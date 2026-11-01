@@ -1,1 +1,18 @@
-# fantasyvarlden
+# Fantasyvärlden
+
+Ett privat hobbyprojekt: ett äventyrsspel i podden Rollspelsklubbens värld, med poddens hjältar och förenklade regler inspirerade av Drakar och Demoner. Inte en officiell produkt.
+
+## Filer
+
+| Fil | Vad den gör |
+|---|---|
+| `index.html` | Sidan och utseendet |
+| `spel.js` | Själva spelet: hemmet, uppdrag, rum, strider, sparning |
+| `regler.js` | Regelmotorn: tärningar, färdigheter, vapen, besvärjelser |
+| `hjaltar.js` | **Datafil** – hjältarnas värden |
+| `varld.js` | **Datafil** – uppdrag, monster, rum och möten |
+| `grafik.js` | Pixelgrafiken (scenen och porträtten) |
+| `sparfil.json` | **Datafil** – skapas automatiskt när spelet sparar till GitHub |
+| `manifest.json`, `sw.js`, `icons/` | Gör att spelet kan installeras som app |
+
+⚠️ Ändra inte datafilerna direkt här på GitHub utan att dubbelkolla. Ett saknat kommatecken eller citattecken räcker för att spelet slutar fungera.
