@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:47:48.444Z",
+  "uppdaterad": "2026-11-02T13:47:52.571Z",
   "spel": {
     "version": 1,
-    "tid": 1793627265448,
+    "tid": 1793627269545,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -204,7 +204,12 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "Ett gammalt gravkapell med söndriga fönster.",
-          "fro": 396825724
+          "fro": 396825724,
+          "fiender": [
+            "rovare",
+            "odod",
+            "rovare"
+          ]
         },
         {
           "typ": "rum",
@@ -225,7 +230,7 @@
       "i": 5,
       "h": {
         "monika": {
-          "kp": 13,
+          "kp": 17,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -250,7 +255,7 @@
           "valtVapen": "Stridsgissel"
         },
         "gaston": {
-          "kp": 1,
+          "kp": 2,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -273,8 +278,8 @@
           "agerat": false
         },
         "ff": {
-          "kp": 3,
-          "vp": 5,
+          "kp": 8,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -391,6 +396,26 @@
         {
           "text": "Gaston Quasimodoson tar 5 skada från Kollapsande grav. KP 1/12.",
           "cls": "fel"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "Mitt i vilan hörs steg…",
+          "cls": "fel"
+        },
+        {
+          "text": "Fienden hinner först!",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Rövare 2 anfaller Gaston Quasimodoson: [18] mot 11 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
