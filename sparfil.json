@@ -1,0 +1,73 @@
+{
+  "app": "Fantasyvärlden",
+  "version": 1,
+  "uppdaterad": "2026-11-02T13:22:47.312Z",
+  "spel": {
+    "version": 1,
+    "tid": 1793552671705,
+    "kassa": 274,
+    "packning": [
+      "Läkedryck",
+      "Läkande ört",
+      "Läkedryck"
+    ],
+    "sallskap": [
+      "monika",
+      "gaston",
+      "ff"
+    ],
+    "hj": {
+      "gaston": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 1,
+        "segrar": 1,
+        "vapen": [],
+        "rustning": null
+      },
+      "monika": {
+        "dod": false,
+        "bonus": {
+          "Slagvapen": 1
+        },
+        "aventyr": 1,
+        "segrar": 1,
+        "vapen": [],
+        "rustning": null
+      },
+      "ff": {
+        "dod": false,
+        "bonus": {
+          "Spjut": 1
+        },
+        "aventyr": 1,
+        "segrar": 1,
+        "vapen": [],
+        "rustning": null
+      },
+      "saganoren": {
+        "dod": true,
+        "bonus": {},
+        "aventyr": 1,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      }
+    },
+    "tavla": [
+      "patricia",
+      "doda-sjon"
+    ],
+    "avklarade": {
+      "broncos": 1
+    },
+    "kronika": [
+      {
+        "tid": "2026-11-01 18:03",
+        "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
+      }
+    ],
+    "run": null,
+    "reset": 0
+  }
+}
