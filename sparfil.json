@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:08:27.927Z",
+  "uppdaterad": "2026-11-02T21:08:36.339Z",
   "spel": {
     "version": 1,
-    "tid": 1793653704942,
+    "tid": 1793653713341,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -261,11 +261,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Gorgor"
+          "agerat": true,
+          "valtVapen": "Kort spjut"
         },
         "shinji": {
-          "kp": 11,
+          "kp": 9,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -443,6 +443,18 @@
         },
         {
           "text": "Shinji Onishi (Kort båge) slår Pilbåge: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [4] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Ramslag. KP 9/13.",
           "cls": "fel"
         }
       ],
