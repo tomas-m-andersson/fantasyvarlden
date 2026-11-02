@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:22:29.818Z",
+  "uppdaterad": "2026-11-02T20:22:41.038Z",
   "spel": {
     "version": 1,
-    "tid": 1793650946758,
+    "tid": 1793650958130,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -268,7 +268,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
@@ -496,6 +496,10 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Trolleriolas (Trästav) slår Stav: [19] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
