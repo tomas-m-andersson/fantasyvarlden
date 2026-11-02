@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:36:35.643Z",
+  "uppdaterad": "2026-11-02T13:36:39.450Z",
   "spel": {
     "version": 1,
-    "tid": 1793626592744,
+    "tid": 1793626596452,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -20,7 +20,7 @@
       "gaston": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null
@@ -30,7 +30,7 @@
         "bonus": {
           "Slagvapen": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null,
@@ -41,7 +41,7 @@
         "bonus": {
           "Spjut": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null,
@@ -109,7 +109,6 @@
       }
     },
     "tavla": [
-      "patricia",
       "doda-sjon",
       "krusbar"
     ],
@@ -122,7 +121,150 @@
         "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "patricia",
+        "givare": "Mandor Marvolt",
+        "titel": "Patricias sista vila",
+        "plats": "Marmoracs kyrkogård",
+        "land": "Grador",
+        "miljo": "gravfalt",
+        "boss": "gravvaktare",
+        "beloning": 250,
+        "rum": 6,
+        "text": "Gasten Mandor Marvolt på Vesselberget kan inte bli fri förrän hans trolovade Patricia återvänder. Hon ligger begravd på Marmoracs kyrkogård, gravplats 362B. Någon – eller något – vaktar gravarna. Håna inte Mandor. Han är känslig.",
+        "foremal": "Patricias kvarlevor",
+        "svar": "”Sluta håna mig! Jag är en gast!” säger Mandor, fast ingen hånade honom."
+      },
+      "party": [
+        "monika",
+        "gaston",
+        "ff"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "dunker"
+        },
+        {
+          "typ": "resa",
+          "mote": "ginzy"
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En öppen grav. Den var inte öppen nyss.",
+          "fro": 31034362,
+          "fiender": [
+            "odod",
+            "rovare"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "Ett gravkor med en tung järngrind.",
+          "fro": 822608062,
+          "hinder": {
+            "namn": "En låst port",
+            "text": "En tung, låst port. Någon behöver dyrka upp den.",
+            "fard": "Fingerfärdighet",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "ruin",
+              "grotta",
+              "kloak",
+              "gravfalt"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "Ett gravkor med en tung järngrind.",
+          "fro": 813431661,
+          "falla": {
+            "namn": "Kollapsande grav",
+            "text": "Någon trampar rakt ner i en gammal grav.",
+            "skada": "T6"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "Ett gammalt gravkapell med söndriga fönster.",
+          "fro": 396825724
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Ett gravkor med en tung järngrind.",
+          "fro": 423553308
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 216957133,
+          "fiender": [
+            "gravvaktare"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "gaston": {
+          "kp": 12,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "ff": {
+          "kp": 13,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkade fikon"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Patricias sista vila” av Mandor Marvolt.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-02 14:36"
+    },
     "reset": 0
   }
 }
