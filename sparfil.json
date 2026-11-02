@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:08:11.391Z",
+  "uppdaterad": "2026-11-02T21:08:18.015Z",
   "spel": {
     "version": 1,
-    "tid": 1793653688373,
+    "tid": 1793653694882,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -262,7 +262,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Kort spjut"
+          "valtVapen": "Gorgor"
         },
         "shinji": {
           "kp": 11,
@@ -424,6 +424,18 @@
         {
           "text": "FF får en extra handling!",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [14] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 2 skada (3 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "FF tar 0 skada (1 − 1 rustning) från Ramslag. KP 6/13.",
+          "cls": "info"
         }
       ],
       "utfall": null,
