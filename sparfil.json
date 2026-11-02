@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:26:49.288Z",
+  "uppdaterad": "2026-11-02T20:27:01.185Z",
   "spel": {
     "version": 1,
-    "tid": 1793651206094,
+    "tid": 1793651218076,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -235,7 +235,9 @@
               "kloak",
               "trask"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Alla tar sig till slut förbi, men Trolleriolas, Galfner Galfner, John P. Bollbirth gjorde sig illa på vägen."
         },
         {
           "typ": "rum",
@@ -251,7 +253,7 @@
       "i": 4,
       "h": {
         "trolleriolas": {
-          "kp": 6,
+          "kp": 1,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -262,11 +264,13 @@
             "En limpa bröd"
           ],
           "markerade": [
-            "Stav"
+            "Stav",
+            "Simma"
           ],
           "anvanda": [
             "Stav",
-            "Magi"
+            "Magi",
+            "Simma"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -280,7 +284,7 @@
           "valtVapen": "Trästav"
         },
         "galfner": {
-          "kp": 7,
+          "kp": 4,
           "vp": 0,
           "doende": false,
           "ok": 0,
@@ -289,14 +293,16 @@
           "dod": false,
           "saker": [],
           "markerade": [
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Simma"
           ],
           "anvanda": [
             "Upptäcka fara",
             "Armborst",
             "Undvika",
             "Kniv",
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Simma"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -310,7 +316,7 @@
           "valtVapen": "Armborst"
         },
         "john": {
-          "kp": 8,
+          "kp": 7,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -320,7 +326,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Slagvapen"
+            "Slagvapen",
+            "Simma"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -871,6 +878,30 @@
         {
           "text": "Galfner Galfner slår Finna dolda ting: [1] mot 7 – DRAKE!",
           "cls": "d"
+        },
+        {
+          "text": "Trolleriolas slår Simma: [20] mot 5 – DEMON!",
+          "cls": "dm"
+        },
+        {
+          "text": "Trolleriolas tar 5 skada från Forsande vatten. KP 1/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner slår Simma: [20] mot 6 – DEMON!",
+          "cls": "dm"
+        },
+        {
+          "text": "Galfner Galfner tar 3 skada från Forsande vatten. KP 4/12.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth slår Simma: [14] mot 4 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth tar 1 skada från Forsande vatten. KP 7/10.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
