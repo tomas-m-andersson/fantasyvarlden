@@ -117,7 +117,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     (hjaltar||[]).slice(0,4).forEach((h,i)=>{
       const img=G.figurBild(h.id); if(!img) return;
       const x=24+i*14, y=37+(i%2?2:0), r=h.ruta??(G.figurRutor(h.id)[0]||0);
-      const rita=()=>{ ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,20,x,y,32,20); R2(28,56,64,2,"#a8733e"); };
+      const rita=()=>{ const S=G.storlek(h.id), hh=Math.round(20*S/32); ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,20,x+Math.round((32-S)/2),y+20-hh,S,hh); R2(28,56,64,2,"#a8733e"); };
       if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
     });
     hjaltar = null;
@@ -133,11 +133,12 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       if(!img.complete){ laddar.push(img); return; }
       ctx.save();
       if(h.nere){ ctx.globalAlpha = .35; }
-      ctx.fillStyle="#0005"; ctx.fillRect(x+9, y+30, 14, 3);
+      const S = G.storlek(h.id), sx = x + Math.round((32-S)/2), sy = y + 30 - Math.round(30*S/32);
+      ctx.fillStyle="#0005"; ctx.fillRect(sx+Math.round(S*.28), y+30, Math.round(S*.44), 3);
       const r = h.ruta;
-      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, 32, 32);
+      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, sx, sy, S, S);
       ctx.restore();
-      if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+14, y-3, 4, 3); }
+      if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(sx+Math.round(S/2)-2, sy-3, 4, 3); }
     });
     if(laddar.length) laddar.forEach(img=>img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true}));
   }
@@ -222,6 +223,9 @@ const UTSEENDE = {
 };
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
 const BILDER = {};
+// Storlek i pixlar (figurerna är 32×32): dvärgar lite mindre, ankor och hobbitar ännu mindre.
+G.storlek = id => { const h = (window.HJALTAR||[]).find(x=>x.id===id), f = h && h.folk;
+  return f==="Dvärg" ? 28 : (f==="Anka" || f==="Hobbit") ? 24 : 32; };
 G.figurBild = id => {
   if(!window.FIGURER || !window.FIGURER[id]) return null;
   if(!BILDER[id]){ const img = new Image(); img.src = "figurer/"+id+".png"; BILDER[id] = img; }
@@ -355,7 +359,7 @@ G.ritaPool = (canvas, doda) => {
     const img=G.figurBild(h.id); if(!img) return;
     const x=px+2+i*18, y=py-8+(i%2)*4;
     const rita=()=>{ const r=h.ruta??(G.figurRutor(h.id)[0]||0);
-      ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,20,x,y,32,20);
+      const S=G.storlek(h.id), hh=Math.round(20*S/32); ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,20,x+Math.round((32-S)/2),y+20-hh,S,hh);
       R(x+4,y+18,24,2,"#2bb5d8"); R(x+8,y+18,6,1,"#7fe3f5"); };
     if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
   });
