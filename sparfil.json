@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:22:50.794Z",
+  "uppdaterad": "2026-11-02T20:23:00.007Z",
   "spel": {
     "version": 1,
-    "tid": 1793650967743,
+    "tid": 1793650976962,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -273,11 +273,11 @@
           "valtVapen": "Trästav"
         },
         "galfner": {
-          "kp": 0,
+          "kp": 5,
           "vp": 4,
-          "doende": true,
+          "doende": false,
           "ok": 0,
-          "miss": 1,
+          "miss": 0,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -299,7 +299,7 @@
           "valtVapen": "Armborst"
         },
         "john": {
-          "kp": 7,
+          "kp": 9,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -323,8 +323,8 @@
           "nackdelNasta": true
         },
         "vad": {
-          "kp": 2,
-          "vp": 9,
+          "kp": 3,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -342,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Handyxa"
         }
@@ -524,6 +524,26 @@
         {
           "text": "John P. Bollbirth förlorar 3 VP.",
           "cls": "fel"
+        },
+        {
+          "text": "★ Våd Snolofsson: Fyra kilo bröd!",
+          "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner kommer tillbaka på benen!",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner återfår 5 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "John P. Bollbirth återfår 2 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "Våd Snolofsson återfår 1 KP.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
