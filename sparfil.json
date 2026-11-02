@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:21:17.650Z",
+  "uppdaterad": "2026-11-02T20:21:28.091Z",
   "spel": {
     "version": 1,
-    "tid": 1793650874671,
+    "tid": 1793650885075,
     "kassa": 335,
     "packning": [
       "Läkedryck",
@@ -269,7 +269,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
@@ -284,7 +284,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Upptäcka fara"
+            "Upptäcka fara",
+            "Armborst"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -294,10 +295,11 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "nackdelNasta": true
+          "nackdelNasta": false,
+          "valtVapen": "Armborst"
         },
         "john": {
-          "kp": 10,
+          "kp": 2,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -316,12 +318,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": true
         },
         "vad": {
-          "kp": 14,
+          "kp": 8,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -340,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Handyxa"
         }
@@ -410,6 +412,22 @@
         {
           "text": "Trolleriolas (Trästav) slår Stav med nackdel: [16 / 8 → 16] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med nackdel: [5 / 17 → 17] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth tar 8 skada från Strupgrepp. KP 2/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Våd Snolofsson tar 6 skada från Smittbett. KP 8/14.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
