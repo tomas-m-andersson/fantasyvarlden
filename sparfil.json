@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:27:01.185Z",
+  "uppdaterad": "2026-11-02T20:27:04.937Z",
   "spel": {
     "version": 1,
-    "tid": 1793651218076,
+    "tid": 1793651221865,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -247,10 +247,14 @@
           "fiender": [
             "gast",
             "dendroid"
+          ],
+          "rutor": [
+            26,
+            7
           ]
         }
       ],
-      "i": 4,
+      "i": 5,
       "h": {
         "trolleriolas": {
           "kp": 1,
