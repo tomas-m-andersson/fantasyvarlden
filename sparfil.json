@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:08:00.558Z",
+  "uppdaterad": "2026-11-02T21:08:11.391Z",
   "spel": {
     "version": 1,
-    "tid": 1793653677651,
+    "tid": 1793653688373,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -266,7 +266,7 @@
         },
         "shinji": {
           "kp": 11,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -287,7 +287,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
@@ -415,6 +415,14 @@
         },
         {
           "text": "Ulv tar 2 skada (3 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Shinji Onishi: Ledarskap!",
+          "cls": "d"
+        },
+        {
+          "text": "FF får en extra handling!",
           "cls": "ok"
         }
       ],
