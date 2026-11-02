@@ -243,14 +243,14 @@ function ritaBasar(){
   const party = st.sallskap.filter(id=>!ar(id));
   app.innerHTML = `<section class="card"><div class="row" style="justify-content:space-between"><h2>Basaren</h2><span class="kassa">💰 ${st.kassa} guld</span></div>
     <p class="muted small">Förbrukningssaker hamnar i sällskapets gemensamma packning och kan användas av vem som helst i strid.</p>
-    <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="row" style="justify-content:space-between"><span><b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
+    <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="vara"><span><b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <section class="card"><h2>Tehandeln</h2><p class="muted small">Rött té, 2 guld koppen. Det gör inte mycket (1 KP), men det är gott. Teet hamnar i packningen.</p>
     <label class="f">Vem köper?<select id="tevem">${window.HJALTAR.filter(h=>!ar(h.id)).sort((a,b)=>(party.includes(b.id)-party.includes(a.id))).map(h=>`<option value="${h.id}">${esc(h.namn)}</option>`).join("")}</select></label>
     <div class="row"><button class="btn small" data-te="1" ${st.kassa<TE_PRIS?"disabled":""}>Köp rött té – ${TE_PRIS} guld</button></div>
     ${basarMeddelande?`<p class="small" style="color:#ff9d92">${esc(basarMeddelande)}</p>`:""}</section>
   <section class="card"><h2>Smeden</h2><p class="muted small">Utrustning köps till en hjälte i sällskapet och behålls mellan äventyren.</p>
     ${party.length?`<label class="f">Till vem?<select id="vem">${party.map(id=>`<option value="${id}">${esc(HJ[id].namn)}</option>`).join("")}</select></label>`:`<p class="small">Välj ett sällskap först.</p>`}
-    <div class="col">${BASAR_UTR.map(([n,p,t])=>`<div class="row" style="justify-content:space-between"><span><b>${esc(n)}</b><br><span class="small muted">${t==="rustning"?"Rustning "+R.RUSTNING[n]:esc(R.VAPEN[n].fard+", "+R.VAPEN[n].skada)}</span></span><button class="btn small" data-utr="${esc(n)}" data-t="${t}" data-p="${p}" ${st.kassa<p||!party.length?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
+    <div class="col">${BASAR_UTR.map(([n,p,t])=>`<div class="vara"><span><b>${esc(n)}</b><br><span class="small muted">${t==="rustning"?"Rustning "+R.RUSTNING[n]:esc(R.VAPEN[n].fard+", "+R.VAPEN[n].skada)}</span></span><button class="btn small" data-utr="${esc(n)}" data-t="${t}" data-p="${p}" ${st.kassa<p||!party.length?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <button class="btn ghost" data-a="hem">Tillbaka till värdshuset</button>`;
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
