@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:48:36.837Z",
+  "uppdaterad": "2026-11-02T13:48:40.844Z",
   "spel": {
     "version": 1,
-    "tid": 1793627313810,
+    "tid": 1793627317877,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -209,7 +209,9 @@
             "rovare",
             "odod",
             "rovare"
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 13 guld."
         },
         {
           "typ": "rum",
@@ -311,7 +313,7 @@
           "valtVapen": "Kort spjut"
         }
       },
-      "guld": 58,
+      "guld": 71,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Patricias sista vila” av Mandor Marvolt.",
@@ -508,6 +510,18 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [8] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 2 tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
