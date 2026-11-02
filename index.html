@@ -149,6 +149,23 @@ input[type=text],input[type=password],select{font:inherit;background:var(--bg2);
 .t20{display:inline-block;font-family:var(--pix);font-weight:800;background:var(--gold);color:#2a1c05;border-radius:4px;padding:0 6px;margin:0 2px}
 .utfall{font-family:var(--pix);letter-spacing:.03em}
 .agerar{font-family:var(--pix);font-weight:800;font-size:1.1rem;color:var(--gold);text-align:center;margin:6px 0}
+/* Tärningsrutan */
+#tarning{position:fixed;inset:0;z-index:30;background:#120e0aee;display:flex;align-items:center;justify-content:center;padding:16px}
+#tarning[hidden]{display:none}
+.tr-kort{background:var(--panel);border:2px solid var(--gold);border-radius:10px;padding:22px 18px;max-width:420px;width:100%;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.tr-vem{font-family:var(--pix);font-weight:800;color:var(--muted);font-size:1rem}
+.tr-kort h2{font-size:1.5rem;margin-top:-6px}
+.tr-mal{font-size:1.1rem} .tr-mal b{font-family:var(--pix);color:var(--gold);font-size:1.3rem}
+.tr-tarningar{display:flex;gap:18px;justify-content:center;margin:8px 0}
+.d20{width:104px;height:104px;background:var(--gold);clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:grid;place-items:center;transition:transform .2s,background .2s,opacity .2s}
+.d20 span{font-family:var(--pix);font-weight:800;font-size:2.6rem;color:#2a1c05}
+.d20.rullar{animation:rull .18s linear infinite}
+@keyframes rull{0%{transform:rotate(0) scale(.95)}50%{transform:rotate(12deg) scale(1.05)}100%{transform:rotate(0) scale(.95)}}
+.d20.ok{background:var(--moss)} .d20.miss{background:#a8a090} .d20.drake{background:#ffd23f;transform:scale(1.12)} .d20.demon{background:var(--red)} .d20.bort{opacity:.3}
+.d20.demon span{color:#fff}
+.tr-utfall{font-family:var(--pix);font-weight:800;font-size:1.5rem;min-height:1.6em}
+.tr-utfall.ok{color:var(--moss)} .tr-utfall.miss{color:#c9bfae} .tr-utfall.drake{color:#ffd23f} .tr-utfall.demon{color:#ff6a5e}
+.tr-kort .btn{width:100%;font-size:1.15rem;padding:14px}
 .figurval{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px}
 .figurval .fv{padding:0;border:2px solid var(--line);border-radius:4px;background:#2b2219;aspect-ratio:1}
 .figurval .fv.vald{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}

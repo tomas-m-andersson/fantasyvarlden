@@ -117,8 +117,11 @@ R.slag = (varde, lage) => { // lage: "fordel" | "nackdel" | undefined
   const lyckat = drake || (!demon && s<=varde);
   let text = (b!=null ? `[${a} / ${b} → ${s}]` : `[${s}]`) + ` mot ${varde}`;
   if(drake) text += " – DRAKE!"; else if(demon) text += " – DEMON!"; else text += lyckat ? " – lyckat" : " – misslyckat";
-  return {lyckat, drake, demon, slag:s, varde, text, lage};
+  const res = {lyckat, drake, demon, slag:s, varde, text, lage, a, b};
+  if(R.inspelning) R.inspelning.push(res);   // spelet kan visa slaget i tärningsrutan så att spelaren "slår" själv
+  return res;
 };
+R.inspelning = null;
 
 window.REGLER = R;
 })();

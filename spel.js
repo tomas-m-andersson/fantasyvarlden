@@ -89,7 +89,7 @@ async function ghLadda(ersatt){
 
 // ================= Inställningar som bara gäller den här enheten =================
 const AKEY = "fantasyvarlden-alternativ";
-let alt = Object.assign({tempo:"steg"}, load(AKEY, {}));
+let alt = Object.assign({tempo:"steg", tarning:"sjalv"}, load(AKEY, {}));
 
 // ================= Navigering =================
 let vy = "hem";
@@ -122,6 +122,69 @@ function modal(html, onOpen){
 function stangModal(){ $("#modal").hidden=true; $("#modal-inner").innerHTML=""; }
 $("#modal").addEventListener("click",e=>{ if(e.target.id==="modal") stangModal(); });
 document.addEventListener("keydown",e=>{ if(e.key==="Escape" && !$("#modal").hidden && !$("#modal").dataset.las) stangModal(); });
+
+// ================= TÄRNINGSRUTAN – spelaren slår hjältarnas tärningar själv =================
+// Spelet räknar ut handlingen som vanligt men spelar in hjältarnas T20-slag. Sedan visas varje slag i en ruta där
+// spelaren trycker "Slå" – tärningen rullar och landar på slaget – innan resultatet syns.
+let tarningLas = null;
+async function medTarningar(fn){
+  R.inspelning = [];
+  let ut, lista;
+  try{ ut = fn(); } finally { lista = R.inspelning || []; R.inspelning = null; }
+  lista = lista.filter(s=>s.vem);                       // bara hjältarnas slag
+  if(lista.length && (alt.tarning||"sjalv")==="sjalv") await visaTarningar(lista);
+  return ut;
+}
+const EGNAMN = Object.fromEntries(R.EGENSKAPER);
+function visaTarningar(lista){
+  let klar; tarningLas = new Promise(r=>klar=r);
+  let el = document.getElementById("tarning");
+  if(!el){ el = document.createElement("div"); el.id = "tarning"; document.body.appendChild(el); }
+  let i = 0, auto = false;
+  const stang = () => { el.hidden = true; el.innerHTML = ""; const k = klar; tarningLas = null; k(); };
+  const visa = () => {
+    const s = lista[i], tva = s.b != null, fard = EGNAMN[s.fard] || s.fard;
+    el.innerHTML = `<div class="tr-kort">
+      <p class="tr-vem">${esc(s.vem)}</p><h2>slår ${esc(fard)}</h2>
+      <p class="tr-mal">Behöver <b>${s.varde}</b> eller lägre</p>
+      ${tva?`<p class="small muted">${s.lage==="fordel"?"Fördel: två tärningar – den lägsta räknas":"Nackdel: två tärningar – den högsta räknas"}</p>`:""}
+      <div class="tr-tarningar">${(tva?[s.a,s.b]:[s.a]).map((_,k)=>`<div class="d20" id="d20-${k}"><span>?</span></div>`).join("")}</div>
+      <p class="tr-utfall" id="tr-utfall">&nbsp;</p>
+      <button class="btn" id="tr-sla">🎲 Slå ${tva?"tärningarna":"tärningen"}</button>
+      ${lista.length>1?`<p class="small muted">Slag ${i+1} av ${lista.length}</p>`:""}
+      ${lista.length-i>1?`<button class="btn ghost small" id="tr-auto">Slå resten automatiskt</button>`:""}
+    </div>`;
+    el.hidden = false;
+    el.querySelector("#tr-sla").onclick = rulla;
+    const ab = el.querySelector("#tr-auto"); if(ab) ab.onclick = () => { auto = true; rulla(); };
+    if(auto) rulla();
+  };
+  const rulla = () => {
+    const s = lista[i], tva = s.b != null, varden = tva ? [s.a, s.b] : [s.a];
+    const knapp = el.querySelector("#tr-sla"); if(!knapp || knapp.disabled) return; knapp.disabled = true;
+    const ab = el.querySelector("#tr-auto"); if(ab) ab.remove();
+    const tar = varden.map((_,k)=>el.querySelector("#d20-"+k));
+    tar.forEach(t=>t.classList.add("rullar"));
+    let n = 0; const steg = auto ? 4 : 12;
+    const iv = setInterval(()=>{
+      n++;
+      tar.forEach(t=>{ t.firstChild.textContent = 1 + Math.floor(Math.random()*20); });
+      if(n < steg) return;
+      clearInterval(iv);
+      tar.forEach((t,k)=>{ t.classList.remove("rullar"); t.firstChild.textContent = varden[k];
+        if(tva && varden[k] !== s.slag) t.classList.add("bort"); else t.classList.add(s.drake?"drake":s.demon?"demon":s.lyckat?"ok":"miss"); });
+      const u = el.querySelector("#tr-utfall");
+      u.className = "tr-utfall " + (s.drake?"drake":s.demon?"demon":s.lyckat?"ok":"miss");
+      u.textContent = s.drake ? "DRAKE! Perfekt!" : s.demon ? "DEMON! Katastrof!" : s.lyckat ? "LYCKAT!" : "MISSLYCKAT";
+      knapp.textContent = i < lista.length-1 ? "Nästa slag ▶" : "Fortsätt ▶"; knapp.disabled = false;
+      const vidare = () => { clearTimeout(tid); i++; if(i < lista.length) visa(); else stang(); };
+      knapp.onclick = vidare;
+      const tid = setTimeout(vidare, auto ? 500 : 1800);
+    }, 60);
+  };
+  visa();
+  return tarningLas;
+}
 
 // ================= HEMMET =================
 function ritaHem(){
@@ -461,7 +524,7 @@ function hjalteSlag(id, fard, lage){
   if(fard==="Simma" && h.folk==="Anka") l = l==="nackdel"?null:"fordel";
   const varde = fv(h, fard), s = R.slag(varde, l);
   if(R.FARD[fard]){ if(!x.anvanda.includes(fard)) x.anvanda.push(fard); if((s.drake||s.demon) && !x.markerade.includes(fard)) x.markerade.push(fard); }
-  s.fard = fard; return s;
+  s.fard = fard; s.vem = h.namn; return s;
 }
 const slagText = (namn, s) => `${namn} slår ${s.fard}${s.lage==="fordel"?" med fördel":s.lage==="nackdel"?" med nackdel":""}: ${s.text}`;
 const slagCls = s => s.drake?"d":s.demon?"dm":s.lyckat?"ok":"fel";
@@ -487,7 +550,7 @@ function lakaHjalte(id, mangd){
 function vpAndra(id, d){ const x=rh(id), h=bygg(id); if(x.dod) return 0; const f=x.vp; x.vp=Math.max(0,Math.min(R.maxVP(h), x.vp+d)); return x.vp-f; }
 function dor(id){ const x=rh(id); x.dod=true; x.doende=false; x.kp=0; logga(`☠ ${HJ[id].namn} är död och hamnar i poolen på skyskrapetaket i Miami.`,"dm"); }
 function dodsslag(id){
-  const x=rh(id), h=bygg(id), s = R.slag(h.e.FYS);
+  const x=rh(id), h=bygg(id), s = R.slag(h.e.FYS); s.vem = h.namn; s.fard = "Dödsslag (FYS)";
   if(s.drake){ x.doende=false; x.ok=0; x.miss=0; x.kp=R.t(6); logga(`${h.namn} slår dödsslag ${s.text} – reser sig med ${x.kp} KP!`,"d"); return; }
   if(s.lyckat) x.ok++; else x.miss += s.demon?2:1;
   logga(`${h.namn} slår dödsslag mot FYS: ${s.text} (${x.ok} lyckade, ${Math.min(3,x.miss)} misslyckade).`, s.lyckat?"ok":"fel");
@@ -535,7 +598,7 @@ function ritaRun(){
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
   G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null, scenHjaltar(), scenNpcer(steg));
   fyllPortratt(app); scrollaLogg();
-  app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled) return; runKlick(b); };
+  app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled||tarningLas) return; medTarningar(()=>runKlick(b)); };
 }
 // Mötespersonen (och ett husdjur vid vägkanten när man går till fots) som ska stå i TV:n
 const DJUR_RUTOR = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63];
@@ -737,6 +800,8 @@ function nyRunda(){
 }
 async function stridLoop(){
   while(strid){
+    if(tarningLas) await tarningLas;
+    if(!strid) return;
     const slut = kollaSlut(); if(slut){ return avslutaStrid(slut); }
     if(strid.pos >= strid.ordning.length){ strid.turStart = strid.logg.length; strid.behallStart = true; nyRunda(); ritaStrid(); await vanta(tempo().paus); continue; }
     const tur = strid.ordning[strid.pos++];
@@ -745,7 +810,7 @@ async function stridLoop(){
     if(tur.typ==="h"){
       const x = rh(tur.id), namn = HJ[tur.id].namn;
       if(x.dod || x.stabil){ tur.gjord=true; continue; }
-      if(x.doende){ strid.aktiv=tur.id; dodsslag(tur.id); tur.gjord=true; await visaResultat(`${namn} kämpar för sitt liv`, tur.id); if(!strid) return; continue; }
+      if(x.doende){ strid.aktiv=tur.id; ritaStrid(); await medTarningar(()=>dodsslag(tur.id)); if(!strid) return; tur.gjord=true; await visaResultat(`${namn} kämpar för sitt liv`, tur.id); if(!strid) return; continue; }
       if(x.stoppad>0){ x.stoppad--; logga(`${namn} är ur spel den här rundan.`,"info"); tur.gjord=true; strid.aktiv=tur.id; await visaResultat(`${namn}s tur`, tur.id); if(!strid) return; continue; }
       if(x.agerat && !tur.extra){ logga(`${namn} har redan använt sin handling till att försvara sig.`,"info"); tur.gjord=true; continue; }
       strid.aktiv = tur.id; strid.meny = "huvud"; strid.tur = tur;
@@ -857,11 +922,12 @@ function fragaForsvar(id, beskr, barUndvika){
   if(x.agerat || x.raseri || !kanAgera(id)){ if(x.raseri) logga(`${h.namn} är i raseri och bryr sig inte om att försvara sig.`,"info"); return Promise.resolve(false); }
   const parv = h.vapen.map(v=>R.VAPEN[v]).filter(v=>v && !v.avstand).map(v=>({v, varde:R.fardVarde(h,v.fard)})).sort((a,b)=>b.varde-a.varde)[0];
   return new Promise(res=>{
-    strid.forsvar = {id, beskr, parv: barUndvika?null:parv, svar:(val)=>{
+    strid.forsvar = {id, beskr, parv: barUndvika?null:parv, svar:async (val)=>{
       strid.forsvar=null;
       if(val==="ta"){ logga(`${h.namn} tar smällen.`,"info"); ritaStrid(); return res(false); }
       x.agerat = true;
-      const s = val==="parera" ? hjalteSlag(id, parv.v.fard, h.skold?"fordel":null) : hjalteSlag(id,"Undvika");
+      const s = await medTarningar(()=> val==="parera" ? hjalteSlag(id, parv.v.fard, h.skold?"fordel":null) : hjalteSlag(id,"Undvika"));
+      if(!strid) return res(false);
       logga(`${h.namn} ${val==="parera"?"parerar":"försöker undvika"}: ${s.text}`, slagCls(s));
       ritaStrid();
       if(s.lyckat) etikett("h:"+id, "MISS", "#ffffff");
@@ -872,7 +938,10 @@ function fragaForsvar(id, beskr, barUndvika){
 }
 
 // ---------- Hjältens handlingar ----------
-function hjalteHandling(fn){ try{ fn(); }catch(e){ console.error(e); logga("Något gick fel: "+e.message,"fel"); } spara(); const r=strid&&strid.svara; if(strid){ strid.svara=null; strid.meny="huvud"; } if(r) r(); }
+async function hjalteHandling(fn){
+  if(strid) strid.svara_las = true;
+  await medTarningar(()=>{ try{ fn(); }catch(e){ console.error(e); logga("Något gick fel: "+e.message,"fel"); } });
+  spara(); const r=strid&&strid.svara; if(strid){ strid.svara=null; strid.meny="huvud"; strid.svara_las=false; } if(r) r(); }
 function skadaFiende(f, d, kalla){
   const verklig = Math.max(0, d - f.rust);
   f.kp = Math.max(0, f.kp - verklig);
@@ -1163,6 +1232,8 @@ $("#btn-inst").onclick = () => modal(`<h2>Inställningar</h2>
   <label class="row small"><input type="checkbox" id="g-auto" ${gh.auto?"checked":""}> Spara automatiskt</label>
   <div class="row"><button class="btn" id="g-spara">Spara inställningarna och hämta</button><button class="btn ghost" id="g-nu">Spara till GitHub nu</button></div>
   <h3>Spelet</h3>
+  <label class="f">Tärningar<select id="tarningval"><option value="sjalv" ${(alt.tarning||"sjalv")==="sjalv"?"selected":""}>Jag slår själv</option><option value="auto" ${alt.tarning==="auto"?"selected":""}>Automatiskt</option></select></label>
+  <p class="small muted">Om du själv ska trycka för att slå hjältarnas tärningar. Fiendernas slag sker alltid automatiskt.</p>
   <label class="f">Stridstempo<select id="tempo">${Object.entries(TEMPON).map(([k,v])=>`<option value="${k}" ${(alt.tempo||"steg")===k?"selected":""}>${esc(v.namn)}</option>`).join("")}</select></label>
   <p class="small muted">Hur länge spelet stannar och visar vad som hände efter varje tur i striden. Sparas på den här enheten.</p>
   <label class="f">Svårighetsgrad<select id="svar">${Object.entries(SVAR).map(([k,v])=>`<option value="${k}" ${svar()===k?"selected":""}>${esc(v.namn)}</option>`).join("")}</select></label>
@@ -1176,6 +1247,7 @@ $("#btn-inst").onclick = () => modal(`<h2>Inställningar</h2>
   $("#i-stang").onclick = stangModal;
   $("#svar").onchange = e => { st.svarighet = e.target.value; spara(); };
   $("#tempo").onchange = e => { alt.tempo = e.target.value; save(AKEY, alt); };
+  $("#tarningval").onchange = e => { alt.tarning = e.target.value; save(AKEY, alt); };
   $("#nollstall").onclick = () => {
     if(!confirm("Vill du verkligen börja om? Alla hjältars framsteg, döda hjältar, guld och krönikan försvinner.")) return;
     if(!confirm("Är du helt säker? Det här går inte att ångra – och sparfilen på GitHub skrivs också över.")) return;
