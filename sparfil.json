@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:33:30.750Z",
+  "uppdaterad": "2026-11-02T13:36:35.643Z",
   "spel": {
     "version": 1,
-    "tid": 1793626407788,
+    "tid": 1793626592744,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -110,7 +110,8 @@
     },
     "tavla": [
       "patricia",
-      "doda-sjon"
+      "doda-sjon",
+      "krusbar"
     ],
     "avklarade": {
       "broncos": 1
