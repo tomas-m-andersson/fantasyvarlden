@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:09:13.555Z",
+  "uppdaterad": "2026-11-02T21:09:17.454Z",
   "spel": {
     "version": 1,
-    "tid": 1793653750594,
+    "tid": 1793653754444,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -288,8 +288,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort båge"
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         },
         "dagny": {
           "kp": 6,
@@ -519,6 +519,10 @@
         {
           "text": "Fummel! Dagny von Fågelborg tappar balansen och får nackdel på nästa slag.",
           "cls": "dm"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [18] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
