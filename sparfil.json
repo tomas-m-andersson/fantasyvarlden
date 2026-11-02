@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:37:29.748Z",
+  "uppdaterad": "2026-11-02T13:37:41.545Z",
   "spel": {
     "version": 1,
-    "tid": 1793626646839,
+    "tid": 1793626658635,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -162,7 +162,9 @@
           "fiender": [
             "odod",
             "rovare"
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 8 guld."
         },
         {
           "typ": "rum",
@@ -230,7 +232,9 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Slagvapen"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -238,7 +242,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Stridsgissel"
         },
         "gaston": {
           "kp": 6,
@@ -285,10 +290,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         }
       },
-      "guld": 50,
+      "guld": 58,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Patricias sista vila” av Mandor Marvolt.",
@@ -349,6 +354,18 @@
         {
           "text": "Rövare anfaller Gaston Quasimodoson: [14] mot 11 – misslyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [14] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 13 skada (14 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
