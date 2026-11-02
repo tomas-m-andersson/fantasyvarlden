@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:18:54.206Z",
+  "uppdaterad": "2026-11-02T20:19:05.580Z",
   "spel": {
     "version": 1,
-    "tid": 1793650731238,
-    "kassa": 345,
+    "tid": 1793650742476,
+    "kassa": 335,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -59,7 +59,7 @@
       "vad": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 0,
         "vapen": [],
         "rustning": null,
@@ -86,7 +86,7 @@
       "john": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -111,7 +111,7 @@
       "trolleriolas": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -119,14 +119,13 @@
       "galfner": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 0,
         "vapen": [],
         "rustning": null
       }
     },
     "tavla": [
-      "doda-sjon",
       "krusbar",
       "svartalf"
     ],
@@ -134,6 +133,10 @@
       "broncos": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-02 21:19",
+        "text": "Trolleriolas, Galfner Galfner, John P. Bollbirth, Våd Snolofsson åkte med Bakhuvudet Jens mot Döda sjön för 10 guld."
+      },
       {
         "tid": "2026-11-02 21:18",
         "text": "Trolleriolas, Galfner Galfner, John P. Bollbirth, Våd Snolofsson utforskade Malbecs gruvor och nådde kapitel 1 (0 rum). Sällskapet gav upp och vände hem."
@@ -147,7 +150,159 @@
         "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "doda-sjon",
+        "givare": "Professor Proppeteus",
+        "titel": "Vattenprover från Döda sjön",
+        "plats": "Döda sjön",
+        "land": "Grador",
+        "miljo": "trask",
+        "boss": "gast",
+        "beloning": 150,
+        "rum": 5,
+        "text": "Professor Proppeteus behöver vattenprover från Döda sjön utanför Cranford för sin mycket originella forskning. Sjön lär vara förgiftad sedan kriget. Det spökar också, säger folk.",
+        "foremal": "Tre flaskor giftigt sjövatten",
+        "svar": "Professorn tittar på er genom tre par glasögon samtidigt."
+      },
+      "party": [
+        "trolleriolas",
+        "galfner",
+        "john",
+        "vad"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "jens-genvag",
+          "jens": true,
+          "vagn": 4
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "En spång av ruttnande plankor.",
+          "fro": 862601446,
+          "falla": {
+            "namn": "Dy",
+            "text": "Dyn suger tag i fötterna.",
+            "skada": "T6"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Grönt vatten som bubblar illavarslande.",
+          "fro": 85209226,
+          "fiender": [
+            "gast",
+            "ratta",
+            "varg"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Dimma och kväkande grodor.",
+          "fro": 635920546
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En spång av ruttnande plankor.",
+          "fro": 549497355,
+          "hinder": {
+            "namn": "Forsande vatten",
+            "text": "Vägen går genom strömt vatten. Den som inte kan simma får det jobbigt.",
+            "fard": "Simma",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "grotta",
+              "skog",
+              "kloak",
+              "trask"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 850272468,
+          "fiender": [
+            "gast",
+            "dendroid"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "trolleriolas": {
+          "kp": 10,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "En limpa bröd"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "john": {
+          "kp": 10,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "vad": {
+          "kp": 14,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Vattenprover från Döda sjön” av Professor Proppeteus.",
+          "cls": "info"
+        },
+        {
+          "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-02 21:19"
+    },
     "reset": 0,
     "rekord": {
       "malbecs-gruvor": {
