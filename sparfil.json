@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:27:29.280Z",
+  "uppdaterad": "2026-11-02T20:27:34.971Z",
   "spel": {
     "version": 1,
-    "tid": 1793651246228,
+    "tid": 1793651251796,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -288,7 +288,7 @@
         },
         "galfner": {
           "kp": 4,
-          "vp": 0,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -316,11 +316,12 @@
           "stoppad": 0,
           "agerat": true,
           "nackdelNasta": false,
-          "valtVapen": "Armborst"
+          "valtVapen": "Armborst",
+          "fordelNasta": true
         },
         "john": {
           "kp": 7,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -339,7 +340,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
           "nackdelNasta": false
         },
@@ -916,6 +917,14 @@
         },
         {
           "text": "Trolleriolas återfår 4 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ John P. Bollbirth: Och hur får det dig att känna?!",
+          "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner ligger på divanen en stund, återfår 7 VP och får fördel på nästa slag.",
           "cls": "ok"
         }
       ],
