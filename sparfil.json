@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:05:08.805Z",
+  "uppdaterad": "2026-11-02T21:05:48.793Z",
   "spel": {
     "version": 1,
-    "tid": 1793653505387,
+    "tid": 1793653545684,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -250,7 +250,17 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Spjut"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         },
         "shinji": {
           "kp": 13,
@@ -264,7 +274,18 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Pilbåge"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Kort båge"
         },
         "dagny": {
           "kp": 10,
@@ -276,7 +297,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -284,6 +313,26 @@
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "FF parerar: [12] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "FF har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [9] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 7 skada (9 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
