@@ -89,6 +89,35 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
   if(extra==="vila"){ ctx.fillStyle="#5a3a1a"; ctx.fillRect(74,66,12,2); ctx.fillStyle="#ff8a2e"; ctx.fillRect(77,60,6,6); ctx.fillStyle="#ffe08a"; ctx.fillRect(79,62,2,3); }
   if(extra==="falla"){ ctx.fillStyle="#9aa0a8"; for(let x=62;x<98;x+=4){ ctx.fillRect(x,64,1,-0); ctx.fillRect(x,60,1,4); } }
   if(extra==="hinder"){ ctx.fillStyle="#000a"; ctx.fillRect(68,64,26,26); }
+  // Bakhuvudet Jens kärra: sällskapet sitter på flaket, Jens på kuskbocken (bakhuvudet mot oss), hästen drar.
+  if(extra==="jens"){
+    const R2=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+    R2(26,77,112,3,"#0005");                                         // skugga
+    // häst
+    R2(104,56,26,12,"#7a4a26"); R2(126,46,8,14,"#7a4a26"); R2(130,42,10,8,"#7a4a26"); R2(138,45,3,4,"#5a3418");
+    R2(127,42,3,3,"#2a1a10"); R2(128,44,2,10,"#2a1a10"); R2(133,44,1,1,"#111");          // man och öga
+    R2(106,68,3,9,"#5a3418"); R2(114,68,3,9,"#5a3418"); R2(121,68,3,9,"#5a3418"); R2(127,68,3,9,"#5a3418");
+    R2(100,57,5,2,"#2a1a10"); R2(100,59,2,8,"#2a1a10");                                   // svans
+    R2(92,58,14,1,"#3a2814");                                                             // skaklar
+    // kärran
+    R2(28,56,64,12,"#8a5a2e"); R2(28,56,64,2,"#a8733e"); for(let x=34;x<92;x+=10) R2(x,58,1,10,"#6a4220");
+    R2(84,46,10,10,"#6a4220");                                                            // kuskbock
+    const hjul=(cx)=>{ R2(cx-6,64,12,12,"#2a1a10"); R2(cx-4,66,8,8,"#a8733e"); R2(cx-1,64,2,12,"#2a1a10"); R2(cx-6,69,12,2,"#2a1a10"); };
+    hjul(40); hjul(80);
+    // Jens: rund bakskalle, krage och tömmar
+    R2(86,34,10,10,"#3a2a1a"); R2(85,36,12,6,"#3a2a1a"); R2(87,33,8,2,"#4a3622");          // bakhuvudet
+    R2(87,42,8,2,"#d9a57c"); R2(96,37,2,3,"#d9a57c");                                     // nacke och öra
+    R2(85,44,12,6,"#3f5a7a"); R2(84,50,14,6,"#3f5a7a"); R2(85,44,12,1,"#5a7a9a");        // rock
+    R2(97,48,9,1,"#2a1a10"); R2(105,49,3,1,"#2a1a10");                                    // tömmar
+    // sällskapet sitter på flaket (överkroppen syns)
+    (hjaltar||[]).slice(0,4).forEach((h,i)=>{
+      const img=G.figurBild(h.id); if(!img) return;
+      const x=24+i*14, y=37+(i%2?2:0), r=h.ruta??(G.figurRutor(h.id)[0]||0);
+      const rita=()=>{ ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,20,x,y,32,20); R2(28,56,64,2,"#a8733e"); };
+      if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
+    });
+    hjaltar = null;
+  }
   // hjältarna (vänster sida, i två led så att fyra får plats)
   const harHjaltar = hjaltar && hjaltar.length;
   if(harHjaltar){

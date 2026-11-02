@@ -151,7 +151,7 @@ function ritaHem(){
     const b = e.target.closest("[data-a]"); if(!b) return;
     const a = b.dataset.a, id = b.dataset.id;
     if(a==="visa") visaHjalte(id);
-    if(a==="tavla") ga("tavla");
+    if(a==="tavla"){ jensLedig = null; ga("tavla"); }
     if(a==="basar") ga("basar");
     if(a==="fortsatt") ga("run");
     if(a==="ge-upp") geUpp();
@@ -287,17 +287,46 @@ function ritaTavla(){
     const b = e.target.closest("button"); if(!b) return;
     if(b.dataset.a==="hem") return ga("hem");
     if(b.dataset.a==="nya"){ st.tavla=[]; fyllTavla(); spara(); return ritaTavla(); }
-    if(b.dataset.anta) startaUppdrag(b.dataset.anta);
+    if(b.dataset.anta) valjResa(b.dataset.anta);
   };
 }
 
+// ================= BAKHUVUDET JENS =================
+// Kusken Bakhuvudet Jens skjutsar ibland äventyrare med sin kärra. Han finns inte alltid på plats.
+const JENS_PRIS = 10;
+let jensLedig = null; // avgörs en gång per besök vid tavlan
+const JENS_BORTA = [
+  "Bakhuvudet Jens är ute på en körning. Hans kärra syns inte till.",
+  "Kärran står här, men Bakhuvudet Jens är inte på kuskbocken. Någon säger att han äter korv.",
+  "Bakhuvudet Jens har ledigt i dag. Det står på en lapp på kärran.",
+  "Bakhuvudet Jens skjutsar ett annat sällskap. Ni ser bara hans bakhuvud försvinna bort längs vägen."
+];
+function valjResa(qid){
+  const u = V.UPPDRAG.find(x=>x.id===qid);
+  if(jensLedig===null) jensLedig = Math.random() < .65;
+  const borta = R.valj(JENS_BORTA);
+  modal(`<h2>Hur tar ni er till ${esc(u.plats)}?</h2>
+    <div class="val">
+      <button class="btn ghost" data-r="fots">Till fots<span class="sub">Gratis. Två möten längs vägen.</span></button>
+      ${jensLedig?`<button class="btn" data-r="jens" ${st.kassa<JENS_PRIS?"disabled":""}>Åk med Bakhuvudet Jens<span class="sub">${JENS_PRIS} guld ur kassan${st.kassa<JENS_PRIS?` – ni har ${st.kassa}`:""}. Bara en händelse på vägen – men det är Jens som kör.</span></button>`
+        :`<p class="small muted">🐴 ${esc(borta)}</p>`}
+      <button class="btn ghost small" data-r="avbryt">Avbryt</button>
+    </div>`, inner=>inner.onclick=e=>{
+      const b=e.target.closest("button"); if(!b) return;
+      if(b.dataset.r==="avbryt") return stangModal();
+      if(b.dataset.r==="jens" && st.kassa<JENS_PRIS) return;
+      stangModal(); startaUppdrag(qid, b.dataset.r==="jens");
+    });
+}
+
 // ================= ÄVENTYRET =================
-function startaUppdrag(qid){
+function startaUppdrag(qid, medJens){
   const q = JSON.parse(JSON.stringify(V.UPPDRAG.find(u=>u.id===qid)));
   const party = st.sallskap.filter(id=>!ar(id)); if(!party.length) return;
-  const resMoten = R.blanda(V.MOTEN.filter(m=>m.resa)).slice(0,2);
+  const resMoten = medJens ? [R.valj(V.MOTEN.filter(m=>m.jens))] : R.blanda(V.MOTEN.filter(m=>m.resa)).slice(0,2);
   const rumMoten = R.blanda(V.MOTEN.filter(m=>m.rum));
-  const steg = resMoten.map(m=>({typ:"resa",mote:m.id}));
+  const steg = resMoten.map(m=>({typ:"resa",mote:m.id,jens:!!medJens}));
+  if(medJens){ st.kassa -= JENS_PRIS; jensLedig = null; }
   const typer = R.blanda(["strid","strid","falla","hinder","skatt","mote","strid","vila","hinder","skatt"]).slice(0,q.rum-1);
   if(!typer.includes("strid")) typer[0]="strid";
   typer.forEach((t,i)=>{
@@ -316,6 +345,7 @@ function startaUppdrag(qid){
   st.tavla = st.tavla.filter(x=>x!==qid);
   storOrn(1/6);
   logga(`Sällskapet antar uppdraget ”${q.titel}” av ${q.givare}.`,"info");
+  if(medJens){ logga(`🐴 Bakhuvudet Jens tar ${JENS_PRIS} guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.`,"info"); kronika(`${party.map(i=>HJ[i].namn).join(", ")} åkte med Bakhuvudet Jens mot ${q.plats} för ${JENS_PRIS} guld.`); }
   spara(); ga("run");
 }
 // Svårighetsgraden avgör hur många fiender som dyker upp och hur tåliga de är.
@@ -388,7 +418,7 @@ function ritaRun(){
   let titel = "", innehall = "";
   if(steg.typ==="resa"){
     const m = V.MOTEN.find(x=>x.id===steg.mote);
-    titel = `På väg mot ${r.q.plats}`;
+    titel = steg.jens ? `På Bakhuvudet Jens kärra mot ${r.q.plats}` : `På väg mot ${r.q.plats}`;
     innehall = moteHtml(m, steg);
   } else if(steg.rumtyp==="boss"){
     titel = `${r.q.plats} – slutstriden`;
@@ -406,7 +436,7 @@ function ritaRun(){
     <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null, scenHjaltar());
+  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens":steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null, scenHjaltar());
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled) return; runKlick(b); };
 }
