@@ -100,10 +100,14 @@ function ga(v){ vy=v; ritaOm(); window.scrollTo({top:0,behavior:"instant"}); }
 
 // ================= Små ritfunktioner =================
 function portratt(id, cls="portr"){
-  const c = document.createElement("canvas"); c.className = "px "+cls; G.ritaPortratt(c, HJ[id], ar(id)); return c;
+  const c = document.createElement("canvas"); c.className = "px "+cls; G.ritaPortratt(c, HJ[id], ar(id), figur(id)); return c;
 }
+// Vilken av hjältens figurvarianter som används (sparas per hjälte).
+function figur(id){ const r=G.figurRutor(id), v=st.hj[id]&&st.hj[id].figur; return r.includes(v)?v:(r[0]??null); }
+// Hjältarna som de ska stå i TV:n
+function scenHjaltar(aktiv){ return st.run ? st.run.party.map(id=>{ const x=rh(id); return {id, ruta:figur(id), nere:x.dod||x.doende||x.stabil||x.kp<=0, aktiv:aktiv===id}; }).filter(h=>!rh(h.id).dod) : []; }
 function fyllPortratt(root){
-  root.querySelectorAll("canvas[data-p]").forEach(c=>{ G.ritaPortratt(c, HJ[c.dataset.p], c.dataset.dod==="1"); });
+  root.querySelectorAll("canvas[data-p]").forEach(c=>{ G.ritaPortratt(c, HJ[c.dataset.p], c.dataset.dod==="1", c.dataset.ruta!=null?Number(c.dataset.ruta):figur(c.dataset.p)); });
 }
 function modal(html, onOpen){
   const m=$("#modal"), i=$("#modal-inner"); i.innerHTML=html; m.hidden=false;
@@ -191,6 +195,7 @@ function visaHjalte(id){
       ${dod?`<button class="btn red" data-a="lucifer" ${st.kassa<100?"disabled":""}>Förhandla med Lucifer<span class="sub">Kostar 100 guld ur kassan</span></button>`
         : vald?`<button class="btn ghost" data-a="ta-bort" ${st.run?"disabled":""}>Ta bort ur sällskapet</button>`
         :`<button class="btn" data-a="lagg-till" ${st.sallskap.filter(x=>!ar(x)).length>=4||st.run?"disabled":""}>Lägg till i sällskapet</button>`}
+      ${G.figurRutor(id).length>1?`<button class="btn ghost" data-a="figur">Byt utseende<span class="sub">${G.figurRutor(id).length} varianter</span></button>`:""}
       <button class="btn ghost" data-a="stang">Stäng</button>
     </div>
     ${st.run&&!dod?`<p class="small muted">Sällskapet kan inte ändras medan ett äventyr pågår.</p>`:""}
@@ -198,10 +203,22 @@ function visaHjalte(id){
   inner=>inner.onclick=e=>{
     const b=e.target.closest("[data-a]"); if(!b) return;
     if(b.dataset.a==="stang") return stangModal();
+    if(b.dataset.a==="figur") return valjFigur(id);
     if(b.dataset.a==="lagg-till"){ st.sallskap = [...st.sallskap.filter(x=>!ar(x)), id].slice(0,4); spara(); stangModal(); ritaOm(); }
     if(b.dataset.a==="ta-bort"){ st.sallskap = st.sallskap.filter(x=>x!==id); spara(); stangModal(); ritaOm(); }
     if(b.dataset.a==="lucifer"){ if(st.kassa<100) return; if(!confirm(`Betala 100 guld till Lucifer för att få tillbaka ${HJ[id].namn}?`)) return;
       st.kassa-=100; hs(id).dod=false; kronika(`${HJ[id].namn} förhandlade sig ut ur Efterriket. Lucifer fick 100 guld.`); spara(); stangModal(); ritaOm(); }
+  });
+}
+function valjFigur(id){
+  const nu = figur(id);
+  modal(`<h2>Utseende: ${esc(HJ[id].namn)}</h2><p class="small muted">Tryck på den figur du vill använda. Den syns i galleriet, på hjältebladet och i TV:n under äventyren.</p>
+    <div class="figurval">${G.figurRutor(id).map(r=>`<button class="fv ${r===nu?"vald":""}" data-r="${r}" aria-label="Variant ${r+1}"><canvas class="px" data-p="${id}" data-ruta="${r}"></canvas></button>`).join("")}</div>
+    <button class="btn ghost" data-a="tillbaka">Tillbaka till hjältebladet</button>`,
+  inner=>inner.onclick=e=>{
+    const b=e.target.closest("button"); if(!b) return;
+    if(b.dataset.r!=null){ hs(id).figur=Number(b.dataset.r); spara(); ritaOm(); return visaHjalte(id); }
+    if(b.dataset.a==="tillbaka") visaHjalte(id);
   });
 }
 function kronika(text){ st.kronika.unshift({tid:datum(),text}); st.kronika = st.kronika.slice(0,40); }
@@ -368,7 +385,7 @@ function ritaRun(){
     <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null);
+  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null, scenHjaltar());
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled) return; runKlick(b); };
 }
@@ -689,6 +706,7 @@ function formaga(id, mal){
     case "lakaAlla": st.run.party.filter(i=>!rh(i).dod).forEach(i=>{ const l=lakaHjalte(i,R.slaTarning(fo.dice)); if(l) logga(`${HJ[i].namn} återfår ${l} KP.`,"ok"); }); break;
     case "lakaSjalv": { const l=lakaHjalte(id,R.slaTarning(fo.dice)); logga(`${h.namn} återfår ${l} KP.`,"ok"); break; }
     case "vpAlla": st.run.party.filter(i=>!rh(i).dod).forEach(i=>{ if(i===id) return; const l=vpAndra(i,R.slaTarning(fo.dice)); if(l) logga(`${HJ[i].namn} återfår ${l} VP.`,"ok"); }); break;
+    case "terapi": { const v=vpAndra(mal,R.slaTarning("2T6")); rh(mal).fordelNasta=true; logga(`${HJ[mal].namn} ligger på divanen en stund, återfår ${v} VP och får fördel på nästa slag.`,"ok"); break; }
     case "extraHandling": { const tur={typ:"h",id:mal,kort:0,extra:true}; strid.ordning.splice(strid.pos,0,tur); logga(`${HJ[mal].namn} får en extra handling!`,"ok"); break; }
     case "stoppaFiende": mal.stoppad = Math.max(mal.stoppad,1); logga(`${mal.namn} står helt paralyserad.`,"ok"); break;
     case "overtala": { const s=hjalteSlag(id,"Övertala"); logga(slagText(h.namn,s),slagCls(s)); if(s.lyckat && mal.folk && !mal.boss){ mal.kp=0; mal.lamnat=true; logga(`${mal.namn} rodnar, slänger vapnet och går därifrån.`,"d"); } else logga(`${mal.namn} är inte intresserad.`,"fel"); break; }
@@ -748,7 +766,7 @@ function ritaStrid(){
     <section class="card">${panel}</section>
     ${loggHtml()}`;
   const fiendeVis = strid.fiender.filter(f=>!f.lamnat).map(f=>({...f, visa:true}));
-  G.ritaScen($("#scen"), r.q.miljo, fiendeVis, steg.fro||7);
+  G.ritaScen($("#scen"), r.q.miljo, fiendeVis, steg.fro||7, null, scenHjaltar(akt));
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b || b.disabled) return;
@@ -766,7 +784,7 @@ function hjalteMeny(id, h, x){
   if(m==="anfall-mal") return `<p>Anfalla vem med ${esc(x.valtVapen)}?</p><div class="val">${mal("gor-anfall")}${tillbaka}</div>`;
   if(m==="besv") return `<p>Vilken besvärjelse? (2 VP, slå Magi ${R.fardVarde(h,"Magi")})</p><div class="val">${h.besv.map(b=>`<button class="btn ghost" data-m="valt-besv" data-b="${esc(b)}" ${x.vp<2?"disabled":""}>${esc(b)}<span class="sub">${esc(R.BESV[b].text)}</span></button>`).join("")}${tillbaka}</div>`;
   if(m==="besv-mal"){ const b=R.BESV[strid.valtBesv]; return `<p>${esc(strid.valtBesv)} – på vem?</p><div class="val">${b.mal==="hjalte"?hjaltar("gor-besv",i=>!rh(i).dod):mal("gor-besv")}${tillbaka}</div>`; }
-  if(m==="formaga-mal"){ const t=h.formaga.typ; return `<p>${esc(h.formaga.namn)} – på vem?</p><div class="val">${t==="extraHandling"?hjaltar("gor-formaga",i=>i!==id&&kanAgera(i)):mal("gor-formaga")}${tillbaka}</div>`; }
+  if(m==="formaga-mal"){ const t=h.formaga.typ; return `<p>${esc(h.formaga.namn)} – på vem?</p><div class="val">${t==="extraHandling"?hjaltar("gor-formaga",i=>i!==id&&kanAgera(i)):t==="terapi"?hjaltar("gor-formaga",i=>kanAgera(i)):mal("gor-formaga")}${tillbaka}</div>`; }
   if(m==="sak"){ const egna=x.saker.map(s=>({s,k:"egen"})), gem=st.packning.filter(s=>R.SAKER[s]).map(s=>({s,k:"packning"}));
     const alla=[...egna,...gem], sedda=new Set();
     return `<p>Använda vad?</p><div class="val">${alla.filter(o=>{const k=o.s+o.k; if(sedda.has(k)) return false; sedda.add(k); return true;}).map(o=>`<button class="btn ghost" data-m="valt-sak" data-s="${esc(o.s)}" data-k="${o.k}">${esc(o.s)}<span class="sub">${o.k==="egen"?"Egen":"Packningen"} · ${esc(R.SAKER[o.s].text)}</span></button>`).join("")||"<p class='muted'>Inget att använda.</p>"}${tillbaka}</div>`; }
@@ -794,7 +812,7 @@ function stridMeny(m, d){
   if(m==="gor-anfall") return hjalteHandling(()=>anfall(id, x.valtVapen, fi));
   if(m==="valt-besv"){ strid.valtBesv=d.b; const b=R.BESV[d.b]; if(b.mal==="ingen"||b.mal==="allaFiender") return hjalteHandling(()=>kasta(id,d.b,null)); strid.meny="besv-mal"; return ritaStrid(); }
   if(m==="gor-besv") return hjalteHandling(()=>kasta(id, strid.valtBesv, fi || d.h));
-  if(m==="formaga"){ const t=h.formaga.typ; const behoverMal=["bonusAnfall","dubbelAnfall","lonnmord","stoppaFiende","overtala","fickstold","eldsvard","chansning","extraHandling","kaos"].includes(t);
+  if(m==="formaga"){ const t=h.formaga.typ; const behoverMal=["bonusAnfall","dubbelAnfall","lonnmord","stoppaFiende","overtala","fickstold","eldsvard","chansning","extraHandling","terapi","kaos"].includes(t);
     if(!behoverMal) return hjalteHandling(()=>formaga(id,null)); strid.meny="formaga-mal"; return ritaStrid(); }
   if(m==="gor-formaga") return hjalteHandling(()=>formaga(id, fi || d.h));
   if(m==="valt-sak"){ strid.valdSak={s:d.s,k:d.k}; const e=R.SAKER[d.s].effekt; if(e==="kp"||e==="vp"){ strid.meny="sak-mal"; return ritaStrid(); } return hjalteHandling(()=>anvandSak(id,d.s,d.k)); }
@@ -876,7 +894,7 @@ function ritaSlut(){
       ${Object.entries(u.forb).map(([id,l])=>`<p><b>${esc(HJ[id].namn)}:</b> ${l.length?l.map(x=>`${esc(x.f)} (${x.v}) slog ${x.s} → ${x.upp?`<span style="color:var(--moss)">+1!</span>`:"ingen ändring"}`).join(", "):"inget att slå för"}</p>`).join("")||"<p class='small'>Ingen överlevde för att förbättras.</p>"}</div>
       <button class="btn" data-a="klar">Tillbaka till värdshuset</button>
     </section>${loggHtml()}`;
-  G.ritaScen($("#scen"), r.q.miljo, [], 99, u.lyckat?"skatt":null);
+  G.ritaScen($("#scen"), r.q.miljo, [], 99, u.lyckat?"skatt":null, scenHjaltar());
   scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(b && b.dataset.a==="klar"){ st.run=null; spara(); ga("hem"); } };
 }

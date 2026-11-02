@@ -53,7 +53,8 @@ G.ritaSprite = (ctx, namn, x, y, skala, palettNamn, vand) => {
 // ---------- Scenen (TV:n) ----------
 // Liten pixelbild 160×90 som skalas upp. Deterministisk efter "fro" så att samma rum ser likadant ut.
 function slump(fro){ let s = fro>>>0 || 1; return () => (s = (s*1664525+1013904223)>>>0) / 4294967296; }
-G.ritaScen = (canvas, miljoId, fiender, fro, extra) => {
+G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
+  const argsKopia = [canvas, miljoId, fiender, fro, extra, hjaltar];
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
   const W = 160, H = 90; canvas.width = W; canvas.height = H;
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
@@ -88,14 +89,32 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra) => {
   if(extra==="vila"){ ctx.fillStyle="#5a3a1a"; ctx.fillRect(74,66,12,2); ctx.fillStyle="#ff8a2e"; ctx.fillRect(77,60,6,6); ctx.fillStyle="#ffe08a"; ctx.fillRect(79,62,2,3); }
   if(extra==="falla"){ ctx.fillStyle="#9aa0a8"; for(let x=62;x<98;x+=4){ ctx.fillRect(x,64,1,-0); ctx.fillRect(x,60,1,4); } }
   if(extra==="hinder"){ ctx.fillStyle="#000a"; ctx.fillRect(68,64,26,26); }
-  if(extra==="mote" && fiender && fiender.length===0){}
+  // hjältarna (vänster sida, i två led så att fyra får plats)
+  const harHjaltar = hjaltar && hjaltar.length;
+  if(harHjaltar){
+    const laddar = [];
+    hjaltar.forEach((h,i)=>{
+      const x = 2 + i*15, y = 66 - 32 + (i%2 ? 3 : -1);
+      const img = G.figurBild(h.id);
+      if(!img){ return; }
+      if(!img.complete){ laddar.push(img); return; }
+      ctx.save();
+      if(h.nere){ ctx.globalAlpha = .35; }
+      ctx.fillStyle="#0005"; ctx.fillRect(x+9, y+30, 14, 3);
+      const r = h.ruta;
+      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, 32, 32);
+      ctx.restore();
+      if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+14, y-3, 4, 3); }
+    });
+    if(laddar.length) laddar.forEach(img=>img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true}));
+  }
   // fiender
   if(fiender && fiender.length){
     const levande = fiender.filter(f=>f.kp>0||f.visa);
-    const n = levande.length, bredd = W-20;
+    const n = levande.length, start = harHjaltar ? 66 : 10, bredd = W - start - 6;
     levande.forEach((f,i)=>{
       const sk = f.boss ? (f.stor?3:3) : (f.liten?1:2);
-      const w = 16*sk, x = Math.round(10 + (i+0.5)*bredd/n - w/2), y = 66 - 16*sk + (f.liten?2:0) + (f.boss?8:0);
+      const w = 16*sk, x = Math.min(W-w, Math.round(start + (i+0.5)*bredd/n - w/2)), y = 66 - 16*sk + (f.liten?2:0) + (f.boss?8:0);
       ctx.globalAlpha = f.kp>0 ? 1 : .25;
       ctx.fillStyle="#0005"; ctx.fillRect(x+2, 64, w-4, 3);
       G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
@@ -137,7 +156,32 @@ const UTSEENDE = {
  bacon:{hud:"#e2a983",har:"#e0d8c8",klader:"#5c3d22"},
  alfred:{hud:"#e8c0a0",har:"#a08a5a",klader:"#7a7a6a"}
 };
-G.ritaPortratt = (canvas, hjalte, dod) => {
+// ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
+const BILDER = {};
+G.figurBild = id => {
+  if(!window.FIGURER || !window.FIGURER[id]) return null;
+  if(!BILDER[id]){ const img = new Image(); img.src = "figurer/"+id+".png"; BILDER[id] = img; }
+  return BILDER[id];
+};
+G.figurRutor = id => (window.FIGURER && window.FIGURER[id]) || [];
+// Ritar en figur (ruta 0–63) i en canvas. Faller tillbaka på det kodritade porträttet om bild saknas.
+G.ritaPortratt = (canvas, hjalte, dod, ruta) => {
+  const img = G.figurBild(hjalte.id), rutor = G.figurRutor(hjalte.id);
+  if(!img || !rutor.length) return G.ritaKodPortratt(canvas, hjalte, dod);
+  if(ruta==null || !rutor.includes(ruta)) ruta = rutor[0];
+  const ctx = canvas.getContext("2d"); canvas.width = 32; canvas.height = 32; ctx.imageSmoothingEnabled = false;
+  const rita = () => {
+    ctx.clearRect(0,0,32,32);
+    ctx.fillStyle = dod ? "#2a2626" : "#2b2219"; ctx.fillRect(0,0,32,32);
+    ctx.fillStyle = dod ? "#201c1c" : "#231b13"; ctx.fillRect(0,24,32,8);
+    ctx.save();
+    if(dod){ ctx.filter = "grayscale(1) brightness(.6)"; ctx.globalAlpha = .7; }
+    ctx.drawImage(img, (ruta%8)*32, Math.floor(ruta/8)*32, 32, 32, 0, 0, 32, 32);
+    ctx.restore();
+  };
+  if(img.complete && img.naturalWidth) rita(); else { ctx.fillStyle="#2b2219"; ctx.fillRect(0,0,32,32); img.addEventListener("load", rita, {once:true}); }
+};
+G.ritaKodPortratt = (canvas, hjalte, dod) => {
   const ctx = canvas.getContext("2d"); canvas.width = 24; canvas.height = 24; ctx.imageSmoothingEnabled = false;
   const u = UTSEENDE[hjalte.id] || {hud:"#e0b090",har:"#4a3020",klader:"#555"};
   const f = hjalte.folk;

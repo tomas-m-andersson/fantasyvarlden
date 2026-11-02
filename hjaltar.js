@@ -186,5 +186,21 @@ window.HJALTAR = [
   vapen:["Kort svärd"],rustning:"Läderväst",besv:[],guld:4,saker:[],
   formaga:{namn:"Personlig assistent",typ:"extraHandling",text:"Bär, hämtar och fixar: en annan hjälte får en extra handling direkt."},
   citat:"",
-  om:"Gladiator som jobbar som personlig assistent åt Bjorn. Ökänt svag och ganska oengagerad i jobbet. Har dolda motiv."}
+  om:"Gladiator som jobbar som personlig assistent åt Bjorn. Ökänt svag och ganska oengagerad i jobbet. Har dolda motiv."},
+
+ {id:"john",namn:"John P. Bollbirth",alias:"",folk:"Människa",yrke:"Psykoterapeut",kon:"Man",alder:"59",
+  e:{STY:7,FYS:10,SMI:8,INT:15,PSY:14,KAR:13},
+  tranad:["Övertala","Läkekonst","Kunskap","Slagvapen"],varden:{},
+  vapen:["Träpinne"],rustning:null,besv:[],guld:6,saker:["Tjurhorn","Anteckningsblock"],
+  formaga:{namn:"Och hur får det dig att känna?",typ:"terapi",text:"En snabb terapisession: en hjälte återfår 2T6 VP och får fördel på sitt nästa slag."},
+  citat:"",
+  om:"Kritvit psykoterapeut med monokel, glasögon utan skalmar, benskydd och dåligt sittande jeans. Antecknar allt."},
+
+ {id:"lufsen",namn:"Lufsen",alias:"",folk:"Vargmänniska",yrke:"Tandläkare",kon:"Man",alder:"Okänd",
+  e:{STY:13,FYS:14,SMI:16,INT:12,PSY:15,KAR:6},
+  tranad:["Slagvapen","Slagsmål","Läkekonst","Upptäcka fara"],varden:{},
+  vapen:["Stridshammare"],rustning:null,besv:[],guld:5,saker:[],
+  formaga:{namn:"Tandutdragning",typ:"bonusAnfall",fordel:true,extra:"T6",text:"Ett professionellt ingrepp med stridshammaren: anfall med fördel och +T6 skada."},
+  citat:"",
+  om:"Vargman och tandläkare i gympaskor, shorts och tandläkarrock. Stark, snabb och med usel bedside manner."}
 ];

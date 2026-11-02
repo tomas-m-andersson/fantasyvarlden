@@ -41,7 +41,7 @@ R.VAPEN = {
   "Gorgor":{fard:"Svärd",skada:"T8",magisk:true}, "Långsvärd":{fard:"Svärd",skada:"T10"},
   "Handyxa":{fard:"Yxor",skada:"T6"}, "Yxa":{fard:"Yxor",skada:"T8"}, "Stridsyxa":{fard:"Yxor",skada:"T10"},
   "Stridsgissel":{fard:"Slagvapen",skada:"T10"}, "Morgonstjärna":{fard:"Slagvapen",skada:"T8"}, "Träpåk":{fard:"Slagvapen",skada:"T6"},
-  "Piska":{fard:"Slagvapen",skada:"T4"},
+  "Piska":{fard:"Slagvapen",skada:"T4"}, "Träpinne":{fard:"Slagvapen",skada:"T4"}, "Stridshammare":{fard:"Slagvapen",skada:"T10"},
   "Spjut":{fard:"Spjut",skada:"T8"}, "Kort spjut":{fard:"Spjut",skada:"T8"}, "Långt spjut":{fard:"Spjut",skada:"T10"},
   "Stav":{fard:"Stav",skada:"T6"}, "Trollstav":{fard:"Stav",skada:"T6"}, "Trästav":{fard:"Stav",skada:"T6"},
   "Kort båge":{fard:"Pilbåge",skada:"T8",avstand:true}, "Pilbåge":{fard:"Pilbåge",skada:"T10",avstand:true},
