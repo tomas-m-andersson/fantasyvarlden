@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:28:39.056Z",
+  "uppdaterad": "2026-11-02T20:28:51.835Z",
   "spel": {
     "version": 1,
-    "tid": 1793651315989,
+    "tid": 1793651328825,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -315,12 +315,12 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "nackdelNasta": true,
+          "nackdelNasta": false,
           "valtVapen": "Armborst",
           "fordelNasta": false
         },
         "john": {
-          "kp": 7,
+          "kp": 1,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -342,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": false
         },
@@ -1036,6 +1036,26 @@
         {
           "text": "Trolleriolas slår dödsslag mot FYS: [7] mot 10 – lyckat (1 lyckade, 0 misslyckade).",
           "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med nackdel: [3 / 1 → 3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Gast tar 9 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Gast faller!",
+          "cls": "d"
+        },
+        {
+          "text": "John P. Bollbirth tar 6 skada från Lövkvävning. KP 1/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 5 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
