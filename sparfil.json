@@ -1,14 +1,13 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:25:04.159Z",
+  "uppdaterad": "2026-11-02T20:25:27.182Z",
   "spel": {
     "version": 1,
-    "tid": 1793651101166,
+    "tid": 1793651124202,
     "kassa": 335,
     "packning": [
-      "Läkande ört",
-      "Läkedryck"
+      "Läkande ört"
     ],
     "sallskap": [
       "trolleriolas",
@@ -257,7 +256,9 @@
           "saker": [
             "En limpa bröd"
           ],
-          "markerade": [],
+          "markerade": [
+            "Stav"
+          ],
           "anvanda": [
             "Stav",
             "Magi"
@@ -269,12 +270,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
         "galfner": {
-          "kp": 1,
+          "kp": 7,
           "vp": 0,
           "doende": false,
           "ok": 0,
@@ -296,7 +297,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -753,6 +754,22 @@
         },
         {
           "text": "— Runda 7 —",
+          "cls": "info"
+        },
+        {
+          "text": "Trolleriolas parerar: [1] mot 10 – DRAKE!",
+          "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner använder läkedryck. Återfå 2T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner återfår 6 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "Trolleriolas har redan använt sin handling till att försvara sig.",
           "cls": "info"
         }
       ],
