@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:48:22.572Z",
+  "uppdaterad": "2026-11-02T13:48:31.458Z",
   "spel": {
     "version": 1,
-    "tid": 1793627299457,
+    "tid": 1793627308526,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -230,7 +230,7 @@
       "i": 5,
       "h": {
         "monika": {
-          "kp": 17,
+          "kp": 15,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -251,7 +251,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "gaston": {
@@ -483,6 +483,22 @@
         },
         {
           "text": "Gaston Quasimodoson (Kort båge) slår Pilbåge med nackdel: [12 / 15 → 15] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [5] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 2 tar 6 skada (7 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 2 anfaller Monika Plöjer: [5] mot 11 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Rövare 2. KP 15/17.",
           "cls": "fel"
         }
       ],
