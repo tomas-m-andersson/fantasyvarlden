@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:25:51.517Z",
+  "uppdaterad": "2026-11-02T20:25:55.771Z",
   "spel": {
     "version": 1,
-    "tid": 1793651148429,
+    "tid": 1793651155580,
     "kassa": 335,
     "packning": [
       "Läkande ört"
@@ -297,9 +297,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "nackdelNasta": true,
-          "valtVapen": "Armborst"
+          "agerat": true,
+          "nackdelNasta": false,
+          "valtVapen": "Dolk av draktand"
         },
         "john": {
           "kp": 8,
@@ -321,9 +321,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "vad": {
           "kp": 0,
@@ -806,6 +806,14 @@
         },
         {
           "text": "Besvärjelsen fräser och dör ut.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Dolk av draktand) slår Kniv med nackdel: [15 / 15 → 15] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [10 / 16 → 16] mot 8 – misslyckat",
           "cls": "fel"
         }
       ],
