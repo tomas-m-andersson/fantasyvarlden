@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:29:00.741Z",
+  "uppdaterad": "2026-11-02T20:29:05.291Z",
   "spel": {
     "version": 1,
-    "tid": 1793651337760,
+    "tid": 1793651342232,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -258,11 +258,11 @@
         "trolleriolas": {
           "kp": 0,
           "vp": 9,
-          "doende": true,
+          "doende": false,
           "ok": 1,
-          "miss": 2,
+          "miss": 3,
           "stabil": false,
-          "dod": false,
+          "dod": true,
           "saker": [
             "En limpa bröd"
           ],
@@ -288,7 +288,7 @@
         },
         "galfner": {
           "kp": 4,
-          "vp": 4,
+          "vp": 1,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -323,7 +323,7 @@
           "kp": 0,
           "vp": 8,
           "doende": true,
-          "ok": 1,
+          "ok": 2,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -1092,6 +1092,34 @@
         {
           "text": "Trolleriolas slår dödsslag mot FYS: [13] mot 10 – misslyckat (1 lyckade, 2 misslyckade).",
           "cls": "fel"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroid tvekar och missar tillfället.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 7 —",
+          "cls": "info"
+        },
+        {
+          "text": "Trolleriolas slår dödsslag mot FYS: [11] mot 10 – misslyckat (1 lyckade, 3 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "☠ Trolleriolas är död och hamnar i poolen på skyskrapetaket i Miami.",
+          "cls": "dm"
+        },
+        {
+          "text": "John P. Bollbirth slår dödsslag mot FYS: [8] mot 10 – lyckat (2 lyckade, 0 misslyckade).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
