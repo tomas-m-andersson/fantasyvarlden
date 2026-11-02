@@ -138,13 +138,15 @@ function ritaHem(){
   html += `<section class="card"><h2>Hjältegalleriet</h2><p class="small muted">Tryck på en hjälte för att se hjältebladet och lägga till eller ta bort ur sällskapet.</p>
     <div class="grid">${levande.map(h=>hkort(h)).join("")}</div></section>`;
   if(doda.length){
-    html += `<section class="card"><h2>Efterriket</h2><p class="small muted">Här hamnar hjältar som dött. Lucifer är öppen för förhandlingar – mot betalning.</p>
+    html += `<section class="card"><h2>Efterriket</h2><p class="small muted">Döda hjältar ligger i poolen på ett skyskrapetak i Miami tillsammans med den stora björnen Tetrok – tills någon köper tillbaka dem till livet. Tryck på en hjälte för att köpa tillbaka hen.</p>
+      <div class="tv"><canvas id="pool" class="px"></canvas><span class="badge">Miami</span></div>
       <div class="grid">${doda.map(h=>hkort(h,true)).join("")}</div></section>`;
   }
   if(st.kronika.length){
     html += `<section class="card"><h2>Krönikan</h2><div class="col small">${st.kronika.slice(0,12).map(k=>`<div><span class="muted">${esc(k.tid)}</span> – ${esc(k.text)}</div>`).join("")}</div></section>`;
   }
   app.innerHTML = html; fyllPortratt(app);
+  if(doda.length) G.ritaPool($("#pool"), doda.map(h=>({id:h.id, ruta:figur(h.id)})));
   app.onclick = e => {
     const b = e.target.closest("[data-a]"); if(!b) return;
     const a = b.dataset.a, id = b.dataset.id;
@@ -175,7 +177,7 @@ function visaHjalte(id){
         ${h.alias?`<span class="small muted">Även känd som: ${esc(h.alias)}</span>`:""}
         <span>${esc(h.folk)} · ${esc(h.yrke)} · ${esc(h.kon)} · ${esc(h.alder)} år</span>
         ${h.citat?`<span class="citat">”${esc(h.citat)}”</span>`:""}
-        ${dod?`<span class="tag red">Död – befinner sig i Efterriket</span>`:""}</div></div>
+        ${dod?`<span class="tag red">Död – ligger i poolen i Miami med Tetrok</span>`:""}</div></div>
     <p>${esc(h.om)}</p>
     <div class="eg">${R.EGENSKAPER.map(([k,n])=>`<div><b>${h.e[k]}</b><span>${k}</span></div>`).join("")}</div>
     <div class="split">
@@ -192,7 +194,7 @@ function visaHjalte(id){
     ${h.saker.length?`<p class="small"><b>Utrustning:</b> ${esc(h.saker.join(", "))}</p>`:""}
     <p class="small muted">Äventyr: ${s.aventyr||0} · Segrar: ${s.segrar||0}</p>
     <div class="row">
-      ${dod?`<button class="btn red" data-a="lucifer" ${st.kassa<100?"disabled":""}>Förhandla med Lucifer<span class="sub">Kostar 100 guld ur kassan</span></button>`
+      ${dod?`<button class="btn red" data-a="kopTillbaka" ${st.kassa<100?"disabled":""}>Köp tillbaka till livet<span class="sub">Kostar 100 guld ur kassan${st.kassa<100?` – ni har ${st.kassa}`:""}</span></button>`
         : vald?`<button class="btn ghost" data-a="ta-bort" ${st.run?"disabled":""}>Ta bort ur sällskapet</button>`
         :`<button class="btn" data-a="lagg-till" ${st.sallskap.filter(x=>!ar(x)).length>=4||st.run?"disabled":""}>Lägg till i sällskapet</button>`}
       ${G.figurRutor(id).length>1?`<button class="btn ghost" data-a="figur">Byt utseende<span class="sub">${G.figurRutor(id).length} varianter</span></button>`:""}
@@ -206,8 +208,8 @@ function visaHjalte(id){
     if(b.dataset.a==="figur") return valjFigur(id);
     if(b.dataset.a==="lagg-till"){ st.sallskap = [...st.sallskap.filter(x=>!ar(x)), id].slice(0,4); spara(); stangModal(); ritaOm(); }
     if(b.dataset.a==="ta-bort"){ st.sallskap = st.sallskap.filter(x=>x!==id); spara(); stangModal(); ritaOm(); }
-    if(b.dataset.a==="lucifer"){ if(st.kassa<100) return; if(!confirm(`Betala 100 guld till Lucifer för att få tillbaka ${HJ[id].namn}?`)) return;
-      st.kassa-=100; hs(id).dod=false; kronika(`${HJ[id].namn} förhandlade sig ut ur Efterriket. Lucifer fick 100 guld.`); spara(); stangModal(); ritaOm(); }
+    if(b.dataset.a==="kopTillbaka"){ if(st.kassa<100) return; if(!confirm(`Betala 100 guld för att köpa tillbaka ${HJ[id].namn} till livet?`)) return;
+      st.kassa-=100; hs(id).dod=false; kronika(`${HJ[id].namn} köptes tillbaka till livet för 100 guld och fick kliva upp ur poolen i Miami. Tetrok vinkade hejdå.`); spara(); stangModal(); ritaOm(); }
   });
 }
 function valjFigur(id){
@@ -348,7 +350,7 @@ function lakaHjalte(id, mangd){
   return x.kp - fore;
 }
 function vpAndra(id, d){ const x=rh(id), h=bygg(id); if(x.dod) return 0; const f=x.vp; x.vp=Math.max(0,Math.min(R.maxVP(h), x.vp+d)); return x.vp-f; }
-function dor(id){ const x=rh(id); x.dod=true; x.doende=false; x.kp=0; logga(`☠ ${HJ[id].namn} är död och vandrar mot Efterriket.`,"dm"); }
+function dor(id){ const x=rh(id); x.dod=true; x.doende=false; x.kp=0; logga(`☠ ${HJ[id].namn} är död och hamnar i poolen på skyskrapetaket i Miami.`,"dm"); }
 function dodsslag(id){
   const x=rh(id), h=bygg(id), s = R.slag(h.e.FYS);
   if(s.drake){ x.doende=false; x.ok=0; x.miss=0; x.kp=R.t(6); logga(`${h.namn} slår dödsslag ${s.text} – reser sig med ${x.kp} KP!`,"d"); return; }
@@ -889,7 +891,7 @@ function ritaSlut(){
         <p>Belöning: <b>${u.beloning} guld</b>${u.avgift?` (Lansor tar ${u.avgift} guld i avgift)`:""}. Byte under resan: <b>${u.byte} guld</b>.</p>`
       :`<p class="berattelse">${esc(u.orsak||"")}</p>`}
       ${u.rad.map(x=>`<p>${esc(x)}</p>`).join("")}
-      ${u.doda.length?`<div><h3>Till Efterriket</h3>${u.doda.map(id=>`<p><b>${esc(HJ[id].namn)}</b>: ${esc(R.valj(V.EFTERRIKET))}</p>`).join("")}</div>`:""}
+      ${u.doda.length?`<div><h3>Till poolen i Miami</h3>${u.doda.map(id=>`<p><b>${esc(HJ[id].namn)}</b>: ${esc(R.valj(V.EFTERRIKET))}</p>`).join("")}</div>`:""}
       <div><h3>Förbättringsslag</h3><p class="small muted">Färdigheter som fick en Drake eller Demon (och en till för varje överlevande vid seger) slås om: T20 över nuvärdet = +1.</p>
       ${Object.entries(u.forb).map(([id,l])=>`<p><b>${esc(HJ[id].namn)}:</b> ${l.length?l.map(x=>`${esc(x.f)} (${x.v}) slog ${x.s} → ${x.upp?`<span style="color:var(--moss)">+1!</span>`:"ingen ändring"}`).join(", "):"inget att slå för"}</p>`).join("")||"<p class='small'>Ingen överlevde för att förbättras.</p>"}</div>
       <button class="btn" data-a="klar">Tillbaka till värdshuset</button>

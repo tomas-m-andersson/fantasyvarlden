@@ -247,12 +247,13 @@ V.MOTEN = [
        {knapp:"Gå förbi",auto:{text:"Ni låtsas inte se det."}}]}
 ];
 
-// ---------- Efterriket ----------
+// ---------- Efterriket: poolen på skyskrapetaket i Miami ----------
+// Döda hjältar ligger i poolen tillsammans med den stora björnen Tetrok tills de köps tillbaka till livet.
 V.EFTERRIKET = [
-  "Hjälten vaknar i en tunnel. Långt fram lyser ett ljus. Bakåt luktar det svavel och grillat.",
-  "En sjungande kaktus hälsar välkommen till Efterriket. Mitt i landskapet står en dörr helt utan vägg.",
-  "Hjälten ligger i en pool tillsammans med en björn som röker cigarr och dricker bubbel. Björnen kan inte prata, eftersom det är en björn.",
-  "Lucifer – horn, getfötter, röda ögon och helt rippad – tittar upp från ett papper och suckar."
+  "Vaknar i en ljummen pool på taket av en skyskrapa i Miami. Bredvid flyter Tetrok, en stor björn med cigarr och ett glas bubbel.",
+  "Tetrok skjuter fram ett glas bubbel och nickar. Han säger ingenting, eftersom han är en björn.",
+  "Neonljusen från Miami speglar sig i poolvattnet. Tetrok blåser en rökring och flyttar lite på sig så att det blir plats.",
+  "Plaskar ner i poolen på skyskrapetaket. Tetrok tittar upp, suckar nöjt och tar en klunk bubbel. Här blir man kvar tills någon betalar."
 ];
 
 window.VARLD = V;

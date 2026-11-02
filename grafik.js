@@ -234,5 +234,50 @@ G.ritaKodPortratt = (canvas, hjalte, dod) => {
   if(dod){ ctx.globalCompositeOperation="saturation"; R(0,0,24,24,"#888"); ctx.globalCompositeOperation="source-over"; R(0,0,24,24,"#0006"); }
 };
 
+// ---------- Efterriket: poolen på skyskrapetaket i Miami, med björnen Tetrok ----------
+G.ritaPool = (canvas, doda) => {
+  const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
+  const W=160, H=90; canvas.width=W; canvas.height=H;
+  const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+  // solnedgång
+  const himmel=["#2a1846","#4a2160","#7a2a6e","#b8406e","#e8705a","#f6a85a"];
+  himmel.forEach((c,i)=>R(0,i*7,W,7,c)); R(0,42,W,12,"#f6c46a");
+  R(112,30,18,18,"#ffd27a"); R(114,28,14,22,"#ffd27a"); R(110,32,22,14,"#ffd27a");
+  // palmer och skyline
+  const hus=[[0,22,14],[16,30,10],[28,14,12],[42,26,9],[54,20,16],[72,34,8],[82,12,14],[98,28,10],[134,18,12],[148,26,12]];
+  hus.forEach(([x,y,w])=>{ R(x,y,w,60,"#1c1430"); for(let yy=y+3;yy<56;yy+=4) for(let xx=x+2;xx<x+w-1;xx+=3) if((xx*7+yy*13)%5) R(xx,yy,1,2,(xx+yy)%3?"#ff6ad5":"#6ae3ff"); });
+  const palm=(x)=>{ for(let i=0;i<20;i++) R(x+Math.round(Math.sin(i/6)*2),36+i,2,1,"#2a1a12"); [[-6,-1],[-4,-3],[0,-4],[4,-3],[6,-1]].forEach(([dx,dy])=>{ R(x+dx-2,36+dy,5,1,"#1f3a1c"); R(x+dx*1.5-1,37+dy,3,1,"#1f3a1c"); }); };
+  palm(8); palm(150);
+  // takkant och trädäck
+  R(0,56,W,34,"#c9b08a"); for(let x=0;x<W;x+=8) R(x,56,1,34,"#b39a74"); R(0,55,W,2,"#e8e0d0");
+  // poolen
+  const px=14, py=60, pw=132, ph=24;
+  R(px-2,py-2,pw+4,ph+4,"#eef4f8"); R(px,py,pw,ph,"#2bb5d8");
+  for(let i=0;i<14;i++) R(px+4+((i*37)%(pw-12)), py+3+((i*11)%(ph-6)), 6, 1, "#7fe3f5");
+  // Tetrok – stor björn i poolen med cigarr och bubbel
+  const bx=106, by=46;
+  R(bx,by+8,40,14,"#5a3418"); R(bx+2,by+6,36,4,"#5a3418");          // axlar
+  R(bx+10,by-6,20,16,"#6b4022");                                   // huvud
+  R(bx+8,by-9,6,6,"#6b4022"); R(bx+26,by-9,6,6,"#6b4022");         // öron
+  R(bx+10,by-8,2,2,"#3a2010"); R(bx+28,by-8,2,2,"#3a2010");
+  R(bx+15,by+2,10,6,"#c9a07a"); R(bx+18,by+2,4,2,"#1a0c06");        // nos
+  R(bx+14,by-1,3,2,"#111"); R(bx+23,by-1,3,2,"#111");               // ögon
+  R(bx+24,by+6,9,2,"#8a5a2a"); R(bx+33,by+6,2,2,"#ff6a2e");        // cigarr
+  R(bx+35,by+3,1,1,"#ccc"); R(bx+37,by,1,1,"#bbb"); R(bx+36,by-3,2,1,"#aaa"); // rök
+  R(bx-2,by+12,6,6,"#5a3418");                                     // tass
+  R(bx-1,by+4,4,7,"#f2e6b0"); R(bx,by+5,2,3,"#ffe9a0"); R(bx+1,by+11,1,2,"#ddd"); // glas bubbel
+  R(px,by+22,pw,ph-(by+22-py),"#2bb5d8"); // vatten framför björnen
+  for(let i=0;i<4;i++) R(bx+2+i*9,by+21,6,1,"#7fe3f5");
+  // döda hjältar flyter i poolen (bara överkroppen syns)
+  (doda||[]).slice(0,5).forEach((h,i)=>{
+    const img=G.figurBild(h.id); if(!img) return;
+    const x=px+2+i*18, y=py-8+(i%2)*4;
+    const rita=()=>{ const r=h.ruta??(G.figurRutor(h.id)[0]||0);
+      ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,20,x,y,32,20);
+      R(x+4,y+18,24,2,"#2bb5d8"); R(x+8,y+18,6,1,"#7fe3f5"); };
+    if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
+  });
+};
+
 window.GRAFIK = G;
 })();
