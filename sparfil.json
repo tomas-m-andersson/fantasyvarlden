@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:47:52.571Z",
+  "uppdaterad": "2026-11-02T13:48:06.634Z",
   "spel": {
     "version": 1,
-    "tid": 1793627269545,
+    "tid": 1793627283696,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -231,7 +231,7 @@
       "h": {
         "monika": {
           "kp": 17,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -248,10 +248,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "gaston": {
@@ -266,7 +266,8 @@
           "markerade": [],
           "anvanda": [
             "Smyga",
-            "Upptäcka fara"
+            "Upptäcka fara",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -275,7 +276,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "nackdelNasta": true
         },
         "ff": {
           "kp": 8,
@@ -416,6 +418,42 @@
         {
           "text": "Rövare 2 anfaller Gaston Quasimodoson: [18] mot 11 – misslyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Gaston Quasimodoson parerar: [16] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Odöd soldat skriker ur sin tomma strupe Gaston Quasimodoson.",
+          "cls": "fel"
+        },
+        {
+          "text": "Gaston Quasimodoson skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Rövare 1 anfaller Gaston Quasimodoson: [13] mot 11 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [4 / 18 → 4] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Odöd soldat tar 14 skada (16 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Odöd soldat faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Gaston Quasimodoson har redan använt sin handling till att försvara sig.",
+          "cls": "info"
         }
       ],
       "utfall": null,
