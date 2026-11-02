@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:22:21.253Z",
+  "uppdaterad": "2026-11-02T20:22:29.818Z",
   "spel": {
     "version": 1,
-    "tid": 1793650938233,
+    "tid": 1793650946758,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -294,7 +294,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -318,12 +318,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": true
         },
         "vad": {
-          "kp": 9,
+          "kp": 2,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -342,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Handyxa"
         }
@@ -484,6 +484,18 @@
         {
           "text": "Galfner Galfner slår dödsslag mot FYS: [14] mot 12 – misslyckat (0 lyckade, 1 misslyckade).",
           "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas (Trästav) slår Stav: [17] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Våd Snolofsson tar 7 skada från Strupgrepp. KP 2/14.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
