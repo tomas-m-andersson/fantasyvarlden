@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:06:49.316Z",
+  "uppdaterad": "2026-11-02T21:07:29.104Z",
   "spel": {
     "version": 1,
-    "tid": 1793653606278,
+    "tid": 1793653645927,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -239,8 +239,8 @@
       "i": 0,
       "h": {
         "ff": {
-          "kp": 13,
-          "vp": 8,
+          "kp": 10,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -251,7 +251,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -260,10 +261,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "shinji": {
-          "kp": 13,
+          "kp": 11,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -289,7 +290,7 @@
           "valtVapen": "Kort svärd"
         },
         "dagny": {
-          "kp": 10,
+          "kp": 6,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -308,9 +309,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Trollstav",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 0,
@@ -366,6 +367,34 @@
         {
           "text": "Brunbjörn tar 2 skada (4 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Bett. KP 11/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg parerar: [13 / 2 → 13] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg tar 4 skada från Bett. KP 6/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "★ FF: Gorgor flammar!",
+          "cls": "d"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [17] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 3 skada från Gorgors lågor. KP 10/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
