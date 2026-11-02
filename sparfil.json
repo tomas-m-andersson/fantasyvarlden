@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:25:31.682Z",
+  "uppdaterad": "2026-11-02T20:25:51.517Z",
   "spel": {
     "version": 1,
-    "tid": 1793651128762,
+    "tid": 1793651148429,
     "kassa": 335,
     "packning": [
       "Läkande ört"
@@ -247,7 +247,7 @@
       "h": {
         "trolleriolas": {
           "kp": 6,
-          "vp": 11,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -270,8 +270,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "nackdelNasta": true,
+          "agerat": true,
+          "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
         "galfner": {
@@ -798,6 +798,14 @@
         },
         {
           "text": "John P. Bollbirth skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas kastar Kontrollera person slår Magi med nackdel: [18 / 8 → 18] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Besvärjelsen fräser och dör ut.",
           "cls": "fel"
         }
       ],
