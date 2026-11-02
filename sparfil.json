@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:18:07.396Z",
+  "uppdaterad": "2026-11-02T20:18:28.318Z",
   "spel": {
     "version": 1,
-    "tid": 1793650684363,
+    "tid": 1793650705347,
     "kassa": 345,
     "packning": [
       "Läkedryck",
@@ -59,7 +59,7 @@
       "vad": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null,
@@ -86,7 +86,7 @@
       "john": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -111,7 +111,7 @@
       "trolleriolas": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -119,7 +119,7 @@
       "galfner": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -142,7 +142,164 @@
         "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-malbecs-gruvor",
+        "titel": "Malbecs gruvor",
+        "plats": "Malbecs gruvor",
+        "land": "Mårdgård",
+        "miljo": "grotta",
+        "boss": "svartalfkung",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "malbecs-gruvor"
+      },
+      "party": [
+        "trolleriolas",
+        "galfner",
+        "john",
+        "vad"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En grotta full av ben. Mest djurben. Mest.",
+          "fro": 929547544,
+          "hinder": {
+            "namn": "En bred klyfta",
+            "text": "En klyfta skär av vägen. Den går att hoppa över – om man är smidig.",
+            "fard": "Akrobatik",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "berg",
+              "grotta",
+              "ruin"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En fuktig grotta där vatten droppar från taket.",
+          "fro": 627966914,
+          "fiender": [
+            "ratta",
+            "orch"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "Ett kyligt rum som luktar orch och gammal ost.",
+          "fro": 699566913,
+          "hinder": {
+            "namn": "Forsande vatten",
+            "text": "Vägen går genom strömt vatten. Den som inte kan simma får det jobbigt.",
+            "fard": "Simma",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "grotta",
+              "skog",
+              "kloak",
+              "trask"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "En fuktig grotta där vatten droppar från taket.",
+          "fro": 926548368,
+          "falla": {
+            "namn": "Fallgrop",
+            "text": "Marken ger vika över en grop med spetsar.",
+            "skada": "T6"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 750894414,
+          "fiender": [
+            "svartalfkung",
+            "ratta"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "trolleriolas": {
+          "kp": 10,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "En limpa bröd"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "john": {
+          "kp": 10,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "vad": {
+          "kp": 14,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-02 21:18",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false
+    },
     "reset": 0,
     "rekord": {}
   }
