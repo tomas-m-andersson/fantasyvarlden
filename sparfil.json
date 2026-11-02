@@ -1,13 +1,14 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:26:10.003Z",
+  "uppdaterad": "2026-11-02T20:26:21.150Z",
   "spel": {
     "version": 1,
-    "tid": 1793651166829,
+    "tid": 1793651178242,
     "kassa": 335,
     "packning": [
-      "Läkande ört"
+      "Läkande ört",
+      "Krigarfasa"
     ],
     "sallskap": [
       "trolleriolas",
@@ -213,7 +214,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "Dimma och kväkande grodor.",
-          "fro": 635920546
+          "fro": 635920546,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 32 guld och krigarfasa."
         },
         {
           "typ": "rum",
@@ -285,12 +288,15 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Finna dolda ting"
+          ],
           "anvanda": [
             "Upptäcka fara",
             "Armborst",
             "Undvika",
-            "Kniv"
+            "Kniv",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -352,7 +358,7 @@
           "valtVapen": "Handyxa"
         }
       },
-      "guld": 5,
+      "guld": 37,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Vattenprover från Döda sjön” av Professor Proppeteus.",
@@ -860,6 +866,10 @@
         },
         {
           "text": "Gast faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [1] mot 7 – DRAKE!",
           "cls": "d"
         }
       ],
