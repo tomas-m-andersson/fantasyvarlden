@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:17:51.811Z",
+  "uppdaterad": "2026-11-02T20:17:57.889Z",
   "spel": {
     "version": 1,
-    "tid": 1793650668829,
+    "tid": 1793650674861,
     "kassa": 345,
     "packning": [
       "Läkedryck",
@@ -12,7 +12,8 @@
       "Läkedryck"
     ],
     "sallskap": [
-      "trolleriolas"
+      "trolleriolas",
+      "galfner"
     ],
     "hj": {
       "gaston": {
@@ -106,6 +107,14 @@
         "rustning": null
       },
       "trolleriolas": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "galfner": {
         "dod": false,
         "bonus": {},
         "aventyr": 0,
