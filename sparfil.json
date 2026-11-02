@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:19:28.093Z",
+  "uppdaterad": "2026-11-02T20:19:42.656Z",
   "spel": {
     "version": 1,
-    "tid": 1793650765029,
+    "tid": 1793650779762,
     "kassa": 335,
     "packning": [
       "Läkedryck",
@@ -189,7 +189,9 @@
             "namn": "Dy",
             "text": "Dyn suger tag i fötterna.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Dyn suger tag i fötterna. Galfner Galfner får ta smällen."
         },
         {
           "typ": "rum",
@@ -255,7 +257,7 @@
           "anvanda": []
         },
         "galfner": {
-          "kp": 12,
+          "kp": 11,
           "vp": 7,
           "doende": false,
           "ok": 0,
@@ -264,7 +266,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Upptäcka fara"
+          ]
         },
         "john": {
           "kp": 10,
@@ -304,6 +308,18 @@
         {
           "text": "Det var faktiskt en genväg. Ni hinner till och med sova en stund i kärran. (alla läker)",
           "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner slår Upptäcka fara: [9] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Dyn suger tag i fötterna.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner tar 1 skada från Dy. KP 11/12.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
