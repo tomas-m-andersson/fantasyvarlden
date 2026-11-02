@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:27:57.481Z",
+  "uppdaterad": "2026-11-02T20:28:06.491Z",
   "spel": {
     "version": 1,
-    "tid": 1793651274539,
+    "tid": 1793651283451,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -328,7 +328,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Slagvapen"
+          ],
           "anvanda": [
             "Slagvapen",
             "Simma"
@@ -340,9 +342,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
-          "nackdelNasta": false
+          "nackdelNasta": true
         },
         "vad": {
           "kp": 0,
@@ -957,6 +959,22 @@
         },
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen: [20] mot 8 – DEMON!",
+          "cls": "dm"
+        },
+        {
+          "text": "Fummel! John P. Bollbirth tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "Dendroid tvekar och missar tillfället.",
+          "cls": "ok"
+        },
+        {
+          "text": "Gast tvekar och missar tillfället.",
           "cls": "ok"
         }
       ],
