@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:28:22.784Z",
+  "uppdaterad": "2026-11-02T20:28:26.864Z",
   "spel": {
     "version": 1,
-    "tid": 1793651299451,
+    "tid": 1793651303861,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -256,9 +256,9 @@
       "i": 5,
       "h": {
         "trolleriolas": {
-          "kp": 5,
+          "kp": 0,
           "vp": 9,
-          "doende": false,
+          "doende": true,
           "ok": 0,
           "miss": 0,
           "stabil": false,
@@ -342,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
           "nackdelNasta": true
         },
@@ -988,6 +988,22 @@
         {
           "text": "Trolleriolas (Trästav) slår Stav: [16] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [20 / 3 → 20] mot 8 – DEMON!",
+          "cls": "dm"
+        },
+        {
+          "text": "Fummel! John P. Bollbirth tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "Trolleriolas tar 8 skada från Grenslag. KP 0/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas faller ihop och ligger döende!",
+          "cls": "dm"
         }
       ],
       "utfall": null,
