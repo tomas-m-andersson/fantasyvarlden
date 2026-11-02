@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:09:05.775Z",
+  "uppdaterad": "2026-11-02T21:09:13.555Z",
   "spel": {
     "version": 1,
-    "tid": 1793653742770,
+    "tid": 1793653750594,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -300,7 +300,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Stav"
+          ],
           "anvanda": [
             "Stav"
           ],
@@ -311,7 +313,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Trollstav",
           "nackdelNasta": true
         }
@@ -509,6 +511,14 @@
         {
           "text": "— Runda 6 —",
           "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg (Trollstav) slår Stav med nackdel: [20 / 16 → 20] mot 12 – DEMON!",
+          "cls": "dm"
+        },
+        {
+          "text": "Fummel! Dagny von Fågelborg tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
         }
       ],
       "utfall": null,
