@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:28:57.448Z",
+  "uppdaterad": "2026-11-02T20:29:00.741Z",
   "spel": {
     "version": 1,
-    "tid": 1793651334526,
+    "tid": 1793651337760,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -260,7 +260,7 @@
           "vp": 9,
           "doende": true,
           "ok": 1,
-          "miss": 1,
+          "miss": 2,
           "stabil": false,
           "dod": false,
           "saker": [
@@ -320,10 +320,10 @@
           "fordelNasta": false
         },
         "john": {
-          "kp": 1,
+          "kp": 0,
           "vp": 8,
-          "doende": false,
-          "ok": 0,
+          "doende": true,
+          "ok": 1,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -342,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": false
         },
@@ -1063,6 +1063,34 @@
         },
         {
           "text": "Trolleriolas slår dödsslag mot FYS: [15] mot 10 – misslyckat (1 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroid tar 4 skada (7 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "John P. Bollbirth tar 5 skada från Lövkvävning. KP 0/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "— Runda 6 —",
+          "cls": "info"
+        },
+        {
+          "text": "John P. Bollbirth slår dödsslag mot FYS: [2] mot 10 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Trolleriolas slår dödsslag mot FYS: [13] mot 10 – misslyckat (1 lyckade, 2 misslyckade).",
           "cls": "fel"
         }
       ],
