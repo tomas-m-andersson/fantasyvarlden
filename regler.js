@@ -88,7 +88,8 @@ R.SAKER = {
   "Hirtonbuske":{text:"Smörjer vapnet med gift: nästa träff gör +T6 skada.",effekt:"gift",forbrukas:true},
   "Krigarfasa":{text:"Röker en mystisk ört: fördel på nästa anfall.",effekt:"fordelNasta",forbrukas:true},
   "Tokfrans":{text:"Tuggar tokfrans: återfå T6 VP men nackdel på nästa slag.",effekt:"vpNackdel",dice:"T6",forbrukas:true},
-  "Gravstensalm":{text:"Doftar på gravstensalm: återfå T4 VP.",effekt:"vp",dice:"T4",forbrukas:true}
+  "Gravstensalm":{text:"Doftar på gravstensalm: återfå T4 VP.",effekt:"vp",dice:"T4",forbrukas:true},
+  "Rött té":{text:"En kopp rött té. Gott, men inte mycket mer: återfå 1 KP.",effekt:"kp",dice:"1",forbrukas:true}
 };
 
 // ---------- Bygg en spelbar hjälte av grunddata ----------

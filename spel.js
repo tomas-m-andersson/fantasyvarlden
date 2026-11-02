@@ -227,19 +227,37 @@ function kronika(text){ st.kronika.unshift({tid:datum(),text}); st.kronika = st.
 
 // ================= BASAREN =================
 const BASAR_SAKER = [["Läkedryck",25],["Läkande ört",10],["Kråkmossa",15],["Krigarfasa",15],["Flaska vin",5]];
+// Rött té – billigt och nästan verkningslöst. Lore: FF vill desperat ha det men får det aldrig.
+const TE_PRIS = 2;
+const TE_SLUT = [
+  "”Tyvärr, rött té är slut.” Försäljaren tittar inte ens upp.",
+  "”Rött té? Nej, tyvärr. Precis slut.” Kunden före FF går därifrån med en hel kanna.",
+  "”Slut. Vi fick in en ny leverans i morse, men den tog också slut.”",
+  "”Tyvärr. Vi har aldrig haft rött té.” Bakom disken står tre fulla kannor rött té.",
+  "”Rött té? Det tog slut i samma sekund som du kom in.”",
+  "”Ledsen, FF. Slut.” Försäljaren vet vad han heter. Det känns personligt."
+];
 const BASAR_UTR = [["Läderrustning",40,"rustning"],["Ringbrynja",150,"rustning"],["Långsvärd",80,"vapen"],["Stridsyxa",70,"vapen"],["Pilbåge",50,"vapen"]];
+let basarMeddelande = "";
 function ritaBasar(){
   const party = st.sallskap.filter(id=>!ar(id));
   app.innerHTML = `<section class="card"><div class="row" style="justify-content:space-between"><h2>Basaren</h2><span class="kassa">💰 ${st.kassa} guld</span></div>
     <p class="muted small">Förbrukningssaker hamnar i sällskapets gemensamma packning och kan användas av vem som helst i strid.</p>
     <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="row" style="justify-content:space-between"><span><b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
+  <section class="card"><h2>Tehandeln</h2><p class="muted small">Rött té, 2 guld koppen. Det gör inte mycket (1 KP), men det är gott. Teet hamnar i packningen.</p>
+    <label class="f">Vem köper?<select id="tevem">${window.HJALTAR.filter(h=>!ar(h.id)).sort((a,b)=>(party.includes(b.id)-party.includes(a.id))).map(h=>`<option value="${h.id}">${esc(h.namn)}</option>`).join("")}</select></label>
+    <div class="row"><button class="btn small" data-te="1" ${st.kassa<TE_PRIS?"disabled":""}>Köp rött té – ${TE_PRIS} guld</button></div>
+    ${basarMeddelande?`<p class="small" style="color:#ff9d92">${esc(basarMeddelande)}</p>`:""}</section>
   <section class="card"><h2>Smeden</h2><p class="muted small">Utrustning köps till en hjälte i sällskapet och behålls mellan äventyren.</p>
     ${party.length?`<label class="f">Till vem?<select id="vem">${party.map(id=>`<option value="${id}">${esc(HJ[id].namn)}</option>`).join("")}</select></label>`:`<p class="small">Välj ett sällskap först.</p>`}
     <div class="col">${BASAR_UTR.map(([n,p,t])=>`<div class="row" style="justify-content:space-between"><span><b>${esc(n)}</b><br><span class="small muted">${t==="rustning"?"Rustning "+R.RUSTNING[n]:esc(R.VAPEN[n].fard+", "+R.VAPEN[n].skada)}</span></span><button class="btn small" data-utr="${esc(n)}" data-t="${t}" data-p="${p}" ${st.kassa<p||!party.length?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <button class="btn ghost" data-a="hem">Tillbaka till värdshuset</button>`;
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
-    if(b.dataset.a==="hem") return ga("hem");
+    if(b.dataset.a==="hem"){ basarMeddelande=""; return ga("hem"); }
+    if(b.dataset.te){ const id=$("#tevem").value;
+      if(id==="ff"){ basarMeddelande = R.valj(TE_SLUT); if(Math.random()<.5) kronika("FF försökte köpa rött té. Det var slut."); spara(); return ritaBasar(); }
+      if(st.kassa<TE_PRIS) return; st.kassa-=TE_PRIS; st.packning.push("Rött té"); basarMeddelande=""; spara(); return ritaBasar(); }
     const p = Number(b.dataset.p);
     if(b.dataset.kop){ if(st.kassa<p) return; st.kassa-=p; st.packning.push(b.dataset.kop); spara(); ritaBasar(); }
     if(b.dataset.utr){ const id=$("#vem").value, n=b.dataset.utr; if(st.kassa<p) return; const s=hs(id);
@@ -728,6 +746,9 @@ function formaga(id, mal){
 function valtVapen(id){ const x=rh(id), h=bygg(id); if(x.valtVapen && h.vapen.includes(x.valtVapen)) return x.valtVapen; return h.vapen.slice().sort((a,b)=>R.fardVarde(h,R.VAPEN[b].fard)-R.fardVarde(h,R.VAPEN[a].fard))[0] || "Knytnävar"; }
 function anvandSak(id, namn, kalla, mal){
   const x=rh(id), sak=R.SAKER[namn], m = mal || id;
+  if(namn==="Rött té" && (id==="ff" || m==="ff")){ // FF får aldrig något rött té
+    logga(id==="ff" ? "FF lyfter tekannan med darrande händer. Den är tom. Den var full nyss." : `${HJ[id].namn} räcker fram en kopp rött té till FF – och snubblar. Allt hamnar på marken. Koppen var dessutom tom.`, "fel");
+    return; }
   if(kalla==="egen"){ const i=x.saker.indexOf(namn); if(i>=0) x.saker.splice(i,1); } else { const i=st.packning.indexOf(namn); if(i>=0) st.packning.splice(i,1); }
   logga(`${HJ[id].namn} använder ${namn.toLowerCase()}${m!==id?" på "+HJ[m].namn:""}. ${sak.text}`,"info");
   const xm = rh(m);
