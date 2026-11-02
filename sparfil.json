@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:18:03.000Z",
+  "uppdaterad": "2026-11-02T20:18:07.396Z",
   "spel": {
     "version": 1,
-    "tid": 1793650680078,
+    "tid": 1793650684363,
     "kassa": 345,
     "packning": [
       "Läkedryck",
@@ -14,7 +14,8 @@
     "sallskap": [
       "trolleriolas",
       "galfner",
-      "john"
+      "john",
+      "vad"
     ],
     "hj": {
       "gaston": {
