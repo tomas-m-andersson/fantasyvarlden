@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:37:11.442Z",
+  "uppdaterad": "2026-11-02T13:37:29.748Z",
   "spel": {
     "version": 1,
-    "tid": 1793626628504,
+    "tid": 1793626646839,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -230,7 +230,15 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "gaston": {
           "kp": 6,
@@ -244,11 +252,19 @@
           "markerade": [],
           "anvanda": [
             "Smyga"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "ff": {
-          "kp": 7,
-          "vp": 8,
+          "kp": 6,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -259,8 +275,17 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Fingerfärdighet"
-          ]
+            "Fingerfärdighet",
+            "Svärd"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         }
       },
       "guld": 50,
@@ -296,6 +321,34 @@
         {
           "text": "Ni fuskar skickligt och vinner potten. (+50 guld)",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ FF: Gorgor flammar!",
+          "cls": "d"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [12] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Odöd soldat tar 13 skada (15 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Odöd soldat faller!",
+          "cls": "d"
+        },
+        {
+          "text": "FF tar 1 skada från Gorgors lågor. KP 6/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Rövare anfaller Gaston Quasimodoson: [14] mot 11 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
