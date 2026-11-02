@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:05:48.793Z",
+  "uppdaterad": "2026-11-02T21:06:29.615Z",
   "spel": {
     "version": 1,
-    "tid": 1793653545684,
+    "tid": 1793653586445,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -297,7 +297,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -305,7 +307,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Trollstav"
         }
       },
       "guld": 0,
@@ -332,6 +335,14 @@
         },
         {
           "text": "Brunbjörn tar 7 skada (9 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Dagny von Fågelborg (Trollstav) slår Stav: [10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 5 skada (7 − 2 rustning).",
           "cls": "ok"
         }
       ],
