@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:18:28.318Z",
+  "uppdaterad": "2026-11-02T20:18:46.076Z",
   "spel": {
     "version": 1,
-    "tid": 1793650705347,
+    "tid": 1793650723101,
     "kassa": 345,
     "packning": [
       "Läkedryck",
@@ -133,6 +133,10 @@
       "broncos": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-02 21:18",
+        "text": "Trolleriolas, Galfner Galfner, John P. Bollbirth, Våd Snolofsson utforskade Malbecs gruvor och nådde kapitel 1 (0 rum). Sällskapet gav upp och vände hem."
+      },
       {
         "tid": "2026-11-02 21:17",
         "text": "Monika Plöjer, Gaston Quasimodoson, FF misslyckades med ”Patricias sista vila”. Sällskapet gav upp och vände hem."
@@ -293,14 +297,38 @@
           "cls": "info"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": false,
+        "orsak": "Sällskapet gav upp och vände hem.",
+        "beloning": 0,
+        "avgift": 0,
+        "byte": 0,
+        "doda": [],
+        "forb": {
+          "trolleriolas": [],
+          "galfner": [],
+          "john": [],
+          "vad": []
+        },
+        "rad": [
+          "Ni tog er igenom 0 rum och nådde kapitel 1 i Malbecs gruvor.",
+          "🏆 Nytt rekord för Malbecs gruvor!"
+        ]
+      },
       "start": "2026-11-02 21:18",
       "utforska": true,
       "kapitel": 1,
       "djup": 0,
-      "paus": false
+      "paus": false,
+      "nyttRekord": true
     },
     "reset": 0,
-    "rekord": {}
+    "rekord": {
+      "malbecs-gruvor": {
+        "kapitel": 1,
+        "djup": 0,
+        "datum": "2026-11-02"
+      }
+    }
   }
 }
