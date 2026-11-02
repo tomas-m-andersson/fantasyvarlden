@@ -329,7 +329,7 @@ function startaUppdrag(qid, medJens){
   const q = JSON.parse(JSON.stringify(V.UPPDRAG.find(u=>u.id===qid)));
   const party = st.sallskap.filter(id=>!ar(id)); if(!party.length) return;
   const resMoten = medJens ? [R.valj(V.MOTEN.filter(m=>m.jens))] : R.blanda(V.MOTEN.filter(m=>m.resa)).slice(0,2);
-  const steg = resMoten.map(m=>({typ:"resa",mote:m.id,jens:!!medJens}));
+  const steg = resMoten.map(m=>({typ:"resa",mote:m.id,jens:!!medJens,vagn:medJens?R.t(G.antalVagnar)-1:undefined}));
   if(medJens){ st.kassa -= JENS_PRIS; jensLedig = null; }
   steg.push(...byggRum(q.miljo, q.rum, party.length, q.boss, 0));
   st.run = {q, party, steg, i:0, h:nyaHjaltar(party), guld:0, logg:[], utfall:null, start:datum()};
@@ -526,7 +526,7 @@ function ritaRun(){
     <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens":steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null, scenHjaltar(), scenNpcer(steg));
+  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null, scenHjaltar(), scenNpcer(steg));
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled) return; runKlick(b); };
 }

@@ -90,36 +90,28 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(extra==="vila"){ ctx.fillStyle="#5a3a1a"; ctx.fillRect(74,66,12,2); ctx.fillStyle="#ff8a2e"; ctx.fillRect(77,60,6,6); ctx.fillStyle="#ffe08a"; ctx.fillRect(79,62,2,3); }
   if(extra==="falla"){ ctx.fillStyle="#9aa0a8"; for(let x=62;x<98;x+=4){ ctx.fillRect(x,64,1,-0); ctx.fillRect(x,60,1,4); } }
   if(extra==="hinder"){ ctx.fillStyle="#000a"; ctx.fillRect(68,64,26,26); }
-  // Bakhuvudet Jens kärra: sällskapet sitter på flaket, Jens på kuskbocken (bakhuvudet mot oss), hästen drar.
-  if(extra==="jens"){
-    const R2=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
-    R2(26,77,112,3,"#0005");                                         // skugga
-    // häst ur husdjursarket (ruta 46), spegelvänd så att den drar åt höger
-    const djur = G.npcBild("djur");
-    if(djur.complete && djur.naturalWidth){ ctx.save(); ctx.translate(100+40, 37); ctx.scale(-1,1); ctx.drawImage(djur, (46%8)*32, Math.floor(46/8)*32, 32, 32, 0, 0, 40, 40); ctx.restore(); }
-    else omRitaVid(djur);
-    R2(92,58,12,1,"#3a2814"); R2(92,61,12,1,"#3a2814");                                   // skaklar
-    // kärran
-    R2(28,56,64,12,"#8a5a2e"); R2(28,56,64,2,"#a8733e"); for(let x=34;x<92;x+=10) R2(x,58,1,10,"#6a4220");
-    R2(84,46,10,10,"#6a4220");                                                            // kuskbock
-    // runda hjul med ekrar
-    const hjul=(cx)=>{ const cy=70;
-      for(let dy=-6;dy<=6;dy++) for(let dx=-6;dx<=6;dx++){ const d=Math.hypot(dx,dy); if(d<=6.4&&d>=4.6) R2(cx+dx,cy+dy,1,1,"#2a1a10"); else if(d<4.6) R2(cx+dx,cy+dy,1,1,"#a8733e"); }
-      R2(cx-5,cy,11,1,"#5a3a1a"); R2(cx,cy-5,1,11,"#5a3a1a"); for(let k=-3;k<=3;k++){ R2(cx+k,cy+k,1,1,"#5a3a1a"); R2(cx+k,cy-k,1,1,"#5a3a1a"); }
-      R2(cx-1,cy-1,3,3,"#2a1a10"); };
-    hjul(40); hjul(80);
-    // Jens: rund bakskalle, krage och tömmar
-    R2(86,34,10,10,"#3a2a1a"); R2(85,36,12,6,"#3a2a1a"); R2(87,33,8,2,"#4a3622");          // bakhuvudet
-    R2(87,42,8,2,"#d9a57c"); R2(96,37,2,3,"#d9a57c");                                     // nacke och öra
-    R2(85,44,12,6,"#3f5a7a"); R2(84,50,14,6,"#3f5a7a"); R2(85,44,12,1,"#5a7a9a");        // rock
-    R2(97,48,9,1,"#2a1a10"); R2(105,49,3,1,"#2a1a10");                                    // tömmar
-    // sällskapet sitter på flaket (överkroppen syns)
+  // Bakhuvudet Jens vagn (npc/jens_vagn.png, sex varianter). Hjältarna ritas först och vagnen ovanpå,
+  // så att relingen döljer underkroppen och de ser ut att sitta på flaket bakom Jens.
+  if(extra && String(extra).startsWith("jens")){
+    const v = VAGNAR[(Number(String(extra).split(":")[1])||0) % VAGNAR.length];
+    const vagn = G.npcBild("jens_vagn");
+    const vx = Math.round((W - v.b)/2), vy = 79 - v.h, reling = vy + v.rel;
+    ctx.fillStyle="#0005"; ctx.fillRect(vx+4, 77, v.b-8, 3);                       // skugga
+    const vantar = [];
+    if(!(vagn.complete && vagn.naturalWidth)) vantar.push(vagn);
+    // sällskapet på flaket: fyra platser mellan bakkanten och Jens
     (hjaltar||[]).slice(0,4).forEach((h,i)=>{
-      const img=G.figurBild(h.id); if(!img) return;
-      const x=24+i*14, y=37+(i%2?2:0), r=h.ruta??(G.figurRutor(h.id)[0]||0);
-      const rita=()=>{ const S=G.storlek(h.id), hh=Math.round(20*S/32); ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,20,x+Math.round((32-S)/2),y+20-hh,S,hh); R2(28,56,64,2,"#a8733e"); };
-      if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
+      const img = G.figurBild(h.id); if(!img) return;
+      if(!(img.complete && img.naturalWidth)){ vantar.push(img); return; }
+      const r = h.ruta ?? (G.figurRutor(h.id)[0]||0), S = G.storlek(h.id);
+      const x = vx - 6 + i*12 + Math.round((32-S)/2);
+      const y = reling + 2 - Math.round(20*S/32) + (i%2 ? 1 : 0);           // huvud och axlar över relingen
+      ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, reling + 8); ctx.clip();      // inga ben under flaket
+      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, S, S);
+      ctx.restore();
     });
+    if(!vantar.length) ctx.drawImage(vagn, v.x, v.y, v.b, v.h, vx, vy, v.b, v.h);
+    else vantar.forEach(omRitaVid);
     hjaltar = null;
   }
   // hjältarna (vänster sida, i två led så att fyra får plats)
@@ -223,15 +215,21 @@ const UTSEENDE = {
 };
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
 const BILDER = {};
-// Storlek i pixlar (figurerna är 32×32): dvärgar lite mindre, ankor och hobbitar ännu mindre.
-G.storlek = id => { const h = (window.HJALTAR||[]).find(x=>x.id===id), f = h && h.folk;
-  return f==="Dvärg" ? 28 : (f==="Anka" || f==="Hobbit") ? 24 : 32; };
+// Storlek i pixlar: alla hjältar ritas i full storlek (32×32). Att förminska figurerna gjorde pixlarna suddiga.
+G.storlek = () => 32;
 G.figurBild = id => {
   if(!window.FIGURER || !window.FIGURER[id]) return null;
   if(!BILDER[id]){ const img = new Image(); img.src = "figurer/"+id+".png"; BILDER[id] = img; }
   return BILDER[id];
 };
 G.figurRutor = id => (window.FIGURER && window.FIGURER[id]) || [];
+// Bakhuvudet Jens vagnar i npc/jens_vagn.png: läge i bilden (x, y, bredd, höjd) och relingens höjd från vagnens överkant
+const VAGNAR = [
+  {x:15,y:10,b:108,h:46,rel:19},{x:139,y:10,b:111,h:46,rel:21},
+  {x:12,y:74,b:111,h:46,rel:21},{x:138,y:74,b:113,h:46,rel:21},
+  {x:10,y:134,b:113,h:51,rel:25},{x:133,y:134,b:118,h:51,rel:25}
+];
+G.antalVagnar = VAGNAR.length;
 // NPC-ark (bilder i npc/): "stad" = stadsbor, "by" = bybor, "djur" = husdjur. Alla rutor 0–63 har en figur.
 const NBILDER = {};
 G.npcBild = ark => { if(!NBILDER[ark]){ const img=new Image(); img.src="npc/"+ark+".png"; NBILDER[ark]=img; } return NBILDER[ark]; };
