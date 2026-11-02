@@ -53,8 +53,9 @@ G.ritaSprite = (ctx, namn, x, y, skala, palettNamn, vand) => {
 // ---------- Scenen (TV:n) ----------
 // Liten pixelbild 160×90 som skalas upp. Deterministisk efter "fro" så att samma rum ser likadant ut.
 function slump(fro){ let s = fro>>>0 || 1; return () => (s = (s*1664525+1013904223)>>>0) / 4294967296; }
-G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
-  const argsKopia = [canvas, miljoId, fiender, fro, extra, hjaltar];
+G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
+  const argsKopia = [canvas, miljoId, fiender, fro, extra, hjaltar, npcer];
+  const omRitaVid = img => img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true});
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
   const W = 160, H = 90; canvas.width = W; canvas.height = H; ctx.imageSmoothingEnabled = false; // efter width – annars nollställs den
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
@@ -93,16 +94,19 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
   if(extra==="jens"){
     const R2=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
     R2(26,77,112,3,"#0005");                                         // skugga
-    // häst
-    R2(104,56,26,12,"#7a4a26"); R2(126,46,8,14,"#7a4a26"); R2(130,42,10,8,"#7a4a26"); R2(138,45,3,4,"#5a3418");
-    R2(127,42,3,3,"#2a1a10"); R2(128,44,2,10,"#2a1a10"); R2(133,44,1,1,"#111");          // man och öga
-    R2(106,68,3,9,"#5a3418"); R2(114,68,3,9,"#5a3418"); R2(121,68,3,9,"#5a3418"); R2(127,68,3,9,"#5a3418");
-    R2(100,57,5,2,"#2a1a10"); R2(100,59,2,8,"#2a1a10");                                   // svans
-    R2(92,58,14,1,"#3a2814");                                                             // skaklar
+    // häst ur husdjursarket (ruta 46), spegelvänd så att den drar åt höger
+    const djur = G.npcBild("djur");
+    if(djur.complete && djur.naturalWidth){ ctx.save(); ctx.translate(100+40, 37); ctx.scale(-1,1); ctx.drawImage(djur, (46%8)*32, Math.floor(46/8)*32, 32, 32, 0, 0, 40, 40); ctx.restore(); }
+    else omRitaVid(djur);
+    R2(92,58,12,1,"#3a2814"); R2(92,61,12,1,"#3a2814");                                   // skaklar
     // kärran
     R2(28,56,64,12,"#8a5a2e"); R2(28,56,64,2,"#a8733e"); for(let x=34;x<92;x+=10) R2(x,58,1,10,"#6a4220");
     R2(84,46,10,10,"#6a4220");                                                            // kuskbock
-    const hjul=(cx)=>{ R2(cx-6,64,12,12,"#2a1a10"); R2(cx-4,66,8,8,"#a8733e"); R2(cx-1,64,2,12,"#2a1a10"); R2(cx-6,69,12,2,"#2a1a10"); };
+    // runda hjul med ekrar
+    const hjul=(cx)=>{ const cy=70;
+      for(let dy=-6;dy<=6;dy++) for(let dx=-6;dx<=6;dx++){ const d=Math.hypot(dx,dy); if(d<=6.4&&d>=4.6) R2(cx+dx,cy+dy,1,1,"#2a1a10"); else if(d<4.6) R2(cx+dx,cy+dy,1,1,"#a8733e"); }
+      R2(cx-5,cy,11,1,"#5a3a1a"); R2(cx,cy-5,1,11,"#5a3a1a"); for(let k=-3;k<=3;k++){ R2(cx+k,cy+k,1,1,"#5a3a1a"); R2(cx+k,cy-k,1,1,"#5a3a1a"); }
+      R2(cx-1,cy-1,3,3,"#2a1a10"); };
     hjul(40); hjul(80);
     // Jens: rund bakskalle, krage och tömmar
     R2(86,34,10,10,"#3a2a1a"); R2(85,36,12,6,"#3a2a1a"); R2(87,33,8,2,"#4a3622");          // bakhuvudet
@@ -136,6 +140,21 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
       if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+14, y-3, 4, 3); }
     });
     if(laddar.length) laddar.forEach(img=>img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true}));
+  }
+  // NPC:er (mötespersoner och husdjur) står till höger och vänder sig mot hjältarna
+  if(npcer && npcer.length){
+    npcer.forEach((n,i)=>{
+      const img = n.fiende ? G.fiendeBild(n.fiende) : G.npcBild(n.ark);
+      if(!img) return;
+      if(!(img.complete && img.naturalWidth)){ omRitaVid(img); return; }
+      const r = n.fiende ? (G.fiendeRutor(n.fiende).includes(n.ruta) ? n.ruta : G.fiendeRutor(n.fiende)[0]) : n.ruta;
+      const x = n.x != null ? n.x : (i===0 ? 100 : 126), fot = n.fot != null ? n.fot : (i===0 ? 77 : 74);
+      ctx.fillStyle="#0005"; ctx.fillRect(x+7, fot-1, 18, 3);
+      ctx.save();
+      if(n.spegel !== false){ ctx.translate(x+32, fot-30); ctx.scale(-1,1); } else ctx.translate(x, fot-30);
+      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, 32, 32);
+      ctx.restore();
+    });
   }
   // fiender
   if(fiender && fiender.length){
@@ -209,6 +228,16 @@ G.figurBild = id => {
   return BILDER[id];
 };
 G.figurRutor = id => (window.FIGURER && window.FIGURER[id]) || [];
+// NPC-ark (bilder i npc/): "stad" = stadsbor, "by" = bybor, "djur" = husdjur. Alla rutor 0–63 har en figur.
+const NBILDER = {};
+G.npcBild = ark => { if(!NBILDER[ark]){ const img=new Image(); img.src="npc/"+ark+".png"; NBILDER[ark]=img; } return NBILDER[ark]; };
+// Ritar en enskild NPC-figur i en egen liten canvas (används t.ex. för försäljarna i basaren)
+G.ritaNpc = (canvas, ark, ruta, spegel) => {
+  const ctx = canvas.getContext("2d"); canvas.width=32; canvas.height=32; ctx.imageSmoothingEnabled=false;
+  const img = G.npcBild(ark);
+  const rita = () => { ctx.clearRect(0,0,32,32); ctx.save(); if(spegel){ ctx.translate(32,0); ctx.scale(-1,1); } ctx.drawImage(img,(ruta%8)*32,Math.floor(ruta/8)*32,32,32,0,0,32,32); ctx.restore(); };
+  if(img.complete && img.naturalWidth) rita(); else img.addEventListener("load", rita, {once:true});
+};
 // Fiendernas pixelfigurer (bilder i fiender/)
 const FBILDER = {};
 G.fiendeRutor = fid => (window.FIENDEFIGURER && window.FIENDEFIGURER[fid]) || [];

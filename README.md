@@ -14,6 +14,7 @@ Ett privat hobbyprojekt: ett äventyrsspel i podden Rollspelsklubbens värld, me
 | `grafik.js` | Pixelgrafiken (scenen och porträtten) |
 | `figurer/`, `figurer.js` | Hjältarnas pixelfigurer (8×8 varianter per bild) och vilka rutor som används |
 | `fiender/`, `fiendebilder.js` | Fiendernas pixelfigurer (8×8 varianter per bild) och vilka rutor som används |
+| `npc/` | NPC-ark: `stad.png` (stadsbor), `by.png` (bybor), `djur.png` (husdjur) – 64 figurer var |
 | `sparfil.json` | **Datafil** – skapas automatiskt när spelet sparar till GitHub |
 | `manifest.json`, `sw.js`, `icons/` | Gör att spelet kan installeras som app |
 
