@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:19:54.603Z",
+  "uppdaterad": "2026-11-02T20:20:33.623Z",
   "spel": {
     "version": 1,
-    "tid": 1793650791614,
+    "tid": 1793650830556,
     "kassa": 335,
     "packning": [
       "Läkedryck",
@@ -259,7 +259,16 @@
             "En limpa bröd"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false,
+          "nackdelNasta": true
         },
         "galfner": {
           "kp": 11,
@@ -273,7 +282,16 @@
           "markerade": [],
           "anvanda": [
             "Upptäcka fara"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false,
+          "nackdelNasta": true
         },
         "john": {
           "kp": 10,
@@ -285,7 +303,19 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Slagvapen"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Träpinne",
+          "nackdelNasta": true
         },
         "vad": {
           "kp": 14,
@@ -297,7 +327,16 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false,
+          "nackdelNasta": true
         }
       },
       "guld": 0,
@@ -324,6 +363,34 @@
         },
         {
           "text": "Galfner Galfner tar 1 skada från Dy. KP 11/12.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen: [19] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Gast klagar så hjärtskärande att hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Våd Snolofsson skakas om och får nackdel på nästa slag.",
           "cls": "fel"
         }
       ],
