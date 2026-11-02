@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:27:34.971Z",
+  "uppdaterad": "2026-11-02T20:27:57.481Z",
   "spel": {
     "version": 1,
-    "tid": 1793651251796,
+    "tid": 1793651274539,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -288,7 +288,7 @@
         },
         "galfner": {
           "kp": 4,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -340,7 +340,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": false
         },
@@ -925,6 +925,38 @@
         },
         {
           "text": "Galfner Galfner ligger på divanen en stund, återfår 7 VP och får fördel på nästa slag.",
+          "cls": "ok"
+        },
+        {
+          "text": "Trolleriolas parerar: [11] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas tar 3 skada från Spökkast. KP 2/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas tar 6 skada från Lövkvävning. KP 0/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "Trolleriolas slår dödsslag [1] mot 10 – DRAKE! – reser sig med 5 KP!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
         }
       ],
