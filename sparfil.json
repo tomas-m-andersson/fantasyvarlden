@@ -1,17 +1,19 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:17:31.878Z",
+  "uppdaterad": "2026-11-02T20:17:51.811Z",
   "spel": {
     "version": 1,
-    "tid": 1793650648886,
+    "tid": 1793650668829,
     "kassa": 345,
     "packning": [
       "Läkedryck",
       "Läkande ört",
       "Läkedryck"
     ],
-    "sallskap": [],
+    "sallskap": [
+      "trolleriolas"
+    ],
     "hj": {
       "gaston": {
         "dod": false,
@@ -96,6 +98,14 @@
         "figur": 3
       },
       "gofnagrim": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "trolleriolas": {
         "dod": false,
         "bonus": {},
         "aventyr": 0,
