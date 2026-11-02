@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:22:08.197Z",
+  "uppdaterad": "2026-11-02T20:22:21.253Z",
   "spel": {
     "version": 1,
-    "tid": 1793650925315,
+    "tid": 1793650938233,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -273,11 +273,11 @@
           "valtVapen": "Trästav"
         },
         "galfner": {
-          "kp": 5,
+          "kp": 0,
           "vp": 4,
-          "doende": false,
+          "doende": true,
           "ok": 0,
-          "miss": 0,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -299,7 +299,7 @@
           "valtVapen": "Armborst"
         },
         "john": {
-          "kp": 9,
+          "kp": 10,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -323,8 +323,8 @@
           "nackdelNasta": true
         },
         "vad": {
-          "kp": 8,
-          "vp": 12,
+          "kp": 9,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -342,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Handyxa"
         }
@@ -456,6 +456,34 @@
         {
           "text": "John P. Bollbirth återfår 7 KP.",
           "cls": "ok"
+        },
+        {
+          "text": "★ Våd Snolofsson: Fyra kilo bröd!",
+          "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner återfår 1 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "John P. Bollbirth återfår 1 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "Våd Snolofsson återfår 1 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner tar 8 skada från Spökkast. KP 0/12.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "Galfner Galfner slår dödsslag mot FYS: [14] mot 12 – misslyckat (0 lyckade, 1 misslyckade).",
+          "cls": "fel"
         }
       ],
       "utfall": null,
