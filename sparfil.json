@@ -1,13 +1,12 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:21:39.640Z",
+  "uppdaterad": "2026-11-02T20:22:08.197Z",
   "spel": {
     "version": 1,
-    "tid": 1793650896591,
+    "tid": 1793650925315,
     "kassa": 335,
     "packning": [
-      "Läkedryck",
       "Läkande ört",
       "Läkedryck"
     ],
@@ -274,7 +273,7 @@
           "valtVapen": "Trästav"
         },
         "galfner": {
-          "kp": 11,
+          "kp": 5,
           "vp": 4,
           "doende": false,
           "ok": 0,
@@ -285,7 +284,8 @@
           "markerade": [],
           "anvanda": [
             "Upptäcka fara",
-            "Armborst"
+            "Armborst",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -299,7 +299,7 @@
           "valtVapen": "Armborst"
         },
         "john": {
-          "kp": 2,
+          "kp": 9,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -318,7 +318,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
           "nackdelNasta": true
         },
@@ -435,6 +435,26 @@
         },
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner försöker undvika: [18] mot 6 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner tar 6 skada från Smittbett. KP 5/12.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth använder läkedryck. Återfå 2T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "John P. Bollbirth återfår 7 KP.",
           "cls": "ok"
         }
       ],
