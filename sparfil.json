@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:23:18.977Z",
+  "uppdaterad": "2026-11-02T20:24:00.123Z",
   "spel": {
     "version": 1,
-    "tid": 1793650995902,
+    "tid": 1793651037043,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -248,7 +248,7 @@
       "h": {
         "trolleriolas": {
           "kp": 6,
-          "vp": 13,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -259,7 +259,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Stav"
+            "Stav",
+            "Magi"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -268,7 +269,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
@@ -300,7 +301,7 @@
           "valtVapen": "Dolk av draktand"
         },
         "john": {
-          "kp": 9,
+          "kp": 8,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -319,16 +320,16 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
-          "nackdelNasta": false
+          "nackdelNasta": true
         },
         "vad": {
-          "kp": 3,
+          "kp": 0,
           "vp": 6,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
+          "doende": true,
+          "ok": 1,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -573,6 +574,70 @@
         {
           "text": "Ulv tar 5 skada (6 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Trolleriolas parerar: [2] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Våd Snolofsson parerar: [14] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Våd Snolofsson tar 8 skada från Spökkast. KP 0/14.",
+          "cls": "fel"
+        },
+        {
+          "text": "Våd Snolofsson faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "John P. Bollbirth tar 1 skada från Bett. KP 8/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Våd Snolofsson slår dödsslag mot FYS: [13] mot 14 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
+        },
+        {
+          "text": "Våd Snolofsson slår dödsslag mot FYS: [17] mot 14 – misslyckat (1 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Gast klagar så hjärtskärande att hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner parerar: [5 / 4 → 5] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Trolleriolas kastar Hela slår Magi med nackdel: [17 / 14 → 17] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Besvärjelsen fräser och dör ut.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
