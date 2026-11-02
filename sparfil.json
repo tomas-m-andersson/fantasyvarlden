@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:22:41.038Z",
+  "uppdaterad": "2026-11-02T20:22:50.794Z",
   "spel": {
     "version": 1,
-    "tid": 1793650958130,
+    "tid": 1793650967743,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -299,8 +299,8 @@
           "valtVapen": "Armborst"
         },
         "john": {
-          "kp": 10,
-          "vp": 14,
+          "kp": 7,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -318,7 +318,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
           "nackdelNasta": true
         },
@@ -499,6 +499,30 @@
         },
         {
           "text": "Trolleriolas (Trästav) slår Stav: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [8 / 7 → 8] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta tar 3 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv ylar så att blodet isar sig John P. Bollbirth.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth tar 3 skada från Isande beröring. KP 7/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth förlorar 3 VP.",
           "cls": "fel"
         }
       ],
