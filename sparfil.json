@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:24:00.123Z",
+  "uppdaterad": "2026-11-02T20:24:16.123Z",
   "spel": {
     "version": 1,
-    "tid": 1793651037043,
+    "tid": 1793651053229,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -269,8 +269,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
-          "nackdelNasta": false,
+          "agerat": false,
+          "nackdelNasta": true,
           "valtVapen": "Trästav"
         },
         "galfner": {
@@ -296,7 +296,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Dolk av draktand"
         },
@@ -322,7 +322,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Träpinne",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "vad": {
           "kp": 0,
@@ -638,6 +638,34 @@
         {
           "text": "Besvärjelsen fräser och dör ut.",
           "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [1 / 6 → 6] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta tar 4 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Ulv ylar så att blodet isar sig Trolleriolas.",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 5 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
