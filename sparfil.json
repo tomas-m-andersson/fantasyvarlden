@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:23:03.015Z",
+  "uppdaterad": "2026-11-02T20:23:09.672Z",
   "spel": {
     "version": 1,
-    "tid": 1793650980052,
+    "tid": 1793650986769,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -318,9 +318,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "vad": {
           "kp": 3,
@@ -560,6 +560,10 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [5 / 13 → 13] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
