@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:20:33.623Z",
+  "uppdaterad": "2026-11-02T20:20:53.181Z",
   "spel": {
     "version": 1,
-    "tid": 1793650830556,
+    "tid": 1793650850206,
     "kassa": 335,
     "packning": [
       "Läkedryck",
@@ -327,7 +327,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Yxor"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -335,8 +337,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "nackdelNasta": true
+          "agerat": true,
+          "nackdelNasta": false,
+          "valtVapen": "Handyxa"
         }
       },
       "guld": 0,
@@ -392,6 +395,14 @@
         {
           "text": "Våd Snolofsson skakas om och får nackdel på nästa slag.",
           "cls": "fel"
+        },
+        {
+          "text": "Våd Snolofsson (Handyxa) slår Yxor med nackdel: [7 / 11 → 11] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Gast tar 7 skada.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
