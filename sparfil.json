@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:08:18.015Z",
+  "uppdaterad": "2026-11-02T21:08:27.927Z",
   "spel": {
     "version": 1,
-    "tid": 1793653694882,
+    "tid": 1793653704942,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -261,7 +261,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Gorgor"
         },
         "shinji": {
@@ -288,7 +288,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Kort svärd"
+          "valtVapen": "Kort båge"
         },
         "dagny": {
           "kp": 6,
@@ -310,7 +310,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -436,6 +436,14 @@
         {
           "text": "FF tar 0 skada (1 − 1 rustning) från Ramslag. KP 6/13.",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [19] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
