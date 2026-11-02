@@ -92,8 +92,25 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     if(mob.complete && mob.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(90, 76, 20, 3); G.ritaRuta(ctx, mob, extra==="skatt"?52:36, 84, 47, 32); }
     else omRitaVid(mob);
   }
-  if(extra==="falla"){ ctx.fillStyle="#9aa0a8"; for(let x=62;x<98;x+=4){ ctx.fillRect(x,64,1,-0); ctx.fillRect(x,60,1,4); } }
-  if(extra==="hinder"){ ctx.fillStyle="#000a"; ctx.fillRect(68,64,26,26); }
+  // Saker ur npc/saker_grotta.png ("g") och npc/saker_by.png ("b")
+  const sg = G.npcBild("saker_grotta"), sb = G.npcBild("saker_by");
+  const klarBild = img => img.complete && img.naturalWidth;
+  const sak = (img, r, x, y, z) => { if(klarBild(img)) G.ritaRuta(ctx, img, r, x, y, z); else omRitaVid(img); };
+  const rnd2 = slump((fro||7) * 31 + 5);
+  // Bakgrundssaker: kranier, ben, tunnor och lyktor i grottor och ruiner – staket, hö och brunnar ute
+  const INNE = {grotta:[7,52,23,48,28,39], kloak:[23,48,52,28,7], ruin:[48,23,7,52,28], gravfalt:[7,52,28]};
+  const UTE = {skog:[24,15,29,12], berg:[11,27,24], oken:[0,1,23], trask:[24,13,9]};
+  if(extra!=="jens" && !String(extra||"").startsWith("jens")){
+    if(INNE[miljoId]){ const l=INNE[miljoId]; sak(sg, l[Math.floor(rnd2()*l.length)], 58, 54, 16); sak(sg, l[Math.floor(rnd2()*l.length)], 142, 56, 16); }
+    else if(UTE[miljoId]){ const l=UTE[miljoId]; sak(sb, l[Math.floor(rnd2()*l.length)], 140, 46, 20); }
+  }
+  if(extra==="resa") sak(sb, 27, 74, 50, 26);                                   // vägvisare vid vägen
+  if(extra==="falla") sak(sg, 53, 74, 54, 26);                                  // spikfälla
+  if(extra==="skatt"){ sak(sg, 19, 76, 70, 10); sak(sg, 19, 82, 72, 9); sak(sg, 24, 114, 68, 12); sak(sg, 40, 120, 71, 10); } // mynt och ädelstenar
+  if(extra==="hinder:dorr"){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
+  if(extra==="hinder:stege") sak(sb, 13, 84, 40, 38);
+  if(extra==="hinder:mur") sak(sb, 25, 82, 46, 32);
+  if(extra==="hinder:klyfta"){ ctx.fillStyle="#000c"; ctx.fillRect(72,66,30,24); ctx.fillStyle="#0006"; ctx.fillRect(70,64,34,3); }
   // Bakhuvudet Jens vagn (npc/jens_vagn.png, sex varianter). Hjältarna ritas först och vagnen ovanpå,
   // så att relingen döljer underkroppen och de ser ut att sitta på flaket bakom Jens.
   if(extra && String(extra).startsWith("jens")){
@@ -249,6 +266,12 @@ function ritaText(ctx, text, cx, botten, farg){
   ctx.fillStyle = farg; pix((px,py)=>ctx.fillRect(px,py,z,z));
 }
 G.ritaEtiketter = (ctx, lista, cx, botten) => { lista.slice(-3).forEach((e,i)=>ritaText(ctx, e.text, cx, Math.max(11, botten - i*12), e.farg)); };
+// Liten ikon (en ruta ur ett ark) i en egen canvas, för menyer och listor
+G.ritaIkon = (canvas, ark, ruta) => {
+  const ctx = canvas.getContext("2d"); canvas.width=32; canvas.height=32; ctx.imageSmoothingEnabled=false;
+  const img = G.npcBild(ark), rita = () => { ctx.clearRect(0,0,32,32); G.ritaRuta(ctx, img, ruta, 0, 0, 32); };
+  if(img.complete && img.naturalWidth) rita(); else img.addEventListener("load", rita, {once:true});
+};
 // Ritar en ruta (0–63) ur ett 8×8-ark med 32×32-rutor
 G.ritaRuta = (ctx, img, ruta, x, y, storlek, spegel) => {
   const z = storlek || 32;

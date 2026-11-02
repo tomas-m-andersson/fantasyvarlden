@@ -113,6 +113,7 @@ function figur(id){ const r=G.figurRutor(id), v=st.hj[id]&&st.hj[id].figur; retu
 // Hjältarna som de ska stå i TV:n
 function scenHjaltar(aktiv){ return st.run ? st.run.party.map(id=>{ const x=rh(id); return {id, ruta:figur(id), nere:x.dod||x.doende||x.stabil||x.kp<=0, aktiv:aktiv===id}; }).filter(h=>!rh(h.id).dod) : []; }
 function fyllPortratt(root){
+  fyllIkoner(root);
   root.querySelectorAll("canvas[data-p]").forEach(c=>{ G.ritaPortratt(c, HJ[c.dataset.p], c.dataset.dod==="1", c.dataset.ruta!=null?Number(c.dataset.ruta):figur(c.dataset.p)); });
 }
 function modal(html, onOpen){
@@ -186,6 +187,25 @@ function visaTarningar(lista){
   return tarningLas;
 }
 
+// ================= IKONER FÖR SAKER (npc/saker_grotta.png = g, npc/saker_by.png = b) =================
+const IKON = {
+  "Läkedryck":"g:1","Läkande ört":"g:12","Grönfräken":"g:12","Gravstensalm":"g:12","Kråkmossa":"g:46","Hirtonbuske":"g:46","Tokfrans":"g:46",
+  "Krigarfasa":"g:50","Flaska vin":"g:29","Vin":"g:29","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"g:49","En limpa bröd":"g:49",
+  "Bröd (fyra kilo)":"g:49","Torkat kött":"g:31","Torkade fikon":"b:4","Rep":"g:15","Karta":"g:36","Karta över Grador och Liane":"g:36",
+  "Trollformelbok":"g:61","Diktsamling":"g:13","Anteckningsblock":"g:13","Tärningsspel":"g:6","Elddon":"g:4","Luta":"b:57",
+  "Kort svärd":"g:2","Långsvärd":"g:2","Rostigt svärd":"g:2","Kroksabel":"g:2","Vantim":"g:2","Nannheim":"g:2","Gorgor":"g:2",
+  "Dolk":"g:21","Gulddolk":"g:21","Dolk av draktand":"g:41","Kastknivar":"g:41","Strypsnara":"g:15","Piska":"g:15",
+  "Handyxa":"g:16","Yxa":"g:16","Stridsyxa":"g:16","Stridsgissel":"g:34","Morgonstjärna":"g:10","Stridshammare":"g:58","Träpinne":"g:56",
+  "Spjut":"g:56","Kort spjut":"g:56","Långt spjut":"g:56","Kort båge":"g:32","Pilbåge":"g:32","Armborst":"g:32",
+  "Ringbrynja":"g:35","Läderrustning":"g:30","Sköld":"g:3","guld":"g:19"
+};
+// Uppdragens föremål
+const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"g:55",slasby:"g:24",rattor:"g:5",svartalf:"g:5",broncos:"g:51","doda-sjon":"g:12",krusbar:"g:51"};
+function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gb]:\d+$/.test(k)) return "";
+  const [a,r] = k.split(":"); return `<canvas class="px ikon ${extraKlass||""}" data-ikon="${a==="g"?"saker_grotta":"saker_by"}:${r}" aria-hidden="true"></canvas>`; }
+function fyllIkoner(root){ (root||document).querySelectorAll("canvas[data-ikon]").forEach(c=>{ const [ark,r]=c.dataset.ikon.split(":"); G.ritaIkon(c, ark, Number(r)); }); }
+const guldHtml = n => `${ikonHtml("guld")}${n} guld`;
+
 // ================= HEMMET =================
 function ritaHem(){
   const levande = window.HJALTAR.filter(h=>!ar(h.id)), doda = window.HJALTAR.filter(h=>ar(h.id));
@@ -195,7 +215,7 @@ function ritaHem(){
     html += `<section class="card quest"><h2>Pågående äventyr</h2><p><b>${esc(st.run.q.titel)}</b> – ${esc(st.run.q.plats)}</p>
       <div class="row"><button class="btn" data-a="fortsatt">Fortsätt äventyret</button><button class="btn ghost small" data-a="ge-upp">Ge upp</button></div></section>`;
   }
-  html += `<section class="card"><div class="row" style="justify-content:space-between"><h2>Sällskapet</h2><span class="kassa">💰 ${st.kassa} guld</span></div>
+  html += `<section class="card"><div class="row" style="justify-content:space-between"><h2>Sällskapet</h2><span class="kassa">${guldHtml(st.kassa)}</span></div>
     <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<button class="slot fylld" data-a="visa" data-id="${id}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span></button>`:`<div class="slot">Tom plats</div>`}).join("")}</div>
     <p class="small muted">Välj 1–4 hjältar i galleriet nedan. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
     <div class="row">
@@ -203,7 +223,7 @@ function ritaHem(){
       <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
       <button class="btn ghost" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
     </div>
-    <p class="small muted">Packning: ${st.packning.length?esc(sammanfatta(st.packning)):"tom"}</p>
+    <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
   </section>`;
   html += `<section class="card"><h2>Hjältegalleriet</h2><p class="small muted">Tryck på en hjälte för att se hjältebladet och lägga till eller ta bort ur sällskapet.</p>
     <div class="grid">${levande.map(h=>hkort(h)).join("")}</div></section>`;
@@ -236,6 +256,7 @@ function hkort(h, dod){
     <span><span class="namn">${esc(h.namn)}</span><br><span class="info">${esc(h.folk)} · ${esc(h.yrke)}</span>
     ${s.segrar?`<br><span class="tag gold">${s.segrar} ${s.segrar===1?"seger":"segrar"}</span>`:""}${vald?` <span class="tag gold">I sällskapet</span>`:""}</span></button>`;
 }
+function packningHtml(arr){ const c={}; arr.forEach(x=>c[x]=(c[x]||0)+1); return Object.entries(c).map(([k,n])=>`<span class="sakchip">${ikonHtml(k)}${esc(k)}${n>1?` ×${n}`:""}</span>`).join(""); }
 function sammanfatta(arr){ const c={}; arr.forEach(x=>c[x]=(c[x]||0)+1); return Object.entries(c).map(([k,n])=>n>1?`${k} ×${n}`:k).join(", "); }
 
 function visaHjalte(id){
@@ -256,14 +277,14 @@ function visaHjalte(id){
       <div class="card" style="padding:10px;gap:4px"><b>Kroppspoäng (KP)</b><span class="kassa">${R.maxKP(h)}</span></div>
       <div class="card" style="padding:10px;gap:4px"><b>Viljepoäng (VP)</b><span class="kassa" style="color:var(--vp)">${R.maxVP(h)}</span></div>
     </div>
-    <div><h3>Vapen</h3><table class="stat">${h.vapen.map(v=>{const w=R.VAPEN[v]||{};return `<tr><td>${esc(v)} <span class="muted small">(${esc(w.fard)}, ${esc(w.skada)}${w.bonus?"+"+w.bonus:""}${w.avstand?", avstånd":""})</span></td><td>${R.fardVarde(h,w.fard)}</td></tr>`}).join("")}
+    <div><h3>Vapen</h3><table class="stat">${h.vapen.map(v=>{const w=R.VAPEN[v]||{};return `<tr><td>${ikonHtml(v)}${esc(v)} <span class="muted small">(${esc(w.fard)}, ${esc(w.skada)}${w.bonus?"+"+w.bonus:""}${w.avstand?", avstånd":""})</span></td><td>${R.fardVarde(h,w.fard)}</td></tr>`}).join("")}
       <tr><td>Skadebonus närstrid / avstånd</td><td>${sb||"–"} / ${sba||"–"}</td></tr>
       <tr><td>Rustning: ${esc(h.rustning||"ingen")}${h.skold?" + sköld":""}</td><td>${R.rustning(h)}</td></tr></table></div>
     <div><h3>Färdigheter</h3><table class="stat">${R.allaFard(h).filter(f=>f.tranad).sort((a,b)=>b.varde-a.varde).map(f=>`<tr><td>${esc(f.namn)} <span class="muted small">(${f.eg})${s.bonus&&s.bonus[f.namn]?" · förbättrad +"+s.bonus[f.namn]:""}</span></td><td>${f.varde}</td></tr>`).join("")}
-      <tr><td colspan="2" class="small muted" style="text-align:left">Övriga färdigheter har grundchansen (3–7 beroende på egenskapen).</td></tr></table></div>
+      <tr><td colspan="2" class="small notis">Övriga färdigheter har grundchansen (3–7 beroende på egenskapen).</td></tr></table></div>
     ${h.besv.length?`<div><h3>Besvärjelser <span class="small muted">(2 VP, slå Magi ${R.fardVarde(h,"Magi")})</span></h3><div class="col small">${h.besv.map(b=>`<div><b>${esc(b)}</b> – ${esc((R.BESV[b]||{}).text)}</div>`).join("")}</div></div>`:""}
     <div><h3>Signaturförmåga <span class="small muted">(3 VP)</span></h3><p><b>${esc(h.formaga.namn)}</b> – ${esc(h.formaga.text)}</p></div>
-    ${h.saker.length?`<p class="small"><b>Utrustning:</b> ${esc(h.saker.join(", "))}</p>`:""}
+    ${h.saker.length?`<div class="small packning"><b style="margin-right:8px">Utrustning:</b>${packningHtml(h.saker)}</div>`:""}
     <p class="small muted">Äventyr: ${s.aventyr||0} · Segrar: ${s.segrar||0}</p>
     <div class="row">
       ${dod?`<button class="btn red" data-a="kopTillbaka" ${st.kassa<100?"disabled":""}>Köp tillbaka till livet<span class="sub">Kostar 100 guld ur kassan${st.kassa<100?` – ni har ${st.kassa}`:""}</span></button>`
@@ -313,17 +334,18 @@ const BASAR_UTR = [["Läderrustning",40,"rustning"],["Ringbrynja",150,"rustning"
 let basarMeddelande = "";
 function ritaBasar(){
   const party = st.sallskap.filter(id=>!ar(id));
-  app.innerHTML = `<section class="card"><div class="row" style="justify-content:space-between"><span class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="kopman:22"></canvas><h2>Basaren</h2></span><span class="kassa">💰 ${st.kassa} guld</span></div>
+  app.innerHTML = `<section class="card"><div class="row" style="justify-content:space-between"><span class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="kopman:22"></canvas><h2>Basaren</h2></span><span class="kassa">${guldHtml(st.kassa)}</span></div>
     <p class="muted small">Förbrukningssaker hamnar i sällskapets gemensamma packning och kan användas av vem som helst i strid.</p>
-    <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="vara"><span><b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
+    <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="vara"><span>${ikonHtml(n)}<b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="stad:36"></canvas><h2>Tehandeln</h2></div><p class="muted small">Rött té, 2 guld koppen. Det gör inte mycket (1 KP), men det är gott. Teet hamnar i packningen.</p>
     <label class="f">Vem köper?<select id="tevem">${window.HJALTAR.filter(h=>!ar(h.id)).sort((a,b)=>(party.includes(b.id)-party.includes(a.id))).map(h=>`<option value="${h.id}">${esc(h.namn)}</option>`).join("")}</select></label>
     <div class="row"><button class="btn small" data-te="1" ${st.kassa<TE_PRIS?"disabled":""}>Köp rött té – ${TE_PRIS} guld</button></div>
     ${basarMeddelande?`<p class="small" style="color:#ff9d92">${esc(basarMeddelande)}</p>`:""}</section>
   <section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="by:12"></canvas><h2>Smeden</h2></div><p class="muted small">Utrustning köps till en hjälte i sällskapet och behålls mellan äventyren.</p>
     ${party.length?`<label class="f">Till vem?<select id="vem">${party.map(id=>`<option value="${id}">${esc(HJ[id].namn)}</option>`).join("")}</select></label>`:`<p class="small">Välj ett sällskap först.</p>`}
-    <div class="col">${BASAR_UTR.map(([n,p,t])=>`<div class="vara"><span><b>${esc(n)}</b><br><span class="small muted">${t==="rustning"?"Rustning "+R.RUSTNING[n]:esc(R.VAPEN[n].fard+", "+R.VAPEN[n].skada)}</span></span><button class="btn small" data-utr="${esc(n)}" data-t="${t}" data-p="${p}" ${st.kassa<p||!party.length?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
+    <div class="col">${BASAR_UTR.map(([n,p,t])=>`<div class="vara"><span>${ikonHtml(n)}<b>${esc(n)}</b><br><span class="small muted">${t==="rustning"?"Rustning "+R.RUSTNING[n]:esc(R.VAPEN[n].fard+", "+R.VAPEN[n].skada)}</span></span><button class="btn small" data-utr="${esc(n)}" data-t="${t}" data-p="${p}" ${st.kassa<p||!party.length?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <button class="btn ghost" data-a="hem">Tillbaka till värdshuset</button>`;
+  fyllIkoner(app);
   app.querySelectorAll("canvas[data-npc]").forEach(c=>{ const [ark,ruta]=c.dataset.npc.split(":"); G.ritaNpc(c, ark, Number(ruta), true); });
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
@@ -354,6 +376,7 @@ function ritaTavla(){
       <div class="row" style="justify-content:space-between"><h2>${esc(u.titel)}</h2><span class="tag gold">${u.beloning} guld</span></div>
       <p class="small muted">Uppdragsgivare: ${esc(u.givare)} · ${esc(u.plats)}, ${esc(u.land)} · ${esc(V.MILJO[u.miljo].namn)} · ${u.rum} rum${n?` · <span class="tag">Klarat ${n} gång${n>1?"er":""}</span>`:""}</p>
       <p>${esc(u.text)}</p>
+      ${u.foremal?`<p class="small foremal">${ikonHtml(UPPDRAG_IKON[u.id])}<span><b>Mål:</b> ${esc(u.foremal)}</span></p>`:""}
       <div class="row"><button class="btn" data-anta="${u.id}" ${!party.length?"disabled":""}>Anta uppdraget</button></div></section>`}).join("")}
     <div class="row"><button class="btn ghost" data-a="nya">Nya lappar</button><button class="btn ghost" data-a="hem">Tillbaka</button></div>`;
   app.onclick = e => {
@@ -362,6 +385,7 @@ function ritaTavla(){
     if(b.dataset.a==="nya"){ st.tavla=[]; fyllTavla(); spara(); return ritaTavla(); }
     if(b.dataset.anta) valjResa(b.dataset.anta);
   };
+  fyllIkoner(app);
 }
 
 // ================= BAKHUVUDET JENS =================
@@ -596,7 +620,7 @@ function ritaRun(){
     <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder":null, scenHjaltar(), scenNpcer(steg));
+  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta"}[steg.hinder.namn]||""):steg.typ==="resa"?"resa":null, scenHjaltar(), scenNpcer(steg));
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled||tarningLas) return; medTarningar(()=>runKlick(b)); };
 }
@@ -607,6 +631,8 @@ function scenNpcer(steg){
   if(steg.jens) return ut;
   const m = steg.mote ? V.MOTEN.find(x=>x.id===steg.mote) : null;
   if(m && m.npc) ut.push(m.npc.fiende ? {fiende:m.npc.fiende, ruta:G.fiendeRutor(m.npc.fiende)[0]} : {ark:m.npc.ark, ruta:m.npc.ruta});
+  if(m && m.id==="kopman"){ ut.push({ark:"saker_by", ruta:32, spegel:false}); return ut; }
+  if(m && m.id==="orter"){ ut.push({ark:"saker_by", ruta:56, spegel:false}); return ut; }
   if(steg.typ==="resa"){ const fro = r.i*977 + r.q.id.length*31 + (r.start||"").length; ut.push({ark:"djur", ruta:DJUR_RUTOR[fro % DJUR_RUTOR.length], spegel:false}); }
   return ut;
 }
@@ -1088,7 +1114,7 @@ function hjalteMeny(id, h, x){
   if(m==="formaga-mal"){ const t=h.formaga.typ; return `<p>${esc(h.formaga.namn)} – på vem?</p><div class="val">${t==="extraHandling"?hjaltar("gor-formaga",i=>i!==id&&kanAgera(i)):t==="terapi"?hjaltar("gor-formaga",i=>kanAgera(i)):mal("gor-formaga")}${tillbaka}</div>`; }
   if(m==="sak"){ const egna=x.saker.map(s=>({s,k:"egen"})), gem=st.packning.filter(s=>R.SAKER[s]).map(s=>({s,k:"packning"}));
     const alla=[...egna,...gem], sedda=new Set();
-    return `<p>Använda vad?</p><div class="val">${alla.filter(o=>{const k=o.s+o.k; if(sedda.has(k)) return false; sedda.add(k); return true;}).map(o=>`<button class="btn ghost" data-m="valt-sak" data-s="${esc(o.s)}" data-k="${o.k}">${esc(o.s)}<span class="sub">${o.k==="egen"?"Egen":"Packningen"} · ${esc(R.SAKER[o.s].text)}</span></button>`).join("")||"<p class='muted'>Inget att använda.</p>"}${tillbaka}</div>`; }
+    return `<p>Använda vad?</p><div class="val">${alla.filter(o=>{const k=o.s+o.k; if(sedda.has(k)) return false; sedda.add(k); return true;}).map(o=>`<button class="btn ghost" data-m="valt-sak" data-s="${esc(o.s)}" data-k="${o.k}">${ikonHtml(o.s)}${esc(o.s)}<span class="sub">${o.k==="egen"?"Egen":"Packningen"} · ${esc(R.SAKER[o.s].text)}</span></button>`).join("")||"<p class='muted'>Inget att använda.</p>"}${tillbaka}</div>`; }
   if(m==="sak-mal"){ return `<p>${esc(strid.valdSak.s)} – till vem?</p><div class="val">${hjaltar("gor-sak",i=>!rh(i).dod&&!rh(i).stabil)}${tillbaka}</div>`; }
   if(m==="hjalp") return `<p>Rädda vem? (slå Läkekonst ${fv(h,"Läkekonst")})</p><div class="val">${hjaltar("gor-hjalp",i=>rh(i).doende||rh(i).stabil)}${tillbaka}</div>`;
   // huvudmeny
@@ -1194,7 +1220,7 @@ function ritaSlut(){
   app.innerHTML = `
     <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${r.utforska?esc(r.q.plats):u.lyckat?"Uppdraget klart!":"Misslyckat"}</span></div>
     <section class="card quest"><h2>${r.utforska?(u.lyckat?"Hemma med bytet!":"Det gick inte som planerat"):u.lyckat?"Seger!":"Det gick inte som planerat"}</h2>
-      ${r.utforska?(u.lyckat?`<p>Byte: <b>${u.byte} guld</b>. Kapitelbonus för ${r.kapitel} ${r.kapitel===1?"kapitel":"kapitel"}: <b>${u.beloning} guld</b>. Totalt <b>${u.byte+u.beloning} guld</b> till kassan.</p>`:`<p class="berattelse">${esc(u.orsak||"")}</p>`):u.lyckat?`<p class="berattelse">${esc(r.q.svar)}</p>
+      ${r.utforska?(u.lyckat?`<p>Byte: <b>${u.byte} guld</b>. Kapitelbonus för ${r.kapitel} ${r.kapitel===1?"kapitel":"kapitel"}: <b>${u.beloning} guld</b>. Totalt <b>${u.byte+u.beloning} guld</b> till kassan.</p>`:`<p class="berattelse">${esc(u.orsak||"")}</p>`):u.lyckat?`<p class="berattelse">${esc(r.q.svar)}</p>${r.q.foremal?`<p class="foremal">${ikonHtml(UPPDRAG_IKON[r.q.id])}<span>Ni har fått tag på: <b>${esc(r.q.foremal)}</b></span></p>`:""}
         <p>Belöning: <b>${u.beloning} guld</b>${u.avgift?` (Lansor tar ${u.avgift} guld i avgift)`:""}. Byte under resan: <b>${u.byte} guld</b>.</p>`
       :`<p class="berattelse">${esc(u.orsak||"")}</p>`}
       ${u.rad.map(x=>`<p>${esc(x)}</p>`).join("")}
@@ -1204,6 +1230,7 @@ function ritaSlut(){
       <button class="btn" data-a="klar">Tillbaka till värdshuset</button>
     </section>${loggHtml()}`;
   G.ritaScen($("#scen"), r.q.miljo, [], 99, u.lyckat?"skatt":null, scenHjaltar());
+  fyllIkoner(app);
   scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(b && b.dataset.a==="klar"){ st.run=null; spara(); ga("hem"); } };
 }
