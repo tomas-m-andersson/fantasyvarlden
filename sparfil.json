@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:28:17.120Z",
+  "uppdaterad": "2026-11-02T20:28:22.784Z",
   "spel": {
     "version": 1,
-    "tid": 1793651294047,
+    "tid": 1793651299451,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -282,7 +282,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
@@ -984,6 +984,10 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Trolleriolas (Trästav) slår Stav: [16] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
