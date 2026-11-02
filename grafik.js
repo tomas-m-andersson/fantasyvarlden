@@ -94,7 +94,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
-      const x = 2 + i*15, y = 66 - 32 + (i%2 ? 3 : -1);
+      const x = 2 + i*15, y = 44 + (i%2 ? 4 : 0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
       const img = G.figurBild(h.id);
       if(!img){ return; }
       if(!img.complete){ laddar.push(img); return; }
@@ -114,9 +114,9 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
     const n = levande.length, start = harHjaltar ? 66 : 10, bredd = W - start - 6;
     levande.forEach((f,i)=>{
       const sk = f.boss ? (f.stor?3:3) : (f.liten?1:2);
-      const w = 16*sk, x = Math.min(W-w, Math.round(start + (i+0.5)*bredd/n - w/2)), y = 66 - 16*sk + (f.liten?2:0) + (f.boss?8:0);
+      const w = 16*sk, x = Math.min(W-w, Math.round(start + (i+0.5)*bredd/n - w/2)), fot = 76 + (i%2 ? 2 : 0), y = fot - 16*sk + (f.liten?1:0);
       ctx.globalAlpha = f.kp>0 ? 1 : .25;
-      ctx.fillStyle="#0005"; ctx.fillRect(x+2, 64, w-4, 3);
+      ctx.fillStyle="#0005"; ctx.fillRect(x+2, fot-1, w-4, 3);
       G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
       ctx.globalAlpha = 1;
       if(f.markerad){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+w/2-2, Math.max(0,y)-5, 4, 3); }
