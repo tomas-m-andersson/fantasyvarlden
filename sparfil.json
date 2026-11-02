@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:28:51.835Z",
+  "uppdaterad": "2026-11-02T20:28:57.448Z",
   "spel": {
     "version": 1,
-    "tid": 1793651328825,
+    "tid": 1793651334526,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -260,7 +260,7 @@
           "vp": 9,
           "doende": true,
           "ok": 1,
-          "miss": 0,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [
@@ -342,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
           "nackdelNasta": false
         },
@@ -1056,6 +1056,14 @@
         {
           "text": "— Runda 5 —",
           "cls": "info"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen: [18] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas slår dödsslag mot FYS: [15] mot 10 – misslyckat (1 lyckade, 1 misslyckade).",
+          "cls": "fel"
         }
       ],
       "utfall": null,
