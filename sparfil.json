@@ -1,15 +1,17 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:04:41.190Z",
+  "uppdaterad": "2026-11-02T21:04:46.094Z",
   "spel": {
     "version": 1,
-    "tid": 1793653478173,
+    "tid": 1793653482893,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
     ],
-    "sallskap": [],
+    "sallskap": [
+      "ff"
+    ],
     "hj": {
       "gaston": {
         "dod": false,
