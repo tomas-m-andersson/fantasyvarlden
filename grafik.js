@@ -56,7 +56,7 @@ function slump(fro){ let s = fro>>>0 || 1; return () => (s = (s*1664525+10139042
 G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
   const argsKopia = [canvas, miljoId, fiender, fro, extra, hjaltar];
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
-  const W = 160, H = 90; canvas.width = W; canvas.height = H;
+  const W = 160, H = 90; canvas.width = W; canvas.height = H; ctx.imageSmoothingEnabled = false; // efter width – annars nollställs den
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
   // himmel/bakgrund
   for(let y=0;y<H;y++){ const t=y/H; ctx.fillStyle = blanda(m.himmel[0], m.himmel[1], t); ctx.fillRect(0,y,W,1); }
@@ -140,16 +140,32 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar) => {
   // fiender
   if(fiender && fiender.length){
     const levande = fiender.filter(f=>f.kp>0||f.visa);
-    const n = levande.length, start = harHjaltar ? 66 : 10, bredd = W - start - 6;
+    const n = levande.length, start = harHjaltar ? 74 : 10, slut = W - 2, vantar = [];
+    // Storlek: egna pixelfigurer (32×32) i naturlig storlek, bossar 1,5 gånger större, draken dubbelt.
+    const mått = levande.map(f=>{ const egen = G.fiendeBild(f.fid) && G.fiendeRutor(f.fid).length;
+      const sk = egen ? (f.boss ? (f.stor ? 2 : 1.5) : 1) : (f.boss ? 3 : (f.liten?1:2)); return {egen, sk, w: egen ? Math.round(32*sk) : 16*sk}; });
+    const summa = mått.reduce((a,m)=>a+m.w,0), luft = slut - start - summa;
+    const mellan = n>1 ? Math.min(8, luft/(n-1)) : 0;                       // negativt = de står lite omlott
+    let xNu = start + Math.max(0, (luft - mellan*(n-1))/2);
+    const xPos = mått.map(m=>{ const x=Math.round(xNu); xNu += m.w + mellan; return x; });
     levande.forEach((f,i)=>{
-      const sk = f.boss ? (f.stor?3:3) : (f.liten?1:2);
-      const w = 16*sk, x = Math.min(W-w, Math.round(start + (i+0.5)*bredd/n - w/2)), fot = 76 + (i%2 ? 2 : 0), y = fot - 16*sk + (f.liten?1:0);
+      const img = G.fiendeBild(f.fid), rutor = G.fiendeRutor(f.fid);
+      const {egen, sk, w} = mått[i];
+      const x = Math.max(start-4, Math.min(W-w, xPos[i])), fot = 76 + (i%2 ? 2 : 0);
+      const y = egen ? fot - Math.round(30*sk) : fot - 16*sk + (f.liten?1:0);
       ctx.globalAlpha = f.kp>0 ? 1 : .25;
-      ctx.fillStyle="#0005"; ctx.fillRect(x+2, fot-1, w-4, 3);
-      G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
+      ctx.fillStyle="#0005"; ctx.fillRect(x+Math.round(w*.2), fot-1, Math.round(w*.6), 3);
+      if(egen){
+        if(!(img.complete && img.naturalWidth)){ vantar.push(img); ctx.globalAlpha=1; return; }
+        const r = rutor.includes(f.ruta) ? f.ruta : rutor[0];
+        ctx.save(); ctx.translate(x+w, Math.max(0,y)); ctx.scale(-1,1);   // spegelvänd så att fienden tittar mot hjältarna
+        ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, w, w);
+        ctx.restore();
+      } else G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
       ctx.globalAlpha = 1;
-      if(f.markerad){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+w/2-2, Math.max(0,y)-5, 4, 3); }
+      if(f.markerad){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+w/2-2, Math.max(0,y)-3, 4, 3); }
     });
+    if(vantar.length) [...new Set(vantar)].forEach(img=>img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true}));
   }
 };
 function tradd(ctx,x,y,h,farg){ ctx.fillStyle=farg; for(let i=0;i<h;i+=3){ const w=Math.max(2,Math.floor((i/h)*12)); ctx.fillRect(x-w/2,y+i,w,3);} ctx.fillRect(x-1,y+h,2,4); }
@@ -193,6 +209,14 @@ G.figurBild = id => {
   return BILDER[id];
 };
 G.figurRutor = id => (window.FIGURER && window.FIGURER[id]) || [];
+// Fiendernas pixelfigurer (bilder i fiender/)
+const FBILDER = {};
+G.fiendeRutor = fid => (window.FIENDEFIGURER && window.FIENDEFIGURER[fid]) || [];
+G.fiendeBild = fid => {
+  if(!G.fiendeRutor(fid).length) return null;
+  if(!FBILDER[fid]){ const img = new Image(); img.src = "fiender/"+fid+".png"; FBILDER[fid] = img; }
+  return FBILDER[fid];
+};
 // Ritar en figur (ruta 0–63) i en canvas. Faller tillbaka på det kodritade porträttet om bild saknas.
 G.ritaPortratt = (canvas, hjalte, dod, ruta) => {
   const img = G.figurBild(hjalte.id), rutor = G.figurRutor(hjalte.id);
@@ -266,7 +290,7 @@ G.ritaKodPortratt = (canvas, hjalte, dod) => {
 // ---------- Efterriket: poolen på skyskrapetaket i Miami, med björnen Tetrok ----------
 G.ritaPool = (canvas, doda) => {
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
-  const W=160, H=90; canvas.width=W; canvas.height=H;
+  const W=160, H=90; canvas.width=W; canvas.height=H; ctx.imageSmoothingEnabled = false;
   const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
   // solnedgång
   const himmel=["#2a1846","#4a2160","#7a2a6e","#b8406e","#e8705a","#f6a85a"];

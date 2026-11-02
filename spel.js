@@ -516,7 +516,8 @@ function ritaRun(){
     titel = r.utforska ? `Kapitel ${r.kapitel} · rum ${r.djup+1}` : `Rum ${r.i - antalResa() + 1} av ${r.steg.length - antalResa()}`;
     innehall = rumHtml(steg);
   }
-  const fiendeVisning = steg.fiender && !steg.klar ? steg.fiender.map(fid=>({...V.FIENDER[fid],fid,kp:1})) : [];
+  if(steg.fiender && !steg.rutor) steg.rutor = steg.fiender.map(fid=>slumpRuta(fid));
+  const fiendeVisning = steg.fiender && !steg.klar ? steg.fiender.map((fid,i)=>({...V.FIENDER[fid],fid,kp:1,ruta:steg.rutor[i]})) : [];
   app.innerHTML = `
     <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.titel)}</span></div>
     <div class="prog">${progHtml()}</div>
@@ -690,10 +691,12 @@ function geUpp(){
 }
 
 // ================= STRIDEN =================
+// Slumpar vilken av fiendens figurvarianter som används
+function slumpRuta(fid){ const r = G.fiendeRutor(fid); return r.length ? R.valj(r) : null; }
 function startaStrid(fiendeIds, opt){
   opt = opt||{};
-  const r = st.run;
-  const fiender = fiendeIds.map((fid,i)=>{ const f=V.FIENDER[fid], kp=Math.max(1,Math.round(f.kp*SVAR[svar()].kp*(st.run&&st.run.utforska?kpFaktor(st.run.kapitel):1))); return {i, fid, namn:f.namn, sprite:f.sprite, kp, max:kp, rust:f.rust||0, typ:f.typ, anfall:f.anfall, skada:f.skada, attacker:f.attacker, boss:!!f.boss, folk:!!f.folk, stor:!!f.stor, liten:!!f.liten, besv:f.besv, stoppad:0, nackdel:false}; });
+  const r = st.run, sr = r.steg[r.i], rutor = (sr && sr.fiender===fiendeIds && sr.rutor) || [];
+  const fiender = fiendeIds.map((fid,i)=>{ const f=V.FIENDER[fid], kp=Math.max(1,Math.round(f.kp*SVAR[svar()].kp*(st.run&&st.run.utforska?kpFaktor(st.run.kapitel):1))); return {i, fid, ruta: rutor[i]!=null ? rutor[i] : slumpRuta(fid), namn:f.namn, sprite:f.sprite, kp, max:kp, rust:f.rust||0, typ:f.typ, anfall:f.anfall, skada:f.skada, attacker:f.attacker, boss:!!f.boss, folk:!!f.folk, stor:!!f.stor, liten:!!f.liten, besv:f.besv, stoppad:0, nackdel:false}; });
   // Numrera likadana fiender
   const c={}; fiender.forEach(f=>{c[f.namn]=(c[f.namn]||0)+1}); const n={}; fiender.forEach(f=>{ if(c[f.namn]>1){ n[f.namn]=(n[f.namn]||0)+1; f.namn+=" "+n[f.namn]; } });
   r.party.forEach(id=>{ const x=rh(id); Object.assign(x,{tempRust:0,vapenbonus:null,gift:x.gift||false,maktig:false,raseri:false,undvikAllt:false,stoppad:0}); });
