@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:04:59.405Z",
+  "uppdaterad": "2026-11-02T21:05:08.805Z",
   "spel": {
     "version": 1,
-    "tid": 1793653496325,
+    "tid": 1793653505387,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -39,7 +39,7 @@
         "bonus": {
           "Spjut": 1
         },
-        "aventyr": 2,
+        "aventyr": 3,
         "segrar": 1,
         "vapen": [],
         "rustning": null,
@@ -126,7 +126,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -134,7 +134,7 @@
       "dagny": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -169,7 +169,130 @@
         "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-gollenskogen",
+        "titel": "Gollenskogen",
+        "plats": "Gollenskogen",
+        "land": "Mårdgård",
+        "miljo": "skog",
+        "boss": "dendroidmoder",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "gollenskogen"
+      },
+      "party": [
+        "ff",
+        "shinji",
+        "dagny"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En glänta där solen knappt når ner.",
+          "fro": 114509930,
+          "fiender": [
+            "varg",
+            "bjorn"
+          ],
+          "rutor": [
+            58,
+            11
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "Gamla ekar med ansikten inristade i barken.",
+          "fro": 329396760
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Gamla ekar med ansikten inristade i barken.",
+          "fro": 288528950,
+          "fiender": [
+            "varg",
+            "rovare"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En nedbrunnen lägereld som fortfarande är varm.",
+          "fro": 214572755
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 963335361,
+          "fiender": [
+            "dendroidmoder"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "ff": {
+          "kp": 13,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkade fikon"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "dagny": {
+          "kp": 10,
+          "vp": 9,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-02 22:05",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false
+    },
     "reset": 0,
     "rekord": {
       "malbecs-gruvor": {
