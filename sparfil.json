@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:08:36.339Z",
+  "uppdaterad": "2026-11-02T21:09:05.775Z",
   "spel": {
     "version": 1,
-    "tid": 1793653713341,
+    "tid": 1793653742770,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -261,7 +261,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "shinji": {
@@ -278,7 +278,8 @@
           "markerade": [],
           "anvanda": [
             "Pilbåge",
-            "Svärd"
+            "Svärd",
+            "Kniv"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -287,7 +288,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "dagny": {
@@ -312,7 +313,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Trollstav",
-          "nackdelNasta": false
+          "nackdelNasta": true
         }
       },
       "guld": 0,
@@ -456,6 +457,58 @@
         {
           "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Ramslag. KP 9/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg parerar: [8] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dagny von Fågelborg har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 5 —",
+          "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg parerar: [15] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Ulv ylar så att blodet isar sig Dagny von Fågelborg.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi parerar: [3] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [11] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 6 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
