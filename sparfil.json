@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:25:27.182Z",
+  "uppdaterad": "2026-11-02T20:25:31.682Z",
   "spel": {
     "version": 1,
-    "tid": 1793651124202,
+    "tid": 1793651128762,
     "kassa": 335,
     "packning": [
       "Läkande ört"
@@ -270,8 +270,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
-          "nackdelNasta": false,
+          "agerat": false,
+          "nackdelNasta": true,
           "valtVapen": "Trästav"
         },
         "galfner": {
@@ -297,8 +297,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
-          "nackdelNasta": false,
+          "agerat": false,
+          "nackdelNasta": true,
           "valtVapen": "Armborst"
         },
         "john": {
@@ -323,7 +323,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Träpinne",
-          "nackdelNasta": false
+          "nackdelNasta": true
         },
         "vad": {
           "kp": 0,
@@ -771,6 +771,34 @@
         {
           "text": "Trolleriolas har redan använt sin handling till att försvara sig.",
           "cls": "info"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen: [4] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Gast tar 3 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 8 —",
+          "cls": "info"
+        },
+        {
+          "text": "Gast klagar så hjärtskärande att hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "John P. Bollbirth skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
