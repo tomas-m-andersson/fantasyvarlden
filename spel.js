@@ -13,7 +13,7 @@ const save = (k,v) => { try{ localStorage.setItem(k,JSON.stringify(v)) }catch(e)
 
 // ================= Sparat spel =================
 const KEY = "fantasyvarlden-spel";
-function nyttSpel(){ return {version:1,tid:0,kassa:50,packning:["Läkedryck","Läkande ört"],sallskap:[],hj:{},tavla:[],avklarade:{},kronika:[],run:null,reset:0} }
+function nyttSpel(){ return {version:1,tid:0,kassa:50,packning:["Läkedryck","Läkande ört"],sallskap:[],hj:{},tavla:[],avklarade:{},kronika:[],run:null,reset:0,rekord:{}} }
 function normSpel(o){
   const n = nyttSpel(); if(!o||typeof o!=="object") return n;
   const s = Object.assign(n, o);
@@ -23,6 +23,7 @@ function normSpel(o){
   s.tavla = Array.isArray(s.tavla)?s.tavla.filter(id=>V.UPPDRAG.some(u=>u.id===id)):[];
   s.kronika = Array.isArray(s.kronika)?s.kronika.slice(0,40):[];
   s.kassa = Number(s.kassa)||0;
+  s.rekord = s.rekord&&typeof s.rekord==="object"?s.rekord:{};
   return s;
 }
 let st = normSpel(load(KEY,null));
@@ -94,6 +95,7 @@ function ritaOm(){
   if(vy==="tavla") return ritaTavla();
   if(vy==="run" && st.run) return ritaRun();
   if(vy==="basar") return ritaBasar();
+  if(vy==="platser") return ritaPlatser();
   vy="hem"; ritaHem();
 }
 function ga(v){ vy=v; ritaOm(); window.scrollTo({top:0,behavior:"instant"}); }
@@ -131,6 +133,7 @@ function ritaHem(){
     <p class="small muted">Välj 1–4 hjältar i galleriet nedan. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
     <div class="row">
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragstavlan<span class="sub">Lansors förmedling</span></button>
+      <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
       <button class="btn ghost" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
     </div>
     <p class="small muted">Packning: ${st.packning.length?esc(sammanfatta(st.packning)):"tom"}</p>
@@ -153,6 +156,7 @@ function ritaHem(){
     if(a==="visa") visaHjalte(id);
     if(a==="tavla"){ jensLedig = null; ga("tavla"); }
     if(a==="basar") ga("basar");
+    if(a==="platser") ga("platser");
     if(a==="fortsatt") ga("run");
     if(a==="ge-upp") geUpp();
   };
@@ -324,30 +328,104 @@ function startaUppdrag(qid, medJens){
   const q = JSON.parse(JSON.stringify(V.UPPDRAG.find(u=>u.id===qid)));
   const party = st.sallskap.filter(id=>!ar(id)); if(!party.length) return;
   const resMoten = medJens ? [R.valj(V.MOTEN.filter(m=>m.jens))] : R.blanda(V.MOTEN.filter(m=>m.resa)).slice(0,2);
-  const rumMoten = R.blanda(V.MOTEN.filter(m=>m.rum));
   const steg = resMoten.map(m=>({typ:"resa",mote:m.id,jens:!!medJens}));
   if(medJens){ st.kassa -= JENS_PRIS; jensLedig = null; }
-  const typer = R.blanda(["strid","strid","falla","hinder","skatt","mote","strid","vila","hinder","skatt"]).slice(0,q.rum-1);
-  if(!typer.includes("strid")) typer[0]="strid";
-  typer.forEach((t,i)=>{
-    const rum = {typ:"rum",rumtyp:t,text:R.valj(V.RUMTEXT[q.miljo]),fro:Math.floor(Math.random()*1e9)};
-    if(t==="strid") rum.fiender = slumpaFiender(q.miljo, party.length, false);
-    if(t==="falla") rum.falla = R.valj(V.FALLOR[q.miljo]);
-    if(t==="hinder"){ const l=V.HINDER.filter(x=>x.miljo.includes(q.miljo)); rum.hinder = R.valj(l.length?l:V.HINDER); }
-    if(t==="mote") rum.mote = (rumMoten.shift()||V.MOTEN.find(m=>m.rum)).id;
-    steg.push(rum);
-  });
-  steg.push({typ:"rum",rumtyp:"boss",text:"",fro:Math.floor(Math.random()*1e9),fiender:[q.boss, ...slumpaFiender(q.miljo, antalHantlangare(party.length), true)]});
-  const h = {};
-  party.forEach(id=>{ const b=bygg(id); h[id]={kp:R.maxKP(b),vp:R.maxVP(b),doende:false,ok:0,miss:0,stabil:false,dod:false,
-    saker:b.saker.filter(s=>R.SAKER[s]),markerade:[],anvanda:[]}; hs(id).aventyr=(hs(id).aventyr||0)+1; });
-  st.run = {q, party, steg, i:0, h, guld:0, logg:[], utfall:null, start:datum()};
+  steg.push(...byggRum(q.miljo, q.rum, party.length, q.boss, 0));
+  st.run = {q, party, steg, i:0, h:nyaHjaltar(party), guld:0, logg:[], utfall:null, start:datum()};
   st.tavla = st.tavla.filter(x=>x!==qid);
   storOrn(1/6);
   logga(`Sällskapet antar uppdraget ”${q.titel}” av ${q.givare}.`,"info");
   if(medJens){ logga(`🐴 Bakhuvudet Jens tar ${JENS_PRIS} guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.`,"info"); kronika(`${party.map(i=>HJ[i].namn).join(", ")} åkte med Bakhuvudet Jens mot ${q.plats} för ${JENS_PRIS} guld.`); }
   spara(); ga("run");
 }
+// Bygger ett antal rum som slutar med en boss. extra = fler fiender (används när man utforskar djupare).
+function byggRum(miljo, antalRum, antal, boss, extra){
+  const rumMoten = R.blanda(V.MOTEN.filter(m=>m.rum)), ut = [];
+  const typer = R.blanda(["strid","strid","falla","hinder","skatt","mote","strid","vila","hinder","skatt"]).slice(0,antalRum-1);
+  if(!typer.includes("strid")) typer[0]="strid";
+  typer.forEach(t=>{
+    const rum = {typ:"rum",rumtyp:t,text:R.valj(V.RUMTEXT[miljo]),fro:Math.floor(Math.random()*1e9)};
+    if(t==="strid") rum.fiender = slumpaFiender(miljo, antal + extra, false);
+    if(t==="falla") rum.falla = R.valj(V.FALLOR[miljo]);
+    if(t==="hinder"){ const l=V.HINDER.filter(x=>x.miljo.includes(miljo)); rum.hinder = R.valj(l.length?l:V.HINDER); }
+    if(t==="mote") rum.mote = (rumMoten.shift()||V.MOTEN.find(m=>m.rum)).id;
+    ut.push(rum);
+  });
+  ut.push({typ:"rum",rumtyp:"boss",text:"",fro:Math.floor(Math.random()*1e9),fiender:[boss, ...slumpaFiender(miljo, Math.min(3, antalHantlangare(antal) + extra), true)]});
+  return ut;
+}
+function nyaHjaltar(party){
+  const h = {};
+  party.forEach(id=>{ const b=bygg(id); h[id]={kp:R.maxKP(b),vp:R.maxVP(b),doende:false,ok:0,miss:0,stabil:false,dod:false,
+    saker:b.saker.filter(s=>R.SAKER[s]),markerade:[],anvanda:[]}; hs(id).aventyr=(hs(id).aventyr||0)+1; });
+  return h;
+}
+
+// ================= UTFORSKA EN PLATS (som "Short adventure" i Nat20) =================
+// Ingen uppdragsgivare och ingen berättelse: välj en plats och se hur djupt ni kommer.
+// Varje kapitel = 4 rum + en boss. Efter varje boss väljer man att gå djupare eller gå hem med bytet.
+const KAPITEL_RUM = 5;
+const extraFiender = kap => Math.floor((kap-1)/2);          // en fiende till vartannat kapitel
+const kpFaktor = kap => 1 + 0.15*(kap-1);                    // fienderna blir 15 % tåligare per kapitel
+const kapitelBonus = kap => 20*kap*(kap+1)/2;                // bonus när man går hem: 20, 60, 120, 200 … guld
+function ritaPlatser(){
+  const party = st.sallskap.filter(id=>!ar(id));
+  app.innerHTML = `<section class="card"><h2>Utforska en plats</h2><p class="muted">Ingen uppdragsgivare och ingen berättelse – välj en plats och se hur djupt ni kommer. Varje kapitel är ${KAPITEL_RUM-1} rum och en boss. Efter bossen väljer ni att gå djupare eller gå hem med bytet. Faller hela sällskapet förlorar ni allt ni hittat.</p></section>
+    <div class="platsgrid">${V.PLATSER.map(p=>{ const rek=st.rekord[p.id]; return `<button class="platskort" data-plats="${p.id}" ${party.length?"":"disabled"}>
+      <canvas class="px" data-scen="${p.miljo}"></canvas>
+      <span class="pk"><b>${esc(p.namn)}</b><span class="small muted">${esc(p.land)} · ${esc(V.MILJO[p.miljo].namn)}</span>
+      <span class="small">${esc(p.text)}</span>
+      ${rek?`<span class="tag gold">Rekord: kapitel ${rek.kapitel}, rum ${rek.djup}</span>`:`<span class="tag">Inte utforskad än</span>`}</span></button>`}).join("")}</div>
+    ${party.length?"":`<p class="small muted">Välj ett sällskap i galleriet först.</p>`}
+    <button class="btn ghost" data-a="hem">Tillbaka till värdshuset</button>`;
+  app.querySelectorAll("canvas[data-scen]").forEach((c,i)=>G.ritaScen(c, c.dataset.scen, [], 31+i*7));
+  app.onclick = e => {
+    const b = e.target.closest("button"); if(!b || b.disabled) return;
+    if(b.dataset.a==="hem") return ga("hem");
+    if(b.dataset.plats) startaUtforskning(b.dataset.plats);
+  };
+}
+function startaUtforskning(pid){
+  const p = V.PLATSER.find(x=>x.id===pid), party = st.sallskap.filter(id=>!ar(id)); if(!p || !party.length) return;
+  const q = {id:"utforska-"+p.id, titel:p.namn, plats:p.namn, land:p.land, miljo:p.miljo, boss:R.valj(p.bossar), beloning:0, givare:"", svar:"", foremal:null, rum:KAPITEL_RUM, plats_id:p.id};
+  st.run = {q, party, steg:byggRum(p.miljo, KAPITEL_RUM, party.length, q.boss, 0), i:0, h:nyaHjaltar(party), guld:0, logg:[], utfall:null, start:datum(),
+    utforska:true, kapitel:1, djup:0, paus:false};
+  storOrn(1/6);
+  logga(`Sällskapet ger sig in i ${p.namn}. Kapitel 1.`,"info");
+  spara(); ga("run");
+}
+function kapitelKlart(){
+  const r = st.run; r.paus = true; r.djup++;
+  logga(`★ Kapitel ${r.kapitel} klart! Sällskapet har tagit sig igenom ${r.djup} rum i ${r.q.plats}.`,"d");
+  uppdateraRekord();
+  r.party.forEach(id=>{ const x=rh(id); if(!x.dod){ x.kp=Math.max(x.kp,1); } });
+  spara(); ritaRun();
+}
+function uppdateraRekord(){
+  const r = st.run; if(!r || !r.utforska) return;
+  const pid = r.q.plats_id, gammal = st.rekord[pid];
+  const nytt = {kapitel:r.kapitel, djup:r.djup, datum:datum().slice(0,10)};
+  if(!gammal || r.djup > gammal.djup){ st.rekord[pid] = nytt; r.nyttRekord = true; }
+}
+function nyttKapitel(){
+  const r = st.run; r.paus = false; r.kapitel++;
+  const p = V.PLATSER.find(x=>x.id===r.q.plats_id);
+  r.q.boss = R.valj(p.bossar);
+  r.steg.push(...byggRum(r.q.miljo, KAPITEL_RUM, r.party.length, r.q.boss, extraFiender(r.kapitel)));
+  r.i++; r.kapStart = r.i;
+  logga(`Sällskapet går djupare in i ${r.q.plats}. Kapitel ${r.kapitel}.`,"info");
+  storOrn(1/6); spara(); ritaRun(); window.scrollTo({top:0,behavior:"smooth"});
+}
+function kapitelHtml(){
+  const r = st.run, nasta = r.kapitel+1;
+  return `<h2>Kapitel ${r.kapitel} klart!</h2>
+    <p class="berattelse">Bossen är besegrad. Ni har tagit er igenom <b>${r.djup} rum</b> i ${esc(r.q.plats)} och hittat <b>${r.guld} guld</b> hittills.</p>
+    ${r.nyttRekord?`<p><span class="tag gold">Nytt rekord för ${esc(r.q.plats)}!</span></p>`:""}
+    <p class="small muted">Kapitel ${nasta}: fienderna är ${Math.round((kpFaktor(nasta)-1)*100)} % tåligare${extraFiender(nasta)?` och fler (+${extraFiender(nasta)})`:""}. Faller hela sällskapet förlorar ni allt byte.</p>
+    <div class="val"><button class="btn red" data-a="djupare">Gå djupare<span class="sub">Kapitel ${nasta}</span></button>
+    <button class="btn" data-a="hemmed">Gå hem med bytet<span class="sub">${r.guld} guld i byte + ${kapitelBonus(r.kapitel)} guld i kapitelbonus</span></button></div>`;
+}
+
 // Svårighetsgraden avgör hur många fiender som dyker upp och hur tåliga de är.
 const SVAR = {latt:{namn:"Lätt",kp:.75},normal:{namn:"Normal",kp:.9},podden:{namn:"Som i podden (dödligt)",kp:1}};
 const svar = () => SVAR[st.svarighet] ? st.svarighet : "normal";
@@ -414,6 +492,16 @@ function ritaRun(){
   const r = st.run, steg = r.steg[r.i];
   if(r.utfall) return ritaSlut();
   if(strid) return ritaStrid();
+  if(r.utforska && r.paus){
+    app.innerHTML = `<div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.plats)} · kapitel ${r.kapitel}</span></div>
+      ${partyHtml()}<section class="card quest">${kapitelHtml()}</section>${loggHtml()}`;
+    G.ritaScen($("#scen"), r.q.miljo, [], 77+r.kapitel, "skatt", scenHjaltar());
+    fyllPortratt(app); scrollaLogg();
+    app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b) return;
+      if(b.dataset.a==="djupare") return nyttKapitel();
+      if(b.dataset.a==="hemmed") return avslutaRun(true, "Sällskapet gick hem med bytet."); };
+    return;
+  }
   const miljo = r.q.miljo;
   let titel = "", innehall = "";
   if(steg.typ==="resa"){
@@ -421,11 +509,11 @@ function ritaRun(){
     titel = steg.jens ? `På Bakhuvudet Jens kärra mot ${r.q.plats}` : `På väg mot ${r.q.plats}`;
     innehall = moteHtml(m, steg);
   } else if(steg.rumtyp==="boss"){
-    titel = `${r.q.plats} – slutstriden`;
+    titel = r.utforska ? `Kapitel ${r.kapitel} · bossen` : `${r.q.plats} – slutstriden`;
     innehall = steg.klar ? klarHtml(steg) : `<p class="berattelse">Ni har nått målet. Här finns ${esc(V.FIENDER[steg.fiender[0]].namn.toLowerCase())}${steg.fiender.length>1?" – och den är inte ensam":""}. Det är nu det gäller.</p>
       <div class="val"><button class="btn red" data-a="strid">Till strid!</button></div>`;
   } else {
-    titel = `Rum ${r.i - antalResa() + 1} av ${r.steg.length - antalResa()}`;
+    titel = r.utforska ? `Kapitel ${r.kapitel} · rum ${r.djup+1}` : `Rum ${r.i - antalResa() + 1} av ${r.steg.length - antalResa()}`;
     innehall = rumHtml(steg);
   }
   const fiendeVisning = steg.fiender && !steg.klar ? steg.fiender.map(fid=>({...V.FIENDER[fid],fid,kp:1})) : [];
@@ -443,7 +531,7 @@ function ritaRun(){
 const antalResa = () => st.run.steg.filter(s=>s.typ==="resa").length;
 const resMiljo = (m,i) => i===0 ? (m==="oken"?"oken":"skog") : (m==="grotta"||m==="kloak"?"berg":m);
 function progHtml(){
-  const r=st.run; return r.steg.map((s,i)=>`<i class="${i<r.i||(i===r.i&&s.klar)?"klar":i===r.i?"nu":""} ${s.rumtyp==="boss"?"boss":""}" title="${s.typ==="resa"?"Resa":s.rumtyp}"></i>`).join("") + `<span class="small muted" style="margin-left:6px">Hittat: ${r.guld} guld</span>`;
+  const r=st.run, fran=r.utforska?(r.kapStart||0):0; return r.steg.map((s,i)=>i<fran?"":`<i class="${i<r.i||(i===r.i&&s.klar)?"klar":i===r.i?"nu":""} ${s.rumtyp==="boss"?"boss":""}" title="${s.typ==="resa"?"Resa":s.rumtyp}"></i>`).join("") + `<span class="small muted" style="margin-left:6px">Hittat: ${r.guld} guld</span>`;
 }
 function partyHtml(aktivId){
   const r=st.run;
@@ -593,6 +681,7 @@ function storOrn(chans, iStrid){
 function nastaSteg(){
   const r=st.run; aktivtVal=null;
   if(r.i >= r.steg.length-1){ return avslutaRun(true); }
+  if(r.utforska) r.djup++;
   r.i++; storOrn(1/6); spara(); ritaRun(); window.scrollTo({top:0,behavior:"smooth"});
 }
 function geUpp(){
@@ -604,7 +693,7 @@ function geUpp(){
 function startaStrid(fiendeIds, opt){
   opt = opt||{};
   const r = st.run;
-  const fiender = fiendeIds.map((fid,i)=>{ const f=V.FIENDER[fid], kp=Math.max(1,Math.round(f.kp*SVAR[svar()].kp)); return {i, fid, namn:f.namn, sprite:f.sprite, kp, max:kp, rust:f.rust||0, typ:f.typ, anfall:f.anfall, skada:f.skada, attacker:f.attacker, boss:!!f.boss, folk:!!f.folk, stor:!!f.stor, liten:!!f.liten, besv:f.besv, stoppad:0, nackdel:false}; });
+  const fiender = fiendeIds.map((fid,i)=>{ const f=V.FIENDER[fid], kp=Math.max(1,Math.round(f.kp*SVAR[svar()].kp*(st.run&&st.run.utforska?kpFaktor(st.run.kapitel):1))); return {i, fid, namn:f.namn, sprite:f.sprite, kp, max:kp, rust:f.rust||0, typ:f.typ, anfall:f.anfall, skada:f.skada, attacker:f.attacker, boss:!!f.boss, folk:!!f.folk, stor:!!f.stor, liten:!!f.liten, besv:f.besv, stoppad:0, nackdel:false}; });
   // Numrera likadana fiender
   const c={}; fiender.forEach(f=>{c[f.namn]=(c[f.namn]||0)+1}); const n={}; fiender.forEach(f=>{ if(c[f.namn]>1){ n[f.namn]=(n[f.namn]||0)+1; f.namn+=" "+n[f.namn]; } });
   r.party.forEach(id=>{ const x=rh(id); Object.assign(x,{tempRust:0,vapenbonus:null,gift:x.gift||false,maktig:false,raseri:false,undvikAllt:false,stoppad:0}); });
@@ -912,6 +1001,7 @@ function avslutaStrid(slut){
       dodsslagDirekt(id);
     });
     r.party.forEach(id=>{ const x=rh(id); if(x.stabil){ x.stabil=false; x.kp=1; logga(`${HJ[id].namn} vaknar upp med 1 KP.`,"info"); } });
+    if(steg.rumtyp==="boss" && r.utforska){ steg.klar=true; spara(); return kapitelKlart(); }
     if(steg.rumtyp==="boss"){ steg.klar=true; steg.utfallText=`${r.q.foremal ? "Ni har fått tag på: "+r.q.foremal+". " : ""}${V.FIENDER[r.q.boss].namn} är besegrad!`; spara(); return avslutaRun(true); }
     steg.klar = true; steg.utfallText = `Segern är er!${g?` Ni plundrar fienderna på ${g} guld.`:""}${steg.efterStrid?" ":""}`;
     spara(); return ritaRun();
@@ -935,7 +1025,12 @@ function avslutaRun(lyckat, orsak, gavUpp){
   r.party.forEach(id=>{ const x=rh(id); if(x.doende) dodsslagDirekt(id); if(x.stabil){ x.stabil=false; x.kp=Math.max(1,x.kp); } });
   const doda = r.party.filter(id=>rh(id).dod), levande = r.party.filter(id=>!rh(id).dod);
   let beloning = 0, avgift = 0;
-  if(lyckat){
+  if(r.utforska){ if(!lyckat) uppdateraRekord(); rad.push(`Ni tog er igenom ${r.djup} rum och nådde kapitel ${r.kapitel} i ${r.q.plats}.`); if(r.nyttRekord) rad.push(`🏆 Nytt rekord för ${r.q.plats}!`); }
+  if(lyckat && r.utforska){
+    beloning = kapitelBonus(r.kapitel);
+    st.kassa += r.guld + beloning;
+    levande.forEach(id=>{ hs(id).segrar=(hs(id).segrar||0)+1; const x=rh(id); const kand = x.anvanda.filter(f=>!x.markerade.includes(f)); if(kand.length) x.markerade.push(R.valj(kand)); });
+  } else if(lyckat){
     beloning = r.q.beloning; if(r.q.givare==="Lansor"){ avgift = Math.round(beloning*0.1); }
     st.kassa += beloning - avgift + r.guld;
     st.avklarade[r.q.id] = (st.avklarade[r.q.id]||0)+1;
@@ -950,7 +1045,8 @@ function avslutaRun(lyckat, orsak, gavUpp){
   doda.forEach(id=>{ hs(id).dod=true; });
   st.sallskap = st.sallskap.filter(id=>!hs(id).dod);
   const namn = r.party.map(id=>HJ[id].namn).join(", ");
-  kronika(lyckat ? `${namn} klarade ”${r.q.titel}” och fick ${beloning-avgift} guld${r.guld?` + ${r.guld} i byte`:""}.${doda.length?` ${doda.map(i=>HJ[i].namn).join(" och ")} dog på vägen.`:""}`
+  if(r.utforska) kronika(`${namn} utforskade ${r.q.plats} och nådde kapitel ${r.kapitel} (${r.djup} rum). ${lyckat?`De gick hem med ${r.guld+beloning} guld.`:(orsak||"")}${doda.length?` ${doda.map(i=>HJ[i].namn).join(" och ")} dog.`:""}`);
+  else kronika(lyckat ? `${namn} klarade ”${r.q.titel}” och fick ${beloning-avgift} guld${r.guld?` + ${r.guld} i byte`:""}.${doda.length?` ${doda.map(i=>HJ[i].namn).join(" och ")} dog på vägen.`:""}`
     : `${namn} misslyckades med ”${r.q.titel}”. ${orsak||""}${doda.length?` ${doda.map(i=>HJ[i].namn).join(" och ")} dog.`:""}`);
   if(r.ornar){ kronika(`Stör-örnen anföll Potus Rövhatt ${r.ornar} ${r.ornar===1?"gång":"gånger"} under ”${r.q.titel}”.`); rad.push(`🦅 Stör-örnen anföll Potus ${r.ornar} ${r.ornar===1?"gång":"gånger"}.`); }
   r.utfall = {lyckat, orsak, beloning, avgift, byte:r.guld, doda, forb, rad};
@@ -959,9 +1055,9 @@ function avslutaRun(lyckat, orsak, gavUpp){
 function ritaSlut(){
   const r = st.run, u = r.utfall;
   app.innerHTML = `
-    <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${u.lyckat?"Uppdraget klart!":"Misslyckat"}</span></div>
-    <section class="card quest"><h2>${u.lyckat?"Seger!":"Det gick inte som planerat"}</h2>
-      ${u.lyckat?`<p class="berattelse">${esc(r.q.svar)}</p>
+    <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${r.utforska?esc(r.q.plats):u.lyckat?"Uppdraget klart!":"Misslyckat"}</span></div>
+    <section class="card quest"><h2>${r.utforska?(u.lyckat?"Hemma med bytet!":"Det gick inte som planerat"):u.lyckat?"Seger!":"Det gick inte som planerat"}</h2>
+      ${r.utforska?(u.lyckat?`<p>Byte: <b>${u.byte} guld</b>. Kapitelbonus för ${r.kapitel} ${r.kapitel===1?"kapitel":"kapitel"}: <b>${u.beloning} guld</b>. Totalt <b>${u.byte+u.beloning} guld</b> till kassan.</p>`:`<p class="berattelse">${esc(u.orsak||"")}</p>`):u.lyckat?`<p class="berattelse">${esc(r.q.svar)}</p>
         <p>Belöning: <b>${u.beloning} guld</b>${u.avgift?` (Lansor tar ${u.avgift} guld i avgift)`:""}. Byte under resan: <b>${u.byte} guld</b>.</p>`
       :`<p class="berattelse">${esc(u.orsak||"")}</p>`}
       ${u.rad.map(x=>`<p>${esc(x)}</p>`).join("")}

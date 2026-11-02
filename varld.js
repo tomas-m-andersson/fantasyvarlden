@@ -135,6 +135,20 @@ V.UPPDRAG = [
   foremal:"Tre flaskor giftigt sjövatten",svar:"Professorn tittar på er genom tre par glasögon samtidigt."}
 ];
 
+// ---------- Platser att utforska (läget "Utforska en plats", utan berättelse) ----------
+// Varje kapitel är några rum och slutar med en av platsens bossar. Ju djupare, desto svårare.
+V.PLATSER = [
+ {id:"gollenskogen",namn:"Gollenskogen",land:"Mårdgård",miljo:"skog",bossar:["dendroidmoder","harpydrottning"],text:"Mörk och läskig skog nära Malbec. Sedan Raven dog har harpyor flyttat in."},
+ {id:"krusbarsberget",namn:"Krusbärsberget",land:"Bedinin",miljo:"grotta",bossar:["orchhovding"],text:"Berget vid Draksjön, där grottorna kryllar av orcher."},
+ {id:"harpybergen",namn:"Harpybergen",land:"Grador",miljo:"berg",bossar:["harpydrottning","grip"],text:"En läskig och obehaglig bergskedja full av harpyor."},
+ {id:"ostra-oknen",namn:"Östra öknen",land:"Bedinin",miljo:"oken",bossar:["rovarhovding","drake"],text:"Fruktansvärd hetta. Längst österut bor en talande drake."},
+ {id:"malbecs-gruvor",namn:"Malbecs gruvor",land:"Mårdgård",miljo:"grotta",bossar:["hogprast","svartalfkung"],text:"Gruvgångarna under arbetarstaden Malbec. Det viskas om Tarragons Hand."},
+ {id:"kras-kras",namn:"Kras-Kras kloaker",land:"Dargobar",miljo:"kloak",bossar:["rattkung"],text:"Ett fint avloppssystem som ingen använder. Råttorna har vuxit sig enorma."},
+ {id:"gravskogen",namn:"Gravskogen",land:"Gallvenien",miljo:"gravfalt",bossar:["general","gravvaktare"],text:"Gravarna från Det röda slaget står så tätt att de bildat en skog."},
+ {id:"vesselberget",namn:"Vesselberget",land:"Grador",miljo:"ruin",bossar:["rovarhovding","gravvaktare"],text:"Ett förfallet utkikstorn och fästning. Gasten Mandor Marvolt spökar här."},
+ {id:"doda-sjon",namn:"Döda sjön",land:"Grador",miljo:"trask",bossar:["dendroidmoder","gast"],text:"Sjön nära Cranford, förgiftad sedan kriget. Allt som rinner ut i den är också förgiftat."}
+];
+
 // ---------- Rum ----------
 V.RUMTEXT = {
   grotta:["En fuktig grotta där vatten droppar från taket.","En smal gång som slingrar sig nedåt i mörkret.","En stor sal med stalaktiter som hänger som tänder.","Ett kyligt rum som luktar orch och gammal ost.","En grotta full av ben. Mest djurben. Mest."],
