@@ -86,8 +86,12 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     const g=ctx.createRadialGradient(11,42,1,11,42,40); g.addColorStop(0,"#ffb02e33"); g.addColorStop(1,"#0000"); ctx.fillStyle=g; ctx.fillRect(0,0,60,90);
   }
   // rummets föremål (skatt, fälla, vila…)
-  if(extra==="skatt"){ ctx.fillStyle="#5a3a1a"; ctx.fillRect(74,58,14,8); ctx.fillStyle="#e0b450"; ctx.fillRect(74,56,14,3); ctx.fillRect(80,60,2,2); }
-  if(extra==="vila"){ ctx.fillStyle="#5a3a1a"; ctx.fillRect(74,66,12,2); ctx.fillStyle="#ff8a2e"; ctx.fillRect(77,60,6,6); ctx.fillStyle="#ffe08a"; ctx.fillRect(79,62,2,3); }
+  // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
+  if(extra==="skatt" || extra==="vila"){
+    const mob = G.npcBild("mobler");
+    if(mob.complete && mob.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(90, 76, 20, 3); G.ritaRuta(ctx, mob, extra==="skatt"?52:36, 84, 47, 32); }
+    else omRitaVid(mob);
+  }
   if(extra==="falla"){ ctx.fillStyle="#9aa0a8"; for(let x=62;x<98;x+=4){ ctx.fillRect(x,64,1,-0); ctx.fillRect(x,60,1,4); } }
   if(extra==="hinder"){ ctx.fillStyle="#000a"; ctx.fillRect(68,64,26,26); }
   // Bakhuvudet Jens vagn (npc/jens_vagn.png, sex varianter). Hjältarna ritas först och vagnen ovanpå,
@@ -230,6 +234,14 @@ const VAGNAR = [
   {x:10,y:134,b:113,h:51,rel:25},{x:133,y:134,b:118,h:51,rel:25}
 ];
 G.antalVagnar = VAGNAR.length;
+// Ritar en ruta (0–63) ur ett 8×8-ark med 32×32-rutor
+G.ritaRuta = (ctx, img, ruta, x, y, storlek, spegel) => {
+  const z = storlek || 32;
+  ctx.save();
+  if(spegel){ ctx.translate(x+z, y); ctx.scale(-1,1); ctx.drawImage(img, (ruta%8)*32, Math.floor(ruta/8)*32, 32, 32, 0, 0, z, z); }
+  else ctx.drawImage(img, (ruta%8)*32, Math.floor(ruta/8)*32, 32, 32, x, y, z, z);
+  ctx.restore();
+};
 // NPC-ark (bilder i npc/): "stad" = stadsbor, "by" = bybor, "djur" = husdjur. Alla rutor 0–63 har en figur.
 const NBILDER = {};
 G.npcBild = ark => { if(!NBILDER[ark]){ const img=new Image(); img.src="npc/"+ark+".png"; NBILDER[ark]=img; } return NBILDER[ark]; };
@@ -361,6 +373,42 @@ G.ritaPool = (canvas, doda) => {
       R(x+4,y+18,24,2,"#2bb5d8"); R(x+8,y+18,6,1,"#7fe3f5"); };
     if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
   });
+};
+
+// ---------- Värdshuset på startsidan: möbler ur npc/mobler.png, värden ur npc/kopman.png ----------
+G.ritaVardshus = (canvas, hjaltar) => {
+  const ctx = canvas.getContext("2d"); const W=160, H=90; canvas.width=W; canvas.height=H; ctx.imageSmoothingEnabled=false;
+  const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+  // vägg av timmer och golv av plankor
+  for(let y=0;y<58;y+=6){ R(0,y,W,6,y%12?"#3a2616":"#33210f"); R(0,y+5,W,1,"#241509"); }
+  for(let x=7;x<W;x+=29) R(x,0,3,58,"#2a1a0c");
+  R(0,58,W,32,"#5a3a1e"); for(let y=62;y<H;y+=5) R(0,y,W,1,"#4a2e16"); for(let x=0;x<W;x+=23) R(x+((x/23)%2?11:0),58,1,32,"#4a2e16");
+  R(0,57,W,2,"#241509");
+  const mob = G.npcBild("mobler"), kop = G.npcBild("kopman"), vantar=[];
+  const klar = img => img.complete && img.naturalWidth;
+  [mob,kop].forEach(i=>{ if(!klar(i)) vantar.push(i); });
+  if(!vantar.length){
+    const M=(r,x,y,z,sp)=>G.ritaRuta(ctx,mob,r,x,y,z,sp);
+    M(44, 44, 2, 24);            // älghuvud
+    M(47, 70, 6, 18);            // sköld
+    M(43, 4, 10, 22);            // anslagstavla (uppdragen)
+    M(46, 30, 12, 16);           // kandelaber
+    M(33, 4, 30, 30);            // öppen spis
+    M(20, 112, 8, 30);           // hylla med flaskor
+    M(23, 132, 12, 26);          // hylla med glas
+    G.ritaRuta(ctx, kop, 2, 115, 24, 30);   // värdshusvärden bakom disken
+    M(21, 100, 38, 30); M(22, 128, 38, 30); // bardisk
+    M(25, 136, 62, 24);          // tunna
+  }
+  // sällskapet står framför bordet
+  (hjaltar||[]).slice(0,4).forEach((h,i)=>{
+    const img = G.figurBild(h.id); if(!img) return;
+    if(!klar(img)){ vantar.push(img); return; }
+    const r = h.ruta ?? (G.figurRutor(h.id)[0]||0), x = 26 + i*17, y = 52 + (i%2?3:0);
+    R(x+9, y+30, 14, 2, "#0005");
+    ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, 32, 32);
+  });
+  if(vantar.length) [...new Set(vantar)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar),{once:true}));
 };
 
 window.GRAFIK = G;

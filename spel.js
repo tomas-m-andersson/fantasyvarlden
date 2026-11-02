@@ -123,7 +123,7 @@ document.addEventListener("keydown",e=>{ if(e.key==="Escape" && !$("#modal").hid
 function ritaHem(){
   const levande = window.HJALTAR.filter(h=>!ar(h.id)), doda = window.HJALTAR.filter(h=>ar(h.id));
   const party = st.sallskap.filter(id=>!ar(id));
-  let html = "";
+  let html = `<div class="tv"><canvas id="vardshus" class="px"></canvas><span class="badge">Värdshuset</span></div>`;
   if(st.run){
     html += `<section class="card quest"><h2>Pågående äventyr</h2><p><b>${esc(st.run.q.titel)}</b> – ${esc(st.run.q.plats)}</p>
       <div class="row"><button class="btn" data-a="fortsatt">Fortsätt äventyret</button><button class="btn ghost small" data-a="ge-upp">Ge upp</button></div></section>`;
@@ -149,6 +149,7 @@ function ritaHem(){
     html += `<section class="card"><h2>Krönikan</h2><div class="col small">${st.kronika.slice(0,12).map(k=>`<div><span class="muted">${esc(k.tid)}</span> – ${esc(k.text)}</div>`).join("")}</div></section>`;
   }
   app.innerHTML = html; fyllPortratt(app);
+  G.ritaVardshus($("#vardshus"), party.map(id=>({id, ruta:figur(id)})));
   if(doda.length) G.ritaPool($("#pool"), doda.map(h=>({id:h.id, ruta:figur(h.id)})));
   app.onclick = e => {
     const b = e.target.closest("[data-a]"); if(!b) return;
@@ -245,7 +246,7 @@ const BASAR_UTR = [["Läderrustning",40,"rustning"],["Ringbrynja",150,"rustning"
 let basarMeddelande = "";
 function ritaBasar(){
   const party = st.sallskap.filter(id=>!ar(id));
-  app.innerHTML = `<section class="card"><div class="row" style="justify-content:space-between"><span class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="stad:6"></canvas><h2>Basaren</h2></span><span class="kassa">💰 ${st.kassa} guld</span></div>
+  app.innerHTML = `<section class="card"><div class="row" style="justify-content:space-between"><span class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="kopman:22"></canvas><h2>Basaren</h2></span><span class="kassa">💰 ${st.kassa} guld</span></div>
     <p class="muted small">Förbrukningssaker hamnar i sällskapets gemensamma packning och kan användas av vem som helst i strid.</p>
     <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="vara"><span><b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="stad:36"></canvas><h2>Tehandeln</h2></div><p class="muted small">Rött té, 2 guld koppen. Det gör inte mycket (1 KP), men det är gott. Teet hamnar i packningen.</p>
