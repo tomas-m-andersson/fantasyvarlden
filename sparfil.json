@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:09:17.454Z",
+  "uppdaterad": "2026-11-02T21:09:26.189Z",
   "spel": {
     "version": 1,
-    "tid": 1793653754444,
+    "tid": 1793653763114,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -202,7 +202,9 @@
           "rutor": [
             58,
             11
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 4 guld."
         },
         {
           "typ": "rum",
@@ -239,7 +241,7 @@
       "i": 0,
       "h": {
         "ff": {
-          "kp": 6,
+          "kp": 1,
           "vp": 5,
           "doende": false,
           "ok": 0,
@@ -252,7 +254,8 @@
           "markerade": [],
           "anvanda": [
             "Spjut",
-            "Svärd"
+            "Svärd",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -288,7 +291,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
@@ -313,12 +316,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Trollstav",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
-      "guld": 0,
+      "guld": 4,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -523,6 +526,34 @@
         {
           "text": "Shinji Onishi (Kort svärd) slår Svärd: [18] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "FF försöker undvika: [7] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 5 skada (6 − 1 rustning) från Ramslag. KP 1/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "FF har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 7 —",
+          "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg (Trollstav) slår Stav med nackdel: [4 / 1 → 4] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 6 skada (8 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
