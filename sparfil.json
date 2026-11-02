@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:24:41.324Z",
+  "uppdaterad": "2026-11-02T20:24:57.074Z",
   "spel": {
     "version": 1,
-    "tid": 1793651078322,
+    "tid": 1793651094151,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -274,8 +274,8 @@
           "valtVapen": "Trästav"
         },
         "galfner": {
-          "kp": 5,
-          "vp": 1,
+          "kp": 1,
+          "vp": 0,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -296,7 +296,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -320,18 +320,18 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Träpinne",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "vad": {
           "kp": 0,
           "vp": 6,
-          "doende": true,
+          "doende": false,
           "ok": 1,
-          "miss": 2,
+          "miss": 3,
           "stabil": false,
-          "dod": false,
+          "dod": true,
           "saker": [],
           "markerade": [],
           "anvanda": [
@@ -710,6 +710,34 @@
         {
           "text": "— Runda 6 —",
           "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner parerar: [10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Våd Snolofsson slår dödsslag mot FYS: [16] mot 14 – misslyckat (1 lyckade, 3 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "☠ Våd Snolofsson är död och hamnar i poolen på skyskrapetaket i Miami.",
+          "cls": "dm"
+        },
+        {
+          "text": "Galfner Galfner tar 4 skada från Isande beröring. KP 1/12.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner förlorar 1 VP.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [19 / 11 → 19] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
