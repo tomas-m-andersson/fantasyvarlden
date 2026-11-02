@@ -137,6 +137,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   }
   // hjältarna (vänster sida, i två led så att fyra får plats)
   const harHjaltar = hjaltar && hjaltar.length;
+  let ornRita = null;
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
@@ -153,7 +154,21 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       ctx.restore();
       if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(sx+Math.round(S/2)-2, sy-3, 4, 3); }
       if(h.etikett && h.etikett.length) G.ritaEtiketter(ctx, h.etikett, sx+S/2, sy-1);
+      if(h.orn && h.orn.t != null) ornRita = {h, sx, sy, S};
     });
+      // Stör-örnen störtdyker in från höger, hackar Potus i huvudet och flyger iväg (ritas sist så att den syns överst)
+      if(ornRita){ const {h, sx, sy, S} = ornRita;
+        const ob = G.npcBild("storn");
+        if(ob.complete && ob.naturalWidth){
+          const t = h.orn.t, mx = sx + 6, my = sy - 16, ease = u => u*u*(3-2*u);
+          let ox, oy;
+          if(t < .5){ const u = ease(t/.5); ox = W + 10 + (mx - W - 10)*u; oy = -30 + (my + 30)*u; }
+          else if(t < .72){ ox = mx + ((Math.floor(t*60)%2) ? 1 : -1); oy = my + ((Math.floor(t*40)%2) ? 2 : 0); }
+          else { const u = ease((t-.72)/.28); ox = mx + (-70)*u; oy = my + (-60)*u; }
+          G.ritaRuta(ctx, ob, h.orn.ruta, Math.round(ox), Math.round(oy), 30);
+          if(t >= .5 && h.orn.d) ritaText(ctx, "-"+h.orn.d, sx+S/2, sy-2, "#ff5a4a");
+        }
+      }
     if(laddar.length) laddar.forEach(img=>img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true}));
   }
   // NPC:er (mötespersoner och husdjur) står till höger och vänder sig mot hjältarna

@@ -111,7 +111,15 @@ function portratt(id, cls="portr"){
 // Vilken av hjältens figurvarianter som används (sparas per hjälte).
 function figur(id){ const r=G.figurRutor(id), v=st.hj[id]&&st.hj[id].figur; return r.includes(v)?v:(r[0]??null); }
 // Hjältarna som de ska stå i TV:n
-function scenHjaltar(aktiv){ return st.run ? st.run.party.map(id=>{ const x=rh(id); return {id, ruta:figur(id), nere:x.dod||x.doende||x.stabil||x.kp<=0, aktiv:aktiv===id}; }).filter(h=>!rh(h.id).dod) : []; }
+function scenHjaltar(aktiv, orn){ return st.run ? st.run.party.map(id=>{ const x=rh(id); return {id, ruta:figur(id), nere:x.dod||x.doende||x.stabil||x.kp<=0, aktiv:aktiv===id, orn: id==="potus" ? orn : undefined}; }).filter(h=>!rh(h.id).dod) : []; }
+// Stör-örnen (npc/storn.png): rutor där örnen tittar åt vänster, så att den kan störtdyka in från höger mot Potus
+const ORN_RUTOR = [0,2,3,4,6,8,11,13,16,17,18,19,20,21,22,23,24,26,27,28,32,33,34,35,40,41,42,43,44,45,46,47,48,49,56,57,58,59,60,62,63];
+// Spelar örnens anfall i TV:n: rita(t) ritar om scenen med örnen på väg (t går från 0 till 1), rita(null) utan örn
+function spelaOrn(rita){
+  const start = performance.now(), langd = 1600;
+  const steg = nu => { const t = Math.min(1, (nu-start)/langd); try{ rita(t); }catch(e){} if(t<1) requestAnimationFrame(steg); else { try{ rita(null); }catch(e){} } };
+  requestAnimationFrame(steg);
+}
 function fyllPortratt(root){
   fyllIkoner(root);
   root.querySelectorAll("canvas[data-p]").forEach(c=>{ G.ritaPortratt(c, HJ[c.dataset.p], c.dataset.dod==="1", c.dataset.ruta!=null?Number(c.dataset.ruta):figur(c.dataset.p)); });
@@ -620,7 +628,9 @@ function ritaRun(){
     <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta"}[steg.hinder.namn]||""):steg.typ==="resa"?"resa":null, scenHjaltar(), scenNpcer(steg));
+  const ritaRum = orn => G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta"}[steg.hinder.namn]||""):steg.typ==="resa"?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
+  ritaRum();
+  if(r.ornVisa){ const v = r.ornVisa; r.ornVisa = null; spelaOrn(t => ritaRum(t==null ? undefined : {ruta:v.ruta, t, d:v.d})); }
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled||tarningLas) return; medTarningar(()=>runKlick(b)); };
 }
@@ -785,6 +795,8 @@ function storOrn(chans, iStrid){
   x.kp -= d;
   logga(`🦅 ${R.valj(ORN_TEXT)} Potus tar ${d} skada. KP ${x.kp}/${R.maxKP(bygg("potus"))}.`, "fel");
   r.ornar = (r.ornar||0) + 1;
+  const visa = {ruta: R.valj(ORN_RUTOR), d};
+  if(strid){ strid.ornVisa = visa; etikett("h:potus", "-"+d, "#ff5a4a"); } else r.ornVisa = visa;
 }
 function nastaSteg(){
   const r=st.run; aktivtVal=null;
@@ -1093,6 +1105,8 @@ function ritaStrid(){
   const fiendeVis = strid.fiender.filter(f=>!f.lamnat).map(f=>({...f, visa:true, etikett:et.filter(e=>e.mal==="f:"+f.i)}));
   const hjVis = scenHjaltar(akt).map(h=>({...h, etikett:et.filter(e=>e.mal==="h:"+h.id)}));
   G.ritaScen($("#scen"), r.q.miljo, fiendeVis, steg.fro||7, null, hjVis);
+  if(strid.ornVisa){ const v = strid.ornVisa; strid.ornVisa = null;
+    spelaOrn(t => { const c = $("#scen"); if(c && strid) G.ritaScen(c, r.q.miljo, fiendeVis, steg.fro||7, null, hjVis.map(h=>h.id==="potus"&&t!=null?{...h, orn:{ruta:v.ruta, t}}:h)); }); }
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b || b.disabled) return;
@@ -1286,5 +1300,6 @@ $("#btn-inst").onclick = () => modal(`<h2>Inställningar</h2>
 if(st.run && !st.run.utfall){ vy="hem"; }
 ritaOm();
 ghLadda(false);
+G.npcBild("storn"); // ladda örnen i förväg så att den syns direkt när den anfaller
 window.__fv = {get st(){return st}, get strid(){return strid}}; // för felsökning
 })();
