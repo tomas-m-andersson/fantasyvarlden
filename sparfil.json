@@ -1,16 +1,17 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:04:46.094Z",
+  "uppdaterad": "2026-11-02T21:04:52.365Z",
   "spel": {
     "version": 1,
-    "tid": 1793653482893,
+    "tid": 1793653489288,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
     ],
     "sallskap": [
-      "ff"
+      "ff",
+      "shinji"
     ],
     "hj": {
       "gaston": {
@@ -117,6 +118,14 @@
         "dod": true,
         "bonus": {},
         "aventyr": 2,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "shinji": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
         "segrar": 0,
         "vapen": [],
         "rustning": null
