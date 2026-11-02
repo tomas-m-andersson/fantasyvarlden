@@ -1,19 +1,17 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:17:28.259Z",
+  "uppdaterad": "2026-11-02T20:17:31.878Z",
   "spel": {
     "version": 1,
-    "tid": 1793650645237,
+    "tid": 1793650648886,
     "kassa": 345,
     "packning": [
       "Läkedryck",
       "Läkande ört",
       "Läkedryck"
     ],
-    "sallskap": [
-      "ff"
-    ],
+    "sallskap": [],
     "hj": {
       "gaston": {
         "dod": false,
