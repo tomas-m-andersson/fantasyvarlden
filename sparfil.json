@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:26:03.247Z",
+  "uppdaterad": "2026-11-02T20:26:10.003Z",
   "spel": {
     "version": 1,
-    "tid": 1793651162897,
+    "tid": 1793651166829,
     "kassa": 335,
     "packning": [
       "Läkande ört"
@@ -205,7 +205,9 @@
             39,
             51,
             17
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 5 guld."
         },
         {
           "typ": "rum",
@@ -243,7 +245,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "trolleriolas": {
           "kp": 6,
@@ -271,7 +273,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "nackdelNasta": true,
+          "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
         "galfner": {
@@ -297,7 +299,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -321,7 +323,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": false
         },
@@ -350,7 +352,7 @@
           "valtVapen": "Handyxa"
         }
       },
-      "guld": 0,
+      "guld": 5,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Vattenprover från Döda sjön” av Professor Proppeteus.",
@@ -847,6 +849,18 @@
         {
           "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [10 / 18 → 18] mot 8 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas (Trästav) slår Stav med nackdel: [10 / 7 → 10] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Gast tar 1 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Gast faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
