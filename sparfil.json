@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:48:31.458Z",
+  "uppdaterad": "2026-11-02T13:48:36.837Z",
   "spel": {
     "version": 1,
-    "tid": 1793627308526,
+    "tid": 1793627313810,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -251,7 +251,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "gaston": {
@@ -277,7 +277,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -500,6 +500,14 @@
         {
           "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Rövare 2. KP 15/17.",
           "cls": "fel"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [19] mot 15 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
