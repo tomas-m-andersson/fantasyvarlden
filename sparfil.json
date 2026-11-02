@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:20:53.181Z",
+  "uppdaterad": "2026-11-02T20:21:17.650Z",
   "spel": {
     "version": 1,
-    "tid": 1793650850206,
+    "tid": 1793650874671,
     "kassa": 335,
     "packning": [
       "Läkedryck",
@@ -259,7 +259,9 @@
             "En limpa bröd"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -267,8 +269,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "nackdelNasta": true
+          "agerat": true,
+          "nackdelNasta": false,
+          "valtVapen": "Trästav"
         },
         "galfner": {
           "kp": 11,
@@ -403,6 +406,10 @@
         {
           "text": "Gast tar 7 skada.",
           "cls": "ok"
+        },
+        {
+          "text": "Trolleriolas (Trästav) slår Stav med nackdel: [16 / 8 → 16] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
