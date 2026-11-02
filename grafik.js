@@ -135,6 +135,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, sx, sy, S, S);
       ctx.restore();
       if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(sx+Math.round(S/2)-2, sy-3, 4, 3); }
+      if(h.etikett && h.etikett.length) G.ritaEtiketter(ctx, h.etikett, sx+S/2, sy-1);
     });
     if(laddar.length) laddar.forEach(img=>img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true}));
   }
@@ -180,6 +181,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       } else G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
       ctx.globalAlpha = 1;
       if(f.markerad){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+w/2-2, Math.max(0,y)-3, 4, 3); }
+      if(f.etikett && f.etikett.length) G.ritaEtiketter(ctx, f.etikett, x+w/2, Math.max(10,y)-1);
     });
     if(vantar.length) [...new Set(vantar)].forEach(img=>img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true}));
   }
@@ -234,6 +236,19 @@ const VAGNAR = [
   {x:10,y:134,b:113,h:51,rel:25},{x:133,y:134,b:118,h:51,rel:25}
 ];
 G.antalVagnar = VAGNAR.length;
+// ---------- Flygande siffror i TV:n (skada, läkning, MISS) ----------
+// Egen pixelfont 3×5 som ritas dubbelt så stor med svart kant, så att den syns tydligt.
+const TECKEN = {"0":"111101101101111","1":"010110010010111","2":"111001111100111","3":"111001111001111","4":"101101111001001",
+  "5":"111100111001111","6":"111100111101111","7":"111001010010010","8":"111101111101111","9":"111101111001111",
+  "-":"000000111000000","+":"000010111010000","M":"101111111101101","I":"111010010010111","S":"111100111001111"};
+function ritaText(ctx, text, cx, botten, farg){
+  const z = 2, bredd = text.length*4*z - z, x0 = Math.round(cx - bredd/2), y0 = Math.round(botten - 5*z);
+  const pix = (col) => { for(let k=0;k<text.length;k++){ const g = TECKEN[text[k]]; if(!g) continue;
+    for(let i=0;i<15;i++) if(g[i]==="1"){ const px=x0+k*4*z+(i%3)*z, py=y0+Math.floor(i/3)*z; col(px,py); } } };
+  ctx.fillStyle = "#000"; pix((px,py)=>ctx.fillRect(px-1,py-1,z+2,z+2));
+  ctx.fillStyle = farg; pix((px,py)=>ctx.fillRect(px,py,z,z));
+}
+G.ritaEtiketter = (ctx, lista, cx, botten) => { lista.slice(-3).forEach((e,i)=>ritaText(ctx, e.text, cx, Math.max(11, botten - i*12), e.farg)); };
 // Ritar en ruta (0–63) ur ett 8×8-ark med 32×32-rutor
 G.ritaRuta = (ctx, img, ruta, x, y, storlek, spegel) => {
   const z = storlek || 32;

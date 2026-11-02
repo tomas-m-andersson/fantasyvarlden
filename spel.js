@@ -87,6 +87,10 @@ async function ghLadda(ersatt){
   }catch(e){ setSync(e.message,"fel"); }
 }
 
+// ================= Inställningar som bara gäller den här enheten =================
+const AKEY = "fantasyvarlden-alternativ";
+let alt = Object.assign({tempo:"steg"}, load(AKEY, {}));
+
 // ================= Navigering =================
 let vy = "hem";
 let strid = null;          // pågående strid (sparas inte – laddar man om börjar striden om)
@@ -468,6 +472,7 @@ function skadaHjalte(id, mangd, kalla, ignoreraRust){
   const verklig = Math.max(0, mangd - rust);
   if(x.doende){ x.miss++; logga(`${h.namn} träffas medan hen ligger döende – ett misslyckat dödsslag (${x.miss}/3).`,"fel"); if(x.miss>=3) dor(id); return verklig; }
   x.kp = Math.max(0, x.kp - verklig);
+  etikett("h:"+id, "-"+verklig, verklig?"#ff5a4a":"#cfc6b4");
   logga(`${h.namn} tar ${verklig} skada${rust&&mangd>verklig?` (${mangd} − ${rust} rustning)`:""}${kalla?" från "+kalla:""}. KP ${x.kp}/${R.maxKP(h)}.`, verklig?"fel":"info");
   if(x.kp<=0 && !x.dod){ x.doende=true; x.ok=0; x.miss=0; logga(`${h.namn} faller ihop och ligger döende!`,"dm"); if(!strid) dodsslagDirekt(id); }
   return verklig;
@@ -475,6 +480,7 @@ function skadaHjalte(id, mangd, kalla, ignoreraRust){
 function lakaHjalte(id, mangd){
   const x=rh(id), h=bygg(id); if(x.dod) return 0;
   const fore = x.kp; x.kp = Math.min(R.maxKP(h), x.kp + mangd);
+  if(x.kp>fore) etikett("h:"+id, "+"+(x.kp-fore), "#7fe07a");
   if(x.doende||x.stabil){ x.doende=false; x.stabil=false; x.ok=0; x.miss=0; if(x.kp<=0) x.kp=1; logga(`${h.namn} kommer tillbaka på benen!`,"ok"); }
   return x.kp - fore;
 }
@@ -732,30 +738,69 @@ function nyRunda(){
 async function stridLoop(){
   while(strid){
     const slut = kollaSlut(); if(slut){ return avslutaStrid(slut); }
-    if(strid.pos >= strid.ordning.length){ nyRunda(); ritaStrid(); await vanta(250); continue; }
+    if(strid.pos >= strid.ordning.length){ strid.turStart = strid.logg.length; strid.behallStart = true; nyRunda(); ritaStrid(); await vanta(tempo().paus); continue; }
     const tur = strid.ordning[strid.pos++];
     tur.nu = true;
+    if(!strid.behallStart){ strid.turStart = strid.logg.length; } strid.behallStart = false; strid.etiketter = [];
     if(tur.typ==="h"){
-      const x = rh(tur.id);
+      const x = rh(tur.id), namn = HJ[tur.id].namn;
       if(x.dod || x.stabil){ tur.gjord=true; continue; }
-      if(x.doende){ strid.aktiv=tur.id; dodsslag(tur.id); ritaStrid(); await vanta(700); tur.gjord=true; continue; }
-      if(x.stoppad>0){ x.stoppad--; logga(`${HJ[tur.id].namn} är ur spel den här rundan.`,"info"); tur.gjord=true; ritaStrid(); await vanta(500); continue; }
-      if(x.agerat && !tur.extra){ logga(`${HJ[tur.id].namn} har redan använt sin handling till att försvara sig.`,"info"); tur.gjord=true; continue; }
+      if(x.doende){ strid.aktiv=tur.id; dodsslag(tur.id); tur.gjord=true; await visaResultat(`${namn} kämpar för sitt liv`, tur.id); if(!strid) return; continue; }
+      if(x.stoppad>0){ x.stoppad--; logga(`${namn} är ur spel den här rundan.`,"info"); tur.gjord=true; strid.aktiv=tur.id; await visaResultat(`${namn}s tur`, tur.id); if(!strid) return; continue; }
+      if(x.agerat && !tur.extra){ logga(`${namn} har redan använt sin handling till att försvara sig.`,"info"); tur.gjord=true; continue; }
       strid.aktiv = tur.id; strid.meny = "huvud"; strid.tur = tur;
       await new Promise(res=>{ strid.svara=res; ritaStrid(); });
       if(!strid) return;
-      x.agerat = true; tur.gjord = true; strid.aktiv=null;
-      ritaStrid(); await vanta(300);
+      x.agerat = true; tur.gjord = true;
+      await visaResultat(`${namn}s tur`, tur.id);
+      if(!strid) return;
+      strid.aktiv=null;
     } else {
       const f = strid.fiender[tur.i];
       if(!f || f.kp<=0){ tur.gjord=true; continue; }
-      if(f.stoppad>0){ f.stoppad--; logga(`${f.namn} står still och kan inte agera.`,"ok"); tur.gjord=true; ritaStrid(); await vanta(500); continue; }
-      strid.aktiv = "#f"+f.i; f.markerad = true; ritaStrid(); await vanta(550);
+      strid.aktiv = "#f"+f.i; f.markerad = true;
+      if(f.stoppad>0){ f.stoppad--; logga(`${f.namn} står still och kan inte agera.`,"ok"); tur.gjord=true; await visaResultat(`${f.namn}s tur`, null, f); if(!strid) return; f.markerad=false; continue; }
+      ritaStrid(); await vanta(tempo().fore);
       await fiendeAgerar(f);
       if(!strid) return;
-      f.markerad=false; tur.gjord=true; strid.aktiv=null; ritaStrid(); await vanta(450);
+      tur.gjord=true;
+      await visaResultat(`${f.namn}s tur`, null, f);
+      if(!strid) return;
+      f.markerad=false; strid.aktiv=null;
     }
   }
+}
+// ---------- Stridstempo och händelserutan ----------
+// "steg" = stanna efter varje tur tills man trycker Fortsätt, "lugnt" = vänta ca 3 s, "snabbt" = som förut.
+const TEMPON = {steg:{namn:"Steg för steg (tryck Fortsätt)",fore:700,paus:400}, lugnt:{namn:"Lugnt (automatiskt, ca 3 sekunder)",fore:900,paus:600,vanta:3000}, snabbt:{namn:"Snabbt",fore:450,paus:250,vanta:1000}};
+const tempo = () => TEMPON[alt.tempo] || TEMPON.steg;
+function etikett(mal, text, farg){ if(strid){ strid.etiketter = strid.etiketter||[]; strid.etiketter.push({mal, text, farg}); } }
+async function visaResultat(titel, hjalteId, fiende){
+  if(!strid) return;
+  const rader = strid.logg.slice(strid.turStart||0).filter(l=>l.text && !/^— Runda \d+ —$/.test(l.text));
+  if(!rader.length){ ritaStrid(); return; }
+  strid.resultat = {titel, hjalteId, fiende: fiende ? fiende.i : null, rader};
+  ritaStrid();
+  const t = tempo();
+  await new Promise(res=>{ strid.fortsatt = res; if(t.vanta) strid.timer = setTimeout(res, t.vanta); });
+  if(!strid) return;
+  clearTimeout(strid.timer); strid.resultat = null; strid.fortsatt = null; strid.etiketter = [];
+  if(kollaSlut()) return;
+  ritaStrid();
+}
+// Gör en loggrad tydligare: tärningsslag som stora brickor och utfallet i fetstil
+function tydligRad(t){
+  let h = esc(t);
+  h = h.replace(/\[(\d+) \/ (\d+) → (\d+)\] mot (\d+)/g, (m,a,b,c,v)=>`<span class="t20">🎲 ${c}</span> <span class="small muted">(${a} och ${b})</span> mot ${v}`);
+  h = h.replace(/\[(\d+)\] mot (\d+)/g, (m,a,v)=>`<span class="t20">🎲 ${a}</span> mot ${v}`);
+  h = h.replace(/ – (DRAKE!|DEMON!|lyckat|misslyckat)/g, (m,u)=>` – <b class="utfall">${u==="lyckat"?"LYCKAT":u==="misslyckat"?"MISSLYCKAT":u}</b>`);
+  return h;
+}
+function resultatHtml(){
+  const r = strid.resultat, t = tempo();
+  return `<div class="resultat"><div class="rubrik">${r.hjalteId?`<canvas class="px" data-p="${r.hjalteId}"></canvas>`:""}<h3>${esc(r.titel)}</h3></div>
+    <div class="rader">${r.rader.map(l=>`<p class="${l.cls}">${tydligRad(l.text)}</p>`).join("")}</div>
+    <button class="btn" data-a="fortsatt">Fortsätt ▶${t.vanta?`<span class="sub">Fortsätter av sig själv om en stund</span>`:""}</button></div>`;
 }
 function kollaSlut(){
   if(strid.flydde) return "flydde";
@@ -778,7 +823,7 @@ async function fiendeAgerar(f){
   if(f.typ==="folk"){
     const s = R.slag(f.anfall, f.nackdel?"nackdel":null); f.nackdel=false;
     logga(`${f.namn} anfaller ${HJ[mal].namn}: ${s.text}`, s.lyckat?"fel":"ok");
-    if(!s.lyckat) return;
+    if(!s.lyckat){ etikett("h:"+mal, "MISS", "#ffffff"); return; }
     const fs = await fragaForsvar(mal, `${f.namn} träffar ${HJ[mal].namn} (${f.skada}${s.drake?", DRAKE – dubbel skada":""}).`);
     if(fs) return;
     let d = R.slaTarning(f.skada); if(s.drake) d += R.slaTarning(f.skada);
@@ -819,6 +864,7 @@ function fragaForsvar(id, beskr, barUndvika){
       const s = val==="parera" ? hjalteSlag(id, parv.v.fard, h.skold?"fordel":null) : hjalteSlag(id,"Undvika");
       logga(`${h.namn} ${val==="parera"?"parerar":"försöker undvika"}: ${s.text}`, slagCls(s));
       ritaStrid();
+      if(s.lyckat) etikett("h:"+id, "MISS", "#ffffff");
       res(s.lyckat);
     }};
     strid.aktiv = id; ritaStrid();
@@ -830,6 +876,7 @@ function hjalteHandling(fn){ try{ fn(); }catch(e){ console.error(e); logga("Någ
 function skadaFiende(f, d, kalla){
   const verklig = Math.max(0, d - f.rust);
   f.kp = Math.max(0, f.kp - verklig);
+  etikett("f:"+f.i, "-"+verklig, verklig?"#ffd23f":"#cfc6b4");
   logga(`${f.namn} tar ${verklig} skada${f.rust&&d>verklig?` (${d} − ${f.rust} rustning)`:""}${kalla?" från "+kalla:""}.`, verklig?"ok":"info");
   if(f.kp<=0) logga(`${f.namn} faller!`,"d");
   return verklig;
@@ -839,7 +886,7 @@ function anfall(id, vapenNamn, f, extra){
   const h=bygg(id), x=rh(id), v=R.VAPEN[vapenNamn];
   const s = hjalteSlag(id, v.fard, extra.fordel?"fordel":null);
   logga(slagText(h.namn+" ("+vapenNamn+")", s), slagCls(s));
-  if(!s.lyckat){ if(s.demon){ x.nackdelNasta=true; logga(`Fummel! ${h.namn} tappar balansen och får nackdel på nästa slag.`,"dm"); } return 0; }
+  if(!s.lyckat){ etikett("f:"+f.i, "MISS", "#ffffff"); if(s.demon){ x.nackdelNasta=true; logga(`Fummel! ${h.namn} tappar balansen och får nackdel på nästa slag.`,"dm"); } return 0; }
   let d = R.slaTarning(v.skada) + (v.bonus||0);
   if(s.drake){ d += R.slaTarning(v.skada); logga("Drake! Dubbel vapenskada.","d"); }
   const sb = R.skadebonus(h, v.avstand); if(sb) d += R.slaTarning(sb);
@@ -931,24 +978,30 @@ function ritaStrid(){
       <button class="btn" data-f="undvika">Undvika<span class="sub">Slå Undvika ${fv(h,"Undvika")}${rh(fo.id).nackdelNasta?" (nackdel)":""}</span></button>
       ${fo.parv?`<button class="btn" data-f="parera">Parera<span class="sub">Slå ${esc(fo.parv.v.fard)} ${fo.parv.varde}${h.skold?" med fördel (sköld)":""}</span></button>`:""}
       <button class="btn ghost" data-f="ta">Ta smällen<span class="sub">Spara handlingen till ett eget anfall</span></button></div>`;
+  } else if(strid.resultat){
+    panel = resultatHtml();
   } else if(x && strid.svara){
     const h = bygg(akt);
-    panel = `<h3>${esc(h.namn)}s tur</h3>` + hjalteMeny(akt, h, x);
+    panel = `<div class="resultat"><div class="rubrik"><canvas class="px" data-p="${akt}"></canvas><h3>${esc(h.namn)}s tur – vad gör hen?</h3></div></div>` + hjalteMeny(akt, h, x);
   } else {
-    panel = `<p class="muted">${akt&&String(akt).startsWith("#f")?esc((strid.fiender[Number(akt.slice(2))]||{}).namn||"")+" agerar…":"…"}</p>`;
+    const fn = akt&&String(akt).startsWith("#f") ? (strid.fiender[Number(akt.slice(2))]||{}).namn : null;
+    panel = `<p class="agerar">${fn?`⚔ ${esc(fn)} agerar…`:`Runda ${strid.runda} börjar…`}</p>`;
   }
   app.innerHTML = `
     <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">Runda ${strid.runda}</span></div>
-    <div class="ordning">${strid.ordning.map(t=>`<span class="${t.nu&&!t.gjord?"nu":""} ${t.gjord?"gjord":""} ${t.typ==="f"?"f":""}">${t.typ==="h"?esc(HJ[t.id].namn.split(" ")[0]):esc((strid.fiender[t.i]||{}).namn)}</span>`).join("")}</div>
+    <section class="card stridpanel">${panel}</section>
+    <div class="ordning"><span class="small muted" style="border:0;background:none;padding:2px 0">Turordning:</span>${strid.ordning.map(t=>`<span class="${t.nu&&!t.gjord?"nu":""} ${t.gjord?"gjord":""} ${t.typ==="f"?"f":""}">${t.typ==="h"?esc(HJ[t.id].namn.split(" ")[0]):esc((strid.fiender[t.i]||{}).namn)}</span>`).join("")}</div>
     <div class="fiender">${strid.fiender.map(f=>`<div class="fiende ${f.kp<=0?"dod":""}"><span class="n">${esc(f.namn)}${f.stoppad>0?" ⛓":""}${f.nackdel?" 😨":""}</span><span class="siffra">KP ${f.kp}/${f.max}</span><div class="bar f"><b style="width:${100*f.kp/f.max}%"></b></div></div>`).join("")}</div>
     ${partyHtml(akt)}
-    <section class="card">${panel}</section>
     ${loggHtml()}`;
-  const fiendeVis = strid.fiender.filter(f=>!f.lamnat).map(f=>({...f, visa:true}));
-  G.ritaScen($("#scen"), r.q.miljo, fiendeVis, steg.fro||7, null, scenHjaltar(akt));
+  const et = strid.etiketter || [];
+  const fiendeVis = strid.fiender.filter(f=>!f.lamnat).map(f=>({...f, visa:true, etikett:et.filter(e=>e.mal==="f:"+f.i)}));
+  const hjVis = scenHjaltar(akt).map(h=>({...h, etikett:et.filter(e=>e.mal==="h:"+h.id)}));
+  G.ritaScen($("#scen"), r.q.miljo, fiendeVis, steg.fro||7, null, hjVis);
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b || b.disabled) return;
+    if(b.dataset.a==="fortsatt" && strid.fortsatt) return strid.fortsatt();
     if(b.dataset.f && strid.forsvar) return strid.forsvar.svar(b.dataset.f);
     if(b.dataset.m) return stridMeny(b.dataset.m, b.dataset);
   };
@@ -1110,6 +1163,8 @@ $("#btn-inst").onclick = () => modal(`<h2>Inställningar</h2>
   <label class="row small"><input type="checkbox" id="g-auto" ${gh.auto?"checked":""}> Spara automatiskt</label>
   <div class="row"><button class="btn" id="g-spara">Spara inställningarna och hämta</button><button class="btn ghost" id="g-nu">Spara till GitHub nu</button></div>
   <h3>Spelet</h3>
+  <label class="f">Stridstempo<select id="tempo">${Object.entries(TEMPON).map(([k,v])=>`<option value="${k}" ${(alt.tempo||"steg")===k?"selected":""}>${esc(v.namn)}</option>`).join("")}</select></label>
+  <p class="small muted">Hur länge spelet stannar och visar vad som hände efter varje tur i striden. Sparas på den här enheten.</p>
   <label class="f">Svårighetsgrad<select id="svar">${Object.entries(SVAR).map(([k,v])=>`<option value="${k}" ${svar()===k?"selected":""}>${esc(v.namn)}</option>`).join("")}</select></label>
   <p class="small muted">Påverkar hur många fiender som dyker upp och hur tåliga de är. Gäller från nästa strid.</p>
   <div class="row"><button class="btn red small" id="nollstall">Börja om från början</button></div>
@@ -1120,6 +1175,7 @@ $("#btn-inst").onclick = () => modal(`<h2>Inställningar</h2>
   $("#g-nu").onclick = async () => { las(); setSync("Sparar till GitHub…"); try{ await ghPut(); setSync("Sparat till GitHub "+datum().slice(11),"ok"); }catch(e){ setSync(e.message,"fel"); alert(e.message); } };
   $("#i-stang").onclick = stangModal;
   $("#svar").onchange = e => { st.svarighet = e.target.value; spara(); };
+  $("#tempo").onchange = e => { alt.tempo = e.target.value; save(AKEY, alt); };
   $("#nollstall").onclick = () => {
     if(!confirm("Vill du verkligen börja om? Alla hjältars framsteg, döda hjältar, guld och krönikan försvinner.")) return;
     if(!confirm("Är du helt säker? Det här går inte att ångra – och sparfilen på GitHub skrivs också över.")) return;
