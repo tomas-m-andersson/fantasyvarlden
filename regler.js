@@ -1,5 +1,5 @@
 // Fantasyvärlden – regelmotorn. Bygger på hur Drakar och Demoner fungerar, men allt är skrivet med egna ord.
-// Grundidé: slå T20 och få LIKA MED eller UNDER färdighetsvärdet. 1 = Drake (perfekt), 20 = Demon (katastrof).
+// Grundidé: slå T20 och få LIKA MED eller UNDER färdighetsvärdet. Naturligt 1 = perfekt slag, naturligt 20 = katastrof.
 (function(){
 const R = {};
 
@@ -116,7 +116,7 @@ R.slag = (varde, lage) => { // lage: "fordel" | "nackdel" | undefined
   const drake = s===1, demon = s===20;
   const lyckat = drake || (!demon && s<=varde);
   let text = (b!=null ? `[${a} / ${b} → ${s}]` : `[${s}]`) + ` mot ${varde}`;
-  if(drake) text += " – DRAKE!"; else if(demon) text += " – DEMON!"; else text += lyckat ? " – lyckat" : " – misslyckat";
+  if(drake) text += " – NATURLIGT 1!"; else if(demon) text += " – NATURLIGT 20!"; else text += lyckat ? " – lyckat" : " – misslyckat";
   const res = {lyckat, drake, demon, slag:s, varde, text, lage, a, b};
   if(R.inspelning) R.inspelning.push(res);   // spelet kan visa slaget i tärningsrutan så att spelaren "slår" själv
   return res;

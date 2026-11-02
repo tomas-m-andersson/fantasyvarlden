@@ -175,7 +175,7 @@ function visaTarningar(lista){
         if(tva && varden[k] !== s.slag) t.classList.add("bort"); else t.classList.add(s.drake?"drake":s.demon?"demon":s.lyckat?"ok":"miss"); });
       const u = el.querySelector("#tr-utfall");
       u.className = "tr-utfall " + (s.drake?"drake":s.demon?"demon":s.lyckat?"ok":"miss");
-      u.textContent = s.drake ? "DRAKE! Perfekt!" : s.demon ? "DEMON! Katastrof!" : s.lyckat ? "LYCKAT!" : "MISSLYCKAT";
+      u.textContent = s.drake ? "NATURLIGT 1 – perfekt!" : s.demon ? "NATURLIGT 20 – katastrof!" : s.lyckat ? "LYCKAT!" : "MISSLYCKAT";
       knapp.textContent = i < lista.length-1 ? "Nästa slag ▶" : "Fortsätt ▶"; knapp.disabled = false;
       const vidare = () => { clearTimeout(tid); i++; if(i < lista.length) visa(); else stang(); };
       knapp.onclick = vidare;
@@ -514,7 +514,7 @@ const rh = id => st.run.h[id];
 const kanAgera = id => { const x=rh(id); return x && !x.dod && !x.doende && !x.stabil && x.kp>0; };
 const vakna = () => st.run.party.filter(kanAgera);
 
-// Ett slag av en hjälte – med fördel/nackdel-flaggor och markering vid drake/demon.
+// Ett slag av en hjälte – med fördel/nackdel-flaggor och markering vid naturligt 1/20.
 function hjalteSlag(id, fard, lage){
   const h = bygg(id), x = rh(id);
   let l = lage || null;
@@ -858,7 +858,7 @@ function tydligRad(t){
   let h = esc(t);
   h = h.replace(/\[(\d+) \/ (\d+) → (\d+)\] mot (\d+)/g, (m,a,b,c,v)=>`<span class="t20">🎲 ${c}</span> <span class="small muted">(${a} och ${b})</span> mot ${v}`);
   h = h.replace(/\[(\d+)\] mot (\d+)/g, (m,a,v)=>`<span class="t20">🎲 ${a}</span> mot ${v}`);
-  h = h.replace(/ – (DRAKE!|DEMON!|lyckat|misslyckat)/g, (m,u)=>` – <b class="utfall">${u==="lyckat"?"LYCKAT":u==="misslyckat"?"MISSLYCKAT":u}</b>`);
+  h = h.replace(/ – (NATURLIGT 1!|NATURLIGT 20!|lyckat|misslyckat)/g, (m,u)=>` – <b class="utfall">${u==="lyckat"?"LYCKAT":u==="misslyckat"?"MISSLYCKAT":u}</b>`);
   return h;
 }
 function resultatHtml(){
@@ -955,9 +955,9 @@ function anfall(id, vapenNamn, f, extra){
   const h=bygg(id), x=rh(id), v=R.VAPEN[vapenNamn];
   const s = hjalteSlag(id, v.fard, extra.fordel?"fordel":null);
   logga(slagText(h.namn+" ("+vapenNamn+")", s), slagCls(s));
-  if(!s.lyckat){ etikett("f:"+f.i, "MISS", "#ffffff"); if(s.demon){ x.nackdelNasta=true; logga(`Fummel! ${h.namn} tappar balansen och får nackdel på nästa slag.`,"dm"); } return 0; }
+  if(!s.lyckat){ etikett("f:"+f.i, "MISS", "#ffffff"); if(s.demon){ x.nackdelNasta=true; logga(`Naturligt 20! ${h.namn} tappar balansen och får nackdel på nästa slag.`,"dm"); } return 0; }
   let d = R.slaTarning(v.skada) + (v.bonus||0);
-  if(s.drake){ d += R.slaTarning(v.skada); logga("Drake! Dubbel vapenskada.","d"); }
+  if(s.drake){ d += R.slaTarning(v.skada); logga("Naturligt 1! Dubbel vapenskada.","d"); }
   const sb = R.skadebonus(h, v.avstand); if(sb) d += R.slaTarning(sb);
   if(x.vapenbonus) d += R.slaTarning(x.vapenbonus);
   if(x.gift){ d += R.t(6); x.gift=false; logga("Giftet på vapnet gör sitt.","ok"); }
@@ -971,7 +971,7 @@ function kasta(id, namn, mal){
   x.vp -= R.BESV_KOSTNAD;
   const s = hjalteSlag(id, "Magi");
   logga(slagText(`${h.namn} kastar ${namn}`, s), slagCls(s));
-  if(!s.lyckat){ if(s.demon){ const d=R.t(6); logga(`Magisk olycka! Besvärjelsen slår tillbaka.`,"dm"); skadaHjalte(id,d,"sin egen magi",true); } else logga("Besvärjelsen fräser och dör ut.","fel"); return; }
+  if(!s.lyckat){ if(s.demon){ const d=R.t(6); logga(`Naturligt 20 – magisk olycka! Besvärjelsen slår tillbaka.`,"dm"); skadaHjalte(id,d,"sin egen magi",true); } else logga("Besvärjelsen fräser och dör ut.","fel"); return; }
   const m = (x.maktig?2:1) * (s.drake?2:1); if(x.maktig){ logga("Hocus pocus i fokus – dubbel effekt!","d"); x.maktig=false; }
   if(b.skada){ const lista = b.mal==="allaFiender" ? strid.fiender.filter(f=>f.kp>0) : [mal]; lista.forEach(f=>skadaFiende(f, R.slaTarning(b.skada)*m, namn)); }
   if(b.stoppa && mal && mal.kp>0){ mal.stoppad = (b.stoppaRundor||1)*m; logga(`${mal.namn} är fastlåst i ${mal.stoppad} ${mal.stoppad>1?"handlingar":"handling"}.`,"ok"); }
@@ -1199,7 +1199,7 @@ function ritaSlut(){
       :`<p class="berattelse">${esc(u.orsak||"")}</p>`}
       ${u.rad.map(x=>`<p>${esc(x)}</p>`).join("")}
       ${u.doda.length?`<div><h3>Till poolen i Miami</h3>${u.doda.map(id=>`<p><b>${esc(HJ[id].namn)}</b>: ${esc(R.valj(V.EFTERRIKET))}</p>`).join("")}</div>`:""}
-      <div><h3>Förbättringsslag</h3><p class="small muted">Färdigheter som fick en Drake eller Demon (och en till för varje överlevande vid seger) slås om: T20 över nuvärdet = +1.</p>
+      <div><h3>Förbättringsslag</h3><p class="small muted">Färdigheter som fick ett naturligt 1 eller naturligt 20 (och en till för varje överlevande vid seger) slås om: T20 över nuvärdet = +1.</p>
       ${Object.entries(u.forb).map(([id,l])=>`<p><b>${esc(HJ[id].namn)}:</b> ${l.length?l.map(x=>`${esc(x.f)} (${x.v}) slog ${x.s} → ${x.upp?`<span style="color:var(--moss)">+1!</span>`:"ingen ändring"}`).join(", "):"inget att slå för"}</p>`).join("")||"<p class='small'>Ingen överlevde för att förbättras.</p>"}</div>
       <button class="btn" data-a="klar">Tillbaka till värdshuset</button>
     </section>${loggHtml()}`;
@@ -1210,15 +1210,15 @@ function ritaSlut(){
 
 // ================= Reglerna och inställningar =================
 $("#btn-regler").onclick = () => modal(`<h2>Så funkar reglerna</h2>
-  <p><b>Slag:</b> Slå en T20. Lika med eller under färdighetsvärdet = lyckat. En <b>1:a är en Drake</b> (perfekt – t.ex. dubbel vapenskada) och en <b>20 är en Demon</b> (katastrof – fummel eller magisk olycka).</p>
+  <p><b>Slag:</b> Slå en T20. Lika med eller under färdighetsvärdet = lyckat. Ett <b>naturligt 1</b> (tärningen visar 1) är ett perfekt slag – t.ex. dubbel vapenskada. Ett <b>naturligt 20</b> är en katastrof – t.ex. att man tappar balansen eller att magin slår tillbaka.</p>
   <p><b>Fördel / nackdel:</b> Slå två T20 och ta det bästa (fördel) eller sämsta (nackdel). Ankor har fördel på Simma.</p>
   <p><b>Färdigheter:</b> Grundchansen är 3–7 beroende på egenskapen. Tränade färdigheter har dubbla grundchansen. Värden som nämns i podden är behållna.</p>
   <p><b>Strid:</b> Varje runda dras initiativkort 1–10. Lägst börjar. Varje hjälte har <b>en handling</b> per runda: anfalla, kasta en besvärjelse, använda sin förmåga, en sak eller rädda en vän. Blir man anfallen innan man agerat kan man <b>undvika</b> eller <b>parera</b> – men då går handlingen åt.</p>
   <p><b>Monster</b> träffar alltid – man måste undvika eller parera. <b>Människolika fiender</b> slår för att träffa.</p>
   <p><b>Skada:</b> Vapnets tärning + skadebonus (STY för närstrid, SMI för avstånd, 13+ = T4, 17+ = T6) minus rustning.</p>
   <p><b>KP och VP:</b> Kroppspoäng = FYS, viljepoäng = PSY. Besvärjelser kostar 2 VP och kräver ett lyckat Magi-slag. Signaturförmågor kostar 3 VP.</p>
-  <p><b>Döende:</b> Vid 0 KP faller hjälten. Varje runda slås ett dödsslag mot FYS: tre lyckade = stabil, tre misslyckade = död. En Drake = upp på benen igen. Vänner kan rädda med Läkekonst eller Hela.</p>
-  <p><b>Förbättring:</b> Färdigheter som fått en Drake eller Demon markeras. Efter äventyret slår man T20 – över nuvärdet = +1.</p>
+  <p><b>Döende:</b> Vid 0 KP faller hjälten. Varje runda slås ett dödsslag mot FYS: tre lyckade = stabil, tre misslyckade = död. Ett naturligt 1 = upp på benen igen. Vänner kan rädda med Läkekonst eller Hela.</p>
+  <p><b>Förbättring:</b> Färdigheter som fått ett naturligt 1 eller naturligt 20 markeras. Efter äventyret slår man T20 – över nuvärdet = +1.</p>
   <p class="small muted">Reglerna är förenklade och skrivna med egna ord, inspirerade av Drakar och Demoner. Inte en officiell produkt.</p>
   <button class="btn ghost" onclick="document.getElementById('modal').hidden=true">Stäng</button>`);
 
