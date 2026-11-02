@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:23:09.672Z",
+  "uppdaterad": "2026-11-02T20:23:18.977Z",
   "spel": {
     "version": 1,
-    "tid": 1793650986769,
+    "tid": 1793650995902,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -285,7 +285,8 @@
           "anvanda": [
             "Upptäcka fara",
             "Armborst",
-            "Undvika"
+            "Undvika",
+            "Kniv"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -294,9 +295,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
-          "valtVapen": "Armborst"
+          "valtVapen": "Dolk av draktand"
         },
         "john": {
           "kp": 9,
@@ -564,6 +565,14 @@
         {
           "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [5 / 13 → 13] mot 8 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Dolk av draktand) slår Kniv: [5] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
