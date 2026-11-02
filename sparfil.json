@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:24:57.074Z",
+  "uppdaterad": "2026-11-02T20:25:04.159Z",
   "spel": {
     "version": 1,
-    "tid": 1793651094151,
+    "tid": 1793651101166,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -296,7 +296,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -320,7 +320,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": false
         },
@@ -738,6 +738,22 @@
         {
           "text": "John P. Bollbirth (Träpinne) slår Slagvapen med nackdel: [19 / 11 → 19] mot 8 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas (Trästav) slår Stav: [10] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 7 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
