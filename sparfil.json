@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:47:38.988Z",
+  "uppdaterad": "2026-11-02T13:47:43.560Z",
   "spel": {
     "version": 1,
-    "tid": 1793627256104,
+    "tid": 1793627260475,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -196,7 +196,9 @@
             "namn": "Kollapsande grav",
             "text": "Någon trampar rakt ner i en gammal grav.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Någon trampar rakt ner i en gammal grav. Gaston Quasimodoson får ta smällen."
         },
         {
           "typ": "rum",
@@ -248,7 +250,7 @@
           "valtVapen": "Stridsgissel"
         },
         "gaston": {
-          "kp": 6,
+          "kp": 1,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -258,7 +260,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Smyga"
+            "Smyga",
+            "Upptäcka fara"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -375,6 +378,18 @@
         },
         {
           "text": "FF tar 3 skada från En låst port. KP 3/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Gaston Quasimodoson slår Upptäcka fara: [13] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Någon trampar rakt ner i en gammal grav.",
+          "cls": "fel"
+        },
+        {
+          "text": "Gaston Quasimodoson tar 5 skada från Kollapsande grav. KP 1/12.",
           "cls": "fel"
         }
       ],
