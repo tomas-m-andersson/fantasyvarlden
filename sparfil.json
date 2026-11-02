@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:36:57.671Z",
+  "uppdaterad": "2026-11-02T13:37:11.442Z",
   "spel": {
     "version": 1,
-    "tid": 1793626614692,
+    "tid": 1793626628504,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -150,7 +150,9 @@
         },
         {
           "typ": "resa",
-          "mote": "ginzy"
+          "mote": "ginzy",
+          "klar": true,
+          "utfallText": "Ni fuskar skickligt och vinner potten. (+50 guld)"
         },
         {
           "typ": "rum",
@@ -214,7 +216,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "monika": {
           "kp": 13,
@@ -256,10 +258,12 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Fingerfärdighet"
+          ]
         }
       },
-      "guld": 0,
+      "guld": 50,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Patricias sista vila” av Mandor Marvolt.",
@@ -283,6 +287,14 @@
         },
         {
           "text": "”Det ska vara lugnt på Dunkers hus!” Dunker lyfter er med magi och hivar ut er genom entrén, långt ner på marken.",
+          "cls": "info"
+        },
+        {
+          "text": "FF slår Fingerfärdighet: [3] mot 5 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ni fuskar skickligt och vinner potten. (+50 guld)",
           "cls": "info"
         }
       ],
