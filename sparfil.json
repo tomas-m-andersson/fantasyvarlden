@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:36:39.450Z",
+  "uppdaterad": "2026-11-02T13:36:52.582Z",
   "spel": {
     "version": 1,
-    "tid": 1793626596452,
+    "tid": 1793626609689,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -144,7 +144,9 @@
       "steg": [
         {
           "typ": "resa",
-          "mote": "dunker"
+          "mote": "dunker",
+          "klar": true,
+          "utfallText": "”Det ska vara lugnt på Dunkers hus!” Dunker lyfter er med magi och hivar ut er genom entrén, långt ner på marken."
         },
         {
           "typ": "resa",
@@ -215,7 +217,7 @@
       "i": 0,
       "h": {
         "monika": {
-          "kp": 17,
+          "kp": 13,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -229,7 +231,7 @@
           "anvanda": []
         },
         "gaston": {
-          "kp": 12,
+          "kp": 6,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -238,10 +240,12 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Smyga"
+          ]
         },
         "ff": {
-          "kp": 13,
+          "kp": 7,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -259,6 +263,26 @@
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Patricias sista vila” av Mandor Marvolt.",
+          "cls": "info"
+        },
+        {
+          "text": "Gaston Quasimodoson slår Smyga: [9] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 4 skada. KP 13/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Gaston Quasimodoson tar 6 skada. KP 6/12.",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 6 skada. KP 7/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "”Det ska vara lugnt på Dunkers hus!” Dunker lyfter er med magi och hivar ut er genom entrén, långt ner på marken.",
           "cls": "info"
         }
       ],
