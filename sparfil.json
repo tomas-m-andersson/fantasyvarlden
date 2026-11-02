@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:48:15.661Z",
+  "uppdaterad": "2026-11-02T13:48:22.572Z",
   "spel": {
     "version": 1,
-    "tid": 1793627292644,
+    "tid": 1793627299457,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -267,7 +267,8 @@
           "anvanda": [
             "Smyga",
             "Upptäcka fara",
-            "Svärd"
+            "Svärd",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -276,8 +277,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "nackdelNasta": true
+          "agerat": true,
+          "nackdelNasta": false,
+          "valtVapen": "Kort båge"
         },
         "ff": {
           "kp": 8,
@@ -478,6 +480,10 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Gaston Quasimodoson (Kort båge) slår Pilbåge med nackdel: [12 / 15 → 15] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
