@@ -1,13 +1,12 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:27:04.937Z",
+  "uppdaterad": "2026-11-02T20:27:29.280Z",
   "spel": {
     "version": 1,
-    "tid": 1793651221865,
+    "tid": 1793651246228,
     "kassa": 335,
     "packning": [
-      "Läkande ört",
       "Krigarfasa"
     ],
     "sallskap": [
@@ -257,7 +256,7 @@
       "i": 5,
       "h": {
         "trolleriolas": {
-          "kp": 1,
+          "kp": 5,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -315,7 +314,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -906,6 +905,18 @@
         {
           "text": "John P. Bollbirth tar 1 skada från Forsande vatten. KP 7/10.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner använder läkande ört på Trolleriolas. Återfå T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Trolleriolas återfår 4 KP.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
