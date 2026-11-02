@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:24:34.153Z",
+  "uppdaterad": "2026-11-02T20:24:41.324Z",
   "spel": {
     "version": 1,
-    "tid": 1793651071154,
+    "tid": 1793651078322,
     "kassa": 335,
     "packning": [
       "Läkande ört",
@@ -270,7 +270,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "nackdelNasta": true,
+          "nackdelNasta": false,
           "valtVapen": "Trästav"
         },
         "galfner": {
@@ -296,7 +296,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -320,7 +320,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Träpinne",
           "nackdelNasta": true
         },
@@ -702,6 +702,14 @@
         {
           "text": "Galfner Galfner (Armborst) slår Armborst med nackdel: [18 / 9 → 18] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Trolleriolas (Trästav) slår Stav med nackdel: [18 / 7 → 18] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 6 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
