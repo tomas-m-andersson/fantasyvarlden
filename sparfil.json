@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T13:48:06.634Z",
+  "uppdaterad": "2026-11-02T13:48:15.661Z",
   "spel": {
     "version": 1,
-    "tid": 1793627283696,
+    "tid": 1793627292644,
     "kassa": 274,
     "packning": [
       "Läkedryck",
@@ -248,10 +248,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "gaston": {
@@ -276,7 +276,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": true
         },
         "ff": {
@@ -290,10 +290,13 @@
           "saker": [
             "Torkade fikon"
           ],
-          "markerade": [],
+          "markerade": [
+            "Spjut"
+          ],
           "anvanda": [
             "Fingerfärdighet",
-            "Svärd"
+            "Svärd",
+            "Spjut"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -302,7 +305,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Kort spjut"
         }
       },
       "guld": 58,
@@ -453,6 +457,26 @@
         },
         {
           "text": "Gaston Quasimodoson har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [1] mot 15 – DRAKE!",
+          "cls": "d"
+        },
+        {
+          "text": "Drake! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Rövare 1 tar 12 skada (13 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 1 faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 2 —",
           "cls": "info"
         }
       ],
