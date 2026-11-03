@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:25:06.276Z",
+  "uppdaterad": "2026-11-03T20:25:10.534Z",
   "spel": {
     "version": 1,
-    "tid": 1793737503259,
+    "tid": 1793737507514,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -292,10 +292,13 @@
           "fro": 465907043,
           "fiender": [
             "harpydrottning"
+          ],
+          "rutor": [
+            41
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "shinji": {
           "kp": 6,
@@ -351,7 +354,7 @@
           "valtVapen": "Kroksabel"
         },
         "potus": {
-          "kp": 7,
+          "kp": 4,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -518,13 +521,17 @@
         {
           "text": "Tola Sparv slår Finna dolda ting: [13] mot 5 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "🦅 Från ingenstans kommer en stör-örn, tar Potus i skägget, lyfter honom en decimeter och släpper. Potus tar 3 skada. KP 4/15.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
       "start": "2026-11-03 21:16",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false,
       "anvandaText": [
         "En utsiktspunkt där någon har byggt ett stenröse",
@@ -541,7 +548,7 @@
         "En vimpel från Harpybergen fladdrar i vinden",
         "Vinden ylar som en ensam varg"
       ],
-      "ornar": 1,
+      "ornar": 2,
       "ornVisa": null
     },
     "reset": 0,
