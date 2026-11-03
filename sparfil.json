@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T14:21:15.947Z",
+  "uppdaterad": "2026-11-03T14:21:19.913Z",
   "spel": {
     "version": 1,
-    "tid": 1793715672876,
+    "tid": 1793715676843,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -176,9 +176,9 @@
       }
     },
     "tavla": [
-      "krusbar",
       "gripagg",
-      "rattor"
+      "broncos",
+      "svartalf"
     ],
     "avklarade": {
       "broncos": 1,
