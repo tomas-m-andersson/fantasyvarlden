@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:28:25.381Z",
+  "uppdaterad": "2026-11-03T06:28:37.671Z",
   "spel": {
     "version": 1,
-    "tid": 1793687302420,
+    "tid": 1793687314635,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -246,10 +246,13 @@
           "fro": 963335361,
           "fiender": [
             "dendroidmoder"
+          ],
+          "rutor": [
+            31
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "ff": {
           "kp": 1,
@@ -672,7 +675,7 @@
       "start": "2026-11-02 22:05",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false
     },
     "reset": 0,
