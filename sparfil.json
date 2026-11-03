@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:27:21.799Z",
+  "uppdaterad": "2026-11-03T06:27:28.930Z",
   "spel": {
     "version": 1,
-    "tid": 1793687238825,
+    "tid": 1793687245886,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -322,7 +322,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -608,6 +608,14 @@
         {
           "text": "Shinji Onishi (Kort svärd) slår Svärd: [12] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg (Trollstav) slår Stav: [10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 2 skada (3 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
