@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:27:15.408Z",
+  "uppdaterad": "2026-11-03T06:27:21.799Z",
   "spel": {
     "version": 1,
-    "tid": 1793687232489,
+    "tid": 1793687238825,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -297,8 +297,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort båge"
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         },
         "dagny": {
           "kp": 6,
@@ -604,6 +604,10 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [12] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
