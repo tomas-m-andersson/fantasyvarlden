@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:24:52.851Z",
+  "uppdaterad": "2026-11-03T20:25:06.276Z",
   "spel": {
     "version": 1,
-    "tid": 1793737489850,
+    "tid": 1793737503259,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -281,7 +281,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "Ett gammalt bo med fjädrar stora som åror. En vimpel från Harpybergen fladdrar i vinden. Vinden ylar som en ensam varg.",
-          "fro": 263708268
+          "fro": 263708268,
+          "klar": true,
+          "utfallText": "Tola Sparv hittar 9 guld."
         },
         {
           "typ": "rum",
@@ -385,7 +387,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -398,7 +401,7 @@
           "valtVapen": "Långt spjut"
         }
       },
-      "guld": 9,
+      "guld": 18,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Harpybergen. Kapitel 1.",
@@ -510,6 +513,10 @@
         },
         {
           "text": "Shinji Onishi tar 5 skada från Isfläck. KP 6/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv slår Finna dolda ting: [13] mot 5 – misslyckat",
           "cls": "fel"
         }
       ],
