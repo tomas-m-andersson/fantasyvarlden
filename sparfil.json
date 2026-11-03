@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:31:08.271Z",
+  "uppdaterad": "2026-11-03T06:31:52.334Z",
   "spel": {
     "version": 1,
-    "tid": 1793687465182,
+    "tid": 1793687509315,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -257,8 +257,8 @@
           "kp": 0,
           "vp": 8,
           "doende": true,
-          "ok": 0,
-          "miss": 0,
+          "ok": 1,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -280,7 +280,7 @@
           "fordelNasta": true
         },
         "shinji": {
-          "kp": 10,
+          "kp": 8,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -302,16 +302,16 @@
           "maktig": false,
           "raseri": false,
           "undvikAllt": false,
-          "stoppad": 1,
+          "stoppad": 0,
           "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
-          "kp": 3,
+          "kp": 0,
           "vp": 2,
-          "doende": false,
+          "doende": true,
           "ok": 0,
-          "miss": 0,
+          "miss": 2,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -329,7 +329,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 1,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -846,6 +846,62 @@
         },
         {
           "text": "Dagny von Fågelborg sitter fast och förlorar sin nästa handling.",
+          "cls": "fel"
+        },
+        {
+          "text": "FF slår dödsslag mot FYS: [5] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 6 —",
+          "cls": "info"
+        },
+        {
+          "text": "FF slår dödsslag mot FYS: [14] mot 13 – misslyckat (1 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Dendroidmodern låter rötter skjuta upp under hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Rotnät. KP 8/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi sitter fast och förlorar sin nästa handling.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg tar 6 skada från Rotnät. KP 0/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "Dagny von Fågelborg sitter fast och förlorar sin nästa handling.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg slår dödsslag mot FYS: [16] mot 10 – misslyckat (0 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi är ur spel den här rundan.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 7 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi försöker rädda FF slår Läkekonst: [17] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg slår dödsslag mot FYS: [19] mot 10 – misslyckat (0 lyckade, 2 misslyckade).",
           "cls": "fel"
         }
       ],
