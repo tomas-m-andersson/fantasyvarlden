@@ -64,6 +64,11 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Bakgrund ur bakgrund.js: en egen målad bild om miljön har en, annars ritad med kod
   const bgVantar = window.BAKGRUND.rita(ctx, miljoId, fro);
   if(bgVantar) omRitaVid(bgVantar);
+  // Regnväder: ungefär vart fjärde rum utomhus (på målade bakgrunder) regnar det. Himlen mörknar här,
+  // och själva regnet faller i ett eget genomskinligt lager ovanpå TV:n (se REGN längre ner).
+  const regnar = G.vader(miljoId, fro) === "regn";
+  if(regnar){ ctx.fillStyle = "rgba(18,26,40,.38)"; ctx.fillRect(0, 0, W, H); }
+  G.regnLager(canvas, regnar);
   // rummets föremål (skatt, fälla, vila…)
   // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
   if(extra==="skatt" || extra==="vila"){
@@ -234,6 +239,56 @@ const UTSEENDE = {
  alfred:{hud:"#e8c0a0",har:"#a08a5a",klader:"#7a7a6a"}
 };
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
+// ---------- Väder ----------
+// Vilka miljöer det kan regna i (inte grottor, kloaker eller öknen) och hur ofta: 1 rum på 4.
+const REGNMILJO = {skog:1, berg:1, ruin:1, gravfalt:1, trask:1};
+G.vader = (miljo, fro) => {
+  if(!REGNMILJO[miljo] || !(window.BAKGRUND.harEgen && window.BAKGRUND.harEgen(miljo))) return null;
+  const h = Math.imul((fro||7) >>> 0, 2654435761) >>> 0;
+  return (h >>> 7) % 4 === 0 ? "regn" : null;
+};
+// Regnlagret: en genomskinlig canvas ovanpå scenen i TV:n. Ett gemensamt animationsvarv ritar alla som finns.
+const REGN = { aktiv:false, droppar:[], stank:[], blixt:0, nastaBlixt:0, senast:0 };
+const STILLA = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function nyDroppe(overst){ return { x: Math.random()*360, y: overst ? -Math.random()*40 : Math.random()*180, v: 210 + Math.random()*120, l: 4 + Math.floor(Math.random()*4), fot: 128 + Math.random()*52, ljus: Math.random() < .3 }; }
+function ritaRegn(c){
+  const x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);
+  if(REGN.blixt > 0){ x.fillStyle = `rgba(230,236,255,${Math.min(.45, REGN.blixt*2.2)})`; x.fillRect(0, 0, 320, 180); }
+  for(const d of REGN.droppar){
+    x.fillStyle = d.ljus ? "rgba(214,226,240,.75)" : "rgba(160,178,200,.55)";
+    for(let i=0;i<d.l;i++) x.fillRect(Math.round(d.x - i*0.35), Math.round(d.y - i), 1, 1);
+  }
+  x.fillStyle = "rgba(200,214,232,.7)";
+  for(const s of REGN.stank){ const X=Math.round(s.x), Y=Math.round(s.y);
+    if(s.t < .08){ x.fillRect(X, Y-1, 1, 1); } else { x.fillRect(X-1, Y-1, 1, 1); x.fillRect(X+1, Y-1, 1, 1); } }
+}
+function regnSteg(t){
+  const lager = [...document.querySelectorAll("canvas.vader")].filter(c=>c.isConnected);
+  if(!lager.length){ REGN.aktiv = false; return; }
+  const dt = Math.min(.05, REGN.senast ? (t - REGN.senast)/1000 : .016); REGN.senast = t;
+  for(const d of REGN.droppar){
+    d.y += d.v*dt; d.x -= d.v*dt*0.35;
+    if(d.y >= d.fot){ if(Math.random() < .5) REGN.stank.push({x:d.x, y:d.fot, t:0}); Object.assign(d, nyDroppe(true)); }
+  }
+  REGN.stank.forEach(s=>s.t += dt); REGN.stank = REGN.stank.filter(s=>s.t < .16);
+  // ibland en blixt långt bort
+  if(!REGN.nastaBlixt) REGN.nastaBlixt = t + 9000 + Math.random()*16000;
+  if(t > REGN.nastaBlixt){ REGN.blixt = .2; REGN.nastaBlixt = t + 9000 + Math.random()*16000; }
+  if(REGN.blixt > 0){ REGN.blixt -= dt; if(REGN.blixt > .08 && REGN.blixt < .12) REGN.blixt = .05; }
+  lager.forEach(ritaRegn);
+  requestAnimationFrame(regnSteg);
+}
+G.regnLager = (canvas, pa) => {
+  const tv = canvas.parentElement;
+  if(!tv || !tv.classList.contains("tv")) return;
+  let ov = tv.querySelector("canvas.vader");
+  if(!pa){ if(ov) ov.remove(); return; }
+  if(!ov){ ov = document.createElement("canvas"); ov.className = "px vader"; ov.width = 320; ov.height = 180; ov.setAttribute("aria-hidden","true"); canvas.after(ov); }
+  if(!REGN.droppar.length) for(let i=0;i<150;i++) REGN.droppar.push(nyDroppe(false));
+  if(STILLA){ ritaRegn(ov); return; }
+  if(!REGN.aktiv){ REGN.aktiv = true; REGN.senast = 0; requestAnimationFrame(regnSteg); }
+};
+
 const BILDER = {};
 // Storlek i pixlar: alla hjältar ritas i full storlek (32×32). Att förminska figurerna gjorde pixlarna suddiga.
 G.storlek = () => 32;
