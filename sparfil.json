@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:30:23.534Z",
+  "uppdaterad": "2026-11-03T06:30:37.371Z",
   "spel": {
     "version": 1,
-    "tid": 1793687420438,
+    "tid": 1793687434337,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -255,11 +255,11 @@
       "i": 4,
       "h": {
         "ff": {
-          "kp": 0,
+          "kp": 3,
           "vp": 8,
-          "doende": true,
-          "ok": 1,
-          "miss": 1,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -287,9 +287,7 @@
           "miss": 0,
           "stabil": false,
           "dod": false,
-          "saker": [
-            "Torkat kött"
-          ],
+          "saker": [],
           "markerade": [],
           "anvanda": [
             "Pilbåge",
@@ -305,7 +303,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
@@ -777,6 +775,22 @@
         {
           "text": "— Runda 4 —",
           "cls": "info"
+        },
+        {
+          "text": "Dendroidmodern står still och kan inte agera.",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi använder torkat kött på FF. Tuggar torkat kött: återfå T4 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "FF kommer tillbaka på benen!",
+          "cls": "ok"
+        },
+        {
+          "text": "FF återfår 3 KP.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
