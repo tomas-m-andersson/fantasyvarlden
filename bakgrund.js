@@ -335,8 +335,26 @@ RITA.trask = (ctx, rnd) => {
 
 // Rita med cache: varje (miljö, frö) ritas en gång och återanvänds sedan
 const CACHE = new Map();
+// Egna målade bakgrunder (320×180, dubbel upplösning) i mappen bakgrunder/. Saknas en miljö här ritas den med kod.
+const EGNA = { grotta:["grotta1","grotta2"], skog:["skog1","skog2"] };
+const EBILDER = {};
+const egenBild = namn => { if(!EBILDER[namn]){ const i=new Image(); i.src="bakgrunder/"+namn+".png"; EBILDER[namn]=i; } return EBILDER[namn]; };
 window.BAKGRUND = {
+  // Returnerar en bild som inte hunnit laddas (så att scenen kan ritas om när den är klar), annars null.
   rita(ctx, miljo, fro){
+    const lista = EGNA[miljo];
+    if(lista){
+      const img = egenBild(lista[((fro||7)>>>0) % lista.length]);
+      if(img.complete && img.naturalWidth){
+        ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.imageSmoothingEnabled=false;
+        ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height); ctx.restore();
+        return null;
+      }
+      if(!img.complete) { this.kod(ctx, miljo, fro); return img; }
+    }
+    this.kod(ctx, miljo, fro); return null;
+  },
+  kod(ctx, miljo, fro){
     const nyckel = miljo + ":" + (fro||7);
     let c = CACHE.get(nyckel);
     if(!c){
@@ -348,6 +366,7 @@ window.BAKGRUND = {
     }
     ctx.drawImage(c, 0, 0);
   },
-  finns: miljo => !!RITA[miljo]
+  finns: miljo => !!RITA[miljo],
+  harEgen: miljo => !!EGNA[miljo]
 };
 })();

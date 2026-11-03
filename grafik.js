@@ -57,10 +57,13 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const argsKopia = [canvas, miljoId, fiender, fro, extra, hjaltar, npcer];
   const omRitaVid = img => img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true});
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
-  const W = 160, H = 90; canvas.width = W; canvas.height = H; ctx.imageSmoothingEnabled = false; // efter width – annars nollställs den
+  // TV:n är 320×180 pixlar så att målade bakgrunder syns i full upplösning. Allt annat ritas i 160×90-koordinater, förstorat två gånger.
+  const W = 160, H = 90; canvas.width = W*2; canvas.height = H*2; ctx.imageSmoothingEnabled = false; // efter width – annars nollställs den
+  ctx.setTransform(2,0,0,2,0,0);
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
-  // Detaljerad bakgrund ur bakgrund.js (ritas en gång per rum och sparas undan)
-  window.BAKGRUND.rita(ctx, miljoId, fro);
+  // Bakgrund ur bakgrund.js: en egen målad bild om miljön har en, annars ritad med kod
+  const bgVantar = window.BAKGRUND.rita(ctx, miljoId, fro);
+  if(bgVantar) omRitaVid(bgVantar);
   // rummets föremål (skatt, fälla, vila…)
   // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
   if(extra==="skatt" || extra==="vila"){
@@ -76,7 +79,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Bakgrundssaker: kranier, ben, tunnor och lyktor i grottor och ruiner – staket, hö och brunnar ute
   const INNE = {grotta:[7,52,23,48,28,39], kloak:[23,48,52,28,7], ruin:[48,23,7,52,28], gravfalt:[7,52,28]};
   const UTE = {skog:[24,15,29,12], berg:[11,24], trask:[24,12]};   // inga lådor eller tunnor i öknen
-  if(extra!=="jens" && !String(extra||"").startsWith("jens")){
+  // (målade bakgrunder har redan egna detaljer och får inga utströdda saker)
+  if(extra!=="jens" && !String(extra||"").startsWith("jens") && !window.BAKGRUND.harEgen(miljoId)){
     // sakerna står på marken (underkanten vid y ≈ 72) och får en skugga, så att de inte ser uppklistrade ut
     const pa = (img, r, x, fot, z) => { if(klarBild(img)){ ctx.fillStyle="#0004"; ctx.fillRect(x+Math.round(z*.15), fot-1, Math.round(z*.7), 2); } sak(img, r, x, fot - z + 1, z); };
     if(INNE[miljoId]){ const l=INNE[miljoId]; pa(sg, l[Math.floor(rnd2()*l.length)], 58, 70, 16); pa(sg, l[Math.floor(rnd2()*l.length)], 142, 72, 16); }
