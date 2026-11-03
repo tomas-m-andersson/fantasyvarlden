@@ -128,7 +128,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
-      const x = 2 + i*15, y = 44 + (i%2 ? 4 : 0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
+      const x = 2 + i*15, y = 44 + (i%2 ? 4 : 0) + (MARK_NER[miljoId]||0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
       const img = G.figurBild(h.id);
       if(!img){ return; }
       if(!img.complete){ laddar.push(img); return; }
@@ -288,6 +288,9 @@ G.regnLager = (canvas, pa) => {
   if(STILLA){ ritaRegn(ov); return; }
   if(!REGN.aktiv){ REGN.aktiv = true; REGN.senast = 0; requestAnimationFrame(regnSteg); }
 };
+
+// Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
+const MARK_NER = { basar: 9 };
 
 const BILDER = {};
 // Storlek i pixlar: alla hjältar ritas i full storlek (32×32). Att förminska figurerna gjorde pixlarna suddiga.

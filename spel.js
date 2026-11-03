@@ -360,7 +360,7 @@ function ritaBasar(){
   app.querySelectorAll("canvas[data-npc]").forEach(c=>{ const [ark,ruta]=c.dataset.npc.split(":"); G.ritaNpc(c, ark, Number(ruta), true); });
   // TV:n: sällskapet till vänster, köpmannen, teförsäljaren och smeden vid stånden till höger
   G.ritaScen($("#basarscen"), "basar", [], 1, null, party.map(id=>({id, ruta:figur(id)})),
-    [{ark:"stad", ruta:36, x:84, fot:76}, {ark:"kopman", ruta:22, x:106, fot:78}, {ark:"by", ruta:12, x:128, fot:76}]);
+    [{ark:"stad", ruta:36, x:84, fot:85}, {ark:"kopman", ruta:22, x:106, fot:87}, {ark:"by", ruta:12, x:128, fot:85}]);
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
     if(b.dataset.a==="hem"){ basarMeddelande=""; return ga("hem"); }
