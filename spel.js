@@ -226,7 +226,7 @@ function ritaHem(){
   html += `<section class="card"><div class="row" style="justify-content:space-between"><h2>Sällskapet</h2><span class="kassa">${guldHtml(st.kassa)}</span></div>
     <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<button class="slot fylld" data-a="visa" data-id="${id}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span></button>`:`<div class="slot">Tom plats</div>`}).join("")}</div>
     <p class="small muted">Välj 1–4 hjältar i galleriet nedan. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
-    <div class="row">
+    <div class="row hemval">
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragstavlan<span class="sub">Lansors förmedling</span></button>
       <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
       <button class="btn ghost" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
