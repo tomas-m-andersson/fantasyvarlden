@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:25:29.617Z",
+  "uppdaterad": "2026-11-03T20:25:39.307Z",
   "spel": {
     "version": 1,
-    "tid": 1793737526716,
+    "tid": 1793737536401,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -379,7 +379,7 @@
         },
         "tola": {
           "kp": 13,
-          "vp": 5,
+          "vp": 2,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -398,7 +398,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Långt spjut"
         }
       },
@@ -531,6 +531,18 @@
         {
           "text": "Potus Singulus Rövhatt använder kråkmossa. Smörjer vapnet med gift: nästa träff gör +T6 skada.",
           "cls": "info"
+        },
+        {
+          "text": "★ Tola Sparv: Riddaranfall!",
+          "cls": "d"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut med fördel: [11 / 5 → 5] mot 11 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 6 skada (8 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
