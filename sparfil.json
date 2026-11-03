@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:30:50.942Z",
+  "uppdaterad": "2026-11-03T06:31:00.608Z",
   "spel": {
     "version": 1,
-    "tid": 1793687447798,
+    "tid": 1793687457527,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -308,7 +308,7 @@
         },
         "dagny": {
           "kp": 4,
-          "vp": 4,
+          "vp": 2,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -329,7 +329,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -803,6 +803,14 @@
         {
           "text": "— Runda 5 —",
           "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg kastar Lyft slår Magi: [12] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Besvärjelsen fräser och dör ut.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
