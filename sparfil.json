@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:08:53.901Z",
+  "uppdaterad": "2026-11-03T11:08:58.972Z",
   "spel": {
     "version": 1,
-    "tid": 1793704130544,
+    "tid": 1793704136066,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -331,7 +331,8 @@
           "anvanda": [
             "Övertala",
             "Smyga",
-            "Fingerfärdighet"
+            "Fingerfärdighet",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -340,7 +341,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "malexander": {
@@ -458,6 +459,10 @@
         },
         {
           "text": "Tola Sparv (Långt spjut) slår Spjut: [16] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [19] mot 10 – misslyckat",
           "cls": "fel"
         }
       ],
