@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:25:39.307Z",
+  "uppdaterad": "2026-11-03T20:26:01.155Z",
   "spel": {
     "version": 1,
-    "tid": 1793737536401,
+    "tid": 1793737558196,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -314,7 +314,8 @@
           ],
           "anvanda": [
             "Svärd",
-            "Upptäcka fara"
+            "Upptäcka fara",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -323,8 +324,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd"
+          "agerat": true,
+          "valtVapen": "Kort båge",
+          "nackdelNasta": false
         },
         "malexander": {
           "kp": 14,
@@ -349,7 +351,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kroksabel"
+          "valtVapen": "Kroksabel",
+          "nackdelNasta": true
         },
         "potus": {
           "kp": 4,
@@ -399,7 +402,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Långt spjut"
+          "valtVapen": "Långt spjut",
+          "nackdelNasta": true
         }
       },
       "guld": 18,
@@ -543,6 +547,30 @@
         {
           "text": "Harpydrottningen tar 6 skada (8 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen skriker så att alla tappar fattningen – hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge med nackdel: [18 / 7 → 18] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
