@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:29:51.682Z",
+  "uppdaterad": "2026-11-03T06:30:17.472Z",
   "spel": {
     "version": 1,
-    "tid": 1793687388748,
+    "tid": 1793687414435,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -259,7 +259,7 @@
           "vp": 8,
           "doende": true,
           "ok": 1,
-          "miss": 0,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -295,7 +295,8 @@
             "Pilbåge",
             "Svärd",
             "Kniv",
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Läkekonst"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -330,7 +331,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -748,6 +749,22 @@
         {
           "text": "FF slår dödsslag mot FYS: [4] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Dendroidmodern står still och kan inte agera.",
+          "cls": "ok"
+        },
+        {
+          "text": "FF slår dödsslag mot FYS: [16] mot 13 – misslyckat (1 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi försöker rädda FF slår Läkekonst: [17] mot 5 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
