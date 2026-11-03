@@ -505,23 +505,40 @@ G.ritaPool = (canvas, doda) => {
 
 // ---------- Värdshuset på startsidan: möbler ur npc/mobler.png, värden ur npc/kopman.png ----------
 G.ritaVardshus = (canvas, hjaltar) => {
-  const ctx = canvas.getContext("2d"); const W=160, H=90; canvas.width=W; canvas.height=H; ctx.imageSmoothingEnabled=false;
+  const ctx = canvas.getContext("2d"); const W=160, H=90; ctx.imageSmoothingEnabled=false;
   const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+  // Målad bakgrund (bakgrunder/vardshus.png, 320×180): väggen med dörren till vänster och golvet från y 62.
+  // Möblerna ställs mellan pelarna så att dörren och ljusen syns. Saknas bilden ritas väggen med kod.
+  const tak = G.npcBild("../bakgrunder/vardshus"), malad = tak.complete && tak.naturalWidth;
+  if(!tak.complete) tak.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar),{once:true});
+  if(malad){
+    canvas.width=W*2; canvas.height=H*2; ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(tak, 0, 0); ctx.setTransform(2,0,0,2,0,0);
+  } else { canvas.width=W; canvas.height=H; ctx.imageSmoothingEnabled=false; }
   // vägg av timmer och golv av plankor
-  for(let y=0;y<58;y+=6){ R(0,y,W,6,y%12?"#3a2616":"#33210f"); R(0,y+5,W,1,"#241509"); }
-  for(let x=7;x<W;x+=29) R(x,0,3,58,"#2a1a0c");
-  R(0,58,W,32,"#5a3a1e"); for(let y=62;y<H;y+=5) R(0,y,W,1,"#4a2e16"); for(let x=0;x<W;x+=23) R(x+((x/23)%2?11:0),58,1,32,"#4a2e16");
-  R(0,57,W,2,"#241509");
+  if(!malad) for(let y=0;y<58;y+=6){ R(0,y,W,6,y%12?"#3a2616":"#33210f"); R(0,y+5,W,1,"#241509"); }
+  if(!malad){
+    for(let x=7;x<W;x+=29) R(x,0,3,58,"#2a1a0c");
+    R(0,58,W,32,"#5a3a1e"); for(let y=62;y<H;y+=5) R(0,y,W,1,"#4a2e16"); for(let x=0;x<W;x+=23) R(x+((x/23)%2?11:0),58,1,32,"#4a2e16");
+    R(0,57,W,2,"#241509");
+  }
   const mob = G.npcBild("mobler"), kop = G.npcBild("kopman"), vantar=[];
   const klar = img => img.complete && img.naturalWidth;
   [mob,kop].forEach(i=>{ if(!klar(i)) vantar.push(i); });
   if(!vantar.length){
     const M=(r,x,y,z,sp)=>G.ritaRuta(ctx,mob,r,x,y,z,sp);
-    M(44, 44, 2, 24);            // älghuvud
-    M(47, 70, 6, 18);            // sköld
-    M(43, 4, 10, 22);            // anslagstavla (uppdragen)
-    M(46, 30, 12, 16);           // kandelaber
-    M(33, 4, 30, 30);            // öppen spis
+    if(malad){
+      M(33, 44, 33, 30);         // öppen spis mellan första pelarparet
+      M(44, 49, 8, 20);          // älghuvud ovanför spisen
+      M(43, 80, 26, 22);         // anslagstavla (uppdragen) under fönstret
+      M(47, 1, 22, 15);          // sköld på väggen till vänster om dörren
+    } else {
+      M(44, 44, 2, 24);          // älghuvud
+      M(47, 70, 6, 18);          // sköld
+      M(43, 4, 10, 22);          // anslagstavla (uppdragen)
+      M(46, 30, 12, 16);         // kandelaber
+      M(33, 4, 30, 30);          // öppen spis
+    }
     M(20, 112, 8, 30);           // hylla med flaskor
     M(23, 132, 12, 26);          // hylla med glas
     G.ritaRuta(ctx, kop, 2, 115, 24, 30);   // värdshusvärden bakom disken
@@ -536,6 +553,7 @@ G.ritaVardshus = (canvas, hjaltar) => {
     R(x+9, y+30, 14, 2, "#0005");
     ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, 32, 32);
   });
+  ctx.setTransform(1,0,0,1,0,0);
   if(vantar.length) [...new Set(vantar)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar),{once:true}));
 };
 
