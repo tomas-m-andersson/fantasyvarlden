@@ -122,6 +122,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     else vantar.forEach(omRitaVid);
     hjaltar = null;
   }
+  // effekt ur npc/effekter.png ovanpå en figur (träff, miss, trolldom)
+  const effektPa = (ruta, x, y, z) => { if(ruta==null) return; const ei = G.npcBild("effekter"); if(ei.complete && ei.naturalWidth){ ctx.save(); ctx.globalAlpha = ruta>=40 && ruta<48 ? .6 : .9; G.ritaRuta(ctx, ei, ruta, x, y, z); ctx.restore(); } };   // skölden lite genomskinlig
   // hjältarna (vänster sida, i två led så att fyra får plats)
   const harHjaltar = hjaltar && hjaltar.length;
   let ornRita = null;
@@ -139,6 +141,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       const r = h.ruta;
       ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, sx, sy, S, S);
       ctx.restore();
+      effektPa(h.effekt, sx, sy, S);
       if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(sx+Math.round(S/2)-2, sy-3, 4, 3); }
       if(h.etikett && h.etikett.length) G.ritaEtiketter(ctx, h.etikett, sx+S/2, sy-1);
       if(h.orn && h.orn.t != null) ornRita = {h, sx, sy, S};
@@ -199,6 +202,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
         ctx.restore();
       } else G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
       ctx.globalAlpha = 1;
+      effektPa(f.effekt, x, Math.max(0,y), egen ? w : Math.max(24, w));
       if(f.markerad){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+w/2-2, Math.max(0,y)-3, 4, 3); }
       if(f.etikett && f.etikett.length) G.ritaEtiketter(ctx, f.etikett, x+w/2, Math.max(10,y)-1);
     });

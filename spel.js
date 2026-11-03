@@ -593,7 +593,7 @@ function skadaHjalte(id, mangd, kalla, ignoreraRust){
   const verklig = Math.max(0, mangd - rust);
   if(x.doende){ x.miss++; logga(`${h.namn} träffas medan hen ligger döende – ett misslyckat dödsslag (${x.miss}/3).`,"fel"); if(x.miss>=3) dor(id); return verklig; }
   x.kp = Math.max(0, x.kp - verklig);
-  etikett("h:"+id, "-"+verklig, verklig?"#ff5a4a":"#cfc6b4");
+  etikett("h:"+id, "-"+verklig, verklig?"#ff5a4a":"#cfc6b4"); visaEffekt("h:"+id, "traff");
   logga(`${h.namn} tar ${verklig} skada${rust&&mangd>verklig?` (${mangd} − ${rust} rustning)`:""}${kalla?" från "+kalla:""}. KP ${x.kp}/${R.maxKP(h)}.`, verklig?"fel":"info");
   if(x.kp<=0 && !x.dod){ x.doende=true; x.ok=0; x.miss=0; logga(`${h.namn} faller ihop och ligger döende!`,"dm"); if(!strid) dodsslagDirekt(id); }
   return verklig;
@@ -601,7 +601,7 @@ function skadaHjalte(id, mangd, kalla, ignoreraRust){
 function lakaHjalte(id, mangd){
   const x=rh(id), h=bygg(id); if(x.dod) return 0;
   const fore = x.kp; x.kp = Math.min(R.maxKP(h), x.kp + mangd);
-  if(x.kp>fore) etikett("h:"+id, "+"+(x.kp-fore), "#7fe07a");
+  if(x.kp>fore){ etikett("h:"+id, "+"+(x.kp-fore), "#7fe07a"); visaEffekt("h:"+id, "hela"); }
   if(x.doende||x.stabil){ x.doende=false; x.stabil=false; x.ok=0; x.miss=0; if(x.kp<=0) x.kp=1; logga(`${h.namn} kommer tillbaka på benen!`,"ok"); }
   return x.kp - fore;
 }
@@ -860,7 +860,7 @@ function nyRunda(){
   st.run.party.forEach(id=>{ const x=rh(id); x.agerat=false; x.raseri=false; x.undvikAllt=false; });
   logga(`— Runda ${strid.runda} —`,"info");
   storOrn(1/20, true);
-  if(strid.salamander>0){ const l=strid.fiender.filter(f=>f.kp>0); if(l.length){ const f=R.valj(l); const d=Math.max(0,R.t(8)-f.rust); f.kp=Math.max(0,f.kp-d); logga(`Salamandern bränner ${f.namn} för ${d} skada.`,"ok"); if(f.kp<=0) logga(`${f.namn} faller!`,"d"); } strid.salamander--; }
+  if(strid.salamander>0){ const l=strid.fiender.filter(f=>f.kp>0); if(l.length){ const f=R.valj(l); const d=Math.max(0,R.t(8)-f.rust); f.kp=Math.max(0,f.kp-d); visaEffekt("f:"+f.i, "salamander"); logga(`Salamandern bränner ${f.namn} för ${d} skada.`,"ok"); if(f.kp<=0) logga(`${f.namn} faller!`,"d"); } strid.salamander--; }
 }
 async function stridLoop(){
   while(strid){
@@ -870,7 +870,7 @@ async function stridLoop(){
     if(strid.pos >= strid.ordning.length){ strid.turStart = strid.logg.length; strid.behallStart = true; nyRunda(); ritaStrid(); await vanta(tempo().paus); continue; }
     const tur = strid.ordning[strid.pos++];
     tur.nu = true;
-    if(!strid.behallStart){ strid.turStart = strid.logg.length; } strid.behallStart = false; strid.etiketter = [];
+    if(!strid.behallStart){ strid.turStart = strid.logg.length; } strid.behallStart = false; strid.etiketter = []; strid.effekter = [];
     if(tur.typ==="h"){
       const x = rh(tur.id), namn = HJ[tur.id].namn;
       if(x.dod || x.stabil){ tur.gjord=true; continue; }
@@ -904,6 +904,29 @@ async function stridLoop(){
 const TEMPON = {steg:{namn:"Steg för steg (tryck Fortsätt)",fore:700,paus:400}, lugnt:{namn:"Lugnt (automatiskt, ca 3 sekunder)",fore:900,paus:600,vanta:3000}, snabbt:{namn:"Snabbt",fore:450,paus:250,vanta:1000}};
 const tempo = () => TEMPON[alt.tempo] || TEMPON.steg;
 function etikett(mal, text, farg){ if(strid){ strid.etiketter = strid.etiketter||[]; strid.etiketter.push({mal, text, farg}); } }
+// ---------- Effekter för trolldom och strid (npc/effekter.png, en animation per rad) ----------
+const r8 = n => [0,1,2,3,4,5,6,7].map(k=>n*8+k);
+const EFFEKT = { blixt:r8(0), eld:r8(1), eldklot:r8(2), frost:r8(3), hela:r8(4), skydd:r8(5), rok:r8(6),
+  salamander:[56,57,58,57,58,9,19,15], traff:[59,60,61], miss:[62,63,63] };
+const BESV_EFFEKT = { "Blixt":"blixt", "Eld":"eld", "Eldklot":"eldklot", "Frost":"frost", "Hela":"hela", "Motståndskraft":"skydd", "Beskyddare":"skydd",
+  "Lyft":"rok", "Försegla":"skydd", "Teleportera":"rok", "Förtrolla vapen":"skydd", "Salamander":"salamander", "Kontrollera person":"hela", "Avbild":"rok" };
+// Lägger en effekt på en figur ("f:<nr>" eller "h:<id>"). Första effekten per figur och handling gäller,
+// så att en besvärjelse inte skrivs över av den vanliga träffgnistan när skadan delas ut.
+function visaEffekt(mal, typ){ if(!strid || !EFFEKT[typ]) return; strid.effekter = strid.effekter||[]; if(strid.effekter.some(e=>e.mal===mal)) return; strid.effekter.push({mal, rutor:EFFEKT[typ]}); }
+function spelaEffekter(miljo, fro, fiendeVis, hjVis){
+  const ef = strid.effekter; strid.effekter = [];
+  const id = strid.effektId = (strid.effektId||0) + 1, langd = Math.max(...ef.map(e=>e.rutor.length));
+  let k = 0;
+  const ruta = (mal) => { const e = ef.find(e=>e.mal===mal); return e && k < e.rutor.length ? e.rutor[k] : null; };
+  const steg = () => {
+    if(!strid || strid.effektId !== id) return;
+    const c = $("#scen"); if(!c) return;
+    const f2 = fiendeVis.map(f=>({...f, effekt: ruta("f:"+f.i)})), h2 = hjVis.map(h=>({...h, effekt: ruta("h:"+h.id)}));
+    G.ritaScen(c, miljo, f2, fro, null, h2);
+    if(k++ < langd) setTimeout(steg, 85);
+  };
+  steg();
+}
 async function visaResultat(titel, hjalteId, fiende){
   if(!strid) return;
   const rader = strid.logg.slice(strid.turStart||0).filter(l=>l.text && !/^— Runda \d+ —$/.test(l.text));
@@ -952,7 +975,7 @@ async function fiendeAgerar(f){
   if(f.typ==="folk"){
     const s = R.slag(f.anfall, f.nackdel?"nackdel":null); f.nackdel=false;
     logga(`${f.namn} anfaller ${HJ[mal].namn}: ${s.text}`, s.lyckat?"fel":"ok");
-    if(!s.lyckat){ etikett("h:"+mal, "MISS", "#ffffff"); return; }
+    if(!s.lyckat){ etikett("h:"+mal, "MISS", "#ffffff"); visaEffekt("h:"+mal, "miss"); return; }
     const fs = await fragaForsvar(mal, `${f.namn} träffar ${HJ[mal].namn} (${f.skada}${s.drake?", DRAKE – dubbel skada":""}).`);
     if(fs) return;
     let d = R.slaTarning(f.skada); if(s.drake) d += R.slaTarning(f.skada);
@@ -994,7 +1017,7 @@ function fragaForsvar(id, beskr, barUndvika){
       if(!strid) return res(false);
       logga(`${h.namn} ${val==="parera"?"parerar":"försöker undvika"}: ${s.text}`, slagCls(s));
       ritaStrid();
-      if(s.lyckat) etikett("h:"+id, "MISS", "#ffffff");
+      if(s.lyckat){ etikett("h:"+id, "MISS", "#ffffff"); visaEffekt("h:"+id, "miss"); }
       res(s.lyckat);
     }};
     strid.aktiv = id; ritaStrid();
@@ -1009,7 +1032,7 @@ async function hjalteHandling(fn){
 function skadaFiende(f, d, kalla){
   const verklig = Math.max(0, d - f.rust);
   f.kp = Math.max(0, f.kp - verklig);
-  etikett("f:"+f.i, "-"+verklig, verklig?"#ffd23f":"#cfc6b4");
+  etikett("f:"+f.i, "-"+verklig, verklig?"#ffd23f":"#cfc6b4"); visaEffekt("f:"+f.i, "traff");
   logga(`${f.namn} tar ${verklig} skada${f.rust&&d>verklig?` (${d} − ${f.rust} rustning)`:""}${kalla?" från "+kalla:""}.`, verklig?"ok":"info");
   if(f.kp<=0) logga(`${f.namn} faller!`,"d");
   return verklig;
@@ -1019,7 +1042,7 @@ function anfall(id, vapenNamn, f, extra){
   const h=bygg(id), x=rh(id), v=R.VAPEN[vapenNamn];
   const s = hjalteSlag(id, v.fard, extra.fordel?"fordel":null);
   logga(slagText(h.namn+" ("+vapenNamn+")", s), slagCls(s));
-  if(!s.lyckat){ etikett("f:"+f.i, "MISS", "#ffffff"); if(s.demon){ x.nackdelNasta=true; logga(`Naturligt 20! ${h.namn} tappar balansen och får nackdel på nästa slag.`,"dm"); } return 0; }
+  if(!s.lyckat){ etikett("f:"+f.i, "MISS", "#ffffff"); visaEffekt("f:"+f.i, "miss"); if(s.demon){ x.nackdelNasta=true; logga(`Naturligt 20! ${h.namn} tappar balansen och får nackdel på nästa slag.`,"dm"); } return 0; }
   let d = R.slaTarning(v.skada) + (v.bonus||0);
   if(s.drake){ d += R.slaTarning(v.skada); logga("Naturligt 1! Dubbel vapenskada.","d"); }
   const sb = R.skadebonus(h, v.avstand); if(sb) d += R.slaTarning(sb);
@@ -1036,6 +1059,11 @@ function kasta(id, namn, mal){
   const s = hjalteSlag(id, "Magi");
   logga(slagText(`${h.namn} kastar ${namn}`, s), slagCls(s));
   if(!s.lyckat){ if(s.demon){ const d=R.t(6); logga(`Naturligt 20 – magisk olycka! Besvärjelsen slår tillbaka.`,"dm"); skadaHjalte(id,d,"sin egen magi",true); } else logga("Besvärjelsen fräser och dör ut.","fel"); return; }
+  const ef = BESV_EFFEKT[namn];
+  if(ef){ if(b.mal==="allaFiender") strid.fiender.filter(f=>f.kp>0).forEach(f=>visaEffekt("f:"+f.i, ef));
+    else if(b.mal==="fiende" && mal) visaEffekt("f:"+mal.i, ef);
+    else if(b.mal==="hjalte" && mal) visaEffekt("h:"+mal, ef);
+    else if(b.fly || b.skrack) st.run.party.filter(i=>!rh(i).dod).forEach(i=>visaEffekt("h:"+i, ef)); }
   const m = (x.maktig?2:1) * (s.drake?2:1); if(x.maktig){ logga("Hocus pocus i fokus – dubbel effekt!","d"); x.maktig=false; }
   if(b.skada){ const lista = b.mal==="allaFiender" ? strid.fiender.filter(f=>f.kp>0) : [mal]; lista.forEach(f=>skadaFiende(f, R.slaTarning(b.skada)*m, namn)); }
   if(b.stoppa && mal && mal.kp>0){ mal.stoppad = (b.stoppaRundor||1)*m; logga(`${mal.namn} är fastlåst i ${mal.stoppad} ${mal.stoppad>1?"handlingar":"handling"}.`,"ok"); }
@@ -1131,6 +1159,8 @@ function ritaStrid(){
   const fiendeVis = strid.fiender.filter(f=>!f.lamnat).map(f=>({...f, visa:true, etikett:et.filter(e=>e.mal==="f:"+f.i)}));
   const hjVis = scenHjaltar(akt).map(h=>({...h, etikett:et.filter(e=>e.mal==="h:"+h.id)}));
   G.ritaScen($("#scen"), r.q.miljo, fiendeVis, steg.fro||7, null, hjVis);
+  G.npcBild("effekter");   // läs in effektarket i förväg
+  if(strid.effekter && strid.effekter.length) spelaEffekter(r.q.miljo, steg.fro||7, fiendeVis, hjVis);
   if(strid.ornVisa){ const v = strid.ornVisa; strid.ornVisa = null;
     spelaOrn(t => { const c = $("#scen"); if(c && strid) G.ritaScen(c, r.q.miljo, fiendeVis, steg.fro||7, null, hjVis.map(h=>h.id==="potus"&&t!=null?{...h, orn:{ruta:v.ruta, t}}:h)); }); }
   fyllPortratt(app); scrollaLogg();
