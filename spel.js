@@ -434,7 +434,7 @@ function startaUppdrag(qid, medJens){
   steg.push(...byggRum(q.miljo, q.rum, party.length, q.boss, 0));
   st.run = {q, party, steg, i:0, h:nyaHjaltar(party), guld:0, logg:[], utfall:null, start:datum()};
   st.tavla = st.tavla.filter(x=>x!==qid);
-  storOrn(1/6);
+  storOrn(1/12);
   logga(`Sällskapet antar uppdraget ”${q.titel}” av ${q.givare}.`,"info");
   if(medJens){ logga(`🐴 Bakhuvudet Jens tar ${JENS_PRIS} guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.`,"info"); kronika(`${party.map(i=>HJ[i].namn).join(", ")} åkte med Bakhuvudet Jens mot ${q.plats} för ${JENS_PRIS} guld.`); }
   spara(); ga("run");
@@ -503,7 +503,7 @@ function startaUtforskning(pid){
   st.run = {q, party, steg:byggRum(p.miljo, KAPITEL_RUM, party.length, q.boss, 0), i:0, h:nyaHjaltar(party), guld:0, logg:[], utfall:null, start:datum(),
     utforska:true, kapitel:1, djup:0, paus:false};
   st.run.anvandaText = st.run.steg.anvanda || [];
-  storOrn(1/6);
+  storOrn(1/12);
   logga(`Sällskapet ger sig in i ${p.namn}. Kapitel 1.`,"info");
   spara(); ga("run");
 }
@@ -528,7 +528,7 @@ function nyttKapitel(){
   r.anvandaText = nya.anvanda; r.steg.push(...nya);
   r.i++; r.kapStart = r.i;
   logga(`Sällskapet går djupare in i ${r.q.plats}. Kapitel ${r.kapitel}.`,"info");
-  storOrn(1/6); spara(); ritaRun(); window.scrollTo({top:0,behavior:"smooth"});
+  storOrn(1/12); spara(); ritaRun(); window.scrollTo({top:0,behavior:"smooth"});
 }
 function kapitelHtml(){
   const r = st.run, nasta = r.kapitel+1;
@@ -790,7 +790,7 @@ function klart(steg, text){
 }
 function kollaAllaNere(){ if(!st.run) return false; if(vakna().length===0){ avslutaRun(false,"Hela sällskapet har fallit."); return true; } return false; }
 // Stör-örnen (lore): Potus Rövhatt har en tendens att bli anfallen av örnar.
-// Varje gång sällskapet kommer till ett nytt steg (1 på 6) och varje stridsrunda (1 på 10) kan en örn dyka ner på honom.
+// Varje gång sällskapet kommer till ett nytt steg (1 på 12) och varje stridsrunda (1 på 20) kan en örn dyka ner på honom.
 // Den gör lite skada (T4, rustning hjälper inte), men tar honom aldrig under 1 KP.
 const ORN_TEXT = [
   "En stör-örn störtdyker ur skyn och hackar Potus Rövhatt i huvudet. Sedan flyger den iväg igen.",
@@ -815,7 +815,7 @@ function nastaSteg(){
   const r=st.run; aktivtVal=null;
   if(r.i >= r.steg.length-1){ return avslutaRun(true); }
   if(r.utforska) r.djup++;
-  r.i++; storOrn(1/6); spara(); ritaRun(); window.scrollTo({top:0,behavior:"smooth"});
+  r.i++; storOrn(1/12); spara(); ritaRun(); window.scrollTo({top:0,behavior:"smooth"});
 }
 function geUpp(){
   if(!confirm("Vill ni verkligen ge upp äventyret? Ni behåller livet men får ingen belöning.")) return;
@@ -846,7 +846,7 @@ function nyRunda(){
   strid.ordning = delt; strid.pos = 0;
   st.run.party.forEach(id=>{ const x=rh(id); x.agerat=false; x.raseri=false; x.undvikAllt=false; });
   logga(`— Runda ${strid.runda} —`,"info");
-  storOrn(1/10, true);
+  storOrn(1/20, true);
   if(strid.salamander>0){ const l=strid.fiender.filter(f=>f.kp>0); if(l.length){ const f=R.valj(l); const d=Math.max(0,R.t(8)-f.rust); f.kp=Math.max(0,f.kp-d); logga(`Salamandern bränner ${f.namn} för ${d} skada.`,"ok"); if(f.kp<=0) logga(`${f.namn} faller!`,"d"); } strid.salamander--; }
 }
 async function stridLoop(){
