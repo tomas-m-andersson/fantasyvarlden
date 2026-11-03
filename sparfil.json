@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:27:51.888Z",
+  "uppdaterad": "2026-11-03T06:28:05.005Z",
   "spel": {
     "version": 1,
-    "tid": 1793687268728,
+    "tid": 1793687282109,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -226,7 +226,9 @@
           "rutor": [
             63,
             34
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 10 guld."
         },
         {
           "typ": "rum",
@@ -322,12 +324,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
       },
-      "guld": 4,
+      "guld": 14,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -644,6 +646,18 @@
         {
           "text": "Dagny von Fågelborg tar 2 skada från Strupgrepp. KP 4/10.",
           "cls": "fel"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [6] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 6 skada (7 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
