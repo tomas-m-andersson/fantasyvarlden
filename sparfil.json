@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:27:13.621Z",
+  "uppdaterad": "2026-11-03T20:27:19.802Z",
   "spel": {
     "version": 1,
-    "tid": 1793737630557,
+    "tid": 1793737636871,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -324,7 +324,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         },
@@ -641,6 +641,14 @@
         {
           "text": "Tola Sparv (Långt spjut) slår Spjut med nackdel: [17 / 18 → 18] mot 11 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [2] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
