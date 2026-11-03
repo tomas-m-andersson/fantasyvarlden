@@ -132,7 +132,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
-      const x = 2 + i*(HJ_STEG[bgId]||15), y = 44 + (i%2 ? 4 : 0) + (MARK_NER[bgId]||0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
+      const x = (HJ_START[bgId] ?? 2) + i*(HJ_STEG[bgId]||15), y = 44 + (i%2 ? 4 : 0) + (MARK_NER[bgId]||0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
       const img = G.figurBild(h.id);
       if(!img){ return; }
       if(!img.complete){ laddar.push(img); return; }
@@ -296,9 +296,11 @@ G.regnLager = (canvas, pa) => {
 };
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
-const MARK_NER = { basar: 9, klyfta_ute: -10, klyfta_inne: -14 };
+const MARK_NER = { basar: 9, klyfta_ute: -10, klyfta_inne: -15 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
-const HJ_STEG = { klyfta_ute: 11, klyfta_inne: 11 };
+const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9 };
+// Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
+const HJ_START = { klyfta_ute: -3, klyfta_inne: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
 const KLYFTA_UTE = { skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1 };
 
