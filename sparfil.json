@@ -1,17 +1,18 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:06:30.015Z",
+  "uppdaterad": "2026-11-03T11:06:33.290Z",
   "spel": {
     "version": 1,
-    "tid": 1793703987017,
+    "tid": 1793703990290,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
     ],
     "sallskap": [
       "shinji",
-      "malexander"
+      "malexander",
+      "potus"
     ],
     "hj": {
       "gaston": {
