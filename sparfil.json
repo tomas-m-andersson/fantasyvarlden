@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:26:29.080Z",
+  "uppdaterad": "2026-11-03T20:26:43.615Z",
   "spel": {
     "version": 1,
-    "tid": 1793737586148,
+    "tid": 1793737600718,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -299,7 +299,7 @@
       "i": 4,
       "h": {
         "shinji": {
-          "kp": 6,
+          "kp": 2,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -329,7 +329,7 @@
           "nackdelNasta": false
         },
         "malexander": {
-          "kp": 14,
+          "kp": 10,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -355,7 +355,7 @@
           "nackdelNasta": false
         },
         "potus": {
-          "kp": 4,
+          "kp": 2,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -389,7 +389,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Spjut"
+          ],
           "anvanda": [
             "Spjut",
             "Finna dolda ting"
@@ -401,7 +403,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Långt spjut",
           "nackdelNasta": true
         }
@@ -591,6 +593,34 @@
         {
           "text": "Malexander Bard (Kroksabel) slår Svärd med nackdel: [3 / 15 → 15] mot 13 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Harpydrottningen piskar upp en storm mot hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Vingstorm. KP 2/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard tar 4 skada (5 − 1 rustning) från Vingstorm. KP 10/14.",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt tar 2 skada (3 − 1 rustning) från Vingstorm. KP 2/15.",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv tar 0 skada (1 − 3 rustning) från Vingstorm. KP 13/13.",
+          "cls": "info"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut med nackdel: [20 / 4 → 20] mot 11 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Tola Sparv tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
         }
       ],
       "utfall": null,
