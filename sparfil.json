@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:09:06.750Z",
+  "uppdaterad": "2026-11-03T11:09:14.895Z",
   "spel": {
     "version": 1,
-    "tid": 1793704143681,
+    "tid": 1793704151882,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -341,7 +341,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "malexander": {
@@ -387,7 +387,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "tola": {
@@ -410,7 +410,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         }
       },
@@ -475,6 +475,22 @@
         {
           "text": "Orch 1 anfaller Malexander Bard: [18] mot 12 – misslyckat",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [4] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
