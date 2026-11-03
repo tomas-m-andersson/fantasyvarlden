@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:16:49.299Z",
+  "uppdaterad": "2026-11-03T20:23:11.637Z",
   "spel": {
     "version": 1,
-    "tid": 1793737006303,
+    "tid": 1793737388616,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -258,8 +258,8 @@
             "orch"
           ],
           "rutor": [
-            37,
-            38
+            39,
+            36
           ]
         },
         {
@@ -303,7 +303,15 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "malexander": {
           "kp": 14,
@@ -315,7 +323,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "potus": {
           "kp": 14,
@@ -327,7 +343,18 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Svärd"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         },
         "tola": {
           "kp": 13,
@@ -339,7 +366,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -351,6 +386,18 @@
         {
           "text": "🦅 En stör-örn dyker ner, tar ett nyp i Potus kvarvarande öra och försvinner bakom en sky. Potus tar 1 skada. KP 14/15.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [2] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
