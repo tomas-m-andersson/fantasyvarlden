@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:09:20.821Z",
+  "uppdaterad": "2026-11-03T11:09:27.408Z",
   "spel": {
     "version": 1,
-    "tid": 1793704157757,
+    "tid": 1793704166916,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -244,7 +244,13 @@
             "orch",
             "orch"
           ],
-          "efterStrid": "Låset går sönder och larmet går."
+          "efterStrid": "Låset går sönder och larmet går.",
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld. ",
+          "rutor": [
+            14,
+            25
+          ]
         },
         {
           "typ": "rum",
@@ -332,7 +338,8 @@
             "Övertala",
             "Smyga",
             "Fingerfärdighet",
-            "Svärd"
+            "Svärd",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -342,7 +349,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort svärd"
+          "valtVapen": "Kort båge"
         },
         "malexander": {
           "kp": 14,
@@ -364,7 +371,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "potus": {
@@ -410,11 +417,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         }
       },
-      "guld": 0,
+      "guld": 6,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
@@ -495,6 +502,18 @@
         {
           "text": "Tola Sparv (Långt spjut) slår Spjut: [18] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [8] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
