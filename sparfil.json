@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:28:05.005Z",
+  "uppdaterad": "2026-11-03T06:28:11.985Z",
   "spel": {
     "version": 1,
-    "tid": 1793687282109,
+    "tid": 1793687289019,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -246,7 +246,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "ff": {
           "kp": 1,
@@ -664,7 +664,7 @@
       "start": "2026-11-02 22:05",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false
     },
     "reset": 0,
