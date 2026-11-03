@@ -197,20 +197,22 @@ function visaTarningar(lista){
 
 // ================= IKONER FÖR SAKER (npc/saker_grotta.png = g, npc/saker_by.png = b) =================
 const IKON = {
-  "Läkedryck":"g:1","Läkande ört":"g:12","Grönfräken":"g:12","Gravstensalm":"g:12","Kråkmossa":"g:46","Hirtonbuske":"g:46","Tokfrans":"g:46",
-  "Krigarfasa":"g:50","Flaska vin":"g:29","Vin":"g:29","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"g:49","En limpa bröd":"g:49",
-  "Bröd (fyra kilo)":"g:49","Torkat kött":"g:31","Torkade fikon":"b:4","Rep":"g:15","Karta":"g:36","Karta över Grador och Liane":"g:36",
-  "Trollformelbok":"g:61","Diktsamling":"g:13","Anteckningsblock":"g:13","Tärningsspel":"g:6","Elddon":"g:4","Luta":"b:57",
-  "Kort svärd":"g:2","Långsvärd":"g:2","Rostigt svärd":"g:2","Kroksabel":"g:2","Vantim":"g:2","Nannheim":"g:2","Gorgor":"g:2",
-  "Dolk":"g:21","Gulddolk":"g:21","Dolk av draktand":"g:41","Kastknivar":"g:41","Strypsnara":"g:15","Piska":"g:15",
-  "Handyxa":"g:16","Yxa":"g:16","Stridsyxa":"g:16","Stridsgissel":"g:34","Morgonstjärna":"g:10","Stridshammare":"g:58","Träpinne":"g:56",
-  "Spjut":"g:56","Kort spjut":"g:56","Långt spjut":"g:56","Kort båge":"g:32","Pilbåge":"g:32","Armborst":"g:32",
-  "Ringbrynja":"g:35","Läderrustning":"g:30","Sköld":"g:3","guld":"g:19"
+  // "i:" = npc/ikoner.png (ikonarket), "g:" = npc/saker_grotta.png, "b:" = npc/saker_by.png
+  "Läkedryck":"i:39","Läkande ört":"i:22","Grönfräken":"i:23","Gravstensalm":"i:24","Kråkmossa":"i:19","Hirtonbuske":"i:20","Tokfrans":"i:21",
+  "Krigarfasa":"g:50","Flaska vin":"g:29","Vin":"g:29","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"i:55","En limpa bröd":"i:55",
+  "Bröd (fyra kilo)":"i:55","Torkat kött":"i:56","Torkade fikon":"b:4","Rep":"i:16","Karta":"i:58","Karta över Grador och Liane":"i:58",
+  "Trollformelbok":"i:44","Diktsamling":"g:13","Anteckningsblock":"g:13","Tärningsspel":"g:6","Elddon":"g:4","Luta":"b:57",
+  "Kort svärd":"i:0","Långsvärd":"i:1","Rostigt svärd":"i:2","Kroksabel":"i:3","Vantim":"i:4","Nannheim":"i:5","Gorgor":"i:6",
+  "Dolk":"i:49","Gulddolk":"g:21","Dolk av draktand":"g:41","Kastknivar":"g:41","Strypsnara":"i:18","Piska":"i:17",
+  "Handyxa":"i:51","Yxa":"i:51","Stridsyxa":"i:50","Stridsgissel":"g:34","Morgonstjärna":"g:10","Stridshammare":"i:52","Träpinne":"i:10","Träpåk":"i:11",
+  "Spjut":"i:7","Kort spjut":"i:8","Långt spjut":"i:9","Kort båge":"i:12","Pilbåge":"i:13","Armborst":"i:14","Slunga":"i:15",
+  "Ringbrynja":"g:35","Läderrustning":"i:33","Läderväst":"i:33","Plåtrustning":"i:34","Sköld":"i:30","guld":"g:19"
 };
 // Uppdragens föremål
-const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"g:55",slasby:"g:24",rattor:"g:5",svartalf:"g:5",broncos:"g:51","doda-sjon":"g:12",krusbar:"g:51"};
-function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gb]:\d+$/.test(k)) return "";
-  const [a,r] = k.split(":"); return `<canvas class="px ikon ${extraKlass||""}" data-ikon="${a==="g"?"saker_grotta":"saker_by"}:${r}" aria-hidden="true"></canvas>`; }
+const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"g:51","doda-sjon":"i:54",krusbar:"i:28"};
+const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner"};
+function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbi]:\d+$/.test(k)) return "";
+  const [a,r] = k.split(":"); return `<canvas class="px ikon ${extraKlass||""}" data-ikon="${IKONARK[a]}:${r}" aria-hidden="true"></canvas>`; }
 function fyllIkoner(root){ (root||document).querySelectorAll("canvas[data-ikon]").forEach(c=>{ const [ark,r]=c.dataset.ikon.split(":"); G.ritaIkon(c, ark, Number(r)); }); }
 const guldHtml = n => `${ikonHtml("guld")}${n} guld`;
 
