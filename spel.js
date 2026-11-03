@@ -609,7 +609,7 @@ function ritaRun(){
   if(r.utfall) return ritaSlut();
   if(strid) return ritaStrid();
   if(r.utforska && r.paus){
-    app.innerHTML = `<div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.plats)} · kapitel ${r.kapitel}</span></div>
+    app.innerHTML = `<div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.plats)} · kapitel ${r.kapitel}</span></div>
       ${partyHtml()}<section class="card quest">${kapitelHtml()}</section>${loggHtml()}`;
     G.ritaScen($("#scen"), r.q.miljo, [], 77+r.kapitel, "skatt", scenHjaltar());
     fyllPortratt(app); scrollaLogg();
@@ -635,7 +635,7 @@ function ritaRun(){
   if(steg.fiender && !steg.rutor) steg.rutor = steg.fiender.map(fid=>slumpRuta(fid));
   const fiendeVisning = steg.fiender && !steg.klar ? steg.fiender.map((fid,i)=>({...V.FIENDER[fid],fid,kp:1,ruta:steg.rutor[i]})) : [];
   app.innerHTML = `
-    <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.titel)}</span></div>
+    <div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.titel)}</span></div>
     <div class="prog">${progHtml()}</div>
     ${partyHtml()}
     <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
@@ -1108,7 +1108,7 @@ function ritaStrid(){
     panel = `<p class="agerar">${fn?`⚔ ${esc(fn)} agerar…`:`Runda ${strid.runda} börjar…`}</p>`;
   }
   app.innerHTML = `
-    <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">Runda ${strid.runda}</span></div>
+    <div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">Runda ${strid.runda}</span></div>
     <section class="card stridpanel">${panel}</section>
     <div class="ordning"><span class="small muted" style="border:0;background:none;padding:2px 0">Turordning:</span>${strid.ordning.map(t=>`<span class="${t.nu&&!t.gjord?"nu":""} ${t.gjord?"gjord":""} ${t.typ==="f"?"f":""}">${t.typ==="h"?esc(HJ[t.id].namn.split(" ")[0]):esc((strid.fiender[t.i]||{}).namn)}</span>`).join("")}</div>
     <div class="fiender">${strid.fiender.map(f=>`<div class="fiende ${f.kp<=0?"dod":""}"><span class="n">${esc(f.namn)}${f.stoppad>0?" ⛓":""}${f.nackdel?" 😨":""}</span><span class="siffra">KP ${f.kp}/${f.max}</span><div class="bar f"><b style="width:${100*f.kp/f.max}%"></b></div></div>`).join("")}</div>
@@ -1245,7 +1245,7 @@ function avslutaRun(lyckat, orsak, gavUpp){
 function ritaSlut(){
   const r = st.run, u = r.utfall;
   app.innerHTML = `
-    <div class="tv"><canvas id="scen" class="px"></canvas><span class="badge">${r.utforska?esc(r.q.plats):u.lyckat?"Uppdraget klart!":"Misslyckat"}</span></div>
+    <div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${r.utforska?esc(r.q.plats):u.lyckat?"Uppdraget klart!":"Misslyckat"}</span></div>
     <section class="card quest"><h2>${r.utforska?(u.lyckat?"Hemma med bytet!":"Det gick inte som planerat"):u.lyckat?"Seger!":"Det gick inte som planerat"}</h2>
       ${r.utforska?(u.lyckat?`<p>Byte: <b>${u.byte} guld</b>. Kapitelbonus för ${r.kapitel} ${r.kapitel===1?"kapitel":"kapitel"}: <b>${u.beloning} guld</b>. Totalt <b>${u.byte+u.beloning} guld</b> till kassan.</p>`:`<p class="berattelse">${esc(u.orsak||"")}</p>`):u.lyckat?`<p class="berattelse">${esc(r.q.svar)}</p>${r.q.foremal?`<p class="foremal">${ikonHtml(UPPDRAG_IKON[r.q.id])}<span>Ni har fått tag på: <b>${esc(r.q.foremal)}</b></span></p>`:""}
         <p>Belöning: <b>${u.beloning} guld</b>${u.avgift?` (Lansor tar ${u.avgift} guld i avgift)`:""}. Byte under resan: <b>${u.byte} guld</b>.</p>`
