@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:24:42.783Z",
+  "uppdaterad": "2026-11-03T20:24:52.851Z",
   "spel": {
     "version": 1,
-    "tid": 1793737479835,
+    "tid": 1793737489850,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -293,7 +293,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "shinji": {
           "kp": 6,
@@ -517,7 +517,7 @@
       "start": "2026-11-03 21:16",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false,
       "anvandaText": [
         "En utsiktspunkt där någon har byggt ett stenröse",
