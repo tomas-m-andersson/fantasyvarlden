@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:24:16.203Z",
+  "uppdaterad": "2026-11-03T20:24:20.957Z",
   "spel": {
     "version": 1,
-    "tid": 1793737453239,
+    "tid": 1793737457956,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -260,7 +260,9 @@
           "rutor": [
             39,
             36
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 9 guld."
         },
         {
           "typ": "rum",
@@ -340,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "potus": {
@@ -365,7 +367,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": true
         },
@@ -389,11 +391,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         }
       },
-      "guld": 0,
+      "guld": 9,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Harpybergen. Kapitel 1.",
