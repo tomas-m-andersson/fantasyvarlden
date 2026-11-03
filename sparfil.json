@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:26:21.193Z",
+  "uppdaterad": "2026-11-03T20:26:29.080Z",
   "spel": {
     "version": 1,
-    "tid": 1793737578220,
+    "tid": 1793737586148,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -350,9 +350,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "potus": {
           "kp": 4,
@@ -586,6 +586,10 @@
         },
         {
           "text": "Shinji Onishi (Kort svärd) slår Svärd: [13] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd med nackdel: [3 / 15 → 15] mot 13 – misslyckat",
           "cls": "fel"
         }
       ],
