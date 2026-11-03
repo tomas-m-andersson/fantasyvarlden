@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:29:37.419Z",
+  "uppdaterad": "2026-11-03T06:29:51.682Z",
   "spel": {
     "version": 1,
-    "tid": 1793687374266,
+    "tid": 1793687388748,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -258,7 +258,7 @@
           "kp": 0,
           "vp": 8,
           "doende": true,
-          "ok": 0,
+          "ok": 1,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -304,12 +304,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
           "kp": 4,
-          "vp": 6,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -326,11 +326,11 @@
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
-          "maktig": true,
+          "maktig": false,
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -720,6 +720,34 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi parerar: [10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dagny von Fågelborg kastar Lyft slår Magi: [7] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Hocus pocus i fokus – dubbel effekt!",
+          "cls": "d"
+        },
+        {
+          "text": "Dendroidmodern tar 2 skada (6 − 4 rustning) från Lyft.",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroidmodern är fastlåst i 2 handlingar.",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "FF slår dödsslag mot FYS: [4] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
