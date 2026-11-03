@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:13:13.722Z",
+  "uppdaterad": "2026-11-03T11:13:20.468Z",
   "spel": {
     "version": 1,
-    "tid": 1793704390574,
+    "tid": 1793704397425,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -397,8 +397,8 @@
           "valtVapen": "Kroksabel"
         },
         "potus": {
-          "kp": 6,
-          "vp": 10,
+          "kp": 14,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -417,7 +417,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "tola": {
@@ -673,6 +673,18 @@
         },
         {
           "text": "Den nya svartalfkungen tar 6 skada (8 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Malexander Bard har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "★ Potus Singulus Rövhatt: Vägrar ge upp!",
+          "cls": "d"
+        },
+        {
+          "text": "Potus Singulus Rövhatt återfår 8 KP.",
           "cls": "ok"
         }
       ],
