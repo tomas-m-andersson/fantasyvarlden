@@ -336,7 +336,7 @@ RITA.trask = (ctx, rnd) => {
 // Rita med cache: varje (miljö, frö) ritas en gång och återanvänds sedan
 const CACHE = new Map();
 // Egna målade bakgrunder (320×180, dubbel upplösning) i mappen bakgrunder/. Saknas en miljö här ritas den med kod.
-const EGNA = { grotta:["grotta1","grotta2","grotta3"], skog:["skog1","skog2","skog1natt","skog2natt"], oken:["oken1","oken2"], berg:["berg1","berg2"], ruin:["ruin1","ruin2"], gravfalt:["gravfalt1","gravfalt2"], trask:["trask1","trask2"], kloak:["kloak1","kloak2"], basar:["basar"], klyfta_ute:["klyfta_ute"], klyfta_inne:["klyfta_inne"] };
+const EGNA = { grotta:["grotta1","grotta2","grotta3"], skog:["skog1","skog2","skog1natt","skog2natt"], oken:["oken1","oken2"], berg:["berg1","berg2"], ruin:["ruin1","ruin2"], gravfalt:["gravfalt1","gravfalt2"], trask:["trask1","trask2"], kloak:["kloak1","kloak2"], basar:["basar"], klyfta_ute:["klyfta_ute","klyfta_ute2"], klyfta_inne:["klyfta_inne","klyfta_inne2"] };
 const EBILDER = {};
 const egenBild = namn => { if(!EBILDER[namn]){ const i=new Image(); i.src="bakgrunder/"+namn+".png"; EBILDER[namn]=i; } return EBILDER[namn]; };
 window.BAKGRUND = {
@@ -367,6 +367,8 @@ window.BAKGRUND = {
     ctx.drawImage(c, 0, 0);
   },
   finns: miljo => !!RITA[miljo],
-  harEgen: miljo => !!EGNA[miljo]
+  harEgen: miljo => !!EGNA[miljo],
+  // Vilken målad bild ett rum får (samma val som i rita), t.ex. "klyfta_ute2"
+  namn: (miljo, fro) => { const l = EGNA[miljo]; return l ? l[((fro||7)>>>0) % l.length] : miljo; }
 };
 })();
