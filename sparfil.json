@@ -1,18 +1,17 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:32:25.700Z",
+  "uppdaterad": "2026-11-03T11:06:10.725Z",
   "spel": {
     "version": 1,
-    "tid": 1793687539352,
+    "tid": 1793703967674,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
     ],
     "sallskap": [
       "ff",
-      "shinji",
-      "dagny"
+      "shinji"
     ],
     "hj": {
       "gaston": {
