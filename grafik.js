@@ -75,10 +75,12 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const rnd2 = slump((fro||7) * 31 + 5);
   // Bakgrundssaker: kranier, ben, tunnor och lyktor i grottor och ruiner – staket, hö och brunnar ute
   const INNE = {grotta:[7,52,23,48,28,39], kloak:[23,48,52,28,7], ruin:[48,23,7,52,28], gravfalt:[7,52,28]};
-  const UTE = {skog:[24,15,29,12], berg:[11,27,24], oken:[0,1,23], trask:[24,12]};
+  const UTE = {skog:[24,15,29,12], berg:[11,24], trask:[24,12]};   // inga lådor eller tunnor i öknen
   if(extra!=="jens" && !String(extra||"").startsWith("jens")){
-    if(INNE[miljoId]){ const l=INNE[miljoId]; sak(sg, l[Math.floor(rnd2()*l.length)], 58, 54, 16); sak(sg, l[Math.floor(rnd2()*l.length)], 142, 56, 16); }
-    else if(UTE[miljoId]){ const l=UTE[miljoId]; sak(sb, l[Math.floor(rnd2()*l.length)], 140, 46, 20); }
+    // sakerna står på marken (underkanten vid y ≈ 72) och får en skugga, så att de inte ser uppklistrade ut
+    const pa = (img, r, x, fot, z) => { if(klarBild(img)){ ctx.fillStyle="#0004"; ctx.fillRect(x+Math.round(z*.15), fot-1, Math.round(z*.7), 2); } sak(img, r, x, fot - z + 1, z); };
+    if(INNE[miljoId]){ const l=INNE[miljoId]; pa(sg, l[Math.floor(rnd2()*l.length)], 58, 70, 16); pa(sg, l[Math.floor(rnd2()*l.length)], 142, 72, 16); }
+    else if(UTE[miljoId]){ const l=UTE[miljoId]; pa(sb, l[Math.floor(rnd2()*l.length)], 138, 72, 20); }
   }
   if(extra==="resa") sak(sb, 27, 74, 50, 26);                                   // vägvisare vid vägen
   if(extra==="falla") sak(sg, 53, 74, 54, 26);                                  // spikfälla

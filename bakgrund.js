@@ -156,7 +156,11 @@ RITA.oken = (ctx, rnd) => {
   const d2 = kam(rnd, 60, 3, [0.07,0.17]); fyllKam(d2, "#dba760", 66);
   for(let x=0;x<W;x++) P(x, d2[x], "#f2c983");
   // kaktusar på dynerna
-  for(let i=0;i<2;i++){ const cx = 10+rnd()*140, cy = 58; R(cx, cy-9, 2, 9, "#4f7a3a"); R(cx-3, cy-6, 1, 3, "#4f7a3a"); R(cx-3, cy-4, 3, 1, "#4f7a3a"); R(cx+2, cy-7, 3, 1, "#4f7a3a"); R(cx+4, cy-9, 1, 3, "#4f7a3a"); P(cx+1, cy-9, "#7aa85a"); }
+  // kaktusar som står på den främre dynens kant (med skugga vid foten)
+  for(let i=0;i<2;i++){ const cx = Math.floor(10+rnd()*140), cy = Math.round(d2[cx]) + 2;
+    R(cx-1, cy, 5, 1, "#c48a46");
+    R(cx, cy-9, 2, 9, "#4f7a3a"); R(cx+1, cy-9, 1, 9, "#3c5f2c");
+    R(cx-3, cy-6, 1, 3, "#4f7a3a"); R(cx-3, cy-4, 3, 1, "#4f7a3a"); R(cx+2, cy-7, 3, 1, "#4f7a3a"); R(cx+4, cy-9, 1, 3, "#4f7a3a"); P(cx, cy-9, "#7aa85a"); }
   // sandmark med vindmönster
   gradient(64, H, ["#e9be78","#ddab62","#cf9a52","#bf8a46"]);
   for(let y=66;y<H;y+=3){ const fas = rnd()*6; for(let x=0;x<W;x++) if(Math.sin(x*0.25 + fas + y*0.4) > 0.75) P(x, y + (Math.sin(x*0.1+fas)>0?0:1), "#c48a46"); }
