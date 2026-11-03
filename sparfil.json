@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:08:58.972Z",
+  "uppdaterad": "2026-11-03T11:09:06.750Z",
   "spel": {
     "version": 1,
-    "tid": 1793704136066,
+    "tid": 1793704143681,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -377,7 +377,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -385,7 +387,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         },
         "tola": {
           "kp": 13,
@@ -464,6 +467,14 @@
         {
           "text": "Shinji Onishi (Kort svärd) slår Svärd: [19] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [17] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orch 1 anfaller Malexander Bard: [18] mot 12 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
