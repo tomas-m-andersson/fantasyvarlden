@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:26:43.615Z",
+  "uppdaterad": "2026-11-03T20:26:50.324Z",
   "spel": {
     "version": 1,
-    "tid": 1793737600718,
+    "tid": 1793737607436,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -324,7 +324,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         },
@@ -350,13 +350,13 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel",
           "nackdelNasta": false
         },
         "potus": {
-          "kp": 2,
-          "vp": 10,
+          "kp": 10,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -403,7 +403,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut",
           "nackdelNasta": true
         }
@@ -621,6 +621,18 @@
         {
           "text": "Naturligt 20! Tola Sparv tappar balansen och får nackdel på nästa slag.",
           "cls": "dm"
+        },
+        {
+          "text": "★ Potus Singulus Rövhatt: Vägrar ge upp!",
+          "cls": "d"
+        },
+        {
+          "text": "Potus Singulus Rövhatt återfår 8 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
