@@ -1,14 +1,12 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:25:10.534Z",
+  "uppdaterad": "2026-11-03T20:25:29.617Z",
   "spel": {
     "version": 1,
-    "tid": 1793737507514,
+    "tid": 1793737526716,
     "kassa": 564,
-    "packning": [
-      "Kråkmossa"
-    ],
+    "packning": [],
     "sallskap": [
       "shinji",
       "malexander",
@@ -370,12 +368,12 @@
           ],
           "tempRust": 0,
           "vapenbonus": null,
-          "gift": false,
+          "gift": true,
           "maktig": false,
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
           "nackdelNasta": true
         },
@@ -525,6 +523,14 @@
         {
           "text": "🦅 Från ingenstans kommer en stör-örn, tar Potus i skägget, lyfter honom en decimeter och släpper. Potus tar 3 skada. KP 4/15.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Potus Singulus Rövhatt använder kråkmossa. Smörjer vapnet med gift: nästa träff gör +T6 skada.",
+          "cls": "info"
         }
       ],
       "utfall": null,
