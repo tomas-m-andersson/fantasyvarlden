@@ -59,32 +59,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
   const W = 160, H = 90; canvas.width = W; canvas.height = H; ctx.imageSmoothingEnabled = false; // efter width – annars nollställs den
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
-  // himmel/bakgrund
-  for(let y=0;y<H;y++){ const t=y/H; ctx.fillStyle = blanda(m.himmel[0], m.himmel[1], t); ctx.fillRect(0,y,W,1); }
-  if(miljoId==="oken"){ ctx.fillStyle="#fff3c4"; ctx.fillRect(122,10,14,14); ctx.fillStyle="#ffe08a"; ctx.fillRect(120,12,18,10); }
-  if(miljoId==="berg"||miljoId==="ruin"||miljoId==="gravfalt"||miljoId==="trask"){ // stjärnor/moln
-    for(let i=0;i<14;i++){ ctx.fillStyle = miljoId==="berg"?"#ffffffaa":"#ffffff66"; ctx.fillRect(Math.floor(rnd()*W),Math.floor(rnd()*35),1,1); }
-  }
-  // bakre siluetter
-  ctx.fillStyle = mork(m.sten, .35);
-  if(miljoId==="skog"||miljoId==="trask"){
-    for(let i=0;i<12;i++){ const x=Math.floor(rnd()*W), h=24+Math.floor(rnd()*26); tradd(ctx,x,62-h,h,mork(m.mark,.3)); }
-  } else if(miljoId==="grotta"||miljoId==="kloak"){
-    for(let x=0;x<W;x+=4){ const h=4+Math.floor(rnd()*14); ctx.fillRect(x,0,4,h); }
-    if(miljoId==="kloak"){ ctx.fillStyle=mork(m.sten,.1); for(let x=0;x<W;x+=16) ctx.fillRect(x,8,1,50); ctx.fillRect(0,22,W,1); ctx.fillRect(0,40,W,1); }
-  } else {
-    let y=46; for(let x=0;x<W;x+=4){ y += Math.floor(rnd()*7)-3; y=Math.max(26,Math.min(56,y)); ctx.fillRect(x,y,4,H-y); }
-  }
-  if(miljoId==="ruin"){ ctx.fillStyle=mork(m.sten,.15); ctx.fillRect(18,22,10,40); ctx.fillRect(14,20,18,4); ctx.fillRect(126,30,10,32); ctx.fillRect(122,28,12,3); }
-  if(miljoId==="gravfalt"){ ctx.fillStyle=m.sten; for(let i=0;i<9;i++){ const x=4+i*18+Math.floor(rnd()*6), y=58+Math.floor(rnd()*6); ctx.fillRect(x,y,6,9); ctx.fillRect(x+1,y-2,4,2); } }
-  // mark
-  ctx.fillStyle = m.mark; ctx.fillRect(0,64,W,H-64);
-  for(let i=0;i<70;i++){ ctx.fillStyle = rnd()<.5?mork(m.mark,.15):ljus(m.mark,.12); ctx.fillRect(Math.floor(rnd()*W),64+Math.floor(rnd()*26),2,1); }
-  if(miljoId==="trask"||miljoId==="kloak"){ ctx.fillStyle = miljoId==="trask"?"#3e5a3c":"#3a4a2a"; ctx.fillRect(0,76,W,6); ctx.fillStyle="#ffffff22"; for(let x=4;x<W;x+=14) ctx.fillRect(x,78,5,1); }
-  if(miljoId==="grotta"||miljoId==="kloak"){ // fackla
-    ctx.fillStyle="#5a3a1a"; ctx.fillRect(10,44,2,10); ctx.fillStyle="#ffb02e"; ctx.fillRect(9,40,4,4); ctx.fillStyle="#ffe08a"; ctx.fillRect(10,41,2,2);
-    const g=ctx.createRadialGradient(11,42,1,11,42,40); g.addColorStop(0,"#ffb02e33"); g.addColorStop(1,"#0000"); ctx.fillStyle=g; ctx.fillRect(0,0,60,90);
-  }
+  // Detaljerad bakgrund ur bakgrund.js (ritas en gång per rum och sparas undan)
+  window.BAKGRUND.rita(ctx, miljoId, fro);
   // rummets föremål (skatt, fälla, vila…)
   // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
   if(extra==="skatt" || extra==="vila"){
@@ -99,7 +75,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const rnd2 = slump((fro||7) * 31 + 5);
   // Bakgrundssaker: kranier, ben, tunnor och lyktor i grottor och ruiner – staket, hö och brunnar ute
   const INNE = {grotta:[7,52,23,48,28,39], kloak:[23,48,52,28,7], ruin:[48,23,7,52,28], gravfalt:[7,52,28]};
-  const UTE = {skog:[24,15,29,12], berg:[11,27,24], oken:[0,1,23], trask:[24,13,9]};
+  const UTE = {skog:[24,15,29,12], berg:[11,27,24], oken:[0,1,23], trask:[24,12]};
   if(extra!=="jens" && !String(extra||"").startsWith("jens")){
     if(INNE[miljoId]){ const l=INNE[miljoId]; sak(sg, l[Math.floor(rnd2()*l.length)], 58, 54, 16); sak(sg, l[Math.floor(rnd2()*l.length)], 142, 56, 16); }
     else if(UTE[miljoId]){ const l=UTE[miljoId]; sak(sb, l[Math.floor(rnd2()*l.length)], 140, 46, 20); }
