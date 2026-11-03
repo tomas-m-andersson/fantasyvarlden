@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:29:02.523Z",
+  "uppdaterad": "2026-11-03T06:29:12.235Z",
   "spel": {
     "version": 1,
-    "tid": 1793687339486,
+    "tid": 1793687349148,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -255,16 +255,14 @@
       "i": 4,
       "h": {
         "ff": {
-          "kp": 1,
+          "kp": 0,
           "vp": 8,
-          "doende": false,
+          "doende": true,
           "ok": 0,
           "miss": 0,
           "stabil": false,
           "dod": false,
-          "saker": [
-            "Torkade fikon"
-          ],
+          "saker": [],
           "markerade": [],
           "anvanda": [
             "Spjut",
@@ -278,7 +276,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut"
         },
         "shinji": {
@@ -681,6 +679,26 @@
         {
           "text": "FF får en extra handling!",
           "cls": "ok"
+        },
+        {
+          "text": "FF använder torkade fikon. Äter fikon: återfå T4 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "FF återfår 1 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "FF har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "FF tar 9 skada (10 − 1 rustning) från Stamslag. KP 0/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "FF faller ihop och ligger döende!",
+          "cls": "dm"
         }
       ],
       "utfall": null,
