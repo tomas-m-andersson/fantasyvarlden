@@ -1,13 +1,14 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:28:11.985Z",
+  "uppdaterad": "2026-11-03T06:28:25.381Z",
   "spel": {
     "version": 1,
-    "tid": 1793687289019,
+    "tid": 1793687302420,
     "kassa": 335,
     "packning": [
-      "Krigarfasa"
+      "Krigarfasa",
+      "Kråkmossa"
     ],
     "sallskap": [
       "ff",
@@ -234,7 +235,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En nedbrunnen lägereld som fortfarande är varm.",
-          "fro": 214572755
+          "fro": 214572755,
+          "klar": true,
+          "utfallText": "Shinji Onishi hittar 23 guld och kråkmossa."
         },
         {
           "typ": "rum",
@@ -290,7 +293,8 @@
           "anvanda": [
             "Pilbåge",
             "Svärd",
-            "Kniv"
+            "Kniv",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -329,7 +333,7 @@
           "nackdelNasta": false
         }
       },
-      "guld": 14,
+      "guld": 37,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -658,6 +662,10 @@
         {
           "text": "Ulv faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi slår Finna dolda ting: [4] mot 5 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
