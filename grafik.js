@@ -73,7 +73,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
   if(extra==="skatt" || extra==="vila"){
     const mob = G.npcBild("mobler");
-    if(mob.complete && mob.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(90, 76, 20, 3); G.ritaRuta(ctx, mob, extra==="skatt"?52:36, 84, 47, 32); }
+    if(mob.complete && mob.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(88, 77, 24, 3); G.ritaRuta(ctx, mob, extra==="skatt"?52:36, 84, 53, 32); }   // står på marken i höjd med hjältarnas fötter
     else omRitaVid(mob);
   }
   // Saker ur npc/saker_grotta.png ("g") och npc/saker_by.png ("b")
