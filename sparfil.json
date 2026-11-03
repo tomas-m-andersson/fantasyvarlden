@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:08:39.533Z",
+  "uppdaterad": "2026-11-03T11:08:53.901Z",
   "spel": {
     "version": 1,
-    "tid": 1793704116500,
+    "tid": 1793704130544,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -340,7 +340,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Kort svärd"
         },
         "malexander": {
           "kp": 14,
@@ -395,7 +396,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Spjut"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -403,7 +406,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Långt spjut"
         }
       },
       "guld": 0,
@@ -447,6 +451,14 @@
         {
           "text": "Orch 1 tar 6 skada (7 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Orch 2 anfaller Potus Singulus Rövhatt: [15] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut: [16] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
