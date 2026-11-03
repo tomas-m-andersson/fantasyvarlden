@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:26:57.802Z",
+  "uppdaterad": "2026-11-03T20:27:13.621Z",
   "spel": {
     "version": 1,
-    "tid": 1793737614860,
+    "tid": 1793737630557,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -403,9 +403,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Långt spjut",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 18,
@@ -636,6 +636,10 @@
         },
         {
           "text": "Malexander Bard (Kroksabel) slår Svärd: [18] mot 13 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut med nackdel: [17 / 18 → 18] mot 11 – misslyckat",
           "cls": "fel"
         }
       ],
