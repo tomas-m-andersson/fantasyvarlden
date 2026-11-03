@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:12:38.155Z",
+  "uppdaterad": "2026-11-03T11:13:13.722Z",
   "spel": {
     "version": 1,
-    "tid": 1793704355143,
+    "tid": 1793704390574,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -367,11 +367,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         },
         "malexander": {
-          "kp": 13,
+          "kp": 6,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -393,11 +393,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel"
         },
         "potus": {
-          "kp": 8,
+          "kp": 6,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -646,11 +646,39 @@
         {
           "text": "Sabeltandad tiger faller!",
           "cls": "d"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "🦅 En stör-örn störtdyker ur skyn och hackar Potus Rövhatt i huvudet. Sedan flyger den iväg igen. Potus tar 2 skada. KP 6/15.",
+          "cls": "fel"
+        },
+        {
+          "text": "Den nya svartalfkungen anfaller Malexander Bard: [4] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard parerar: [14] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard tar 7 skada (8 − 1 rustning) från Den nya svartalfkungen. KP 6/14.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [9] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen tar 6 skada (8 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
       "start": "2026-11-03 12:07",
-      "ornar": 1,
+      "ornar": 2,
       "ornVisa": null
     },
     "reset": 0,
