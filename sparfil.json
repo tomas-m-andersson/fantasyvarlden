@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:26:50.324Z",
+  "uppdaterad": "2026-11-03T20:26:57.802Z",
   "spel": {
     "version": 1,
-    "tid": 1793737607436,
+    "tid": 1793737614860,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -350,7 +350,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel",
           "nackdelNasta": false
         },
@@ -633,6 +633,10 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [18] mot 13 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
