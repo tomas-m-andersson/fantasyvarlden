@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:12:22.016Z",
+  "uppdaterad": "2026-11-03T11:12:33.447Z",
   "spel": {
     "version": 1,
-    "tid": 1793704338864,
+    "tid": 1793704353180,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -318,7 +318,9 @@
           "rutor": [
             29,
             4
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 3 guld."
         },
         {
           "typ": "rum",
@@ -362,7 +364,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "malexander": {
@@ -374,7 +376,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
             "Svärd",
             "Akrobatik"
@@ -386,7 +390,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "potus": {
@@ -410,7 +414,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "tola": {
@@ -434,11 +438,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         }
       },
-      "guld": 6,
+      "guld": 9,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
@@ -619,6 +623,26 @@
         {
           "text": "Sabeltandad tiger tar 1 skada (2 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [1] mot 12 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Sabeltandad tiger tar 15 skada (16 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
