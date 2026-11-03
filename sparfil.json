@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:28:37.671Z",
+  "uppdaterad": "2026-11-03T06:29:02.523Z",
   "spel": {
     "version": 1,
-    "tid": 1793687314635,
+    "tid": 1793687339486,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -283,7 +283,7 @@
         },
         "shinji": {
           "kp": 13,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -306,7 +306,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
@@ -668,6 +668,18 @@
         },
         {
           "text": "Shinji Onishi slår Finna dolda ting: [4] mot 5 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Shinji Onishi: Ledarskap!",
+          "cls": "d"
+        },
+        {
+          "text": "FF får en extra handling!",
           "cls": "ok"
         }
       ],
