@@ -437,7 +437,7 @@ function ritaPoolMalad(canvas, doda, tetrokRuta, bild){
     iVattnet(()=>ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,32,x,y,32,32), x+6, 20);
   });
   const tb = G.npcBild("tetrok");
-  if(tb.complete && tb.naturalWidth){ const tx=118, ty=VY-25; iVattnet(()=>G.ritaRuta(ctx, tb, tetrokRuta, tx, ty, 32), tx+3, 26); }
+  if(tb.complete && tb.naturalWidth){ const tx=118, ty=VY-25; iVattnet(()=>G.ritaRuta(ctx, tb, tetrokRuta, tx, ty, 32, true), tx+3, 26); }
   ctx.setTransform(1,0,0,1,0,0);
 }
 function ritaPoolRuta(canvas, doda, tetrokRuta){
@@ -471,12 +471,12 @@ function ritaPoolRuta(canvas, doda, tetrokRuta){
     if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
   });
 
-  // Tetrok ur npc/tetrok.png (8×8 rutor): sitter i poolen till höger, vattnet ritas om framför honom
+  // Tetrok ur npc/tetrok.png (8×8 rutor, spegelvänd så att han tittar mot hjältarna): sitter i poolen till höger, vattnet ritas om framför honom
   const tb = G.npcBild("tetrok");
   if(tb.complete && tb.naturalWidth){
     const tx = 116, ty = 44, vy = ty + 26;            // vattenlinjen ligger på rad 26 i rutan
     ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, vy); ctx.clip();
-    G.ritaRuta(ctx, tb, tetrokRuta, tx, ty, 32);
+    G.ritaRuta(ctx, tb, tetrokRuta, tx, ty, 32, true);
     ctx.restore();
     R(px, vy, pw, py+ph-vy, "#2bb5d8");
     R(tx+5, vy, 22, 1, "#7fe3f5"); R(tx+2, vy+2, 6, 1, "#7fe3f5"); R(tx+22, vy+2, 7, 1, "#7fe3f5");
