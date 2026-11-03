@@ -16,7 +16,7 @@ Ett privat hobbyprojekt: ett äventyrsspel i podden Rollspelsklubbens värld, me
 | `bakgrunder/` | Målade bakgrunder, 320×180 pixlar (t.ex. `grotta1.png`, `skog2.png`, `skog2natt.png`). Listas överst i `bakgrund.js` (EGNA). |
 | `figurer/`, `figurer.js` | Hjältarnas pixelfigurer (8×8 varianter per bild) och vilka rutor som används |
 | `fiender/`, `fiendebilder.js` | Fiendernas pixelfigurer (8×8 varianter per bild) och vilka rutor som används |
-| `npc/` | NPC-ark: `stad.png` (stadsbor), `by.png` (bybor), `djur.png` (husdjur) – 64 figurer var – `kopman.png` (köpmän), `mobler.png` (värdshusmöbler), `saker_grotta.png` och `saker_by.png` (föremål och ikoner), `storn.png` (stör-örnen) – 64 figurer var – och `jens_vagn.png` (Bakhuvudet Jens vagn, sex varianter) |
+| `npc/` | NPC-ark: `stad.png` (stadsbor), `by.png` (bybor), `djur.png` (husdjur) – 64 figurer var – `kopman.png` (köpmän), `mobler.png` (värdshusmöbler), `saker_grotta.png` och `saker_by.png` (föremål och ikoner), `storn.png` (stör-örnen), `tetrok.png` (björnen Tetrok i poolen) – 64 figurer var – och `jens_vagn.png` (Bakhuvudet Jens vagn, sex varianter) |
 | `sparfil.json` | **Datafil** – skapas automatiskt när spelet sparar till GitHub |
 | `manifest.json`, `sw.js`, `icons/` | Gör att spelet kan installeras som app |
 

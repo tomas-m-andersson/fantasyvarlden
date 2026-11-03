@@ -421,7 +421,7 @@ G.ritaKodPortratt = (canvas, hjalte, dod) => {
 };
 
 // ---------- Efterriket: poolen på skyskrapetaket i Miami, med björnen Tetrok ----------
-G.ritaPool = (canvas, doda) => {
+function ritaPoolRuta(canvas, doda, tetrokRuta){
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
   const W=160, H=90; canvas.width=W; canvas.height=H; ctx.imageSmoothingEnabled = false;
   const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
@@ -440,20 +440,6 @@ G.ritaPool = (canvas, doda) => {
   const px=14, py=60, pw=132, ph=24;
   R(px-2,py-2,pw+4,ph+4,"#eef4f8"); R(px,py,pw,ph,"#2bb5d8");
   for(let i=0;i<14;i++) R(px+4+((i*37)%(pw-12)), py+3+((i*11)%(ph-6)), 6, 1, "#7fe3f5");
-  // Tetrok – stor björn i poolen med cigarr och bubbel
-  const bx=106, by=46;
-  R(bx,by+8,40,14,"#5a3418"); R(bx+2,by+6,36,4,"#5a3418");          // axlar
-  R(bx+10,by-6,20,16,"#6b4022");                                   // huvud
-  R(bx+8,by-9,6,6,"#6b4022"); R(bx+26,by-9,6,6,"#6b4022");         // öron
-  R(bx+10,by-8,2,2,"#3a2010"); R(bx+28,by-8,2,2,"#3a2010");
-  R(bx+15,by+2,10,6,"#c9a07a"); R(bx+18,by+2,4,2,"#1a0c06");        // nos
-  R(bx+14,by-1,3,2,"#111"); R(bx+23,by-1,3,2,"#111");               // ögon
-  R(bx+24,by+6,9,2,"#8a5a2a"); R(bx+33,by+6,2,2,"#ff6a2e");        // cigarr
-  R(bx+35,by+3,1,1,"#ccc"); R(bx+37,by,1,1,"#bbb"); R(bx+36,by-3,2,1,"#aaa"); // rök
-  R(bx-2,by+12,6,6,"#5a3418");                                     // tass
-  R(bx-1,by+4,4,7,"#f2e6b0"); R(bx,by+5,2,3,"#ffe9a0"); R(bx+1,by+11,1,2,"#ddd"); // glas bubbel
-  R(px,by+22,pw,ph-(by+22-py),"#2bb5d8"); // vatten framför björnen
-  for(let i=0;i<4;i++) R(bx+2+i*9,by+21,6,1,"#7fe3f5");
   // döda hjältar flyter i poolen (bara överkroppen syns)
   (doda||[]).slice(0,5).forEach((h,i)=>{
     const img=G.figurBild(h.id); if(!img) return;
@@ -463,6 +449,38 @@ G.ritaPool = (canvas, doda) => {
       R(x+4,y+18,24,2,"#2bb5d8"); R(x+8,y+18,6,1,"#7fe3f5"); };
     if(img.complete&&img.naturalWidth) rita(); else img.addEventListener("load",rita,{once:true});
   });
+
+  // Tetrok ur npc/tetrok.png (8×8 rutor): sitter i poolen till höger, vattnet ritas om framför honom
+  const tb = G.npcBild("tetrok");
+  if(tb.complete && tb.naturalWidth){
+    const tx = 116, ty = 44, vy = ty + 26;            // vattenlinjen ligger på rad 26 i rutan
+    ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, vy); ctx.clip();
+    G.ritaRuta(ctx, tb, tetrokRuta, tx, ty, 32);
+    ctx.restore();
+    R(px, vy, pw, py+ph-vy, "#2bb5d8");
+    R(tx+5, vy, 22, 1, "#7fe3f5"); R(tx+2, vy+2, 6, 1, "#7fe3f5"); R(tx+22, vy+2, 7, 1, "#7fe3f5");
+  }
+}
+// Poolen med Tetrok som rör sig: han spelar en av sina rader (8 rutor) i taget, och vilar mellan raderna.
+// Raderna: 0 röker, 1 dricker, 2 rökringar, 3 slumrar, 4 pratar, 5 skålar, 6 plaskar, 7 kliar sig.
+G.ritaPool = (canvas, doda) => {
+  if(!canvas) return;
+  const id = (canvas._poolId = (canvas._poolId||0) + 1);
+  const tb = G.npcBild("tetrok");
+  if(!(tb.complete && tb.naturalWidth)) tb.addEventListener("load", ()=>G.ritaPool(canvas, doda), {once:true});
+  let rad = 0, ruta = 0, vila = 0;
+  const STILLA = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const tick = () => {
+    if(!canvas.isConnected || canvas._poolId !== id) return;
+    ritaPoolRuta(canvas, doda, rad*8 + ruta);
+    if(STILLA) return;
+    let paus = 170;
+    if(vila > 0){ vila--; paus = 1000; if(vila === 0){ rad = Math.floor(Math.random()*8); ruta = 0; } }
+    else if(ruta < 7){ ruta++; }
+    else { ruta = 0; rad = 0; vila = 2 + Math.floor(Math.random()*3); paus = 600; }
+    setTimeout(tick, paus);
+  };
+  tick();
 };
 
 // ---------- Värdshuset på startsidan: möbler ur npc/mobler.png, värden ur npc/kopman.png ----------
