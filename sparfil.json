@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:29:24.001Z",
+  "uppdaterad": "2026-11-03T06:29:37.419Z",
   "spel": {
     "version": 1,
-    "tid": 1793687360895,
+    "tid": 1793687374266,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -276,7 +276,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "shinji": {
@@ -304,12 +304,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
           "kp": 4,
-          "vp": 8,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -320,7 +320,8 @@
             "Stav"
           ],
           "anvanda": [
-            "Stav"
+            "Stav",
+            "Magi"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -329,7 +330,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -707,6 +708,18 @@
         {
           "text": "Dagny von Fågelborg fokuserar. Nästa besvärjelse får dubbel effekt. (Kostade bara 1 VP.)",
           "cls": "ok"
+        },
+        {
+          "text": "Dagny von Fågelborg kastar Lyft slår Magi: [12] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Besvärjelsen fräser och dör ut.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
