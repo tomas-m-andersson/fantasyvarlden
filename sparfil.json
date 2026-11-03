@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:25:40.500Z",
+  "uppdaterad": "2026-11-03T06:25:44.880Z",
   "spel": {
     "version": 1,
-    "tid": 1793687140154,
+    "tid": 1793687141815,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -222,6 +222,10 @@
           "fiender": [
             "varg",
             "rovare"
+          ],
+          "rutor": [
+            63,
+            34
           ]
         },
         {
@@ -240,7 +244,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "ff": {
           "kp": 7,
@@ -566,7 +570,7 @@
       "start": "2026-11-02 22:05",
       "utforska": true,
       "kapitel": 1,
-      "djup": 1,
+      "djup": 2,
       "paus": false
     },
     "reset": 0,
