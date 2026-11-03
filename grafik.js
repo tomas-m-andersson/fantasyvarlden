@@ -296,7 +296,7 @@ G.regnLager = (canvas, pa) => {
 };
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
-const MARK_NER = { basar: 9, klyfta_ute: -10, klyfta_inne: -15 };
+const MARK_NER = { basar: 9, klyfta_ute: -13, klyfta_inne: -18 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
