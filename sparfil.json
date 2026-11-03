@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:25:44.880Z",
+  "uppdaterad": "2026-11-03T06:26:49.190Z",
   "spel": {
     "version": 1,
-    "tid": 1793687141815,
+    "tid": 1793687206076,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -270,7 +270,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut"
         },
         "shinji": {
@@ -297,8 +297,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd"
+          "agerat": true,
+          "valtVapen": "Kort båge"
         },
         "dagny": {
           "kp": 7,
@@ -563,6 +563,26 @@
         },
         {
           "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Rövare anfaller FF: [1] mot 11 – NATURLIGT 1!",
+          "cls": "fel"
+        },
+        {
+          "text": "FF parerar: [9] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [3] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 6 skada (7 − 1 rustning).",
           "cls": "ok"
         }
       ],
