@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:07:18.480Z",
+  "uppdaterad": "2026-11-03T11:07:38.527Z",
   "spel": {
     "version": 1,
-    "tid": 1793704035316,
+    "tid": 1793704055578,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -223,7 +223,9 @@
         {
           "typ": "resa",
           "mote": "egon",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Egon rycker på axlarna. ”Visst, varför inte.” (alla läker)"
         },
         {
           "typ": "resa",
@@ -319,7 +321,9 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Övertala"
+          ]
         },
         "malexander": {
           "kp": 14,
@@ -362,6 +366,14 @@
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår Övertala: [2] mot 6 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Egon rycker på axlarna. ”Visst, varför inte.” (alla läker)",
           "cls": "info"
         }
       ],
