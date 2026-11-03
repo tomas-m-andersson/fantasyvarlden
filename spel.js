@@ -197,7 +197,7 @@ function visaTarningar(lista){
 
 // ================= IKONER FÖR SAKER (npc/saker_grotta.png = g, npc/saker_by.png = b) =================
 const IKON = {
-  // "i:" = npc/ikoner.png (ikonarket), "g:" = npc/saker_grotta.png, "b:" = npc/saker_by.png
+  // "i:" = npc/ikoner.png (ikonarket), "j:" = npc/ikoner2.png (ikonark 2), "g:" = npc/saker_grotta.png, "b:" = npc/saker_by.png
   "Läkedryck":"i:39","Läkande ört":"i:22","Grönfräken":"i:23","Gravstensalm":"i:24","Kråkmossa":"i:19","Hirtonbuske":"i:20","Tokfrans":"i:21",
   "Krigarfasa":"g:50","Flaska vin":"g:29","Vin":"g:29","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"i:55","En limpa bröd":"i:55",
   "Bröd (fyra kilo)":"i:55","Torkat kött":"i:56","Torkade fikon":"b:4","Rep":"i:16","Karta":"i:58","Karta över Grador och Liane":"i:58",
@@ -206,12 +206,14 @@ const IKON = {
   "Dolk":"i:49","Gulddolk":"g:21","Dolk av draktand":"g:41","Kastknivar":"g:41","Strypsnara":"i:18","Piska":"i:17",
   "Handyxa":"i:51","Yxa":"i:51","Stridsyxa":"i:50","Stridsgissel":"g:34","Morgonstjärna":"g:10","Stridshammare":"i:52","Träpinne":"i:10","Träpåk":"i:11",
   "Spjut":"i:7","Kort spjut":"i:8","Långt spjut":"i:9","Kort båge":"i:12","Pilbåge":"i:13","Armborst":"i:14","Slunga":"i:15",
-  "Ringbrynja":"g:35","Läderrustning":"i:33","Läderväst":"i:33","Plåtrustning":"i:34","Sköld":"i:30","guld":"g:19"
+  "Ringbrynja":"g:35","Läderrustning":"i:33","Läderväst":"i:33","Plåtrustning":"i:34","Sköld":"i:30","guld":"g:19",
+  "Stav":"j:0","Trollstav":"j:1","Trästav":"j:2","Knytnävar":"j:3","Tygtunika":"j:4","Ulvskinn":"j:5","Fjällpansar (ett ben)":"j:6",
+  "Hästen Häs":"j:7","Skalp från en tornerspelare":"j:8","Visselpipa":"j:9","Tjurhorn":"j:10"
 };
 // Uppdragens föremål
-const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"g:51","doda-sjon":"i:54",krusbar:"i:28"};
-const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner"};
-function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbi]:\d+$/.test(k)) return "";
+const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"j:13",barnen:"j:11",gripagg:"j:12","doda-sjon":"i:54",krusbar:"i:28"};
+const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner", j:"ikoner2"};
+function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbij]:\d+$/.test(k)) return "";
   const [a,r] = k.split(":"); return `<canvas class="px ikon ${extraKlass||""}" data-ikon="${IKONARK[a]}:${r}" aria-hidden="true"></canvas>`; }
 function fyllIkoner(root){ (root||document).querySelectorAll("canvas[data-ikon]").forEach(c=>{ const [ark,r]=c.dataset.ikon.split(":"); G.ritaIkon(c, ark, Number(r)); }); }
 const guldHtml = n => `${ikonHtml("guld")}${n} guld`;
@@ -289,7 +291,7 @@ function visaHjalte(id){
     </div>
     <div><h3>Vapen</h3><table class="stat">${h.vapen.map(v=>{const w=R.VAPEN[v]||{};return `<tr><td>${ikonHtml(v)}${esc(v)} <span class="muted small">(${esc(w.fard)}, ${esc(w.skada)}${w.bonus?"+"+w.bonus:""}${w.avstand?", avstånd":""})</span></td><td>${R.fardVarde(h,w.fard)}</td></tr>`}).join("")}
       <tr><td>Skadebonus närstrid / avstånd</td><td>${sb||"–"} / ${sba||"–"}</td></tr>
-      <tr><td>Rustning: ${esc(h.rustning||"ingen")}${h.skold?" + sköld":""}</td><td>${R.rustning(h)}</td></tr></table></div>
+      <tr><td>${h.rustning?ikonHtml(h.rustning):""}Rustning: ${esc(h.rustning||"ingen")}${h.skold?" + sköld":""}</td><td>${R.rustning(h)}</td></tr></table></div>
     <div><h3>Färdigheter</h3><table class="stat">${R.allaFard(h).filter(f=>f.tranad).sort((a,b)=>b.varde-a.varde).map(f=>`<tr><td>${esc(f.namn)} <span class="muted small">(${f.eg})${s.bonus&&s.bonus[f.namn]?" · förbättrad +"+s.bonus[f.namn]:""}</span></td><td>${f.varde}</td></tr>`).join("")}
       <tr><td colspan="2" class="small notis">Övriga färdigheter har grundchansen (3–7 beroende på egenskapen).</td></tr></table></div>
     ${h.besv.length?`<div><h3>Besvärjelser <span class="small muted">(2 VP, slå Magi ${R.fardVarde(h,"Magi")})</span></h3><div class="col small">${h.besv.map(b=>`<div><b>${esc(b)}</b> – ${esc((R.BESV[b]||{}).text)}</div>`).join("")}</div></div>`:""}
