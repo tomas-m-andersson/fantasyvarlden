@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:16:46.095Z",
+  "uppdaterad": "2026-11-03T20:16:49.299Z",
   "spel": {
     "version": 1,
-    "tid": 1793737003169,
+    "tid": 1793737006303,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -256,6 +256,10 @@
           "fiender": [
             "varg",
             "orch"
+          ],
+          "rutor": [
+            37,
+            38
           ]
         },
         {
@@ -285,7 +289,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "shinji": {
           "kp": 13,
@@ -314,7 +318,7 @@
           "anvanda": []
         },
         "potus": {
-          "kp": 15,
+          "kp": 14,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -343,13 +347,17 @@
         {
           "text": "Sällskapet ger sig in i Harpybergen. Kapitel 1.",
           "cls": "info"
+        },
+        {
+          "text": "🦅 En stör-örn dyker ner, tar ett nyp i Potus kvarvarande öra och försvinner bakom en sky. Potus tar 1 skada. KP 14/15.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
       "start": "2026-11-03 21:16",
       "utforska": true,
       "kapitel": 1,
-      "djup": 0,
+      "djup": 1,
       "paus": false,
       "anvandaText": [
         "En utsiktspunkt där någon har byggt ett stenröse",
@@ -365,7 +373,9 @@
         "Ett gammalt bo med fjädrar stora som åror",
         "En vimpel från Harpybergen fladdrar i vinden",
         "Vinden ylar som en ensam varg"
-      ]
+      ],
+      "ornar": 1,
+      "ornVisa": null
     },
     "reset": 0,
     "rekord": {
