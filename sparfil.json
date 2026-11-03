@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:10:59.950Z",
+  "uppdaterad": "2026-11-03T11:11:14.846Z",
   "spel": {
     "version": 1,
-    "tid": 1793704256845,
+    "tid": 1793704271852,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -314,6 +314,10 @@
           "fiender": [
             "tiger",
             "ratta"
+          ],
+          "rutor": [
+            29,
+            4
           ]
         },
         {
@@ -326,7 +330,7 @@
           ]
         }
       ],
-      "i": 5,
+      "i": 6,
       "h": {
         "shinji": {
           "kp": 9,
@@ -386,7 +390,7 @@
           "valtVapen": "Kroksabel"
         },
         "potus": {
-          "kp": 11,
+          "kp": 8,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -567,10 +571,16 @@
         {
           "text": "Tola Sparv tar 5 skada från En bred klyfta. KP 8/13.",
           "cls": "fel"
+        },
+        {
+          "text": "🦅 Potus tittar upp i exakt rätt sekund för att få en stör-örn rakt i ansiktet. Potus tar 3 skada. KP 8/15.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
-      "start": "2026-11-03 12:07"
+      "start": "2026-11-03 12:07",
+      "ornar": 1,
+      "ornVisa": null
     },
     "reset": 0,
     "rekord": {
