@@ -440,12 +440,22 @@ function startaUppdrag(qid, medJens){
   spara(); ga("run");
 }
 // Bygger ett antal rum som slutar med en boss. extra = fler fiender (används när man utforskar djupare).
+// Bygger en rumsbeskrivning av tre delar och undviker delar som redan använts i samma äventyr
+function rumText(miljo, anvanda){
+  const D = V.RUMDELAR && V.RUMDELAR[miljo]; if(!D) return R.valj(V.RUMTEXT[miljo]);
+  const ny = lista => { const l = lista.filter(x=>!anvanda.has(x)); const v = R.valj(l.length ? l : lista); anvanda.add(v); return v; };
+  let t = `${ny(D.plats)}. ${ny(D.syn)}.`;
+  if(Math.random() < .8) t += ` ${ny(D.sinne)}.`;
+  if(V.RUMEXTRA && Math.random() < .12) t += ` ${ny(V.RUMEXTRA)}`;
+  return t;
+}
 function byggRum(miljo, antalRum, antal, boss, extra){
   const rumMoten = R.blanda(V.MOTEN.filter(m=>m.rum)), ut = [];
+  const anvanda = (st.run && st.run.anvandaText) ? new Set(st.run.anvandaText) : new Set();
   const typer = R.blanda(["strid","strid","falla","hinder","skatt","mote","strid","vila","hinder","skatt"]).slice(0,antalRum-1);
   if(!typer.includes("strid")) typer[0]="strid";
   typer.forEach(t=>{
-    const rum = {typ:"rum",rumtyp:t,text:R.valj(V.RUMTEXT[miljo]),fro:Math.floor(Math.random()*1e9)};
+    const rum = {typ:"rum",rumtyp:t,text:rumText(miljo, anvanda),fro:Math.floor(Math.random()*1e9)};
     if(t==="strid") rum.fiender = slumpaFiender(miljo, antal + extra, false);
     if(t==="falla") rum.falla = R.valj(V.FALLOR[miljo]);
     if(t==="hinder"){ const l=V.HINDER.filter(x=>x.miljo.includes(miljo)); rum.hinder = R.valj(l.length?l:V.HINDER); }
@@ -453,6 +463,7 @@ function byggRum(miljo, antalRum, antal, boss, extra){
     ut.push(rum);
   });
   ut.push({typ:"rum",rumtyp:"boss",text:"",fro:Math.floor(Math.random()*1e9),fiender:[boss, ...slumpaFiender(miljo, Math.min(3, antalHantlangare(antal) + extra), true)]});
+  ut.anvanda = [...anvanda];
   return ut;
 }
 function nyaHjaltar(party){
@@ -491,6 +502,7 @@ function startaUtforskning(pid){
   const q = {id:"utforska-"+p.id, titel:p.namn, plats:p.namn, land:p.land, miljo:p.miljo, boss:R.valj(p.bossar), beloning:0, givare:"", svar:"", foremal:null, rum:KAPITEL_RUM, plats_id:p.id};
   st.run = {q, party, steg:byggRum(p.miljo, KAPITEL_RUM, party.length, q.boss, 0), i:0, h:nyaHjaltar(party), guld:0, logg:[], utfall:null, start:datum(),
     utforska:true, kapitel:1, djup:0, paus:false};
+  st.run.anvandaText = st.run.steg.anvanda || [];
   storOrn(1/6);
   logga(`Sällskapet ger sig in i ${p.namn}. Kapitel 1.`,"info");
   spara(); ga("run");
@@ -512,7 +524,8 @@ function nyttKapitel(){
   const r = st.run; r.paus = false; r.kapitel++;
   const p = V.PLATSER.find(x=>x.id===r.q.plats_id);
   r.q.boss = R.valj(p.bossar);
-  r.steg.push(...byggRum(r.q.miljo, KAPITEL_RUM, r.party.length, r.q.boss, extraFiender(r.kapitel)));
+  const nya = byggRum(r.q.miljo, KAPITEL_RUM, r.party.length, r.q.boss, extraFiender(r.kapitel));
+  r.anvandaText = nya.anvanda; r.steg.push(...nya);
   r.i++; r.kapStart = r.i;
   logga(`Sällskapet går djupare in i ${r.q.plats}. Kapitel ${r.kapitel}.`,"info");
   storOrn(1/6); spara(); ritaRun(); window.scrollTo({top:0,behavior:"smooth"});
