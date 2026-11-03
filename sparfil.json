@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:12:04.871Z",
+  "uppdaterad": "2026-11-03T11:12:22.016Z",
   "spel": {
     "version": 1,
-    "tid": 1793704321828,
+    "tid": 1793704338864,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -386,7 +386,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel"
         },
         "potus": {
@@ -611,6 +611,14 @@
         {
           "text": "Shinji Onishi tar 3 skada (4 − 1 rustning) från Klor. KP 6/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
