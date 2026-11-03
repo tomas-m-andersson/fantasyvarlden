@@ -1,13 +1,12 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:30:37.371Z",
+  "uppdaterad": "2026-11-03T06:30:45.633Z",
   "spel": {
     "version": 1,
-    "tid": 1793687434337,
+    "tid": 1793687442603,
     "kassa": 335,
     "packning": [
-      "Krigarfasa",
       "Kråkmossa"
     ],
     "sallskap": [
@@ -276,8 +275,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort spjut"
+          "agerat": true,
+          "valtVapen": "Kort spjut",
+          "fordelNasta": true
         },
         "shinji": {
           "kp": 13,
@@ -791,6 +791,10 @@
         {
           "text": "FF återfår 3 KP.",
           "cls": "ok"
+        },
+        {
+          "text": "FF använder krigarfasa. Röker en mystisk ört: fördel på nästa anfall.",
+          "cls": "info"
         }
       ],
       "utfall": null,
