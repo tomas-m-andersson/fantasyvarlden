@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:06:45.509Z",
+  "uppdaterad": "2026-11-03T11:06:51.725Z",
   "spel": {
     "version": 1,
-    "tid": 1793704002469,
+    "tid": 1793704008789,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -212,6 +212,7 @@
         "djup": 4,
         "datum": "2026-11-03"
       }
-    }
+    },
+    "svarighet": "latt"
   }
 }
