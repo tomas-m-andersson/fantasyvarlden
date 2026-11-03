@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:10:14.346Z",
+  "uppdaterad": "2026-11-03T11:10:59.950Z",
   "spel": {
     "version": 1,
-    "tid": 1793704211200,
+    "tid": 1793704256845,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -302,7 +302,9 @@
               "grotta",
               "ruin"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Alla tar sig till slut förbi, men Shinji Onishi, Malexander Bard, Potus Singulus Rövhatt, Tola Sparv gjorde sig illa på vägen."
         },
         {
           "typ": "rum",
@@ -327,7 +329,7 @@
       "i": 5,
       "h": {
         "shinji": {
-          "kp": 13,
+          "kp": 9,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -346,7 +348,8 @@
             "Fingerfärdighet",
             "Svärd",
             "Pilbåge",
-            "Upptäcka fara"
+            "Upptäcka fara",
+            "Akrobatik"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -359,7 +362,7 @@
           "valtVapen": "Kort båge"
         },
         "malexander": {
-          "kp": 14,
+          "kp": 13,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -369,7 +372,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Akrobatik"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -382,7 +386,7 @@
           "valtVapen": "Kroksabel"
         },
         "potus": {
-          "kp": 15,
+          "kp": 11,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -392,7 +396,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Akrobatik"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -405,7 +410,7 @@
           "valtVapen": "Kort svärd"
         },
         "tola": {
-          "kp": 13,
+          "kp": 8,
           "vp": 5,
           "doende": false,
           "ok": 0,
@@ -415,7 +420,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Akrobatik"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -529,6 +535,38 @@
         {
           "text": "Shinji Onishi slår Fingerfärdighet: [1] mot 7 – NATURLIGT 1!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi slår Akrobatik: [13] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada från En bred klyfta. KP 9/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard slår Akrobatik: [5] mot 3 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard tar 1 skada från En bred klyfta. KP 13/14.",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt slår Akrobatik: [10] mot 3 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt tar 4 skada från En bred klyfta. KP 11/15.",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv slår Akrobatik: [10] mot 4 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv tar 5 skada från En bred klyfta. KP 8/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
