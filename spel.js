@@ -201,7 +201,7 @@ const IKON = {
   "Läkedryck":"i:39","Läkande ört":"i:22","Grönfräken":"i:23","Gravstensalm":"i:24","Kråkmossa":"i:19","Hirtonbuske":"i:20","Tokfrans":"i:21",
   "Krigarfasa":"g:50","Flaska vin":"g:29","Vin":"g:29","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"i:55","En limpa bröd":"i:55",
   "Bröd (fyra kilo)":"i:55","Torkat kött":"i:56","Torkade fikon":"b:4","Rep":"i:16","Karta":"i:58","Karta över Grador och Liane":"i:58",
-  "Trollformelbok":"i:44","Diktsamling":"g:13","Anteckningsblock":"g:13","Tärningsspel":"g:6","Elddon":"g:4","Luta":"b:57",
+  "Trollformelbok":"i:44","Diktsamling":"g:13","Anteckningsblock":"g:13","Tärningsspel":"g:6","Elddon":"g:4",
   "Kort svärd":"i:0","Långsvärd":"i:1","Rostigt svärd":"i:2","Kroksabel":"i:3","Vantim":"i:4","Nannheim":"i:5","Gorgor":"i:6",
   "Dolk":"i:49","Gulddolk":"g:21","Dolk av draktand":"g:41","Kastknivar":"g:41","Strypsnara":"i:18","Piska":"i:17",
   "Handyxa":"i:51","Yxa":"i:51","Stridsyxa":"i:50","Stridsgissel":"g:34","Morgonstjärna":"g:10","Stridshammare":"i:52","Träpinne":"i:10","Träpåk":"i:11",
