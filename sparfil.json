@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:13:20.468Z",
+  "uppdaterad": "2026-11-03T11:13:29.277Z",
   "spel": {
     "version": 1,
-    "tid": 1793704397425,
-    "kassa": 335,
+    "tid": 1793704408732,
+    "kassa": 564,
     "packning": [
       "Kråkmossa"
     ],
@@ -126,9 +126,11 @@
       },
       "shinji": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Fingerfärdighet": 1
+        },
         "aventyr": 2,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
@@ -142,25 +144,32 @@
       },
       "malexander": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Svärd": 1,
+          "Akrobatik": 1
+        },
         "aventyr": 1,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
       "potus": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Akrobatik": 1
+        },
         "aventyr": 1,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
       "tola": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Spjut": 1
+        },
         "aventyr": 1,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       }
@@ -170,9 +179,18 @@
       "gripagg"
     ],
     "avklarade": {
-      "broncos": 1
+      "broncos": 1,
+      "svartalf": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-03 12:13",
+        "text": "Stör-örnen anföll Potus Rövhatt 2 gånger under ”Den nya svartalfkungen”."
+      },
+      {
+        "tid": "2026-11-03 12:13",
+        "text": "Shinji Onishi, Malexander Bard, Potus Singulus Rövhatt, Tola Sparv klarade ”Den nya svartalfkungen” och fick 220 guld + 9 i byte."
+      },
       {
         "tid": "2026-11-03 07:32",
         "text": "FF, Shinji Onishi, Dagny von Fågelborg utforskade Gollenskogen och nådde kapitel 1 (4 rum). Hela sällskapet har fallit i striden."
@@ -332,7 +350,9 @@
           ],
           "rutor": [
             9
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Ni har fått tag på: Svartalfkungens krona. Den nya svartalfkungen är besegrad!"
         }
       ],
       "i": 7,
@@ -349,7 +369,8 @@
             "Torkat kött"
           ],
           "markerade": [
-            "Fingerfärdighet"
+            "Fingerfärdighet",
+            "Svärd"
           ],
           "anvanda": [
             "Övertala",
@@ -367,7 +388,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "malexander": {
@@ -380,7 +401,8 @@
           "dod": false,
           "saker": [],
           "markerade": [
-            "Svärd"
+            "Svärd",
+            "Akrobatik"
           ],
           "anvanda": [
             "Svärd",
@@ -393,7 +415,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "potus": {
@@ -405,7 +427,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Akrobatik"
+          ],
           "anvanda": [
             "Svärd",
             "Akrobatik"
@@ -417,19 +441,21 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "tola": {
           "kp": 8,
-          "vp": 5,
+          "vp": 2,
           "doende": false,
           "ok": 0,
           "miss": 0,
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Spjut"
+          ],
           "anvanda": [
             "Spjut",
             "Akrobatik"
@@ -686,9 +712,80 @@
         {
           "text": "Potus Singulus Rövhatt återfår 8 KP.",
           "cls": "ok"
+        },
+        {
+          "text": "★ Tola Sparv: Riddaranfall!",
+          "cls": "d"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut med fördel: [3 / 4 → 3] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen tar 11 skada (13 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen faller!",
+          "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "beloning": 220,
+        "avgift": 0,
+        "byte": 9,
+        "doda": [],
+        "forb": {
+          "shinji": [
+            {
+              "f": "Fingerfärdighet",
+              "v": 7,
+              "s": 17,
+              "upp": true
+            },
+            {
+              "f": "Svärd",
+              "v": 10,
+              "s": 9,
+              "upp": false
+            }
+          ],
+          "malexander": [
+            {
+              "f": "Svärd",
+              "v": 12,
+              "s": 14,
+              "upp": true
+            },
+            {
+              "f": "Akrobatik",
+              "v": 3,
+              "s": 15,
+              "upp": true
+            }
+          ],
+          "potus": [
+            {
+              "f": "Akrobatik",
+              "v": 3,
+              "s": 9,
+              "upp": true
+            }
+          ],
+          "tola": [
+            {
+              "f": "Spjut",
+              "v": 10,
+              "s": 18,
+              "upp": true
+            }
+          ]
+        },
+        "rad": [
+          "🦅 Stör-örnen anföll Potus 2 gånger."
+        ]
+      },
       "start": "2026-11-03 12:07",
       "ornar": 2,
       "ornVisa": null
