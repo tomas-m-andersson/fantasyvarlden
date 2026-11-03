@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:23:49.657Z",
+  "uppdaterad": "2026-11-03T20:23:57.228Z",
   "spel": {
     "version": 1,
-    "tid": 1793737426715,
+    "tid": 1793737434197,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -349,7 +349,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
             "Svärd"
           ],
@@ -360,8 +362,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd"
+          "agerat": true,
+          "valtVapen": "Kort svärd",
+          "nackdelNasta": true
         },
         "tola": {
           "kp": 13,
@@ -456,6 +459,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [20] mot 12 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Potus Singulus Rövhatt tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
         }
       ],
       "utfall": null,
