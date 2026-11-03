@@ -336,7 +336,7 @@ RITA.trask = (ctx, rnd) => {
 // Rita med cache: varje (miljö, frö) ritas en gång och återanvänds sedan
 const CACHE = new Map();
 // Egna målade bakgrunder (320×180, dubbel upplösning) i mappen bakgrunder/. Saknas en miljö här ritas den med kod.
-const EGNA = { grotta:["grotta1","grotta2"], skog:["skog1","skog2","skog1natt","skog2natt"], oken:["oken1","oken2"] };
+const EGNA = { grotta:["grotta1","grotta2"], skog:["skog1","skog2","skog1natt","skog2natt"], oken:["oken1","oken2"], berg:["berg1","berg2"] };
 const EBILDER = {};
 const egenBild = namn => { if(!EBILDER[namn]){ const i=new Image(); i.src="bakgrunder/"+namn+".png"; EBILDER[namn]=i; } return EBILDER[namn]; };
 window.BAKGRUND = {
