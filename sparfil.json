@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:16:28.523Z",
+  "uppdaterad": "2026-11-03T20:16:46.095Z",
   "spel": {
     "version": 1,
-    "tid": 1793736985478,
+    "tid": 1793737003169,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -244,7 +244,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En utsiktspunkt där någon har byggt ett stenröse. En bergsget stirrar oavbrutet på er. Solen bländar mot snön.",
-          "fro": 794557543
+          "fro": 794557543,
+          "klar": true,
+          "utfallText": "Ni går vidare utan att vila."
         },
         {
           "typ": "rum",
