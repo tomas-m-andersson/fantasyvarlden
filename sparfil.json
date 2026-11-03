@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:29:12.235Z",
+  "uppdaterad": "2026-11-03T06:29:24.001Z",
   "spel": {
     "version": 1,
-    "tid": 1793687349148,
+    "tid": 1793687360895,
     "kassa": 335,
     "packning": [
       "Krigarfasa",
@@ -309,7 +309,7 @@
         },
         "dagny": {
           "kp": 4,
-          "vp": 9,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -325,11 +325,11 @@
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
-          "maktig": false,
+          "maktig": true,
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
         }
@@ -699,6 +699,14 @@
         {
           "text": "FF faller ihop och ligger döende!",
           "cls": "dm"
+        },
+        {
+          "text": "★ Dagny von Fågelborg: Focus on the Hocus Pocus!",
+          "cls": "d"
+        },
+        {
+          "text": "Dagny von Fågelborg fokuserar. Nästa besvärjelse får dubbel effekt. (Kostade bara 1 VP.)",
+          "cls": "ok"
         }
       ],
       "utfall": null,
