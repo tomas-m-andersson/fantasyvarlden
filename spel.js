@@ -377,6 +377,12 @@ function ritaBasar(){
 }
 
 // ================= UPPDRAGSTAVLAN =================
+// Uppdragsgivarnas figurark i npc/ (8×8 rutor). Familjen von Borge: rad 1 är fadern som står för familjen.
+const GIVARE = {"Porsch Wilson":"porsch","Barden Baror":"baror","Mandor Marvolt":"mandor","Gitte von Gittemberg":"gitte","Lansor":"lansor",
+  "Familjen von Borge":"vonborge","Slasbys församling":"hannes","Eva":"eva","Hövding Atlas":"atlas","Clark":"clark",
+  "Borgmästaren i Hagbo":"hagbo","Professor Proppeteus":"proppeteus"};
+function givare(namn, fro){ const ark = "givare_" + (GIVARE[namn] || "generisk");
+  return {ark, ruta: ark==="givare_vonborge" ? (fro||0) % 8 : (fro||0) % 64}; }
 function fyllTavla(){
   const ids = V.UPPDRAG.map(u=>u.id);
   st.tavla = st.tavla.filter(id=>ids.includes(id));
@@ -385,14 +391,15 @@ function fyllTavla(){
 function ritaTavla(){
   fyllTavla(); spara();
   const party = st.sallskap.filter(id=>!ar(id));
-  app.innerHTML = `<section class="card"><h2>Uppdragstavlan</h2><p class="muted">Lansor – svart påvehatt, Fu Manchu-mustasch, pipskägg – pekar med en lång nagel på lapparna. Han tar 10 % av alla belöningar för uppdrag han förmedlar själv.</p></section>
+  app.innerHTML = `<section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="givare_lansor:0"></canvas><h2>Uppdragstavlan</h2></div><p class="muted">Lansor – svart påvehatt, Fu Manchu-mustasch, pipskägg – pekar med en lång nagel på lapparna. Han tar 10 % av alla belöningar för uppdrag han förmedlar själv.</p></section>
     ${st.tavla.map(id=>{const u=V.UPPDRAG.find(x=>x.id===id); const n=st.avklarade[id]||0; return `<section class="card quest">
-      <div class="row" style="justify-content:space-between"><h2>${esc(u.titel)}</h2><span class="tag gold">${u.beloning} guld</span></div>
+      <div class="row" style="justify-content:space-between;flex-wrap:nowrap;align-items:flex-start"><span class="row" style="gap:8px;flex-wrap:nowrap;align-items:center">${(g=>`<canvas class="px saljare" data-npc="${g.ark}:${g.ruta}"></canvas>`)(givare(u.givare, u.id.length*7))}<h2>${esc(u.titel)}</h2></span><span class="tag gold" style="flex:none;white-space:nowrap">${u.beloning} guld</span></div>
       <p class="small muted">Uppdragsgivare: ${esc(u.givare)} · ${esc(u.plats)}, ${esc(u.land)} · ${esc(V.MILJO[u.miljo].namn)} · ${u.rum} rum${n?` · <span class="tag">Klarat ${n} gång${n>1?"er":""}</span>`:""}</p>
       <p>${esc(u.text)}</p>
       ${u.foremal?`<p class="small foremal">${ikonHtml(UPPDRAG_IKON[u.id])}<span><b>Mål:</b> ${esc(u.foremal)}</span></p>`:""}
       <div class="row"><button class="btn" data-anta="${u.id}" ${!party.length?"disabled":""}>Anta uppdraget</button></div></section>`}).join("")}
     <div class="row"><button class="btn ghost" data-a="nya">Nya lappar</button><button class="btn ghost" data-a="hem">Tillbaka</button></div>`;
+  app.querySelectorAll("canvas[data-npc]").forEach(c=>{ const [ark,ruta]=c.dataset.npc.split(":"); G.ritaNpc(c, ark, Number(ruta), true); });
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
     if(b.dataset.a==="hem") return ga("hem");
@@ -1262,7 +1269,9 @@ function ritaSlut(){
       ${Object.entries(u.forb).map(([id,l])=>`<p><b>${esc(HJ[id].namn)}:</b> ${l.length?l.map(x=>`${esc(x.f)} (${x.v}) slog ${x.s} → ${x.upp?`<span style="color:var(--moss)">+1!</span>`:"ingen ändring"}`).join(", "):"inget att slå för"}</p>`).join("")||"<p class='small'>Ingen överlevde för att förbättras.</p>"}</div>
       <button class="btn" data-a="klar">Tillbaka till värdshuset</button>
     </section>${loggHtml()}`;
-  G.ritaScen($("#scen"), r.q.miljo, [], 99, u.lyckat?"skatt":null, scenHjaltar());
+  // Vid seger i ett uppdrag (inte utforskning) står uppdragsgivaren vid skatten och tar emot sällskapet
+  const tack = u.lyckat && !r.utforska ? [{...givare(r.q.givare, r.q.id.length*7), x:118, fot:78}] : [];
+  G.ritaScen($("#scen"), r.q.miljo, [], 99, u.lyckat?"skatt":null, scenHjaltar(), tack);
   fyllIkoner(app);
   scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(b && b.dataset.a==="klar"){ st.run=null; spara(); ga("hem"); } };
