@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:31:00.608Z",
+  "uppdaterad": "2026-11-03T06:31:08.271Z",
   "spel": {
     "version": 1,
-    "tid": 1793687457527,
+    "tid": 1793687465182,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -254,9 +254,9 @@
       "i": 4,
       "h": {
         "ff": {
-          "kp": 3,
+          "kp": 0,
           "vp": 8,
-          "doende": false,
+          "doende": true,
           "ok": 0,
           "miss": 0,
           "stabil": false,
@@ -274,13 +274,13 @@
           "maktig": false,
           "raseri": false,
           "undvikAllt": false,
-          "stoppad": 0,
+          "stoppad": 1,
           "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": true
         },
         "shinji": {
-          "kp": 13,
+          "kp": 10,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -302,12 +302,12 @@
           "maktig": false,
           "raseri": false,
           "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
+          "stoppad": 1,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
-          "kp": 4,
+          "kp": 3,
           "vp": 2,
           "doende": false,
           "ok": 0,
@@ -328,7 +328,7 @@
           "maktig": false,
           "raseri": false,
           "undvikAllt": false,
-          "stoppad": 0,
+          "stoppad": 1,
           "agerat": true,
           "valtVapen": "Trollstav",
           "nackdelNasta": false
@@ -810,6 +810,42 @@
         },
         {
           "text": "Besvärjelsen fräser och dör ut.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Dendroidmodern låter rötter skjuta upp under hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 5 skada (6 − 1 rustning) från Rotnät. KP 0/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "FF faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "FF sitter fast och förlorar sin nästa handling.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 3 skada (4 − 1 rustning) från Rotnät. KP 10/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi sitter fast och förlorar sin nästa handling.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg tar 1 skada från Rotnät. KP 3/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg sitter fast och förlorar sin nästa handling.",
           "cls": "fel"
         }
       ],
