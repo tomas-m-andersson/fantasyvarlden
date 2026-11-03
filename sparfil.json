@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:13:51.626Z",
+  "uppdaterad": "2026-11-03T13:44:59.245Z",
   "spel": {
     "version": 1,
-    "tid": 1793704428575,
+    "tid": 1793713496304,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -132,7 +132,8 @@
         "aventyr": 2,
         "segrar": 1,
         "vapen": [],
-        "rustning": null
+        "rustning": null,
+        "figur": 4
       },
       "dagny": {
         "dod": false,
