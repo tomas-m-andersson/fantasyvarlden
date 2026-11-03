@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:27:41.639Z",
+  "uppdaterad": "2026-11-03T20:27:58.351Z",
   "spel": {
     "version": 1,
-    "tid": 1793737658765,
+    "tid": 1793737675248,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -293,7 +293,8 @@
           ],
           "rutor": [
             41
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -324,9 +325,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
-          "nackdelNasta": false
+          "nackdelNasta": true
         },
         "malexander": {
           "kp": 10,
@@ -378,7 +379,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Kort svärd",
-          "nackdelNasta": false
+          "nackdelNasta": true
         },
         "tola": {
           "kp": 13,
@@ -405,7 +406,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Långt spjut",
-          "nackdelNasta": false
+          "nackdelNasta": true
         }
       },
       "guld": 18,
@@ -677,14 +678,50 @@
         {
           "text": "Harpydrottningen tar 4 skada (6 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen skriker så att alla tappar fattningen – hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd med nackdel: [7 / 9 → 9] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 9 skada (11 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen faller!",
+          "cls": "d"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Harpybergen.",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-03 21:16",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "En utsiktspunkt där någon har byggt ett stenröse",
         "En bergsget stirrar oavbrutet på er",
@@ -701,7 +738,8 @@
         "Vinden ylar som en ensam varg"
       ],
       "ornar": 3,
-      "ornVisa": null
+      "ornVisa": null,
+      "nyttRekord": true
     },
     "reset": 0,
     "rekord": {
@@ -713,6 +751,11 @@
       "gollenskogen": {
         "kapitel": 1,
         "djup": 4,
+        "datum": "2026-11-03"
+      },
+      "harpybergen": {
+        "kapitel": 1,
+        "djup": 5,
         "datum": "2026-11-03"
       }
     },
