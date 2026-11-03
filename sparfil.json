@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:30:45.633Z",
+  "uppdaterad": "2026-11-03T06:30:50.942Z",
   "spel": {
     "version": 1,
-    "tid": 1793687442603,
+    "tid": 1793687447798,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -275,7 +275,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": true
         },
@@ -303,7 +303,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
@@ -794,6 +794,14 @@
         },
         {
           "text": "FF använder krigarfasa. Röker en mystisk ört: fördel på nästa anfall.",
+          "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg (Trollstav) slår Stav: [19] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 5 —",
           "cls": "info"
         }
       ],
