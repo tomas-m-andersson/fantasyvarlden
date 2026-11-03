@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-02T21:09:26.189Z",
+  "uppdaterad": "2026-11-03T06:25:40.500Z",
   "spel": {
     "version": 1,
-    "tid": 1793653763114,
+    "tid": 1793687140154,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -210,7 +210,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "Gamla ekar med ansikten inristade i barken.",
-          "fro": 329396760
+          "fro": 329396760,
+          "klar": true,
+          "utfallText": "Ni vilar i lugn och ro. Alla känner sig lite bättre."
         },
         {
           "typ": "rum",
@@ -238,11 +240,11 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "ff": {
-          "kp": 1,
-          "vp": 5,
+          "kp": 7,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -268,8 +270,8 @@
           "valtVapen": "Kort spjut"
         },
         "shinji": {
-          "kp": 9,
-          "vp": 8,
+          "kp": 13,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -295,7 +297,7 @@
           "valtVapen": "Kort svärd"
         },
         "dagny": {
-          "kp": 6,
+          "kp": 7,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -554,13 +556,17 @@
         {
           "text": "Brunbjörn faller!",
           "cls": "d"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
       "start": "2026-11-02 22:05",
       "utforska": true,
       "kapitel": 1,
-      "djup": 0,
+      "djup": 1,
       "paus": false
     },
     "reset": 0,
