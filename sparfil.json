@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:12:00.025Z",
+  "uppdaterad": "2026-11-03T11:12:04.871Z",
   "spel": {
     "version": 1,
-    "tid": 1793704316984,
+    "tid": 1793704321828,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -333,7 +333,7 @@
       "i": 6,
       "h": {
         "shinji": {
-          "kp": 9,
+          "kp": 6,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -410,7 +410,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         },
         "tola": {
@@ -607,6 +607,10 @@
         {
           "text": "Jätteråtta faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi tar 3 skada (4 − 1 rustning) från Klor. KP 6/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
