@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:09:52.526Z",
+  "uppdaterad": "2026-11-03T11:10:05.375Z",
   "spel": {
     "version": 1,
-    "tid": 1793704189409,
+    "tid": 1793704201916,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -282,7 +282,9 @@
               "kloak",
               "gravfalt"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Shinji Onishi löser det med imponerande stil. Ni går vidare."
         },
         {
           "typ": "rum",
@@ -335,7 +337,9 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
+          "markerade": [
+            "Fingerfärdighet"
+          ],
           "anvanda": [
             "Övertala",
             "Smyga",
@@ -521,6 +525,10 @@
         {
           "text": "Shinji Onishi slår Upptäcka fara: [7] mot 10 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi slår Fingerfärdighet: [1] mot 7 – NATURLIGT 1!",
+          "cls": "d"
         }
       ],
       "utfall": null,
