@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:27:19.802Z",
+  "uppdaterad": "2026-11-03T20:27:41.639Z",
   "spel": {
     "version": 1,
-    "tid": 1793737636871,
+    "tid": 1793737658765,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -350,12 +350,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel",
           "nackdelNasta": false
         },
         "potus": {
-          "kp": 10,
+          "kp": 2,
           "vp": 7,
           "doende": false,
           "ok": 0,
@@ -378,7 +378,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Kort svärd",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "tola": {
           "kp": 13,
@@ -403,7 +403,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut",
           "nackdelNasta": false
         }
@@ -649,6 +649,34 @@
         {
           "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Potus Singulus Rövhatt parerar: [3 / 14 → 14] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt tar 6 skada (7 − 1 rustning) från Klor. KP 4/15.",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
+        },
+        {
+          "text": "🦅 Potus tittar upp i exakt rätt sekund för att få en stör-örn rakt i ansiktet. Potus tar 2 skada. KP 2/15.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [7] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
@@ -672,7 +700,7 @@
         "En vimpel från Harpybergen fladdrar i vinden",
         "Vinden ylar som en ensam varg"
       ],
-      "ornar": 2,
+      "ornar": 3,
       "ornVisa": null
     },
     "reset": 0,
