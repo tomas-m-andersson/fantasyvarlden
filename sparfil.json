@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:08:06.341Z",
+  "uppdaterad": "2026-11-03T11:08:20.534Z",
   "spel": {
     "version": 1,
-    "tid": 1793704083249,
+    "tid": 1793704097530,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -239,7 +239,12 @@
           "rumtyp": "mote",
           "text": "En fuktig grotta där vatten droppar från taket.",
           "fro": 436735974,
-          "mote": "fange"
+          "mote": "fange",
+          "fiender": [
+            "orch",
+            "orch"
+          ],
+          "efterStrid": "Låset går sönder och larmet går."
         },
         {
           "typ": "rum",
@@ -325,8 +330,17 @@
           "markerade": [],
           "anvanda": [
             "Övertala",
-            "Smyga"
-          ]
+            "Smyga",
+            "Fingerfärdighet"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "malexander": {
           "kp": 14,
@@ -338,7 +352,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "potus": {
           "kp": 15,
@@ -350,7 +372,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "tola": {
           "kp": 13,
@@ -362,7 +392,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -385,6 +423,18 @@
         },
         {
           "text": "Ni tar er runt i skydd av mörkret.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår Fingerfärdighet: [17] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Låset går sönder och larmet går.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
           "cls": "info"
         }
       ],
