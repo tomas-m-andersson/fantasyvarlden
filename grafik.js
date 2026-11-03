@@ -62,8 +62,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   ctx.setTransform(2,0,0,2,0,0);
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
   // Bakgrund ur bakgrund.js: en egen målad bild om miljön har en, annars ritad med kod
-  // Klyftan utomhus har en egen målad bakgrund där sällskapet står vid kanten (bakgrunder/klyfta_ute.png)
-  const bgId = (extra==="hinder:klyfta" && KLYFTA_UTE[miljoId]) ? "klyfta_ute" : miljoId;
+  // Klyftan har egna målade bakgrunder där sällskapet står vid kanten (bakgrunder/klyfta_ute.png och klyfta_inne.png)
+  const bgId = extra==="hinder:klyfta" ? (KLYFTA_UTE[miljoId] ? "klyfta_ute" : "klyfta_inne") : miljoId;
   const bgVantar = window.BAKGRUND.rita(ctx, bgId, fro);
   if(bgVantar) omRitaVid(bgVantar);
   // Regnväder: ungefär vart fjärde rum utomhus (på målade bakgrunder) regnar det. Himlen mörknar här,
@@ -99,7 +99,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(extra==="hinder:dorr"){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege") sak(sb, 13, 84, 40, 38);
   if(extra==="hinder:mur") sak(sb, 25, 82, 46, 32);
-  if(extra==="hinder:klyfta" && bgId!=="klyfta_ute"){ ctx.fillStyle="#000c"; ctx.fillRect(72,66,30,24); ctx.fillStyle="#0006"; ctx.fillRect(70,64,34,3); }
+  if(extra==="hinder:klyfta" && !window.BAKGRUND.harEgen(bgId)){ ctx.fillStyle="#000c"; ctx.fillRect(72,66,30,24); ctx.fillStyle="#0006"; ctx.fillRect(70,64,34,3); }
   // Bakhuvudet Jens vagn (npc/jens_vagn.png, sex varianter). Hjältarna ritas först och vagnen ovanpå,
   // så att relingen döljer underkroppen och de ser ut att sitta på flaket bakom Jens.
   if(extra && String(extra).startsWith("jens")){
@@ -296,10 +296,10 @@ G.regnLager = (canvas, pa) => {
 };
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
-const MARK_NER = { basar: 9, klyfta_ute: -10 };
+const MARK_NER = { basar: 9, klyfta_ute: -10, klyfta_inne: -14 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
-const HJ_STEG = { klyfta_ute: 11 };
-// Miljöer som använder den målade klyftan utomhus (inomhus ritas klyftan fortfarande med kod)
+const HJ_STEG = { klyfta_ute: 11, klyfta_inne: 11 };
+// Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
 const KLYFTA_UTE = { skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1 };
 
 const BILDER = {};
