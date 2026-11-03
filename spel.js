@@ -344,7 +344,8 @@ const BASAR_UTR = [["Läderrustning",40,"rustning"],["Ringbrynja",150,"rustning"
 let basarMeddelande = "";
 function ritaBasar(){
   const party = st.sallskap.filter(id=>!ar(id));
-  app.innerHTML = `<section class="card"><div class="row" style="justify-content:space-between"><span class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="kopman:22"></canvas><h2>Basaren</h2></span><span class="kassa">${guldHtml(st.kassa)}</span></div>
+  app.innerHTML = `<div class="tv"><canvas id="basarscen" class="px"></canvas><span class="badge">Basaren</span></div>
+  <section class="card"><div class="row" style="justify-content:space-between"><span class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="kopman:22"></canvas><h2>Basaren</h2></span><span class="kassa">${guldHtml(st.kassa)}</span></div>
     <p class="muted small">Förbrukningssaker hamnar i sällskapets gemensamma packning och kan användas av vem som helst i strid.</p>
     <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="vara"><span>${ikonHtml(n)}<b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="stad:36"></canvas><h2>Tehandeln</h2></div><p class="muted small">Rött té, 2 guld koppen. Det gör inte mycket (1 KP), men det är gott. Teet hamnar i packningen.</p>
@@ -357,6 +358,9 @@ function ritaBasar(){
   <button class="btn ghost" data-a="hem">Tillbaka till värdshuset</button>`;
   fyllIkoner(app);
   app.querySelectorAll("canvas[data-npc]").forEach(c=>{ const [ark,ruta]=c.dataset.npc.split(":"); G.ritaNpc(c, ark, Number(ruta), true); });
+  // TV:n: sällskapet till vänster, köpmannen, teförsäljaren och smeden vid stånden till höger
+  G.ritaScen($("#basarscen"), "basar", [], 1, null, party.map(id=>({id, ruta:figur(id)})),
+    [{ark:"stad", ruta:36, x:84, fot:76}, {ark:"kopman", ruta:22, x:106, fot:78}, {ark:"by", ruta:12, x:128, fot:76}]);
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
     if(b.dataset.a==="hem"){ basarMeddelande=""; return ga("hem"); }
