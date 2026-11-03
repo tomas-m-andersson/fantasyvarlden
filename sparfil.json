@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:23:26.038Z",
+  "uppdaterad": "2026-11-03T20:23:49.657Z",
   "spel": {
     "version": 1,
-    "tid": 1793737403048,
+    "tid": 1793737426715,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -292,7 +292,7 @@
       "i": 1,
       "h": {
         "shinji": {
-          "kp": 13,
+          "kp": 11,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -302,8 +302,12 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
-          "anvanda": [],
+          "markerade": [
+            "Svärd"
+          ],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -311,7 +315,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Kort svärd"
         },
         "malexander": {
           "kp": 14,
@@ -323,7 +328,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -353,7 +360,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "tola": {
@@ -376,7 +383,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         }
       },
@@ -409,6 +416,46 @@
         {
           "text": "Orch tar 4 skada (5 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Malexander Bard parerar: [12] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch anfaller Shinji Onishi: [6] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Orch. KP 11/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [1] mot 10 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Orch tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Malexander Bard har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
