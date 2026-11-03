@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:08:20.534Z",
+  "uppdaterad": "2026-11-03T11:08:39.533Z",
   "spel": {
     "version": 1,
-    "tid": 1793704097530,
+    "tid": 1793704116500,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -352,7 +352,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -360,7 +362,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Kroksabel"
         },
         "potus": {
           "kp": 15,
@@ -436,6 +439,14 @@
         {
           "text": "— Runda 1 —",
           "cls": "info"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [8] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 tar 6 skada (7 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
