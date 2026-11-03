@@ -421,7 +421,28 @@ G.ritaKodPortratt = (canvas, hjalte, dod) => {
 };
 
 // ---------- Efterriket: poolen på skyskrapetaket i Miami, med björnen Tetrok ----------
+// Miami-taket som målad bakgrund (bakgrunder/miami.png, 320×180). Hjältarna och Tetrok sitter i poolen
+// med vattenlinjen vid y 78 (i 160×90-koordinater) – allt under den linjen döljs, så att de ser ut att sitta i vattnet.
+function ritaPoolMalad(canvas, doda, tetrokRuta, bild){
+  const ctx = canvas.getContext("2d");
+  canvas.width = 320; canvas.height = 180; ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(bild, 0, 0);
+  ctx.setTransform(2,0,0,2,0,0);
+  const VY = 78, R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+  const iVattnet = (rita, x, b) => { ctx.save(); ctx.beginPath(); ctx.rect(0, 0, 160, VY); ctx.clip(); rita(); ctx.restore();
+    R(x+2, VY, b-4, 1, "#b8f6f0"); R(x, VY+1, 4, 1, "#7fe3e8"); R(x+b-4, VY+1, 4, 1, "#7fe3e8"); };
+  (doda||[]).slice(0,5).forEach((h,i)=>{
+    const img=G.figurBild(h.id); if(!(img && img.complete && img.naturalWidth)){ if(img) img.addEventListener("load",()=>G.ritaPool(canvas, doda),{once:true}); return; }
+    const r=h.ruta??(G.figurRutor(h.id)[0]||0), x=14+i*18, y=VY-21+(i%2);
+    iVattnet(()=>ctx.drawImage(img,(r%8)*32,Math.floor(r/8)*32,32,32,x,y,32,32), x+6, 20);
+  });
+  const tb = G.npcBild("tetrok");
+  if(tb.complete && tb.naturalWidth){ const tx=118, ty=VY-25; iVattnet(()=>G.ritaRuta(ctx, tb, tetrokRuta, tx, ty, 32), tx+3, 26); }
+  ctx.setTransform(1,0,0,1,0,0);
+}
 function ritaPoolRuta(canvas, doda, tetrokRuta){
+  const tak = G.npcBild("../bakgrunder/miami");
+  if(tak.complete && tak.naturalWidth) return ritaPoolMalad(canvas, doda, tetrokRuta, tak);
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
   const W=160, H=90; canvas.width=W; canvas.height=H; ctx.imageSmoothingEnabled = false;
   const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
@@ -466,8 +487,7 @@ function ritaPoolRuta(canvas, doda, tetrokRuta){
 G.ritaPool = (canvas, doda) => {
   if(!canvas) return;
   const id = (canvas._poolId = (canvas._poolId||0) + 1);
-  const tb = G.npcBild("tetrok");
-  if(!(tb.complete && tb.naturalWidth)) tb.addEventListener("load", ()=>G.ritaPool(canvas, doda), {once:true});
+  [G.npcBild("tetrok"), G.npcBild("../bakgrunder/miami")].forEach(b=>{ if(!(b.complete && b.naturalWidth)) b.addEventListener("load", ()=>G.ritaPool(canvas, doda), {once:true}); });
   let rad = 0, ruta = 0, vila = 0;
   const STILLA = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const tick = () => {
