@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:31:52.334Z",
+  "uppdaterad": "2026-11-03T06:32:14.617Z",
   "spel": {
     "version": 1,
-    "tid": 1793687509315,
+    "tid": 1793687531501,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -256,10 +256,10 @@
         "ff": {
           "kp": 0,
           "vp": 8,
-          "doende": true,
-          "ok": 1,
+          "doende": false,
+          "ok": 3,
           "miss": 1,
-          "stabil": false,
+          "stabil": true,
           "dod": false,
           "saker": [],
           "markerade": [],
@@ -280,7 +280,7 @@
           "fordelNasta": true
         },
         "shinji": {
-          "kp": 8,
+          "kp": 6,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -310,7 +310,7 @@
           "kp": 0,
           "vp": 2,
           "doende": true,
-          "ok": 0,
+          "ok": 1,
           "miss": 2,
           "stabil": false,
           "dod": false,
@@ -903,6 +903,42 @@
         {
           "text": "Dagny von Fågelborg slår dödsslag mot FYS: [19] mot 10 – misslyckat (0 lyckade, 2 misslyckade).",
           "cls": "fel"
+        },
+        {
+          "text": "FF slår dödsslag mot FYS: [8] mot 13 – lyckat (2 lyckade, 1 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroidmodern sprider kvävande sporer över hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Sporer. KP 6/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 8 —",
+          "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg slår dödsslag mot FYS: [3] mot 10 – lyckat (1 lyckade, 2 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "FF slår dödsslag mot FYS: [7] mot 13 – lyckat (3 lyckade, 1 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "FF är stabil men medvetslös.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [9] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroidmodern tar 3 skada (7 − 4 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
