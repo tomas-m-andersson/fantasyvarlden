@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T14:21:34.201Z",
+  "uppdaterad": "2026-11-03T20:16:28.523Z",
   "spel": {
     "version": 1,
-    "tid": 1793715691042,
+    "tid": 1793736985478,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -129,7 +129,7 @@
         "bonus": {
           "Fingerfärdighet": 1
         },
-        "aventyr": 2,
+        "aventyr": 3,
         "segrar": 1,
         "vapen": [],
         "rustning": null,
@@ -149,7 +149,7 @@
           "Svärd": 1,
           "Akrobatik": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null
@@ -159,7 +159,7 @@
         "bonus": {
           "Akrobatik": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null
@@ -169,7 +169,7 @@
         "bonus": {
           "Spjut": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null
@@ -218,7 +218,153 @@
         "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-harpybergen",
+        "titel": "Harpybergen",
+        "plats": "Harpybergen",
+        "land": "Grador",
+        "miljo": "berg",
+        "boss": "harpydrottning",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "harpybergen"
+      },
+      "party": [
+        "shinji",
+        "malexander",
+        "potus",
+        "tola"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "En utsiktspunkt där någon har byggt ett stenröse. En bergsget stirrar oavbrutet på er. Solen bländar mot snön.",
+          "fro": 794557543
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En smal stig längs en brant klippvägg. Spår av klor i klippan, djupa som fingrar. Molnen sveper förbi under era fötter.",
+          "fro": 116265979,
+          "fiender": [
+            "varg",
+            "orch"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "En grotta halvvägs upp i bergväggen. Ett gammalt rep sitter fast i en järnkrok. Det knakar oroväckande i berget. Långt borta hörs en ensam luta spela Lasse Holm.",
+          "fro": 362316150,
+          "falla": {
+            "namn": "Isfläck",
+            "text": "Stigen är spegelblank.",
+            "skada": "T6"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Ett gammalt bo med fjädrar stora som åror. En vimpel från Harpybergen fladdrar i vinden. Vinden ylar som en ensam varg.",
+          "fro": 263708268
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 465907043,
+          "fiender": [
+            "harpydrottning"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "malexander": {
+          "kp": 14,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "potus": {
+          "kp": 15,
+          "vp": 10,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "tola": {
+          "kp": 13,
+          "vp": 5,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Harpybergen. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-03 21:16",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false,
+      "anvandaText": [
+        "En utsiktspunkt där någon har byggt ett stenröse",
+        "En bergsget stirrar oavbrutet på er",
+        "Solen bländar mot snön",
+        "En smal stig längs en brant klippvägg",
+        "Spår av klor i klippan, djupa som fingrar",
+        "Molnen sveper förbi under era fötter",
+        "En grotta halvvägs upp i bergväggen",
+        "Ett gammalt rep sitter fast i en järnkrok",
+        "Det knakar oroväckande i berget",
+        "Långt borta hörs en ensam luta spela Lasse Holm.",
+        "Ett gammalt bo med fjädrar stora som åror",
+        "En vimpel från Harpybergen fladdrar i vinden",
+        "Vinden ylar som en ensam varg"
+      ]
+    },
     "reset": 0,
     "rekord": {
       "malbecs-gruvor": {
