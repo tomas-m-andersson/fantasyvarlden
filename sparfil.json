@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:26:49.190Z",
+  "uppdaterad": "2026-11-03T06:27:15.408Z",
   "spel": {
     "version": 1,
-    "tid": 1793687206076,
+    "tid": 1793687232489,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -270,7 +270,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "shinji": {
@@ -297,11 +297,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "dagny": {
-          "kp": 7,
+          "kp": 6,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -584,6 +584,26 @@
         {
           "text": "Ulv tar 6 skada (7 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Dagny von Fågelborg tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg tar 1 skada från Bett. KP 6/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg (Trollstav) slår Stav: [15] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
