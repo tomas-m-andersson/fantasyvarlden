@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:09:44.755Z",
+  "uppdaterad": "2026-11-03T11:09:52.526Z",
   "spel": {
     "version": 1,
-    "tid": 1793704181730,
+    "tid": 1793704189409,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -322,7 +322,7 @@
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "shinji": {
           "kp": 13,
