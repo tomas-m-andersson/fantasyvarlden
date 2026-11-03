@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:26:01.155Z",
+  "uppdaterad": "2026-11-03T20:26:12.185Z",
   "spel": {
     "version": 1,
-    "tid": 1793737558196,
+    "tid": 1793737569209,
     "kassa": 564,
     "packning": [],
     "sallskap": [
@@ -324,7 +324,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge",
           "nackdelNasta": false
         },
@@ -376,7 +376,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": true
         },
@@ -401,7 +401,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut",
           "nackdelNasta": true
         }
@@ -571,6 +571,18 @@
         {
           "text": "Shinji Onishi (Kort båge) slår Pilbåge med nackdel: [18 / 7 → 18] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd med nackdel: [20 / 8 → 20] mot 13 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Malexander Bard tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
