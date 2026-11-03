@@ -62,7 +62,9 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   ctx.setTransform(2,0,0,2,0,0);
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
   // Bakgrund ur bakgrund.js: en egen målad bild om miljön har en, annars ritad med kod
-  const bgVantar = window.BAKGRUND.rita(ctx, miljoId, fro);
+  // Klyftan utomhus har en egen målad bakgrund där sällskapet står vid kanten (bakgrunder/klyfta_ute.png)
+  const bgId = (extra==="hinder:klyfta" && KLYFTA_UTE[miljoId]) ? "klyfta_ute" : miljoId;
+  const bgVantar = window.BAKGRUND.rita(ctx, bgId, fro);
   if(bgVantar) omRitaVid(bgVantar);
   // Regnväder: ungefär vart fjärde rum utomhus (på målade bakgrunder) regnar det. Himlen mörknar här,
   // och själva regnet faller i ett eget genomskinligt lager ovanpå TV:n (se REGN längre ner).
@@ -97,7 +99,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(extra==="hinder:dorr"){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege") sak(sb, 13, 84, 40, 38);
   if(extra==="hinder:mur") sak(sb, 25, 82, 46, 32);
-  if(extra==="hinder:klyfta"){ ctx.fillStyle="#000c"; ctx.fillRect(72,66,30,24); ctx.fillStyle="#0006"; ctx.fillRect(70,64,34,3); }
+  if(extra==="hinder:klyfta" && bgId!=="klyfta_ute"){ ctx.fillStyle="#000c"; ctx.fillRect(72,66,30,24); ctx.fillStyle="#0006"; ctx.fillRect(70,64,34,3); }
   // Bakhuvudet Jens vagn (npc/jens_vagn.png, sex varianter). Hjältarna ritas först och vagnen ovanpå,
   // så att relingen döljer underkroppen och de ser ut att sitta på flaket bakom Jens.
   if(extra && String(extra).startsWith("jens")){
@@ -130,7 +132,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
-      const x = 2 + i*15, y = 44 + (i%2 ? 4 : 0) + (MARK_NER[miljoId]||0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
+      const x = 2 + i*(HJ_STEG[bgId]||15), y = 44 + (i%2 ? 4 : 0) + (MARK_NER[bgId]||0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
       const img = G.figurBild(h.id);
       if(!img){ return; }
       if(!img.complete){ laddar.push(img); return; }
@@ -294,7 +296,11 @@ G.regnLager = (canvas, pa) => {
 };
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
-const MARK_NER = { basar: 9 };
+const MARK_NER = { basar: 9, klyfta_ute: -10 };
+// Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
+const HJ_STEG = { klyfta_ute: 11 };
+// Miljöer som använder den målade klyftan utomhus (inomhus ritas klyftan fortfarande med kod)
+const KLYFTA_UTE = { skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1 };
 
 const BILDER = {};
 // Storlek i pixlar: alla hjältar ritas i full storlek (32×32). Att förminska figurerna gjorde pixlarna suddiga.
