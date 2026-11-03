@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:24:25.299Z",
+  "uppdaterad": "2026-11-03T20:24:42.783Z",
   "spel": {
     "version": 1,
-    "tid": 1793737462279,
+    "tid": 1793737479835,
     "kassa": 564,
     "packning": [
       "Kråkmossa"
@@ -273,7 +273,9 @@
             "namn": "Isfläck",
             "text": "Stigen är spegelblank.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Stigen är spegelblank. Shinji Onishi får ta smällen."
         },
         {
           "typ": "rum",
@@ -294,7 +296,7 @@
       "i": 2,
       "h": {
         "shinji": {
-          "kp": 11,
+          "kp": 6,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -308,7 +310,8 @@
             "Svärd"
           ],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Upptäcka fara"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -496,6 +499,18 @@
         {
           "text": "Ulv faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi slår Upptäcka fara: [14] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Stigen är spegelblank.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 5 skada från Isfläck. KP 6/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
