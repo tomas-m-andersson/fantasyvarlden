@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:27:28.930Z",
+  "uppdaterad": "2026-11-03T06:27:39.264Z",
   "spel": {
     "version": 1,
-    "tid": 1793687245886,
+    "tid": 1793687256138,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -270,7 +270,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut"
         },
         "shinji": {
@@ -616,6 +616,18 @@
         {
           "text": "Ulv tar 2 skada (3 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [9] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 10 skada (11 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
