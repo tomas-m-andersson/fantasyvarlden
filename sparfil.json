@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:06:51.725Z",
+  "uppdaterad": "2026-11-03T11:07:18.480Z",
   "spel": {
     "version": 1,
-    "tid": 1793704008789,
+    "tid": 1793704035316,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -127,7 +127,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -143,7 +143,7 @@
       "malexander": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -151,7 +151,7 @@
       "potus": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -159,7 +159,7 @@
       "tola": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -167,7 +167,6 @@
     },
     "tavla": [
       "krusbar",
-      "svartalf",
       "gripagg"
     ],
     "avklarade": {
@@ -199,7 +198,176 @@
         "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "svartalf",
+        "givare": "Hövding Atlas",
+        "titel": "Den nya svartalfkungen",
+        "plats": "Tunnlarna under Mårdgård",
+        "land": "Mårdgård",
+        "miljo": "grotta",
+        "boss": "svartalfkung",
+        "beloning": 220,
+        "rum": 6,
+        "text": "Svartalfkungen klövs på mitten av en blixt, men nu har en ny kung tagit över tunnlarna under Mårdgård. Hövding Atlas i Skrovby betalar gärna igen. Han undrar fortfarande var hans son Greg är.",
+        "foremal": "Svartalfkungens krona",
+        "svar": "Atlas tittar misstänksamt på er. ”Har ni sett Greg?”"
+      },
+      "party": [
+        "shinji",
+        "malexander",
+        "potus",
+        "tola"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "egon",
+          "jens": false
+        },
+        {
+          "typ": "resa",
+          "mote": "vagtull",
+          "jens": false
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "mote",
+          "text": "En fuktig grotta där vatten droppar från taket.",
+          "fro": 436735974,
+          "mote": "fange"
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "En grotta full av ben. Mest djurben. Mest.",
+          "fro": 368805859,
+          "falla": {
+            "namn": "Stenras",
+            "text": "Taket börjar rasa!",
+            "skada": "T8"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "Ett kyligt rum som luktar orch och gammal ost.",
+          "fro": 96397544,
+          "hinder": {
+            "namn": "En låst port",
+            "text": "En tung, låst port. Någon behöver dyrka upp den.",
+            "fard": "Fingerfärdighet",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "ruin",
+              "grotta",
+              "kloak",
+              "gravfalt"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "Ett kyligt rum som luktar orch och gammal ost.",
+          "fro": 278096137,
+          "hinder": {
+            "namn": "En bred klyfta",
+            "text": "En klyfta skär av vägen. Den går att hoppa över – om man är smidig.",
+            "fard": "Akrobatik",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "berg",
+              "grotta",
+              "ruin"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En smal gång som slingrar sig nedåt i mörkret.",
+          "fro": 262315467,
+          "fiender": [
+            "tiger",
+            "ratta"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 860837875,
+          "fiender": [
+            "svartalfkung"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "malexander": {
+          "kp": 14,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "potus": {
+          "kp": 15,
+          "vp": 10,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "tola": {
+          "kp": 13,
+          "vp": 5,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-03 12:07"
+    },
     "reset": 0,
     "rekord": {
       "malbecs-gruvor": {
