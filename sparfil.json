@@ -1,16 +1,17 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:06:18.460Z",
+  "uppdaterad": "2026-11-03T11:06:30.015Z",
   "spel": {
     "version": 1,
-    "tid": 1793703975395,
+    "tid": 1793703987017,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
     ],
     "sallskap": [
-      "shinji"
+      "shinji",
+      "malexander"
     ],
     "hj": {
       "gaston": {
@@ -133,6 +134,22 @@
         "dod": false,
         "bonus": {},
         "aventyr": 1,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "malexander": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "potus": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
         "segrar": 0,
         "vapen": [],
         "rustning": null
