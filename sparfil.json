@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:09:34.916Z",
+  "uppdaterad": "2026-11-03T11:09:44.755Z",
   "spel": {
     "version": 1,
-    "tid": 1793704171884,
+    "tid": 1793704181730,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -261,7 +261,9 @@
             "namn": "Stenras",
             "text": "Taket börjar rasa!",
             "skada": "T8"
-          }
+          },
+          "klar": true,
+          "utfallText": "Shinji Onishi upptäcker fällan (Stenras) i tid och leder alla runt den."
         },
         {
           "typ": "rum",
@@ -339,7 +341,8 @@
             "Smyga",
             "Fingerfärdighet",
             "Svärd",
-            "Pilbåge"
+            "Pilbåge",
+            "Upptäcka fara"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -514,6 +517,10 @@
         {
           "text": "Orch 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi slår Upptäcka fara: [7] mot 10 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
