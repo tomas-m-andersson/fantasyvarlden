@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T06:27:39.264Z",
+  "uppdaterad": "2026-11-03T06:27:51.888Z",
   "spel": {
     "version": 1,
-    "tid": 1793687256138,
+    "tid": 1793687268728,
     "kassa": 335,
     "packning": [
       "Krigarfasa"
@@ -247,7 +247,7 @@
       "i": 2,
       "h": {
         "ff": {
-          "kp": 7,
+          "kp": 1,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -270,7 +270,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "shinji": {
@@ -297,11 +297,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         },
         "dagny": {
-          "kp": 6,
+          "kp": 4,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -628,6 +628,22 @@
         {
           "text": "Rövare faller!",
           "cls": "d"
+        },
+        {
+          "text": "FF tar 6 skada (7 − 1 rustning) från Strupgrepp. KP 1/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Dagny von Fågelborg (Trollstav) slår Stav: [14] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Dagny von Fågelborg tar 2 skada från Strupgrepp. KP 4/10.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
