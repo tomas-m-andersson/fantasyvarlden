@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T11:09:14.895Z",
+  "uppdaterad": "2026-11-03T11:09:20.821Z",
   "spel": {
     "version": 1,
-    "tid": 1793704151882,
+    "tid": 1793704157757,
     "kassa": 335,
     "packning": [
       "Kråkmossa"
@@ -410,7 +410,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Långt spjut"
         }
       },
@@ -491,6 +491,10 @@
         {
           "text": "Orch 1 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut: [18] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
