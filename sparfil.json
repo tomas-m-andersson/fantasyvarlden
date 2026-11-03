@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-03T20:27:58.351Z",
+  "uppdaterad": "2026-11-03T20:28:04.622Z",
   "spel": {
     "version": 1,
-    "tid": 1793737675248,
-    "kassa": 564,
+    "tid": 1793737681529,
+    "kassa": 602,
     "packning": [],
     "sallskap": [
       "shinji",
@@ -125,10 +125,12 @@
       "shinji": {
         "dod": false,
         "bonus": {
-          "Fingerfärdighet": 1
+          "Fingerfärdighet": 1,
+          "Svärd": 1,
+          "Pilbåge": 1
         },
         "aventyr": 3,
-        "segrar": 1,
+        "segrar": 2,
         "vapen": [],
         "rustning": null,
         "figur": 4
@@ -144,11 +146,11 @@
       "malexander": {
         "dod": false,
         "bonus": {
-          "Svärd": 1,
+          "Svärd": 2,
           "Akrobatik": 1
         },
         "aventyr": 2,
-        "segrar": 1,
+        "segrar": 2,
         "vapen": [],
         "rustning": null
       },
@@ -158,17 +160,17 @@
           "Akrobatik": 1
         },
         "aventyr": 2,
-        "segrar": 1,
+        "segrar": 2,
         "vapen": [],
         "rustning": null
       },
       "tola": {
         "dod": false,
         "bonus": {
-          "Spjut": 1
+          "Spjut": 2
         },
         "aventyr": 2,
-        "segrar": 1,
+        "segrar": 2,
         "vapen": [],
         "rustning": null
       }
@@ -183,6 +185,14 @@
       "svartalf": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-03 21:28",
+        "text": "Stör-örnen anföll Potus Rövhatt 3 gånger under ”Harpybergen”."
+      },
+      {
+        "tid": "2026-11-03 21:28",
+        "text": "Shinji Onishi, Malexander Bard, Potus Singulus Rövhatt, Tola Sparv utforskade Harpybergen och nådde kapitel 1 (5 rum). De gick hem med 38 guld."
+      },
       {
         "tid": "2026-11-03 12:13",
         "text": "Stör-örnen anföll Potus Rövhatt 2 gånger under ”Den nya svartalfkungen”."
@@ -216,531 +226,7 @@
         "text": "Monika Plöjer, Gaston Quasimodoson, FF, Saganoren Länskrimmalmö klarade ”Broncos i Hagbo” och fick 160 guld + 64 i byte. Saganoren Länskrimmalmö dog på vägen."
       }
     ],
-    "run": {
-      "q": {
-        "id": "utforska-harpybergen",
-        "titel": "Harpybergen",
-        "plats": "Harpybergen",
-        "land": "Grador",
-        "miljo": "berg",
-        "boss": "harpydrottning",
-        "beloning": 0,
-        "givare": "",
-        "svar": "",
-        "foremal": null,
-        "rum": 5,
-        "plats_id": "harpybergen"
-      },
-      "party": [
-        "shinji",
-        "malexander",
-        "potus",
-        "tola"
-      ],
-      "steg": [
-        {
-          "typ": "rum",
-          "rumtyp": "vila",
-          "text": "En utsiktspunkt där någon har byggt ett stenröse. En bergsget stirrar oavbrutet på er. Solen bländar mot snön.",
-          "fro": 794557543,
-          "klar": true,
-          "utfallText": "Ni går vidare utan att vila."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "strid",
-          "text": "En smal stig längs en brant klippvägg. Spår av klor i klippan, djupa som fingrar. Molnen sveper förbi under era fötter.",
-          "fro": 116265979,
-          "fiender": [
-            "varg",
-            "orch"
-          ],
-          "rutor": [
-            39,
-            36
-          ],
-          "klar": true,
-          "utfallText": "Segern är er! Ni plundrar fienderna på 9 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "falla",
-          "text": "En grotta halvvägs upp i bergväggen. Ett gammalt rep sitter fast i en järnkrok. Det knakar oroväckande i berget. Långt borta hörs en ensam luta spela Lasse Holm.",
-          "fro": 362316150,
-          "falla": {
-            "namn": "Isfläck",
-            "text": "Stigen är spegelblank.",
-            "skada": "T6"
-          },
-          "klar": true,
-          "utfallText": "Stigen är spegelblank. Shinji Onishi får ta smällen."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "skatt",
-          "text": "Ett gammalt bo med fjädrar stora som åror. En vimpel från Harpybergen fladdrar i vinden. Vinden ylar som en ensam varg.",
-          "fro": 263708268,
-          "klar": true,
-          "utfallText": "Tola Sparv hittar 9 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "boss",
-          "text": "",
-          "fro": 465907043,
-          "fiender": [
-            "harpydrottning"
-          ],
-          "rutor": [
-            41
-          ],
-          "klar": true
-        }
-      ],
-      "i": 4,
-      "h": {
-        "shinji": {
-          "kp": 2,
-          "vp": 11,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [
-            "Torkat kött"
-          ],
-          "markerade": [
-            "Svärd"
-          ],
-          "anvanda": [
-            "Svärd",
-            "Upptäcka fara",
-            "Pilbåge"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd",
-          "nackdelNasta": true
-        },
-        "malexander": {
-          "kp": 10,
-          "vp": 8,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [],
-          "markerade": [
-            "Svärd"
-          ],
-          "anvanda": [
-            "Svärd"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kroksabel",
-          "nackdelNasta": false
-        },
-        "potus": {
-          "kp": 2,
-          "vp": 7,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [],
-          "markerade": [
-            "Svärd"
-          ],
-          "anvanda": [
-            "Svärd"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": true,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd",
-          "nackdelNasta": true
-        },
-        "tola": {
-          "kp": 13,
-          "vp": 2,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [],
-          "markerade": [
-            "Spjut"
-          ],
-          "anvanda": [
-            "Spjut",
-            "Finna dolda ting"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Långt spjut",
-          "nackdelNasta": true
-        }
-      },
-      "guld": 18,
-      "logg": [
-        {
-          "text": "Sällskapet ger sig in i Harpybergen. Kapitel 1.",
-          "cls": "info"
-        },
-        {
-          "text": "🦅 En stör-örn dyker ner, tar ett nyp i Potus kvarvarande öra och försvinner bakom en sky. Potus tar 1 skada. KP 14/15.",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [2] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Ulv tar 1 skada (2 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Tola Sparv (Långt spjut) slår Spjut: [5] mot 11 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch tar 4 skada (5 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Malexander Bard parerar: [12] mot 13 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch anfaller Shinji Onishi: [6] mot 12 – lyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi tar smällen.",
-          "cls": "info"
-        },
-        {
-          "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Orch. KP 11/13.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi (Kort svärd) slår Svärd: [1] mot 10 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "Naturligt 1! Dubbel vapenskada.",
-          "cls": "d"
-        },
-        {
-          "text": "Orch tar 7 skada (8 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Malexander Bard har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [20] mot 12 – NATURLIGT 20!",
-          "cls": "dm"
-        },
-        {
-          "text": "Naturligt 20! Potus Singulus Rövhatt tappar balansen och får nackdel på nästa slag.",
-          "cls": "dm"
-        },
-        {
-          "text": "Potus Singulus Rövhatt tar 7 skada (8 − 1 rustning) från Strupgrepp. KP 7/15.",
-          "cls": "fel"
-        },
-        {
-          "text": "Tola Sparv (Långt spjut) slår Spjut: [15] mot 11 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Malexander Bard (Kroksabel) slår Svärd: [1] mot 13 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "Naturligt 1! Dubbel vapenskada.",
-          "cls": "d"
-        },
-        {
-          "text": "Ulv tar 9 skada (10 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Ulv faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Shinji Onishi slår Upptäcka fara: [14] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Stigen är spegelblank.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi tar 5 skada från Isfläck. KP 6/13.",
-          "cls": "fel"
-        },
-        {
-          "text": "Tola Sparv slår Finna dolda ting: [13] mot 5 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "🦅 Från ingenstans kommer en stör-örn, tar Potus i skägget, lyfter honom en decimeter och släpper. Potus tar 3 skada. KP 4/15.",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Potus Singulus Rövhatt använder kråkmossa. Smörjer vapnet med gift: nästa träff gör +T6 skada.",
-          "cls": "info"
-        },
-        {
-          "text": "★ Tola Sparv: Riddaranfall!",
-          "cls": "d"
-        },
-        {
-          "text": "Tola Sparv (Långt spjut) slår Spjut med fördel: [11 / 5 → 5] mot 11 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 6 skada (8 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen skriker så att alla tappar fattningen – hela sällskapet!",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Malexander Bard skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Potus Singulus Rövhatt skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Tola Sparv skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi (Kort båge) slår Pilbåge med nackdel: [18 / 7 → 18] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Malexander Bard (Kroksabel) slår Svärd med nackdel: [20 / 8 → 20] mot 13 – NATURLIGT 20!",
-          "cls": "dm"
-        },
-        {
-          "text": "Naturligt 20! Malexander Bard tappar balansen och får nackdel på nästa slag.",
-          "cls": "dm"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Shinji Onishi (Kort svärd) slår Svärd: [13] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Malexander Bard (Kroksabel) slår Svärd med nackdel: [3 / 15 → 15] mot 13 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Harpydrottningen piskar upp en storm mot hela sällskapet!",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Vingstorm. KP 2/13.",
-          "cls": "fel"
-        },
-        {
-          "text": "Malexander Bard tar 4 skada (5 − 1 rustning) från Vingstorm. KP 10/14.",
-          "cls": "fel"
-        },
-        {
-          "text": "Potus Singulus Rövhatt tar 2 skada (3 − 1 rustning) från Vingstorm. KP 2/15.",
-          "cls": "fel"
-        },
-        {
-          "text": "Tola Sparv tar 0 skada (1 − 3 rustning) från Vingstorm. KP 13/13.",
-          "cls": "info"
-        },
-        {
-          "text": "Tola Sparv (Långt spjut) slår Spjut med nackdel: [20 / 4 → 20] mot 11 – NATURLIGT 20!",
-          "cls": "dm"
-        },
-        {
-          "text": "Naturligt 20! Tola Sparv tappar balansen och får nackdel på nästa slag.",
-          "cls": "dm"
-        },
-        {
-          "text": "★ Potus Singulus Rövhatt: Vägrar ge upp!",
-          "cls": "d"
-        },
-        {
-          "text": "Potus Singulus Rövhatt återfår 8 KP.",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 3 —",
-          "cls": "info"
-        },
-        {
-          "text": "Malexander Bard (Kroksabel) slår Svärd: [18] mot 13 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Tola Sparv (Långt spjut) slår Spjut med nackdel: [17 / 18 → 18] mot 11 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi (Kort svärd) slår Svärd: [2] mot 10 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Potus Singulus Rövhatt parerar: [3 / 14 → 14] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Potus Singulus Rövhatt tar 6 skada (7 − 1 rustning) från Klor. KP 4/15.",
-          "cls": "fel"
-        },
-        {
-          "text": "Potus Singulus Rövhatt har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "— Runda 4 —",
-          "cls": "info"
-        },
-        {
-          "text": "🦅 Potus tittar upp i exakt rätt sekund för att få en stör-örn rakt i ansiktet. Potus tar 2 skada. KP 2/15.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi (Kort svärd) slår Svärd: [7] mot 10 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 4 skada (6 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen skriker så att alla tappar fattningen – hela sällskapet!",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Malexander Bard skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Potus Singulus Rövhatt skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Tola Sparv skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Malexander Bard (Kroksabel) slår Svärd med nackdel: [7 / 9 → 9] mot 13 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 9 skada (11 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen faller!",
-          "cls": "d"
-        },
-        {
-          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Harpybergen.",
-          "cls": "d"
-        }
-      ],
-      "utfall": null,
-      "start": "2026-11-03 21:16",
-      "utforska": true,
-      "kapitel": 1,
-      "djup": 5,
-      "paus": true,
-      "anvandaText": [
-        "En utsiktspunkt där någon har byggt ett stenröse",
-        "En bergsget stirrar oavbrutet på er",
-        "Solen bländar mot snön",
-        "En smal stig längs en brant klippvägg",
-        "Spår av klor i klippan, djupa som fingrar",
-        "Molnen sveper förbi under era fötter",
-        "En grotta halvvägs upp i bergväggen",
-        "Ett gammalt rep sitter fast i en järnkrok",
-        "Det knakar oroväckande i berget",
-        "Långt borta hörs en ensam luta spela Lasse Holm.",
-        "Ett gammalt bo med fjädrar stora som åror",
-        "En vimpel från Harpybergen fladdrar i vinden",
-        "Vinden ylar som en ensam varg"
-      ],
-      "ornar": 3,
-      "ornVisa": null,
-      "nyttRekord": true
-    },
+    "run": null,
     "reset": 0,
     "rekord": {
       "malbecs-gruvor": {
