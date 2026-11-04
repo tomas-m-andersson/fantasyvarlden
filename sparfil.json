@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:12:24.916Z",
+  "uppdaterad": "2026-11-04T11:12:38.121Z",
   "spel": {
     "version": 1,
-    "tid": 1793790741858,
+    "tid": 1793790755137,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -223,7 +223,8 @@
             "Kunskap",
             "Upptäcka fara",
             "Pilbåge",
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Kniv"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -232,8 +233,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort båge"
+          "agerat": true,
+          "valtVapen": "Dolk"
         },
         "gofnagrim": {
           "kp": 13,
@@ -489,6 +490,18 @@
         {
           "text": "Orch tar 4 skada (5 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Dolk) slår Kniv: [3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 2 skada (3 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
         }
       ],
       "utfall": null,
