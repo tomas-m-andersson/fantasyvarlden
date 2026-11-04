@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:14:51.339Z",
+  "uppdaterad": "2026-11-04T11:14:56.936Z",
   "spel": {
     "version": 1,
-    "tid": 1793790888175,
+    "tid": 1793790893891,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -278,7 +278,7 @@
         },
         "kevin": {
           "kp": 10,
-          "vp": 8,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -297,9 +297,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kastknivar",
-          "fordelNasta": true
+          "fordelNasta": false
         }
       },
       "guld": 31,
@@ -667,6 +667,18 @@
         {
           "text": "Alla hjältar får fördel på sitt nästa slag.",
           "cls": "ok"
+        },
+        {
+          "text": "★ Kevin: KEEEVIIIN!!",
+          "cls": "d"
+        },
+        {
+          "text": "Kevin (Kastknivar) slår Kastvapen med fördel: [9 / 15 → 9] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken tar 0 skada (4 − 4 rustning).",
+          "cls": "info"
         }
       ],
       "utfall": null,
