@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:10:44.748Z",
+  "uppdaterad": "2026-11-04T11:10:58.906Z",
   "spel": {
     "version": 1,
-    "tid": 1793790641678,
+    "tid": 1793790655887,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -235,7 +235,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -243,7 +245,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "kevin": {
           "kp": 10,
@@ -256,7 +258,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Kastvapen"
+            "Kastvapen",
+            "Spjut"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -265,7 +268,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Spjut"
         }
       },
       "guld": 0,
@@ -365,6 +369,18 @@
         {
           "text": "Orch anfaller Göfnagrim: [11] mot 12 – lyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim parerar: [12] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kevin (Spjut) slår Spjut: [2] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger tar 0 skada (1 − 1 rustning).",
+          "cls": "info"
         }
       ],
       "utfall": null,
