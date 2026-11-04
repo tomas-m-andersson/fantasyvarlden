@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T09:03:42.824Z",
+  "uppdaterad": "2026-11-04T09:03:52.622Z",
   "spel": {
     "version": 1,
-    "tid": 1793783019918,
+    "tid": 1793783029572,
     "kassa": 602,
     "packning": [],
     "sallskap": [
@@ -176,9 +176,9 @@
       }
     },
     "tavla": [
-      "slasby",
-      "barnen",
-      "skold"
+      "skold",
+      "gripagg",
+      "rattor"
     ],
     "avklarade": {
       "broncos": 1,
