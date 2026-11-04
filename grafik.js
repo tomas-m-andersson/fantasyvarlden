@@ -256,7 +256,7 @@ const UTSEENDE = {
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
 // ---------- Väder ----------
 // Vilka miljöer det kan regna i (inte grottor, kloaker eller öknen) och hur ofta: 1 rum på 4.
-const REGNMILJO = {skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1};
+const REGNMILJO = {skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1, boss_harpyor:1};
 G.vader = (miljo, fro) => {
   if(!REGNMILJO[miljo] || !(window.BAKGRUND.harEgen && window.BAKGRUND.harEgen(miljo))) return null;
   const h = Math.imul((fro||7) >>> 0, 2654435761) >>> 0;
@@ -312,7 +312,7 @@ const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, 
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
 const HJ_START = { klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
-const KLYFTA_UTE = { skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
+const KLYFTA_UTE = { boss_grip:1, boss_harpyor:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 const INNE_MILJO = { grotta:1, kloak:1, gruva:1, gruva_kult:1 };
 
 // ---------- Lägereld som brinner och ryker ----------
