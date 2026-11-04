@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:11:50.581Z",
+  "uppdaterad": "2026-11-04T11:12:24.916Z",
   "spel": {
     "version": 1,
-    "tid": 1793790707601,
+    "tid": 1793790741858,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -155,7 +155,11 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En korsning där tre gångar möts. Svamp växer i ringar på golvet och lyser svagt blått. Ett ekande skratt hörs – sedan blir det helt tyst.",
-          "fro": 213738754
+          "fro": 213738754,
+          "fiender": [
+            "svartnisse",
+            "orch"
+          ]
         },
         {
           "typ": "rum",
@@ -178,7 +182,7 @@
       "h": {
         "monika": {
           "kp": 17,
-          "vp": 8,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -200,11 +204,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "pescatore": {
-          "kp": 9,
+          "kp": 11,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -233,7 +237,7 @@
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 10,
+          "vp": 12,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -257,7 +261,7 @@
         },
         "kevin": {
           "kp": 10,
-          "vp": 7,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -276,8 +280,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Spjut"
+          "agerat": true,
+          "valtVapen": "Kastknivar"
         }
       },
       "guld": 19,
@@ -449,6 +453,42 @@
         {
           "text": "Pescatore Vesuvio slår Finna dolda ting: [13] mot 7 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "Mitt i vilan hörs steg…",
+          "cls": "fel"
+        },
+        {
+          "text": "Fienden hinner först!",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Orch anfaller Monika Plöjer: [2] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer parerar: [9 / 4 → 4] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Svartnisse anfaller Göfnagrim: [16] mot 10 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kevin (Kastknivar) slår Kastvapen: [2] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
