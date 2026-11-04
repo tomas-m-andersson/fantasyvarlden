@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:57:15.980Z",
+  "uppdaterad": "2026-11-04T20:57:52.196Z",
   "spel": {
     "version": 1,
-    "tid": 1793825833051,
-    "kassa": 267,
+    "tid": 1793825869258,
+    "kassa": 257,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -24,7 +24,7 @@
       "monika": {
         "dod": false,
         "bonus": {},
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 1,
         "vapen": [],
         "rustning": null
@@ -69,7 +69,7 @@
       "bacon": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -85,7 +85,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null,
@@ -93,7 +93,6 @@
       }
     },
     "tavla": [
-      "barnen",
       "hostvakt",
       "slasby"
     ],
@@ -101,6 +100,10 @@
       "skold": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-04 21:57",
+        "text": "Bacon, Monika Plöjer, Shinji Onishi åkte med Bakhuvudet Jens mot Harpybergen för 10 guld."
+      },
       {
         "tid": "2026-11-04 12:19",
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim misslyckades med ”Abu Bagars gyllene sköld”. Sällskapet gav upp och vände hem."
@@ -114,7 +117,170 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "barnen",
+        "givare": "Barden Baror",
+        "titel": "Barden Barors barn",
+        "plats": "Harpybergen",
+        "land": "Grador",
+        "miljo": "berg",
+        "boss": "harpydrottning",
+        "beloning": 600,
+        "rum": 7,
+        "text": "Superkändisen Barden Baror har fortfarande inte fått tillbaka sina kidnappade barn Ulf och Ulfina. Nya spår pekar mot Harpybergen. Belöningen är fortfarande saftig, och Midsol kryllar av lycksökare.",
+        "foremal": "Ulf och Ulfina",
+        "svar": "Barden Baror torkar en tår och nynnar på en av sina hits."
+      },
+      "party": [
+        "bacon",
+        "monika",
+        "shinji"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "jens-genvag",
+          "jens": true,
+          "vagn": 2
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En klyfta med en vinglig hängbro. Snöfläckar ligger kvar i skuggorna.",
+          "fro": 251368080,
+          "fiender": [
+            "orch",
+            "harpya"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En sluttning full av lösa stenar. Någon har ristat ”Garvard var här” – såklart. Solen bländar mot snön.",
+          "fro": 417225740,
+          "hinder": {
+            "namn": "En bred klyfta",
+            "text": "En klyfta skär av vägen. Den går att hoppa över – om man är smidig.",
+            "fard": "Akrobatik",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "berg",
+              "grotta",
+              "ruin"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En smal stig längs en brant klippvägg. Rester av en lavin har begravt stigen. Det knakar oroväckande i berget. En björnhatt med ett ankhuvud ovanpå ligger kvarglömd. Nej, det är inte Monikas. Den här är mindre.",
+          "fro": 720459990
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "En glaciär som knakar under fötterna. Ett gammalt rep sitter fast i en järnkrok. Det luktar snö och järn.",
+          "fro": 919627419
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Ett pass mellan två toppar. En vimpel från Harpybergen fladdrar i vinden.",
+          "fro": 877585960,
+          "fiender": [
+            "harpya",
+            "varg"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En smal kam med stup på båda sidor. En bergsget stirrar oavbrutet på er. Stenar rasar någonstans ovanför.",
+          "fro": 151741318,
+          "hinder": {
+            "namn": "En brant klippa",
+            "text": "Enda vägen fram är uppåt.",
+            "fard": "Akrobatik",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "berg",
+              "oken",
+              "ruin"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 167014821,
+          "fiender": [
+            "harpydrottning"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "bacon": {
+          "kp": 17,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Flaska vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Barden Barors barn” av Barden Baror.",
+          "cls": "info"
+        },
+        {
+          "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-04 21:57"
+    },
     "reset": 1793783047660,
     "rekord": {}
   }
