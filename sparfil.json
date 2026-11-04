@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:12:38.121Z",
+  "uppdaterad": "2026-11-04T11:12:42.302Z",
   "spel": {
     "version": 1,
-    "tid": 1793790755137,
+    "tid": 1793790759314,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -204,7 +204,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "pescatore": {
@@ -233,12 +233,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Dolk"
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 12,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -281,7 +281,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kastknivar"
         }
       },
@@ -501,6 +501,18 @@
         },
         {
           "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
           "cls": "info"
         }
       ],
