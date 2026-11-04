@@ -405,11 +405,27 @@ function ritaStenport(ctx, cx, fot, fro){
 
 // ---------- Lägereld som brinner och ryker ----------
 // Var elden står i varje lägerbild (320×180-pixlar): x = mitten, y = där lågorna börjar, s = storlek
+// Värdshuset: elden i eldstaden (ingen rök, den går upp i skorstenen) och de fyra väggljusen
+const VARDSHUS_ELDAR = [ {x:105, y:114, s:9, inne:true},
+  {x:45, y:17, ljus:true}, {x:166, y:17, ljus:true}, {x:224, y:17, ljus:true}, {x:315, y:17, ljus:true} ];
 const ELDAR = { lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
 const ELD = { senast:0, gnistor:[], rok:[] };
-function ritaEld(c, e, t){
+function ritaEld(c, eldar, t){
   const x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);
+  (Array.isArray(eldar) ? eldar : [eldar]).forEach((e,n)=>ritaEnEld(x, e, t + n*377));
+}
+function ritaEnEld(x, e, t){
   const S = e.s, T = t/1000;
+  // väggljus: en liten låga som fladdrar och ett svagt sken runt den
+  if(e.ljus){
+    const h = 3 + Math.round(1.2*Math.sin(T*13 + e.x) + .8*Math.sin(T*31 + e.x*2));
+    const g = x.createRadialGradient(e.x, e.y-2, 0, e.x, e.y-2, 12);
+    g.addColorStop(0, `rgba(255,190,90,${.20 + .06*Math.sin(T*17+e.x)})`); g.addColorStop(1, "rgba(255,160,60,0)");
+    x.fillStyle = g; x.fillRect(e.x-12, e.y-14, 24, 24);
+    const lut = Math.round(Math.sin(T*9 + e.x)*.8);
+    for(let k=0;k<h;k++){ x.fillStyle = k<1 ? "#fff3b0" : k<h-1 ? "#ffcf4a" : "#ff8a2a"; x.fillRect(e.x + (k>=h-2?lut:0), e.y - k, k<h-1?2:1, 1); }
+    return;
+  }
   // varmt sken på marken som pulserar
   const puls = .14 + .05*Math.sin(T*9) + .03*Math.sin(T*23);
   const g = x.createRadialGradient(e.x, e.y-S*.6, 1, e.x, e.y-S*.6, S*5);
@@ -429,19 +445,19 @@ function ritaEld(c, e, t){
   }
   // gnistor
   x.fillStyle = "#ffd36a";
-  ELD.gnistor.forEach(p=>{ if(p.e===e){ x.globalAlpha = Math.max(0, 1 - p.t/p.liv); x.fillRect(Math.round(p.x), Math.round(p.y), 1, 1); } });
+  ELD.gnistor.forEach(p=>{ if(p.e===e && !e.ljus){ x.globalAlpha = Math.max(0, 1 - p.t/p.liv); x.fillRect(Math.round(p.x), Math.round(p.y), 1, 1); } });
   // rök
-  ELD.rok.forEach(p=>{ if(p.e===e){ const a = .28*(1 - p.t/p.liv); x.fillStyle = `rgba(150,150,160,${a})`; const z = Math.round(2 + p.t*3); x.fillRect(Math.round(p.x - z/2), Math.round(p.y - z/2), z, z); } });
+  ELD.rok.forEach(p=>{ if(p.e===e && !e.inne){ const a = .28*(1 - p.t/p.liv); x.fillStyle = `rgba(150,150,160,${a})`; const z = Math.round(2 + p.t*3); x.fillRect(Math.round(p.x - z/2), Math.round(p.y - z/2), z, z); } });
   x.globalAlpha = 1;
 }
 function eldSteg(t){
   const lager = [...document.querySelectorAll("canvas.eld")].filter(c=>c.isConnected && c._eld);
   if(!lager.length){ ELD.aktiv = false; ELD.gnistor = []; ELD.rok = []; return; }
   const dt = Math.min(.05, ELD.senast ? (t - ELD.senast)/1000 : .016); ELD.senast = t;
-  lager.forEach(c=>{ const e = c._eld;
+  lager.forEach(c=>(Array.isArray(c._eld) ? c._eld : [c._eld]).filter(e=>!e.ljus).forEach(e=>{
     if(Math.random() < dt*6) ELD.gnistor.push({e, x:e.x + (Math.random()-.5)*e.s, y:e.y - e.s, vx:(Math.random()-.5)*8, vy:-18 - Math.random()*14, t:0, liv:.6 + Math.random()*.8});
-    if(Math.random() < dt*4) ELD.rok.push({e, x:e.x + (Math.random()-.5)*e.s*.5, y:e.y - e.s*1.5, vx:3 + Math.random()*4, vy:-8 - Math.random()*5, t:0, liv:2.5 + Math.random()*1.5});
-  });
+    if(!e.inne && Math.random() < dt*4) ELD.rok.push({e, x:e.x + (Math.random()-.5)*e.s*.5, y:e.y - e.s*1.5, vx:3 + Math.random()*4, vy:-8 - Math.random()*5, t:0, liv:2.5 + Math.random()*1.5});
+  }));
   [...ELD.gnistor, ...ELD.rok].forEach(p=>{ p.t += dt; p.x += p.vx*dt; p.y += p.vy*dt; p.vx += (Math.random()-.5)*20*dt; });
   ELD.gnistor = ELD.gnistor.filter(p=>p.t < p.liv); ELD.rok = ELD.rok.filter(p=>p.t < p.liv);
   lager.forEach(c=>ritaEld(c, c._eld, t));
@@ -749,6 +765,7 @@ G.ritaVardshus = (canvas, hjaltar) => {
     ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, 32, 32);
   });
   ctx.setTransform(1,0,0,1,0,0);
+  G.eldLager(canvas, VARDSHUS_ELDAR);
   if(v2.length) [...new Set(v2)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar),{once:true}));
 };
 
