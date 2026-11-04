@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:58:43.296Z",
+  "uppdaterad": "2026-11-04T20:59:36.183Z",
   "spel": {
     "version": 1,
-    "tid": 1793825920293,
+    "tid": 1793825973246,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -231,7 +231,7 @@
       "i": 1,
       "h": {
         "bacon": {
-          "kp": 17,
+          "kp": 15,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -242,7 +242,17 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Undvika"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         },
         "monika": {
           "kp": 17,
@@ -256,7 +266,15 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "shinji": {
           "kp": 13,
@@ -270,7 +288,18 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Svärd"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         }
       },
       "guld": 0,
@@ -286,6 +315,26 @@
         {
           "text": "Det var faktiskt en genväg. Ni hinner till och med sova en stund i kärran. (alla läker)",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon försöker undvika: [18] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 2 skada (3 − 1 rustning) från Störtdyk. KP 15/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [8] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 6 skada (7 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
