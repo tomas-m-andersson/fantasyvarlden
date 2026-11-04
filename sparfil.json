@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:01:24.490Z",
+  "uppdaterad": "2026-11-04T21:01:32.996Z",
   "spel": {
     "version": 1,
-    "tid": 1793826081601,
+    "tid": 1793826090129,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -178,7 +178,9 @@
               "grotta",
               "ruin"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Alla tar sig till slut förbi, men Bacon, Monika Plöjer, Shinji Onishi gjorde sig illa på vägen."
         },
         {
           "typ": "rum",
@@ -233,7 +235,7 @@
       "i": 2,
       "h": {
         "bacon": {
-          "kp": 15,
+          "kp": 11,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -246,7 +248,8 @@
           "markerade": [],
           "anvanda": [
             "Undvika",
-            "Yxor"
+            "Yxor",
+            "Akrobatik"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -259,7 +262,7 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 17,
+          "kp": 11,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -271,7 +274,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Slagvapen"
+            "Slagvapen",
+            "Akrobatik"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -284,7 +288,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 8,
+          "kp": 5,
           "vp": 5,
           "doende": false,
           "ok": 0,
@@ -296,7 +300,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Akrobatik"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -307,7 +312,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Kort svärd",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 13,
@@ -463,6 +468,30 @@
         {
           "text": "Harpya faller!",
           "cls": "d"
+        },
+        {
+          "text": "Bacon slår Akrobatik: [18] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 4 skada från En bred klyfta. KP 11/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer slår Akrobatik: [6] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 6 skada från En bred klyfta. KP 11/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår Akrobatik med nackdel: [10 / 11 → 11] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 3 skada från En bred klyfta. KP 5/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
