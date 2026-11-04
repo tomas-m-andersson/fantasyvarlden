@@ -501,6 +501,16 @@ G.ritaRuta = (ctx, img, ruta, x, y, storlek, spegel) => {
 const NBILDER = {};
 G.npcBild = ark => { if(!NBILDER[ark]){ const img=new Image(); img.src="npc/"+ark+".png"; NBILDER[ark]=img; } return NBILDER[ark]; };
 // Ritar en enskild NPC-figur i en egen liten canvas (används t.ex. för försäljarna i basaren)
+// Spelledaren Isak: figurark npc/isak.png (8×8 rutor) när det finns, annars spelets tjugosidiga tärning
+G.ritaIsak = (canvas, nr) => {
+  const ctx = canvas.getContext("2d"); canvas.width = 32; canvas.height = 32; ctx.imageSmoothingEnabled = false;
+  const ark = G.npcBild("isak");
+  if(ark.complete && ark.naturalWidth){ ctx.clearRect(0,0,32,32); G.ritaRuta(ctx, ark, (nr>>>0)%64, 0, 0, 32); return; }
+  if(!ark.complete){ ark.addEventListener("load", ()=>G.ritaIsak(canvas, nr), {once:true}); ark.addEventListener("error", ()=>G.ritaIsak(canvas, nr), {once:true}); }
+  const d20 = G.npcBild("../icons/icon-192");
+  const rita = () => { ctx.clearRect(0,0,32,32); ctx.imageSmoothingEnabled = true; ctx.drawImage(d20, 2, 2, 28, 28); };
+  if(d20.complete && d20.naturalWidth) rita(); else d20.addEventListener("load", rita, {once:true});
+};
 G.ritaNpc = (canvas, ark, ruta, spegel) => {
   const ctx = canvas.getContext("2d"); canvas.width=32; canvas.height=32; ctx.imageSmoothingEnabled=false;
   const img = G.npcBild(ark);

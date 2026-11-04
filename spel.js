@@ -121,7 +121,7 @@ function spelaOrn(rita){
   requestAnimationFrame(steg);
 }
 function fyllPortratt(root){
-  fyllIkoner(root);
+  fyllIkoner(root); fyllIsak(root);
   root.querySelectorAll("canvas[data-p]").forEach(c=>{ G.ritaPortratt(c, HJ[c.dataset.p], c.dataset.dod==="1", c.dataset.ruta!=null?Number(c.dataset.ruta):figur(c.dataset.p)); });
 }
 function modal(html, onOpen){
@@ -227,6 +227,7 @@ function ritaHem(){
     html += `<section class="card quest"><h2>Pågående äventyr</h2><p><b>${esc(st.run.q.titel)}</b> – ${esc(st.run.q.plats)}</p>
       <div class="row"><button class="btn" data-a="fortsatt">Fortsätt äventyret</button><button class="btn ghost small" data-a="ge-upp">Ge upp</button></div></section>`;
   }
+  html += `<section class="card"><div class="spelledare">${isakHtml(new Date().getDate())}<div><span class="small muted">Spelledaren Isak Jansson</span><p class="berattelse" style="margin:2px 0 0">${esc(ISAK.halsning[(new Date().getDate()+new Date().getHours())%ISAK.halsning.length])}</p></div></div></section>`;
   html += `<section class="card"><div class="row" style="justify-content:space-between"><h2>Sällskapet</h2><span class="kassa">${guldHtml(st.kassa)}</span></div>
     <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<button class="slot fylld" data-a="visa" data-id="${id}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span></button>`:`<div class="slot">Tom plats</div>`}).join("")}</div>
     <p class="small muted">Välj 1–4 hjältar i galleriet nedan. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
@@ -587,7 +588,29 @@ function slumpaFiender(miljo, antal, minst0){
   const n = minst0 ? antal : antalFiender(antal);
   const ut=[]; for(let i=0;i<n;i++) ut.push(R.valj(V.POOL[miljo])); return ut;
 }
-function logga(text, cls=""){ if(!st.run) return; st.run.logg.push({text,cls}); if(st.run.logg.length>200) st.run.logg.splice(0,st.run.logg.length-200); if(strid) strid.logg.push({text,cls}); }
+function logga(text, cls=""){ if(!st.run) return; st.run.logg.push({text,cls}); if(st.run.logg.length>200) st.run.logg.splice(0,st.run.logg.length-200); if(strid) strid.logg.push({text,cls});
+  // Spelledaren Isak kommenterar naturliga 1:or och 20:or (ungefär varannan gång, så att det inte blir tjatigt)
+  if(/ anfaller /.test(text)) return;                         // bara hjältarnas egna slag
+  if(/NATURLIGT 1!/.test(text) && Math.random()<.6) logga("🎲 Spelledaren Isak: " + R.valj(ISAK.nat1), "d");
+  else if(/NATURLIGT 20!/.test(text) && Math.random()<.6) logga("🎲 Spelledaren Isak: " + R.valj(ISAK.nat20), "dm");
+}
+// ---------- Spelledaren och berättaren Isak Jansson ----------
+// Isak berättar rummen, hälsar i värdshuset och kommenterar tärningsslag. Han påverkar inte reglerna.
+const ISAK = {
+  halsning: [
+    "Välkomna till värdshuset. Välj ert sällskap, ta en lapp från tavlan, så börjar vi.",
+    "Tärningarna är framme och kartan är utrullad. Vart bär det av i kväll?",
+    "Sätt er. Någon har redan beställt rött té. Någon annan har redan blivit nekad.",
+    "Spelledarskärmen är uppe. Det betyder inte att jag har förberett något. Eller gör det?",
+    "Kom ihåg: det är ni som skriver historien. Jag ser bara till att den blir jobbig."
+  ],
+  nat1: ["Naturligt 1! Det där kommer att berättas om länge.", "Perfekt! Jag hade inte ens förberett mig på att ni skulle lyckas så bra.",
+         "En etta! Beskriv gärna hur snyggt det där såg ut.", "Där satt den. Tärningsgudarna ler i dag."],
+  nat20: ["Naturligt 20. Aj. Det här kommer att svida.", "En tjugo… Jag ska försöka vara snäll. Nej, förresten.",
+          "Det där var ingen bra dag för tärningen. Eller för er.", "Tjugo. Någon antecknar det här till nästa avsnitt."]
+};
+const isakHtml = (nr, liten) => `<canvas class="px saljare isak${liten?" liten":""}" data-isak="${nr||0}" aria-hidden="true"></canvas>`;
+function fyllIsak(root){ (root||document).querySelectorAll("canvas[data-isak]").forEach(c=>G.ritaIsak(c, Number(c.dataset.isak))); }
 const rh = id => st.run.h[id];
 const kanAgera = id => { const x=rh(id); return x && !x.dod && !x.doende && !x.stabil && x.kp>0; };
 const vakna = () => st.run.party.filter(kanAgera);
@@ -671,7 +694,7 @@ function ritaRun(){
     <div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.titel)}</span></div>
     <div class="prog">${progHtml()}</div>
     ${partyHtml()}
-    <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
+    <section class="card"><div class="spelledare">${isakHtml(r.i)}<div><span class="small muted">Spelledaren Isak berättar</span><h2>${esc(titel)}</h2></div></div>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
   const ritaRum = orn => G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta"}[steg.hinder.namn]||""):steg.typ==="resa"?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
