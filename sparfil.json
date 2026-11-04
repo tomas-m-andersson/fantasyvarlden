@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T09:04:19.054Z",
+  "uppdaterad": "2026-11-04T09:04:23.445Z",
   "spel": {
     "version": 1,
-    "tid": 1793783056054,
+    "tid": 1793783060458,
     "kassa": 50,
     "packning": [
       "Läkedryck",
@@ -24,9 +24,9 @@
       }
     },
     "tavla": [
-      "skold",
-      "slasby",
-      "rattor"
+      "rattor",
+      "svartalf",
+      "skold"
     ],
     "avklarade": {},
     "kronika": [],
