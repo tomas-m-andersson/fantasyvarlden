@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:07:41.315Z",
+  "uppdaterad": "2026-11-04T11:07:56.840Z",
   "spel": {
     "version": 1,
-    "tid": 1793790458178,
-    "kassa": 50,
+    "tid": 1793790473862,
+    "kassa": 40,
     "packning": [
       "Läkedryck",
       "Läkande ört"
@@ -20,7 +20,7 @@
       "monika": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -28,7 +28,7 @@
       "pescatore": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -36,7 +36,7 @@
       "gofnagrim": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -44,7 +44,7 @@
       "kevin": {
         "dod": false,
         "bonus": {},
-        "aventyr": 0,
+        "aventyr": 1,
         "segrar": 0,
         "vapen": [],
         "rustning": null
@@ -52,12 +52,182 @@
     },
     "tavla": [
       "barnen",
-      "skold",
       "hostvakt"
     ],
     "avklarade": {},
-    "kronika": [],
-    "run": null,
+    "kronika": [
+      {
+        "tid": "2026-11-04 12:07",
+        "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
+      }
+    ],
+    "run": {
+      "q": {
+        "id": "skold",
+        "givare": "Porsch Wilson",
+        "titel": "Abu Bagars gyllene sköld",
+        "plats": "Östra bergen",
+        "land": "Bedinin",
+        "miljo": "grotta",
+        "boss": "drake",
+        "beloning": 300,
+        "rum": 7,
+        "text": "Kung Abu Bagars gyllene favoritsköld åkte ner i magen på en drake under en drakjakt. Porsch Wilson – alven med svetsarglasögonen – samlar ihop ett gäng som ska hämta tillbaka den. Draken bor i en grotta i Östra bergen, bortom den brännheta Östra öknen.",
+        "foremal": "Abu Bagars gyllene sköld",
+        "svar": "Porsch Wilson nickar bakom de mörka glasögonen. Gripen bakom honom gäspar."
+      },
+      "party": [
+        "monika",
+        "pescatore",
+        "gofnagrim",
+        "kevin"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "jens-korv",
+          "jens": true,
+          "vagn": 3
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En sluttande gång täckt av löst grus. Fladdermöss hänger i taket och följer er med blicken. Långt borta hörs någon som slår på en gryta.",
+          "fro": 980425363,
+          "hinder": {
+            "namn": "En gåta i sten",
+            "text": "En stenport med en inristad gåta. Någon lärd måste klura ut svaret.",
+            "fard": "Kunskap",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "ruin",
+              "grotta",
+              "gravfalt",
+              "oken"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "En fuktig grotta där vatten droppar från taket. Väggmålningar visar jägare som jagar något med alldeles för många ben. Det luktar fuktig ull och svavel.",
+          "fro": 659674182,
+          "falla": {
+            "namn": "Fallgrop",
+            "text": "Marken ger vika över en grop med spetsar.",
+            "skada": "T6"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En stor sal med stalaktiter som hänger som tänder. Ett gammalt rep hänger ner ur ett hål i taket. Ett avlägset muller får golvet att darra.",
+          "fro": 863366071,
+          "fiender": [
+            "tiger",
+            "ratta",
+            "orch"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En trång passage med kalla, svettiga väggar. En trasig tunna läcker något som kanske en gång var öl. Det luktar bränt, som om någon nyss stekt något.",
+          "fro": 42826498
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "En korsning där tre gångar möts. Svamp växer i ringar på golvet och lyser svagt blått. Ett ekande skratt hörs – sedan blir det helt tyst.",
+          "fro": 213738754
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En spricka i berget, precis bred nog att klämma sig igenom. Spår i leran visar att något stort nyss gick här. Det droppar oavbrutet någonstans i mörkret.",
+          "fro": 593878195
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 921372200,
+          "fiender": [
+            "drake",
+            "tiger"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "pescatore": {
+          "kp": 11,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "gofnagrim": {
+          "kp": 13,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "kevin": {
+          "kp": 10,
+          "vp": 10,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
+          "cls": "info"
+        },
+        {
+          "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-04 12:07"
+    },
     "reset": 1793783047660,
     "rekord": {}
   }
