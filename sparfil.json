@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:01:10.491Z",
+  "uppdaterad": "2026-11-04T21:01:17.985Z",
   "spel": {
     "version": 1,
-    "tid": 1793826067610,
+    "tid": 1793826075103,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -158,7 +158,9 @@
           "rutor": [
             50,
             5
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 13 guld."
         },
         {
           "typ": "rum",
@@ -278,7 +280,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -303,12 +305,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": true
         }
       },
-      "guld": 0,
+      "guld": 13,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Barden Barors barn” av Barden Baror.",
@@ -449,6 +451,18 @@
         {
           "text": "Monika Plöjer får en extra handling!",
           "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [11] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
