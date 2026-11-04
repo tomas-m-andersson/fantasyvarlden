@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:00:53.968Z",
+  "uppdaterad": "2026-11-04T21:01:10.491Z",
   "spel": {
     "version": 1,
-    "tid": 1793826051064,
+    "tid": 1793826067610,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -253,7 +253,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -282,8 +282,8 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 10,
-          "vp": 8,
+          "kp": 8,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -428,6 +428,26 @@
         },
         {
           "text": "Harpya tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi tar 2 skada (3 − 1 rustning) från Störtdyk. KP 8/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer parerar: [20 / 6 → 6] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Shinji Onishi: Ledarskap!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer får en extra handling!",
           "cls": "ok"
         }
       ],
