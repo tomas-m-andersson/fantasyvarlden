@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:57:52.196Z",
+  "uppdaterad": "2026-11-04T20:58:43.296Z",
   "spel": {
     "version": 1,
-    "tid": 1793825869258,
+    "tid": 1793825920293,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -142,7 +142,9 @@
           "typ": "resa",
           "mote": "jens-genvag",
           "jens": true,
-          "vagn": 2
+          "vagn": 2,
+          "klar": true,
+          "utfallText": "Det var faktiskt en genväg. Ni hinner till och med sova en stund i kärran. (alla läker)"
         },
         {
           "typ": "rum",
@@ -152,6 +154,10 @@
           "fiender": [
             "orch",
             "harpya"
+          ],
+          "rutor": [
+            50,
+            5
           ]
         },
         {
@@ -222,7 +228,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "bacon": {
           "kp": 17,
@@ -275,6 +281,10 @@
         },
         {
           "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
+          "cls": "info"
+        },
+        {
+          "text": "Det var faktiskt en genväg. Ni hinner till och med sova en stund i kärran. (alla läker)",
           "cls": "info"
         }
       ],
