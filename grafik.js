@@ -104,7 +104,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(extra==="skatt"){ sak(sg, 19, 76, 70, 10); sak(sg, 19, 82, 72, 9); sak(sg, 24, 114, 68, 12); sak(sg, 40, 120, 71, 10); } // mynt och ädelstenar
   if(extra==="hinder:dorr"){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege") sak(sb, 13, 84, 40, 38);
-  if(extra==="hinder:mur") sak(sb, 25, 82, 46, 32);
+  if(extra==="hinder:mur") ritaStenport(ctx, 178, (76 + markNer)*2, fro);   // gåtan i sten: en stenport med runor
   if(extra==="hinder:klyfta" && !window.BAKGRUND.harEgen(bgId)){ ctx.fillStyle="#000c"; ctx.fillRect(72,66,30,24); ctx.fillStyle="#0006"; ctx.fillRect(70,64,34,3); }
   // Bakhuvudet Jens vagn (npc/jens_vagn.png, sex varianter). Hjältarna ritas först och vagnen ovanpå,
   // så att relingen döljer underkroppen och de ser ut att sitta på flaket bakom Jens.
@@ -314,6 +314,71 @@ const HJ_START = { klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
 const KLYFTA_UTE = { boss_grip:1, boss_harpyor:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 const INNE_MILJO = { grotta:1, kloak:1, gruva:1, gruva_kult:1 };
+
+// ---------- Stenporten med gåtan (ritas med kod i full upplösning, 320×180) ----------
+// cx = mitten, fot = markens höjd. Två pelare och en överliggare av huggen sten, mörk gång emellan
+// och en inristad gåta som lyser svagt blått.
+function ritaStenport(ctx, cx, fot, fro){
+  const r = slump((fro||7)*13+1);
+  ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.imageSmoothingEnabled = false;
+  // färgen på marken där porten står – stenen tonas lite mot den så att den hör hemma i miljön
+  let ton = [90,88,92];
+  try{ const d = ctx.getImageData(cx-20, fot-3, 40, 3).data; let a=[0,0,0], n=0; for(let k=0;k<d.length;k+=4){ a[0]+=d[k]; a[1]+=d[k+1]; a[2]+=d[k+2]; n++; } ton = a.map(v=>v/n); }catch(e){}
+  const blanda = (c,t)=>`rgb(${c.map((v,k)=>Math.round(v+(ton[k]-v)*t)).join(",")})`;
+  const STEN=[[104,100,104],[92,89,94],[116,111,112],[84,82,88]], LJUS=[150,145,142], SKUGGA=[58,56,62];
+  const OX = 40, IX = 21, HP = 54, FOT = fot;           // ytterhalvbredd, öppningens halvbredd, pelarhöjd
+  const topp = FOT - HP - OX;                            // högsta punkten på valvet
+  // är (x,y) sten? Pelare upp till HP, sedan ett halvrunt valv. Ytterkanten är lite ojämn och sliten.
+  const ytter = (x,y)=>{ const dx=x-cx, h=FOT-y; if(h<0) return false; if(h<=HP) return Math.abs(dx)<=OX; const u=h-HP; return dx*dx+u*u <= OX*OX; };
+  const inre  = (x,y)=>{ const dx=x-cx, h=FOT-y; if(h<0) return false; if(h<=HP) return Math.abs(dx)<IX; const u=h-HP; return dx*dx+u*u < IX*IX; };
+  const nagg = {}; for(let k=0;k<60;k++) nagg[(Math.floor(r()*OX*2))+","+Math.floor(r()*3)] = 1;
+  // skugga på marken
+  ctx.fillStyle="rgba(0,0,0,.35)"; ctx.fillRect(cx-OX-4, FOT-2, OX*2+8, 4);
+  // gången: mörk, med blåaktig dimma längst ner
+  for(let y=topp; y<FOT; y++) for(let x=cx-IX; x<cx+IX; x++) if(inre(x,y)){
+    const t = (y - (FOT-HP-IX))/(HP+IX); ctx.fillStyle = `rgb(${10+t*8|0},${10+t*12|0},${16+t*22|0})`; ctx.fillRect(x,y,1,1); }
+  // stenarna: block i rader (pelare) och kilstenar (valv)
+  const blockId = (x,y)=>{ const h=FOT-y, dx=x-cx;
+    if(h<=HP){ const rad=Math.floor(h/11), off=(rad%2)*6; return "p"+rad+"_"+Math.floor((dx+OX+off)/((dx<0)?19:19)); }
+    const ang = Math.atan2(h-HP, dx); return "v"+Math.floor(ang/(Math.PI/9)); };
+  const fargOf = {};
+  for(let y=topp-1; y<=FOT; y++) for(let x=cx-OX-1; x<=cx+OX+1; x++){
+    if(!ytter(x,y) || inre(x,y)) continue;
+    const ut = !ytter(x,y-1)||!ytter(x-1,y)||!ytter(x+1,y);
+    if(ut && nagg[(x-cx+OX)+","+((x*7+y)%3)]) continue;           // slitna kanter
+    const id = blockId(x,y); if(!fargOf[id]) fargOf[id] = STEN[Math.floor(r()*STEN.length)];
+    let c = fargOf[id];
+    const fog = blockId(x,y)!==blockId(x,y-1) || blockId(x,y)!==blockId(x-1,y);
+    const kantIn = inre(x+1,y)||inre(x-1,y)||inre(x,y+1)||inre(x,y-1);
+    if(fog) c = SKUGGA; else if(ut) c = (x<cx? LJUS : SKUGGA); else if(kantIn) c = SKUGGA;
+    else if(blockId(x+1,y)!==id || blockId(x,y+1)!==id) c = c.map(v=>v*.82); else if(blockId(x-1,y)!==id || blockId(x,y-1)!==id) c = c.map((v,k)=>v+(LJUS[k]-v)*.35);
+    const brus = r(); if(brus<.08) c = c.map(v=>v*.85); else if(brus>.95) c = c.map(v=>Math.min(255,v*1.12));
+    ctx.fillStyle = blanda(c, .22); ctx.fillRect(x,y,1,1);
+  }
+  // mörk kontur runt valvet
+  ctx.fillStyle="#18171b";
+  for(let y=topp-1; y<=FOT; y++) for(let x=cx-OX-1; x<=cx+OX+1; x++) if(!ytter(x,y) && (ytter(x+1,y)||ytter(x-1,y)||ytter(x,y+1))) ctx.fillRect(x,y,1,1);
+  // mossa nertill och i fogarna
+  for(let k=0;k<14;k++){ const x = cx + (r()<.5?-1:1)*(IX + 2 + r()*(OX-IX-4)), y = FOT - 2 - r()*(k<8?10:HP);
+    ctx.fillStyle = "#4d6a3a"; ctx.fillRect(x|0, y|0, 3, 1); ctx.fillStyle="#6b8c4c"; ctx.fillRect((x|0)+1, (y|0)-1, 1, 1); }
+  // gåtan: runor inristade runt valvbågen, med ett svagt blått sken
+  const GLYF = ["010111010","111101111","100111001","011010110","101010101","110011001","001111100","111010010","010101010","101111101"];
+  const antal = 9;
+  for(let k=0;k<antal;k++){
+    const a = Math.PI*(.12 + .76*k/(antal-1)), rr = (OX+IX)/2;
+    const gx = Math.round(cx + Math.cos(a)*rr) - 1, gy = Math.round(FOT - HP - Math.sin(a)*rr) - 1;
+    ctx.fillStyle = "rgba(110,190,255,.22)"; ctx.fillRect(gx-1, gy-1, 5, 5);
+    const g = GLYF[Math.floor(r()*GLYF.length)];
+    for(let q=0;q<9;q++) if(g[q]==="1"){ ctx.fillStyle = "#a8e0ff"; ctx.fillRect(gx + q%3, gy + Math.floor(q/3), 1, 1); }
+  }
+  // slutstenen överst: en inristad cirkel med ett öga, gåtans tecken
+  const ky = topp + 6;
+  ctx.fillStyle = "rgba(110,190,255,.18)"; ctx.fillRect(cx-6, ky-6, 12, 12);
+  ctx.fillStyle = "#a8e0ff";
+  [[-3,-4],[-1,-5],[1,-5],[3,-4],[4,-2],[4,0],[3,2],[1,3],[-1,3],[-3,2],[-4,0],[-4,-2]].forEach(([dx,dy])=>ctx.fillRect(cx+dx, ky+dy, 1, 1));
+  ctx.fillRect(cx-1, ky-2, 2, 2); ctx.fillStyle="#e8f6ff"; ctx.fillRect(cx-1, ky-2, 1, 1);
+  ctx.restore();
+}
 
 // ---------- Lägereld som brinner och ryker ----------
 // Var elden står i varje lägerbild (320×180-pixlar): x = mitten, y = där lågorna börjar, s = storlek
