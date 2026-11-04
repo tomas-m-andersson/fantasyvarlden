@@ -66,7 +66,10 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Viloplatserna har egna lägerbilder med lägereld (inne i grottor, kloaker och gruvor, annars ute)
   const bgId = extra==="hinder:klyfta" ? (KLYFTA_UTE[miljoId] ? "klyfta_ute" : "klyfta_inne")
              : extra==="vila" ? (INNE_MILJO[miljoId] ? "lager_inne" : "lager_ute")
-             : extra==="hinder:mur" ? (GATA[miljoId] || (INNE_MILJO[miljoId] ? "gata_inne" : "gata_ute")) : miljoId;
+             : extra==="hinder:mur" ? (GATA[miljoId] || (INNE_MILJO[miljoId] ? "gata_inne" : "gata_ute"))
+             : extra==="hinder:dorr" ? (INNE_MILJO[miljoId] ? "port_inne" : "port_ute")
+             : extra==="hinder:stege" ? "klippa"
+             : extra==="hinder:vatten" ? (INNE_MILJO[miljoId] ? "vatten_inne" : "vatten_ute") : miljoId;
   const bgVantar = window.BAKGRUND.rita(ctx, bgId, fro);
   // hur mycket längre ner (eller upp) marken ligger i just den här bilden – gäller hjältar, NPC:er och fiender
   const markNer = MARK_NER[window.BAKGRUND.namn(bgId, fro)] ?? MARK_NER[bgId] ?? 0;
@@ -103,8 +106,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(extra==="resa") sak(sb, 27, 74, 50, 26);                                   // vägvisare vid vägen
   if(extra==="falla") sak(sg, 53, 74, 54, 26);                                  // spikfälla
   if(extra==="skatt"){ sak(sg, 19, 76, 70, 10); sak(sg, 19, 82, 72, 9); sak(sg, 24, 114, 68, 12); sak(sg, 40, 120, 71, 10); } // mynt och ädelstenar
-  if(extra==="hinder:dorr"){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
-  if(extra==="hinder:stege") sak(sb, 13, 84, 40, 38);
+  if(extra==="hinder:dorr" && !window.BAKGRUND.harEgen(bgId)){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
+  if(extra==="hinder:stege" && !window.BAKGRUND.harEgen(bgId)) sak(sb, 13, 84, 40, 38);
   if(extra==="hinder:mur" && !window.BAKGRUND.harEgen(bgId)) ritaStenport(ctx, 178, (76 + markNer)*2, fro);   // gåtan i sten: en stenport med runor
   if(extra==="hinder:klyfta" && !window.BAKGRUND.harEgen(bgId)){ ctx.fillStyle="#000c"; ctx.fillRect(72,66,30,24); ctx.fillStyle="#0006"; ctx.fillRect(70,64,34,3); }
   // Bakhuvudet Jens vagn (npc/jens_vagn.png, sex varianter). Hjältarna ritas först och vagnen ovanpå,
@@ -272,7 +275,7 @@ const UTSEENDE = {
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
 // ---------- Väder ----------
 // Vilka miljöer det kan regna i (inte grottor, kloaker eller öknen) och hur ofta: 1 rum på 4.
-const REGNMILJO = {skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1, boss_harpyor:1, boss_dodasjon:1};
+const REGNMILJO = {port_ute:1, klippa:1, vatten_ute:1, skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1, boss_harpyor:1, boss_dodasjon:1};
 G.vader = (miljo, fro) => {
   if(!REGNMILJO[miljo] || !(window.BAKGRUND.harEgen && window.BAKGRUND.harEgen(miljo))) return null;
   const h = Math.imul((fro||7) >>> 0, 2654435761) >>> 0;
@@ -322,16 +325,17 @@ G.regnLager = (canvas, pa) => {
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
-const MARK_NER = { basar: 9, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const MARK_NER = { basar: 9, klippa: 4, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
 const HJ_START = { klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
-const KLYFTA_UTE = { boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
+const KLYFTA_UTE = { port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 // Gåtan i sten: en förseglad dörr som stänger vägen, målad för varje sorts miljö
 const GATA = { grotta:"gata_inne", gruva:"gata_inne_gruva", gruva_kult:"gata_inne_gruva", kloak:"gata_inne_kloak",
   ruin:"gata_ute_ruin", vesselberget:"gata_ute_ruin", oken:"gata_ute_oken" };
+// (port och vatten väljer inne- eller utebild efter miljön; ruiner räknas som ute)
 const INNE_MILJO = { grotta:1, kloak:1, gruva:1, gruva_kult:1, boss_orch:1, boss_svartalf:1, boss_drake:1 };
 
 // ---------- Stenporten med gåtan (ritas med kod i full upplösning, 320×180) ----------
