@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:15:52.906Z",
+  "uppdaterad": "2026-11-04T11:16:30.441Z",
   "spel": {
     "version": 1,
-    "tid": 1793790949974,
+    "tid": 1793790987383,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -213,18 +213,18 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "fordelNasta": true,
-          "nackdelNasta": false
+          "nackdelNasta": true
         },
         "pescatore": {
-          "kp": 0,
+          "kp": 4,
           "vp": 6,
-          "doende": true,
+          "doende": false,
           "ok": 0,
           "miss": 0,
           "stabil": false,
@@ -247,7 +247,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Dolk",
           "fordelNasta": true,
           "nackdelNasta": true
@@ -257,7 +257,7 @@
           "vp": 0,
           "doende": true,
           "ok": 1,
-          "miss": 0,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [],
@@ -303,7 +303,7 @@
           "stoppad": 0,
           "agerat": true,
           "valtVapen": "Strypsnara",
-          "fordelNasta": true,
+          "fordelNasta": false,
           "nackdelNasta": false
         }
       },
@@ -772,6 +772,42 @@
         {
           "text": "Göfnagrim slår dödsslag mot FYS: [6] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim slår dödsslag mot FYS: [15] mot 13 – misslyckat (1 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio slår dödsslag [1] mot 11 – NATURLIGT 1! – reser sig med 4 KP!",
+          "cls": "d"
+        },
+        {
+          "text": "Den talande draken håller en lång och nedlåtande föreläsning för hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Kevin skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Kevin (Strypsnara) slår Kniv: [8] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken tar 0 skada (1 − 4 rustning).",
+          "cls": "info"
         }
       ],
       "utfall": null,
