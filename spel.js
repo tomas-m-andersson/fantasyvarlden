@@ -598,11 +598,7 @@ function logga(text, cls=""){ if(!st.run) return; st.run.logg.push({text,cls}); 
 // Isak berättar rummen, hälsar i värdshuset och kommenterar tärningsslag. Han påverkar inte reglerna.
 const ISAK = {
   halsning: [
-    "Välkomna till värdshuset. Välj ert sällskap, ta en lapp från tavlan, så börjar vi.",
-    "Tärningarna är framme och kartan är utrullad. Vart bär det av i kväll?",
-    "Sätt er. Någon har redan beställt rött té. Någon annan har redan blivit nekad.",
-    "Spelledarskärmen är uppe. Det betyder inte att jag har förberett något. Eller gör det?",
-    "Kom ihåg: det är ni som skriver historien. Jag ser bara till att den blir jobbig."
+    "Välkomna till Rollspelsklubben. Slå er ner. Om ni törs."
   ],
   nat1: ["Naturligt 1! Det där kommer att berättas om länge.", "Perfekt! Jag hade inte ens förberett mig på att ni skulle lyckas så bra.",
          "En etta! Beskriv gärna hur snyggt det där såg ut.", "Där satt den. Tärningsgudarna ler i dag."],
