@@ -171,7 +171,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       const img = n.fiende ? G.fiendeBild(n.fiende) : G.npcBild(n.ark);
       if(!img) return;
       if(!(img.complete && img.naturalWidth)){ omRitaVid(img); return; }
-      const r = n.fiende ? (G.fiendeRutor(n.fiende).includes(n.ruta) ? n.ruta : G.fiendeRutor(n.fiende)[0]) : n.ruta;
+      const r = n.fiende ? G.fiendeRuta(n.fiende, n.ruta, false) : n.ruta;
       const x = n.x != null ? n.x : (i===0 ? 100 : 126), fot = n.fot != null ? n.fot : (i===0 ? 77 : 74) + markNer;
       ctx.fillStyle="#0005"; ctx.fillRect(x+7, fot-1, 18, 3);
       ctx.save();
@@ -200,7 +200,9 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       ctx.fillStyle="#0005"; ctx.fillRect(x+Math.round(w*.2), fot-1, Math.round(w*.6), 3);
       if(egen){
         if(!(img.complete && img.naturalWidth)){ vantar.push(img); ctx.globalAlpha=1; return; }
-        const r = rutor.includes(f.ruta) ? f.ruta : rutor[0];
+        const dod = f.kp <= 0, ligger = dod && G.fiendeLigger(f.fid);
+        const r = G.fiendeRuta(f.fid, f.ruta, dod, i);
+        if(ligger) ctx.globalAlpha = .9;   // döda fiender ligger kvar på marken i stället för att blekna
         ctx.save(); ctx.translate(x+w, Math.max(0,y)); ctx.scale(-1,1);   // spegelvänd så att fienden tittar mot hjältarna
         ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, w, w);
         ctx.restore();
@@ -368,6 +370,37 @@ G.fiendeBild = fid => {
   if(!FBILDER[fid]){ const img = new Image(); img.src = "fiender/"+fid+".png"; FBILDER[fid] = img; }
   return FBILDER[fid];
 };
+// Fiendearken innehåller också rutor där fienden ligger död eller håller på att försvinna.
+// När arket har laddats mäts varje ruta: "upp" = står upp (nästan lika hög som fiendens vanliga höjd och ordentligt fylld),
+// "ligger" = mycket lägre än vanligt (en död kropp). Tomma rutor och halvt fallna rutor används inte för levande fiender.
+const FDELAR = {};
+function fiendeDelar(fid){
+  if(FDELAR[fid]) return FDELAR[fid];
+  const img = G.fiendeBild(fid); if(!(img && img.complete && img.naturalWidth)) return null;
+  try{
+    const c = document.createElement("canvas"); c.width = 256; c.height = 256;
+    const x = c.getContext("2d"); x.drawImage(img, 0, 0); const d = x.getImageData(0, 0, 256, 256).data;
+    const info = [];
+    for(let r=0;r<64;r++){ let n=0, y0=99, y1=-1; const cx=(r%8)*32, cy=Math.floor(r/8)*32;
+      for(let y=0;y<32;y++) for(let xx=0;xx<32;xx++) if(d[((cy+y)*256+cx+xx)*4+3] >= 128){ n++; if(y<y0) y0=y; if(y>y1) y1=y; }
+      info.push({r, n, h: n ? y1-y0+1 : 0}); }
+    const mitt = l => { const v=[...l].sort((a,b)=>a-b); return v[Math.floor(v.length/2)] || 0; };
+    const fyllda = info.filter(i=>i.n), median = mitt(fyllda.map(i=>i.n)), mh = mitt(fyllda.map(i=>i.h));
+    // jämför med fiendens vanliga höjd, så att låga djur (råttor) inte räknas som liggande
+    const upp = fyllda.filter(i=>i.h >= mh*0.8 && i.n >= median*0.5).map(i=>i.r);
+    const ligger = fyllda.filter(i=>i.h < mh*0.6).map(i=>i.r);
+    return FDELAR[fid] = {upp: upp.length ? upp : info.filter(i=>i.n).map(i=>i.r), ligger};
+  }catch(e){ return FDELAR[fid] = {upp: G.fiendeRutor(fid), ligger: []}; }
+}
+// Vilken ruta som ska visas: en stående för levande fiender, en liggande för döda (om arket har någon)
+G.fiendeRuta = (fid, ruta, dod, nr) => {
+  const rutor = G.fiendeRutor(fid), del = fiendeDelar(fid);
+  let r = rutor.includes(ruta) ? ruta : rutor[0];
+  if(!del) return r;
+  if(dod && del.ligger.length) return del.ligger[(nr||0) % del.ligger.length];
+  return del.upp.includes(r) ? r : del.upp[(r>>>0) % del.upp.length];
+};
+G.fiendeLigger = (fid) => { const del = fiendeDelar(fid); return !!(del && del.ligger.length); };
 // Ritar en figur (ruta 0–63) i en canvas. Faller tillbaka på det kodritade porträttet om bild saknas.
 G.ritaPortratt = (canvas, hjalte, dod, ruta) => {
   const img = G.figurBild(hjalte.id), rutor = G.figurRutor(hjalte.id);
