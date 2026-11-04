@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:56:00.250Z",
+  "uppdaterad": "2026-11-04T20:56:09.717Z",
   "spel": {
     "version": 1,
-    "tid": 1793825757356,
+    "tid": 1793825766828,
     "kassa": 372,
     "packning": [
       "Läkedryck",
@@ -12,7 +12,8 @@
     ],
     "sallskap": [
       "bacon",
-      "monika"
+      "monika",
+      "shinji"
     ],
     "hj": {
       "monika": {
@@ -69,6 +70,14 @@
         "rustning": null
       },
       "tola": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "shinji": {
         "dod": false,
         "bonus": {},
         "aventyr": 0,
