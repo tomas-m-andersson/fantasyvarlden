@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:09:19.985Z",
+  "uppdaterad": "2026-11-04T11:09:37.179Z",
   "spel": {
     "version": 1,
-    "tid": 1793790556855,
+    "tid": 1793790574246,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -184,7 +184,15 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "pescatore": {
           "kp": 9,
@@ -201,11 +209,19 @@
           "anvanda": [
             "Kunskap",
             "Upptäcka fara"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 13,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -213,7 +229,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         },
         "kevin": {
           "kp": 10,
@@ -225,7 +249,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -257,6 +289,18 @@
         {
           "text": "Pescatore Vesuvio tar 2 skada från Fallgrop. KP 9/11.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
