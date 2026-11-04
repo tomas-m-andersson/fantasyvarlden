@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:13:35.604Z",
+  "uppdaterad": "2026-11-04T11:13:41.640Z",
   "spel": {
     "version": 1,
-    "tid": 1793790812469,
+    "tid": 1793790818591,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -171,7 +171,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En spricka i berget, precis bred nog att klämma sig igenom. Spår i leran visar att något stort nyss gick här. Det droppar oavbrutet någonstans i mörkret.",
-          "fro": 593878195
+          "fro": 593878195,
+          "klar": true,
+          "utfallText": "Pescatore Vesuvio hittar 7 guld."
         },
         {
           "typ": "rum",
@@ -181,10 +183,14 @@
           "fiender": [
             "drake",
             "tiger"
+          ],
+          "rutor": [
+            7,
+            61
           ]
         }
       ],
-      "i": 6,
+      "i": 7,
       "h": {
         "monika": {
           "kp": 17,
@@ -292,7 +298,7 @@
           "valtVapen": "Kastknivar"
         }
       },
-      "guld": 24,
+      "guld": 31,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
@@ -581,6 +587,10 @@
         {
           "text": "Svartnisse faller!",
           "cls": "d"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Finna dolda ting: [13] mot 7 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
