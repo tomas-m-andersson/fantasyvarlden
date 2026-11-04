@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:17:03.098Z",
+  "uppdaterad": "2026-11-04T11:19:10.045Z",
   "spel": {
     "version": 1,
-    "tid": 1793791020115,
-    "kassa": 40,
+    "tid": 1793791147002,
+    "kassa": 372,
     "packning": [
       "Läkedryck",
       "Läkande ört"
@@ -13,36 +13,39 @@
     "sallskap": [
       "monika",
       "pescatore",
-      "gofnagrim",
-      "kevin"
+      "gofnagrim"
     ],
     "hj": {
       "monika": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
-        "segrar": 0,
+        "aventyr": 3,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
       "pescatore": {
         "dod": false,
-        "bonus": {},
-        "aventyr": 1,
-        "segrar": 0,
+        "bonus": {
+          "Läkekonst": 1
+        },
+        "aventyr": 3,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
       "gofnagrim": {
         "dod": false,
-        "bonus": {},
-        "aventyr": 1,
-        "segrar": 0,
+        "bonus": {
+          "Magi": 1
+        },
+        "aventyr": 3,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
       "kevin": {
-        "dod": false,
+        "dod": true,
         "bonus": {},
         "aventyr": 1,
         "segrar": 0,
@@ -54,8 +57,18 @@
       "barnen",
       "hostvakt"
     ],
-    "avklarade": {},
+    "avklarade": {
+      "skold": 1
+    },
     "kronika": [
+      {
+        "tid": "2026-11-04 12:19",
+        "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim misslyckades med ”Abu Bagars gyllene sköld”. Sällskapet gav upp och vände hem."
+      },
+      {
+        "tid": "2026-11-04 12:17",
+        "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin klarade ”Abu Bagars gyllene sköld” och fick 300 guld + 32 i byte. Kevin dog på vägen."
+      },
       {
         "tid": "2026-11-04 12:07",
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
@@ -79,122 +92,105 @@
       "party": [
         "monika",
         "pescatore",
-        "gofnagrim",
-        "kevin"
+        "gofnagrim"
       ],
       "steg": [
         {
           "typ": "resa",
-          "mote": "jens-korv",
-          "jens": true,
-          "vagn": 3,
-          "klar": true,
-          "utfallText": "Ni äter ert eget. Jens äter två korvar och delar inte med sig."
+          "mote": "fjass",
+          "jens": false
+        },
+        {
+          "typ": "resa",
+          "mote": "gycklare",
+          "jens": false
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En korsning där tre gångar möts. På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel.",
+          "fro": 469257209,
+          "fiender": [
+            "orch",
+            "orch"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Ett runt rum som någon har huggit ut med hacka. Ett gammalt rep hänger ner ur ett hål i taket. Ett ekande skratt hörs – sedan blir det helt tyst.",
+          "fro": 36459997
         },
         {
           "typ": "rum",
           "rumtyp": "hinder",
-          "text": "En sluttande gång täckt av löst grus. Fladdermöss hänger i taket och följer er med blicken. Långt borta hörs någon som slår på en gryta.",
-          "fro": 980425363,
+          "text": "En sluttande gång täckt av löst grus. En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier. En tom kopp med en rödaktig fläck i botten. Rött té? FF skulle bli så avundsjuk.",
+          "fro": 489028291,
           "hinder": {
-            "namn": "En gåta i sten",
-            "text": "En stenport med en inristad gåta. Någon lärd måste klura ut svaret.",
-            "fard": "Kunskap",
+            "namn": "Forsande vatten",
+            "text": "Vägen går genom strömt vatten. Den som inte kan simma får det jobbigt.",
+            "fard": "Simma",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "grotta",
+              "skog",
+              "kloak",
+              "trask"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En grotta med ett underjordiskt vattenhål i mitten. En trasig tunna läcker något som kanske en gång var öl. Långt borta hörs någon som slår på en gryta.",
+          "fro": 27724162,
+          "hinder": {
+            "namn": "En låst port",
+            "text": "En tung, låst port. Någon behöver dyrka upp den.",
+            "fard": "Fingerfärdighet",
             "alla": false,
             "skada": "T4",
             "miljo": [
               "ruin",
               "grotta",
-              "gravfalt",
-              "oken"
+              "kloak",
+              "gravfalt"
             ]
-          },
-          "klar": true,
-          "utfallText": "Pescatore Vesuvio löser det. Ni går vidare."
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En stor sal med stalaktiter som hänger som tänder. En halväten ost ligger på en sten. Det luktar bränt, som om någon nyss stekt något.",
+          "fro": 842228458
         },
         {
           "typ": "rum",
           "rumtyp": "falla",
-          "text": "En fuktig grotta där vatten droppar från taket. Väggmålningar visar jägare som jagar något med alldeles för många ben. Det luktar fuktig ull och svavel.",
-          "fro": 659674182,
+          "text": "En låg tunnel där alla utom ankorna måste huka sig. Svamp växer i ringar på golvet och lyser svagt blått. Ett efterlysningsanslag med Obdullahs sigill.",
+          "fro": 144349785,
           "falla": {
             "namn": "Fallgrop",
             "text": "Marken ger vika över en grop med spetsar.",
             "skada": "T6"
-          },
-          "klar": true,
-          "utfallText": "Marken ger vika över en grop med spetsar. Pescatore Vesuvio får ta smällen."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "strid",
-          "text": "En stor sal med stalaktiter som hänger som tänder. Ett gammalt rep hänger ner ur ett hål i taket. Ett avlägset muller får golvet att darra.",
-          "fro": 863366071,
-          "fiender": [
-            "tiger",
-            "ratta",
-            "orch"
-          ],
-          "rutor": [
-            50,
-            2,
-            36
-          ],
-          "klar": true,
-          "utfallText": "Segern är er! Ni plundrar fienderna på 10 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "skatt",
-          "text": "En trång passage med kalla, svettiga väggar. En trasig tunna läcker något som kanske en gång var öl. Det luktar bränt, som om någon nyss stekt något.",
-          "fro": 42826498,
-          "klar": true,
-          "utfallText": "Pescatore Vesuvio hittar 9 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "vila",
-          "text": "En korsning där tre gångar möts. Svamp växer i ringar på golvet och lyser svagt blått. Ett ekande skratt hörs – sedan blir det helt tyst.",
-          "fro": 213738754,
-          "fiender": [
-            "svartnisse",
-            "orch"
-          ],
-          "klar": true,
-          "utfallText": "Segern är er! Ni plundrar fienderna på 5 guld.",
-          "rutor": [
-            21,
-            23
-          ]
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "skatt",
-          "text": "En spricka i berget, precis bred nog att klämma sig igenom. Spår i leran visar att något stort nyss gick här. Det droppar oavbrutet någonstans i mörkret.",
-          "fro": 593878195,
-          "klar": true,
-          "utfallText": "Pescatore Vesuvio hittar 7 guld."
+          }
         },
         {
           "typ": "rum",
           "rumtyp": "boss",
           "text": "",
-          "fro": 921372200,
+          "fro": 469706937,
           "fiender": [
-            "drake",
-            "tiger"
-          ],
-          "rutor": [
-            7,
-            61
+            "drake"
           ]
         }
       ],
-      "i": 7,
+      "i": 0,
       "h": {
         "monika": {
-          "kp": 12,
-          "vp": 0,
+          "kp": 17,
+          "vp": 14,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -203,27 +199,12 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [
-            "Slagvapen"
-          ],
-          "anvanda": [
-            "Slagvapen"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": true,
-          "valtVapen": "Stridsgissel",
-          "fordelNasta": false,
-          "nackdelNasta": false
+          "markerade": [],
+          "anvanda": []
         },
         "pescatore": {
-          "kp": 4,
-          "vp": 6,
+          "kp": 11,
+          "vp": 12,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -233,633 +214,43 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": [
-            "Kunskap",
-            "Upptäcka fara",
-            "Pilbåge",
-            "Finna dolda ting",
-            "Kniv"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": true,
-          "valtVapen": "Kort båge",
-          "fordelNasta": false,
-          "nackdelNasta": false
+          "anvanda": []
         },
         "gofnagrim": {
-          "kp": 0,
-          "vp": 0,
-          "doende": true,
-          "ok": 2,
-          "miss": 1,
-          "stabil": false,
-          "dod": false,
-          "saker": [],
-          "markerade": [
-            "Stav"
-          ],
-          "anvanda": [
-            "Stav",
-            "Magi"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true,
-          "nackdelNasta": false
-        },
-        "kevin": {
-          "kp": 0,
-          "vp": 2,
-          "doende": true,
+          "kp": 13,
+          "vp": 13,
+          "doende": false,
           "ok": 0,
           "miss": 0,
           "stabil": false,
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [
-            "Kastvapen",
-            "Spjut",
-            "Kniv"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": true,
-          "valtVapen": "Strypsnara",
-          "fordelNasta": false,
-          "nackdelNasta": false
+          "anvanda": []
         }
       },
-      "guld": 31,
+      "guld": 0,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
           "cls": "info"
-        },
-        {
-          "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
-          "cls": "info"
-        },
-        {
-          "text": "Ni äter ert eget. Jens äter två korvar och delar inte med sig.",
-          "cls": "info"
-        },
-        {
-          "text": "Pescatore Vesuvio slår Kunskap: [7] mot 16 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio slår Upptäcka fara: [13] mot 7 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Marken ger vika över en grop med spetsar.",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio tar 2 skada från Fallgrop. KP 9/11.",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
-          "cls": "d"
-        },
-        {
-          "text": "Fienderna ryggar tillbaka i fasa.",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [1 / 4 → 1] mot 14 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "Naturligt 1! Dubbel vapenskada.",
-          "cls": "d"
-        },
-        {
-          "text": "Sabeltandad tiger tar 15 skada (16 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [17] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Orch anfaller Pescatore Vesuvio: [8 / 16 → 16] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Kevin: KEEEVIIIN!!",
-          "cls": "d"
-        },
-        {
-          "text": "Kevin (Kastknivar) slår Kastvapen: [7] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Jätteråtta tar 12 skada.",
-          "cls": "ok"
-        },
-        {
-          "text": "Jätteråtta faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Sabeltandad tiger tvekar och missar tillfället.",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [16] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Orch anfaller Göfnagrim: [11] mot 12 – lyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim parerar: [12] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Kevin (Spjut) slår Spjut: [2] mot 8 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Sabeltandad tiger tar 0 skada (1 − 1 rustning).",
-          "cls": "info"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [5 / 14 → 5] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch tar 18 skada (19 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer är i raseri och bryr sig inte om att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "Monika Plöjer tar 0 skada (1 − 1 rustning) från Klor. KP 17/17.",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "— Runda 3 —",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim parerar: [1] mot 12 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [16] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Kevin (Spjut) slår Spjut: [17] mot 8 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [8] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Sabeltandad tiger tar 8 skada (9 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Sabeltandad tiger faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Pescatore Vesuvio slår Finna dolda ting: [13] mot 7 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Sällskapet vilar och samlar krafter.",
-          "cls": "ok"
-        },
-        {
-          "text": "Mitt i vilan hörs steg…",
-          "cls": "fel"
-        },
-        {
-          "text": "Fienden hinner först!",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Orch anfaller Monika Plöjer: [2] mot 12 – lyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer parerar: [9 / 4 → 4] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Svartnisse anfaller Göfnagrim: [16] mot 10 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Kevin (Kastknivar) slår Kastvapen: [2] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch tar 4 skada (5 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio (Dolk) slår Kniv: [3] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch tar 2 skada (3 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
-          "cls": "d"
-        },
-        {
-          "text": "Fienderna ryggar tillbaka i fasa.",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Kevin (Kastknivar) slår Kastvapen: [19] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Svartnisse anfaller Göfnagrim: [6 / 14 → 14] mot 10 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Göfnagrim kastar Blixt slår Magi: [19] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Besvärjelsen fräser och dör ut.",
-          "cls": "fel"
-        },
-        {
-          "text": "Orch anfaller Göfnagrim: [10 / 4 → 10] mot 12 – lyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim tar 4 skada från Orch. KP 9/13.",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio (Dolk) slår Kniv: [10] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch tar 1 skada (2 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [3] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch tar 6 skada (7 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch faller!",
-          "cls": "d"
-        },
-        {
-          "text": "— Runda 3 —",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim kastar Blixt slår Magi: [3] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Svartnisse tar 11 skada från Blixt.",
-          "cls": "ok"
-        },
-        {
-          "text": "Svartnisse faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Pescatore Vesuvio slår Finna dolda ting: [13] mot 7 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Pescatore Vesuvio parerar: [7] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
-          "cls": "d"
-        },
-        {
-          "text": "Fienderna ryggar tillbaka i fasa.",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio tar 10 skada från Sabeltänder. KP 1/11.",
-          "cls": "fel"
-        },
-        {
-          "text": "Kevin (Kastknivar) slår Kastvapen: [13] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [4 / 10 → 4] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Sabeltandad tiger tar 16 skada (17 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Sabeltandad tiger faller!",
-          "cls": "d"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [1 / 8 → 1] mot 14 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "Naturligt 1! Dubbel vapenskada.",
-          "cls": "d"
-        },
-        {
-          "text": "Den talande draken tar 10 skada (14 − 4 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Pescatore Vesuvio: Stridshymnen!",
-          "cls": "d"
-        },
-        {
-          "text": "Alla hjältar får fördel på sitt nästa slag.",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Kevin: KEEEVIIIN!!",
-          "cls": "d"
-        },
-        {
-          "text": "Kevin (Kastknivar) slår Kastvapen med fördel: [9 / 15 → 9] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken tar 0 skada (4 − 4 rustning).",
-          "cls": "info"
-        },
-        {
-          "text": "Den talande draken håller en lång och nedlåtande föreläsning för hela sällskapet!",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Kevin skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim kastar Blixt slår Magi: [10] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken tar 3 skada (7 − 4 rustning) från Blixt.",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 3 —",
-          "cls": "info"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [9 / 12 → 9] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken tar 3 skada (7 − 4 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Kevin (Strypsnara) slår Kniv med nackdel: [7 / 17 → 17] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "★ Pescatore Vesuvio: Stridshymnen!",
-          "cls": "d"
-        },
-        {
-          "text": "Alla hjältar får fördel på sitt nästa slag.",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken sprutar eld över hela sällskapet!",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer tar 5 skada (6 − 1 rustning) från Eldlunga. KP 12/17.",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio tar 7 skada från Eldlunga. KP 0/11.",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio faller ihop och ligger döende!",
-          "cls": "dm"
-        },
-        {
-          "text": "Göfnagrim tar 10 skada från Eldlunga. KP 0/13.",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim faller ihop och ligger döende!",
-          "cls": "dm"
-        },
-        {
-          "text": "Kevin tar 7 skada (8 − 1 rustning) från Eldlunga. KP 3/10.",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim slår dödsslag mot FYS: [6] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 4 —",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim slår dödsslag mot FYS: [15] mot 13 – misslyckat (1 lyckade, 1 misslyckade).",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio slår dödsslag [1] mot 11 – NATURLIGT 1! – reser sig med 4 KP!",
-          "cls": "d"
-        },
-        {
-          "text": "Den talande draken håller en lång och nedlåtande föreläsning för hela sällskapet!",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Kevin skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Kevin (Strypsnara) slår Kniv: [8] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken tar 0 skada (1 − 4 rustning).",
-          "cls": "info"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [4] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken tar 3 skada (7 − 4 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 5 —",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim slår dödsslag mot FYS: [13] mot 13 – lyckat (2 lyckade, 1 misslyckade).",
-          "cls": "ok"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [16] mot 14 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "★ Kevin: KEEEVIIIN!!",
-          "cls": "d"
-        },
-        {
-          "text": "Kevin (Strypsnara) slår Kniv: [5] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken tar 2 skada (6 − 4 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [11] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den talande draken tar 1 skada (5 − 4 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Kevin tar 7 skada (8 − 1 rustning) från Svans. KP 0/10.",
-          "cls": "fel"
-        },
-        {
-          "text": "Kevin faller ihop och ligger döende!",
-          "cls": "dm"
         }
       ],
-      "utfall": null,
-      "start": "2026-11-04 12:07"
+      "utfall": {
+        "lyckat": false,
+        "orsak": "Sällskapet gav upp och vände hem.",
+        "beloning": 0,
+        "avgift": 0,
+        "byte": 0,
+        "doda": [],
+        "forb": {
+          "monika": [],
+          "pescatore": [],
+          "gofnagrim": []
+        },
+        "rad": []
+      },
+      "start": "2026-11-04 12:18"
     },
     "reset": 1793783047660,
     "rekord": {}
