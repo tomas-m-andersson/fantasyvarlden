@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:59:48.108Z",
+  "uppdaterad": "2026-11-04T21:00:08.987Z",
   "spel": {
     "version": 1,
-    "tid": 1793825985212,
+    "tid": 1793826006088,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -252,7 +252,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "monika": {
           "kp": 17,
@@ -345,6 +345,34 @@
         },
         {
           "text": "Bacon har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Orch anfaller Monika Plöjer: [13] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Orch anfaller Monika Plöjer: [9] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer parerar: [6 / 3 → 3] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [10] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 2 skada (3 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
           "cls": "info"
         }
       ],
