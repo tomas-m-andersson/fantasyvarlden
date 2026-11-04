@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:12:42.302Z",
+  "uppdaterad": "2026-11-04T11:12:51.620Z",
   "spel": {
     "version": 1,
-    "tid": 1793790759314,
+    "tid": 1793790768574,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -281,7 +281,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kastknivar"
         }
       },
@@ -514,6 +514,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Kevin (Kastknivar) slår Kastvapen: [19] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Svartnisse anfaller Göfnagrim: [6 / 14 → 14] mot 10 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
