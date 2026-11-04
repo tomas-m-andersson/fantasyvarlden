@@ -75,6 +75,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const regnar = G.vader(miljoId, fro) === "regn";
   if(regnar){ ctx.fillStyle = "rgba(18,26,40,.38)"; ctx.fillRect(0, 0, W, H); }
   G.regnLager(canvas, regnar);
+  // Lägereldarna i de målade lägerbilderna fladdrar och ryker (eget lager ovanpå, se ELD längre ner)
+  G.eldLager(canvas, ELDAR[window.BAKGRUND.namn(bgId, fro)] || null);
   // rummets föremål (skatt, fälla, vila…)
   // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
   if(extra==="skatt" || (extra==="vila" && !window.BAKGRUND.harEgen(bgId))){   // lägerbilderna har redan en eld
@@ -312,6 +314,61 @@ const HJ_START = { klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
 const KLYFTA_UTE = { skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 const INNE_MILJO = { grotta:1, kloak:1, gruva:1, gruva_kult:1 };
+
+// ---------- Lägereld som brinner och ryker ----------
+// Var elden står i varje lägerbild (320×180-pixlar): x = mitten, y = där lågorna börjar, s = storlek
+const ELDAR = { lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
+const ELD = { senast:0, gnistor:[], rok:[] };
+function ritaEld(c, e, t){
+  const x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);
+  const S = e.s, T = t/1000;
+  // varmt sken på marken som pulserar
+  const puls = .14 + .05*Math.sin(T*9) + .03*Math.sin(T*23);
+  const g = x.createRadialGradient(e.x, e.y-S*.6, 1, e.x, e.y-S*.6, S*5);
+  g.addColorStop(0, `rgba(255,170,70,${puls})`); g.addColorStop(1, "rgba(255,140,40,0)");
+  x.fillStyle = g; x.fillRect(e.x-S*5, e.y-S*6, S*10, S*7);
+  // lågorna: en kolumn per pixel, höjden fladdrar
+  const halv = Math.round(S*.7);
+  for(let dx=-halv; dx<=halv; dx++){
+    const kant = 1 - Math.abs(dx)/(halv+1);
+    const h = Math.max(1, Math.round(S*1.5*kant*(.65 + .35*Math.sin(T*11 + dx*1.7) + .2*Math.sin(T*27 + dx*3.1))));
+    for(let k=0; k<h; k++){
+      const u = k/h;
+      x.fillStyle = u < .3 ? "#fff3b0" : u < .55 ? "#ffd04a" : u < .8 ? "#ff8a2a" : "#e04a20";
+      if(u > .8 && Math.abs(dx) > halv*.6) continue;   // spetsiga toppar
+      x.fillRect(e.x + dx, e.y - k, 1, 1);
+    }
+  }
+  // gnistor
+  x.fillStyle = "#ffd36a";
+  ELD.gnistor.forEach(p=>{ if(p.e===e){ x.globalAlpha = Math.max(0, 1 - p.t/p.liv); x.fillRect(Math.round(p.x), Math.round(p.y), 1, 1); } });
+  // rök
+  ELD.rok.forEach(p=>{ if(p.e===e){ const a = .28*(1 - p.t/p.liv); x.fillStyle = `rgba(150,150,160,${a})`; const z = Math.round(2 + p.t*3); x.fillRect(Math.round(p.x - z/2), Math.round(p.y - z/2), z, z); } });
+  x.globalAlpha = 1;
+}
+function eldSteg(t){
+  const lager = [...document.querySelectorAll("canvas.eld")].filter(c=>c.isConnected && c._eld);
+  if(!lager.length){ ELD.aktiv = false; ELD.gnistor = []; ELD.rok = []; return; }
+  const dt = Math.min(.05, ELD.senast ? (t - ELD.senast)/1000 : .016); ELD.senast = t;
+  lager.forEach(c=>{ const e = c._eld;
+    if(Math.random() < dt*6) ELD.gnistor.push({e, x:e.x + (Math.random()-.5)*e.s, y:e.y - e.s, vx:(Math.random()-.5)*8, vy:-18 - Math.random()*14, t:0, liv:.6 + Math.random()*.8});
+    if(Math.random() < dt*4) ELD.rok.push({e, x:e.x + (Math.random()-.5)*e.s*.5, y:e.y - e.s*1.5, vx:3 + Math.random()*4, vy:-8 - Math.random()*5, t:0, liv:2.5 + Math.random()*1.5});
+  });
+  [...ELD.gnistor, ...ELD.rok].forEach(p=>{ p.t += dt; p.x += p.vx*dt; p.y += p.vy*dt; p.vx += (Math.random()-.5)*20*dt; });
+  ELD.gnistor = ELD.gnistor.filter(p=>p.t < p.liv); ELD.rok = ELD.rok.filter(p=>p.t < p.liv);
+  lager.forEach(c=>ritaEld(c, c._eld, t));
+  requestAnimationFrame(eldSteg);
+}
+G.eldLager = (canvas, eld) => {
+  const tv = canvas.parentElement;
+  if(!tv || !tv.classList.contains("tv")) return;
+  let ov = tv.querySelector("canvas.eld");
+  if(!eld){ if(ov) ov.remove(); return; }
+  if(!ov){ ov = document.createElement("canvas"); ov.className = "px eld"; ov.width = 320; ov.height = 180; ov.setAttribute("aria-hidden","true"); canvas.after(ov); }
+  ov._eld = eld;
+  if(STILLA){ ritaEld(ov, eld, 0); return; }
+  if(!ELD.aktiv){ ELD.aktiv = true; ELD.senast = 0; requestAnimationFrame(eldSteg); }
+};
 
 const BILDER = {};
 // Storlek i pixlar: alla hjältar ritas i full storlek (32×32). Att förminska figurerna gjorde pixlarna suddiga.

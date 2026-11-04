@@ -76,7 +76,7 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 /* TV:n */
 .tv{background:#000;border:3px solid #3a2e22;border-radius:6px;overflow:hidden;position:relative;box-shadow:0 6px 0 #0d0a07}
 .tv canvas{width:100%;aspect-ratio:16/9}
-.tv canvas.vader{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.tv canvas.vader,.tv canvas.eld{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 /* Under äventyr sitter TV:n kvar högst upp när man scrollar. På liggande mobil hålls den lagom hög. */
 .tv.fast{position:sticky;top:max(6px,env(safe-area-inset-top));z-index:10;width:100%;max-width:calc(42vh*16/9);margin-inline:auto;box-sizing:border-box;box-shadow:0 6px 0 #0d0a07,0 -16px 0 4px var(--bg)}
 .tv .badge{position:absolute;left:8px;top:8px;background:#000b;color:var(--gold);font-family:var(--pix);font-weight:800;font-size:.8rem;padding:3px 8px;border-radius:3px}
