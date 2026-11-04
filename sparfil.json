@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T09:02:57.532Z",
+  "uppdaterad": "2026-11-04T09:03:03.067Z",
   "spel": {
     "version": 1,
-    "tid": 1793782974512,
+    "tid": 1793782980070,
     "kassa": 602,
     "packning": [],
     "sallskap": [
@@ -176,9 +176,9 @@
       }
     },
     "tavla": [
-      "gripagg",
-      "patricia",
-      "skold"
+      "krusbar",
+      "slasby",
+      "broncos"
     ],
     "avklarade": {
       "broncos": 1,
