@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:14:03.674Z",
+  "uppdaterad": "2026-11-04T11:14:29.157Z",
   "spel": {
     "version": 1,
-    "tid": 1793790840574,
+    "tid": 1793790866038,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -294,7 +294,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kastknivar"
         }
       },
@@ -611,6 +611,14 @@
         {
           "text": "Pescatore Vesuvio tar 10 skada från Sabeltänder. KP 1/11.",
           "cls": "fel"
+        },
+        {
+          "text": "Kevin (Kastknivar) slår Kastvapen: [13] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio har redan använt sin handling till att försvara sig.",
+          "cls": "info"
         }
       ],
       "utfall": null,
