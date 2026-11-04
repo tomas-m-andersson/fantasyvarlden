@@ -1,20 +1,29 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T09:04:36.657Z",
+  "uppdaterad": "2026-11-04T11:07:26.908Z",
   "spel": {
     "version": 1,
-    "tid": 1793783073708,
+    "tid": 1793790443754,
     "kassa": 50,
     "packning": [
       "Läkedryck",
       "Läkande ört"
     ],
     "sallskap": [
-      "monika"
+      "monika",
+      "pescatore"
     ],
     "hj": {
       "monika": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "pescatore": {
         "dod": false,
         "bonus": {},
         "aventyr": 0,
