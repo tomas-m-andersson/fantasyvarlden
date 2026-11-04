@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:10:58.906Z",
+  "uppdaterad": "2026-11-04T11:11:11.672Z",
   "spel": {
     "version": 1,
-    "tid": 1793790655887,
+    "tid": 1793790668714,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -174,7 +174,7 @@
       "h": {
         "monika": {
           "kp": 17,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -193,10 +193,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "pescatore": {
           "kp": 9,
@@ -381,6 +381,22 @@
         {
           "text": "Sabeltandad tiger tar 0 skada (1 − 1 rustning).",
           "cls": "info"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [5 / 14 → 5] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 18 skada (19 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
