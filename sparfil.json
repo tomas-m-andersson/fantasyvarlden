@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:04:34.814Z",
+  "uppdaterad": "2026-11-04T21:04:41.295Z",
   "spel": {
     "version": 1,
-    "tid": 1793826271920,
+    "tid": 1793826278280,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -281,7 +281,7 @@
         },
         "monika": {
           "kp": 7,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -300,10 +300,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -653,6 +653,18 @@
         },
         {
           "text": "Harpydrottningen tar 1 skada (3 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [10 / 6 → 6] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 10 skada (12 − 2 rustning).",
           "cls": "ok"
         }
       ],
