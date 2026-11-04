@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:14:46.644Z",
+  "uppdaterad": "2026-11-04T11:14:51.339Z",
   "spel": {
     "version": 1,
-    "tid": 1793790883572,
+    "tid": 1793790888175,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -217,11 +217,12 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Stridsgissel"
+          "valtVapen": "Stridsgissel",
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 1,
-          "vp": 12,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -245,8 +246,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Dolk"
+          "agerat": true,
+          "valtVapen": "Dolk",
+          "fordelNasta": true
         },
         "gofnagrim": {
           "kp": 9,
@@ -271,7 +273,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "fordelNasta": true
         },
         "kevin": {
           "kp": 10,
@@ -295,7 +298,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kastknivar"
+          "valtVapen": "Kastknivar",
+          "fordelNasta": true
         }
       },
       "guld": 31,
@@ -654,6 +658,14 @@
         },
         {
           "text": "Den talande draken tar 10 skada (14 − 4 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
           "cls": "ok"
         }
       ],
