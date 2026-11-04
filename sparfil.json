@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:10:08.095Z",
+  "uppdaterad": "2026-11-04T11:10:26.950Z",
   "spel": {
     "version": 1,
-    "tid": 1793790605102,
+    "tid": 1793790623957,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -247,7 +247,7 @@
         },
         "kevin": {
           "kp": 10,
-          "vp": 10,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -255,7 +255,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Kastvapen"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -263,7 +265,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         }
       },
       "guld": 0,
@@ -330,6 +332,26 @@
         },
         {
           "text": "Orch anfaller Pescatore Vesuvio: [8 / 16 → 16] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Kevin: KEEEVIIIN!!",
+          "cls": "d"
+        },
+        {
+          "text": "Kevin (Kastknivar) slår Kastvapen: [7] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta tar 12 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Sabeltandad tiger tvekar och missar tillfället.",
           "cls": "ok"
         }
       ],
