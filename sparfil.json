@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:16:36.365Z",
+  "uppdaterad": "2026-11-04T11:17:03.098Z",
   "spel": {
     "version": 1,
-    "tid": 1793790993287,
+    "tid": 1793791020115,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -216,7 +216,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
           "fordelNasta": false,
           "nackdelNasta": false
@@ -247,10 +247,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Dolk",
-          "fordelNasta": true,
-          "nackdelNasta": true
+          "agerat": true,
+          "valtVapen": "Kort båge",
+          "fordelNasta": false,
+          "nackdelNasta": false
         },
         "gofnagrim": {
           "kp": 0,
@@ -280,9 +280,9 @@
           "nackdelNasta": false
         },
         "kevin": {
-          "kp": 3,
-          "vp": 5,
-          "doende": false,
+          "kp": 0,
+          "vp": 2,
+          "doende": true,
           "ok": 0,
           "miss": 0,
           "stabil": false,
@@ -301,7 +301,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Strypsnara",
           "fordelNasta": false,
           "nackdelNasta": false
@@ -824,6 +824,38 @@
         {
           "text": "Göfnagrim slår dödsslag mot FYS: [13] mot 13 – lyckat (2 lyckade, 1 misslyckade).",
           "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [16] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Kevin: KEEEVIIIN!!",
+          "cls": "d"
+        },
+        {
+          "text": "Kevin (Strypsnara) slår Kniv: [5] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken tar 2 skada (6 − 4 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [11] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken tar 1 skada (5 − 4 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Kevin tar 7 skada (8 − 1 rustning) från Svans. KP 0/10.",
+          "cls": "fel"
+        },
+        {
+          "text": "Kevin faller ihop och ligger döende!",
+          "cls": "dm"
         }
       ],
       "utfall": null,
