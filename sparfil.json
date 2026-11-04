@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:08:11.628Z",
+  "uppdaterad": "2026-11-04T11:08:50.334Z",
   "spel": {
     "version": 1,
-    "tid": 1793790488683,
+    "tid": 1793790527275,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -108,7 +108,9 @@
               "gravfalt",
               "oken"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Pescatore Vesuvio löser det. Ni går vidare."
         },
         {
           "typ": "rum",
@@ -189,7 +191,9 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Kunskap"
+          ]
         },
         "gofnagrim": {
           "kp": 13,
@@ -229,6 +233,10 @@
         {
           "text": "Ni äter ert eget. Jens äter två korvar och delar inte med sig.",
           "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Kunskap: [7] mot 16 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
