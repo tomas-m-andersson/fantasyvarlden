@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:13:02.860Z",
+  "uppdaterad": "2026-11-04T11:13:20.695Z",
   "spel": {
     "version": 1,
-    "tid": 1793790779801,
+    "tid": 1793790797676,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -259,7 +259,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "kevin": {
           "kp": 10,
@@ -282,7 +282,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kastknivar"
         }
       },
@@ -539,6 +539,30 @@
         {
           "text": "Göfnagrim tar 4 skada från Orch. KP 9/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio (Dolk) slår Kniv: [10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [3] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 6 skada (7 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
