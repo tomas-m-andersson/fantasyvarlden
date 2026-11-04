@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:09:37.179Z",
+  "uppdaterad": "2026-11-04T11:09:51.528Z",
   "spel": {
     "version": 1,
-    "tid": 1793790574246,
+    "tid": 1793790588594,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -174,7 +174,7 @@
       "h": {
         "monika": {
           "kp": 17,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -183,16 +183,20 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [],
-          "anvanda": [],
+          "markerade": [
+            "Slagvapen"
+          ],
+          "anvanda": [
+            "Slagvapen"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "pescatore": {
           "kp": 9,
@@ -300,6 +304,22 @@
         },
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [1 / 4 → 1] mot 14 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Sabeltandad tiger tar 15 skada (16 − 1 rustning).",
           "cls": "ok"
         }
       ],
