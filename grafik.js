@@ -65,6 +65,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Klyftan har egna målade bakgrunder där sällskapet står vid kanten (bakgrunder/klyfta_ute.png och klyfta_inne.png)
   const bgId = extra==="hinder:klyfta" ? (KLYFTA_UTE[miljoId] ? "klyfta_ute" : "klyfta_inne") : miljoId;
   const bgVantar = window.BAKGRUND.rita(ctx, bgId, fro);
+  // hur mycket längre ner (eller upp) marken ligger i just den här bilden – gäller hjältar, NPC:er och fiender
+  const markNer = MARK_NER[window.BAKGRUND.namn(bgId, fro)] ?? MARK_NER[bgId] ?? 0;
   if(bgVantar) omRitaVid(bgVantar);
   // Regnväder: ungefär vart fjärde rum utomhus (på målade bakgrunder) regnar det. Himlen mörknar här,
   // och själva regnet faller i ett eget genomskinligt lager ovanpå TV:n (se REGN längre ner).
@@ -132,7 +134,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
-      const x = (HJ_START[bgId] ?? 2) + i*(HJ_STEG[bgId]||15), y = 44 + (i%2 ? 4 : 0) + (MARK_NER[window.BAKGRUND.namn(bgId, fro)] ?? MARK_NER[bgId] ?? 0); // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
+      const x = (HJ_START[bgId] ?? 2) + i*(HJ_STEG[bgId]||15), y = 44 + (i%2 ? 4 : 0) + markNer; // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
       const img = G.figurBild(h.id);
       if(!img){ return; }
       if(!img.complete){ laddar.push(img); return; }
@@ -170,7 +172,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       if(!img) return;
       if(!(img.complete && img.naturalWidth)){ omRitaVid(img); return; }
       const r = n.fiende ? (G.fiendeRutor(n.fiende).includes(n.ruta) ? n.ruta : G.fiendeRutor(n.fiende)[0]) : n.ruta;
-      const x = n.x != null ? n.x : (i===0 ? 100 : 126), fot = n.fot != null ? n.fot : (i===0 ? 77 : 74);
+      const x = n.x != null ? n.x : (i===0 ? 100 : 126), fot = n.fot != null ? n.fot : (i===0 ? 77 : 74) + markNer;
       ctx.fillStyle="#0005"; ctx.fillRect(x+7, fot-1, 18, 3);
       ctx.save();
       if(n.spegel !== false){ ctx.translate(x+32, fot-30); ctx.scale(-1,1); } else ctx.translate(x, fot-30);
@@ -192,7 +194,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     levande.forEach((f,i)=>{
       const img = G.fiendeBild(f.fid), rutor = G.fiendeRutor(f.fid);
       const {egen, sk, w} = mått[i];
-      const x = Math.max(start-4, Math.min(W-w, xPos[i])), fot = 76 + (i%2 ? 2 : 0);
+      const x = Math.max(start-4, Math.min(W-w, xPos[i])), fot = 76 + (i%2 ? 2 : 0) + markNer;
       const y = egen ? fot - Math.round(30*sk) : fot - 16*sk + (f.liten?1:0);
       ctx.globalAlpha = f.kp>0 ? 1 : .25;
       ctx.fillStyle="#0005"; ctx.fillRect(x+Math.round(w*.2), fot-1, Math.round(w*.6), 3);
@@ -297,7 +299,7 @@ G.regnLager = (canvas, pa) => {
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
-const MARK_NER = { basar: 9, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const MARK_NER = { basar: 9, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
