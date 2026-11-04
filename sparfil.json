@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:11:11.672Z",
+  "uppdaterad": "2026-11-04T11:11:26.936Z",
   "spel": {
     "version": 1,
-    "tid": 1793790668714,
+    "tid": 1793790683928,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -193,10 +193,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "pescatore": {
           "kp": 9,
@@ -234,7 +234,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Stav"
+          ],
           "anvanda": [
             "Stav"
           ],
@@ -268,7 +270,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Spjut"
         }
       },
@@ -397,6 +399,34 @@
         {
           "text": "Orch faller!",
           "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer är i raseri och bryr sig inte om att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 0 skada (1 − 1 rustning) från Klor. KP 17/17.",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim parerar: [1] mot 12 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [16] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Kevin (Spjut) slår Spjut: [17] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
