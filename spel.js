@@ -350,19 +350,21 @@ function ritaBasar(){
   <section class="card"><div class="row" style="justify-content:space-between"><span class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="kopman:22"></canvas><h2>Basaren</h2></span><span class="kassa">${guldHtml(st.kassa)}</span></div>
     <p class="muted small">Förbrukningssaker hamnar i sällskapets gemensamma packning och kan användas av vem som helst i strid.</p>
     <div class="col">${BASAR_SAKER.map(([n,p])=>`<div class="vara"><span>${ikonHtml(n)}<b>${esc(n)}</b><br><span class="small muted">${esc(R.SAKER[n].text)}</span></span><button class="btn small" data-kop="${esc(n)}" data-p="${p}" ${st.kassa<p?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
-  <section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="stad:36"></canvas><h2>Tehandeln</h2></div><p class="muted small">Rött té, 2 guld koppen. Det gör inte mycket (1 KP), men det är gott. Teet hamnar i packningen.</p>
+  <section class="card"><div class="tv" style="margin-bottom:10px"><canvas id="tescen" class="px"></canvas><span class="badge">Tehandeln</span></div><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="stad:36"></canvas><h2>Tehandeln</h2></div><p class="muted small">Rött té, 2 guld koppen. Det gör inte mycket (1 KP), men det är gott. Teet hamnar i packningen.</p>
     <label class="f">Vem köper?<select id="tevem">${window.HJALTAR.filter(h=>!ar(h.id)).sort((a,b)=>(party.includes(b.id)-party.includes(a.id))).map(h=>`<option value="${h.id}">${esc(h.namn)}</option>`).join("")}</select></label>
     <div class="row"><button class="btn small" data-te="1" ${st.kassa<TE_PRIS?"disabled":""}>Köp rött té – ${TE_PRIS} guld</button></div>
     ${basarMeddelande?`<p class="small" style="color:#ff9d92">${esc(basarMeddelande)}</p>`:""}</section>
-  <section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="by:12"></canvas><h2>Smeden</h2></div><p class="muted small">Utrustning köps till en hjälte i sällskapet och behålls mellan äventyren.</p>
+  <section class="card"><div class="tv" style="margin-bottom:10px"><canvas id="smedscen" class="px"></canvas><span class="badge">Smedjan</span></div><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="by:12"></canvas><h2>Smeden</h2></div><p class="muted small">Utrustning köps till en hjälte i sällskapet och behålls mellan äventyren.</p>
     ${party.length?`<label class="f">Till vem?<select id="vem">${party.map(id=>`<option value="${id}">${esc(HJ[id].namn)}</option>`).join("")}</select></label>`:`<p class="small">Välj ett sällskap först.</p>`}
     <div class="col">${BASAR_UTR.map(([n,p,t])=>`<div class="vara"><span>${ikonHtml(n)}<b>${esc(n)}</b><br><span class="small muted">${t==="rustning"?"Rustning "+R.RUSTNING[n]:esc(R.VAPEN[n].fard+", "+R.VAPEN[n].skada)}</span></span><button class="btn small" data-utr="${esc(n)}" data-t="${t}" data-p="${p}" ${st.kassa<p||!party.length?"disabled":""}>${p} guld</button></div>`).join("")}</div></section>
   <button class="btn ghost" data-a="hem">Tillbaka till värdshuset</button>`;
   fyllIkoner(app);
   app.querySelectorAll("canvas[data-npc]").forEach(c=>{ const [ark,ruta]=c.dataset.npc.split(":"); G.ritaNpc(c, ark, Number(ruta), true); });
-  // TV:n: sällskapet till vänster, köpmannen, teförsäljaren och smeden vid stånden till höger
-  G.ritaScen($("#basarscen"), "basar", [], 1, null, party.map(id=>({id, ruta:figur(id)})),
-    [{ark:"stad", ruta:36, x:84, fot:85}, {ark:"kopman", ruta:22, x:106, fot:87}, {ark:"by", ruta:12, x:128, fot:85}]);
+  // TV:arna: sällskapet till vänster och säljaren till höger – köpmannen på basaren, teförsäljaren i tehandeln och smeden i smedjan
+  const sallskap = () => party.map(id=>({id, ruta:figur(id)}));
+  G.ritaScen($("#basarscen"), "basar", [], 1, null, sallskap(), [{ark:"kopman", ruta:22, x:112, fot:87}]);
+  G.ritaScen($("#tescen"), "tehandeln", [], 1, null, sallskap(), [{ark:"stad", ruta:36, x:116}]);
+  G.ritaScen($("#smedscen"), "smedjan", [], 1, null, sallskap(), [{ark:"by", ruta:12, x:116}]);
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
     if(b.dataset.a==="hem"){ basarMeddelande=""; return ga("hem"); }
@@ -466,10 +468,13 @@ function rumText(miljo, anvanda){
 }
 // Malbecs gruvor (uppdraget och platsen) har egna målade gruvbakgrunder i stället för grottans.
 // Bossrummet blir kultisternas altarsal. Bara bilden byts – rumstexter och fiender är fortfarande grottans.
+// Platser med egna målade bakgrunder (bara bilden byts, inte rumstexter eller fiender)
+const PLATS_BILD = {"Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vesselberget":"vesselberget", "Bududuoar":"bududuoar"};
 function scenMiljo(m, steg){
-  const r = st.run;
-  if(r && m==="grotta" && /Malbecks? gruvor/.test(r.q.plats||"")) return steg && steg.rumtyp==="boss" ? "gruva_kult" : "gruva";
-  return m;
+  const r = st.run, p = r && PLATS_BILD[r.q.plats];
+  if(!p) return m;
+  if(p==="gruva" && steg && steg.rumtyp==="boss") return "gruva_kult";
+  return p;
 }
 function byggRum(miljo, antalRum, antal, boss, extra){
   const rumMoten = R.blanda(V.MOTEN.filter(m=>m.rum)), ut = [];
@@ -682,7 +687,8 @@ function scenNpcer(steg){
   return ut;
 }
 const antalResa = () => st.run.steg.filter(s=>s.typ==="resa").length;
-const resMiljo = (m,i) => i===0 ? (m==="oken"?"oken":"skog") : (m==="grotta"||m==="kloak"?"berg":m);
+// Första resdagen går längs landsvägen (vägbilderna), utom mot öknen. Andra dagen närmar man sig målet.
+const resMiljo = (m,i) => i===0 ? (m==="oken"?"oken":"vag") : (m==="grotta"||m==="kloak"?"berg":m);
 function progHtml(){
   const r=st.run, fran=r.utforska?(r.kapStart||0):0; return r.steg.map((s,i)=>i<fran?"":`<i class="${i<r.i||(i===r.i&&s.klar)?"klar":i===r.i?"nu":""} ${s.rumtyp==="boss"?"boss":""}" title="${s.typ==="resa"?"Resa":s.rumtyp}"></i>`).join("") + `<span class="small muted" style="margin-left:6px">Hittat: ${r.guld} guld</span>`;
 }

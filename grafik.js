@@ -63,7 +63,9 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const m = (window.VARLD.MILJO[miljoId] || window.VARLD.MILJO.grotta), rnd = slump(fro||7);
   // Bakgrund ur bakgrund.js: en egen målad bild om miljön har en, annars ritad med kod
   // Klyftan har egna målade bakgrunder där sällskapet står vid kanten (bakgrunder/klyfta_ute.png och klyfta_inne.png)
-  const bgId = extra==="hinder:klyfta" ? (KLYFTA_UTE[miljoId] ? "klyfta_ute" : "klyfta_inne") : miljoId;
+  // Viloplatserna har egna lägerbilder med lägereld (inne i grottor, kloaker och gruvor, annars ute)
+  const bgId = extra==="hinder:klyfta" ? (KLYFTA_UTE[miljoId] ? "klyfta_ute" : "klyfta_inne")
+             : extra==="vila" ? (INNE_MILJO[miljoId] ? "lager_inne" : "lager_ute") : miljoId;
   const bgVantar = window.BAKGRUND.rita(ctx, bgId, fro);
   // hur mycket längre ner (eller upp) marken ligger i just den här bilden – gäller hjältar, NPC:er och fiender
   const markNer = MARK_NER[window.BAKGRUND.namn(bgId, fro)] ?? MARK_NER[bgId] ?? 0;
@@ -75,7 +77,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   G.regnLager(canvas, regnar);
   // rummets föremål (skatt, fälla, vila…)
   // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
-  if(extra==="skatt" || extra==="vila"){
+  if(extra==="skatt" || (extra==="vila" && !window.BAKGRUND.harEgen(bgId))){   // lägerbilderna har redan en eld
     const mob = G.npcBild("mobler");
     if(mob.complete && mob.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(88, 77, 24, 3); G.ritaRuta(ctx, mob, extra==="skatt"?52:36, 84, 53, 32); }   // står på marken i höjd med hjältarnas fötter
     else omRitaVid(mob);
@@ -134,7 +136,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
-      const x = (HJ_START[bgId] ?? 2) + i*(HJ_STEG[bgId]||15), y = 44 + (i%2 ? 4 : 0) + markNer; // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
+      const bn = window.BAKGRUND.namn(bgId, fro);
+      const x = (HJ_START[bn] ?? HJ_START[bgId] ?? 2) + i*(HJ_STEG[bn] || HJ_STEG[bgId] || 15), y = 44 + (i%2 ? 4 : 0) + markNer; // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
       const img = G.figurBild(h.id);
       if(!img){ return; }
       if(!img.complete){ laddar.push(img); return; }
@@ -251,7 +254,7 @@ const UTSEENDE = {
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
 // ---------- Väder ----------
 // Vilka miljöer det kan regna i (inte grottor, kloaker eller öknen) och hur ofta: 1 rum på 4.
-const REGNMILJO = {skog:1, berg:1, ruin:1, gravfalt:1, trask:1};
+const REGNMILJO = {skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1};
 G.vader = (miljo, fro) => {
   if(!REGNMILJO[miljo] || !(window.BAKGRUND.harEgen && window.BAKGRUND.harEgen(miljo))) return null;
   const h = Math.imul((fro||7) >>> 0, 2654435761) >>> 0;
@@ -301,13 +304,14 @@ G.regnLager = (canvas, pa) => {
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
-const MARK_NER = { basar: 9, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const MARK_NER = { basar: 9, vag2: 9, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
-const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9 };
+const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
-const HJ_START = { klyfta_ute: -3, klyfta_inne: -3 };
+const HJ_START = { klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
-const KLYFTA_UTE = { skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1 };
+const KLYFTA_UTE = { skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
+const INNE_MILJO = { grotta:1, kloak:1, gruva:1, gruva_kult:1 };
 
 const BILDER = {};
 // Storlek i pixlar: alla hjältar ritas i full storlek (32×32). Att förminska figurerna gjorde pixlarna suddiga.
