@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:11:31.851Z",
+  "uppdaterad": "2026-11-04T11:11:41.018Z",
   "spel": {
     "version": 1,
-    "tid": 1793790688815,
+    "tid": 1793790698009,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -139,7 +139,9 @@
             50,
             2,
             36
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 10 guld."
         },
         {
           "typ": "rum",
@@ -170,7 +172,7 @@
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "monika": {
           "kp": 17,
@@ -196,7 +198,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Stridsgissel"
         },
         "pescatore": {
           "kp": 9,
@@ -222,7 +225,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "gofnagrim": {
@@ -247,7 +250,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "kevin": {
           "kp": 10,
@@ -270,11 +273,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Spjut"
         }
       },
-      "guld": 0,
+      "guld": 10,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
@@ -427,6 +430,18 @@
         {
           "text": "Kevin (Spjut) slår Spjut: [17] mot 8 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [8] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
