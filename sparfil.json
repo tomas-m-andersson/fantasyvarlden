@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:59:36.183Z",
+  "uppdaterad": "2026-11-04T20:59:48.108Z",
   "spel": {
     "version": 1,
-    "tid": 1793825973246,
+    "tid": 1793825985212,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -266,7 +266,9 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Slagvapen"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -274,7 +276,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Stridsgissel"
         },
         "shinji": {
           "kp": 13,
@@ -335,6 +338,14 @@
         {
           "text": "Orch tar 6 skada (7 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [17] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon har redan använt sin handling till att försvara sig.",
+          "cls": "info"
         }
       ],
       "utfall": null,
