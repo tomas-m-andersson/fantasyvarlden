@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:07:56.840Z",
+  "uppdaterad": "2026-11-04T11:08:11.628Z",
   "spel": {
     "version": 1,
-    "tid": 1793790473862,
+    "tid": 1793790488683,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -87,7 +87,9 @@
           "typ": "resa",
           "mote": "jens-korv",
           "jens": true,
-          "vagn": 3
+          "vagn": 3,
+          "klar": true,
+          "utfallText": "Ni äter ert eget. Jens äter två korvar och delar inte med sig."
         },
         {
           "typ": "rum",
@@ -159,7 +161,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "monika": {
           "kp": 17,
@@ -222,6 +224,10 @@
         },
         {
           "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
+          "cls": "info"
+        },
+        {
+          "text": "Ni äter ert eget. Jens äter två korvar och delar inte med sig.",
           "cls": "info"
         }
       ],
