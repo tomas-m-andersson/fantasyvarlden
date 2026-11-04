@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:02:43.189Z",
+  "uppdaterad": "2026-11-04T21:03:16.058Z",
   "spel": {
     "version": 1,
-    "tid": 1793826160281,
+    "tid": 1793826193051,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -243,7 +243,7 @@
       "i": 5,
       "h": {
         "bacon": {
-          "kp": 14,
+          "kp": 13,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -272,7 +272,7 @@
         },
         "monika": {
           "kp": 12,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -313,7 +313,8 @@
             "Svärd",
             "Akrobatik",
             "Finna dolda ting",
-            "Smyga"
+            "Smyga",
+            "Kniv"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -535,6 +536,46 @@
         },
         {
           "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi parerar: [5] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Bacon försöker undvika: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 1 skada (2 − 1 rustning) från Klor. KP 13/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [12 / 5 → 5] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 14 skada (15 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 2 —",
           "cls": "info"
         }
       ],
