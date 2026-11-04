@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:00:39.639Z",
+  "uppdaterad": "2026-11-04T21:00:47.326Z",
   "spel": {
     "version": 1,
-    "tid": 1793826036760,
+    "tid": 1793826044442,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -412,6 +412,14 @@
         },
         {
           "text": "Monika Plöjer får en extra handling!",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [8] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 7 skada (8 − 1 rustning).",
           "cls": "ok"
         }
       ],
