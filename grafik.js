@@ -181,7 +181,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       ctx.fillStyle="#0005"; ctx.fillRect(x+7, fot-1, 18, 3);
       ctx.save();
       if(n.spegel !== false){ ctx.translate(x+32, fot-30); ctx.scale(-1,1); } else ctx.translate(x, fot-30);
-      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, 32, 32);
+      if(n.fiende) ctx.drawImage(img, ...fiendeKalla(n.fiende, r), 0, 0, 32, 32);
+      else ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, 32, 32);
       ctx.restore();
     });
   }
@@ -191,11 +192,25 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     const n = levande.length, start = harHjaltar ? 74 : 10, slut = W - 2, vantar = [];
     // Storlek: egna pixelfigurer (32×32) i naturlig storlek, bossar 1,5 gånger större, draken dubbelt.
     const mått = levande.map(f=>{ const egen = G.fiendeBild(f.fid) && G.fiendeRutor(f.fid).length;
-      const sk = egen ? (f.boss ? (f.stor ? 2 : 1.5) : 1) : (f.boss ? 3 : (f.liten?1:2)); return {egen, sk, w: egen ? Math.round(32*sk) : 16*sk}; });
+      const vis = egen && RUTNAT[f.fid] && RUTNAT[f.fid].vis;
+      const sk = vis ? vis/32 : egen ? (f.boss ? (f.stor ? 2 : 1.5) : 1) : (f.boss ? 3 : (f.liten?1:2)); return {egen, sk, w: egen ? Math.round(32*sk) : 16*sk}; });
     const summa = mått.reduce((a,m)=>a+m.w,0), luft = slut - start - summa;
     const mellan = n>1 ? Math.min(8, luft/(n-1)) : 0;                       // negativt = de står lite omlott
     let xNu = start + Math.max(0, (luft - mellan*(n-1))/2);
-    const xPos = mått.map(m=>{ const x=Math.round(xNu); xNu += m.w + mellan; return x; });
+    let xPos = mått.map(m=>{ const x=Math.round(xNu); xNu += m.w + mellan; return x; });
+    // En jätteboss (t.ex. draken) står längst till höger, och hantlangarna ställer sig framför den, närmare hjältarna
+    const jatte = levande.findIndex((f,i)=>RUTNAT[f.fid] && RUTNAT[f.fid].vis && mått[i].egen);
+    if(jatte >= 0 && luft < 0){
+      const ovr = levande.map((f,i)=>i).filter(i=>i!==jatte), bred = ovr.reduce((a,i)=>a+mått[i].w,0);
+      let xx = start + 2;
+      xPos = mått.map(()=>0); xPos[jatte] = W - mått[jatte].w;
+      ovr.forEach(i=>{ xPos[i] = Math.round(xx); xx += Math.max(14, Math.min(mått[i].w, (W - start - 30 - bred)/Math.max(1,ovr.length) + mått[i].w)); });
+      // rita jätten först så att hantlangarna syns framför den
+      const ordning = [jatte, ...ovr];
+      levande.splice(0, levande.length, ...ordning.map(i=>levande[i])); 
+      const m2 = ordning.map(i=>mått[i]), x2 = ordning.map(i=>xPos[i]);
+      mått.splice(0, mått.length, ...m2); xPos = x2;
+    }
     levande.forEach((f,i)=>{
       const img = G.fiendeBild(f.fid), rutor = G.fiendeRutor(f.fid);
       const {egen, sk, w} = mått[i];
@@ -209,7 +224,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
         const r = G.fiendeRuta(f.fid, f.ruta, dod, i);
         if(ligger) ctx.globalAlpha = .9;   // döda fiender ligger kvar på marken i stället för att blekna
         ctx.save(); ctx.translate(x+w, Math.max(0,y)); ctx.scale(-1,1);   // spegelvänd så att fienden tittar mot hjältarna
-        ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, w, w);
+        ctx.drawImage(img, ...fiendeKalla(f.fid, r), 0, 0, w, w);
         ctx.restore();
       } else G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
       ctx.globalAlpha = 1;
@@ -490,7 +505,13 @@ G.ritaNpc = (canvas, ark, ruta, spegel) => {
 };
 // Fiendernas pixelfigurer (bilder i fiender/)
 const FBILDER = {};
-G.fiendeRutor = fid => (window.FIENDEFIGURER && window.FIENDEFIGURER[fid]) || [];
+// De flesta fiendeark har 8×8 rutor på 32×32. Ark med större rutor anges här: c = rutans storlek, n = rutor per rad,
+// vis = hur bred figuren ritas i TV:n (i 160×90-pixlar; 96 = tre gånger arkets pixlar i den höga upplösningen).
+const RUTNAT = { drake: {c:64, n:4, vis:96} };
+const rutnat = fid => RUTNAT[fid] || {c:32, n:8};
+G.fiendeRutnat = rutnat;
+G.fiendeRutor = fid => RUTNAT[fid] ? [...Array(RUTNAT[fid].n*RUTNAT[fid].n).keys()] : ((window.FIENDEFIGURER && window.FIENDEFIGURER[fid]) || []);
+const fiendeKalla = (fid, r) => { const g = rutnat(fid); return [(r%g.n)*g.c, Math.floor(r/g.n)*g.c, g.c, g.c]; };
 G.fiendeBild = fid => {
   if(!G.fiendeRutor(fid).length) return null;
   if(!FBILDER[fid]){ const img = new Image(); img.src = "fiender/"+fid+".png"; FBILDER[fid] = img; }
@@ -504,11 +525,12 @@ function fiendeDelar(fid){
   if(FDELAR[fid]) return FDELAR[fid];
   const img = G.fiendeBild(fid); if(!(img && img.complete && img.naturalWidth)) return null;
   try{
-    const c = document.createElement("canvas"); c.width = 256; c.height = 256;
-    const x = c.getContext("2d"); x.drawImage(img, 0, 0); const d = x.getImageData(0, 0, 256, 256).data;
+    const g = rutnat(fid), S = g.c*g.n;
+    const c = document.createElement("canvas"); c.width = S; c.height = S;
+    const x = c.getContext("2d"); x.drawImage(img, 0, 0); const d = x.getImageData(0, 0, S, S).data;
     const info = [];
-    for(let r=0;r<64;r++){ let n=0, y0=99, y1=-1; const cx=(r%8)*32, cy=Math.floor(r/8)*32;
-      for(let y=0;y<32;y++) for(let xx=0;xx<32;xx++) if(d[((cy+y)*256+cx+xx)*4+3] >= 128){ n++; if(y<y0) y0=y; if(y>y1) y1=y; }
+    for(let r=0;r<g.n*g.n;r++){ let n=0, y0=999, y1=-1; const cx=(r%g.n)*g.c, cy=Math.floor(r/g.n)*g.c;
+      for(let y=0;y<g.c;y++) for(let xx=0;xx<g.c;xx++) if(d[((cy+y)*S+cx+xx)*4+3] >= 128){ n++; if(y<y0) y0=y; if(y>y1) y1=y; }
       info.push({r, n, h: n ? y1-y0+1 : 0}); }
     const mitt = l => { const v=[...l].sort((a,b)=>a-b); return v[Math.floor(v.length/2)] || 0; };
     const fyllda = info.filter(i=>i.n), median = mitt(fyllda.map(i=>i.n)), mh = mitt(fyllda.map(i=>i.h));
