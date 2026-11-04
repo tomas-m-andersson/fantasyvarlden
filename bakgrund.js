@@ -337,7 +337,7 @@ RITA.trask = (ctx, rnd) => {
 const CACHE = new Map();
 // Egna målade bakgrunder (320×180, dubbel upplösning) i mappen bakgrunder/. Saknas en miljö här ritas den med kod.
 const EGNA = { grotta:["grotta1","grotta2","grotta3","grotta4","grotta5"], skog:["skog1","skog2","skog3","skog4","skog5","skog1natt","skog2natt","skog3natt","skog4natt","skog5natt"], oken:["oken1","oken2","oken3","oken4","oken5"], berg:["berg1","berg2","berg3","berg4","berg5"], ruin:["ruin1","ruin2","ruin3","ruin4","ruin5"], gravfalt:["gravfalt1","gravfalt2","gravfalt3","gravfalt4"], trask:["trask1","trask2","trask3","trask4"], kloak:["kloak1","kloak2","kloak3","kloak4","kloak5"], basar:["basar"], gruva:["gruva1","gruva2","gruva3"], vag:["vag1","vag2","vag3","vag4"], lager_ute:["lager_ute","lager_ute2"], lager_inne:["lager_inne","lager_inne2"],
-  vesselberget:["vesselberget1","vesselberget2"], bududuoar:["bududuoar1","bududuoar2"], tehandeln:["tehandeln"], boss_drake:["boss_drake"], boss_grip:["boss_grip"], boss_harpyor:["boss_harpyor"], smedjan:["smedjan"], gruva_kult:["gruva_kult"], klyfta_ute:["klyfta_ute","klyfta_ute2"], klyfta_inne:["klyfta_inne","klyfta_inne2"] };
+  vesselberget:["vesselberget1","vesselberget2"], bududuoar:["bududuoar1","bududuoar2"], tehandeln:["tehandeln"], boss_drake:["boss_drake"], boss_grip:["boss_grip"], boss_harpyor:["boss_harpyor"], boss_orch:["boss_orch"], boss_svartalf:["boss_svartalf"], boss_dodasjon:["boss_dodasjon"], smedjan:["smedjan"], gruva_kult:["gruva_kult"], klyfta_ute:["klyfta_ute","klyfta_ute2"], klyfta_inne:["klyfta_inne","klyfta_inne2"] };
 const EBILDER = {};
 const egenBild = namn => { if(!EBILDER[namn]){ const i=new Image(); i.src="bakgrunder/"+namn+".png"; EBILDER[namn]=i; } return EBILDER[namn]; };
 window.BAKGRUND = {
