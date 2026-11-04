@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:02:31.412Z",
+  "uppdaterad": "2026-11-04T21:02:43.189Z",
   "spel": {
     "version": 1,
-    "tid": 1793826148501,
+    "tid": 1793826160281,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -257,7 +257,8 @@
           "anvanda": [
             "Undvika",
             "Yxor",
-            "Akrobatik"
+            "Akrobatik",
+            "Smyga"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -283,7 +284,8 @@
           "markerade": [],
           "anvanda": [
             "Slagvapen",
-            "Akrobatik"
+            "Akrobatik",
+            "Smyga"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -310,7 +312,8 @@
           "anvanda": [
             "Svärd",
             "Akrobatik",
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Smyga"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -509,6 +512,30 @@
         {
           "text": "Sällskapet vilar och samlar krafter.",
           "cls": "ok"
+        },
+        {
+          "text": "Bacon slår Smyga: [18] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer slår Smyga: [8] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår Smyga: [3] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Bacon trampar på något som låter. Fienden anfaller!",
+          "cls": "fel"
+        },
+        {
+          "text": "Fienden hinner först!",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
