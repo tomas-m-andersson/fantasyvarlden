@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:16:30.441Z",
+  "uppdaterad": "2026-11-04T11:16:36.365Z",
   "spel": {
     "version": 1,
-    "tid": 1793790987383,
+    "tid": 1793790993287,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -218,8 +218,8 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Stridsgissel",
-          "fordelNasta": true,
-          "nackdelNasta": true
+          "fordelNasta": false,
+          "nackdelNasta": false
         },
         "pescatore": {
           "kp": 4,
@@ -256,7 +256,7 @@
           "kp": 0,
           "vp": 0,
           "doende": true,
-          "ok": 1,
+          "ok": 2,
           "miss": 1,
           "stabil": false,
           "dod": false,
@@ -301,7 +301,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Strypsnara",
           "fordelNasta": false,
           "nackdelNasta": false
@@ -808,6 +808,22 @@
         {
           "text": "Den talande draken tar 0 skada (1 − 4 rustning).",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [4] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken tar 3 skada (7 − 4 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 5 —",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim slår dödsslag mot FYS: [13] mot 13 – lyckat (2 lyckade, 1 misslyckade).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
