@@ -1,17 +1,18 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:55:51.214Z",
+  "uppdaterad": "2026-11-04T20:56:00.250Z",
   "spel": {
     "version": 1,
-    "tid": 1793825748342,
+    "tid": 1793825757356,
     "kassa": 372,
     "packning": [
       "Läkedryck",
       "Läkande ört"
     ],
     "sallskap": [
-      "bacon"
+      "bacon",
+      "monika"
     ],
     "hj": {
       "monika": {
@@ -60,6 +61,14 @@
         "figur": 38
       },
       "bacon": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "tola": {
         "dod": false,
         "bonus": {},
         "aventyr": 0,
