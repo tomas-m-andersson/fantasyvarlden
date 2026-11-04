@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:00:08.987Z",
+  "uppdaterad": "2026-11-04T21:00:20.642Z",
   "spel": {
     "version": 1,
-    "tid": 1793826006088,
+    "tid": 1793826017756,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -243,7 +243,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Undvika"
+            "Undvika",
+            "Yxor"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -252,7 +253,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 17,
@@ -374,6 +376,10 @@
         {
           "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
           "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [11] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
