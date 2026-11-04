@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:00:30.862Z",
+  "uppdaterad": "2026-11-04T21:00:39.639Z",
   "spel": {
     "version": 1,
-    "tid": 1793826028000,
+    "tid": 1793826036760,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -283,7 +283,7 @@
         },
         "shinji": {
           "kp": 10,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -303,7 +303,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
           "nackdelNasta": true
         }
@@ -405,6 +405,14 @@
         {
           "text": "Orch faller!",
           "cls": "d"
+        },
+        {
+          "text": "★ Shinji Onishi: Ledarskap!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer får en extra handling!",
+          "cls": "ok"
         }
       ],
       "utfall": null,
