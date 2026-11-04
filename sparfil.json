@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:03:30.432Z",
+  "uppdaterad": "2026-11-04T21:03:56.656Z",
   "spel": {
     "version": 1,
-    "tid": 1793826207550,
+    "tid": 1793826233786,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -210,7 +210,9 @@
           "rutor": [
             20,
             2
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 5 guld."
         },
         {
           "typ": "rum",
@@ -240,7 +242,7 @@
           ]
         }
       ],
-      "i": 5,
+      "i": 6,
       "h": {
         "bacon": {
           "kp": 13,
@@ -267,7 +269,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -294,7 +296,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -328,7 +330,7 @@
           "nackdelNasta": false
         }
       },
-      "guld": 15,
+      "guld": 20,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Barden Barors barn” av Barden Baror.",
@@ -585,6 +587,34 @@
         {
           "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [19] mot 14 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi parerar: [12] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon försöker undvika: [4] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [6] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 12 skada (13 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
