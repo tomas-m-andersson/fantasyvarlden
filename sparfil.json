@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:00:47.326Z",
+  "uppdaterad": "2026-11-04T21:00:53.968Z",
   "spel": {
     "version": 1,
-    "tid": 1793826044442,
+    "tid": 1793826051064,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -253,7 +253,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -420,6 +420,14 @@
         },
         {
           "text": "Harpya tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [6] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 1 skada (2 − 1 rustning).",
           "cls": "ok"
         }
       ],
