@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:11:41.018Z",
+  "uppdaterad": "2026-11-04T11:11:45.403Z",
   "spel": {
     "version": 1,
-    "tid": 1793790698009,
+    "tid": 1793790702322,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -147,7 +147,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En trång passage med kalla, svettiga väggar. En trasig tunna läcker något som kanske en gång var öl. Det luktar bränt, som om någon nyss stekt något.",
-          "fro": 42826498
+          "fro": 42826498,
+          "klar": true,
+          "utfallText": "Pescatore Vesuvio hittar 9 guld."
         },
         {
           "typ": "rum",
@@ -216,7 +218,8 @@
           "anvanda": [
             "Kunskap",
             "Upptäcka fara",
-            "Pilbåge"
+            "Pilbåge",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -277,7 +280,7 @@
           "valtVapen": "Spjut"
         }
       },
-      "guld": 10,
+      "guld": 19,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
@@ -442,6 +445,10 @@
         {
           "text": "Sabeltandad tiger faller!",
           "cls": "d"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Finna dolda ting: [13] mot 7 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
