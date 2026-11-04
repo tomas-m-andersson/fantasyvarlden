@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:03:56.656Z",
+  "uppdaterad": "2026-11-04T21:04:10.198Z",
   "spel": {
     "version": 1,
-    "tid": 1793826233786,
+    "tid": 1793826247310,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -230,7 +230,9 @@
               "oken",
               "ruin"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Alla tar sig till slut förbi, men Bacon, Monika Plöjer gjorde sig illa på vägen."
         },
         {
           "typ": "rum",
@@ -245,7 +247,7 @@
       "i": 6,
       "h": {
         "bacon": {
-          "kp": 13,
+          "kp": 11,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -255,7 +257,9 @@
           "saker": [
             "Flaska vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Akrobatik"
+          ],
           "anvanda": [
             "Undvika",
             "Yxor",
@@ -273,7 +277,7 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 12,
+          "kp": 7,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -615,6 +619,26 @@
         {
           "text": "Ulv faller!",
           "cls": "d"
+        },
+        {
+          "text": "Bacon slår Akrobatik: [20] mot 5 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Bacon tar 2 skada från En brant klippa. KP 11/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer slår Akrobatik: [15] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 5 skada från En brant klippa. KP 7/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår Akrobatik: [7] mot 7 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
