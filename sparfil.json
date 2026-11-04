@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:08:57.454Z",
+  "uppdaterad": "2026-11-04T11:09:13.875Z",
   "spel": {
     "version": 1,
-    "tid": 1793790534097,
+    "tid": 1793790550869,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -121,7 +121,9 @@
             "namn": "Fallgrop",
             "text": "Marken ger vika över en grop med spetsar.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Marken ger vika över en grop med spetsar. Pescatore Vesuvio får ta smällen."
         },
         {
           "typ": "rum",
@@ -180,7 +182,7 @@
           "anvanda": []
         },
         "pescatore": {
-          "kp": 11,
+          "kp": 9,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -192,7 +194,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Kunskap"
+            "Kunskap",
+            "Upptäcka fara"
           ]
         },
         "gofnagrim": {
@@ -237,6 +240,18 @@
         {
           "text": "Pescatore Vesuvio slår Kunskap: [7] mot 16 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Upptäcka fara: [13] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Marken ger vika över en grop med spetsar.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 2 skada från Fallgrop. KP 9/11.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
