@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:05:01.737Z",
+  "uppdaterad": "2026-11-04T21:05:04.733Z",
   "spel": {
     "version": 1,
-    "tid": 1793826298826,
-    "kassa": 257,
+    "tid": 1793826301863,
+    "kassa": 877,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -23,9 +23,11 @@
     "hj": {
       "monika": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Akrobatik": 1
+        },
         "aventyr": 4,
-        "segrar": 1,
+        "segrar": 2,
         "vapen": [],
         "rustning": null
       },
@@ -68,9 +70,11 @@
       },
       "bacon": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Yxor": 1
+        },
         "aventyr": 1,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
@@ -86,7 +90,7 @@
         "dod": false,
         "bonus": {},
         "aventyr": 1,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null,
         "figur": 10
@@ -97,9 +101,14 @@
       "slasby"
     ],
     "avklarade": {
-      "skold": 1
+      "skold": 1,
+      "barnen": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-04 22:05",
+        "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Barden Barors barn” och fick 600 guld + 20 i byte."
+      },
       {
         "tid": "2026-11-04 21:57",
         "text": "Bacon, Monika Plöjer, Shinji Onishi åkte med Bakhuvudet Jens mot Harpybergen för 10 guld."
@@ -244,7 +253,9 @@
           ],
           "rutor": [
             51
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Ni har fått tag på: Ulf och Ulfina. Harpydrottningen är besegrad!"
         }
       ],
       "i": 7,
@@ -261,7 +272,8 @@
             "Flaska vin"
           ],
           "markerade": [
-            "Akrobatik"
+            "Akrobatik",
+            "Yxor"
           ],
           "anvanda": [
             "Undvika",
@@ -276,7 +288,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -290,7 +302,9 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [],
+          "markerade": [
+            "Akrobatik"
+          ],
           "anvanda": [
             "Slagvapen",
             "Akrobatik",
@@ -317,7 +331,9 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
+          "markerade": [
+            "Smyga"
+          ],
           "anvanda": [
             "Svärd",
             "Akrobatik",
@@ -716,7 +732,46 @@
           "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "beloning": 600,
+        "avgift": 0,
+        "byte": 20,
+        "doda": [],
+        "forb": {
+          "bacon": [
+            {
+              "f": "Akrobatik",
+              "v": 5,
+              "s": 2,
+              "upp": false
+            },
+            {
+              "f": "Yxor",
+              "v": 8,
+              "s": 20,
+              "upp": true
+            }
+          ],
+          "monika": [
+            {
+              "f": "Akrobatik",
+              "v": 5,
+              "s": 17,
+              "upp": true
+            }
+          ],
+          "shinji": [
+            {
+              "f": "Smyga",
+              "v": 14,
+              "s": 11,
+              "upp": false
+            }
+          ]
+        },
+        "rad": []
+      },
       "start": "2026-11-04 21:57"
     },
     "reset": 1793783047660,
