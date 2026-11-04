@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:04:41.295Z",
+  "uppdaterad": "2026-11-04T21:04:47.827Z",
   "spel": {
     "version": 1,
-    "tid": 1793826278280,
+    "tid": 1793826284956,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -250,8 +250,8 @@
       "i": 7,
       "h": {
         "bacon": {
-          "kp": 11,
-          "vp": 11,
+          "kp": 7,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -276,11 +276,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 7,
+          "kp": 5,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -307,7 +307,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 9,
+          "kp": 5,
           "vp": 6,
           "doende": false,
           "ok": 0,
@@ -666,6 +666,34 @@
         {
           "text": "Harpydrottningen tar 10 skada (12 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [5 / 15 → 5] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 5 skada (7 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen piskar upp en storm mot hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 4 skada (5 − 1 rustning) från Vingstorm. KP 7/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Vingstorm. KP 5/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Vingstorm. KP 5/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
