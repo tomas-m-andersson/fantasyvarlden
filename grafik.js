@@ -739,9 +739,9 @@ G.ritaVardshus = (canvas, hjaltar) => {
     R(0,58,W,32,"#5a3a1e"); for(let y=62;y<H;y+=5) R(0,y,W,1,"#4a2e16"); for(let x=0;x<W;x+=23) R(x+((x/23)%2?11:0),58,1,32,"#4a2e16");
     R(0,57,W,2,"#241509");
   }
-  const mob = G.npcBild("mobler"), kop = G.npcBild("kopman"), vantar=[];
+  const mob = G.npcBild("mobler"), kop = G.npcBild("kopman"), isak = G.npcBild("isak"), vantar=[];
   const klar = img => img.complete && img.naturalWidth;
-  [mob,kop].forEach(i=>{ if(!klar(i)) vantar.push(i); });
+  [mob,kop,isak].forEach(i=>{ if(!klar(i)) vantar.push(i); });
   if(!vantar.length){
     const M=(r,x,y,z,sp)=>G.ritaRuta(ctx,mob,r,x,y,z,sp);
     if(malad){
@@ -756,17 +756,20 @@ G.ritaVardshus = (canvas, hjaltar) => {
       M(46, 30, 12, 16);         // kandelaber
       M(33, 4, 30, 30);          // öppen spis
     }
-    M(20, 112, 8, 30);           // hylla med flaskor
-    M(23, 132, 12, 26);          // hylla med glas
-    G.ritaRuta(ctx, kop, 2, 115, 24, 30);   // värdshusvärden bakom disken
-    M(21, 100, 38, 30); M(22, 128, 38, 30); // bardisk
-    M(25, 136, 62, 24);          // tunna
+    // Spelledaren Isak sitter bakom ett bord med tärningar och anteckningar mitt i rummet
+    R(92, 77, 40, 3, "#0005");
+    G.ritaRuta(ctx, isak, (new Date().getDate())%64, 96, 36, 32);
+    M(13, 92, 50, 34);
+    // bardisken längst till höger, med kortsidan mot oss, och värdshusvärden bakom den
+    G.ritaRuta(ctx, kop, 2, 132, 34, 28);
+    R(130, 77, 30, 3, "#0005");
+    M(18, 130, 48, 32);
   }
   // sällskapet står framför bordet
   (hjaltar||[]).slice(0,4).forEach((h,i)=>{
     const img = G.figurBild(h.id); if(!img) return;
     if(!klar(img)){ vantar.push(img); return; }
-    const r = h.ruta ?? (G.figurRutor(h.id)[0]||0), x = 26 + i*17, y = 52 + (i%2?3:0);
+    const r = h.ruta ?? (G.figurRutor(h.id)[0]||0), x = 2 + i*16, y = 52 + (i%2?3:0);
     R(x+9, y+30, 14, 2, "#0005");
     ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, 32, 32);
   });
