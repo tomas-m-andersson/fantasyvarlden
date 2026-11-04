@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T09:03:16.483Z",
+  "uppdaterad": "2026-11-04T09:03:27.868Z",
   "spel": {
     "version": 1,
-    "tid": 1793782993481,
+    "tid": 1793783004909,
     "kassa": 602,
     "packning": [],
     "sallskap": [
@@ -177,8 +177,8 @@
     },
     "tavla": [
       "skold",
-      "tarragon",
-      "patricia"
+      "doda-sjon",
+      "barnen"
     ],
     "avklarade": {
       "broncos": 1,
