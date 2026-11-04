@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:01:48.365Z",
+  "uppdaterad": "2026-11-04T21:02:00.923Z",
   "spel": {
     "version": 1,
-    "tid": 1793826105463,
+    "tid": 1793826118003,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -186,7 +186,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En smal stig längs en brant klippvägg. Rester av en lavin har begravt stigen. Det knakar oroväckande i berget. En björnhatt med ett ankhuvud ovanpå ligger kvarglömd. Nej, det är inte Monikas. Den här är mindre.",
-          "fro": 720459990
+          "fro": 720459990,
+          "klar": true,
+          "utfallText": "Shinji Onishi hittar 2 guld."
         },
         {
           "typ": "rum",
@@ -301,7 +303,8 @@
           "markerade": [],
           "anvanda": [
             "Svärd",
-            "Akrobatik"
+            "Akrobatik",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -315,7 +318,7 @@
           "nackdelNasta": false
         }
       },
-      "guld": 13,
+      "guld": 15,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Barden Barors barn” av Barden Baror.",
@@ -491,6 +494,10 @@
         },
         {
           "text": "Shinji Onishi tar 3 skada från En bred klyfta. KP 5/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår Finna dolda ting: [11] mot 5 – misslyckat",
           "cls": "fel"
         }
       ],
