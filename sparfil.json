@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:15:37.441Z",
+  "uppdaterad": "2026-11-04T11:15:49.346Z",
   "spel": {
     "version": 1,
-    "tid": 1793790934451,
+    "tid": 1793790946238,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -291,7 +291,8 @@
           "markerade": [],
           "anvanda": [
             "Kastvapen",
-            "Spjut"
+            "Spjut",
+            "Kniv"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -300,10 +301,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kastknivar",
+          "agerat": true,
+          "valtVapen": "Strypsnara",
           "fordelNasta": false,
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 31,
@@ -727,6 +728,10 @@
         {
           "text": "Den talande draken tar 3 skada (7 − 4 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Kevin (Strypsnara) slår Kniv med nackdel: [7 / 17 → 17] mot 12 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
