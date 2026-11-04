@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:07:26.908Z",
+  "uppdaterad": "2026-11-04T11:07:35.513Z",
   "spel": {
     "version": 1,
-    "tid": 1793790443754,
+    "tid": 1793790451465,
     "kassa": 50,
     "packning": [
       "Läkedryck",
@@ -12,7 +12,9 @@
     ],
     "sallskap": [
       "monika",
-      "pescatore"
+      "pescatore",
+      "gofnagrim",
+      "kevin"
     ],
     "hj": {
       "monika": {
@@ -24,6 +26,22 @@
         "rustning": null
       },
       "pescatore": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "gofnagrim": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "kevin": {
         "dod": false,
         "bonus": {},
         "aventyr": 0,
