@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:09:51.528Z",
+  "uppdaterad": "2026-11-04T11:10:08.095Z",
   "spel": {
     "version": 1,
-    "tid": 1793790588594,
+    "tid": 1793790605102,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -212,7 +212,8 @@
           "markerade": [],
           "anvanda": [
             "Kunskap",
-            "Upptäcka fara"
+            "Upptäcka fara",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -221,7 +222,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Kort båge"
         },
         "gofnagrim": {
           "kp": 13,
@@ -320,6 +322,14 @@
         },
         {
           "text": "Sabeltandad tiger tar 15 skada (16 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [17] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orch anfaller Pescatore Vesuvio: [8 / 16 → 16] mot 12 – misslyckat",
           "cls": "ok"
         }
       ],
