@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:14:56.936Z",
+  "uppdaterad": "2026-11-04T11:15:28.442Z",
   "spel": {
     "version": 1,
-    "tid": 1793790893891,
+    "tid": 1793790925481,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -213,12 +213,13 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
-          "fordelNasta": true
+          "fordelNasta": true,
+          "nackdelNasta": true
         },
         "pescatore": {
           "kp": 1,
@@ -246,13 +247,14 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Dolk",
-          "fordelNasta": true
+          "fordelNasta": true,
+          "nackdelNasta": true
         },
         "gofnagrim": {
           "kp": 9,
-          "vp": 2,
+          "vp": 0,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -274,7 +276,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "nackdelNasta": false
         },
         "kevin": {
           "kp": 10,
@@ -297,9 +300,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kastknivar",
-          "fordelNasta": false
+          "fordelNasta": false,
+          "nackdelNasta": true
         }
       },
       "guld": 31,
@@ -678,6 +682,38 @@
         },
         {
           "text": "Den talande draken tar 0 skada (4 − 4 rustning).",
+          "cls": "info"
+        },
+        {
+          "text": "Den talande draken håller en lång och nedlåtande föreläsning för hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Kevin skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim kastar Blixt slår Magi: [10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken tar 3 skada (7 − 4 rustning) från Blixt.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
           "cls": "info"
         }
       ],
