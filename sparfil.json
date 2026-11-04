@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:04:20.789Z",
+  "uppdaterad": "2026-11-04T21:04:34.814Z",
   "spel": {
     "version": 1,
-    "tid": 1793826257850,
+    "tid": 1793826271920,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -332,7 +332,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -641,6 +641,18 @@
         },
         {
           "text": "Shinji Onishi slår Akrobatik: [7] mot 7 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [4] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 1 skada (3 − 2 rustning).",
           "cls": "ok"
         }
       ],
