@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:04:47.827Z",
+  "uppdaterad": "2026-11-04T21:05:01.737Z",
   "spel": {
     "version": 1,
-    "tid": 1793826284956,
+    "tid": 1793826298826,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -251,7 +251,7 @@
       "h": {
         "bacon": {
           "kp": 7,
-          "vp": 8,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -300,10 +300,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -332,7 +332,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -694,6 +694,26 @@
         {
           "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Vingstorm. KP 5/13.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [13 / 3 → 3] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 7 skada (9 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
