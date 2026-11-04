@@ -1,18 +1,33 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T09:04:10.602Z",
+  "uppdaterad": "2026-11-04T09:04:19.054Z",
   "spel": {
     "version": 1,
-    "tid": 1793783047663,
+    "tid": 1793783056054,
     "kassa": 50,
     "packning": [
       "Läkedryck",
       "Läkande ört"
     ],
-    "sallskap": [],
-    "hj": {},
-    "tavla": [],
+    "sallskap": [
+      "monika"
+    ],
+    "hj": {
+      "monika": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      }
+    },
+    "tavla": [
+      "skold",
+      "slasby",
+      "rattor"
+    ],
     "avklarade": {},
     "kronika": [],
     "run": null,
