@@ -464,6 +464,13 @@ function rumText(miljo, anvanda){
   if(V.RUMEXTRA && Math.random() < .12) t += ` ${ny(V.RUMEXTRA)}`;
   return t;
 }
+// Malbecs gruvor (uppdraget och platsen) har egna målade gruvbakgrunder i stället för grottans.
+// Bossrummet blir kultisternas altarsal. Bara bilden byts – rumstexter och fiender är fortfarande grottans.
+function scenMiljo(m, steg){
+  const r = st.run;
+  if(r && m==="grotta" && /Malbecks? gruvor/.test(r.q.plats||"")) return steg && steg.rumtyp==="boss" ? "gruva_kult" : "gruva";
+  return m;
+}
 function byggRum(miljo, antalRum, antal, boss, extra){
   const rumMoten = R.blanda(V.MOTEN.filter(m=>m.rum)), ut = [];
   const anvanda = (st.run && st.run.anvandaText) ? new Set(st.run.anvandaText) : new Set();
@@ -626,7 +633,7 @@ function ritaRun(){
   if(r.utforska && r.paus){
     app.innerHTML = `<div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.plats)} · kapitel ${r.kapitel}</span></div>
       ${partyHtml()}<section class="card quest">${kapitelHtml()}</section>${loggHtml()}`;
-    G.ritaScen($("#scen"), r.q.miljo, [], 77+r.kapitel, "skatt", scenHjaltar());
+    G.ritaScen($("#scen"), scenMiljo(r.q.miljo), [], 77+r.kapitel, "skatt", scenHjaltar());
     fyllPortratt(app); scrollaLogg();
     app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b) return;
       if(b.dataset.a==="djupare") return nyttKapitel();
@@ -656,7 +663,7 @@ function ritaRun(){
     <section class="card"><h2>${esc(titel)}</h2>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  const ritaRum = orn => G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):miljo, steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta"}[steg.hinder.namn]||""):steg.typ==="resa"?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
+  const ritaRum = orn => G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta"}[steg.hinder.namn]||""):steg.typ==="resa"?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
   ritaRum();
   if(r.ornVisa){ const v = r.ornVisa; r.ornVisa = null; spelaOrn(t => ritaRum(t==null ? undefined : {ruta:v.ruta, t, d:v.d})); }
   fyllPortratt(app); scrollaLogg();
@@ -1160,11 +1167,11 @@ function ritaStrid(){
   const et = strid.etiketter || [];
   const fiendeVis = strid.fiender.filter(f=>!f.lamnat).map(f=>({...f, visa:true, etikett:et.filter(e=>e.mal==="f:"+f.i)}));
   const hjVis = scenHjaltar(akt).map(h=>({...h, etikett:et.filter(e=>e.mal==="h:"+h.id)}));
-  G.ritaScen($("#scen"), r.q.miljo, fiendeVis, steg.fro||7, null, hjVis);
+  G.ritaScen($("#scen"), scenMiljo(r.q.miljo, steg), fiendeVis, steg.fro||7, null, hjVis);
   G.npcBild("effekter");   // läs in effektarket i förväg
-  if(strid.effekter && strid.effekter.length) spelaEffekter(r.q.miljo, steg.fro||7, fiendeVis, hjVis);
+  if(strid.effekter && strid.effekter.length) spelaEffekter(scenMiljo(r.q.miljo, steg), steg.fro||7, fiendeVis, hjVis);
   if(strid.ornVisa){ const v = strid.ornVisa; strid.ornVisa = null;
-    spelaOrn(t => { const c = $("#scen"); if(c && strid) G.ritaScen(c, r.q.miljo, fiendeVis, steg.fro||7, null, hjVis.map(h=>h.id==="potus"&&t!=null?{...h, orn:{ruta:v.ruta, t}}:h)); }); }
+    spelaOrn(t => { const c = $("#scen"); if(c && strid) G.ritaScen(c, scenMiljo(r.q.miljo, steg), fiendeVis, steg.fro||7, null, hjVis.map(h=>h.id==="potus"&&t!=null?{...h, orn:{ruta:v.ruta, t}}:h)); }); }
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b || b.disabled) return;
@@ -1303,7 +1310,7 @@ function ritaSlut(){
     </section>${loggHtml()}`;
   // Vid seger i ett uppdrag (inte utforskning) står uppdragsgivaren vid skatten och tar emot sällskapet
   const tack = u.lyckat && !r.utforska ? [{...givare(r.q.givare, r.q.id.length*7), x:118, fot:78}] : [];
-  G.ritaScen($("#scen"), r.q.miljo, [], 99, u.lyckat?"skatt":null, scenHjaltar(), tack);
+  G.ritaScen($("#scen"), scenMiljo(r.q.miljo), [], 99, u.lyckat?"skatt":null, scenHjaltar(), tack);
   fyllIkoner(app);
   scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(b && b.dataset.a==="klar"){ st.run=null; spara(); ga("hem"); } };
