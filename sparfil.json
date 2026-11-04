@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:02:05.644Z",
+  "uppdaterad": "2026-11-04T21:02:27.280Z",
   "spel": {
     "version": 1,
-    "tid": 1793826122729,
+    "tid": 1793826144297,
     "kassa": 257,
     "packning": [
       "Läkedryck",
@@ -194,7 +194,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En glaciär som knakar under fötterna. Ett gammalt rep sitter fast i en järnkrok. Det luktar snö och järn.",
-          "fro": 919627419
+          "fro": 919627419,
+          "klar": true,
+          "utfallText": "Ni vilar i lugn och ro. Alla känner sig lite bättre."
         },
         {
           "typ": "rum",
@@ -237,7 +239,7 @@
       "i": 4,
       "h": {
         "bacon": {
-          "kp": 11,
+          "kp": 14,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -264,7 +266,7 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 11,
+          "kp": 12,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -290,8 +292,8 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 5,
-          "vp": 5,
+          "kp": 9,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -499,6 +501,10 @@
         {
           "text": "Shinji Onishi slår Finna dolda ting: [11] mot 5 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
