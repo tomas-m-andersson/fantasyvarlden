@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:15:28.442Z",
+  "uppdaterad": "2026-11-04T11:15:37.441Z",
   "spel": {
     "version": 1,
-    "tid": 1793790925481,
+    "tid": 1793790934451,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -194,7 +194,7 @@
       "h": {
         "monika": {
           "kp": 17,
-          "vp": 3,
+          "vp": 0,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -213,13 +213,13 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
-          "fordelNasta": true,
-          "nackdelNasta": true
+          "fordelNasta": false,
+          "nackdelNasta": false
         },
         "pescatore": {
           "kp": 1,
@@ -715,6 +715,18 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [9 / 12 → 9] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken tar 3 skada (7 − 4 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
