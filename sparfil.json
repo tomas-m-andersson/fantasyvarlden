@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T11:13:20.695Z",
+  "uppdaterad": "2026-11-04T11:13:30.352Z",
   "spel": {
     "version": 1,
-    "tid": 1793790797676,
+    "tid": 1793790810051,
     "kassa": 40,
     "packning": [
       "Läkedryck",
@@ -159,6 +159,12 @@
           "fiender": [
             "svartnisse",
             "orch"
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 5 guld.",
+          "rutor": [
+            21,
+            23
           ]
         },
         {
@@ -238,7 +244,7 @@
         },
         "gofnagrim": {
           "kp": 9,
-          "vp": 7,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -286,7 +292,7 @@
           "valtVapen": "Kastknivar"
         }
       },
-      "guld": 19,
+      "guld": 24,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
@@ -563,6 +569,18 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Göfnagrim kastar Blixt slår Magi: [3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Svartnisse tar 11 skada från Blixt.",
+          "cls": "ok"
+        },
+        {
+          "text": "Svartnisse faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
