@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:39:29.129Z",
+  "uppdaterad": "2026-11-05T17:39:34.253Z",
   "spel": {
     "version": 1,
-    "tid": 1793900366238,
+    "tid": 1793900374071,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -180,7 +180,13 @@
             "rovare",
             "rovare"
           ],
-          "efterStrid": "Ni drar vapen."
+          "efterStrid": "Ni drar vapen.",
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 12 guld. ",
+          "rutor": [
+            34,
+            27
+          ]
         },
         {
           "typ": "resa",
@@ -270,7 +276,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -320,11 +326,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
-      "guld": 0,
+      "guld": 12,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
