@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:20:32.344Z",
+  "uppdaterad": "2026-11-05T18:20:40.929Z",
   "spel": {
     "version": 1,
-    "tid": 1793902829166,
+    "tid": 1793902837803,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -238,7 +238,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En sluttande gång täckt av löst grus. En halväten ost ligger på en sten. Luften är så kall att andedräkten syns. Någon har lämnat fyra kilo bröd i en prydlig hög.",
-          "fro": 645296448
+          "fro": 645296448,
+          "klar": true,
+          "utfallText": "Shinji Onishi hittar 4 guld."
         },
         {
           "typ": "rum",
@@ -329,7 +331,8 @@
             "Smyga",
             "Pilbåge",
             "Kniv",
-            "Kunskap"
+            "Kunskap",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -342,7 +345,7 @@
           "valtVapen": "Kort båge"
         }
       },
-      "guld": 14,
+      "guld": 18,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Orcherna i Krusbärsberget” av Clark.",
@@ -687,6 +690,10 @@
         {
           "text": "Begravningen blir mest pinsam.",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår Finna dolda ting: [16] mot 5 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
