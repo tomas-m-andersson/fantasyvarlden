@@ -195,7 +195,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     const levande = fiender.filter(f=>f.kp>0||f.visa);
     const n = levande.length, start = harHjaltar ? 74 : 10, slut = W - 2, vantar = [];
     // Storlek: egna pixelfigurer (32×32) i naturlig storlek, bossar 1,5 gånger större, draken dubbelt.
-    const mått = levande.map(f=>{ const egen = G.fiendeBild(f.fid) && G.fiendeRutor(f.fid).length;
+    const mått = levande.map(f=>{ if(f.hjalte) return {egen:true, sk:1, w:32, hjalte:true};   // en hjälte som motståndare i arenan
+      const egen = G.fiendeBild(f.fid) && G.fiendeRutor(f.fid).length;
       const vis = egen && RUTNAT[f.fid] && RUTNAT[f.fid].vis;
       const sk = vis ? vis/32 : egen ? (f.boss ? (f.stor ? 2 : 1.5) : 1) : (f.boss ? 3 : (f.liten?1:2)); return {egen, sk, w: egen ? Math.round(32*sk) : 16*sk}; });
     const summa = mått.reduce((a,m)=>a+m.w,0), luft = slut - start - summa;
@@ -216,7 +217,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       mått.splice(0, mått.length, ...m2); xPos = x2;
     }
     levande.forEach((f,i)=>{
-      const img = G.fiendeBild(f.fid), rutor = G.fiendeRutor(f.fid);
+      const img = f.hjalte ? G.figurBild(f.hjalte) : G.fiendeBild(f.fid), rutor = f.hjalte ? [] : G.fiendeRutor(f.fid);
       const {egen, sk, w} = mått[i];
       const x = Math.max(start-4, Math.min(W-w, xPos[i])), fot = 76 + (i%2 ? 2 : 0) + markNer;
       const y = egen ? fot - Math.round(30*sk) : fot - 16*sk + (f.liten?1:0);
@@ -224,6 +225,15 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       ctx.fillStyle="#0005"; ctx.fillRect(x+Math.round(w*.2), fot-1, Math.round(w*.6), 3);
       if(egen){
         if(!(img.complete && img.naturalWidth)){ vantar.push(img); ctx.globalAlpha=1; return; }
+        if(f.hjalte){   // hjälten spegelvänd så att hen tittar mot sällskapet
+          ctx.save(); ctx.translate(x+w, Math.max(0,y)); ctx.scale(-1,1);
+          ctx.drawImage(img, (f.ruta%8)*32, Math.floor(f.ruta/8)*32, 32, 32, 0, 0, w, w);
+          ctx.restore(); ctx.globalAlpha = 1;
+          effektPa(f.effekt, x, Math.max(0,y), w);
+          if(f.markerad){ ctx.fillStyle="#ffd23f"; ctx.fillRect(x+w/2-2, Math.max(0,y)-3, 4, 3); }
+          if(f.etikett && f.etikett.length) G.ritaEtiketter(ctx, f.etikett, x+w/2, Math.max(10,y)-1);
+          return;
+        }
         const dod = f.kp <= 0, ligger = dod && G.fiendeLigger(f.fid);
         const r = G.fiendeRuta(f.fid, f.ruta, dod, i);
         if(ligger) ctx.globalAlpha = .9;   // döda fiender ligger kvar på marken i stället för att blekna
@@ -325,7 +335,7 @@ G.regnLager = (canvas, pa) => {
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
-const MARK_NER = { basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const MARK_NER = { arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.

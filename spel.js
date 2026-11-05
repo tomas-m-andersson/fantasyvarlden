@@ -28,7 +28,8 @@ function normSpel(o){
 }
 let st = normSpel(load(KEY,null));
 const hs = id => (st.hj[id] = st.hj[id] || {dod:false,bonus:{},aventyr:0,segrar:0,vapen:[],rustning:null});
-function spara(){ st.tid = Date.now(); save(KEY,st); planeraSynk(); }
+function spara(){ if(st.run && st.run.arena) return;   // inget i arenan sparas
+  st.tid = Date.now(); save(KEY,st); planeraSynk(); }
 
 // ================= Hjältar =================
 // Bygger en hjälte av grunddata + det som hänt i spelet (förbättrade färdigheter, köpt utrustning).
@@ -100,6 +101,7 @@ function ritaOm(){
   if(vy==="run" && st.run) return ritaRun();
   if(vy==="basar") return ritaBasar();
   if(vy==="platser") return ritaPlatser();
+  if(vy==="arena") return ritaArena();
   vy="hem"; ritaHem();
 }
 function ga(v){ vy=v; ritaOm(); window.scrollTo({top:0,behavior:"instant"}); }
@@ -234,6 +236,7 @@ function ritaHem(){
     <div class="row hemval">
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragstavlan<span class="sub">Lansors förmedling</span></button>
       <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
+      <button class="btn" data-a="arena">Arenan<span class="sub">Möt valfria fiender – på låtsas</span></button>
       <button class="btn ghost" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
     </div>
     <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
@@ -258,6 +261,7 @@ function ritaHem(){
     if(a==="tavla"){ jensLedig = null; ga("tavla"); }
     if(a==="basar") ga("basar");
     if(a==="platser") ga("platser");
+    if(a==="arena") ga("arena");
     if(a==="fortsatt") ga("run");
     if(a==="ge-upp") geUpp();
   };
@@ -646,7 +650,7 @@ function lakaHjalte(id, mangd){
   return x.kp - fore;
 }
 function vpAndra(id, d){ const x=rh(id), h=bygg(id); if(x.dod) return 0; const f=x.vp; x.vp=Math.max(0,Math.min(R.maxVP(h), x.vp+d)); return x.vp-f; }
-function dor(id){ const x=rh(id); x.dod=true; x.doende=false; x.kp=0; logga(`☠ ${HJ[id].namn} är död och hamnar i poolen på skyskrapetaket i Miami.`,"dm"); }
+function dor(id){ const x=rh(id); x.dod=true; x.doende=false; x.kp=0; if(st.run && st.run.arena) return logga(`☠ ${HJ[id].namn} är besegrad och bärs ut ur arenan. (Bara på låtsas – ingen hamnar i Efterriket härifrån.)`,"dm"); logga(`☠ ${HJ[id].namn} är död och hamnar i poolen på skyskrapetaket i Miami.`,"dm"); }
 function dodsslag(id){
   const x=rh(id), h=bygg(id), s = R.slag(h.e.FYS); s.vem = h.namn; s.fard = "Dödsslag (FYS)";
   if(s.drake){ x.doende=false; x.ok=0; x.miss=0; x.kp=R.t(6); logga(`${h.namn} slår dödsslag ${s.text} – reser sig med ${x.kp} KP!`,"d"); return; }
@@ -661,6 +665,7 @@ function ritaRun(){
   const r = st.run, steg = r.steg[r.i];
   if(r.utfall) return ritaSlut();
   if(strid) return ritaStrid();
+  if(r.arena){ vy="arena"; return ritaArena(); }
   if(r.utforska && r.paus){
     app.innerHTML = `<div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.plats)} · kapitel ${r.kapitel}</span></div>
       ${partyHtml()}<section class="card quest">${kapitelHtml()}</section>${loggHtml()}`;
@@ -878,16 +883,16 @@ function geUpp(){
 
 // ================= STRIDEN =================
 // Slumpar vilken av fiendens figurvarianter som används
-function slumpRuta(fid){ const r = G.fiendeRutor(fid); return r.length ? R.valj(r) : null; }
+function slumpRuta(fid){ if(String(fid).startsWith("hj:")) return figur(fid.slice(3)); const r = G.fiendeRutor(fid); return r.length ? R.valj(r) : null; }
 function startaStrid(fiendeIds, opt){
   opt = opt||{};
   const r = st.run, sr = r.steg[r.i], rutor = (sr && sr.fiender===fiendeIds && sr.rutor) || [];
-  const fiender = fiendeIds.map((fid,i)=>{ const f=V.FIENDER[fid], kp=Math.max(1,Math.round(f.kp*SVAR[svar()].kp*(st.run&&st.run.utforska?kpFaktor(st.run.kapitel):1))); return {i, fid, ruta: rutor[i]!=null ? rutor[i] : slumpRuta(fid), namn:f.namn, sprite:f.sprite, kp, max:kp, rust:f.rust||0, typ:f.typ, anfall:f.anfall, skada:f.skada, attacker:f.attacker, boss:!!f.boss, folk:!!f.folk, stor:!!f.stor, liten:!!f.liten, besv:f.besv, stoppad:0, nackdel:false}; });
+  const fiender = fiendeIds.map((fid,i)=>{ const f=fiendeData(fid), kp=Math.max(1,Math.round(f.kp*(r.arena?1:SVAR[svar()].kp)*(st.run&&st.run.utforska?kpFaktor(st.run.kapitel):1))); return {i, fid, ruta: rutor[i]!=null ? rutor[i] : slumpRuta(fid), namn:f.namn, sprite:f.sprite, kp, max:kp, rust:f.rust||0, typ:f.typ, anfall:f.anfall, skada:f.skada, skadaFn:f.skadaFn, hjalte:f.hjalte, attacker:f.attacker, boss:!!f.boss, folk:!!f.folk, stor:!!f.stor, liten:!!f.liten, besv:f.besv, stoppad:0, nackdel:false}; });
   // Numrera likadana fiender
   const c={}; fiender.forEach(f=>{c[f.namn]=(c[f.namn]||0)+1}); const n={}; fiender.forEach(f=>{ if(c[f.namn]>1){ n[f.namn]=(n[f.namn]||0)+1; f.namn+=" "+n[f.namn]; } });
   r.party.forEach(id=>{ const x=rh(id); Object.assign(x,{tempRust:0,vapenbonus:null,gift:x.gift||false,maktig:false,raseri:false,undvikAllt:false,stoppad:0}); });
   strid = {fiender, runda:0, ordning:[], pos:0, logg:[], meny:"huvud", aktiv:null, salamander:0, boss:!!opt.boss, overraskad:!!opt.overraskad, svara:null, forsvar:null, slut:null};
-  strid.logg.push({text:opt.boss?"⚔ Slutstriden börjar!":"⚔ Striden börjar!",cls:"d"});
+  strid.logg.push({text:r.arena?"⚔ Publiken vrålar. Matchen börjar!":opt.boss?"⚔ Slutstriden börjar!":"⚔ Striden börjar!",cls:"d"});
   vy="run"; stridLoop();
 }
 function nyRunda(){
@@ -1019,7 +1024,8 @@ async function fiendeAgerar(f){
     if(!s.lyckat){ etikett("h:"+mal, "MISS", "#ffffff"); visaEffekt("h:"+mal, "miss"); return; }
     const fs = await fragaForsvar(mal, `${f.namn} träffar ${HJ[mal].namn} (${f.skada}${s.drake?", DRAKE – dubbel skada":""}).`);
     if(fs) return;
-    let d = R.slaTarning(f.skada); if(s.drake) d += R.slaTarning(f.skada);
+    const sl = () => f.skadaFn ? f.skadaFn() : R.slaTarning(f.skada);
+    let d = sl(); if(s.drake) d += sl();
     skadaHjalte(mal, d, f.namn);
     return;
   }
@@ -1238,7 +1244,7 @@ function hjalteMeny(id, h, x){
     <button class="btn" data-m="formaga" ${x.vp<3?"disabled":""}>${esc(h.formaga.namn)}<span class="sub">3 VP · ${esc(h.formaga.text)}</span></button>
     <button class="btn ghost" data-m="sak" ${harSak?"":"disabled"}>Använda något</button>
     ${doende?`<button class="btn ghost" data-m="hjalp">Rädda en döende vän<span class="sub">Läkekonst ${fv(h,"Läkekonst")}</span></button>`:""}
-    <button class="btn ghost small" data-m="fly">${strid.boss?"Fly (avbryter uppdraget)":"Fly"}</button>
+    <button class="btn ghost small" data-m="fly">${st.run.arena?"Ge upp matchen":strid.boss?"Fly (avbryter uppdraget)":"Fly"}</button>
   </div>`;
 }
 const r_party = () => st.run.party;
@@ -1256,12 +1262,15 @@ function stridMeny(m, d){
   if(m==="valt-sak"){ strid.valdSak={s:d.s,k:d.k}; const e=R.SAKER[d.s].effekt; if(e==="kp"||e==="vp"){ strid.meny="sak-mal"; return ritaStrid(); } return hjalteHandling(()=>anvandSak(id,d.s,d.k)); }
   if(m==="gor-sak") return hjalteHandling(()=>anvandSak(id, strid.valdSak.s, strid.valdSak.k, d.h));
   if(m==="gor-hjalp") return hjalteHandling(()=>hjalpDoende(id, d.h));
+  if(m==="fly" && st.run.arena){ if(!confirm("Ge upp matchen? Ingen kommer till skada.")) return;
+    return hjalteHandling(()=>{ strid.flydde=true; logga("Sällskapet kastar in handduken.","fel"); }); }
   if(m==="fly"){ if(!confirm(strid.boss?"Fly från slutstriden? Uppdraget misslyckas.":"Fly från striden? Varje fiende får ett sista anfall mot er, och ni får inget byte.")) return;
     return hjalteHandling(()=>{ strid.flydde=true; logga("Sällskapet flyr!","fel"); if(!strid.boss) strid.fiender.filter(f=>f.kp>0).forEach(f=>{ const mal=R.valj(st.run.party.filter(kanAgera)); if(!mal) return; const sk = f.typ==="folk"?R.slaTarning(f.skada):R.slaTarning((R.valj(f.attacker).skada)||"T4"); skadaHjalte(mal, sk, f.namn); }); }); }
 }
 
 // ---------- Slutet på en strid ----------
 function avslutaStrid(slut){
+  if(st.run && st.run.arena) return arenaSlut(slut);
   const r = st.run, steg = r.steg[r.i];
   const s = strid; strid = null;
   st.run.party.forEach(id=>{ const x=rh(id); x.tempRust=0; x.vapenbonus=null; x.raseri=false; x.undvikAllt=false; x.stoppad=0; x.agerat=false; x.maktig=false; });
@@ -1291,9 +1300,126 @@ function avslutaStrid(slut){
   avslutaRun(false, "Hela sällskapet har fallit i striden.");
 }
 
+// ================= ARENAN =================
+// Sällskapet möter valfria fiender, bossar eller andra hjältar. Allt är på låtsas:
+// ingen dör på riktigt (ingen hamnar i Efterriket), ingen får förbättringsslag (XP), guld eller byte,
+// och drycker som används kommer tillbaka. Inget i arenan sparas – efter matchen återställs spelet som det var.
+const ARENA_MAX = 6;   // högst sex motståndare åt gången
+const ARENA_BANOR = {sten:"Stenarenan", tra:"Träpalissaden"};
+const AREKEY = "fantasyvarlden-arena";
+let arena = (()=>{ try{ const a = JSON.parse(localStorage.getItem(AREKEY)||"null"); if(a) return {...a, resultat:null}; }catch(e){} return {bana:"sten", publik:true, lag:null, motst:{}, hjaltar:[], resultat:null}; })();
+function sparaArenaVal(){ try{ localStorage.setItem(AREKEY, JSON.stringify({bana:arena.bana, publik:arena.publik, lag:arena.lag, motst:arena.motst, hjaltar:arena.hjaltar})); }catch(e){} }
+const ISAK_ARENA = {
+  seger:["Isak nickar långsamt. ”Imponerande. Det räknas inte, men imponerande.”","Isak antecknar något. ”Spara den formen till när det gäller på riktigt.”","”Publiken älskar er”, säger Isak. ”Tyvärr betalar publiken inte.”"],
+  forlust:["Isak ler. ”Tur att det här bara var arenan.”","”Det där hade varit ert slut”, säger Isak torrt. ”Om det hade räknats.”","Isak slår ihop sina anteckningar. ”Ni vaknar på bänken utanför. Med huvudvärk. Det är allt.”"],
+  flydde:["Isak höjer på ett ögonbryn. ”Kloka människor vet när de ska kasta in handduken.”","”Publiken buar”, säger Isak. ”Men publiken har inga vapen.”"]
+};
+// En hjälte som motståndare: slåss med sitt bästa vapen, med sina egna KP och sin egen rustning
+function hjalteSomFiende(id){
+  const h = bygg(id);
+  const v = h.vapen.filter(n=>R.VAPEN[n]).sort((a,b)=>R.fardVarde(h,R.VAPEN[b].fard)-R.fardVarde(h,R.VAPEN[a].fard))[0];
+  const w = v ? R.VAPEN[v] : {fard:"Slagsmål", skada:"T3"}, sb = R.skadebonus(h, w.avstand);
+  return {namn:h.namn, typ:"folk", folk:true, hjalte:id, kp:R.maxKP(h), rust:R.rustning(h), anfall:R.fardVarde(h, w.fard),
+    skada:`${w.skada}${w.bonus?"+"+w.bonus:""}${sb?"+"+sb:""}`,
+    skadaFn:()=>R.slaTarning(w.skada)+(w.bonus||0)+(sb?R.slaTarning(sb):0)};
+}
+function fiendeData(fid){ return String(fid).startsWith("hj:") ? hjalteSomFiende(fid.slice(3)) : V.FIENDER[fid]; }
+function arenaLag(){ if(!arena.lag) arena.lag = st.sallskap.filter(id=>!ar(id)); arena.lag = arena.lag.filter(id=>HJ[id] && !ar(id)).slice(0,4); return arena.lag; }
+function arenaMotst(){
+  arena.hjaltar = arena.hjaltar.filter(id=>HJ[id] && !ar(id) && !arena.lag.includes(id));
+  const ut = [];
+  Object.entries(arena.motst).forEach(([fid,n])=>{ if(V.FIENDER[fid]) for(let i=0;i<n;i++) ut.push(fid); });
+  ut.sort((a,b)=>(V.FIENDER[b].boss?1:0)-(V.FIENDER[a].boss?1:0));   // bossarna först
+  return [...ut, ...arena.hjaltar.map(id=>"hj:"+id)];
+}
+const arenaBild = () => "arena_" + arena.bana + (arena.publik ? "" : "_tom");
+function ritaArena(){
+  const lag = arenaLag(), motst = arenaMotst(), antal = motst.length;
+  const levande = window.HJALTAR.filter(h=>!ar(h.id));
+  const fiendeRad = fid => { const f=V.FIENDER[fid], n=arena.motst[fid]||0;
+    return `<div class="arad ${n?"pa":""}"><span>${esc(f.namn)}<span class="small muted"> · KP ${f.kp}, rustning ${f.rust||0}</span></span>
+      <span class="aknapp"><button class="btn ghost small" data-minus="${fid}" ${n?"":"disabled"}>−</button><b>${n}</b><button class="btn ghost small" data-plus="${fid}" ${antal>=ARENA_MAX?"disabled":""}>+</button></span></div>`; };
+  const vanliga = Object.keys(V.FIENDER).filter(f=>!V.FIENDER[f].boss), bossar = Object.keys(V.FIENDER).filter(f=>V.FIENDER[f].boss);
+  const res = arena.resultat;
+  let html = `<div class="tv"><canvas id="arenascen" class="px"></canvas><span class="badge">${esc(ARENA_BANOR[arena.bana])}</span></div>`;
+  if(res){
+    html += `<section class="card quest"><h2>${res.slut==="seger"?"🏆 Seger i arenan!":res.slut==="flydde"?"Matchen avbruten":"Förlust i arenan"}</h2>
+      <p class="berattelse">${esc(res.text)}</p>
+      <div class="spelledare">${isakHtml(res.isakNr)}<div><span class="small muted">Spelledaren Isak</span><p class="berattelse" style="margin:2px 0 0">${esc(res.isak)}</p></div></div>
+      <p class="small muted">Ingen hamnar i Efterriket, ingen får förbättringsslag och inget guld. Allt är som innan matchen.</p>
+      <div class="row"><button class="btn red" data-a="kor" ${lag.length&&antal?"":"disabled"}>Revansch – samma match igen</button><button class="btn ghost small" data-a="stang">Ändra matchen</button></div></section>`;
+  }
+  html += `<section class="card"><h2>Arenan</h2>
+    <p class="muted">Här kan sällskapet möta vilka fiender och bossar ni vill – och till och med varandra. Allt är på låtsas: den som faller bärs ut och vaknar på bänken utanför. Ingen hamnar i Efterriket, och ingen får förbättringsslag, guld eller byte. Drycker och örter som används i arenan kommer tillbaka efteråt.</p>
+    <h3>Arena</h3>
+    <div class="row">${Object.entries(ARENA_BANOR).map(([k,n])=>`<button class="btn ${arena.bana===k?"":"ghost"} small" data-bana="${k}">${n}</button>`).join("")}
+      <button class="btn ${arena.publik?"":"ghost"} small" data-a="publik">${arena.publik?"Med publik":"Utan publik"}</button></div>
+  </section>
+  <section class="card"><h2>Ert lag <span class="small muted">(${lag.length} av 4)</span></h2>
+    <p class="small muted">Tryck på hjältarna som ska slåss för er.</p>
+    <div class="achips">${levande.map(h=>{ const pa=lag.includes(h.id), mot=arena.hjaltar.includes(h.id);
+      return `<button class="achip ${pa?"pa":""}" data-lag="${h.id}" ${!pa&&(lag.length>=4||mot)?"disabled":""}><canvas class="px" data-p="${h.id}"></canvas><span>${esc(h.namn)}</span></button>`; }).join("")}</div>
+  </section>
+  <section class="card"><h2>Motståndare <span class="small muted">(${antal} av ${ARENA_MAX})</span></h2>
+    <h3>Fiender</h3><div class="alista">${vanliga.map(fiendeRad).join("")}</div>
+    <h3>Bossar</h3><div class="alista">${bossar.map(fiendeRad).join("")}</div>
+    <h3>Andra hjältar</h3><p class="small muted">Hjältar som inte är med i ert lag kan ställa upp mot er. De slåss med sitt bästa vapen.</p>
+    <div class="achips">${levande.filter(h=>!lag.includes(h.id)).map(h=>{ const pa=arena.hjaltar.includes(h.id);
+      return `<button class="achip mot ${pa?"pa":""}" data-mot="${h.id}" ${!pa&&antal>=ARENA_MAX?"disabled":""}><canvas class="px" data-p="${h.id}"></canvas><span>${esc(h.namn)}</span></button>`; }).join("")||'<span class="small muted">Alla levande hjältar är med i ert lag.</span>'}</div>
+    ${antal?`<button class="btn ghost small" data-a="rensa">Rensa motståndarna</button>`:""}
+  </section>
+  <div class="row astart"><button class="btn red" data-a="kor" ${lag.length&&antal?"":"disabled"}>Till strid! <span class="small">(${lag.length} mot ${antal})</span>${lag.length&&antal?"":`<span class="sub">${lag.length?"Välj minst en motståndare":"Välj minst en hjälte"}</span>`}</button>
+    <button class="btn ghost small" data-a="hem">Till värdshuset</button></div>`;
+  app.innerHTML = html; fyllPortratt(app); fyllIsak(app);
+  const vis = motst.map((fid,i)=>{ const f=fiendeData(fid); return {...f, fid, i, kp:1, visa:true, ruta: f.hjalte ? figur(f.hjalte) : (G.fiendeRutor(fid)[0] ?? null)}; });
+  G.ritaScen($("#arenascen"), arenaBild(), vis, 7, null, lag.map(id=>({id, ruta:figur(id)})));
+  app.onclick = e => {
+    const b = e.target.closest("button"); if(!b || b.disabled) return;
+    const d = b.dataset;
+    if(d.a==="hem"){ arena.resultat=null; return ga("hem"); }
+    if(d.a==="kor") return startaArena();
+    if(d.a==="stang") arena.resultat=null;
+    if(d.a==="publik") arena.publik=!arena.publik;
+    if(d.a==="rensa"){ arena.motst={}; arena.hjaltar=[]; }
+    if(d.bana) arena.bana=d.bana;
+    if(d.plus && antal<ARENA_MAX) arena.motst[d.plus]=(arena.motst[d.plus]||0)+1;
+    if(d.minus){ arena.motst[d.minus]=Math.max(0,(arena.motst[d.minus]||0)-1); if(!arena.motst[d.minus]) delete arena.motst[d.minus]; }
+    if(d.lag){ arena.lag = lag.includes(d.lag) ? lag.filter(x=>x!==d.lag) : [...lag, d.lag]; }
+    if(d.mot){ arena.hjaltar = arena.hjaltar.includes(d.mot) ? arena.hjaltar.filter(x=>x!==d.mot) : [...arena.hjaltar, d.mot]; }
+    sparaArenaVal();
+    const y = window.scrollY; ritaArena(); window.scrollTo({top:y, behavior:"instant"});
+  };
+}
+function startaArena(){
+  const lag = arenaLag(), ids = arenaMotst();
+  if(!lag.length || !ids.length || strid) return;
+  arena.resultat = null;
+  // Kopia av allt som en strid kan ändra – läggs tillbaka efter matchen
+  const kopia = JSON.stringify({kassa:st.kassa, packning:st.packning, hj:st.hj, kronika:st.kronika, sallskap:st.sallskap});
+  const steg = [{typ:"rum", rumtyp:"arena", text:"", fiender:ids, rutor:ids.map(slumpRuta), fro:7}];
+  st.run = {arena:true, kopia, forra:st.run, q:{titel:"Arenan", plats:"Arenan", miljo:arenaBild()}, party:[...lag], steg, i:0, h:nyaHjaltar(lag), guld:0, logg:[], utfall:null};
+  logga(`${lag.map(id=>HJ[id].namn).join(", ")} kliver in i ${ARENA_BANOR[arena.bana].toLowerCase()}.`,"info");
+  startaStrid(ids, {});
+  window.scrollTo({top:0,behavior:"instant"});
+}
+function arenaSlut(slut){
+  const r = st.run, s = strid; strid = null;
+  const lag = r.party.map(id=>HJ[id].namn).join(", ");
+  const kvar = r.party.filter(id=>{ const x=rh(id); return !x.dod && x.kp>0; }).map(id=>HJ[id].namn);
+  const text = slut==="seger" ? `${lag} vinner matchen! ${kvar.length?kvar.join(", ")+" står kvar när dammet lagt sig.":""}`
+    : slut==="flydde" ? `${lag} kastade in handduken.`
+    : `Motståndarna vann matchen. ${lag} bärs ut ur arenan och vaknar på bänken utanför – med huvudvärk, men vid liv.`;
+  // Lägg tillbaka spelet precis som det var före matchen
+  Object.assign(st, JSON.parse(r.kopia)); st.run = r.forra || null;
+  const lista = ISAK_ARENA[slut] || ISAK_ARENA.forlust;
+  arena.resultat = {slut, text, isak:R.valj(lista), isakNr:Math.floor(Math.random()*64)};
+  vy = "arena"; ritaOm(); window.scrollTo({top:0,behavior:"instant"});
+}
+
 // ================= ÄVENTYRETS SLUT =================
 function avslutaRun(lyckat, orsak, gavUpp){
   const r = st.run; if(!r || r.utfall) return;
+  if(r.arena) return arenaSlut(lyckat ? "seger" : "forlust");
   const rad = [];
   // de som fortfarande ligger döende
   r.party.forEach(id=>{ const x=rh(id); if(x.doende) dodsslagDirekt(id); if(x.stabil){ x.stabil=false; x.kp=Math.max(1,x.kp); } });
