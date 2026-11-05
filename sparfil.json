@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:19:26.966Z",
+  "uppdaterad": "2026-11-05T18:19:41.613Z",
   "spel": {
     "version": 1,
-    "tid": 1793902763928,
+    "tid": 1793902778594,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -250,7 +250,7 @@
       "h": {
         "bacon": {
           "kp": 4,
-          "vp": 5,
+          "vp": 2,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -274,7 +274,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "monika": {
           "kp": 16,
@@ -306,10 +306,10 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 3,
+          "kp": 0,
           "vp": 11,
-          "doende": false,
-          "ok": 0,
+          "doende": true,
+          "ok": 1,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -588,6 +588,38 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi tar 3 skada (4 − 1 rustning) från Språng. KP 0/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [9 / 18 → 9] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta tar 9 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [10] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
