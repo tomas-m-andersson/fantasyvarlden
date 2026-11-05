@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:18:04.021Z",
+  "uppdaterad": "2026-11-05T18:18:09.582Z",
   "spel": {
     "version": 1,
-    "tid": 1793902680992,
+    "tid": 1793902686459,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -260,7 +260,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "monika": {
           "kp": 17,
@@ -284,10 +284,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "shinji": {
           "kp": 12,
@@ -302,7 +302,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Akrobatik"
+            "Akrobatik",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -311,7 +312,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Kort svärd"
         }
       },
       "guld": 0,
@@ -419,6 +421,18 @@
         {
           "text": "Orch faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [5] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Svartnisse tar 2 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
