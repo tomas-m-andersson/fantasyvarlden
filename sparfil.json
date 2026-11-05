@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:19:00.792Z",
+  "uppdaterad": "2026-11-05T18:19:06.668Z",
   "spel": {
     "version": 1,
-    "tid": 1793902737744,
+    "tid": 1793902743715,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -274,11 +274,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "monika": {
           "kp": 17,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -330,7 +330,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
@@ -531,6 +531,18 @@
         {
           "text": "Shinji Onishi (Kort båge) slår Pilbåge: [16] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [18 / 17 → 17] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
