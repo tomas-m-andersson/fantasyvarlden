@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:18:47.860Z",
+  "uppdaterad": "2026-11-05T18:19:00.792Z",
   "spel": {
     "version": 1,
-    "tid": 1793902724864,
+    "tid": 1793902737744,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -320,7 +320,8 @@
           "anvanda": [
             "Akrobatik",
             "Svärd",
-            "Smyga"
+            "Smyga",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -329,8 +330,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd"
+          "agerat": true,
+          "valtVapen": "Kort båge"
         }
       },
       "guld": 5,
@@ -526,6 +527,10 @@
         {
           "text": "Sabeltandad tiger 1 tar 14 skada (15 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [16] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
