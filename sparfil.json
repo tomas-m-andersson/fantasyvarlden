@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:49:06.011Z",
+  "uppdaterad": "2026-11-05T18:16:12.752Z",
   "spel": {
     "version": 1,
-    "tid": 1793900943071,
-    "kassa": 1334,
+    "tid": 1793902569627,
+    "kassa": 1085,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -13,9 +13,7 @@
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
-      "Flaska vin",
-      "Rött té",
-      "Läkande ört"
+      "Flaska vin"
     ],
     "sallskap": [
       "bacon",
@@ -27,14 +25,12 @@
         "dod": false,
         "bonus": {
           "Akrobatik": 1,
-          "Uppträda": 1,
-          "Slagvapen": 1
+          "Uppträda": 1
         },
-        "aventyr": 7,
-        "segrar": 4,
+        "aventyr": 6,
+        "segrar": 3,
         "vapen": [],
-        "rustning": null,
-        "figur": 29
+        "rustning": null
       },
       "pescatore": {
         "dod": false,
@@ -62,8 +58,7 @@
         "aventyr": 1,
         "segrar": 0,
         "vapen": [],
-        "rustning": null,
-        "figur": 7
+        "rustning": null
       },
       "gaston": {
         "dod": false,
@@ -77,11 +72,10 @@
       "bacon": {
         "dod": false,
         "bonus": {
-          "Yxor": 2,
-          "Finna dolda ting": 1
+          "Yxor": 2
         },
-        "aventyr": 4,
-        "segrar": 3,
+        "aventyr": 3,
+        "segrar": 2,
         "vapen": [],
         "rustning": null
       },
@@ -95,43 +89,25 @@
       },
       "shinji": {
         "dod": false,
-        "bonus": {
-          "Svärd": 1
-        },
-        "aventyr": 4,
-        "segrar": 3,
+        "bonus": {},
+        "aventyr": 3,
+        "segrar": 2,
         "vapen": [],
         "rustning": null,
         "figur": 10
-      },
-      "uranus": {
-        "dod": false,
-        "bonus": {},
-        "aventyr": 0,
-        "segrar": 0,
-        "vapen": [],
-        "rustning": null
       }
     },
     "tavla": [
       "skold",
-      "barnen"
+      "barnen",
+      "krusbar"
     ],
     "avklarade": {
       "skold": 1,
       "barnen": 1,
-      "rattor": 1,
-      "svartalf": 1
+      "rattor": 1
     },
     "kronika": [
-      {
-        "tid": "2026-11-05 18:48",
-        "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Den nya svartalfkungen” och fick 220 guld + 36 i byte."
-      },
-      {
-        "tid": "2026-11-05 15:02",
-        "text": "FF försökte köpa rött té. Det var slut."
-      },
       {
         "tid": "2026-11-05 13:11",
         "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Råttorna under Kras-Kras” och fick 180 guld + 28 i byte."
