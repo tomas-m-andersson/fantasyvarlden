@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:04:27.555Z",
+  "uppdaterad": "2026-11-05T12:04:35.372Z",
   "spel": {
     "version": 1,
-    "tid": 1793880264462,
+    "tid": 1793880272295,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -98,7 +98,8 @@
     },
     "tavla": [
       "hostvakt",
-      "slasby"
+      "slasby",
+      "gripagg"
     ],
     "avklarade": {
       "skold": 1,
