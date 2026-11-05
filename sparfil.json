@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:11:33.318Z",
+  "uppdaterad": "2026-11-05T12:11:38.689Z",
   "spel": {
     "version": 1,
-    "tid": 1793880690243,
-    "kassa": 877,
+    "tid": 1793880695568,
+    "kassa": 1085,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -24,10 +24,11 @@
       "monika": {
         "dod": false,
         "bonus": {
-          "Akrobatik": 1
+          "Akrobatik": 1,
+          "Uppträda": 1
         },
         "aventyr": 6,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": null
       },
@@ -71,10 +72,10 @@
       "bacon": {
         "dod": false,
         "bonus": {
-          "Yxor": 1
+          "Yxor": 2
         },
         "aventyr": 3,
-        "segrar": 1,
+        "segrar": 2,
         "vapen": [],
         "rustning": null
       },
@@ -90,7 +91,7 @@
         "dod": false,
         "bonus": {},
         "aventyr": 3,
-        "segrar": 1,
+        "segrar": 2,
         "vapen": [],
         "rustning": null,
         "figur": 10
@@ -102,9 +103,14 @@
     ],
     "avklarade": {
       "skold": 1,
-      "barnen": 1
+      "barnen": 1,
+      "rattor": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-05 13:11",
+        "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Råttorna under Kras-Kras” och fick 180 guld + 28 i byte."
+      },
       {
         "tid": "2026-11-05 13:04",
         "text": "Bacon, Monika Plöjer, Shinji Onishi utforskade Döda sjön och nådde kapitel 1 (0 rum). Sällskapet gav upp och vände hem."
@@ -244,7 +250,9 @@
           ],
           "rutor": [
             53
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Ni har fått tag på: Råttkungens krona. Råttkungen är besegrad!"
         }
       ],
       "i": 7,
@@ -260,7 +268,9 @@
           "saker": [
             "Flaska vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Yxor"
+          ],
           "anvanda": [
             "Yxor"
           ],
@@ -271,7 +281,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -286,7 +296,8 @@
             "Äppelcider"
           ],
           "markerade": [
-            "Slagvapen"
+            "Slagvapen",
+            "Uppträda"
           ],
           "anvanda": [
             "Uppträda",
@@ -296,10 +307,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -314,7 +325,8 @@
             "Torkat kött"
           ],
           "markerade": [
-            "Svärd"
+            "Svärd",
+            "Pilbåge"
           ],
           "anvanda": [
             "Finna dolda ting",
@@ -632,7 +644,52 @@
           "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "beloning": 180,
+        "avgift": 0,
+        "byte": 28,
+        "doda": [],
+        "forb": {
+          "bacon": [
+            {
+              "f": "Yxor",
+              "v": 9,
+              "s": 10,
+              "upp": true
+            }
+          ],
+          "monika": [
+            {
+              "f": "Slagvapen",
+              "v": 14,
+              "s": 11,
+              "upp": false
+            },
+            {
+              "f": "Uppträda",
+              "v": 8,
+              "s": 13,
+              "upp": true
+            }
+          ],
+          "shinji": [
+            {
+              "f": "Svärd",
+              "v": 10,
+              "s": 10,
+              "upp": false
+            },
+            {
+              "f": "Pilbåge",
+              "v": 10,
+              "s": 4,
+              "upp": false
+            }
+          ]
+        },
+        "rad": []
+      },
       "start": "2026-11-05 13:05"
     },
     "reset": 1793783047660,
