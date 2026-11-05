@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T14:00:44.452Z",
+  "uppdaterad": "2026-11-05T14:01:50.899Z",
   "spel": {
     "version": 1,
-    "tid": 1793887241472,
+    "tid": 1793887307708,
     "kassa": 1085,
     "packning": [
       "Läkedryck",
@@ -97,6 +97,14 @@
         "vapen": [],
         "rustning": null,
         "figur": 10
+      },
+      "uranus": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
       }
     },
     "tavla": [
