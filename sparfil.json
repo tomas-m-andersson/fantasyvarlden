@@ -1,14 +1,13 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:20:55.922Z",
+  "uppdaterad": "2026-11-05T18:21:03.492Z",
   "spel": {
     "version": 1,
-    "tid": 1793902852824,
+    "tid": 1793902859913,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
-      "Läkedryck",
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
@@ -257,7 +256,7 @@
       "i": 7,
       "h": {
         "bacon": {
-          "kp": 4,
+          "kp": 8,
           "vp": 2,
           "doende": false,
           "ok": 0,
@@ -343,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         }
       },
@@ -707,6 +706,14 @@
         },
         {
           "text": "Shinji Onishi återfår 11 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi använder läkedryck på Bacon. Återfå 2T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon återfår 4 KP.",
           "cls": "ok"
         }
       ],
