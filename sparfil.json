@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:09:52.687Z",
+  "uppdaterad": "2026-11-05T12:10:06.199Z",
   "spel": {
     "version": 1,
-    "tid": 1793880589543,
+    "tid": 1793880603245,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -260,7 +260,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -462,6 +462,18 @@
         {
           "text": "Jätteråtta 1 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi tar 0 skada (1 − 1 rustning) från Bett. KP 9/13.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [18] mot 9 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
