@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:20:01.855Z",
+  "uppdaterad": "2026-11-05T18:20:27.705Z",
   "spel": {
     "version": 1,
-    "tid": 1793902798799,
+    "tid": 1793902824435,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -230,7 +230,9 @@
           "rumtyp": "mote",
           "text": "En grottsal där taket försvinner upp i mörkret. Ben ligger utspridda över golvet – mest djurben. Mest.",
           "fro": 15619233,
-          "mote": "lik"
+          "mote": "lik",
+          "klar": true,
+          "utfallText": "Begravningen blir mest pinsam."
         },
         {
           "typ": "rum",
@@ -326,7 +328,8 @@
             "Svärd",
             "Smyga",
             "Pilbåge",
-            "Kniv"
+            "Kniv",
+            "Kunskap"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -675,6 +678,14 @@
         },
         {
           "text": "Shinji Onishi vaknar med 1 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår Kunskap: [13] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Begravningen blir mest pinsam.",
           "cls": "info"
         }
       ],
