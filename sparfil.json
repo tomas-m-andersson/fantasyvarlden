@@ -1,14 +1,13 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:22:37.275Z",
+  "uppdaterad": "2026-11-05T18:23:06.348Z",
   "spel": {
     "version": 1,
-    "tid": 1793902954313,
+    "tid": 1793902983419,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
-      "Läkedryck",
       "Läkedryck",
       "Läkedryck",
       "Flaska vin"
@@ -282,15 +281,15 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
         "monika": {
-          "kp": 3,
+          "kp": 0,
           "vp": 2,
-          "doende": false,
-          "ok": 0,
+          "doende": true,
+          "ok": 1,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -313,15 +312,15 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
         "shinji": {
-          "kp": 0,
+          "kp": 10,
           "vp": 8,
-          "doende": true,
-          "ok": 1,
+          "doende": false,
+          "ok": 0,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -846,6 +845,50 @@
         {
           "text": "Monika Plöjer tar 6 skada (7 − 1 rustning) från Orchhövdingen Grorm. KP 3/17.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 5 —",
+          "cls": "info"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Monika Plöjer: [12] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer parerar: [15 / 18 → 15] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 7 skada (8 − 1 rustning) från Orchhövdingen Grorm. KP 0/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "Monika Plöjer slår dödsslag mot FYS: [14] mot 17 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [5] mot 13 – lyckat (2 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Bacon använder läkedryck på Shinji Onishi. Återfå 2T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi kommer tillbaka på benen!",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi återfår 10 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 6 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
