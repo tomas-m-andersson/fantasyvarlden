@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:24:14.780Z",
+  "uppdaterad": "2026-11-05T18:24:20.770Z",
   "spel": {
     "version": 1,
-    "tid": 1793903051764,
-    "kassa": 1075,
+    "tid": 1793903060568,
+    "kassa": 1293,
     "packning": [
       "Läkande ört",
       "Läkedryck",
@@ -20,11 +20,13 @@
       "monika": {
         "dod": false,
         "bonus": {
-          "Akrobatik": 1,
-          "Uppträda": 1
+          "Akrobatik": 2,
+          "Uppträda": 1,
+          "Slagvapen": 1,
+          "Smyga": 1
         },
         "aventyr": 7,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": null
       },
@@ -68,10 +70,11 @@
       "bacon": {
         "dod": false,
         "bonus": {
-          "Yxor": 2
+          "Yxor": 3,
+          "Akrobatik": 1
         },
         "aventyr": 4,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": null
       },
@@ -87,7 +90,7 @@
         "dod": false,
         "bonus": {},
         "aventyr": 4,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": null,
         "figur": 10
@@ -100,9 +103,14 @@
     "avklarade": {
       "skold": 1,
       "barnen": 1,
-      "rattor": 1
+      "rattor": 1,
+      "krusbar": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-05 19:24",
+        "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Orcherna i Krusbärsberget” och fick 200 guld + 18 i byte."
+      },
       {
         "tid": "2026-11-05 13:11",
         "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Råttorna under Kras-Kras” och fick 180 guld + 28 i byte."
@@ -248,7 +256,9 @@
           ],
           "rutor": [
             29
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Ni har fått tag på: Gregers halsduk. Orchhövdingen Grorm är besegrad!"
         }
       ],
       "i": 7,
@@ -265,7 +275,8 @@
             "Flaska vin"
           ],
           "markerade": [
-            "Yxor"
+            "Yxor",
+            "Akrobatik"
           ],
           "anvanda": [
             "Akrobatik",
@@ -297,7 +308,8 @@
           ],
           "markerade": [
             "Akrobatik",
-            "Slagvapen"
+            "Slagvapen",
+            "Smyga"
           ],
           "anvanda": [
             "Akrobatik",
@@ -326,7 +338,9 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
+          "markerade": [
+            "Kniv"
+          ],
           "anvanda": [
             "Akrobatik",
             "Svärd",
@@ -1019,7 +1033,58 @@
           "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "beloning": 200,
+        "avgift": 0,
+        "byte": 18,
+        "doda": [],
+        "forb": {
+          "bacon": [
+            {
+              "f": "Yxor",
+              "v": 10,
+              "s": 15,
+              "upp": true
+            },
+            {
+              "f": "Akrobatik",
+              "v": 5,
+              "s": 14,
+              "upp": true
+            }
+          ],
+          "monika": [
+            {
+              "f": "Akrobatik",
+              "v": 6,
+              "s": 19,
+              "upp": true
+            },
+            {
+              "f": "Slagvapen",
+              "v": 14,
+              "s": 17,
+              "upp": true
+            },
+            {
+              "f": "Smyga",
+              "v": 5,
+              "s": 12,
+              "upp": true
+            }
+          ],
+          "shinji": [
+            {
+              "f": "Kniv",
+              "v": 14,
+              "s": 10,
+              "upp": false
+            }
+          ]
+        },
+        "rad": []
+      },
       "start": "2026-11-05 19:16"
     },
     "reset": 1793783047660,
