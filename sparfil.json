@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:11:02.401Z",
+  "uppdaterad": "2026-11-05T12:11:12.301Z",
   "spel": {
     "version": 1,
-    "tid": 1793880659303,
+    "tid": 1793880669279,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -329,7 +329,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         }
       },
@@ -570,6 +570,10 @@
         {
           "text": "Råttkungen tar 10 skada (11 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [13] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
