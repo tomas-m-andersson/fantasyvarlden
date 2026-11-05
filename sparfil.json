@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:43:38.398Z",
+  "uppdaterad": "2026-11-05T17:44:32.993Z",
   "spel": {
     "version": 1,
-    "tid": 1793900615476,
-    "kassa": 1083,
+    "tid": 1793900669945,
+    "kassa": 1078,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -239,7 +239,9 @@
           "rumtyp": "mote",
           "text": "En låg tunnel där alla utom ankorna måste huka sig. En rostig hjälm ligger upp och ner i ett hörn. Vinden viner genom gångarna som en sorgsen flöjt.",
           "fro": 64786317,
-          "mote": "torbyn"
+          "mote": "torbyn",
+          "klar": true,
+          "utfallText": "”Lucifer? Jag? Nej då.” Han är borta när ni blinkar. Er börs också. (−20 guld)"
         },
         {
           "typ": "rum",
@@ -333,7 +335,8 @@
           "anvanda": [
             "Pilbåge",
             "Kniv",
-            "Fingerfärdighet"
+            "Fingerfärdighet",
+            "Kunskap"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -346,7 +349,7 @@
           "valtVapen": "Kort båge"
         }
       },
-      "guld": 15,
+      "guld": 0,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
@@ -575,6 +578,18 @@
         {
           "text": "Shinji Onishi tar 2 skada från En låst port. KP 11/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår Kunskap: [6] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Ni betalar 20 guld.",
+          "cls": "info"
+        },
+        {
+          "text": "”Lucifer? Jag? Nej då.” Han är borta när ni blinkar. Er börs också. (−20 guld)",
+          "cls": "info"
         }
       ],
       "utfall": null,
