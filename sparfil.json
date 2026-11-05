@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:21:57.476Z",
+  "uppdaterad": "2026-11-05T18:22:06.639Z",
   "spel": {
     "version": 1,
-    "tid": 1793902914323,
+    "tid": 1793902923383,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -345,7 +345,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         }
       },
@@ -794,6 +794,10 @@
         {
           "text": "Orchhövdingen Grorm tar 2 skada (5 − 3 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [15] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
