@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:08:24.078Z",
+  "uppdaterad": "2026-11-05T12:08:30.842Z",
   "spel": {
     "version": 1,
-    "tid": 1793880501041,
+    "tid": 1793880507859,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -280,7 +280,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -405,6 +405,18 @@
         {
           "text": "Kultist från Tarragons Hand anfaller Shinji Onishi: [18] mot 12 – misslyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [7] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand tar 12 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
