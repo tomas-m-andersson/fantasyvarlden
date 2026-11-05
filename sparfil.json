@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:43:16.070Z",
+  "uppdaterad": "2026-11-05T17:43:28.258Z",
   "spel": {
     "version": 1,
-    "tid": 1793900593140,
+    "tid": 1793900605358,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -230,7 +230,9 @@
               "kloak",
               "gravfalt"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Shinji Onishi misslyckas och gör sig illa, men efter mycket svordomar tar ni er ändå förbi."
         },
         {
           "typ": "rum",
@@ -317,7 +319,7 @@
           "nackdelNasta": false
         },
         "shinji": {
-          "kp": 13,
+          "kp": 11,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -330,7 +332,8 @@
           "markerade": [],
           "anvanda": [
             "Pilbåge",
-            "Kniv"
+            "Kniv",
+            "Fingerfärdighet"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -564,6 +567,14 @@
         {
           "text": "Orch 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi slår Fingerfärdighet: [11] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 2 skada från En låst port. KP 11/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
