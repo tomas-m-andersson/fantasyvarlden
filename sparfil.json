@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:08:36.545Z",
+  "uppdaterad": "2026-11-05T12:08:41.654Z",
   "spel": {
     "version": 1,
-    "tid": 1793880513521,
+    "tid": 1793880518744,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -230,7 +230,7 @@
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "bacon": {
           "kp": 9,
