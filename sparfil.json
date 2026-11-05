@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:41:03.252Z",
+  "uppdaterad": "2026-11-05T17:41:11.292Z",
   "spel": {
     "version": 1,
-    "tid": 1793900460308,
+    "tid": 1793900468399,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -288,7 +288,7 @@
         },
         "monika": {
           "kp": 17,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -305,10 +305,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -446,6 +446,26 @@
         {
           "text": "Orch 1 tar 7 skada (8 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [6 / 5 → 5] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 3 tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 3 faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Orch 1 anfaller Shinji Onishi: [3] mot 12 – lyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
