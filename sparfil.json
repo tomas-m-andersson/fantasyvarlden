@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:46:29.013Z",
+  "uppdaterad": "2026-11-05T17:46:41.700Z",
   "spel": {
     "version": 1,
-    "tid": 1793900786123,
+    "tid": 1793900798814,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -293,12 +293,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 17,
-          "vp": 9,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -325,7 +325,7 @@
           "nackdelNasta": false
         },
         "shinji": {
-          "kp": 13,
+          "kp": 6,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -655,6 +655,38 @@
         {
           "text": "Bacon (Handyxa) slår Yxor med fördel: [11 / 17 → 11] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi parerar: [15] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 7 skada (8 − 1 rustning) från Klor. KP 6/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [14 / 5 → 5] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Svartnisse anfaller Bacon: [16] mot 10 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
