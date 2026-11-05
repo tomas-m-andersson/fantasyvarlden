@@ -68,7 +68,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
              : extra==="vila" ? (INNE_MILJO[miljoId] ? "lager_inne" : "lager_ute")
              : extra==="hinder:mur" ? (GATA[miljoId] || (INNE_MILJO[miljoId] ? "gata_inne" : "gata_ute"))
              : extra==="hinder:dorr" ? (INNE_MILJO[miljoId] ? "port_inne" : "port_ute")
-             : extra==="hinder:stege" ? "klippa"
+             : extra==="hinder:stege" ? (miljoId==="oken" ? "klippa_oken" : (miljoId==="ruin"||miljoId==="vesselberget") ? "klippa_ruin" : "klippa")
              : extra==="hinder:vatten" ? (INNE_MILJO[miljoId] ? "vatten_inne" : "vatten_ute") : miljoId;
   const bgVantar = window.BAKGRUND.rita(ctx, bgId, fro);
   // hur mycket längre ner (eller upp) marken ligger i just den här bilden – gäller hjältar, NPC:er och fiender
@@ -275,7 +275,7 @@ const UTSEENDE = {
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
 // ---------- Väder ----------
 // Vilka miljöer det kan regna i (inte grottor, kloaker eller öknen) och hur ofta: 1 rum på 4.
-const REGNMILJO = {port_ute:1, klippa:1, vatten_ute:1, skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1, boss_harpyor:1, boss_dodasjon:1};
+const REGNMILJO = {boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, klippa_ruin:1, port_ute:1, klippa:1, vatten_ute:1, skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1, boss_harpyor:1, boss_dodasjon:1};
 G.vader = (miljo, fro) => {
   if(!REGNMILJO[miljo] || !(window.BAKGRUND.harEgen && window.BAKGRUND.harEgen(miljo))) return null;
   const h = Math.imul((fro||7) >>> 0, 2654435761) >>> 0;
@@ -331,7 +331,7 @@ const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, 
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
 const HJ_START = { klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
-const KLYFTA_UTE = { port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
+const KLYFTA_UTE = { klippa_oken:1, klippa_ruin:1, boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 // Gåtan i sten: en förseglad dörr som stänger vägen, målad för varje sorts miljö
 const GATA = { grotta:"gata_inne", gruva:"gata_inne_gruva", gruva_kult:"gata_inne_gruva", kloak:"gata_inne_kloak",
   ruin:"gata_ute_ruin", vesselberget:"gata_ute_ruin", oken:"gata_ute_oken" };

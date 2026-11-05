@@ -472,7 +472,8 @@ function rumText(miljo, anvanda){
 // Platser med egna målade bakgrunder (bara bilden byts, inte rumstexter eller fiender)
 const PLATS_BILD = {"Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vesselberget":"vesselberget", "Bududuoar":"bududuoar"};
 // Egna bossrum: när bossen själv står i rummet byts bakgrunden (gäller både uppdrag och utforskning)
-const BOSS_BILD = {drake:"boss_drake", grip:"boss_grip", harpydrottning:"boss_harpyor", orchhovding:"boss_orch", svartalfkung:"boss_svartalf"};
+const BOSS_BILD = {drake:"boss_drake", grip:"boss_grip", harpydrottning:"boss_harpyor", orchhovding:"boss_orch", svartalfkung:"boss_svartalf",
+  rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding"};
 // Bossrum som hör till en plats i stället för en viss boss
 const BOSS_PLATS = {"Döda sjön":"boss_dodasjon"};
 function scenMiljo(m, steg){
