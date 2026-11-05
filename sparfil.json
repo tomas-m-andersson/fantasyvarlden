@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T14:00:25.494Z",
+  "uppdaterad": "2026-11-05T14:00:44.452Z",
   "spel": {
     "version": 1,
-    "tid": 1793887221985,
+    "tid": 1793887241472,
     "kassa": 1085,
     "packning": [
       "Läkedryck",
@@ -30,7 +30,8 @@
         "aventyr": 6,
         "segrar": 3,
         "vapen": [],
-        "rustning": null
+        "rustning": null,
+        "figur": 29
       },
       "pescatore": {
         "dod": false,
