@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:04:50.730Z",
+  "uppdaterad": "2026-11-05T12:05:09.825Z",
   "spel": {
     "version": 1,
-    "tid": 1793880287759,
+    "tid": 1793880306798,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -26,7 +26,7 @@
         "bonus": {
           "Akrobatik": 1
         },
-        "aventyr": 5,
+        "aventyr": 6,
         "segrar": 2,
         "vapen": [],
         "rustning": null
@@ -73,7 +73,7 @@
         "bonus": {
           "Yxor": 1
         },
-        "aventyr": 2,
+        "aventyr": 3,
         "segrar": 1,
         "vapen": [],
         "rustning": null
@@ -89,7 +89,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 2,
+        "aventyr": 3,
         "segrar": 1,
         "vapen": [],
         "rustning": null,
@@ -98,7 +98,6 @@
     },
     "tavla": [
       "skold",
-      "rattor",
       "barnen"
     ],
     "avklarade": {
@@ -131,7 +130,149 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "rattor",
+        "givare": "Eva",
+        "titel": "Råttorna under Kras-Kras",
+        "plats": "Kras-Kras kloaker",
+        "land": "Dargobar",
+        "miljo": "kloak",
+        "boss": "rattkung",
+        "beloning": 180,
+        "rum": 6,
+        "text": "Kras-Kras har ett fint avloppssystem som ingen använder – folk slänger fortfarande allt genom fönstren. I tunnlarna har råttorna vuxit sig enorma. Kentauren Eva på Evas uppdragsförmedling har fått in ett jobb.",
+        "foremal": "Råttkungens krona",
+        "svar": "Eva stampar med hovarna. ”Jobb är jobb.”"
+      },
+      "party": [
+        "bacon",
+        "monika",
+        "shinji"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "gycklare",
+          "jens": false
+        },
+        {
+          "typ": "resa",
+          "mote": "fjass",
+          "jens": false
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En sal med pelare täckta av slem. Spår av något med väldigt många tår. Något skrapar mot röret ovanför.",
+          "fro": 109079320
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Ett gammalt förråd som någon har bott i. Någon har ritat en pil och skrivit ”UT” – pilen pekar rakt in i väggen. Det stinker fruktansvärt.",
+          "fro": 234571587,
+          "fiender": [
+            "kultist",
+            "ratta"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "En rostig gallergrind som står på glänt. Svamp som växer i formen av ett ansikte. Ett avlägset brus, som av en stor ström.",
+          "fro": 280444663,
+          "falla": {
+            "namn": "Strömt vatten",
+            "text": "Vattnet stiger plötsligt.",
+            "skada": "T6"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En valvsal där allt avfall från Kras-Kras samlas. Ett tappat gräddtårtsfat, halvätet. Luften är så fuktig att det droppar från näsan.",
+          "fro": 65145034,
+          "fiender": [
+            "ratta",
+            "ratta"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Ett schakt som leder uppåt mot ett lock. Rester av en uppbruten skattkista. Det luktar faktiskt lite gott här – det är oroväckande.",
+          "fro": 14550729,
+          "fiender": [
+            "ratta",
+            "ratta"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 250204330,
+          "fiender": [
+            "rattkung"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "bacon": {
+          "kp": 17,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Flaska vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Råttorna under Kras-Kras” av Eva.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-05 13:05"
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
