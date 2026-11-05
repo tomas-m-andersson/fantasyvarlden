@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:05:53.385Z",
+  "uppdaterad": "2026-11-05T12:06:25.661Z",
   "spel": {
     "version": 1,
-    "tid": 1793880350456,
+    "tid": 1793880382501,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -161,7 +161,9 @@
         {
           "typ": "resa",
           "mote": "fjass",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Fjäss blir ännu mer nedstämd. Det smittar av sig. (alla förlorar VP)"
         },
         {
           "typ": "rum",
@@ -224,7 +226,7 @@
       "h": {
         "bacon": {
           "kp": 17,
-          "vp": 11,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -238,7 +240,7 @@
         },
         "monika": {
           "kp": 17,
-          "vp": 14,
+          "vp": 12,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -254,7 +256,7 @@
         },
         "shinji": {
           "kp": 13,
-          "vp": 11,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -279,6 +281,14 @@
         },
         {
           "text": "Gycklarna ber er artigt att sluta.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer slår Uppträda: [18] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Fjäss blir ännu mer nedstämd. Det smittar av sig. (alla förlorar VP)",
           "cls": "info"
         }
       ],
