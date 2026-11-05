@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:48:06.530Z",
+  "uppdaterad": "2026-11-05T17:48:11.206Z",
   "spel": {
     "version": 1,
-    "tid": 1793900883496,
+    "tid": 1793900888184,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -306,7 +306,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -330,10 +330,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -363,7 +363,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
@@ -812,6 +812,10 @@
         {
           "text": "Den nya svartalfkungen tar 7 skada (9 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
