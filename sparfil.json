@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-04T21:05:33.719Z",
+  "uppdaterad": "2026-11-05T11:32:40.352Z",
   "spel": {
     "version": 1,
-    "tid": 1793826330821,
+    "tid": 1793878357849,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -26,7 +26,7 @@
         "bonus": {
           "Akrobatik": 1
         },
-        "aventyr": 4,
+        "aventyr": 5,
         "segrar": 2,
         "vapen": [],
         "rustning": null
@@ -73,7 +73,7 @@
         "bonus": {
           "Yxor": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null
@@ -89,7 +89,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": null,
@@ -126,7 +126,154 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-doda-sjon",
+        "titel": "Döda sjön",
+        "plats": "Döda sjön",
+        "land": "Grador",
+        "miljo": "trask",
+        "boss": "gast",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "doda-sjon"
+      },
+      "party": [
+        "bacon",
+        "monika",
+        "shinji"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "Grönt vatten som bubblar illavarslande. Grodor sitter i rad och stirrar.",
+          "fro": 790547098
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Ett vassbälte högre än en hobbit. Rester av ett fiskeläger, övergivet i hast. Det plaskar någonstans i vassen.",
+          "fro": 565651390,
+          "fiender": [
+            "dendroid",
+            "dendroid"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En gammal hydda på pålar. Lyktgubbar dansar ute i dimman. Dyn suger tag i stövlarna.",
+          "fro": 358022418,
+          "fiender": [
+            "varg",
+            "ratta"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En gammal damm som har brustit. Döda fiskar flyter med magen upp. Det bubblar och puttrar runt omkring.",
+          "fro": 250783891,
+          "hinder": {
+            "namn": "Forsande vatten",
+            "text": "Vägen går genom strömt vatten. Den som inte kan simma får det jobbigt.",
+            "fard": "Simma",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "grotta",
+              "skog",
+              "kloak",
+              "trask"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 546057027,
+          "fiender": [
+            "gast"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "bacon": {
+          "kp": 17,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Flaska vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Döda sjön. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-05 12:32",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false,
+      "anvandaText": [
+        "Grönt vatten som bubblar illavarslande",
+        "Grodor sitter i rad och stirrar",
+        "Ett vassbälte högre än en hobbit",
+        "Rester av ett fiskeläger, övergivet i hast",
+        "Det plaskar någonstans i vassen",
+        "En gammal hydda på pålar",
+        "Lyktgubbar dansar ute i dimman",
+        "Dyn suger tag i stövlarna",
+        "En gammal damm som har brustit",
+        "Döda fiskar flyter med magen upp",
+        "Det bubblar och puttrar runt omkring"
+      ]
+    },
     "reset": 1793783047660,
     "rekord": {}
   }
