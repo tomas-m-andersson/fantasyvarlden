@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:42:55.057Z",
+  "uppdaterad": "2026-11-05T17:43:00.984Z",
   "spel": {
     "version": 1,
-    "tid": 1793900572132,
+    "tid": 1793900577946,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -307,10 +307,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -337,7 +337,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
@@ -542,6 +542,14 @@
         {
           "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [19] mot 14 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [16] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
