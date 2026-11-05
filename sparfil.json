@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:10:43.928Z",
+  "uppdaterad": "2026-11-05T12:11:02.401Z",
   "spel": {
     "version": 1,
-    "tid": 1793880640916,
+    "tid": 1793880659303,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -250,8 +250,8 @@
       "i": 7,
       "h": {
         "bacon": {
-          "kp": 9,
-          "vp": 6,
+          "kp": 8,
+          "vp": 3,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -271,11 +271,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 15,
+          "kp": 14,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -303,7 +303,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 9,
+          "kp": 8,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -538,6 +538,38 @@
         {
           "text": "Jätteråtta 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Råttkungen skickar en svärm råttor över hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 1 skada (2 − 1 rustning) från Svärm. KP 8/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 1 skada (2 − 1 rustning) från Svärm. KP 14/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 1 skada (2 − 1 rustning) från Svärm. KP 8/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [14 / 2 → 2] mot 9 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Råttkungen tar 10 skada (11 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
