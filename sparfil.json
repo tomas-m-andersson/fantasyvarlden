@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:21:19.927Z",
+  "uppdaterad": "2026-11-05T18:21:24.745Z",
   "spel": {
     "version": 1,
-    "tid": 1793902876844,
+    "tid": 1793902881539,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -298,7 +298,8 @@
             "Äppelcider"
           ],
           "markerade": [
-            "Akrobatik"
+            "Akrobatik",
+            "Slagvapen"
           ],
           "anvanda": [
             "Akrobatik",
@@ -313,11 +314,12 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Stridsgissel"
+          "valtVapen": "Stridsgissel",
+          "nackdelNasta": true
         },
         "shinji": {
           "kp": 8,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 3,
           "miss": 1,
@@ -343,7 +345,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         }
       },
@@ -748,6 +750,22 @@
         {
           "text": "Orchhövdingen Grorm tar 5 skada (8 − 3 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Shinji Onishi: Ledarskap!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer får en extra handling!",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [20] mot 14 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Monika Plöjer tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
         }
       ],
       "utfall": null,
