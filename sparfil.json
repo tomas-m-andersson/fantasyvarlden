@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:43:00.984Z",
+  "uppdaterad": "2026-11-05T17:43:08.043Z",
   "spel": {
     "version": 1,
-    "tid": 1793900577946,
+    "tid": 1793900585156,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -209,7 +209,9 @@
             56,
             10,
             5
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 13 guld."
         },
         {
           "typ": "rum",
@@ -341,7 +343,7 @@
           "valtVapen": "Kort båge"
         }
       },
-      "guld": 2,
+      "guld": 15,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
@@ -550,6 +552,18 @@
         {
           "text": "— Runda 4 —",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [8] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
