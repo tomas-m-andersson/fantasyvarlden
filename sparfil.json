@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:48:00.529Z",
+  "uppdaterad": "2026-11-05T17:48:06.530Z",
   "spel": {
     "version": 1,
-    "tid": 1793900877651,
+    "tid": 1793900883496,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -311,7 +311,7 @@
         },
         "monika": {
           "kp": 17,
-          "vp": 3,
+          "vp": 0,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -330,7 +330,7 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
@@ -339,7 +339,7 @@
         },
         "shinji": {
           "kp": 6,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -363,7 +363,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         }
       },
@@ -792,6 +792,26 @@
         {
           "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
           "cls": "info"
+        },
+        {
+          "text": "★ Shinji Onishi: Ledarskap!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer får en extra handling!",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [18 / 13 → 13] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen tar 7 skada (9 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
