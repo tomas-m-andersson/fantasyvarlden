@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:39:11.934Z",
+  "uppdaterad": "2026-11-05T17:39:29.129Z",
   "spel": {
     "version": 1,
-    "tid": 1793900349022,
+    "tid": 1793900366238,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -270,11 +270,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 17,
+          "kp": 12,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -295,7 +295,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Stridsgissel"
         },
         "shinji": {
           "kp": 13,
@@ -376,6 +377,34 @@
         {
           "text": "Rövare 2 tar 7 skada (8 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Rövare 2 anfaller Monika Plöjer: [8] mot 11 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 5 skada (6 − 1 rustning) från Rövare 2. KP 12/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [17] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [9] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 2 tar 10 skada (11 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
