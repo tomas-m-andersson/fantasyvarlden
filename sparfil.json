@@ -1,13 +1,12 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:20:44.442Z",
+  "uppdaterad": "2026-11-05T18:20:55.922Z",
   "spel": {
     "version": 1,
-    "tid": 1793902841437,
+    "tid": 1793902852824,
     "kassa": 1075,
     "packning": [
-      "Läkedryck",
       "Läkande ört",
       "Läkedryck",
       "Läkedryck",
@@ -313,11 +312,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 1,
+          "kp": 12,
           "vp": 11,
           "doende": false,
           "ok": 3,
@@ -701,6 +700,14 @@
         {
           "text": "— Runda 1 —",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer använder läkedryck på Shinji Onishi. Återfå 2T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi återfår 11 KP.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
