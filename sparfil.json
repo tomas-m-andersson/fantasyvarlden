@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:36:45.771Z",
+  "uppdaterad": "2026-11-05T17:37:41.400Z",
   "spel": {
     "version": 1,
-    "tid": 1793900202870,
+    "tid": 1793900258405,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -175,7 +175,12 @@
         {
           "typ": "resa",
           "mote": "rovarbakhall",
-          "jens": false
+          "jens": false,
+          "fiender": [
+            "rovare",
+            "rovare"
+          ],
+          "efterStrid": "Ni drar vapen."
         },
         {
           "typ": "resa",
@@ -255,7 +260,15 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "monika": {
           "kp": 17,
@@ -269,7 +282,15 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "shinji": {
           "kp": 13,
@@ -283,13 +304,29 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
+          "cls": "info"
+        },
+        {
+          "text": "Ni drar vapen.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
           "cls": "info"
         }
       ],
