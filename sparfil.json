@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:23:13.442Z",
+  "uppdaterad": "2026-11-05T18:23:20.931Z",
   "spel": {
     "version": 1,
-    "tid": 1793902990179,
+    "tid": 1793902997799,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -280,7 +280,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
@@ -907,6 +907,18 @@
         },
         {
           "text": "Shinji Onishi tar 3 skada (4 − 1 rustning) från Orchhövdingen Grorm. KP 7/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [4] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 2 skada (5 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [18] mot 14 – misslyckat",
           "cls": "fel"
         }
       ],
