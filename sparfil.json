@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:19:41.613Z",
+  "uppdaterad": "2026-11-05T18:19:50.926Z",
   "spel": {
     "version": 1,
-    "tid": 1793902778594,
+    "tid": 1793902787873,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -274,7 +274,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false,
+          "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 16,
@@ -620,6 +621,34 @@
         {
           "text": "Shinji Onishi slår dödsslag mot FYS: [10] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
           "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [9] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 1 tar 12 skada (13 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 1 faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [9] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
