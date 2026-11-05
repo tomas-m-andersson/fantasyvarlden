@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:21:28.999Z",
+  "uppdaterad": "2026-11-05T18:21:46.900Z",
   "spel": {
     "version": 1,
-    "tid": 1793902885915,
+    "tid": 1793902903842,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -282,9 +282,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "monika": {
           "kp": 16,
@@ -766,6 +766,10 @@
         {
           "text": "Naturligt 20! Monika Plöjer tappar balansen och får nackdel på nästa slag.",
           "cls": "dm"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med nackdel: [17 / 7 → 17] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
