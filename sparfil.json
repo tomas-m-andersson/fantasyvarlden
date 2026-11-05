@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:16:49.790Z",
+  "uppdaterad": "2026-11-05T18:17:04.658Z",
   "spel": {
     "version": 1,
-    "tid": 1793902606812,
-    "kassa": 1085,
+    "tid": 1793902621590,
+    "kassa": 1075,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -167,7 +167,9 @@
         {
           "typ": "resa",
           "mote": "vagtull",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Vakten stämplar något och vinkar er vidare."
         },
         {
           "typ": "rum",
@@ -227,7 +229,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "bacon": {
           "kp": 17,
@@ -280,6 +282,14 @@
         },
         {
           "text": "Det luktar fantastiskt. Ni går hungriga vidare.",
+          "cls": "info"
+        },
+        {
+          "text": "Ni betalar 10 guld.",
+          "cls": "info"
+        },
+        {
+          "text": "Vakten stämplar något och vinkar er vidare.",
           "cls": "info"
         }
       ],
