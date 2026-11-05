@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:47:23.111Z",
+  "uppdaterad": "2026-11-05T17:47:30.465Z",
   "spel": {
     "version": 1,
-    "tid": 1793900840204,
+    "tid": 1793900847418,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -251,6 +251,12 @@
           "fiender": [
             "svartnisse",
             "tiger"
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 10 guld.",
+          "rutor": [
+            40,
+            10
           ]
         },
         {
@@ -269,7 +275,7 @@
           ]
         }
       ],
-      "i": 5,
+      "i": 6,
       "h": {
         "bacon": {
           "kp": 11,
@@ -293,7 +299,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -350,11 +356,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
-      "guld": 0,
+      "guld": 10,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
