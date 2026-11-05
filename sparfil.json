@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:16:12.752Z",
+  "uppdaterad": "2026-11-05T18:16:33.806Z",
   "spel": {
     "version": 1,
-    "tid": 1793902569627,
+    "tid": 1793902590862,
     "kassa": 1085,
     "packning": [
       "Läkedryck",
@@ -27,7 +27,7 @@
           "Akrobatik": 1,
           "Uppträda": 1
         },
-        "aventyr": 6,
+        "aventyr": 7,
         "segrar": 3,
         "vapen": [],
         "rustning": null
@@ -74,7 +74,7 @@
         "bonus": {
           "Yxor": 2
         },
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 2,
         "vapen": [],
         "rustning": null
@@ -90,7 +90,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 2,
         "vapen": [],
         "rustning": null,
@@ -99,8 +99,7 @@
     },
     "tavla": [
       "skold",
-      "barnen",
-      "krusbar"
+      "barnen"
     ],
     "avklarade": {
       "skold": 1,
@@ -137,7 +136,150 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "krusbar",
+        "givare": "Clark",
+        "titel": "Orcherna i Krusbärsberget",
+        "plats": "Krusbärsberget",
+        "land": "Bedinin",
+        "miljo": "grotta",
+        "boss": "orchhovding",
+        "beloning": 200,
+        "rum": 6,
+        "text": "Clark på värdshuset Den stegrande hingsten har inte glömt sin son Greger, som dog i Krusbärsberget. Orcherna där har blivit fler och tar nu karavaner vid Draksjön. Clark vill ha hämnd.",
+        "foremal": "Gregers halsduk",
+        "svar": "Clark torkar ett glas med en smutsig trasa och tittar bort."
+      },
+      "party": [
+        "bacon",
+        "monika",
+        "shinji"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "dunker",
+          "jens": false
+        },
+        {
+          "typ": "resa",
+          "mote": "vagtull",
+          "jens": false
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En grotta full av glittrande kristaller. Fladdermöss hänger i taket och följer er med blicken. Ett avlägset muller får golvet att darra.",
+          "fro": 865249781,
+          "hinder": {
+            "namn": "En bred klyfta",
+            "text": "En klyfta skär av vägen. Den går att hoppa över – om man är smidig.",
+            "fard": "Akrobatik",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "berg",
+              "grotta",
+              "ruin"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "En trång passage med kalla, svettiga väggar. Någon har lämnat ett par strumpor på tork. Det droppar oavbrutet någonstans i mörkret.",
+          "fro": 73480928
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En smal gång som slingrar sig nedåt i mörkret. Ett gammalt rep hänger ner ur ett hål i taket. Det luktar fuktig ull och svavel.",
+          "fro": 142695635,
+          "fiender": [
+            "ratta",
+            "tiger",
+            "tiger"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "mote",
+          "text": "En grottsal där taket försvinner upp i mörkret. Ben ligger utspridda över golvet – mest djurben. Mest.",
+          "fro": 15619233,
+          "mote": "lik"
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En sluttande gång täckt av löst grus. En halväten ost ligger på en sten. Luften är så kall att andedräkten syns. Någon har lämnat fyra kilo bröd i en prydlig hög.",
+          "fro": 645296448
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 422540536,
+          "fiender": [
+            "orchhovding"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "bacon": {
+          "kp": 17,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Flaska vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Orcherna i Krusbärsberget” av Clark.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-05 19:16"
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
