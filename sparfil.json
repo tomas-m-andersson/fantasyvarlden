@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:48:23.209Z",
+  "uppdaterad": "2026-11-05T17:48:27.516Z",
   "spel": {
     "version": 1,
-    "tid": 1793900900326,
-    "kassa": 1078,
+    "tid": 1793900904622,
+    "kassa": 1334,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -27,10 +27,11 @@
         "dod": false,
         "bonus": {
           "Akrobatik": 1,
-          "Uppträda": 1
+          "Uppträda": 1,
+          "Slagvapen": 1
         },
         "aventyr": 7,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": null,
         "figur": 29
@@ -76,10 +77,11 @@
       "bacon": {
         "dod": false,
         "bonus": {
-          "Yxor": 2
+          "Yxor": 2,
+          "Finna dolda ting": 1
         },
         "aventyr": 4,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": null
       },
@@ -93,9 +95,11 @@
       },
       "shinji": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Svärd": 1
+        },
         "aventyr": 4,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": null,
         "figur": 10
@@ -116,9 +120,14 @@
     "avklarade": {
       "skold": 1,
       "barnen": 1,
-      "rattor": 1
+      "rattor": 1,
+      "svartalf": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-05 18:48",
+        "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Den nya svartalfkungen” och fick 220 guld + 36 i byte."
+      },
       {
         "tid": "2026-11-05 15:02",
         "text": "FF försökte köpa rött té. Det var slut."
@@ -278,7 +287,9 @@
           ],
           "rutor": [
             49
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Ni har fått tag på: Svartalfkungens krona. Den nya svartalfkungen är besegrad!"
         }
       ],
       "i": 7,
@@ -294,7 +305,9 @@
           "saker": [
             "Flaska vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Finna dolda ting"
+          ],
           "anvanda": [
             "Yxor",
             "Finna dolda ting"
@@ -333,7 +346,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -348,7 +361,9 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
             "Pilbåge",
             "Kniv",
@@ -830,7 +845,40 @@
           "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "beloning": 220,
+        "avgift": 0,
+        "byte": 36,
+        "doda": [],
+        "forb": {
+          "bacon": [
+            {
+              "f": "Finna dolda ting",
+              "v": 5,
+              "s": 19,
+              "upp": true
+            }
+          ],
+          "monika": [
+            {
+              "f": "Slagvapen",
+              "v": 14,
+              "s": 18,
+              "upp": true
+            }
+          ],
+          "shinji": [
+            {
+              "f": "Svärd",
+              "v": 10,
+              "s": 14,
+              "upp": true
+            }
+          ]
+        },
+        "rad": []
+      },
       "start": "2026-11-05 18:36"
     },
     "reset": 1793783047660,
