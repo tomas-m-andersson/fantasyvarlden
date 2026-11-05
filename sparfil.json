@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:47:40.362Z",
+  "uppdaterad": "2026-11-05T17:48:00.529Z",
   "spel": {
     "version": 1,
-    "tid": 1793900857456,
+    "tid": 1793900877651,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -285,7 +285,7 @@
       "h": {
         "bacon": {
           "kp": 11,
-          "vp": 3,
+          "vp": 0,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -306,7 +306,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -333,7 +333,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -764,6 +764,34 @@
         {
           "text": "Bacon slår Finna dolda ting: [5] mot 5 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Den nya svartalfkungen anfaller Monika Plöjer: [9] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer parerar: [16 / 7 → 7] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [15 / 5 → 5] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen tar 7 skada (9 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
         }
       ],
       "utfall": null,
