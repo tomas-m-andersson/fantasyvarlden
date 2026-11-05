@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:11:17.747Z",
+  "uppdaterad": "2026-11-05T12:11:23.915Z",
   "spel": {
     "version": 1,
-    "tid": 1793880674659,
+    "tid": 1793880680851,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -271,7 +271,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -589,6 +589,14 @@
         },
         {
           "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [8] mot 9 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Råttkungen tar 0 skada (1 − 1 rustning).",
           "cls": "info"
         }
       ],
