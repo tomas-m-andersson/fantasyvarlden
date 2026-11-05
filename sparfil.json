@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:48:11.206Z",
+  "uppdaterad": "2026-11-05T17:48:23.209Z",
   "spel": {
     "version": 1,
-    "tid": 1793900888184,
+    "tid": 1793900900326,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -333,7 +333,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -816,6 +816,18 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [3] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen tar 5 skada (7 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
