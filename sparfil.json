@@ -1,14 +1,13 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:23:06.348Z",
+  "uppdaterad": "2026-11-05T18:23:13.442Z",
   "spel": {
     "version": 1,
-    "tid": 1793902983419,
+    "tid": 1793902990179,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
-      "Läkedryck",
       "Läkedryck",
       "Flaska vin"
     ],
@@ -286,10 +285,10 @@
           "nackdelNasta": false
         },
         "monika": {
-          "kp": 0,
+          "kp": 8,
           "vp": 2,
-          "doende": true,
-          "ok": 1,
+          "doende": false,
+          "ok": 0,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -317,7 +316,7 @@
           "nackdelNasta": false
         },
         "shinji": {
-          "kp": 10,
+          "kp": 7,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -344,7 +343,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         }
       },
@@ -889,6 +888,26 @@
         {
           "text": "— Runda 6 —",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi använder läkedryck på Monika Plöjer. Återfå 2T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer kommer tillbaka på benen!",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer återfår 8 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Shinji Onishi: [14] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 3 skada (4 − 1 rustning) från Orchhövdingen Grorm. KP 7/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
