@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:08:41.654Z",
+  "uppdaterad": "2026-11-05T12:09:10.505Z",
   "spel": {
     "version": 1,
-    "tid": 1793880518744,
+    "tid": 1793880547540,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -198,7 +198,9 @@
             "namn": "Strömt vatten",
             "text": "Vattnet stiger plötsligt.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Vattnet stiger plötsligt. Shinji Onishi får ta smällen."
         },
         {
           "typ": "rum",
@@ -286,7 +288,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 13,
+          "kp": 9,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -301,7 +303,8 @@
           ],
           "anvanda": [
             "Finna dolda ting",
-            "Svärd"
+            "Svärd",
+            "Upptäcka fara"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -419,6 +422,18 @@
         {
           "text": "Kultist från Tarragons Hand faller!",
           "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi slår Upptäcka fara: [13] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Vattnet stiger plötsligt.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada från Strömt vatten. KP 9/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
