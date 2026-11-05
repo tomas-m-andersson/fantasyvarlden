@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:23:34.333Z",
+  "uppdaterad": "2026-11-05T18:23:39.013Z",
   "spel": {
     "version": 1,
-    "tid": 1793903011322,
+    "tid": 1793903015906,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -311,7 +311,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -935,6 +935,10 @@
         },
         {
           "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [19] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Shinji Onishi: [11] mot 14 – lyckat",
           "cls": "fel"
         }
       ],
