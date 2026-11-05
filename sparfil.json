@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:17:26.582Z",
+  "uppdaterad": "2026-11-05T18:17:41.191Z",
   "spel": {
     "version": 1,
-    "tid": 1793902643426,
+    "tid": 1793902661017,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -195,7 +195,11 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En trång passage med kalla, svettiga väggar. Någon har lämnat ett par strumpor på tork. Det droppar oavbrutet någonstans i mörkret.",
-          "fro": 73480928
+          "fro": 73480928,
+          "fiender": [
+            "svartnisse",
+            "orch"
+          ]
         },
         {
           "typ": "rum",
@@ -231,10 +235,10 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "bacon": {
-          "kp": 11,
+          "kp": 14,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -247,10 +251,18 @@
           "markerade": [],
           "anvanda": [
             "Akrobatik"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "monika": {
-          "kp": 16,
+          "kp": 17,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -265,10 +277,18 @@
           ],
           "anvanda": [
             "Akrobatik"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "shinji": {
-          "kp": 12,
+          "kp": 13,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -281,7 +301,15 @@
           "markerade": [],
           "anvanda": [
             "Akrobatik"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -329,6 +357,22 @@
         {
           "text": "Shinji Onishi tar 1 skada från En bred klyfta. KP 12/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "Mitt i vilan hörs steg…",
+          "cls": "fel"
+        },
+        {
+          "text": "Fienden hinner först!",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
