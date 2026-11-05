@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:47:09.339Z",
+  "uppdaterad": "2026-11-05T17:47:17.546Z",
   "spel": {
     "version": 1,
-    "tid": 1793900826450,
+    "tid": 1793900834668,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -293,7 +293,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -351,7 +351,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort båge"
+          "valtVapen": "Kort svärd"
         }
       },
       "guld": 0,
@@ -727,6 +727,14 @@
         {
           "text": "— Runda 4 —",
           "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [12] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [17] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
