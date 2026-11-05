@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:08:30.842Z",
+  "uppdaterad": "2026-11-05T12:08:36.545Z",
   "spel": {
     "version": 1,
-    "tid": 1793880507859,
+    "tid": 1793880513521,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -185,7 +185,9 @@
           "rutor": [
             13,
             44
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld."
         },
         {
           "typ": "rum",
@@ -252,7 +254,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -280,7 +282,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -308,11 +310,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
-      "guld": 8,
+      "guld": 14,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Råttorna under Kras-Kras” av Eva.",
