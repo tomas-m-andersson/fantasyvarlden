@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:07:13.025Z",
+  "uppdaterad": "2026-11-05T12:07:49.669Z",
   "spel": {
     "version": 1,
-    "tid": 1793880430001,
+    "tid": 1793880466407,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -242,7 +242,15 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "monika": {
           "kp": 17,
@@ -258,7 +266,15 @@
           "markerade": [],
           "anvanda": [
             "Uppträda"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "shinji": {
           "kp": 13,
@@ -271,10 +287,22 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
-            "Finna dolda ting"
-          ]
+            "Finna dolda ting",
+            "Svärd"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         }
       },
       "guld": 8,
@@ -302,6 +330,22 @@
         {
           "text": "Shinji Onishi slår Finna dolda ting: [13] mot 5 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [1] mot 10 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Kultist från Tarragons Hand tar 7 skada.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
