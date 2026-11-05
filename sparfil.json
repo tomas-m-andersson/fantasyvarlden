@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:08:11.589Z",
+  "uppdaterad": "2026-11-05T12:08:18.835Z",
   "spel": {
     "version": 1,
-    "tid": 1793880488548,
+    "tid": 1793880495833,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -252,7 +252,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -280,7 +280,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -388,6 +388,14 @@
         },
         {
           "text": "Bacon tar 7 skada (8 − 1 rustning) från Kultist från Tarragons Hand. KP 9/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [15] mot 10 – misslyckat",
           "cls": "fel"
         }
       ],
