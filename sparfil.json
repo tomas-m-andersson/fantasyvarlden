@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:21:03.492Z",
+  "uppdaterad": "2026-11-05T18:21:10.563Z",
   "spel": {
     "version": 1,
-    "tid": 1793902859913,
+    "tid": 1793902867395,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -282,8 +282,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Handyxa"
+          "agerat": true,
+          "valtVapen": "Handyxa",
+          "nackdelNasta": true
         },
         "monika": {
           "kp": 16,
@@ -315,7 +316,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 12,
+          "kp": 8,
           "vp": 11,
           "doende": false,
           "ok": 3,
@@ -715,6 +716,22 @@
         {
           "text": "Bacon återfår 4 KP.",
           "cls": "ok"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [20] mot 10 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Bacon tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Shinji Onishi: [8] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Orchhövdingen Grorm. KP 8/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
