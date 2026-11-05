@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:39:46.366Z",
+  "uppdaterad": "2026-11-05T17:40:26.365Z",
   "spel": {
     "version": 1,
-    "tid": 1793900383502,
+    "tid": 1793900423348,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -191,7 +191,9 @@
         {
           "typ": "resa",
           "mote": "dunker",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Den bästa måltiden i ert liv. Alla läker. (alla läker)"
         },
         {
           "typ": "rum",
@@ -202,6 +204,11 @@
             "orch",
             "orch",
             "orch"
+          ],
+          "rutor": [
+            56,
+            10,
+            5
           ]
         },
         {
@@ -252,7 +259,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "bacon": {
           "kp": 17,
@@ -280,8 +287,8 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 12,
-          "vp": 11,
+          "kp": 17,
+          "vp": 14,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -330,7 +337,7 @@
           "valtVapen": "Kort båge"
         }
       },
-      "guld": 12,
+      "guld": 2,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
@@ -411,6 +418,14 @@
         {
           "text": "Rövare 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Ni betalar 10 guld.",
+          "cls": "info"
+        },
+        {
+          "text": "Den bästa måltiden i ert liv. Alla läker. (alla läker)",
+          "cls": "info"
         }
       ],
       "utfall": null,
