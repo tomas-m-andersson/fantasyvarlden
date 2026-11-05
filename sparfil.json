@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:38:33.060Z",
+  "uppdaterad": "2026-11-05T17:38:51.756Z",
   "spel": {
     "version": 1,
-    "tid": 1793900310108,
+    "tid": 1793900328847,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -260,7 +260,9 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Yxor"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -268,7 +270,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 17,
@@ -346,6 +349,10 @@
         {
           "text": "Rövare 1 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [18] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
