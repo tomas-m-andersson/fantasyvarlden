@@ -518,7 +518,7 @@ function ritaPlatser(){
   const party = st.sallskap.filter(id=>!ar(id));
   app.innerHTML = `<section class="card"><h2>Utforska en plats</h2><p class="muted">Ingen uppdragsgivare och ingen berättelse – välj en plats och se hur djupt ni kommer. Varje kapitel är ${KAPITEL_RUM-1} rum och en boss. Efter bossen väljer ni att gå djupare eller gå hem med bytet. Faller hela sällskapet förlorar ni allt ni hittat.</p></section>
     <div class="platsgrid">${V.PLATSER.map(p=>{ const rek=st.rekord[p.id]; return `<button class="platskort" data-plats="${p.id}" ${party.length?"":"disabled"}>
-      <canvas class="px" data-scen="${p.miljo}"></canvas>
+      <canvas class="px" data-scen="${PLATS_BILD[p.namn]||p.miljo}"></canvas>
       <span class="pk"><b>${esc(p.namn)}</b><span class="small muted">${esc(p.land)} · ${esc(V.MILJO[p.miljo].namn)}</span>
       <span class="small">${esc(p.text)}</span>
       ${rek?`<span class="tag gold">Rekord: kapitel ${rek.kapitel}, rum ${rek.djup}</span>`:`<span class="tag">Inte utforskad än</span>`}</span></button>`}).join("")}</div>
