@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:23:58.935Z",
+  "uppdaterad": "2026-11-05T18:24:05.713Z",
   "spel": {
     "version": 1,
-    "tid": 1793903035866,
+    "tid": 1793903042747,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -280,7 +280,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
@@ -334,7 +334,8 @@
             "Pilbåge",
             "Kniv",
             "Kunskap",
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -971,6 +972,18 @@
         },
         {
           "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Orchhövdingen Grorm. KP 6/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 9 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [16] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Shinji Onishi: [8] mot 14 – lyckat",
           "cls": "fel"
         }
       ],
