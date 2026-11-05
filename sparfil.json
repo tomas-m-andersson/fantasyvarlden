@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T14:01:50.899Z",
+  "uppdaterad": "2026-11-05T14:02:00.863Z",
   "spel": {
     "version": 1,
-    "tid": 1793887307708,
-    "kassa": 1085,
+    "tid": 1793887317902,
+    "kassa": 1083,
     "packning": [
       "Läkedryck",
       "Läkande ört",
@@ -13,7 +13,8 @@
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
-      "Flaska vin"
+      "Flaska vin",
+      "Rött té"
     ],
     "sallskap": [
       "bacon",
