@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:20:40.929Z",
+  "uppdaterad": "2026-11-05T18:20:44.442Z",
   "spel": {
     "version": 1,
-    "tid": 1793902837803,
+    "tid": 1793902841437,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -249,10 +249,13 @@
           "fro": 422540536,
           "fiender": [
             "orchhovding"
+          ],
+          "rutor": [
+            29
           ]
         }
       ],
-      "i": 6,
+      "i": 7,
       "h": {
         "bacon": {
           "kp": 4,
@@ -694,6 +697,10 @@
         {
           "text": "Shinji Onishi slår Finna dolda ting: [16] mot 5 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
