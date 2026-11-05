@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:10:31.267Z",
+  "uppdaterad": "2026-11-05T12:10:43.928Z",
   "spel": {
     "version": 1,
-    "tid": 1793880628094,
+    "tid": 1793880640916,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -230,7 +230,9 @@
           "rutor": [
             47,
             32
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld."
         },
         {
           "typ": "rum",
@@ -239,10 +241,13 @@
           "fro": 250204330,
           "fiender": [
             "rattkung"
+          ],
+          "rutor": [
+            53
           ]
         }
       ],
-      "i": 6,
+      "i": 7,
       "h": {
         "bacon": {
           "kp": 9,
@@ -266,11 +271,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 16,
+          "kp": 15,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -314,7 +319,8 @@
           "anvanda": [
             "Finna dolda ting",
             "Svärd",
-            "Upptäcka fara"
+            "Upptäcka fara",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -324,10 +330,10 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort svärd"
+          "valtVapen": "Kort båge"
         }
       },
-      "guld": 22,
+      "guld": 28,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Råttorna under Kras-Kras” av Eva.",
@@ -511,6 +517,26 @@
         },
         {
           "text": "Jätteråtta 1 faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 1 skada (2 − 1 rustning) från Bett. KP 15/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [3] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 2 tar 6 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 2 faller!",
           "cls": "d"
         }
       ],
