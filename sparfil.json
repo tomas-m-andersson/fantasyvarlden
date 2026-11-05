@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:06:35.620Z",
+  "uppdaterad": "2026-11-05T12:07:06.936Z",
   "spel": {
     "version": 1,
-    "tid": 1793880392548,
+    "tid": 1793880423926,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -169,7 +169,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En sal med pelare täckta av slem. Spår av något med väldigt många tår. Något skrapar mot röret ovanför.",
-          "fro": 109079320
+          "fro": 109079320,
+          "klar": true,
+          "utfallText": "Shinji Onishi hittar 8 guld."
         },
         {
           "typ": "rum",
@@ -266,10 +268,12 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Finna dolda ting"
+          ]
         }
       },
-      "guld": 0,
+      "guld": 8,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Råttorna under Kras-Kras” av Eva.",
@@ -290,6 +294,10 @@
         {
           "text": "Fjäss blir ännu mer nedstämd. Det smittar av sig. (alla förlorar VP)",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår Finna dolda ting: [13] mot 5 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
