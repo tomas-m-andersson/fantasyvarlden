@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:08:05.419Z",
+  "uppdaterad": "2026-11-05T12:08:11.589Z",
   "spel": {
     "version": 1,
-    "tid": 1793880482350,
+    "tid": 1793880488548,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -231,7 +231,7 @@
       "i": 3,
       "h": {
         "bacon": {
-          "kp": 16,
+          "kp": 9,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -266,9 +266,12 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [],
+          "markerade": [
+            "Slagvapen"
+          ],
           "anvanda": [
-            "Uppträda"
+            "Uppträda",
+            "Slagvapen"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -277,7 +280,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Stridsgissel"
         },
         "shinji": {
           "kp": 13,
@@ -360,6 +364,30 @@
         },
         {
           "text": "Bacon (Handyxa) slår Yxor: [17] mot 9 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [1] mot 14 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Jätteråtta tar 19 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Kultist från Tarragons Hand anfaller Bacon: [1] mot 12 – NATURLIGT 1!",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 7 skada (8 − 1 rustning) från Kultist från Tarragons Hand. KP 9/17.",
           "cls": "fel"
         }
       ],
