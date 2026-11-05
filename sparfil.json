@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:46:50.184Z",
+  "uppdaterad": "2026-11-05T17:47:00.746Z",
   "spel": {
     "version": 1,
-    "tid": 1793900807314,
+    "tid": 1793900817842,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -350,8 +350,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd"
+          "agerat": true,
+          "valtVapen": "Kort båge"
         }
       },
       "guld": 0,
@@ -702,6 +702,10 @@
         },
         {
           "text": "Bacon tar 6 skada (7 − 1 rustning) från Sabeltänder. KP 11/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [12] mot 10 – misslyckat",
           "cls": "fel"
         }
       ],
