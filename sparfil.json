@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:07:49.669Z",
+  "uppdaterad": "2026-11-05T12:08:05.419Z",
   "spel": {
     "version": 1,
-    "tid": 1793880466407,
+    "tid": 1793880482350,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -231,7 +231,7 @@
       "i": 3,
       "h": {
         "bacon": {
-          "kp": 17,
+          "kp": 16,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -242,7 +242,9 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Yxor"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -250,7 +252,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 17,
@@ -346,6 +349,18 @@
         {
           "text": "Kultist från Tarragons Hand tar 7 skada.",
           "cls": "ok"
+        },
+        {
+          "text": "Bacon tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon tar 1 skada (2 − 1 rustning) från Bett. KP 16/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [17] mot 9 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
