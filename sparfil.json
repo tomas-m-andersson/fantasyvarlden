@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:46:41.700Z",
+  "uppdaterad": "2026-11-05T17:46:50.184Z",
   "spel": {
     "version": 1,
-    "tid": 1793900798814,
+    "tid": 1793900807314,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -272,8 +272,8 @@
       "i": 5,
       "h": {
         "bacon": {
-          "kp": 17,
-          "vp": 6,
+          "kp": 11,
+          "vp": 3,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -293,7 +293,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -687,6 +687,22 @@
         {
           "text": "Svartnisse anfaller Bacon: [16] mot 10 – misslyckat",
           "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [10 / 20 → 10] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Bacon tar 6 skada (7 − 1 rustning) från Sabeltänder. KP 11/17.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
