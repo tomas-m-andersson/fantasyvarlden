@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:21:46.900Z",
+  "uppdaterad": "2026-11-05T18:21:57.476Z",
   "spel": {
     "version": 1,
-    "tid": 1793902903842,
+    "tid": 1793902914323,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -282,12 +282,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
         "monika": {
-          "kp": 16,
+          "kp": 9,
           "vp": 2,
           "doende": false,
           "ok": 0,
@@ -310,12 +310,12 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
           "valtVapen": "Stridsgissel",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "shinji": {
           "kp": 8,
@@ -345,7 +345,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
@@ -770,6 +770,30 @@
         {
           "text": "Bacon (Handyxa) slår Yxor med nackdel: [17 / 7 → 17] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Monika Plöjer: [9] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer är i raseri och bryr sig inte om att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 7 skada (8 − 1 rustning) från Orchhövdingen Grorm. KP 9/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med nackdel: [7 / 1 → 7] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 2 skada (5 − 3 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
