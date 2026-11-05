@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:22:06.639Z",
+  "uppdaterad": "2026-11-05T18:22:18.077Z",
   "spel": {
     "version": 1,
-    "tid": 1793902923383,
+    "tid": 1793902934900,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -282,7 +282,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
@@ -318,11 +318,11 @@
           "nackdelNasta": false
         },
         "shinji": {
-          "kp": 8,
+          "kp": 0,
           "vp": 8,
-          "doende": false,
-          "ok": 3,
-          "miss": 1,
+          "doende": true,
+          "ok": 0,
+          "miss": 0,
           "stabil": false,
           "dod": false,
           "saker": [
@@ -798,6 +798,26 @@
         {
           "text": "Shinji Onishi (Kort båge) slår Pilbåge: [15] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [2] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 1 skada (4 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Shinji Onishi: [10] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 10 skada (11 − 1 rustning) från Orchhövdingen Grorm. KP 0/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi faller ihop och ligger döende!",
+          "cls": "dm"
         }
       ],
       "utfall": null,
