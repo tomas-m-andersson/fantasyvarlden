@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:22:32.278Z",
+  "uppdaterad": "2026-11-05T18:22:37.275Z",
   "spel": {
     "version": 1,
-    "tid": 1793902949235,
+    "tid": 1793902954313,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -287,7 +287,7 @@
           "nackdelNasta": false
         },
         "monika": {
-          "kp": 9,
+          "kp": 3,
           "vp": 2,
           "doende": false,
           "ok": 0,
@@ -313,7 +313,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -838,6 +838,14 @@
         {
           "text": "Orchhövdingen Grorm tar 4 skada (7 − 3 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Monika Plöjer: [14] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 6 skada (7 − 1 rustning) från Orchhövdingen Grorm. KP 3/17.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
