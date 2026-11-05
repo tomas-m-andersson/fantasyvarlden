@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:42:16.816Z",
+  "uppdaterad": "2026-11-05T17:42:55.057Z",
   "spel": {
     "version": 1,
-    "tid": 1793900533855,
+    "tid": 1793900572132,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -288,7 +288,7 @@
         },
         "monika": {
           "kp": 17,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -307,12 +307,12 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "shinji": {
           "kp": 13,
@@ -337,7 +337,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         }
       },
@@ -522,6 +522,26 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Orch 2 anfaller Shinji Onishi: [10] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi parerar: [6] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [19] mot 14 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
