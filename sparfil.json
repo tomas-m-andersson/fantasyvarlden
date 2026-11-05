@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:17:58.893Z",
+  "uppdaterad": "2026-11-05T18:18:04.021Z",
   "spel": {
     "version": 1,
-    "tid": 1793902675363,
+    "tid": 1793902680992,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -264,7 +264,7 @@
         },
         "monika": {
           "kp": 17,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -277,16 +277,17 @@
             "Akrobatik"
           ],
           "anvanda": [
-            "Akrobatik"
+            "Akrobatik",
+            "Slagvapen"
           ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "shinji": {
           "kp": 12,
@@ -402,6 +403,22 @@
         {
           "text": "Orch tar 3 skada (4 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [17 / 10 → 10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 14 skada (15 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
