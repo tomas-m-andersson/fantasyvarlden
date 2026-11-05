@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:09:18.427Z",
+  "uppdaterad": "2026-11-05T12:09:52.687Z",
   "spel": {
     "version": 1,
-    "tid": 1793880555408,
+    "tid": 1793880589543,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -264,7 +264,7 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 17,
+          "kp": 16,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -288,7 +288,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -438,6 +438,30 @@
         {
           "text": "Shinji Onishi tar 4 skada från Strömt vatten. KP 9/13.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 1 skada (2 − 1 rustning) från Smittbett. KP 16/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [5] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 1 tar 10 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
