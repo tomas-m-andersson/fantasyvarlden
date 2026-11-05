@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:47:30.465Z",
+  "uppdaterad": "2026-11-05T17:47:34.989Z",
   "spel": {
     "version": 1,
-    "tid": 1793900847418,
+    "tid": 1793900852118,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -14,7 +14,8 @@
       "Läkedryck",
       "Läkedryck",
       "Flaska vin",
-      "Rött té"
+      "Rött té",
+      "Läkande ört"
     ],
     "sallskap": [
       "bacon",
@@ -263,7 +264,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En grottsal där taket försvinner upp i mörkret. På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel. Det luktar fuktig ull och svavel.",
-          "fro": 122092159
+          "fro": 122092159,
+          "klar": true,
+          "utfallText": "Bacon hittar 26 guld och läkande ört."
         },
         {
           "typ": "rum",
@@ -290,7 +293,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Yxor"
+            "Yxor",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -360,7 +364,7 @@
           "valtVapen": "Kort svärd"
         }
       },
-      "guld": 10,
+      "guld": 36,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
@@ -753,6 +757,10 @@
         {
           "text": "Sabeltandad tiger faller!",
           "cls": "d"
+        },
+        {
+          "text": "Bacon slår Finna dolda ting: [5] mot 5 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
