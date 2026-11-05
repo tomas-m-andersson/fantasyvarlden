@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:10:15.143Z",
+  "uppdaterad": "2026-11-05T12:10:31.267Z",
   "spel": {
     "version": 1,
-    "tid": 1793880612100,
+    "tid": 1793880628094,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -246,7 +246,7 @@
       "h": {
         "bacon": {
           "kp": 9,
-          "vp": 9,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -266,7 +266,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -491,6 +491,26 @@
         },
         {
           "text": "Jätteråtta 2 faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [19 / 6 → 6] mot 9 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 1 tar 5 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 1 faller!",
           "cls": "d"
         }
       ],
