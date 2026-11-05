@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:23:54.874Z",
+  "uppdaterad": "2026-11-05T18:23:58.935Z",
   "spel": {
     "version": 1,
-    "tid": 1793903031867,
+    "tid": 1793903035866,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -280,12 +280,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
         "monika": {
-          "kp": 8,
+          "kp": 6,
           "vp": 2,
           "doende": false,
           "ok": 0,
@@ -963,6 +963,14 @@
         },
         {
           "text": "Bacon (Handyxa) slår Yxor: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Monika Plöjer: [13] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Orchhövdingen Grorm. KP 6/17.",
           "cls": "fel"
         }
       ],
