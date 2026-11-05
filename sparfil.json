@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:42:10.613Z",
+  "uppdaterad": "2026-11-05T17:42:16.816Z",
   "spel": {
     "version": 1,
-    "tid": 1793900527570,
+    "tid": 1793900533855,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -283,7 +283,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -297,7 +297,9 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [],
+          "markerade": [
+            "Slagvapen"
+          ],
           "anvanda": [
             "Slagvapen"
           ],
@@ -309,7 +311,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Stridsgissel"
+          "valtVapen": "Stridsgissel",
+          "nackdelNasta": true
         },
         "shinji": {
           "kp": 13,
@@ -334,7 +337,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
@@ -503,6 +506,22 @@
         {
           "text": "Orch 1 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [20] mot 14 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Monika Plöjer tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
