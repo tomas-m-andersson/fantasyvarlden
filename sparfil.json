@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:37:41.400Z",
+  "uppdaterad": "2026-11-05T17:38:33.060Z",
   "spel": {
     "version": 1,
-    "tid": 1793900258405,
+    "tid": 1793900310108,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -272,7 +272,7 @@
         },
         "monika": {
           "kp": 17,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -282,15 +282,17 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Slagvapen"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "shinji": {
           "kp": 13,
@@ -328,6 +330,22 @@
         {
           "text": "— Runda 1 —",
           "cls": "info"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [6 / 16 → 6] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 1 tar 18 skada (19 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
