@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:08:18.835Z",
+  "uppdaterad": "2026-11-05T12:08:24.078Z",
   "spel": {
     "version": 1,
-    "tid": 1793880495833,
+    "tid": 1793880501041,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -252,7 +252,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -397,6 +397,14 @@
         {
           "text": "Shinji Onishi (Kort svärd) slår Svärd: [15] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [12] mot 9 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Kultist från Tarragons Hand anfaller Shinji Onishi: [18] mot 12 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
