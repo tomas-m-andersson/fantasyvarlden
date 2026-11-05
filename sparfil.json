@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:05:09.825Z",
+  "uppdaterad": "2026-11-05T12:05:43.440Z",
   "spel": {
     "version": 1,
-    "tid": 1793880306798,
+    "tid": 1793880339808,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -154,7 +154,9 @@
         {
           "typ": "resa",
           "mote": "gycklare",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Gycklarna ber er artigt att sluta."
         },
         {
           "typ": "resa",
@@ -246,7 +248,9 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Uppträda"
+          ]
         },
         "shinji": {
           "kp": 13,
@@ -267,6 +271,14 @@
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Råttorna under Kras-Kras” av Eva.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer slår Uppträda: [13] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Gycklarna ber er artigt att sluta.",
           "cls": "info"
         }
       ],
