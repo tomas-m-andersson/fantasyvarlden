@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:24:05.713Z",
+  "uppdaterad": "2026-11-05T18:24:14.780Z",
   "spel": {
     "version": 1,
-    "tid": 1793903042747,
+    "tid": 1793903051764,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -311,12 +311,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
         "shinji": {
-          "kp": 7,
+          "kp": 3,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -344,7 +344,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
@@ -985,6 +985,38 @@
         {
           "text": "Orchhövdingen Grorm anfaller Shinji Onishi: [8] mot 14 – lyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi försöker undvika: [14] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Orchhövdingen Grorm. KP 3/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [16] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 10 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 12 skada (15 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
