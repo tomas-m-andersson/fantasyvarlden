@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:40:26.365Z",
+  "uppdaterad": "2026-11-05T17:41:03.252Z",
   "spel": {
     "version": 1,
-    "tid": 1793900423348,
+    "tid": 1793900460308,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -263,7 +263,7 @@
       "h": {
         "bacon": {
           "kp": 17,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -283,7 +283,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -426,6 +426,26 @@
         {
           "text": "Den bästa måltiden i ert liv. Alla läker. (alla läker)",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Orch 2 anfaller Shinji Onishi: [19] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [3 / 5 → 3] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
