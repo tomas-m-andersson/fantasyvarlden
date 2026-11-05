@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:22:18.077Z",
+  "uppdaterad": "2026-11-05T18:22:32.278Z",
   "spel": {
     "version": 1,
-    "tid": 1793902934900,
+    "tid": 1793902949235,
     "kassa": 1075,
     "packning": [
       "Läkande ört",
@@ -313,7 +313,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -321,7 +321,7 @@
           "kp": 0,
           "vp": 8,
           "doende": true,
-          "ok": 0,
+          "ok": 1,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -345,7 +345,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
@@ -818,6 +818,26 @@
         {
           "text": "Shinji Onishi faller ihop och ligger döende!",
           "cls": "dm"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [7] mot 13 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [4] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 4 skada (7 − 3 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
