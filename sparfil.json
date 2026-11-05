@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:18:27.045Z",
+  "uppdaterad": "2026-11-05T18:18:47.860Z",
   "spel": {
     "version": 1,
-    "tid": 1793902703892,
+    "tid": 1793902724864,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -249,8 +249,8 @@
       "i": 4,
       "h": {
         "bacon": {
-          "kp": 14,
-          "vp": 8,
+          "kp": 4,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -259,7 +259,9 @@
           "saker": [
             "Flaska vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Yxor"
+          ],
           "anvanda": [
             "Akrobatik",
             "Yxor",
@@ -272,7 +274,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "monika": {
           "kp": 17,
@@ -304,7 +306,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 12,
+          "kp": 8,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -484,6 +486,46 @@
         {
           "text": "— Runda 1 —",
           "cls": "info"
+        },
+        {
+          "text": "Bacon tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon tar 5 skada (6 − 1 rustning) från Klor. KP 9/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Sabeltänder. KP 8/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon tar 5 skada (6 − 1 rustning) från Smittbett. KP 4/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [1 / 20 → 1] mot 10 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Sabeltandad tiger 1 tar 14 skada (15 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
