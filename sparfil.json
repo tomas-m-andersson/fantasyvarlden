@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:36:32.528Z",
+  "uppdaterad": "2026-11-05T17:36:45.771Z",
   "spel": {
     "version": 1,
-    "tid": 1793900189655,
+    "tid": 1793900202870,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -28,7 +28,7 @@
           "Akrobatik": 1,
           "Uppträda": 1
         },
-        "aventyr": 6,
+        "aventyr": 7,
         "segrar": 3,
         "vapen": [],
         "rustning": null,
@@ -77,7 +77,7 @@
         "bonus": {
           "Yxor": 2
         },
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 2,
         "vapen": [],
         "rustning": null
@@ -93,7 +93,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 2,
         "vapen": [],
         "rustning": null,
@@ -110,8 +110,7 @@
     },
     "tavla": [
       "skold",
-      "barnen",
-      "svartalf"
+      "barnen"
     ],
     "avklarade": {
       "skold": 1,
@@ -152,7 +151,151 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "svartalf",
+        "givare": "Hövding Atlas",
+        "titel": "Den nya svartalfkungen",
+        "plats": "Tunnlarna under Mårdgård",
+        "land": "Mårdgård",
+        "miljo": "grotta",
+        "boss": "svartalfkung",
+        "beloning": 220,
+        "rum": 6,
+        "text": "Svartalfkungen klövs på mitten av en blixt, men nu har en ny kung tagit över tunnlarna under Mårdgård. Hövding Atlas i Skrovby betalar gärna igen. Han undrar fortfarande var hans son Greg är.",
+        "foremal": "Svartalfkungens krona",
+        "svar": "Atlas tittar misstänksamt på er. ”Har ni sett Greg?”"
+      },
+      "party": [
+        "bacon",
+        "monika",
+        "shinji"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "rovarbakhall",
+          "jens": false
+        },
+        {
+          "typ": "resa",
+          "mote": "dunker",
+          "jens": false
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En fuktig grotta där vatten droppar från taket. En trasig tunna läcker något som kanske en gång var öl.",
+          "fro": 435440984,
+          "fiender": [
+            "orch",
+            "orch",
+            "orch"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En smal gång som slingrar sig nedåt i mörkret. Fladdermöss hänger i taket och följer er med blicken. Ett ekande skratt hörs – sedan blir det helt tyst.",
+          "fro": 20865021,
+          "hinder": {
+            "namn": "En låst port",
+            "text": "En tung, låst port. Någon behöver dyrka upp den.",
+            "fard": "Fingerfärdighet",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "ruin",
+              "grotta",
+              "kloak",
+              "gravfalt"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "mote",
+          "text": "En låg tunnel där alla utom ankorna måste huka sig. En rostig hjälm ligger upp och ner i ett hörn. Vinden viner genom gångarna som en sorgsen flöjt.",
+          "fro": 64786317,
+          "mote": "torbyn"
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "Ett runt rum som någon har huggit ut med hacka. Ett gammalt rep hänger ner ur ett hål i taket. En lapp: ”Har ni sett Greg? / Atlas”.",
+          "fro": 723432128
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En grottsal där taket försvinner upp i mörkret. På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel. Det luktar fuktig ull och svavel.",
+          "fro": 122092159
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 24138957,
+          "fiender": [
+            "svartalfkung"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "bacon": {
+          "kp": 17,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Flaska vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Den nya svartalfkungen” av Hövding Atlas.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-05 18:36"
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
