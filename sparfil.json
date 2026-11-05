@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:11:23.915Z",
+  "uppdaterad": "2026-11-05T12:11:33.318Z",
   "spel": {
     "version": 1,
-    "tid": 1793880680851,
+    "tid": 1793880690243,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -250,7 +250,7 @@
       "i": 7,
       "h": {
         "bacon": {
-          "kp": 8,
+          "kp": 7,
           "vp": 3,
           "doende": false,
           "ok": 0,
@@ -275,8 +275,8 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 14,
-          "vp": 9,
+          "kp": 12,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -296,14 +296,14 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 8,
+          "kp": 3,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -598,6 +598,38 @@
         {
           "text": "Råttkungen tar 0 skada (1 − 1 rustning).",
           "cls": "info"
+        },
+        {
+          "text": "Råttkungen andas ut ett pestmoln över hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 1 skada (2 − 1 rustning) från Pestandedräkt. KP 7/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Pestandedräkt. KP 12/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 5 skada (6 − 1 rustning) från Pestandedräkt. KP 3/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [14 / 14 → 14] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Råttkungen tar 18 skada (19 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Råttkungen faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
