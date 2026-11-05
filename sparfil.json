@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:19:06.668Z",
+  "uppdaterad": "2026-11-05T18:19:26.966Z",
   "spel": {
     "version": 1,
-    "tid": 1793902743715,
+    "tid": 1793902763928,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -277,8 +277,8 @@
           "agerat": false
         },
         "monika": {
-          "kp": 17,
-          "vp": 8,
+          "kp": 16,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -306,7 +306,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 8,
+          "kp": 3,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -321,7 +321,8 @@
             "Akrobatik",
             "Svärd",
             "Smyga",
-            "Pilbåge"
+            "Pilbåge",
+            "Kniv"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -542,6 +543,50 @@
         },
         {
           "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi parerar: [16] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 5 skada (6 − 1 rustning) från Klor. KP 3/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon parerar: [10] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 1 skada (2 − 1 rustning) från Bett. KP 16/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [2 / 7 → 2] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 tar 14 skada (15 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 3 —",
           "cls": "info"
         }
       ],
