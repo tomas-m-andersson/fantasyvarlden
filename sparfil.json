@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:16:33.806Z",
+  "uppdaterad": "2026-11-05T18:16:49.790Z",
   "spel": {
     "version": 1,
-    "tid": 1793902590862,
+    "tid": 1793902606812,
     "kassa": 1085,
     "packning": [
       "Läkedryck",
@@ -160,7 +160,9 @@
         {
           "typ": "resa",
           "mote": "dunker",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Det luktar fantastiskt. Ni går hungriga vidare."
         },
         {
           "typ": "resa",
@@ -225,7 +227,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "bacon": {
           "kp": 17,
@@ -274,6 +276,10 @@
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Orcherna i Krusbärsberget” av Clark.",
+          "cls": "info"
+        },
+        {
+          "text": "Det luktar fantastiskt. Ni går hungriga vidare.",
           "cls": "info"
         }
       ],
