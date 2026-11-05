@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:47:17.546Z",
+  "uppdaterad": "2026-11-05T17:47:23.111Z",
   "spel": {
     "version": 1,
-    "tid": 1793900834668,
+    "tid": 1793900840204,
     "kassa": 1078,
     "packning": [
       "Läkedryck",
@@ -350,7 +350,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         }
       },
@@ -735,6 +735,18 @@
         {
           "text": "Shinji Onishi (Kort svärd) slår Svärd: [17] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
