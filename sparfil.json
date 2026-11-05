@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:17:44.569Z",
+  "uppdaterad": "2026-11-05T18:17:58.893Z",
   "spel": {
     "version": 1,
-    "tid": 1793902661017,
+    "tid": 1793902675363,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -239,7 +239,7 @@
       "h": {
         "bacon": {
           "kp": 14,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -250,7 +250,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Akrobatik"
+            "Akrobatik",
+            "Yxor"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -259,7 +260,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "monika": {
           "kp": 17,
@@ -288,7 +289,7 @@
           "agerat": false
         },
         "shinji": {
-          "kp": 13,
+          "kp": 12,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -377,6 +378,30 @@
         {
           "text": "Svartnisse anfaller Shinji Onishi: [8] mot 10 – lyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi tar 1 skada (2 − 1 rustning) från Svartnisse. KP 12/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Orch anfaller Shinji Onishi: [17] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [12 / 4 → 4] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch tar 3 skada (4 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
