@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T14:02:00.863Z",
+  "uppdaterad": "2026-11-05T14:02:06.735Z",
   "spel": {
     "version": 1,
-    "tid": 1793887317902,
+    "tid": 1793887323818,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -118,6 +118,10 @@
       "rattor": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-05 15:02",
+        "text": "FF försökte köpa rött té. Det var slut."
+      },
       {
         "tid": "2026-11-05 13:11",
         "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Råttorna under Kras-Kras” och fick 180 guld + 28 i byte."
