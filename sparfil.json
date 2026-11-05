@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T18:19:50.926Z",
+  "uppdaterad": "2026-11-05T18:19:57.035Z",
   "spel": {
     "version": 1,
-    "tid": 1793902787873,
+    "tid": 1793902794082,
     "kassa": 1075,
     "packning": [
       "Läkedryck",
@@ -221,7 +221,9 @@
             43,
             4,
             20
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 9 guld."
         },
         {
           "typ": "rum",
@@ -265,7 +267,8 @@
           "anvanda": [
             "Akrobatik",
             "Yxor",
-            "Smyga"
+            "Smyga",
+            "Läkekonst"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -307,11 +310,11 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 0,
+          "kp": 1,
           "vp": 11,
-          "doende": true,
-          "ok": 1,
-          "miss": 0,
+          "doende": false,
+          "ok": 3,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [
@@ -336,7 +339,7 @@
           "valtVapen": "Kort båge"
         }
       },
-      "guld": 5,
+      "guld": 14,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Orcherna i Krusbärsberget” av Clark.",
@@ -649,6 +652,30 @@
         {
           "text": "Sabeltandad tiger 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Bacon tar hand om Shinji Onishi slår Läkekonst: [15] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [10] mot 13 – lyckat (2 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [18] mot 13 – misslyckat (2 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [8] mot 13 – lyckat (3 lyckade, 1 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi är stabil men medvetslös.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi vaknar med 1 KP.",
+          "cls": "info"
         }
       ],
       "utfall": null,
