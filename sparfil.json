@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T12:10:06.199Z",
+  "uppdaterad": "2026-11-05T12:10:15.143Z",
   "spel": {
     "version": 1,
-    "tid": 1793880603245,
+    "tid": 1793880612100,
     "kassa": 877,
     "packning": [
       "Läkedryck",
@@ -214,7 +214,9 @@
           "rutor": [
             19,
             59
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 8 guld."
         },
         {
           "typ": "rum",
@@ -224,6 +226,10 @@
           "fiender": [
             "ratta",
             "ratta"
+          ],
+          "rutor": [
+            47,
+            32
           ]
         },
         {
@@ -236,7 +242,7 @@
           ]
         }
       ],
-      "i": 5,
+      "i": 6,
       "h": {
         "bacon": {
           "kp": 9,
@@ -260,7 +266,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -288,7 +294,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -321,7 +327,7 @@
           "valtVapen": "Kort svärd"
         }
       },
-      "guld": 14,
+      "guld": 22,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Råttorna under Kras-Kras” av Eva.",
@@ -474,6 +480,18 @@
         {
           "text": "Bacon (Handyxa) slår Yxor: [18] mot 9 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [10] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 2 tar 6 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
