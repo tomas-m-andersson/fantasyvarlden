@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-05T17:38:51.756Z",
+  "uppdaterad": "2026-11-05T17:39:03.292Z",
   "spel": {
     "version": 1,
-    "tid": 1793900328847,
+    "tid": 1793900340413,
     "kassa": 1083,
     "packning": [
       "Läkedryck",
@@ -270,7 +270,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -292,10 +292,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "shinji": {
           "kp": 13,
@@ -309,7 +309,9 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Pilbåge"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -317,7 +319,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Kort båge"
         }
       },
       "guld": 0,
@@ -353,6 +356,18 @@
         {
           "text": "Bacon (Handyxa) slår Yxor: [18] mot 10 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Rövare 2 anfaller Bacon: [17] mot 11 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [11] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
