@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:22:19.701Z",
+  "uppdaterad": "2026-11-06T18:22:36.337Z",
   "spel": {
     "version": 1,
-    "tid": 1793989336659,
+    "tid": 1793989353275,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -182,7 +182,9 @@
           "rutor": [
             5,
             28
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 3 guld."
         },
         {
           "typ": "rum",
@@ -211,7 +213,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "bacon": {
           "kp": 17,
@@ -235,7 +237,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -294,11 +296,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
-      "guld": 9,
+      "guld": 12,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -431,13 +433,41 @@
         {
           "text": "Harpya faller!",
           "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer försöker undvika: [5] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 5 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [1] mot 15 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Ulv tar 14 skada (15 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-06 19:19",
       "utforska": true,
       "kapitel": 1,
-      "djup": 1,
+      "djup": 2,
       "paus": false,
       "anvandaText": [
         "Ett hygge med stubbar så långt ögat når",
