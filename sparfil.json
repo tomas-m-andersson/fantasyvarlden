@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:21:46.372Z",
+  "uppdaterad": "2026-11-06T18:22:08.116Z",
   "spel": {
     "version": 1,
-    "tid": 1793989303300,
+    "tid": 1793989325219,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -235,11 +235,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 12,
+          "kp": 10,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -263,9 +263,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "shinji": {
           "kp": 13,
@@ -291,7 +291,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
@@ -372,6 +372,38 @@
         {
           "text": "Monika Plöjer tar 3 skada (4 − 1 rustning) från Bett. KP 12/17.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer försöker undvika: [16 / 15 → 16] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Klor. KP 10/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi parerar: [9] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [18] mot 11 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 4 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
