@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:23:28.242Z",
+  "uppdaterad": "2026-11-06T18:23:34.593Z",
   "spel": {
     "version": 1,
-    "tid": 1793989405254,
+    "tid": 1793989411602,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -224,7 +224,7 @@
       "h": {
         "bacon": {
           "kp": 17,
-          "vp": 8,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -244,7 +244,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
@@ -539,6 +539,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [18 / 12 → 12] mot 11 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
