@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:23:49.690Z",
+  "uppdaterad": "2026-11-06T18:23:57.323Z",
   "spel": {
     "version": 1,
-    "tid": 1793989426770,
+    "tid": 1793989434349,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -305,7 +305,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -575,6 +575,14 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [6] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 2 skada (4 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
