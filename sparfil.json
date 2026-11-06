@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:21:15.829Z",
+  "uppdaterad": "2026-11-06T18:21:23.586Z",
   "spel": {
     "version": 1,
-    "tid": 1793989272791,
+    "tid": 1793989280515,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -225,7 +225,9 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Yxor"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -233,7 +235,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 17,
@@ -259,7 +262,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": true
         },
@@ -286,7 +289,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         }
       },
       "guld": 9,
@@ -321,6 +324,18 @@
         },
         {
           "text": "Monika Plöjer tar 0 skada (1 − 1 rustning) från Klor. KP 17/17.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [7] mot 11 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 2 skada (3 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
           "cls": "info"
         }
       ],
