@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:21:36.486Z",
+  "uppdaterad": "2026-11-06T18:21:46.372Z",
   "spel": {
     "version": 1,
-    "tid": 1793989293355,
+    "tid": 1793989303300,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -239,7 +239,7 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 15,
+          "kp": 12,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -281,7 +281,8 @@
           "markerade": [],
           "anvanda": [
             "Finna dolda ting",
-            "Kniv"
+            "Kniv",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -290,7 +291,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Kort båge"
         }
       },
       "guld": 9,
@@ -362,6 +364,14 @@
         {
           "text": "Harpya tar 4 skada (5 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 3 skada (4 − 1 rustning) från Bett. KP 12/17.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
