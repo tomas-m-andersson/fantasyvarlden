@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:19:33.163Z",
+  "uppdaterad": "2026-11-06T18:19:59.200Z",
   "spel": {
     "version": 1,
-    "tid": 1793989170281,
+    "tid": 1793989196237,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -25,7 +25,7 @@
           "Slagvapen": 1,
           "Smyga": 1
         },
-        "aventyr": 7,
+        "aventyr": 8,
         "segrar": 4,
         "vapen": [],
         "rustning": null
@@ -73,7 +73,7 @@
           "Yxor": 3,
           "Akrobatik": 1
         },
-        "aventyr": 4,
+        "aventyr": 5,
         "segrar": 3,
         "vapen": [],
         "rustning": null
@@ -89,7 +89,7 @@
       "shinji": {
         "dod": false,
         "bonus": {},
-        "aventyr": 4,
+        "aventyr": 5,
         "segrar": 3,
         "vapen": [],
         "rustning": null,
@@ -141,7 +141,143 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-gollenskogen",
+        "titel": "Gollenskogen",
+        "plats": "Gollenskogen",
+        "land": "Mårdgård",
+        "miljo": "skog",
+        "boss": "harpydrottning",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "gollenskogen"
+      },
+      "party": [
+        "bacon",
+        "monika",
+        "shinji"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Ett hygge med stubbar så långt ögat når. En hydda av grenar som ser nybyggd ut. Det luktar rök från en eld någon annanstans.",
+          "fro": 457211251
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Ett snår så tätt att ni måste hugga er igenom. En skylt säger ”HÄR BOR INGEN” med stora bokstäver. Myggen är fruktansvärda.",
+          "fro": 549926106,
+          "fiender": [
+            "harpya",
+            "varg"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "En stig kantad av enorma ormbunkar. En nedbrunnen lägereld är fortfarande varm. Doften av vilda smultron är nästan förförisk.",
+          "fro": 882572649,
+          "falla": {
+            "namn": "Giftpil",
+            "text": "En snubbeltråd utlöser en giftpil.",
+            "skada": "T8"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "En skogssjö blank som en spegel. Någon har knutit små tygbitar på grenarna. Det doftar kåda och regn.",
+          "fro": 340312366
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 895310847,
+          "fiender": [
+            "harpydrottning"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "bacon": {
+          "kp": 17,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Flaska vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "shinji": {
+          "kp": 13,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkat kött"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-06 19:19",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false,
+      "anvandaText": [
+        "Ett hygge med stubbar så långt ögat når",
+        "En hydda av grenar som ser nybyggd ut",
+        "Det luktar rök från en eld någon annanstans",
+        "Ett snår så tätt att ni måste hugga er igenom",
+        "En skylt säger ”HÄR BOR INGEN” med stora bokstäver",
+        "Myggen är fruktansvärda",
+        "En stig kantad av enorma ormbunkar",
+        "En nedbrunnen lägereld är fortfarande varm",
+        "Doften av vilda smultron är nästan förförisk",
+        "En skogssjö blank som en spegel",
+        "Någon har knutit små tygbitar på grenarna",
+        "Det doftar kåda och regn"
+      ]
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
