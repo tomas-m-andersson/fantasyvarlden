@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:24:15.445Z",
+  "uppdaterad": "2026-11-06T18:24:49.338Z",
   "spel": {
     "version": 1,
-    "tid": 1793989452512,
+    "tid": 1793989486213,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -56,7 +56,8 @@
         "aventyr": 1,
         "segrar": 0,
         "vapen": [],
-        "rustning": null
+        "rustning": null,
+        "figur": 24
       },
       "gaston": {
         "dod": false,
