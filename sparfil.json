@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:22:14.408Z",
+  "uppdaterad": "2026-11-06T18:22:19.701Z",
   "spel": {
     "version": 1,
-    "tid": 1793989331427,
+    "tid": 1793989336659,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -294,7 +294,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         }
       },
