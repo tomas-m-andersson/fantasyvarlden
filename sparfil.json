@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:20:30.566Z",
+  "uppdaterad": "2026-11-06T18:20:36.054Z",
   "spel": {
     "version": 1,
-    "tid": 1793989227529,
+    "tid": 1793989232970,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -178,6 +178,10 @@
           "fiender": [
             "harpya",
             "varg"
+          ],
+          "rutor": [
+            5,
+            28
           ]
         },
         {
@@ -207,7 +211,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "bacon": {
           "kp": 17,
@@ -269,7 +273,7 @@
       "start": "2026-11-06 19:19",
       "utforska": true,
       "kapitel": 1,
-      "djup": 0,
+      "djup": 1,
       "paus": false,
       "anvandaText": [
         "Ett hygge med stubbar så långt ögat når",
