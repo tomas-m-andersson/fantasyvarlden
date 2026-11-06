@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:21:23.586Z",
+  "uppdaterad": "2026-11-06T18:21:36.486Z",
   "spel": {
     "version": 1,
-    "tid": 1793989280515,
+    "tid": 1793989293355,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -235,11 +235,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 17,
+          "kp": 15,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -253,7 +253,8 @@
             "Slagvapen"
           ],
           "anvanda": [
-            "Slagvapen"
+            "Slagvapen",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -262,7 +263,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": true
         },
@@ -337,6 +338,30 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer försöker undvika: [9 / 19 → 19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Skrik. KP 15/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [8] mot 11 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
