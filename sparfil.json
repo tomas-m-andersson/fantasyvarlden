@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:24:09.173Z",
+  "uppdaterad": "2026-11-06T18:24:15.445Z",
   "spel": {
     "version": 1,
-    "tid": 1793989446294,
-    "kassa": 1293,
+    "tid": 1793989452512,
+    "kassa": 1325,
     "packning": [
       "Läkande ört",
       "Läkedryck",
@@ -26,7 +26,7 @@
           "Smyga": 1
         },
         "aventyr": 8,
-        "segrar": 4,
+        "segrar": 5,
         "vapen": [],
         "rustning": null
       },
@@ -70,11 +70,11 @@
       "bacon": {
         "dod": false,
         "bonus": {
-          "Yxor": 3,
+          "Yxor": 4,
           "Akrobatik": 1
         },
         "aventyr": 5,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": null
       },
@@ -88,9 +88,11 @@
       },
       "shinji": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Svärd": 1
+        },
         "aventyr": 5,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": null,
         "figur": 10
@@ -108,6 +110,10 @@
       "krusbar": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-06 19:24",
+        "text": "Bacon, Monika Plöjer, Shinji Onishi utforskade Gollenskogen och nådde kapitel 1 (5 rum). De gick hem med 32 guld."
+      },
       {
         "tid": "2026-11-05 19:24",
         "text": "Bacon, Monika Plöjer, Shinji Onishi klarade ”Orcherna i Krusbärsberget” och fick 200 guld + 18 i byte."
@@ -141,505 +147,7 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": {
-      "q": {
-        "id": "utforska-gollenskogen",
-        "titel": "Gollenskogen",
-        "plats": "Gollenskogen",
-        "land": "Mårdgård",
-        "miljo": "skog",
-        "boss": "harpydrottning",
-        "beloning": 0,
-        "givare": "",
-        "svar": "",
-        "foremal": null,
-        "rum": 5,
-        "plats_id": "gollenskogen"
-      },
-      "party": [
-        "bacon",
-        "monika",
-        "shinji"
-      ],
-      "steg": [
-        {
-          "typ": "rum",
-          "rumtyp": "skatt",
-          "text": "Ett hygge med stubbar så långt ögat når. En hydda av grenar som ser nybyggd ut. Det luktar rök från en eld någon annanstans.",
-          "fro": 457211251,
-          "klar": true,
-          "utfallText": "Shinji Onishi hittar 9 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "strid",
-          "text": "Ett snår så tätt att ni måste hugga er igenom. En skylt säger ”HÄR BOR INGEN” med stora bokstäver. Myggen är fruktansvärda.",
-          "fro": 549926106,
-          "fiender": [
-            "harpya",
-            "varg"
-          ],
-          "rutor": [
-            5,
-            28
-          ],
-          "klar": true,
-          "utfallText": "Segern är er! Ni plundrar fienderna på 3 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "falla",
-          "text": "En stig kantad av enorma ormbunkar. En nedbrunnen lägereld är fortfarande varm. Doften av vilda smultron är nästan förförisk.",
-          "fro": 882572649,
-          "falla": {
-            "namn": "Giftpil",
-            "text": "En snubbeltråd utlöser en giftpil.",
-            "skada": "T8"
-          },
-          "klar": true,
-          "utfallText": "En snubbeltråd utlöser en giftpil. Shinji Onishi får ta smällen."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "vila",
-          "text": "En skogssjö blank som en spegel. Någon har knutit små tygbitar på grenarna. Det doftar kåda och regn.",
-          "fro": 340312366,
-          "klar": true,
-          "utfallText": "Ni vilar i lugn och ro. Alla känner sig lite bättre."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "boss",
-          "text": "",
-          "fro": 895310847,
-          "fiender": [
-            "harpydrottning"
-          ],
-          "rutor": [
-            35
-          ],
-          "klar": true
-        }
-      ],
-      "i": 4,
-      "h": {
-        "bacon": {
-          "kp": 17,
-          "vp": 2,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [
-            "Flaska vin"
-          ],
-          "markerade": [],
-          "anvanda": [
-            "Yxor"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Handyxa",
-          "nackdelNasta": false
-        },
-        "monika": {
-          "kp": 13,
-          "vp": 5,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [
-            "Äppelcider"
-          ],
-          "markerade": [
-            "Slagvapen"
-          ],
-          "anvanda": [
-            "Slagvapen",
-            "Undvika"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Stridsgissel",
-          "nackdelNasta": false
-        },
-        "shinji": {
-          "kp": 10,
-          "vp": 8,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [
-            "Torkat kött"
-          ],
-          "markerade": [
-            "Svärd"
-          ],
-          "anvanda": [
-            "Finna dolda ting",
-            "Kniv",
-            "Pilbåge",
-            "Svärd",
-            "Upptäcka fara"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd",
-          "nackdelNasta": false
-        }
-      },
-      "guld": 12,
-      "logg": [
-        {
-          "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
-          "cls": "info"
-        },
-        {
-          "text": "Shinji Onishi slår Finna dolda ting: [10] mot 5 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Shinji Onishi parerar: [4] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [20] mot 15 – NATURLIGT 20!",
-          "cls": "dm"
-        },
-        {
-          "text": "Naturligt 20! Monika Plöjer tappar balansen och får nackdel på nästa slag.",
-          "cls": "dm"
-        },
-        {
-          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "Monika Plöjer tar 0 skada (1 − 1 rustning) från Klor. KP 17/17.",
-          "cls": "info"
-        },
-        {
-          "text": "Bacon (Handyxa) slår Yxor: [7] mot 11 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpya tar 2 skada (3 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Monika Plöjer försöker undvika: [9 / 19 → 19] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Skrik. KP 15/17.",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "Bacon (Handyxa) slår Yxor: [8] mot 11 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpya tar 4 skada (5 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [19] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer tar 3 skada (4 − 1 rustning) från Bett. KP 12/17.",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 3 —",
-          "cls": "info"
-        },
-        {
-          "text": "Monika Plöjer försöker undvika: [16 / 15 → 16] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Klor. KP 10/17.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi parerar: [9] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "Bacon (Handyxa) slår Yxor: [18] mot 11 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 4 —",
-          "cls": "info"
-        },
-        {
-          "text": "Bacon (Handyxa) slår Yxor: [18] mot 11 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi (Kort svärd) slår Svärd: [1] mot 10 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "🎲 Spelledaren Isak: Där satt den. Tärningsgudarna ler i dag.",
-          "cls": "d"
-        },
-        {
-          "text": "Naturligt 1! Dubbel vapenskada.",
-          "cls": "d"
-        },
-        {
-          "text": "Harpya tar 14 skada (15 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpya faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer försöker undvika: [5] mot 10 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "— Runda 5 —",
-          "cls": "info"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [1] mot 15 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "Naturligt 1! Dubbel vapenskada.",
-          "cls": "d"
-        },
-        {
-          "text": "Ulv tar 14 skada (15 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Ulv faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Shinji Onishi slår Upptäcka fara: [11] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "En snubbeltråd utlöser en giftpil.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi tar 7 skada från Giftpil. KP 6/13.",
-          "cls": "fel"
-        },
-        {
-          "text": "Sällskapet vilar och samlar krafter.",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Harpydrottningen skriker så att alla tappar fattningen – hela sällskapet!",
-          "cls": "fel"
-        },
-        {
-          "text": "Bacon skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi skakas om och får nackdel på nästa slag.",
-          "cls": "fel"
-        },
-        {
-          "text": "★ Shinji Onishi: Ledarskap!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer får en extra handling!",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [17] mot 15 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "★ Bacon: Gladiatorvana!",
-          "cls": "d"
-        },
-        {
-          "text": "Bacon (Handyxa) slår Yxor: [19] mot 11 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "★ Bacon: Gladiatorvana!",
-          "cls": "d"
-        },
-        {
-          "text": "Bacon (Handyxa) slår Yxor med fördel: [18 / 12 → 12] mot 11 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Monika Plöjer tar smällen.",
-          "cls": "info"
-        },
-        {
-          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Klor. KP 13/17.",
-          "cls": "fel"
-        },
-        {
-          "text": "Shinji Onishi (Kort svärd) slår Svärd med nackdel: [6 / 17 → 17] mot 10 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [8 / 16 → 8] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 17 skada (19 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 3 —",
-          "cls": "info"
-        },
-        {
-          "text": "Shinji Onishi (Kort svärd) slår Svärd: [6] mot 10 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 2 skada (4 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Bacon: Gladiatorvana!",
-          "cls": "d"
-        },
-        {
-          "text": "Bacon (Handyxa) slår Yxor med fördel: [4 / 18 → 4] mot 11 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Monika Plöjer: Hatten stannar på!!",
-          "cls": "d"
-        },
-        {
-          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [11 / 7 → 7] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen tar 17 skada (19 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Harpydrottningen faller!",
-          "cls": "d"
-        },
-        {
-          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Gollenskogen.",
-          "cls": "d"
-        }
-      ],
-      "utfall": null,
-      "start": "2026-11-06 19:19",
-      "utforska": true,
-      "kapitel": 1,
-      "djup": 5,
-      "paus": true,
-      "anvandaText": [
-        "Ett hygge med stubbar så långt ögat når",
-        "En hydda av grenar som ser nybyggd ut",
-        "Det luktar rök från en eld någon annanstans",
-        "Ett snår så tätt att ni måste hugga er igenom",
-        "En skylt säger ”HÄR BOR INGEN” med stora bokstäver",
-        "Myggen är fruktansvärda",
-        "En stig kantad av enorma ormbunkar",
-        "En nedbrunnen lägereld är fortfarande varm",
-        "Doften av vilda smultron är nästan förförisk",
-        "En skogssjö blank som en spegel",
-        "Någon har knutit små tygbitar på grenarna",
-        "Det doftar kåda och regn"
-      ],
-      "nyttRekord": true
-    },
+    "run": null,
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
