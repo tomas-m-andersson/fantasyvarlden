@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:19:59.200Z",
+  "uppdaterad": "2026-11-06T18:20:30.566Z",
   "spel": {
     "version": 1,
-    "tid": 1793989196237,
+    "tid": 1793989227529,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -166,7 +166,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "Ett hygge med stubbar så långt ögat når. En hydda av grenar som ser nybyggd ut. Det luktar rök från en eld någon annanstans.",
-          "fro": 457211251
+          "fro": 457211251,
+          "klar": true,
+          "utfallText": "Shinji Onishi hittar 9 guld."
         },
         {
           "typ": "rum",
@@ -247,14 +249,20 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Finna dolda ting"
+          ]
         }
       },
-      "guld": 0,
+      "guld": 9,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår Finna dolda ting: [10] mot 5 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
