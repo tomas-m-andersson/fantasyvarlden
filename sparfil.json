@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:24:02.858Z",
+  "uppdaterad": "2026-11-06T18:24:09.173Z",
   "spel": {
     "version": 1,
-    "tid": 1793989439869,
+    "tid": 1793989446294,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -217,7 +217,8 @@
           ],
           "rutor": [
             35
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -244,13 +245,13 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
         "monika": {
           "kp": 13,
-          "vp": 8,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -305,7 +306,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -595,14 +596,34 @@
         {
           "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [11 / 7 → 7] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 17 skada (19 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen faller!",
+          "cls": "d"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Gollenskogen.",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-06 19:19",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "Ett hygge med stubbar så långt ögat når",
         "En hydda av grenar som ser nybyggd ut",
@@ -616,7 +637,8 @@
         "En skogssjö blank som en spegel",
         "Någon har knutit små tygbitar på grenarna",
         "Det doftar kåda och regn"
-      ]
+      ],
+      "nyttRekord": true
     },
     "reset": 1793783047660,
     "rekord": {
@@ -624,6 +646,11 @@
         "kapitel": 1,
         "djup": 0,
         "datum": "2026-11-05"
+      },
+      "gollenskogen": {
+        "kapitel": 1,
+        "djup": 5,
+        "datum": "2026-11-06"
       }
     }
   }
