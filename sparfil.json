@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:23:34.593Z",
+  "uppdaterad": "2026-11-06T18:23:44.012Z",
   "spel": {
     "version": 1,
-    "tid": 1793989411602,
+    "tid": 1793989421069,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -249,8 +249,8 @@
           "nackdelNasta": false
         },
         "monika": {
-          "kp": 15,
-          "vp": 11,
+          "kp": 13,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -270,7 +270,7 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
@@ -305,9 +305,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 12,
@@ -547,6 +547,30 @@
         {
           "text": "Bacon (Handyxa) slår Yxor med fördel: [18 / 12 → 12] mot 11 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 2 skada (3 − 1 rustning) från Klor. KP 13/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd med nackdel: [6 / 17 → 17] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [8 / 16 → 8] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 17 skada (19 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
