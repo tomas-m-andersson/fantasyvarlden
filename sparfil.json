@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:23:22.094Z",
+  "uppdaterad": "2026-11-06T18:23:28.242Z",
   "spel": {
     "version": 1,
-    "tid": 1793989399103,
+    "tid": 1793989405254,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -224,7 +224,7 @@
       "h": {
         "bacon": {
           "kp": 17,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -246,7 +246,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Handyxa",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "monika": {
           "kp": 15,
@@ -270,10 +270,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -305,7 +305,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": true
         }
@@ -523,6 +523,22 @@
         {
           "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [17] mot 15 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [19] mot 11 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
