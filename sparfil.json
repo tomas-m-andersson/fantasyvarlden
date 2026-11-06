@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:20:36.054Z",
+  "uppdaterad": "2026-11-06T18:21:15.829Z",
   "spel": {
     "version": 1,
-    "tid": 1793989232970,
+    "tid": 1793989272791,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -225,7 +225,15 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "monika": {
           "kp": 17,
@@ -238,8 +246,22 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [],
-          "anvanda": []
+          "markerade": [
+            "Slagvapen"
+          ],
+          "anvanda": [
+            "Slagvapen"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Stridsgissel",
+          "nackdelNasta": true
         },
         "shinji": {
           "kp": 13,
@@ -254,8 +276,17 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Finna dolda ting"
-          ]
+            "Finna dolda ting",
+            "Kniv"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         }
       },
       "guld": 9,
@@ -267,6 +298,30 @@
         {
           "text": "Shinji Onishi slår Finna dolda ting: [10] mot 5 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi parerar: [4] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [20] mot 15 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Monika Plöjer tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 0 skada (1 − 1 rustning) från Klor. KP 17/17.",
+          "cls": "info"
         }
       ],
       "utfall": null,
