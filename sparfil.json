@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:23:44.012Z",
+  "uppdaterad": "2026-11-06T18:23:49.690Z",
   "spel": {
     "version": 1,
-    "tid": 1793989421069,
+    "tid": 1793989426770,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -244,7 +244,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
@@ -270,7 +270,7 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
@@ -305,7 +305,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -571,6 +571,10 @@
         {
           "text": "Harpydrottningen tar 17 skada (19 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
