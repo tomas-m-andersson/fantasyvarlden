@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:22:59.671Z",
+  "uppdaterad": "2026-11-06T18:23:03.357Z",
   "spel": {
     "version": 1,
-    "tid": 1793989376729,
+    "tid": 1793989380445,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -203,7 +203,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En skogssjö blank som en spegel. Någon har knutit små tygbitar på grenarna. Det doftar kåda och regn.",
-          "fro": 340312366
+          "fro": 340312366,
+          "klar": true,
+          "utfallText": "Ni vilar i lugn och ro. Alla känner sig lite bättre."
         },
         {
           "typ": "rum",
@@ -212,10 +214,13 @@
           "fro": 895310847,
           "fiender": [
             "harpydrottning"
+          ],
+          "rutor": [
+            35
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "bacon": {
           "kp": 17,
@@ -243,7 +248,7 @@
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 10,
+          "kp": 15,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -272,7 +277,7 @@
           "nackdelNasta": false
         },
         "shinji": {
-          "kp": 6,
+          "kp": 10,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -476,13 +481,17 @@
         {
           "text": "Shinji Onishi tar 7 skada från Giftpil. KP 6/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
       "start": "2026-11-06 19:19",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false,
       "anvandaText": [
         "Ett hygge med stubbar så långt ögat når",
