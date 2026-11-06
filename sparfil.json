@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:22:08.116Z",
+  "uppdaterad": "2026-11-06T18:22:14.408Z",
   "spel": {
     "version": 1,
-    "tid": 1793989325219,
+    "tid": 1793989331427,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -235,7 +235,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
@@ -278,11 +278,14 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
             "Finna dolda ting",
             "Kniv",
-            "Pilbåge"
+            "Pilbåge",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -292,7 +295,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort båge"
+          "valtVapen": "Kort svärd"
         }
       },
       "guld": 9,
@@ -404,6 +407,30 @@
         {
           "text": "— Runda 4 —",
           "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [18] mot 11 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [1] mot 10 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Där satt den. Tärningsgudarna ler i dag.",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Harpya tar 14 skada (15 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
