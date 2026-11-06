@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-06T18:23:57.323Z",
+  "uppdaterad": "2026-11-06T18:24:02.858Z",
   "spel": {
     "version": 1,
-    "tid": 1793989434349,
+    "tid": 1793989439869,
     "kassa": 1293,
     "packning": [
       "Läkande ört",
@@ -224,7 +224,7 @@
       "h": {
         "bacon": {
           "kp": 17,
-          "vp": 5,
+          "vp": 2,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -244,7 +244,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         },
@@ -582,6 +582,18 @@
         },
         {
           "text": "Harpydrottningen tar 2 skada (4 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [4 / 18 → 4] mot 11 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
           "cls": "ok"
         }
       ],
