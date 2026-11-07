@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:04:38.408Z",
+  "uppdaterad": "2026-11-07T09:04:45.982Z",
   "spel": {
     "version": 1,
-    "tid": 1794042275384,
+    "tid": 1794042283108,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -352,7 +352,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         }
       },
@@ -537,6 +537,14 @@
         {
           "text": "Bacon tar 7 skada (8 − 1 rustning) från Klor. KP 10/17.",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [2] mot 11 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 1 tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
