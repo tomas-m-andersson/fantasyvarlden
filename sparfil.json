@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:05:20.876Z",
+  "uppdaterad": "2026-11-07T09:05:26.172Z",
   "spel": {
     "version": 1,
-    "tid": 1794042318021,
+    "tid": 1794042323313,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -294,7 +294,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 4,
@@ -322,7 +323,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -354,7 +355,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
@@ -607,6 +608,14 @@
         {
           "text": "Shinji Onishi (Kort svärd) slår Svärd: [17] mot 11 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [19] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 5 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
