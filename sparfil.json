@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:05:26.172Z",
+  "uppdaterad": "2026-11-07T09:05:33.411Z",
   "spel": {
     "version": 1,
-    "tid": 1794042323313,
+    "tid": 1794042330543,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -243,7 +243,9 @@
           "rutor": [
             62,
             49
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld."
         },
         {
           "typ": "rum",
@@ -359,7 +361,7 @@
           "valtVapen": "Kort svärd"
         }
       },
-      "guld": 5,
+      "guld": 11,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
@@ -616,6 +618,18 @@
         {
           "text": "— Runda 5 —",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [14] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 tar 13 skada (14 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
