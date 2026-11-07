@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:01:34.121Z",
+  "uppdaterad": "2026-11-07T09:01:43.613Z",
   "spel": {
     "version": 1,
-    "tid": 1794042091245,
+    "tid": 1794042100637,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -178,7 +178,9 @@
         {
           "typ": "resa",
           "mote": "gycklare",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Vagnen rullar igen! Gycklarna bjuder på mat och en låt. (alla läker)"
         },
         {
           "typ": "rum",
@@ -282,7 +284,7 @@
           "anvanda": []
         },
         "shinji": {
-          "kp": 9,
+          "kp": 13,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -314,6 +316,14 @@
         },
         {
           "text": "Ni plockar fel. Någon får utslag överallt.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår STY: [12] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Vagnen rullar igen! Gycklarna bjuder på mat och en låt. (alla läker)",
           "cls": "info"
         }
       ],
