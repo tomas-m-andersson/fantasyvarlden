@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:05:58.682Z",
+  "uppdaterad": "2026-11-07T09:06:06.494Z",
   "spel": {
     "version": 1,
-    "tid": 1794042355783,
+    "tid": 1794042363597,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -309,7 +309,7 @@
         },
         "monika": {
           "kp": 4,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -330,7 +330,7 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
@@ -338,7 +338,7 @@
         },
         "shinji": {
           "kp": 10,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -366,7 +366,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         }
       },
@@ -651,6 +651,22 @@
         {
           "text": "— Runda 1 —",
           "cls": "info"
+        },
+        {
+          "text": "★ Shinji Onishi: Ledarskap!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer får en extra handling!",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [16 / 19 → 16] mot 15 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
