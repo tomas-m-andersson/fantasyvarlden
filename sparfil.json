@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:03:51.186Z",
+  "uppdaterad": "2026-11-07T09:03:56.114Z",
   "spel": {
     "version": 1,
-    "tid": 1794042228322,
+    "tid": 1794042233266,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -239,6 +239,10 @@
           "fiender": [
             "tiger",
             "tiger"
+          ],
+          "rutor": [
+            62,
+            49
           ]
         },
         {
@@ -263,7 +267,7 @@
           ]
         }
       ],
-      "i": 4,
+      "i": 5,
       "h": {
         "bacon": {
           "kp": 17,
