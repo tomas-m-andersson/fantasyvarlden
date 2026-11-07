@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:03:56.114Z",
+  "uppdaterad": "2026-11-07T09:04:17.253Z",
   "spel": {
     "version": 1,
-    "tid": 1794042233266,
+    "tid": 1794042254256,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -340,7 +340,8 @@
             "Bestiologi",
             "Akrobatik",
             "Upptäcka fara",
-            "Kniv"
+            "Kniv",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -349,7 +350,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         }
       },
       "guld": 5,
@@ -469,6 +471,18 @@
         {
           "text": "Svartnisse faller!",
           "cls": "d"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi (Kort svärd) slår Svärd: [4] mot 11 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 1 tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
