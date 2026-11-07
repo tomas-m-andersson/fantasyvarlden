@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:01:50.530Z",
+  "uppdaterad": "2026-11-07T09:02:27.248Z",
   "spel": {
     "version": 1,
-    "tid": 1794042107661,
+    "tid": 1794042144265,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -198,7 +198,9 @@
               "grotta",
               "ruin"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Alla tar sig till slut förbi, men Monika Plöjer gjorde sig illa på vägen."
         },
         {
           "typ": "rum",
@@ -267,10 +269,12 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Akrobatik"
+          ]
         },
         "monika": {
-          "kp": 17,
+          "kp": 12,
           "vp": 14,
           "doende": false,
           "ok": 0,
@@ -281,7 +285,9 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Akrobatik"
+          ]
         },
         "shinji": {
           "kp": 13,
@@ -296,7 +302,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Bestiologi"
+            "Bestiologi",
+            "Akrobatik"
           ]
         }
       },
@@ -325,6 +332,22 @@
         {
           "text": "Vagnen rullar igen! Gycklarna bjuder på mat och en låt. (alla läker)",
           "cls": "info"
+        },
+        {
+          "text": "Bacon slår Akrobatik: [3] mot 6 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer slår Akrobatik: [13] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 5 skada från En bred klyfta. KP 12/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår Akrobatik: [3] mot 7 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
