@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:02:36.045Z",
+  "uppdaterad": "2026-11-07T09:03:07.586Z",
   "spel": {
     "version": 1,
-    "tid": 1794042153169,
+    "tid": 1794042184677,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -211,7 +211,9 @@
             "namn": "Fallgrop",
             "text": "Marken ger vika över en grop med spetsar.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Marken ger vika över en grop med spetsar. Shinji Onishi får ta smällen."
         },
         {
           "typ": "rum",
@@ -290,7 +292,7 @@
           ]
         },
         "shinji": {
-          "kp": 13,
+          "kp": 10,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -303,7 +305,8 @@
           "markerade": [],
           "anvanda": [
             "Bestiologi",
-            "Akrobatik"
+            "Akrobatik",
+            "Upptäcka fara"
           ]
         }
       },
@@ -348,6 +351,18 @@
         {
           "text": "Shinji Onishi slår Akrobatik: [3] mot 7 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi slår Upptäcka fara: [19] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Marken ger vika över en grop med spetsar.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 3 skada från Fallgrop. KP 10/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
