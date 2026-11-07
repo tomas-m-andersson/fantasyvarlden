@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:06:06.494Z",
+  "uppdaterad": "2026-11-07T09:06:11.057Z",
   "spel": {
     "version": 1,
-    "tid": 1794042363597,
+    "tid": 1794042368181,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -333,7 +333,7 @@
           "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
