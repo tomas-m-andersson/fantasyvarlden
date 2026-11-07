@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:04:17.253Z",
+  "uppdaterad": "2026-11-07T09:04:23.441Z",
   "spel": {
     "version": 1,
-    "tid": 1794042254256,
+    "tid": 1794042260316,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -296,7 +296,7 @@
         },
         "monika": {
           "kp": 12,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -316,10 +316,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -482,6 +482,18 @@
         },
         {
           "text": "Sabeltandad tiger 1 tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Monika Plöjer: Hatten stannar på!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [12 / 18 → 12] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 tar 11 skada (12 − 1 rustning).",
           "cls": "ok"
         }
       ],
