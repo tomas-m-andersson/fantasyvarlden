@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:00:35.483Z",
+  "uppdaterad": "2026-11-07T09:01:26.985Z",
   "spel": {
     "version": 1,
-    "tid": 1794042032555,
+    "tid": 1794042084011,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -171,7 +171,9 @@
         {
           "typ": "resa",
           "mote": "orter",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Ni plockar fel. Någon får utslag överallt."
         },
         {
           "typ": "resa",
@@ -280,7 +282,7 @@
           "anvanda": []
         },
         "shinji": {
-          "kp": 13,
+          "kp": 9,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -291,13 +293,27 @@
             "Torkat kött"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Bestiologi"
+          ]
         }
       },
       "guld": 0,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi slår Bestiologi: [18] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada. KP 9/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Ni plockar fel. Någon får utslag överallt.",
           "cls": "info"
         }
       ],
