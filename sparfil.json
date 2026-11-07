@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:03:12.605Z",
+  "uppdaterad": "2026-11-07T09:03:34.227Z",
   "spel": {
     "version": 1,
-    "tid": 1794042189749,
+    "tid": 1794042211338,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -277,7 +277,15 @@
           "markerade": [],
           "anvanda": [
             "Akrobatik"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "monika": {
           "kp": 12,
@@ -290,10 +298,22 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [],
+          "markerade": [
+            "Slagvapen"
+          ],
           "anvanda": [
-            "Akrobatik"
-          ]
+            "Akrobatik",
+            "Slagvapen"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Stridsgissel"
         },
         "shinji": {
           "kp": 10,
@@ -306,12 +326,23 @@
           "saker": [
             "Torkat kött"
           ],
-          "markerade": [],
+          "markerade": [
+            "Kniv"
+          ],
           "anvanda": [
             "Bestiologi",
             "Akrobatik",
-            "Upptäcka fara"
-          ]
+            "Upptäcka fara",
+            "Kniv"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         }
       },
       "guld": 0,
@@ -367,6 +398,30 @@
         {
           "text": "Shinji Onishi tar 3 skada från Fallgrop. KP 10/13.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi parerar: [1] mot 14 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Shinji Onishi har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [1] mot 15 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Sabeltandad tiger tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
