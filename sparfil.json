@@ -1,7 +1,7 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:05:55.886Z",
+  "uppdaterad": "2026-11-07T09:05:58.682Z",
   "spel": {
     "version": 1,
     "tid": 1794042355783,
@@ -647,6 +647,10 @@
         {
           "text": "Shinji Onishi slår Finna dolda ting: [14] mot 5 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
