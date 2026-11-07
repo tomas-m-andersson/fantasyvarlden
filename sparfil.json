@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:05:51.716Z",
+  "uppdaterad": "2026-11-07T09:05:55.886Z",
   "spel": {
     "version": 1,
-    "tid": 1794042348851,
+    "tid": 1794042355783,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -259,7 +259,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En grotta full av glittrande kristaller. Spår i leran visar att något stort nyss gick här. Det knastrar under fötterna.",
-          "fro": 993788961
+          "fro": 993788961,
+          "klar": true,
+          "utfallText": "Shinji Onishi hittar 10 guld."
         },
         {
           "typ": "rum",
@@ -268,10 +270,13 @@
           "fro": 59966536,
           "fiender": [
             "drake"
+          ],
+          "rutor": [
+            10
           ]
         }
       ],
-      "i": 7,
+      "i": 8,
       "h": {
         "bacon": {
           "kp": 10,
@@ -351,7 +356,8 @@
             "Upptäcka fara",
             "Kniv",
             "Svärd",
-            "Undvika"
+            "Undvika",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -364,7 +370,7 @@
           "valtVapen": "Kort svärd"
         }
       },
-      "guld": 21,
+      "guld": 31,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
@@ -636,6 +642,10 @@
         },
         {
           "text": "Bacon slår Finna dolda ting: [14] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår Finna dolda ting: [14] mot 5 – misslyckat",
           "cls": "fel"
         }
       ],
