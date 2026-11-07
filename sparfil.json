@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:06:59.171Z",
+  "uppdaterad": "2026-11-07T09:07:15.338Z",
   "spel": {
     "version": 1,
-    "tid": 1794042416313,
+    "tid": 1794042432345,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -311,7 +311,7 @@
           "vp": 8,
           "doende": true,
           "ok": 2,
-          "miss": 0,
+          "miss": 1,
           "stabil": false,
           "dod": false,
           "saker": [
@@ -336,9 +336,9 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 1,
+          "kp": 0,
           "vp": 8,
-          "doende": false,
+          "doende": true,
           "ok": 0,
           "miss": 0,
           "stabil": false,
@@ -366,7 +366,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         }
       },
@@ -719,6 +719,26 @@
         {
           "text": "Den talande draken tar 0 skada (1 − 4 rustning).",
           "cls": "info"
+        },
+        {
+          "text": "Shinji Onishi tar 4 skada (5 − 1 rustning) från Svans. KP 0/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [16] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer slår dödsslag mot FYS: [19] mot 17 – misslyckat (2 lyckade, 1 misslyckade).",
+          "cls": "fel"
         }
       ],
       "utfall": null,
