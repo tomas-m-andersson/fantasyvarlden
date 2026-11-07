@@ -1,14 +1,13 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:06:11.057Z",
+  "uppdaterad": "2026-11-07T09:06:30.394Z",
   "spel": {
     "version": 1,
-    "tid": 1794042368181,
+    "tid": 1794042387519,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
-      "Läkedryck",
       "Flaska vin"
     ],
     "sallskap": [
@@ -279,7 +278,7 @@
       "i": 8,
       "h": {
         "bacon": {
-          "kp": 10,
+          "kp": 3,
           "vp": 2,
           "doende": false,
           "ok": 0,
@@ -304,13 +303,13 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa"
         },
         "monika": {
-          "kp": 4,
+          "kp": 0,
           "vp": 8,
-          "doende": false,
+          "doende": true,
           "ok": 0,
           "miss": 0,
           "stabil": false,
@@ -337,7 +336,7 @@
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
-          "kp": 10,
+          "kp": 1,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -666,6 +665,34 @@
         },
         {
           "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [16 / 19 → 16] mot 15 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon använder läkedryck på Monika Plöjer. Återfå 2T6 KP.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer återfår 4 KP.",
+          "cls": "ok"
+        },
+        {
+          "text": "Den talande draken sprutar eld över hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 7 skada (8 − 1 rustning) från Eldlunga. KP 3/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 8 skada (9 − 1 rustning) från Eldlunga. KP 0/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "Shinji Onishi tar 9 skada (10 − 1 rustning) från Eldlunga. KP 1/13.",
           "cls": "fel"
         }
       ],
