@@ -1,23 +1,21 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:07:15.338Z",
+  "uppdaterad": "2026-11-07T09:07:22.710Z",
   "spel": {
     "version": 1,
-    "tid": 1794042432345,
+    "tid": 1794042439842,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
       "Flaska vin"
     ],
     "sallskap": [
-      "bacon",
-      "monika",
-      "shinji"
+      "bacon"
     ],
     "hj": {
       "monika": {
-        "dod": false,
+        "dod": true,
         "bonus": {
           "Akrobatik": 2,
           "Uppträda": 1,
@@ -87,7 +85,7 @@
         "rustning": null
       },
       "shinji": {
-        "dod": false,
+        "dod": true,
         "bonus": {
           "Svärd": 1
         },
@@ -109,6 +107,10 @@
       "krusbar": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-07 10:07",
+        "text": "Bacon, Monika Plöjer, Shinji Onishi misslyckades med ”Abu Bagars gyllene sköld”. Hela sällskapet har fallit i striden. Monika Plöjer och Shinji Onishi dog."
+      },
       {
         "tid": "2026-11-06 19:24",
         "text": "Bacon, Monika Plöjer, Shinji Onishi utforskade Gollenskogen och nådde kapitel 1 (5 rum). De gick hem med 32 guld."
@@ -278,7 +280,7 @@
       "i": 8,
       "h": {
         "bacon": {
-          "kp": 3,
+          "kp": 5,
           "vp": 2,
           "doende": false,
           "ok": 0,
@@ -303,17 +305,17 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 0,
           "vp": 8,
-          "doende": true,
+          "doende": false,
           "ok": 2,
-          "miss": 1,
+          "miss": 3,
           "stabil": false,
-          "dod": false,
+          "dod": true,
           "saker": [
             "Äppelcider"
           ],
@@ -338,11 +340,11 @@
         "shinji": {
           "kp": 0,
           "vp": 8,
-          "doende": true,
+          "doende": false,
           "ok": 0,
-          "miss": 0,
+          "miss": 3,
           "stabil": false,
-          "dod": false,
+          "dod": true,
           "saker": [
             "Torkat kött"
           ],
@@ -739,9 +741,76 @@
         {
           "text": "Monika Plöjer slår dödsslag mot FYS: [19] mot 17 – misslyckat (2 lyckade, 1 misslyckade).",
           "cls": "fel"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [17] mot 13 – misslyckat (0 lyckade, 1 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 12 skada (13 − 1 rustning) från Klor. KP 0/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon faller ihop och ligger döende!",
+          "cls": "dm"
+        },
+        {
+          "text": "Bacon slår dödsslag [1] mot 17 – NATURLIGT 1! – reser sig med 5 KP!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Där satt den. Tärningsgudarna ler i dag.",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer slår dödsslag mot FYS: [20] mot 17 – NATURLIGT 20! (2 lyckade, 3 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: En tjugo… Jag ska försöka vara snäll. Nej, förresten.",
+          "cls": "dm"
+        },
+        {
+          "text": "☠ Monika Plöjer är död och hamnar i poolen på skyskrapetaket i Miami.",
+          "cls": "dm"
+        },
+        {
+          "text": "Shinji Onishi slår dödsslag mot FYS: [20] mot 13 – NATURLIGT 20! (0 lyckade, 3 misslyckade).",
+          "cls": "fel"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Naturligt 20. Aj. Det här kommer att svida.",
+          "cls": "dm"
+        },
+        {
+          "text": "☠ Shinji Onishi är död och hamnar i poolen på skyskrapetaket i Miami.",
+          "cls": "dm"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": false,
+        "orsak": "Hela sällskapet har fallit i striden.",
+        "beloning": 0,
+        "avgift": 0,
+        "byte": 31,
+        "doda": [
+          "monika",
+          "shinji"
+        ],
+        "forb": {
+          "bacon": [
+            {
+              "f": "Yxor",
+              "v": 12,
+              "s": 12,
+              "upp": false
+            }
+          ]
+        },
+        "rad": [
+          "Allt ni hittat under äventyret (31 guld) går förlorat."
+        ]
+      },
       "start": "2026-11-07 10:00"
     },
     "reset": 1793783047660,
