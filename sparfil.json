@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:06:30.394Z",
+  "uppdaterad": "2026-11-07T09:06:52.406Z",
   "spel": {
     "version": 1,
-    "tid": 1794042387519,
+    "tid": 1794042409549,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -303,14 +303,14 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         },
         "monika": {
           "kp": 0,
           "vp": 8,
           "doende": true,
-          "ok": 0,
+          "ok": 2,
           "miss": 0,
           "stabil": false,
           "dod": false,
@@ -329,10 +329,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -356,7 +356,8 @@
             "Kniv",
             "Svärd",
             "Undvika",
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -366,7 +367,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Kort svärd"
+          "valtVapen": "Kort båge"
         }
       },
       "guld": 31,
@@ -693,6 +694,22 @@
         },
         {
           "text": "Shinji Onishi tar 9 skada (10 − 1 rustning) från Eldlunga. KP 1/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer slår dödsslag mot FYS: [8] mot 17 – lyckat (1 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer slår dödsslag mot FYS: [3] mot 17 – lyckat (2 lyckade, 0 misslyckade).",
+          "cls": "ok"
+        },
+        {
+          "text": "Shinji Onishi (Kort båge) slår Pilbåge: [19] mot 10 – misslyckat",
           "cls": "fel"
         }
       ],
