@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:05:33.411Z",
+  "uppdaterad": "2026-11-07T09:05:43.058Z",
   "spel": {
     "version": 1,
-    "tid": 1794042330543,
+    "tid": 1794042340195,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -269,7 +269,7 @@
           ]
         }
       ],
-      "i": 5,
+      "i": 6,
       "h": {
         "bacon": {
           "kp": 10,
