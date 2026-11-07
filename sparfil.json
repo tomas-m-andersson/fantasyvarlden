@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:05:02.293Z",
+  "uppdaterad": "2026-11-07T09:05:06.208Z",
   "spel": {
     "version": 1,
-    "tid": 1794042299425,
+    "tid": 1794042303193,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -321,7 +321,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -343,7 +343,8 @@
             "Akrobatik",
             "Upptäcka fara",
             "Kniv",
-            "Svärd"
+            "Svärd",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -352,7 +353,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd"
         }
       },
