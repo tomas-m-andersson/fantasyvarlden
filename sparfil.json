@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:03:34.227Z",
+  "uppdaterad": "2026-11-07T09:03:40.689Z",
   "spel": {
     "version": 1,
-    "tid": 1794042211338,
+    "tid": 1794042217822,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -265,7 +265,7 @@
       "h": {
         "bacon": {
           "kp": 17,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -276,7 +276,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Akrobatik"
+            "Akrobatik",
+            "Yxor"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -285,7 +286,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "monika": {
           "kp": 12,
@@ -422,6 +423,30 @@
         {
           "text": "Sabeltandad tiger tar 9 skada (10 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [19 / 4 → 4] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Svartnisse anfaller Monika Plöjer: [4] mot 10 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer tar 0 skada (1 − 1 rustning) från Svartnisse. KP 12/17.",
+          "cls": "info"
         }
       ],
       "utfall": null,
