@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:03:40.689Z",
+  "uppdaterad": "2026-11-07T09:03:51.186Z",
   "spel": {
     "version": 1,
-    "tid": 1794042217822,
+    "tid": 1794042228322,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -227,7 +227,9 @@
           "rutor": [
             39,
             7
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 5 guld."
         },
         {
           "typ": "rum",
@@ -286,7 +288,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "monika": {
           "kp": 12,
@@ -313,7 +315,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -343,10 +345,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         }
       },
-      "guld": 0,
+      "guld": 5,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Abu Bagars gyllene sköld” av Porsch Wilson.",
@@ -447,6 +449,22 @@
         {
           "text": "Monika Plöjer tar 0 skada (1 − 1 rustning) från Svartnisse. KP 12/17.",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [5] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Svartnisse tar 11 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Svartnisse faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
