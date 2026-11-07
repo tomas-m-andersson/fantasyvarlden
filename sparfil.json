@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-07T09:04:23.441Z",
+  "uppdaterad": "2026-11-07T09:04:38.408Z",
   "spel": {
     "version": 1,
-    "tid": 1794042260316,
+    "tid": 1794042275384,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -270,8 +270,8 @@
       "i": 5,
       "h": {
         "bacon": {
-          "kp": 17,
-          "vp": 8,
+          "kp": 10,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -280,7 +280,9 @@
           "saker": [
             "Flaska vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Yxor"
+          ],
           "anvanda": [
             "Akrobatik",
             "Yxor"
@@ -292,10 +294,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "monika": {
-          "kp": 12,
+          "kp": 11,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -316,10 +318,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "shinji": {
@@ -350,7 +352,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
@@ -495,6 +497,46 @@
         {
           "text": "Sabeltandad tiger 2 tar 11 skada (12 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Bacon parerar: [1] mot 12 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: En etta! Beskriv gärna hur snyggt det där såg ut.",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer är i raseri och bryr sig inte om att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer tar 1 skada (2 − 1 rustning) från Sabeltänder. KP 11/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [8 / 14 → 8] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 1 tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Bacon tar 7 skada (8 − 1 rustning) från Klor. KP 10/17.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
