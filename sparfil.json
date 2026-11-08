@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:53:25.529Z",
+  "uppdaterad": "2026-11-08T18:53:33.873Z",
   "spel": {
     "version": 1,
-    "tid": 1794164002592,
+    "tid": 1794164010759,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -254,7 +254,9 @@
           "rutor": [
             30,
             43
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 11 guld."
         },
         {
           "typ": "rum",
@@ -264,10 +266,14 @@
           "fiender": [
             "rovarhovding",
             "varg"
+          ],
+          "rutor": [
+            31,
+            53
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "tola": {
           "kp": 11,
@@ -369,7 +375,7 @@
           "nackdelNasta": true
         }
       },
-      "guld": 10,
+      "guld": 21,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Östra öknen. Kapitel 1.",
@@ -674,13 +680,25 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [9] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-08 19:46",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false,
       "anvandaText": [
         "Ett fält av märkliga, vindslipade stenar",
