@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:48:40.406Z",
+  "uppdaterad": "2026-11-08T18:48:49.129Z",
   "spel": {
     "version": 1,
-    "tid": 1794163717401,
+    "tid": 1794163726075,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -300,7 +300,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -505,6 +505,14 @@
         {
           "text": "FF tar 4 skada från Gorgors lågor. KP 9/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [12] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
