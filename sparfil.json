@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:51:10.435Z",
+  "uppdaterad": "2026-11-08T18:51:15.219Z",
   "spel": {
     "version": 1,
-    "tid": 1794163870149,
+    "tid": 1794163872183,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -261,7 +261,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "tola": {
           "kp": 11,
@@ -561,7 +561,7 @@
       "start": "2026-11-08 19:46",
       "utforska": true,
       "kapitel": 1,
-      "djup": 1,
+      "djup": 2,
       "paus": false,
       "anvandaText": [
         "Ett fält av märkliga, vindslipade stenar",
