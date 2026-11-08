@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:54:37.897Z",
+  "uppdaterad": "2026-11-08T18:54:43.627Z",
   "spel": {
     "version": 1,
-    "tid": 1794164074940,
+    "tid": 1794164080482,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -318,7 +318,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -794,6 +794,18 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [11] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
