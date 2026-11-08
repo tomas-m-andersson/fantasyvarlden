@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:07.921Z",
+  "uppdaterad": "2026-11-08T18:47:19.103Z",
   "spel": {
     "version": 1,
-    "tid": 1794163624942,
+    "tid": 1794163636156,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -261,7 +261,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Spjut"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -269,10 +271,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Långt spjut"
         },
         "malexander": {
-          "kp": 14,
+          "kp": 7,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -291,7 +294,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -316,7 +319,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "potus": {
@@ -339,7 +342,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd"
         }
       },
@@ -372,6 +375,26 @@
         {
           "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [15] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Rövare anfaller Malexander Bard: [9] mot 11 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard tar 7 skada (8 − 1 rustning) från Rövare. KP 7/14.",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut: [4] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
