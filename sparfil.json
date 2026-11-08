@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:52:36.730Z",
+  "uppdaterad": "2026-11-08T18:53:19.377Z",
   "spel": {
     "version": 1,
-    "tid": 1794163953655,
+    "tid": 1794163996268,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -293,7 +293,7 @@
           "valtVapen": "Långt spjut"
         },
         "malexander": {
-          "kp": 10,
+          "kp": 7,
           "vp": 5,
           "doende": false,
           "ok": 0,
@@ -364,9 +364,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
-          "nackdelNasta": false
+          "nackdelNasta": true
         }
       },
       "guld": 10,
@@ -645,6 +645,26 @@
         },
         {
           "text": "Malexander Bard (Kroksabel) slår Svärd: [18] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [20] mot 12 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: En tjugo… Jag ska försöka vara snäll. Nej, förresten.",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Potus Singulus Rövhatt tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "Rövare anfaller Malexander Bard: [11] mot 11 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Malexander Bard tar 3 skada (4 − 1 rustning) från Rövare. KP 7/14.",
           "cls": "fel"
         }
       ],
