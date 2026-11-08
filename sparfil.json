@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:52:24.926Z",
+  "uppdaterad": "2026-11-08T18:52:36.730Z",
   "spel": {
     "version": 1,
-    "tid": 1794163941890,
+    "tid": 1794163953655,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -312,7 +312,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -642,6 +642,10 @@
         {
           "text": "Kultist från Tarragons Hand faller!",
           "cls": "d"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [18] mot 12 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
