@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:48:20.693Z",
+  "uppdaterad": "2026-11-08T18:48:40.406Z",
   "spel": {
     "version": 1,
-    "tid": 1794163697634,
+    "tid": 1794163717401,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -258,7 +258,7 @@
       "i": 1,
       "h": {
         "tola": {
-          "kp": 13,
+          "kp": 11,
           "vp": 4,
           "doende": false,
           "ok": 0,
@@ -304,8 +304,8 @@
           "valtVapen": "Kroksabel"
         },
         "ff": {
-          "kp": 13,
-          "vp": 8,
+          "kp": 9,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -316,7 +316,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -325,11 +326,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut"
         },
         "potus": {
-          "kp": 15,
+          "kp": 8,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -350,9 +351,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 4,
@@ -459,6 +460,50 @@
         },
         {
           "text": "Rövare anfaller Potus Singulus Rövhatt: [10] mot 11 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt parerar: [18 / 10 → 18] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt tar 7 skada (8 − 1 rustning) från Rövare. KP 8/15.",
+          "cls": "fel"
+        },
+        {
+          "text": "Kultist från Tarragons Hand anfaller Tola Sparv: [7] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Tola Sparv tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Tola Sparv tar 2 skada (5 − 3 rustning) från Kultist från Tarragons Hand. KP 11/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "★ FF: Gorgor flammar!",
+          "cls": "d"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [5] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand tar 10 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand faller!",
+          "cls": "d"
+        },
+        {
+          "text": "FF tar 4 skada från Gorgors lågor. KP 9/13.",
           "cls": "fel"
         }
       ],
