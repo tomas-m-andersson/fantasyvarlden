@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:48:49.129Z",
+  "uppdaterad": "2026-11-08T18:49:06.613Z",
   "spel": {
     "version": 1,
-    "tid": 1794163726075,
+    "tid": 1794163743564,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -277,7 +277,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -513,6 +513,10 @@
         {
           "text": "Rövare tar 4 skada (5 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut: [15] mot 10 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
