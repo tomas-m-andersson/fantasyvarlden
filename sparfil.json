@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:49:06.613Z",
+  "uppdaterad": "2026-11-08T18:49:31.051Z",
   "spel": {
     "version": 1,
-    "tid": 1794163743564,
+    "tid": 1794163768007,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -277,7 +277,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -326,7 +326,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "potus": {
@@ -351,7 +351,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -516,6 +516,14 @@
         },
         {
           "text": "Tola Sparv (Långt spjut) slår Spjut: [15] mot 10 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [14] mot 12 – misslyckat",
           "cls": "fel"
         }
       ],
