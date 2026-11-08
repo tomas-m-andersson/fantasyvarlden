@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:54:05.908Z",
+  "uppdaterad": "2026-11-08T18:54:11.718Z",
   "spel": {
     "version": 1,
-    "tid": 1794164042995,
+    "tid": 1794164048709,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -295,7 +295,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -318,12 +318,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "ff": {
-          "kp": 9,
-          "vp": 5,
+          "kp": 8,
+          "vp": 2,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -370,7 +370,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -724,6 +724,22 @@
         {
           "text": "Rövarhövdingen tar 1 skada (3 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ FF: Gorgor flammar!",
+          "cls": "d"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [18] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 1 skada från Gorgors lågor. KP 8/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
