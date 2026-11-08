@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:51:01.801Z",
+  "uppdaterad": "2026-11-08T18:51:10.435Z",
   "spel": {
     "version": 1,
-    "tid": 1794163858496,
+    "tid": 1794163870149,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -221,6 +221,12 @@
           "fiender": [
             "rovare",
             "kultist"
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld.",
+          "rutor": [
+            20,
+            16
           ]
         },
         {
@@ -277,7 +283,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -300,7 +306,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -327,7 +333,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort spjut"
+          "valtVapen": "Gorgor"
         },
         "potus": {
           "kp": 8,
@@ -351,12 +357,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
       },
-      "guld": 4,
+      "guld": 10,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Östra öknen. Kapitel 1.",
@@ -537,6 +543,18 @@
         {
           "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [18] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [11] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
