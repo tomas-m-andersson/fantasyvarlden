@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:51:47.871Z",
+  "uppdaterad": "2026-11-08T18:51:53.137Z",
   "spel": {
     "version": 1,
-    "tid": 1794163904929,
+    "tid": 1794163910197,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -293,8 +293,8 @@
           "valtVapen": "Långt spjut"
         },
         "malexander": {
-          "kp": 13,
-          "vp": 8,
+          "kp": 10,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -312,7 +312,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -590,6 +590,18 @@
         {
           "text": "Kultist från Tarragons Hand tar 4 skada.",
           "cls": "ok"
+        },
+        {
+          "text": "★ Malexander Bard: Den gyllene!",
+          "cls": "d"
+        },
+        {
+          "text": "Malexander snubblar på sin egen kroksabel.",
+          "cls": "dm"
+        },
+        {
+          "text": "Malexander Bard tar 3 skada från sig själv. KP 10/14.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
