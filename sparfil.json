@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:51:15.219Z",
+  "uppdaterad": "2026-11-08T18:51:21.730Z",
   "spel": {
     "version": 1,
-    "tid": 1794163872183,
+    "tid": 1794163881454,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -238,7 +238,9 @@
             "namn": "Kvicksand",
             "text": "Sanden börjar suga ner er.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Sanden börjar suga ner er. Potus Singulus Rövhatt får ta smällen."
         },
         {
           "typ": "rum",
@@ -248,6 +250,10 @@
           "fiender": [
             "rovare",
             "kultist"
+          ],
+          "rutor": [
+            30,
+            43
           ]
         },
         {
@@ -261,7 +267,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "tola": {
           "kp": 11,
@@ -336,7 +342,7 @@
           "valtVapen": "Gorgor"
         },
         "potus": {
-          "kp": 8,
+          "kp": 4,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -348,7 +354,8 @@
             "Svärd"
           ],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Upptäcka fara"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -555,13 +562,25 @@
         {
           "text": "Rövare faller!",
           "cls": "d"
+        },
+        {
+          "text": "Potus Singulus Rövhatt slår Upptäcka fara: [8] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Sanden börjar suga ner er.",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt tar 4 skada från Kvicksand. KP 4/15.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
       "start": "2026-11-08 19:46",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false,
       "anvandaText": [
         "Ett fält av märkliga, vindslipade stenar",
