@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:53.053Z",
+  "uppdaterad": "2026-11-08T18:47:59.549Z",
   "spel": {
     "version": 1,
-    "tid": 1794163669796,
+    "tid": 1794163676623,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -209,7 +209,9 @@
           "rutor": [
             25,
             36
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 4 guld."
         },
         {
           "typ": "rum",
@@ -249,7 +251,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "tola": {
           "kp": 13,
@@ -271,7 +273,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -294,7 +296,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -319,7 +321,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "potus": {
@@ -344,12 +346,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": true
         }
       },
-      "guld": 0,
+      "guld": 4,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Östra öknen. Kapitel 1.",
@@ -440,7 +442,7 @@
       "start": "2026-11-08 19:46",
       "utforska": true,
       "kapitel": 1,
-      "djup": 0,
+      "djup": 1,
       "paus": false,
       "anvandaText": [
         "Ett fält av märkliga, vindslipade stenar",
