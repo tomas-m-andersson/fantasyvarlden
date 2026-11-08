@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:29.753Z",
+  "uppdaterad": "2026-11-08T18:47:38.383Z",
   "spel": {
     "version": 1,
-    "tid": 1794163646727,
+    "tid": 1794163655347,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -331,7 +331,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
             "Svärd"
           ],
@@ -342,8 +344,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort svärd"
+          "agerat": true,
+          "valtVapen": "Kort svärd",
+          "nackdelNasta": true
         }
       },
       "guld": 0,
@@ -403,6 +406,14 @@
         {
           "text": "Rövare anfaller Potus Singulus Rövhatt: [20] mot 11 – NATURLIGT 20!",
           "cls": "ok"
+        },
+        {
+          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [20] mot 12 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Potus Singulus Rövhatt tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
         }
       ],
       "utfall": null,
