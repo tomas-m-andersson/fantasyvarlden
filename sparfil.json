@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:46:53.686Z",
+  "uppdaterad": "2026-11-08T18:47:00.275Z",
   "spel": {
     "version": 1,
-    "tid": 1794163610522,
+    "tid": 1794163617178,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -281,7 +281,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -289,7 +291,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Kroksabel"
         },
         "ff": {
           "kp": 13,
@@ -358,6 +361,10 @@
         {
           "text": "Ulv faller!",
           "cls": "d"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [18] mot 12 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
