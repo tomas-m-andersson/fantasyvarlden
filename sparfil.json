@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:54:11.718Z",
+  "uppdaterad": "2026-11-08T18:54:15.055Z",
   "spel": {
     "version": 1,
-    "tid": 1794164048709,
+    "tid": 1794164052157,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -348,8 +348,8 @@
           "valtVapen": "Gorgor"
         },
         "potus": {
-          "kp": 4,
-          "vp": 10,
+          "kp": 9,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -370,7 +370,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -740,6 +740,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "★ Potus Singulus Rövhatt: Vägrar ge upp!",
+          "cls": "d"
+        },
+        {
+          "text": "Potus Singulus Rövhatt återfår 5 KP.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
