@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:38.383Z",
+  "uppdaterad": "2026-11-08T18:47:45.332Z",
   "spel": {
     "version": 1,
-    "tid": 1794163655347,
+    "tid": 1794163662456,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -294,7 +294,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -414,6 +414,10 @@
         {
           "text": "Naturligt 20! Potus Singulus Rövhatt tappar balansen och får nackdel på nästa slag.",
           "cls": "dm"
+        },
+        {
+          "text": "Malexander Bard (Kroksabel) slår Svärd: [13] mot 12 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
