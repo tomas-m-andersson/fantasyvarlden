@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:59.549Z",
+  "uppdaterad": "2026-11-08T18:48:20.693Z",
   "spel": {
     "version": 1,
-    "tid": 1794163676623,
+    "tid": 1794163697634,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -217,7 +217,11 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En saltöken som glittrar i solen. En ensam palm som har gett upp. Solen bränner som om den har något personligt emot er.",
-          "fro": 338799115
+          "fro": 338799115,
+          "fiender": [
+            "rovare",
+            "kultist"
+          ]
         },
         {
           "typ": "rum",
@@ -255,7 +259,7 @@
       "h": {
         "tola": {
           "kp": 13,
-          "vp": 2,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -277,7 +281,7 @@
           "valtVapen": "Långt spjut"
         },
         "malexander": {
-          "kp": 7,
+          "kp": 13,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -436,6 +440,26 @@
         {
           "text": "Rövare faller!",
           "cls": "d"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "Mitt i vilan hörs steg…",
+          "cls": "fel"
+        },
+        {
+          "text": "Fienden hinner först!",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Rövare anfaller Potus Singulus Rövhatt: [10] mot 11 – lyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
