@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:19.103Z",
+  "uppdaterad": "2026-11-08T18:47:29.753Z",
   "spel": {
     "version": 1,
-    "tid": 1794163636156,
+    "tid": 1794163646727,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -319,7 +319,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut"
         },
         "potus": {
@@ -395,6 +395,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [17] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Rövare anfaller Potus Singulus Rövhatt: [20] mot 11 – NATURLIGT 20!",
+          "cls": "ok"
         }
       ],
       "utfall": null,
