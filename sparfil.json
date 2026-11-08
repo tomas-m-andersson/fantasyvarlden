@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:44:39.646Z",
+  "uppdaterad": "2026-11-08T18:44:48.601Z",
   "spel": {
     "version": 1,
-    "tid": 1794163476496,
+    "tid": 1794163484714,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -13,7 +13,8 @@
     "sallskap": [
       "tola",
       "malexander",
-      "ff"
+      "ff",
+      "potus"
     ],
     "hj": {
       "monika": {
@@ -106,6 +107,14 @@
         "rustning": null
       },
       "ff": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "potus": {
         "dod": false,
         "bonus": {},
         "aventyr": 0,
