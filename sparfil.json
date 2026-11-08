@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:54:43.627Z",
+  "uppdaterad": "2026-11-08T18:54:54.799Z",
   "spel": {
     "version": 1,
-    "tid": 1794164080482,
+    "tid": 1794164091812,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -270,7 +270,8 @@
           "rutor": [
             31,
             53
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -318,7 +319,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -377,7 +378,7 @@
           "nackdelNasta": false
         }
       },
-      "guld": 21,
+      "guld": 25,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Östra öknen. Kapitel 1.",
@@ -806,14 +807,18 @@
         {
           "text": "Ulv faller!",
           "cls": "d"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Östra öknen.",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-08 19:46",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "Ett fält av märkliga, vindslipade stenar",
         "Gamar cirklar långt ovanför",
@@ -826,7 +831,8 @@
         "Svetten rinner och vattnet tar slut alldeles för fort",
         "En liten oas med ett grumligt vattenhål",
         "En gammal krukskärva med hästfolkets tecken"
-      ]
+      ],
+      "nyttRekord": true
     },
     "reset": 1793783047660,
     "rekord": {
@@ -839,6 +845,11 @@
         "kapitel": 1,
         "djup": 5,
         "datum": "2026-11-06"
+      },
+      "ostra-oknen": {
+        "kapitel": 1,
+        "djup": 5,
+        "datum": "2026-11-08"
       }
     }
   }
