@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:54:15.055Z",
+  "uppdaterad": "2026-11-08T18:54:21.116Z",
   "spel": {
     "version": 1,
-    "tid": 1794164052157,
+    "tid": 1794164058193,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -332,7 +332,9 @@
           "saker": [
             "Torkade fikon"
           ],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
             "Spjut",
             "Svärd"
@@ -344,11 +346,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Gorgor"
         },
         "potus": {
-          "kp": 9,
+          "kp": 5,
           "vp": 7,
           "doende": false,
           "ok": 0,
@@ -748,6 +750,26 @@
         {
           "text": "Potus Singulus Rövhatt återfår 5 KP.",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [1] mot 14 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Rövarhövdingen tar 15 skada (17 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövarhövdingen faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Potus Singulus Rövhatt tar 4 skada (5 − 1 rustning) från Bett. KP 5/15.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
