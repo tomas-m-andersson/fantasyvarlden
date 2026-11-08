@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:51:24.624Z",
+  "uppdaterad": "2026-11-08T18:51:47.871Z",
   "spel": {
     "version": 1,
-    "tid": 1794163881454,
+    "tid": 1794163904929,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -271,7 +271,7 @@
       "h": {
         "tola": {
           "kp": 11,
-          "vp": 4,
+          "vp": 1,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -289,7 +289,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -574,6 +574,22 @@
         {
           "text": "Potus Singulus Rövhatt tar 4 skada från Kvicksand. KP 4/15.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Tola Sparv: Riddaranfall!",
+          "cls": "d"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut med fördel: [12 / 3 → 3] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand tar 4 skada.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
