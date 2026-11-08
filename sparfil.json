@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:00.275Z",
+  "uppdaterad": "2026-11-08T18:47:07.921Z",
   "spel": {
     "version": 1,
-    "tid": 1794163617178,
+    "tid": 1794163624942,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -329,7 +329,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -337,7 +339,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Kort svärd"
         }
       },
       "guld": 0,
@@ -364,6 +367,10 @@
         },
         {
           "text": "Malexander Bard (Kroksabel) slår Svärd: [18] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Potus Singulus Rövhatt (Kort svärd) slår Svärd: [15] mot 12 – misslyckat",
           "cls": "fel"
         }
       ],
