@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:47:45.332Z",
+  "uppdaterad": "2026-11-08T18:47:53.053Z",
   "spel": {
     "version": 1,
-    "tid": 1794163662456,
+    "tid": 1794163669796,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -253,7 +253,7 @@
       "h": {
         "tola": {
           "kp": 13,
-          "vp": 5,
+          "vp": 2,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -271,7 +271,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -418,6 +418,22 @@
         {
           "text": "Malexander Bard (Kroksabel) slår Svärd: [13] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "★ Tola Sparv: Riddaranfall!",
+          "cls": "d"
+        },
+        {
+          "text": "Tola Sparv (Långt spjut) slår Spjut med fördel: [5 / 14 → 5] mot 10 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
