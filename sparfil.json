@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:52:06.099Z",
+  "uppdaterad": "2026-11-08T18:52:24.926Z",
   "spel": {
     "version": 1,
-    "tid": 1794163923057,
+    "tid": 1794163941890,
     "kassa": 1325,
     "packning": [
       "Läkande ört",
@@ -289,7 +289,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Långt spjut"
         },
         "malexander": {
@@ -312,7 +312,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kroksabel"
         },
         "ff": {
@@ -338,8 +338,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Gorgor"
+          "agerat": true,
+          "valtVapen": "Kort spjut"
         },
         "potus": {
           "kp": 4,
@@ -364,7 +364,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort svärd",
           "nackdelNasta": false
         }
@@ -614,6 +614,34 @@
         {
           "text": "Kultist från Tarragons Hand anfaller FF: [12] mot 12 – lyckat",
           "cls": "fel"
+        },
+        {
+          "text": "FF parerar: [13] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "FF har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Rövare anfaller Tola Sparv: [19] mot 11 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [4] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand tar 7 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
