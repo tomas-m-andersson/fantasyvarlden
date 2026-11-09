@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:24:33.397Z",
+  "uppdaterad": "2026-11-09T22:24:44.640Z",
   "spel": {
     "version": 1,
-    "tid": 1794263070429,
+    "tid": 1794263081636,
     "kassa": 1070,
     "packning": [
       "Läkande ört",
@@ -240,7 +240,9 @@
         {
           "typ": "resa",
           "mote": "gycklare",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Vagnen rullar igen! Gycklarna bjuder på mat och en låt. (alla läker)"
         },
         {
           "typ": "resa",
@@ -370,6 +372,14 @@
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Gojans gladiatorgrop” av Mona.",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer slår STY: [15] mot 17 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Vagnen rullar igen! Gycklarna bjuder på mat och en låt. (alla läker)",
           "cls": "info"
         }
       ],
