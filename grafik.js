@@ -65,7 +65,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Klyftan har egna målade bakgrunder där sällskapet står vid kanten (bakgrunder/klyfta_ute.png och klyfta_inne.png)
   // Viloplatserna har egna lägerbilder med lägereld (inne i grottor, kloaker och gruvor, annars ute)
   const bgId = extra==="hinder:klyfta" ? (KLYFTA_UTE[miljoId] ? "klyfta_ute" : "klyfta_inne")
-             : extra==="vila" ? (INNE_MILJO[miljoId] ? "lager_inne" : "lager_ute")
+             : extra==="vila" ? (INNE_MILJO[miljoId] ? "lager_inne" : String(miljoId).startsWith("oken") ? "lager_oken" : "lager_ute")
              : extra==="hinder:mur" ? (GATA[miljoId] || (INNE_MILJO[miljoId] ? "gata_inne" : "gata_ute"))
              : extra==="hinder:dorr" ? (INNE_MILJO[miljoId] ? "port_inne" : "port_ute")
              : extra==="hinder:stege" ? (miljoId==="oken" ? "klippa_oken" : (miljoId==="ruin"||miljoId==="vesselberget") ? "klippa_ruin" : "klippa")
@@ -344,9 +344,9 @@ G.regnLager = (canvas, pa) => {
 const KISTOR = Array.from({length:64},(_,i)=>i).filter(i=>i<8||i>15);   // npc/kista.png: rad 2 är tom
 const MARK_NER = { ortgard1: 6, ortgard2: 6, dunkers_hus: 4, grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
-const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
+const HJ_STEG = { lager_oken1: 12, lager_oken2: 11, klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
-const HJ_START = { klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
+const HJ_START = { lager_oken2: -3, klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
 const KLYFTA_UTE = { klippa_oken:1, klippa_ruin:1, boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 // Gåtan i sten: en förseglad dörr som stänger vägen, målad för varje sorts miljö
@@ -425,7 +425,7 @@ function ritaStenport(ctx, cx, fot, fro){
 // Värdshuset: elden i eldstaden (ingen rök, den går upp i skorstenen) och de fyra väggljusen
 const VARDSHUS_ELDAR = [ {x:105, y:114, s:9, inne:true},
   {x:45, y:17, ljus:true}, {x:166, y:17, ljus:true}, {x:224, y:17, ljus:true}, {x:315, y:17, ljus:true} ];
-const ELDAR = { lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
+const ELDAR = { lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
 const ELD = { senast:0, gnistor:[], rok:[] };
 function ritaEld(c, eldar, t){
   const x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);

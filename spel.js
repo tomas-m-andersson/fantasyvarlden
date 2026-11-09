@@ -582,7 +582,12 @@ function scenMiljo(m, steg){
   const r = st.run, p = r && PLATS_BILD[r.q.plats];
   if(r && steg && steg.rumtyp==="boss" && BOSS_PLATS[r.q.plats]) return BOSS_PLATS[r.q.plats];
   if(steg && steg.rumtyp==="boss" && steg.fiender && BOSS_BILD[steg.fiender[0]]) return BOSS_BILD[steg.fiender[0]];
-  if(!p && m==="skog" && steg && steg.rumtyp==="skatt") return "hygge";   // skatten i skogen står på ett hygge
+  if(!p && m==="skog" && steg && steg.rumtyp==="skatt") return "hygge";
+  // öknens rum med egna bilder: bilden väljs efter vad rumstexten beskriver
+  if(!p && m==="oken" && steg && steg.text){
+    if(/vindslipade stenar/i.test(steg.text)) return "oken_stenfalt";
+    if(/\boas/i.test(steg.text)) return "oken_oas";
+  }   // skatten i skogen står på ett hygge
   if(!p) return m;
   if(p==="gruva" && steg && steg.rumtyp==="boss") return "gruva_kult";
   return p;
