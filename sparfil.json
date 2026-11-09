@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:27:57.205Z",
+  "uppdaterad": "2026-11-09T22:28:17.427Z",
   "spel": {
     "version": 1,
-    "tid": 1794263274146,
+    "tid": 1794263294413,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -276,7 +276,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En liten oas med ett grumligt vattenhål. Resterna av en karavan som aldrig kom fram. Solen bränner som om den har något personligt emot er.",
-          "fro": 287785364
+          "fro": 287785364,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 6 guld."
         },
         {
           "typ": "rum",
@@ -385,7 +387,8 @@
           "markerade": [],
           "anvanda": [
             "Fingerfärdighet",
-            "Armborst"
+            "Armborst",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -425,7 +428,7 @@
           "valtVapen": "Handyxa"
         }
       },
-      "guld": 22,
+      "guld": 28,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Gojans gladiatorgrop” av Mona.",
@@ -562,6 +565,10 @@
         {
           "text": "Kultist från Tarragons Hand 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [18] mot 7 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
