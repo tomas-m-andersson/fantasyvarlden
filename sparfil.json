@@ -1,20 +1,18 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-08T18:54:59.306Z",
+  "uppdaterad": "2026-11-09T10:37:42.940Z",
   "spel": {
     "version": 1,
-    "tid": 1794164096398,
+    "tid": 1794220662643,
     "kassa": 1370,
     "packning": [
       "Läkande ört",
       "Flaska vin"
     ],
     "sallskap": [
-      "tola",
       "malexander",
-      "ff",
-      "potus"
+      "ff"
     ],
     "hj": {
       "monika": {
