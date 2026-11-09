@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:31:58.723Z",
+  "uppdaterad": "2026-11-09T22:33:21.193Z",
   "spel": {
     "version": 1,
-    "tid": 1794263515699,
+    "tid": 1794263598030,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -361,16 +361,16 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": true,
+          "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
         "uranus": {
           "kp": 11,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -416,7 +416,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst",
           "nackdelNasta": false
         },
@@ -444,7 +444,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         }
@@ -733,6 +733,38 @@
         },
         {
           "text": "🥣 Grötsvärdet! Där Nannheim träffar blir huvudet på Resen Bulk till pyttipanna.",
+          "cls": "dm"
+        },
+        {
+          "text": "Resen Bulk tvekar och missar tillfället.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Uranus Wett: Vantim och Nannheim!",
+          "cls": "d"
+        },
+        {
+          "text": "Uranus Wett (Vantim) slår Svärd: [18] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Uranus Wett (Nannheim) slår Svärd: [6] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Resen Bulk tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Resen Bulk faller!",
+          "cls": "d"
+        },
+        {
+          "text": "🥣 Grötsvärdet! Resen Bulk förvandlas helt till en rykande portion ravioli ur burk.",
           "cls": "dm"
         }
       ],
