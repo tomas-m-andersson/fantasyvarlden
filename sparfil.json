@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:23:15.439Z",
+  "uppdaterad": "2026-11-09T22:23:38.121Z",
   "spel": {
     "version": 1,
-    "tid": 1794262992481,
+    "tid": 1794263015239,
     "kassa": 1070,
     "packning": [
       "Läkande ört",
@@ -130,9 +130,9 @@
       }
     },
     "tavla": [
-      "barnen",
-      "rattor",
-      "gripagg"
+      "gripagg",
+      "hostvakt",
+      "barnen"
     ],
     "avklarade": {
       "skold": 1,
