@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:29:48.674Z",
+  "uppdaterad": "2026-11-09T22:30:02.421Z",
   "spel": {
     "version": 1,
-    "tid": 1794263385755,
+    "tid": 1794263399485,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -320,7 +320,9 @@
           },
           "bulk": true,
           "bulkText": "Kärrans hjul fastnar i sanden. Bulk rycker till och knyter näven.",
-          "bulkKlar": true
+          "bulkKlar": true,
+          "klar": true,
+          "utfallText": "Uranus Wett löser det. Ni går vidare."
         },
         {
           "typ": "rum",
@@ -373,7 +375,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Kunskap"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -611,6 +614,10 @@
         },
         {
           "text": "Monika Plöjer sjunger en vaggvisa. Bulk somnar om med ett lyckligt leende.",
+          "cls": "ok"
+        },
+        {
+          "text": "Uranus Wett slår Kunskap: [6] mot 12 – lyckat",
           "cls": "ok"
         }
       ],
