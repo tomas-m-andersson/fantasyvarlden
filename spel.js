@@ -231,8 +231,8 @@ function ritaHem(){
   }
   html += `<section class="card"><div class="spelledare">${isakHtml(new Date().getDate())}<div><span class="small muted">Spelledaren Isak Jansson</span><p class="berattelse" style="margin:2px 0 0">${esc(ISAK.halsning[(new Date().getDate()+new Date().getHours())%ISAK.halsning.length])}</p></div></div></section>`;
   html += `<section class="card"><div class="row" style="justify-content:space-between"><h2>Sällskapet</h2><span class="kassa">${guldHtml(st.kassa)}</span></div>
-    <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<button class="slot fylld" data-a="visa" data-id="${id}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span></button>`:`<div class="slot">Tom plats</div>`}).join("")}</div>
-    <p class="small muted">Välj 1–4 hjältar i galleriet nedan. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
+    <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<div class="slot fylld" role="button" tabindex="0" data-a="visa" data-id="${id}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span>${st.run?"":`<button class="hval ut" data-a="valj" data-id="${id}" aria-label="Ta bort ${esc(HJ[id].namn)} ur sällskapet">✕</button>`}</div>`:`<div class="slot">Tom plats</div>`}).join("")}</div>
+    <p class="small muted"><b>Håll in</b> på en hjälte i galleriet för att ta med hen. Tryck på <b>✕</b> (eller håll in igen) för att ta bort. Välj 1–4 hjältar. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
     <div class="row hemval">
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragstavlan<span class="sub">Lansors förmedling</span></button>
       <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
@@ -241,7 +241,7 @@ function ritaHem(){
     </div>
     <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
   </section>`;
-  html += `<section class="card"><h2>Hjältegalleriet</h2><p class="small muted">Tryck på en hjälte för att se hjältebladet och lägga till eller ta bort ur sällskapet.</p>
+  html += `<section class="card"><h2>Hjältegalleriet</h2><p class="small muted"><b>Håll in</b> på en hjälte för att ta med hen i sällskapet eller ta bort hen. <b>Tryck</b> kort för att se hjältebladet.</p>
     <div class="grid">${levande.map(h=>hkort(h)).join("")}</div></section>`;
   if(doda.length){
     html += `<section class="card"><h2>Efterriket</h2><p class="small muted">Döda hjältar ligger i poolen på ett skyskrapetak i Miami tillsammans med den stora björnen Tetrok – tills någon köper tillbaka dem till livet. Tryck på en hjälte för att köpa tillbaka hen.</p>
@@ -255,9 +255,11 @@ function ritaHem(){
   G.ritaVardshus($("#vardshus"), party.map(id=>({id, ruta:figur(id)})));
   if(doda.length) G.ritaPool($("#pool"), doda.map(h=>({id:h.id, ruta:figur(h.id)})));
   app.onclick = e => {
+    if(langtryck.gjort){ langtryck.gjort = false; return; }
     const b = e.target.closest("[data-a]"); if(!b) return;
     const a = b.dataset.a, id = b.dataset.id;
     if(a==="visa") visaHjalte(id);
+    if(a==="valj") return valjHjalte(id, b);
     if(a==="tavla"){ jensLedig = null; ga("tavla"); }
     if(a==="basar") ga("basar");
     if(a==="platser") ga("platser");
@@ -266,12 +268,41 @@ function ritaHem(){
     if(a==="ge-upp") geUpp();
   };
 }
+// Snabbval: håll in på en hjälte (ca en halv sekund) för att lägga till eller ta bort ur sällskapet
+const langtryck = {tid:null, gjort:false, x:0, y:0, el:null};
+function slutaLangtryck(){ clearTimeout(langtryck.tid); langtryck.tid = null; if(langtryck.el) langtryck.el.classList.remove("trycker"); langtryck.el = null; }
+app.addEventListener("pointerdown", e => {
+  langtryck.gjort = false;
+  if(vy!=="hem" || st.run) return;
+  const el = e.target.closest(".hcard:not(.dod), .slot.fylld"); if(!el || e.target.closest(".hval")) return;
+  slutaLangtryck(); langtryck.el = el; langtryck.x = e.clientX; langtryck.y = e.clientY;
+  el.classList.add("trycker");
+  langtryck.tid = setTimeout(()=>{ const id = el.dataset.id; slutaLangtryck(); langtryck.gjort = true;
+    try{ navigator.vibrate && navigator.vibrate(30); }catch(_){}
+    valjHjalte(id); }, 480);
+});
+app.addEventListener("pointermove", e => { if(langtryck.tid && Math.hypot(e.clientX-langtryck.x, e.clientY-langtryck.y) > 10) slutaLangtryck(); });
+["pointerup","pointercancel","pointerleave"].forEach(t=>app.addEventListener(t, ()=>{ if(langtryck.tid) slutaLangtryck(); }));
+app.addEventListener("contextmenu", e => { if(vy==="hem" && e.target.closest(".hcard, .slot.fylld")) e.preventDefault(); });
+function valjHjalte(id, knapp){
+  if(st.run || ar(id)) return;
+  const party = st.sallskap.filter(x=>!ar(x));
+  if(party.includes(id)) st.sallskap = st.sallskap.filter(x=>x!==id);
+  else if(party.length >= 4){ const k = knapp || document.querySelector(`.hcard[data-id="${id}"]`); if(k){ k.classList.remove("skaka"); void k.offsetWidth; k.classList.add("skaka"); } return visaFullt(); }
+  else st.sallskap = [...party, id];
+  spara(); const y = window.scrollY; ritaOm(); window.scrollTo({top:y, behavior:"instant"});
+}
+function visaFullt(){
+  let t = $("#fulltnotis"); if(!t){ t = document.createElement("div"); t.id = "fulltnotis"; t.className = "notis"; document.body.appendChild(t); }
+  t.textContent = "Sällskapet är fullt (max fyra). Ta bort någon först."; t.classList.add("syns");
+  clearTimeout(visaFullt.tid); visaFullt.tid = setTimeout(()=>t.classList.remove("syns"), 2200);
+}
 function hkort(h, dod){
   const s = st.hj[h.id]||{}, vald = st.sallskap.includes(h.id);
-  return `<button class="hcard ${vald?"vald":""} ${dod?"dod":""}" data-a="visa" data-id="${h.id}">
+  return `<div class="hcard ${vald?"vald":""} ${dod?"dod":""}" role="button" tabindex="0" data-a="visa" data-id="${h.id}">
     <canvas class="px portr" data-p="${h.id}" ${dod?'data-dod="1"':""}></canvas>
     <span><span class="namn">${esc(h.namn)}</span><br><span class="info">${esc(h.folk)} · ${esc(h.yrke)}</span>
-    ${s.segrar?`<br><span class="tag gold">${s.segrar} ${s.segrar===1?"seger":"segrar"}</span>`:""}${vald?` <span class="tag gold">I sällskapet</span>`:""}</span></button>`;
+    ${s.segrar?`<br><span class="tag gold">${s.segrar} ${s.segrar===1?"seger":"segrar"}</span>`:""}${vald?` <span class="tag gold">I sällskapet</span>`:""}</span></div>`;
 }
 function packningHtml(arr){ const c={}; arr.forEach(x=>c[x]=(c[x]||0)+1); return Object.entries(c).map(([k,n])=>`<span class="sakchip">${ikonHtml(k)}${esc(k)}${n>1?` ×${n}`:""}</span>`).join(""); }
 function sammanfatta(arr){ const c={}; arr.forEach(x=>c[x]=(c[x]||0)+1); return Object.entries(c).map(([k,n])=>n>1?`${k} ×${n}`:k).join(", "); }
