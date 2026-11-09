@@ -201,7 +201,7 @@ function visaTarningar(lista){
 const IKON = {
   // "i:" = npc/ikoner.png (ikonarket), "j:" = npc/ikoner2.png (ikonark 2), "g:" = npc/saker_grotta.png, "b:" = npc/saker_by.png
   "Läkedryck":"i:39","Läkande ört":"i:22","Grönfräken":"i:23","Gravstensalm":"i:24","Kråkmossa":"i:19","Hirtonbuske":"i:20","Tokfrans":"i:21",
-  "Krigarfasa":"g:50","Flaska vin":"g:29","Vin":"g:29","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"i:55","En limpa bröd":"i:55",
+  "Krigarfasa":"g:50","Flaska vin":"v:3","Vin":"v:3","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"i:55","En limpa bröd":"i:55",
   "Bröd (fyra kilo)":"i:55","Torkat kött":"i:56","Torkade fikon":"b:4","Rep":"i:16","Karta":"i:58","Karta över Grador och Liane":"i:58",
   "Trollformelbok":"i:44","Diktsamling":"g:13","Anteckningsblock":"g:13","Tärningsspel":"g:6","Elddon":"g:4",
   "Kort svärd":"i:0","Långsvärd":"i:1","Rostigt svärd":"i:2","Kroksabel":"i:3","Vantim":"i:4","Nannheim":"i:5","Gorgor":"i:6",
@@ -214,8 +214,8 @@ const IKON = {
 };
 // Uppdragens föremål
 const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"j:13",barnen:"j:11",gripagg:"j:12","doda-sjon":"i:54",krusbar:"i:28"};
-const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner", j:"ikoner2"};
-function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbij]:\d+$/.test(k)) return "";
+const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner", j:"ikoner2", v:"vinflaska"};
+function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbijv]:\d+$/.test(k)) return "";
   const [a,r] = k.split(":"); return `<canvas class="px ikon ${extraKlass||""}" data-ikon="${IKONARK[a]}:${r}" aria-hidden="true"></canvas>`; }
 function fyllIkoner(root){ (root||document).querySelectorAll("canvas[data-ikon]").forEach(c=>{ const [ark,r]=c.dataset.ikon.split(":"); G.ritaIkon(c, ark, Number(r)); }); }
 const guldHtml = n => `${ikonHtml("guld")}${n} guld`;
@@ -582,6 +582,7 @@ function scenMiljo(m, steg){
   const r = st.run, p = r && PLATS_BILD[r.q.plats];
   if(r && steg && steg.rumtyp==="boss" && BOSS_PLATS[r.q.plats]) return BOSS_PLATS[r.q.plats];
   if(steg && steg.rumtyp==="boss" && steg.fiender && BOSS_BILD[steg.fiender[0]]) return BOSS_BILD[steg.fiender[0]];
+  if(!p && m==="skog" && steg && steg.rumtyp==="skatt") return "hygge";   // skatten i skogen står på ett hygge
   if(!p) return m;
   if(p==="gruva" && steg && steg.rumtyp==="boss") return "gruva_kult";
   return p;
@@ -797,7 +798,8 @@ function ritaRun(){
     <section class="card"><div class="spelledare">${isakHtml(r.i)}<div><span class="small muted">Spelledaren Isak berättar</span><h2>${esc(titel)}</h2></div></div>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  const ritaRum = orn => G.ritaScen($("#scen"), steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta","Forsande vatten":"vatten"}[steg.hinder.namn]||""):steg.typ==="resa"?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
+  const moteBild = steg.mote && MOTE_BILD[steg.mote];
+  const ritaRum = orn => G.ritaScen($("#scen"), moteBild || (steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg)), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta","Forsande vatten":"vatten"}[steg.hinder.namn]||""):steg.typ==="resa"&&!moteBild?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
   ritaRum();
   if(r.ornVisa){ const v = r.ornVisa; r.ornVisa = null; spelaOrn(t => ritaRum(t==null ? undefined : {ruta:v.ruta, t, d:v.d})); }
   fyllPortratt(app); scrollaLogg();
@@ -805,10 +807,22 @@ function ritaRun(){
 }
 // Mötespersonen (och ett husdjur vid vägkanten när man går till fots) som ska stå i TV:n
 const DJUR_RUTOR = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63];
+// Möten med egna figurark (npc/*.png, 8×8 rutor) – ersätter figuren i varld.js. antal = hur många som står i bild.
+const MOTE_FIGUR = {
+  fjass:{ark:"fjass"}, dunker:{ark:"dunker"}, gycklare:{ark:"gycklare", antal:2},
+  lik:{ark:"lik", rutor:[24,25,26,27,28,29,30,11,14,15,61,62]}   // de som ligger platt
+};
+// Möten med egna målade bakgrunder
+const MOTE_BILD = {orter:"ortgard", dunker:"dunkers_hus"};
 function scenNpcer(steg){
   const r = st.run, ut = [];
   if(steg.jens) return ut;
   const m = steg.mote ? V.MOTEN.find(x=>x.id===steg.mote) : null;
+  const egen = m && MOTE_FIGUR[m.id];
+  if(egen){ const fro = (steg.fro || r.i*977+13), l = egen.rutor || Array.from({length:64},(_,i)=>i);
+    for(let k=0;k<(egen.antal||1);k++) ut.push({ark:egen.ark, ruta:l[(fro + k*23) % l.length]});
+    return ut; }
+  if(m && MOTE_BILD[m.id]){ if(m.npc) ut.push({ark:m.npc.ark, ruta:m.npc.ruta}); return ut; }   // egen bakgrund: inga extra saker eller djur
   if(m && m.npc) ut.push(m.npc.fiende ? {fiende:m.npc.fiende, ruta:G.fiendeRutor(m.npc.fiende)[0]} : {ark:m.npc.ark, ruta:m.npc.ruta});
   if(m && m.id==="kopman"){ ut.push({ark:"saker_by", ruta:32, spegel:false}); return ut; }
   if(m && m.id==="orter"){ ut.push({ark:"saker_by", ruta:56, spegel:false}); return ut; }

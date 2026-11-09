@@ -82,10 +82,15 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Lägereldarna i de målade lägerbilderna fladdrar och ryker (eget lager ovanpå, se ELD längre ner)
   G.eldLager(canvas, ELDAR[window.BAKGRUND.namn(bgId, fro)] || null);
   // rummets föremål (skatt, fälla, vila…)
-  // Skattkista och lägereld ur möbelarket (npc/mobler.png): ruta 52 = kista, 36 = lägereld med stekspett
-  if(extra==="skatt" || (extra==="vila" && !window.BAKGRUND.harEgen(bgId))){   // lägerbilderna har redan en eld
+  // Skattkistan ur kistarket (npc/kista.png, rad 2 är tom) och lägerelden ur möbelarket (npc/mobler.png, ruta 36)
+  if(extra==="skatt"){
+    const kista = G.npcBild("kista"), r = KISTOR[Math.floor(slump((fro||7)*13+1)()*KISTOR.length)];
+    if(kista.complete && kista.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(90, 77+markNer, 20, 3); G.ritaRuta(ctx, kista, r, 88, 55+markNer, 24); }   // står på marken i höjd med hjältarnas fötter
+    else omRitaVid(kista);
+  }
+  if(extra==="vila" && !window.BAKGRUND.harEgen(bgId)){   // lägerbilderna har redan en eld
     const mob = G.npcBild("mobler");
-    if(mob.complete && mob.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(88, 77, 24, 3); G.ritaRuta(ctx, mob, extra==="skatt"?52:36, 84, 53, 32); }   // står på marken i höjd med hjältarnas fötter
+    if(mob.complete && mob.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(88, 77, 24, 3); G.ritaRuta(ctx, mob, 36, 84, 53, 32); }
     else omRitaVid(mob);
   }
   // Saker ur npc/saker_grotta.png ("g") och npc/saker_by.png ("b")
@@ -105,7 +110,6 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   }
   if(extra==="resa") sak(sb, 27, 74, 50, 26);                                   // vägvisare vid vägen
   if(extra==="falla") sak(sg, 53, 74, 54, 26);                                  // spikfälla
-  if(extra==="skatt"){ sak(sg, 19, 76, 70, 10); sak(sg, 19, 82, 72, 9); sak(sg, 24, 114, 68, 12); sak(sg, 40, 120, 71, 10); } // mynt och ädelstenar
   if(extra==="hinder:dorr" && !window.BAKGRUND.harEgen(bgId)){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege" && !window.BAKGRUND.harEgen(bgId)) sak(sb, 13, 84, 40, 38);
   if(extra==="hinder:mur" && !window.BAKGRUND.harEgen(bgId)) ritaStenport(ctx, 178, (76 + markNer)*2, fro);   // gåtan i sten: en stenport med runor
@@ -337,7 +341,8 @@ G.regnLager = (canvas, pa) => {
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
-const MARK_NER = { grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const KISTOR = Array.from({length:64},(_,i)=>i).filter(i=>i<8||i>15);   // npc/kista.png: rad 2 är tom
+const MARK_NER = { ortgard1: 6, ortgard2: 6, dunkers_hus: 4, grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
