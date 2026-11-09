@@ -90,6 +90,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const bgVantar = window.BAKGRUND.rita(ctx, bgId, fro);
   // hur mycket längre ner (eller upp) marken ligger i just den här bilden – gäller hjältar, NPC:er och fiender
   const markNer = MARK_NER[window.BAKGRUND.namn(bgId, fro)] ?? MARK_NER[bgId] ?? 0;
+  // skuggan under figurerna: mjuk och blåaktig på snö (en mörk skugga ser ut som ett hål), annars mörk
+  const SKUGGA = SNOBILDER[window.BAKGRUND.namn(bgId, fro)] ? "rgba(70,96,140,.30)" : "#0005";
   if(bgVantar) omRitaVid(bgVantar);
   // Regnväder: ungefär vart fjärde rum utomhus (på målade bakgrunder) regnar det. Himlen mörknar här,
   // och själva regnet faller i ett eget genomskinligt lager ovanpå TV:n (se REGN längre ner).
@@ -177,7 +179,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       ctx.save();
       if(h.nere){ ctx.globalAlpha = .35; }
       const S = G.storlek(h.id), sx = x + Math.round((32-S)/2), sy = y + 30 - Math.round(30*S/32);
-      ctx.fillStyle="#0005"; ctx.fillRect(sx+Math.round(S*.28), y+30, Math.round(S*.44), 3);
+      ctx.fillStyle=SKUGGA; ctx.fillRect(sx+Math.round(S*.28), y+29, Math.round(S*.44), 2);   // direkt under fötterna
       const r = h.ruta;
       ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, sx, sy - (h.nere ? 0 : andas(i)), S, S);
       ctx.restore();
@@ -209,7 +211,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       if(!(img.complete && img.naturalWidth)){ omRitaVid(img); return; }
       const r = n.fiende ? G.fiendeRuta(n.fiende, n.ruta, false) : n.ruta;
       const x = n.x != null ? n.x : (i===0 ? 100 : 126), fot = n.fot != null ? n.fot : (i===0 ? 77 : 74) + markNer;
-      ctx.fillStyle="#0005"; ctx.fillRect(x+7, fot-1, 18, 3);
+      ctx.fillStyle=SKUGGA; ctx.fillRect(x+7, fot-2, 18, 2);
       ctx.save();
       const nb = n.ark==="lik" ? 0 : andas(i+9);   // liken ligger still
       if(n.spegel !== false){ ctx.translate(x+32, fot-30-nb); ctx.scale(-1,1); } else ctx.translate(x, fot-30-nb);
@@ -250,7 +252,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       const x = Math.max(start-4, Math.min(W-w, xPos[i])), fot = 76 + (i%2 ? 2 : 0) + markNer;
       const y = egen ? fot - Math.round(30*sk) : fot - 16*sk + (f.liten?1:0);
       ctx.globalAlpha = f.kp>0 ? 1 : .25;
-      ctx.fillStyle="#0005"; ctx.fillRect(x+Math.round(w*.2), fot-1, Math.round(w*.6), 3);
+      ctx.fillStyle=SKUGGA; ctx.fillRect(x+Math.round(w*.2), fot-2, Math.round(w*.6), 2);
       if(egen){
         if(!(img.complete && img.naturalWidth)){ vantar.push(img); ctx.globalAlpha=1; return; }
         if(f.hjalte){   // hjälten spegelvänd så att hen tittar mot sällskapet
@@ -410,7 +412,7 @@ G.snoLager = (canvas, pa) => {
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
 const KISTOR = Array.from({length:64},(_,i)=>i).filter(i=>i<8||i>15);   // npc/kista.png: rad 2 är tom
-const MARK_NER = { doda_sjon1: 4, doda_sjon2: 4, gollenskogen1: 4, krusbarsberget1: 5, krusbarsberget2: 4, marmoracs_kyrkogard1: 4, marmoracs_kyrkogard2: 4, skog2: 5, skog2natt: 5, skog4: 6, skog4natt: 6, skog5: 5, skog5natt: 5, gruva1: 6, gruva2: 7, kloak1: 5, vesselberget2: 6, berg7: 5, lager_ute: 4, lager_ute2: 5, ortgard1: 6, ortgard2: 6, dunkers_hus: 4, grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const MARK_NER = { mt_kraknor1: 5, mt_kraknor2: 3, doda_sjon1: 4, doda_sjon2: 4, gollenskogen1: 4, krusbarsberget1: 5, krusbarsberget2: 4, marmoracs_kyrkogard1: 4, marmoracs_kyrkogard2: 4, skog2: 5, skog2natt: 5, skog4: 6, skog4natt: 6, skog5: 5, skog5natt: 5, gruva1: 6, gruva2: 7, kloak1: 5, vesselberget2: 6, berg7: 5, lager_ute: 4, lager_ute2: 5, ortgard1: 6, ortgard2: 6, dunkers_hus: 4, grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { lager_oken1: 12, lager_oken2: 11, klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
