@@ -1590,7 +1590,7 @@ $("#btn-inst").onclick = () => modal(`<h2>Inställningar</h2>
   <label class="row small"><input type="checkbox" id="g-auto" ${gh.auto?"checked":""}> Spara automatiskt</label>
   <div class="row"><button class="btn" id="g-spara">Spara inställningarna och hämta</button><button class="btn ghost" id="g-nu">Spara till GitHub nu</button></div>
   <h3>Spelet</h3>
-  <label class="f">Tärningar<select id="tarningval"><option value="sjalv" ${(alt.tarning||"sjalv")==="sjalv"?"selected":""}>Jag slår själv</option><option value="auto" ${alt.tarning==="auto"?"selected":""}>Automatiskt</option></select></label>
+  <label class="f">Tärningar<select id="tarningval"><option value="sjalv" ${(alt.tarning||"sjalv")==="sjalv"?"selected":""}>Jag slår själv</option><option value="auto" ${alt.tarning==="auto"?"selected":""}>Spelledaren Isak sköter tärningarna</option></select></label>
   <p class="small muted">Om du själv ska trycka för att slå hjältarnas tärningar. Fiendernas slag sker alltid automatiskt.</p>
   <label class="f">Stridstempo<select id="tempo">${Object.entries(TEMPON).map(([k,v])=>`<option value="${k}" ${(alt.tempo||"steg")===k?"selected":""}>${esc(v.namn)}</option>`).join("")}</select></label>
   <p class="small muted">Hur länge spelet stannar och visar vad som hände efter varje tur i striden. Sparas på den här enheten.</p>
