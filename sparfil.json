@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:29:04.834Z",
+  "uppdaterad": "2026-11-09T22:29:23.281Z",
   "spel": {
     "version": 1,
-    "tid": 1794263341893,
+    "tid": 1794263360144,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -296,7 +296,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "Klippor som ger lite efterlängtad skugga. Skorpioner kryper fram ur en spricka. Ni hör en avlägsen kamelklocka.",
-          "fro": 314660370
+          "fro": 314660370,
+          "klar": true,
+          "utfallText": "Ni vilar i lugn och ro. Alla känner sig lite bättre."
         },
         {
           "typ": "rum",
@@ -329,7 +331,7 @@
           ]
         }
       ],
-      "i": 5,
+      "i": 6,
       "h": {
         "monika": {
           "kp": 17,
@@ -361,7 +363,7 @@
         },
         "uranus": {
           "kp": 11,
-          "vp": 10,
+          "vp": 13,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -409,7 +411,7 @@
           "valtVapen": "Armborst"
         },
         "bacon": {
-          "kp": 15,
+          "kp": 17,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -597,6 +599,10 @@
         {
           "text": "🎲 Spelledaren Isak: Naturligt 1! Det där kommer att berättas om länge.",
           "cls": "d"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
