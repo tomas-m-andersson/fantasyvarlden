@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:28:25.620Z",
+  "uppdaterad": "2026-11-09T22:28:46.119Z",
   "spel": {
     "version": 1,
-    "tid": 1794263302611,
+    "tid": 1794263323187,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -286,7 +286,8 @@
           "text": "Ett fält av märkliga, vindslipade stenar. En skylt: ”BEDININ CITY – INGA DVÄRGAR”.",
           "fro": 420698567,
           "bulk": true,
-          "bulkText": "Kärran knakar. Bulk mumlar något om sin mamma och vänder sig på sidan, så att hela kärran lutar."
+          "bulkText": "Kärran knakar. Bulk mumlar något om sin mamma och vänder sig på sidan, så att hela kärran lutar.",
+          "bulkKlar": true
         },
         {
           "typ": "rum",
@@ -338,7 +339,9 @@
           "saker": [
             "Äppelcider"
           ],
-          "markerade": [],
+          "markerade": [
+            "Uppträda"
+          ],
           "anvanda": [
             "Uppträda",
             "Slagvapen"
@@ -569,6 +572,18 @@
         {
           "text": "Galfner Galfner slår Finna dolda ting: [18] mot 7 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer slår Uppträda: [1] mot 9 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Perfekt! Jag hade inte ens förberett mig på att ni skulle lyckas så bra.",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer sjunger en vaggvisa. Bulk somnar om med ett lyckligt leende.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
