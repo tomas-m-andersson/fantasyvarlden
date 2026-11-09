@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:24:50.785Z",
+  "uppdaterad": "2026-11-09T22:25:16.686Z",
   "spel": {
     "version": 1,
-    "tid": 1794263087839,
-    "kassa": 1070,
+    "tid": 1794263113645,
+    "kassa": 1040,
     "packning": [
       "Läkande ört",
       "Flaska vin"
@@ -247,7 +247,9 @@
         {
           "typ": "resa",
           "mote": "ginzy",
-          "jens": false
+          "jens": false,
+          "klar": true,
+          "utfallText": "Ni förlorar och får betala. (−30 guld)"
         },
         {
           "typ": "rum",
@@ -351,7 +353,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Fingerfärdighet"
+          ]
         },
         "bacon": {
           "kp": 17,
@@ -380,6 +384,18 @@
         },
         {
           "text": "Vagnen rullar igen! Gycklarna bjuder på mat och en låt. (alla läker)",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner slår Fingerfärdighet: [9] mot 6 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Ni betalar 30 guld.",
+          "cls": "info"
+        },
+        {
+          "text": "Ni förlorar och får betala. (−30 guld)",
           "cls": "info"
         }
       ],
