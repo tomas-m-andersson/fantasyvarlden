@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T10:38:08.905Z",
+  "uppdaterad": "2026-11-09T10:38:18.316Z",
   "spel": {
     "version": 1,
-    "tid": 1794220685986,
+    "tid": 1794220695297,
     "kassa": 1370,
     "packning": [
       "Läkande ört",
@@ -13,7 +13,8 @@
     "sallskap": [
       "dagny",
       "gaston",
-      "saganoren"
+      "saganoren",
+      "john"
     ],
     "hj": {
       "monika": {
