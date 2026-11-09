@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:31:48.788Z",
+  "uppdaterad": "2026-11-09T22:31:58.723Z",
   "spel": {
     "version": 1,
-    "tid": 1794263505853,
+    "tid": 1794263515699,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -370,7 +370,7 @@
         },
         "uranus": {
           "kp": 11,
-          "vp": 10,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -389,7 +389,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "nackdelNasta": false
         },
         "galfner": {
@@ -714,6 +714,26 @@
         {
           "text": "Galfner Galfner (Armborst) slår Armborst med nackdel: [3 / 16 → 16] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "★ Uranus Wett: Vantim och Nannheim!",
+          "cls": "d"
+        },
+        {
+          "text": "Uranus Wett (Vantim) slår Svärd: [10] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Uranus Wett (Nannheim) slår Svärd: [6] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Resen Bulk tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "🥣 Grötsvärdet! Där Nannheim träffar blir huvudet på Resen Bulk till pyttipanna.",
+          "cls": "dm"
         }
       ],
       "utfall": null,
