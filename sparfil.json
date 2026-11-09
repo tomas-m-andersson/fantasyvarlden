@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:26:43.064Z",
+  "uppdaterad": "2026-11-09T22:27:01.261Z",
   "spel": {
     "version": 1,
-    "tid": 1794263200156,
+    "tid": 1794263218317,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -351,7 +351,7 @@
         },
         "uranus": {
           "kp": 11,
-          "vp": 13,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -359,7 +359,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -367,7 +369,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         },
         "galfner": {
           "kp": 12,
@@ -474,6 +476,22 @@
         {
           "text": "Ulv tar 1 skada (2 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Uranus Wett: Vantim och Nannheim!",
+          "cls": "d"
+        },
+        {
+          "text": "Uranus Wett (Vantim) slår Svärd: [8] mot 8 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Uranus Wett (Nannheim) slår Svärd: [10] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
