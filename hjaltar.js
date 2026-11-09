@@ -8,7 +8,7 @@ window.HJALTAR = [
   tranad:["Slagvapen","Slagsmål","Undvika","Uppträda"],varden:{},
   vapen:["Stridsgissel"],rustning:"Läderväst",skold:true,besv:[],guld:43,
   saker:["Äppelcider"],
-  formaga:{namn:"Hatten stannar på!",typ:"bonusAnfall",fordel:true,extra:"T8",ingetForsvar:true,text:"Raseri: nästa anfall med fördel och +T8 skada, men hon kan inte undvika eller parera den rundan."},
+  formaga:{namn:"Slå. Av. Mig, HATTEN!",typ:"bonusAnfall",fordel:true,extra:"T8",ingetForsvar:true,text:"Raseri: nästa anfall med fördel och +T8 skada, men hon kan inte undvika eller parera den rundan."},
   citat:"SLÅÅÅ AAAV MIG HATTEEEN!",
   om:"Hetlevrad, girig och misstänksam dvärggladiator med ett björnhuvud (med ett ankhuvud ovanpå) som hatt. Kräver alltid större andel av belöningen. Dubbelhänt."},
 
@@ -154,7 +154,7 @@ window.HJALTAR = [
   vapen:["Vantim","Nannheim"],rustning:null,besv:[],guld:6,saker:[],
   formaga:{namn:"Vantim och Nannheim",typ:"dubbelAnfall",text:"Båda de magiska svärden på en gång: två anfall i samma handling."},
   citat:"",
-  om:"Hobbit och astrolog, precis könsmogen för att vara hobbit. Bär två magiska svärd med namnen Vantim och Nannheim."},
+  om:"Hobbit och astrolog, precis könsmogen för att vara hobbit. Bär två magiska svärd med namnen Vantim och Nannheim. Nannheim kallas Grötsvärdet: där det träffar förvandlas fienden till en sunkig maträtt."},
 
  {id:"vad",namn:"Våd Snolofsson",alias:"",folk:"Människa",yrke:"Tjuv",kon:"Quinna",alder:"42",
   e:{STY:13,FYS:14,SMI:10,INT:10,PSY:12,KAR:11},

@@ -1218,7 +1218,17 @@ function anfall(id, vapenNamn, f, extra){
   if(x.gift){ d += R.t(6); x.gift=false; logga("Giftet på vapnet gör sitt.","ok"); }
   if(extra.plus) d += R.slaTarning(extra.plus);
   if(extra.dubbel) d *= 2;
-  return skadaFiende(f, d);
+  const verklig = skadaFiende(f, d);
+  if(vapenNamn==="Nannheim" && verklig > 0) grotsvardet(f);
+  return verklig;
+}
+// Grötsvärdet (Nannheim): där det träffar förvandlas fienden till en slummig maträtt
+const GROT_RATTER = ["lasagne","havregrynsgröt","ravioli ur burk","pyttipanna","blodpudding","makaroner och korv","kålpudding","fiskpinnar","risgrynsgröt","köttbullar i brun sås","kokt potatis med skirat smör","stuvade makaroner","korvstroganoff","rotmos","leverpastej","kalvsylta"];
+const GROT_DELAR = ["ena armen","axeln","ena benet","magen","ryggen","huvudet","ena örat","svansen","näsan","höften"];
+function grotsvardet(f){
+  const ratt = R.valj(GROT_RATTER), del = R.valj(GROT_DELAR);
+  if(f.kp <= 0) logga(`🥣 Grötsvärdet! ${f.namn} förvandlas helt till en rykande portion ${ratt}.`, "dm");
+  else logga(`🥣 Grötsvärdet! Där Nannheim träffar blir ${del} på ${f.namn} till ${ratt}.`, "dm");
 }
 function kasta(id, namn, mal){
   const h=bygg(id), x=rh(id), b=R.BESV[namn];
