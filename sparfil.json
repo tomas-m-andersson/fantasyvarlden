@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:30:14.357Z",
+  "uppdaterad": "2026-11-09T22:30:51.460Z",
   "spel": {
     "version": 1,
-    "tid": 1794263411202,
+    "tid": 1794263448354,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -365,11 +365,12 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Stridsgissel"
+          "valtVapen": "Stridsgissel",
+          "nackdelNasta": true
         },
         "uranus": {
           "kp": 11,
-          "vp": 13,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -388,7 +389,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "nackdelNasta": false
         },
         "galfner": {
           "kp": 12,
@@ -415,7 +417,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Armborst"
+          "valtVapen": "Armborst",
+          "nackdelNasta": true
         },
         "bacon": {
           "kp": 17,
@@ -442,7 +445,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Handyxa"
+          "valtVapen": "Handyxa",
+          "nackdelNasta": true
         }
       },
       "guld": 86,
@@ -622,6 +626,42 @@
         {
           "text": "Uranus Wett slår Kunskap: [6] mot 12 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Resen Bulk vrålar så att publiken tystnar – hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Uranus Wett skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Uranus Wett: Vantim och Nannheim!",
+          "cls": "d"
+        },
+        {
+          "text": "Uranus Wett (Vantim) slår Svärd med nackdel: [1 / 12 → 12] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Uranus Wett (Nannheim) slår Svärd: [13] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
