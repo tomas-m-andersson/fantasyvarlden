@@ -93,9 +93,13 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(bgVantar) omRitaVid(bgVantar);
   // Regnväder: ungefär vart fjärde rum utomhus (på målade bakgrunder) regnar det. Himlen mörknar här,
   // och själva regnet faller i ett eget genomskinligt lager ovanpå TV:n (se REGN längre ner).
-  const regnar = G.vader(miljoId, fro) === "regn";
+  // Snöiga bilder (SNOBILDER) får snöfall i stället för regn, ungefär varannan gång
+  const vaderTyp = SNOBILDER[window.BAKGRUND.namn(bgId, fro)] ? G.snovader(fro) : G.vader(miljoId, fro);
+  const regnar = vaderTyp === "regn", snoar = vaderTyp === "sno";
   if(regnar){ ctx.fillStyle = "rgba(18,26,40,.38)"; ctx.fillRect(0, 0, W, H); }
+  if(snoar){ ctx.fillStyle = "rgba(210,224,245,.10)"; ctx.fillRect(0, 0, W, H); }
   G.regnLager(canvas, regnar);
+  G.snoLager(canvas, snoar);
   // Lägereldarna i de målade lägerbilderna fladdrar och ryker (eget lager ovanpå, se ELD längre ner)
   G.eldLager(canvas, ELDAR[window.BAKGRUND.namn(bgId, fro)] || null);
   // rummets föremål (skatt, fälla, vila…)
@@ -355,6 +359,52 @@ G.regnLager = (canvas, pa) => {
   if(!REGN.droppar.length) for(let i=0;i<150;i++) REGN.droppar.push(nyDroppe(false));
   if(STILLA){ ritaRegn(ov); return; }
   if(!REGN.aktiv){ REGN.aktiv = true; REGN.senast = 0; requestAnimationFrame(regnSteg); }
+};
+
+// ---------- Snöfall ----------
+// Bilder med snö i landskapet. Där snöar det ungefär varannan gång, med enstaka vindbyar som blåser flingorna åt sidan.
+const SNOBILDER = { mt_kraknor1:1, mt_kraknor2:1, berg3:1, berg4:1, berg6:1 };
+G.snovader = fro => { const h = Math.imul(((fro||7) >>> 0) ^ 0x5bd1e995, 2246822519) >>> 0; return (h >>> 9) % 2 === 0 ? "sno" : null; };
+const SNO = { aktiv:false, flingor:[], ilar:[], vind:0, by:null, nastaBy:0, senast:0 };
+function nyFlinga(overst){ return { x: Math.random()*340 - 10, y: overst ? -Math.random()*20 : Math.random()*180, vy: 9 + Math.random()*16,
+  fas: Math.random()*6.28, svaj: 4 + Math.random()*7, s: Math.random() < .25 ? 2 : 1, a: .55 + Math.random()*.4, k: .6 + Math.random()*.6 }; }
+function ritaSno(c){
+  const x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);
+  for(const i of SNO.ilar){   // vindilar: tunna, bleka streck som sveper förbi
+    x.fillStyle = `rgba(235,242,255,${(.32*i.liv).toFixed(3)})`;
+    const dir = Math.sign(i.v) || 1;
+    for(let k=0;k<i.l;k++) x.fillRect(Math.round(i.x - dir*k), Math.round(i.y + Math.sin((i.x - dir*k)*.08)*1.2), 1, 1);
+  }
+  for(const f of SNO.flingor){ x.fillStyle = `rgba(250,252,255,${f.a})`; x.fillRect(Math.round(f.x), Math.round(f.y), f.s, f.s); }
+}
+function snoSteg(t){
+  const lager = [...document.querySelectorAll("canvas.sno")].filter(c=>c.isConnected);
+  if(!lager.length){ SNO.aktiv = false; return; }
+  const dt = Math.min(.05, SNO.senast ? (t - SNO.senast)/1000 : .016); SNO.senast = t;
+  // vindby: blåser upp och lägger sig igen under ett par sekunder, sedan lugnt en stund
+  if(!SNO.nastaBy) SNO.nastaBy = t + 2500 + Math.random()*4000;
+  if(!SNO.by && t > SNO.nastaBy){ SNO.by = {start:t, langd:1400 + Math.random()*1200, styrka:(60 + Math.random()*70) * (Math.random()<.7 ? -1 : 1)};
+    for(let k=0, n=3+Math.floor(Math.random()*4); k<n; k++) SNO.ilar.push({x: SNO.by.styrka<0 ? 330 + Math.random()*60 : -10 - Math.random()*60, y: 15 + Math.random()*140, l: 10 + Math.floor(Math.random()*16), v: SNO.by.styrka*(2.2 + Math.random()), liv: 1}); }
+  if(SNO.by){ const p = (t - SNO.by.start)/SNO.by.langd;
+    if(p >= 1){ SNO.by = null; SNO.vind = 0; SNO.nastaBy = t + 3000 + Math.random()*6000; } else SNO.vind = SNO.by.styrka * Math.sin(Math.PI*p); }
+  for(const f of SNO.flingor){
+    f.fas += dt*1.6; f.y += f.vy*dt*(1 + Math.abs(SNO.vind)/250);
+    f.x += (Math.sin(f.fas)*f.svaj*.6 + SNO.vind*f.k - 3)*dt;
+    if(f.y > 182 || f.x < -14 || f.x > 334){ Object.assign(f, nyFlinga(true)); if(SNO.vind < -20) { f.x = 320 + Math.random()*14; f.y = Math.random()*150; } else if(SNO.vind > 20){ f.x = -10 - Math.random()*4; f.y = Math.random()*150; } }
+  }
+  SNO.ilar.forEach(i=>{ i.x += i.v*dt; i.liv -= dt*.55; }); SNO.ilar = SNO.ilar.filter(i=>i.liv > 0 && i.x > -60 && i.x < 380);
+  lager.forEach(ritaSno);
+  requestAnimationFrame(snoSteg);
+}
+G.snoLager = (canvas, pa) => {
+  const tv = canvas.parentElement;
+  if(!tv || !tv.classList.contains("tv")) return;
+  let ov = tv.querySelector("canvas.sno");
+  if(!pa){ if(ov) ov.remove(); return; }
+  if(!ov){ ov = document.createElement("canvas"); ov.className = "px sno"; ov.width = 320; ov.height = 180; ov.setAttribute("aria-hidden","true"); canvas.after(ov); }
+  if(!SNO.flingor.length) for(let i=0;i<120;i++) SNO.flingor.push(nyFlinga(false));
+  if(STILLA){ ritaSno(ov); return; }
+  if(!SNO.aktiv){ SNO.aktiv = true; SNO.senast = 0; requestAnimationFrame(snoSteg); }
 };
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
