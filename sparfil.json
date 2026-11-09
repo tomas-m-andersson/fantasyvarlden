@@ -1,18 +1,16 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:22:00.994Z",
+  "uppdaterad": "2026-11-09T22:22:11.333Z",
   "spel": {
     "version": 1,
-    "tid": 1794262918042,
+    "tid": 1794262928368,
     "kassa": 1370,
     "packning": [
       "Läkande ört",
       "Flaska vin"
     ],
     "sallskap": [
-      "trolleriolas",
-      "kristina",
       "lufsen"
     ],
     "hj": {
