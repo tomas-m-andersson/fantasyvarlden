@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:22:11.333Z",
+  "uppdaterad": "2026-11-09T22:22:29.630Z",
   "spel": {
     "version": 1,
-    "tid": 1794262928368,
-    "kassa": 1370,
+    "tid": 1794262946719,
+    "kassa": 1270,
     "packning": [
       "Läkande ört",
       "Flaska vin"
@@ -15,7 +15,7 @@
     ],
     "hj": {
       "monika": {
-        "dod": true,
+        "dod": false,
         "bonus": {
           "Akrobatik": 2,
           "Uppträda": 1,
@@ -137,6 +137,10 @@
       "krusbar": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-09 23:22",
+        "text": "Monika Plöjer köptes tillbaka till livet för 100 guld och fick kliva upp ur poolen i Miami. Tetrok vinkade hejdå."
+      },
       {
         "tid": "2026-11-08 19:54",
         "text": "Tola Sparv, Malexander Bard, FF, Potus Singulus Rövhatt utforskade Östra öknen och nådde kapitel 1 (5 rum). De gick hem med 45 guld."
