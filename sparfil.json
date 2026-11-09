@@ -1,14 +1,15 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:28:46.119Z",
+  "uppdaterad": "2026-11-09T22:28:59.616Z",
   "spel": {
     "version": 1,
-    "tid": 1794263323187,
+    "tid": 1794263336719,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
-      "Flaska vin"
+      "Flaska vin",
+      "Läkedryck"
     ],
     "sallskap": [
       "monika",
@@ -287,7 +288,9 @@
           "fro": 420698567,
           "bulk": true,
           "bulkText": "Kärran knakar. Bulk mumlar något om sin mamma och vänder sig på sidan, så att hela kärran lutar.",
-          "bulkKlar": true
+          "bulkKlar": true,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 58 guld och läkedryck."
         },
         {
           "typ": "rum",
@@ -387,7 +390,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Finna dolda ting"
+          ],
           "anvanda": [
             "Fingerfärdighet",
             "Armborst",
@@ -431,7 +436,7 @@
           "valtVapen": "Handyxa"
         }
       },
-      "guld": 28,
+      "guld": 86,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Gojans gladiatorgrop” av Mona.",
@@ -584,6 +589,14 @@
         {
           "text": "Monika Plöjer sjunger en vaggvisa. Bulk somnar om med ett lyckligt leende.",
           "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [1] mot 7 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Naturligt 1! Det där kommer att berättas om länge.",
+          "cls": "d"
         }
       ],
       "utfall": null,
