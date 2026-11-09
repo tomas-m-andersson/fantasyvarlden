@@ -481,7 +481,7 @@ function ritaBasar(){
 // Uppdragsgivarnas figurark i npc/ (8×8 rutor). Familjen von Borge: rad 1 är fadern som står för familjen.
 const GIVARE = {"Porsch Wilson":"porsch","Barden Baror":"baror","Mandor Marvolt":"mandor","Gitte von Gittemberg":"gitte","Lansor":"lansor",
   "Familjen von Borge":"vonborge","Slasbys församling":"hannes","Eva":"eva","Hövding Atlas":"atlas","Clark":"clark",
-  "Borgmästaren i Hagbo":"hagbo","Professor Proppeteus":"proppeteus"};
+  "Borgmästaren i Hagbo":"hagbo","Professor Proppeteus":"proppeteus","Mona":"mona"};
 // Arken tittar åt höger och speglas så att figuren vänder sig mot sällskapet – utom Eva, vars ark redan tittar åt vänster
 const GIVARE_VANSTER = new Set(["givare_eva"]);
 function givare(namn, fro){ const ark = "givare_" + (GIVARE[namn] || "generisk");
