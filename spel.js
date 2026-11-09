@@ -237,7 +237,7 @@ function ritaHem(){
     <div class="row hemval">
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragstavlan<span class="sub">Lansors förmedling</span></button>
       <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
-      <button class="btn" data-a="arena">Arenan<span class="sub">Möt valfria fiender – på låtsas</span></button>
+      <button class="btn" data-a="arena">Gladiatorgroparna<span class="sub">Möt vem som helst – utan risk</span></button>
       <button class="btn ghost" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
     </div>
     <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
@@ -754,7 +754,7 @@ function lakaHjalte(id, mangd){
   return x.kp - fore;
 }
 function vpAndra(id, d){ const x=rh(id), h=bygg(id); if(x.dod) return 0; const f=x.vp; x.vp=Math.max(0,Math.min(R.maxVP(h), x.vp+d)); return x.vp-f; }
-function dor(id){ const x=rh(id); x.dod=true; x.doende=false; x.kp=0; if(st.run && st.run.arena) return logga(`☠ ${HJ[id].namn} är besegrad och bärs ut ur arenan. (Bara på låtsas – ingen hamnar i Efterriket härifrån.)`,"dm"); logga(`☠ ${HJ[id].namn} är död och hamnar i poolen på skyskrapetaket i Miami.`,"dm"); }
+function dor(id){ const x=rh(id); x.dod=true; x.doende=false; x.kp=0; if(st.run && st.run.arena) return logga(`☠ ${HJ[id].namn} är besegrad och bärs ut ur gropen. (Bara på låtsas – ingen hamnar i Efterriket härifrån.)`,"dm"); logga(`☠ ${HJ[id].namn} är död och hamnar i poolen på skyskrapetaket i Miami.`,"dm"); }
 function dodsslag(id){
   const x=rh(id), h=bygg(id), s = R.slag(h.e.FYS); s.vem = h.namn; s.fard = "Dödsslag (FYS)";
   if(s.drake){ x.doende=false; x.ok=0; x.miss=0; x.kp=R.t(6); logga(`${h.namn} slår dödsslag ${s.text} – reser sig med ${x.kp} KP!`,"d"); return; }
@@ -1427,13 +1427,14 @@ function avslutaStrid(slut){
 // ingen dör på riktigt (ingen hamnar i Efterriket), ingen får förbättringsslag (XP), guld eller byte,
 // och drycker som används kommer tillbaka. Inget i arenan sparas – efter matchen återställs spelet som det var.
 const ARENA_MAX = 6;   // högst sex motståndare åt gången
-const ARENA_BANOR = {sten:"Stenarenan", tra:"Träpalissaden"};
+const ARENA_BANOR = {sten:"Gojans gladiatorgrop", tra:"Svartspelsgropen"};
+const ARENA_ORT = {sten:"i Batik", tra:"i Slasby"};
 const AREKEY = "fantasyvarlden-arena";
 let arena = (()=>{ try{ const a = JSON.parse(localStorage.getItem(AREKEY)||"null"); if(a) return {...a, resultat:null}; }catch(e){} return {bana:"sten", publik:true, lag:null, motst:{}, hjaltar:[], resultat:null}; })();
 function sparaArenaVal(){ try{ localStorage.setItem(AREKEY, JSON.stringify({bana:arena.bana, publik:arena.publik, lag:arena.lag, motst:arena.motst, hjaltar:arena.hjaltar})); }catch(e){} }
 const ISAK_ARENA = {
   seger:["Isak nickar långsamt. ”Imponerande. Det räknas inte, men imponerande.”","Isak antecknar något. ”Spara den formen till när det gäller på riktigt.”","”Publiken älskar er”, säger Isak. ”Tyvärr betalar publiken inte.”"],
-  forlust:["Isak ler. ”Tur att det här bara var arenan.”","”Det där hade varit ert slut”, säger Isak torrt. ”Om det hade räknats.”","Isak slår ihop sina anteckningar. ”Ni vaknar på bänken utanför. Med huvudvärk. Det är allt.”"],
+  forlust:["Isak ler. ”Tur att det här bara var gladiatorgropen.”","”Det där hade varit ert slut”, säger Isak torrt. ”Om det hade räknats.”","Isak slår ihop sina anteckningar. ”Ni vaknar på bänken utanför. Med huvudvärk. Det är allt.”"],
   flydde:["Isak höjer på ett ögonbryn. ”Kloka människor vet när de ska kasta in handduken.”","”Publiken buar”, säger Isak. ”Men publiken har inga vapen.”"]
 };
 // En hjälte som motståndare: slåss med sitt bästa vapen, med sina egna KP och sin egen rustning
@@ -1465,15 +1466,15 @@ function ritaArena(){
   const res = arena.resultat;
   let html = `<div class="tv"><canvas id="arenascen" class="px"></canvas><span class="badge">${esc(ARENA_BANOR[arena.bana])}</span></div>`;
   if(res){
-    html += `<section class="card quest"><h2>${res.slut==="seger"?"🏆 Seger i arenan!":res.slut==="flydde"?"Matchen avbruten":"Förlust i arenan"}</h2>
+    html += `<section class="card quest"><h2>${res.slut==="seger"?"🏆 Seger i gropen!":res.slut==="flydde"?"Matchen avbruten":"Förlust i gropen"}</h2>
       <p class="berattelse">${esc(res.text)}</p>
       <div class="spelledare">${isakHtml(res.isakNr)}<div><span class="small muted">Spelledaren Isak</span><p class="berattelse" style="margin:2px 0 0">${esc(res.isak)}</p></div></div>
       <p class="small muted">Ingen hamnar i Efterriket, ingen får förbättringsslag och inget guld. Allt är som innan matchen.</p>
       <div class="row"><button class="btn red" data-a="kor" ${lag.length&&antal?"":"disabled"}>Revansch – samma match igen</button><button class="btn ghost small" data-a="stang">Ändra matchen</button></div></section>`;
   }
-  html += `<section class="card"><h2>Arenan</h2>
-    <p class="muted">Här kan sällskapet möta vilka fiender och bossar ni vill – och till och med varandra. Allt är på låtsas: den som faller bärs ut och vaknar på bänken utanför. Ingen hamnar i Efterriket, och ingen får förbättringsslag, guld eller byte. Drycker och örter som används i arenan kommer tillbaka efteråt.</p>
-    <h3>Arena</h3>
+  html += `<section class="card"><h2>Gladiatorgroparna</h2>
+    <p class="muted">I Gojans gladiatorgrop i Batik och i Svartspelsgropen i Slasby kan sällskapet möta vilka fiender och bossar ni vill – och till och med varandra. Allt är på låtsas: den som faller bärs ut och vaknar på bänken utanför. Ingen hamnar i Efterriket, och ingen får förbättringsslag, guld eller byte. Drycker och örter som används i gropen kommer tillbaka efteråt.</p>
+    <h3>Grop</h3>
     <div class="row">${Object.entries(ARENA_BANOR).map(([k,n])=>`<button class="btn ${arena.bana===k?"":"ghost"} small" data-bana="${k}">${n}</button>`).join("")}
       <button class="btn ${arena.publik?"":"ghost"} small" data-a="publik">${arena.publik?"Med publik":"Utan publik"}</button></div>
   </section>
@@ -1519,8 +1520,8 @@ function startaArena(){
   // Kopia av allt som en strid kan ändra – läggs tillbaka efter matchen
   const kopia = JSON.stringify({kassa:st.kassa, packning:st.packning, hj:st.hj, kronika:st.kronika, sallskap:st.sallskap});
   const steg = [{typ:"rum", rumtyp:"arena", text:"", fiender:ids, rutor:ids.map(slumpRuta), fro:7}];
-  st.run = {arena:true, kopia, forra:st.run, q:{titel:"Arenan", plats:"Arenan", miljo:arenaBild()}, party:[...lag], steg, i:0, h:nyaHjaltar(lag), guld:0, logg:[], utfall:null};
-  logga(`${lag.map(id=>HJ[id].namn).join(", ")} kliver in i ${ARENA_BANOR[arena.bana].toLowerCase()}.`,"info");
+  st.run = {arena:true, kopia, forra:st.run, q:{titel:ARENA_BANOR[arena.bana], plats:ARENA_BANOR[arena.bana], miljo:arenaBild()}, party:[...lag], steg, i:0, h:nyaHjaltar(lag), guld:0, logg:[], utfall:null};
+  logga(`${lag.map(id=>HJ[id].namn).join(", ")} kliver in i ${ARENA_BANOR[arena.bana]} ${ARENA_ORT[arena.bana]}.`,"info");
   startaStrid(ids, {});
   window.scrollTo({top:0,behavior:"instant"});
 }
@@ -1530,7 +1531,7 @@ function arenaSlut(slut){
   const kvar = r.party.filter(id=>{ const x=rh(id); return !x.dod && x.kp>0; }).map(id=>HJ[id].namn);
   const text = slut==="seger" ? `${lag} vinner matchen! ${kvar.length?kvar.join(", ")+" står kvar när dammet lagt sig.":""}`
     : slut==="flydde" ? `${lag} kastade in handduken.`
-    : `Motståndarna vann matchen. ${lag} bärs ut ur arenan och vaknar på bänken utanför – med huvudvärk, men vid liv.`;
+    : `Motståndarna vann matchen. ${lag} bärs ut ur gropen och vaknar på bänken utanför – med huvudvärk, men vid liv.`;
   // Lägg tillbaka spelet precis som det var före matchen
   Object.assign(st, JSON.parse(r.kopia)); st.run = r.forra || null;
   const lista = ISAK_ARENA[slut] || ISAK_ARENA.forlust;
