@@ -53,8 +53,25 @@ G.ritaSprite = (ctx, namn, x, y, skala, palettNamn, vand) => {
 // ---------- Scenen (TV:n) ----------
 // Liten pixelbild 160×90 som skalas upp. Deterministisk efter "fro" så att samma rum ser likadant ut.
 function slump(fro){ let s = fro>>>0 || 1; return () => (s = (s*1664525+1013904223)>>>0) / 4294967296; }
+// ---------- Andning: figurerna lyfts en pixel upp och ner, var och en i sin egen takt ----------
+// (en halv enhet i 160×90 = en pixel på den riktiga 320×180-ytan). Stilla om telefonen vill ha mindre rörelse.
+const ANDAS_TAKT = 760;
+function andas(k){ if(STILLA_ANDAS) return 0; const t = performance.now() + k*331 + (k%3)*97; return Math.floor(t / (ANDAS_TAKT + (k%4)*60)) % 2 ? 0.5 : 0; }
+const STILLA_ANDAS = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let andningIgang = false;
+function startaAndning(){
+  if(andningIgang || STILLA_ANDAS) return; andningIgang = true;
+  setInterval(()=>{
+    if(document.hidden) return;
+    document.querySelectorAll("canvas").forEach(c=>{
+      if(!c.isConnected) return;
+      try{ if(c._scen) G.ritaScen(...c._scen); else if(c._vh) G.ritaVardshus(c, ...c._vh); }catch(e){}
+    });
+  }, 250);
+}
 G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   const argsKopia = [canvas, miljoId, fiender, fro, extra, hjaltar, npcer];
+  canvas._scen = argsKopia; canvas._vh = null; startaAndning();
   const omRitaVid = img => img.addEventListener("load",()=>G.ritaScen(...argsKopia),{once:true});
   const ctx = canvas.getContext("2d"); ctx.imageSmoothingEnabled = false;
   // TV:n är 320×180 pixlar så att målade bakgrunder syns i full upplösning. Allt annat ritas i 160×90-koordinater, förstorat två gånger.
@@ -158,7 +175,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       const S = G.storlek(h.id), sx = x + Math.round((32-S)/2), sy = y + 30 - Math.round(30*S/32);
       ctx.fillStyle="#0005"; ctx.fillRect(sx+Math.round(S*.28), y+30, Math.round(S*.44), 3);
       const r = h.ruta;
-      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, sx, sy, S, S);
+      ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, sx, sy - (h.nere ? 0 : andas(i)), S, S);
       ctx.restore();
       effektPa(h.effekt, sx, sy, S);
       if(h.aktiv){ ctx.fillStyle="#ffd23f"; ctx.fillRect(sx+Math.round(S/2)-2, sy-3, 4, 3); }
@@ -190,7 +207,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       const x = n.x != null ? n.x : (i===0 ? 100 : 126), fot = n.fot != null ? n.fot : (i===0 ? 77 : 74) + markNer;
       ctx.fillStyle="#0005"; ctx.fillRect(x+7, fot-1, 18, 3);
       ctx.save();
-      if(n.spegel !== false){ ctx.translate(x+32, fot-30); ctx.scale(-1,1); } else ctx.translate(x, fot-30);
+      const nb = n.ark==="lik" ? 0 : andas(i+9);   // liken ligger still
+      if(n.spegel !== false){ ctx.translate(x+32, fot-30-nb); ctx.scale(-1,1); } else ctx.translate(x, fot-30-nb);
       if(n.fiende) ctx.drawImage(img, ...fiendeKalla(n.fiende, r), 0, 0, 32, 32);
       else ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, 32, 32);
       ctx.restore();
@@ -232,7 +250,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       if(egen){
         if(!(img.complete && img.naturalWidth)){ vantar.push(img); ctx.globalAlpha=1; return; }
         if(f.hjalte){   // hjälten spegelvänd så att hen tittar mot sällskapet
-          ctx.save(); ctx.translate(x+w, Math.max(0,y)); ctx.scale(-1,1);
+          ctx.save(); ctx.translate(x+w, Math.max(0,y) - (f.kp>0 ? andas(i+5) : 0)); ctx.scale(-1,1);
           ctx.drawImage(img, (f.ruta%8)*32, Math.floor(f.ruta/8)*32, 32, 32, 0, 0, w, w);
           ctx.restore(); ctx.globalAlpha = 1;
           effektPa(f.effekt, x, Math.max(0,y), w);
@@ -243,7 +261,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
         const dod = f.kp <= 0, ligger = dod && G.fiendeLigger(f.fid);
         const r = G.fiendeRuta(f.fid, f.ruta, dod, i);
         if(ligger) ctx.globalAlpha = .9;   // döda fiender ligger kvar på marken i stället för att blekna
-        ctx.save(); ctx.translate(x+w, Math.max(0,y)); ctx.scale(-1,1);   // spegelvänd så att fienden tittar mot hjältarna
+        ctx.save(); ctx.translate(x+w, Math.max(0,y) - (dod ? 0 : andas(i+5)*Math.max(1, Math.round(sk)))); ctx.scale(-1,1);   // spegelvänd så att fienden tittar mot hjältarna
         ctx.drawImage(img, ...fiendeKalla(f.fid, r), 0, 0, w, w);
         ctx.restore();
       } else G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
@@ -758,6 +776,7 @@ G.ritaPool = (canvas, doda) => {
 // {ikon:{ark, ruta}} = uppdragets föremål som ligger på bordet framför Isak
 const IKON_PA_BORD = {x:96, y:52}, UPPDRAGSGIVARE_PLATS = {x:104, y:51};
 G.ritaVardshus = (canvas, hjaltar, extra) => {
+  canvas._vh = [hjaltar, extra]; canvas._scen = null; startaAndning();
   const ctx = canvas.getContext("2d"); const W=160, H=90;
   const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
   // Målad bakgrund (bakgrunder/vardshus2.png, 320×180) med spis, älghuvud, sköld, anslagstavla, bord och bardisk.
@@ -773,12 +792,12 @@ G.ritaVardshus = (canvas, hjaltar, extra) => {
   ctx.drawImage(tak, 0, 0);
   ctx.setTransform(2,0,0,2,0,0);
   // spelledaren Isak sitter på stolen bakom bordet och värdshusvärden står bakom bardisken
-  G.ritaRuta(ctx, isak, (new Date().getDate())%64, 78, 38, 32, true);
-  G.ritaRuta(ctx, kop, 2, 132, 32, 32, true);
+  G.ritaRuta(ctx, isak, (new Date().getDate())%64, 78, 38 - andas(7), 32, true);
+  G.ritaRuta(ctx, kop, 2, 132, 32 - andas(8), 32, true);
   ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(fram, 0, 0); ctx.setTransform(2,0,0,2,0,0);
   if(ikonImg) G.ritaRuta(ctx, ikonImg, extra.ikon.ruta, IKON_PA_BORD.x, IKON_PA_BORD.y, 16);
   if(npcImg){ const n = extra.npc; R(UPPDRAGSGIVARE_PLATS.x+9, UPPDRAGSGIVARE_PLATS.y+30, 14, 2, "#0005");
-    G.ritaRuta(ctx, npcImg, n.ruta, UPPDRAGSGIVARE_PLATS.x, UPPDRAGSGIVARE_PLATS.y, 32, n.spegel !== false); }
+    G.ritaRuta(ctx, npcImg, n.ruta, UPPDRAGSGIVARE_PLATS.x, UPPDRAGSGIVARE_PLATS.y - andas(9), 32, n.spegel !== false); }
   // sällskapet står på golvet till vänster
   const v2 = [];
   (hjaltar||[]).slice(0,4).forEach((h,i)=>{
@@ -786,7 +805,7 @@ G.ritaVardshus = (canvas, hjaltar, extra) => {
     if(!klar(img)){ v2.push(img); return; }
     const r = h.ruta ?? (G.figurRutor(h.id)[0]||0), x = -3 + i*16, y = 49 + (i%2?2:0);
     R(x+9, y+30, 14, 2, "#0005");
-    ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y, 32, 32);
+    ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y - andas(i), 32, 32);
   });
   ctx.setTransform(1,0,0,1,0,0);
   G.eldLager(canvas, VARDSHUS_ELDAR);
