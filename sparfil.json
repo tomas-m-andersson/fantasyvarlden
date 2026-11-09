@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:23:42.856Z",
+  "uppdaterad": "2026-11-09T22:23:51.074Z",
   "spel": {
     "version": 1,
-    "tid": 1794263019990,
+    "tid": 1794263028092,
     "kassa": 1070,
     "packning": [
       "Läkande ört",
@@ -130,8 +130,8 @@
       }
     },
     "tavla": [
-      "patricia",
-      "krusbar",
+      "tarragon",
+      "gripagg",
       "doda-sjon"
     ],
     "avklarade": {
