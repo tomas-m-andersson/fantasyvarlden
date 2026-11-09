@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:22:55.373Z",
+  "uppdaterad": "2026-11-09T22:23:04.789Z",
   "spel": {
     "version": 1,
-    "tid": 1794262972426,
+    "tid": 1794262981832,
     "kassa": 1070,
     "packning": [
       "Läkande ört",
@@ -12,7 +12,8 @@
     ],
     "sallskap": [
       "monika",
-      "uranus"
+      "uranus",
+      "galfner"
     ],
     "hj": {
       "monika": {
