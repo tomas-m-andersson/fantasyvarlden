@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:27:45.221Z",
+  "uppdaterad": "2026-11-09T22:27:51.626Z",
   "spel": {
     "version": 1,
-    "tid": 1794263262326,
+    "tid": 1794263271335,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -268,7 +268,9 @@
             57,
             63
           ],
-          "bulkKlar": true
+          "bulkKlar": true,
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 22 guld."
         },
         {
           "typ": "rum",
@@ -346,7 +348,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel"
         },
         "uranus": {
@@ -392,7 +394,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "bacon": {
@@ -406,7 +408,9 @@
           "saker": [
             "Flaska vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Yxor"
+          ],
           "anvanda": [
             "Yxor"
           ],
@@ -421,7 +425,7 @@
           "valtVapen": "Handyxa"
         }
       },
-      "guld": 0,
+      "guld": 22,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Gojans gladiatorgrop” av Mona.",
@@ -538,6 +542,26 @@
         {
           "text": "Kultist från Tarragons Hand 2 tar 7 skada.",
           "cls": "ok"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor: [1] mot 12 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Där satt den. Tärningsgudarna ler i dag.",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Kultist från Tarragons Hand 2 tar 11 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
