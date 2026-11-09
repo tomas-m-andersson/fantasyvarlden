@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:33:21.193Z",
+  "uppdaterad": "2026-11-09T22:33:39.588Z",
   "spel": {
     "version": 1,
-    "tid": 1794263598030,
-    "kassa": 1040,
+    "tid": 1794263616633,
+    "kassa": 1346,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -27,7 +27,7 @@
           "Smyga": 1
         },
         "aventyr": 10,
-        "segrar": 5,
+        "segrar": 6,
         "vapen": [],
         "rustning": null
       },
@@ -76,7 +76,7 @@
           "Akrobatik": 1
         },
         "aventyr": 7,
-        "segrar": 4,
+        "segrar": 5,
         "vapen": [],
         "rustning": null
       },
@@ -131,17 +131,22 @@
       },
       "uranus": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Kunskap": 1
+        },
         "aventyr": 1,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       },
       "galfner": {
         "dod": false,
-        "bonus": {},
+        "bonus": {
+          "Finna dolda ting": 1,
+          "Armborst": 1
+        },
         "aventyr": 1,
-        "segrar": 0,
+        "segrar": 1,
         "vapen": [],
         "rustning": null
       }
@@ -154,9 +159,14 @@
       "skold": 1,
       "barnen": 1,
       "rattor": 1,
-      "krusbar": 1
+      "krusbar": 1,
+      "gojan": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-09 23:33",
+        "text": "Monika Plöjer, Uranus Wett, Galfner Galfner, Bacon klarade ”Gojans gladiatorgrop” och fick 220 guld + 86 i byte."
+      },
       {
         "tid": "2026-11-09 23:22",
         "text": "Shinji Onishi köptes tillbaka till livet för 100 guld och fick kliva upp ur poolen i Miami. Tetrok vinkade hejdå."
@@ -334,7 +344,9 @@
           ],
           "rutor": [
             11
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Resen Bulk är besegrad!"
         }
       ],
       "i": 7,
@@ -351,7 +363,8 @@
             "Äppelcider"
           ],
           "markerade": [
-            "Uppträda"
+            "Uppträda",
+            "Slagvapen"
           ],
           "anvanda": [
             "Uppträda",
@@ -377,7 +390,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Kunskap"
+          ],
           "anvanda": [
             "Svärd",
             "Kunskap"
@@ -389,7 +404,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false
         },
         "galfner": {
@@ -402,7 +417,8 @@
           "dod": false,
           "saker": [],
           "markerade": [
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Armborst"
           ],
           "anvanda": [
             "Fingerfärdighet",
@@ -768,7 +784,63 @@
           "cls": "dm"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "beloning": 400,
+        "avgift": 180,
+        "avgiftText": "Garvard väntar utanför och tar 180 guld: 150 i skuld och 30 i ränta",
+        "byte": 86,
+        "doda": [],
+        "forb": {
+          "monika": [
+            {
+              "f": "Uppträda",
+              "v": 9,
+              "s": 1,
+              "upp": false
+            },
+            {
+              "f": "Slagvapen",
+              "v": 15,
+              "s": 14,
+              "upp": false
+            }
+          ],
+          "uranus": [
+            {
+              "f": "Kunskap",
+              "v": 12,
+              "s": 17,
+              "upp": true
+            }
+          ],
+          "galfner": [
+            {
+              "f": "Finna dolda ting",
+              "v": 7,
+              "s": 9,
+              "upp": true
+            },
+            {
+              "f": "Armborst",
+              "v": 12,
+              "s": 19,
+              "upp": true
+            }
+          ],
+          "bacon": [
+            {
+              "f": "Yxor",
+              "v": 12,
+              "s": 6,
+              "upp": false
+            }
+          ]
+        },
+        "rad": [
+          "Garvard räknar pengarna två gånger, stoppar dem i en börs med sitt eget namn på och påpekar att räntan fortsätter att ticka."
+        ]
+      },
       "start": "2026-11-09 23:24",
       "bulk": 0
     },
