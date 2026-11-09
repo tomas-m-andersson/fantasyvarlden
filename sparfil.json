@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:23:57.635Z",
+  "uppdaterad": "2026-11-09T22:24:33.397Z",
   "spel": {
     "version": 1,
-    "tid": 1794263034702,
+    "tid": 1794263070429,
     "kassa": 1070,
     "packning": [
       "Läkande ört",
@@ -25,7 +25,7 @@
           "Slagvapen": 1,
           "Smyga": 1
         },
-        "aventyr": 9,
+        "aventyr": 10,
         "segrar": 5,
         "vapen": [],
         "rustning": null
@@ -74,7 +74,7 @@
           "Yxor": 4,
           "Akrobatik": 1
         },
-        "aventyr": 6,
+        "aventyr": 7,
         "segrar": 4,
         "vapen": [],
         "rustning": null
@@ -127,10 +127,25 @@
         "segrar": 1,
         "vapen": [],
         "rustning": null
+      },
+      "uranus": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 1,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
+      },
+      "galfner": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 1,
+        "segrar": 0,
+        "vapen": [],
+        "rustning": null
       }
     },
     "tavla": [
-      "gojan",
       "broncos",
       "gripagg"
     ],
@@ -198,7 +213,170 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "gojan",
+        "givare": "Mona",
+        "titel": "Gojans gladiatorgrop",
+        "plats": "Batik",
+        "land": "Bedinin",
+        "miljo": "oken",
+        "boss": "rese",
+        "beloning": 400,
+        "rum": 6,
+        "sovande": true,
+        "skuld": "Garvard",
+        "text": "Sällskapet är skyldigt Garvard pengar – och skulden växer med ränta. På Monas gäststuga i ökenhamnen Batik får ni höra att Gojan, som äger gladiatorgropen ute i öknen, betalar bra för starka kämpar. Och ni har ju resen Bulk, som ni fångade i Mörka Gollenskogen. Han ligger nedsövd på en kärra. Nu gäller det bara att få honom fram innan sömndrycken går ur.",
+        "foremal": "",
+        "svar": "Gojan räknar upp guldet mynt för mynt medan Bulk bärs ut på en dörr. Mona pratar redan om luftskeppet till spaöarna Bedjar och Kali."
+      },
+      "party": [
+        "monika",
+        "uranus",
+        "galfner",
+        "bacon"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "gycklare",
+          "jens": false
+        },
+        {
+          "typ": "resa",
+          "mote": "ginzy",
+          "jens": false
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En sänka där hettan står stilla. En tom vattensäck ligger och fladdrar. Det är fruktansvärt varmt.",
+          "fro": 111263577,
+          "fiender": [
+            "kultist",
+            "kultist",
+            "varg"
+          ],
+          "bulk": true,
+          "bulkText": "Bulk sträcker på sig i sömnen och kedjorna rasslar. En av dem går av med en smäll."
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En liten oas med ett grumligt vattenhål. Resterna av en karavan som aldrig kom fram. Solen bränner som om den har något personligt emot er.",
+          "fro": 287785364
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Ett fält av märkliga, vindslipade stenar. En skylt: ”BEDININ CITY – INGA DVÄRGAR”.",
+          "fro": 420698567,
+          "bulk": true,
+          "bulkText": "Kärran knakar. Bulk mumlar något om sin mamma och vänder sig på sidan, så att hela kärran lutar."
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "Klippor som ger lite efterlängtad skugga. Skorpioner kryper fram ur en spricka. Ni hör en avlägsen kamelklocka.",
+          "fro": 314660370
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En saltöken som glittrar i solen. Någon har ritat en karta i sanden – och sedan suddat ut den. Svetten rinner och vattnet tar slut alldeles för fort. En tom kopp med en rödaktig fläck i botten. Rött té? FF skulle bli så avundsjuk.",
+          "fro": 563127407,
+          "hinder": {
+            "namn": "En gåta i sten",
+            "text": "En stenport med en inristad gåta. Någon lärd måste klura ut svaret.",
+            "fard": "Kunskap",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "ruin",
+              "grotta",
+              "gravfalt",
+              "oken"
+            ]
+          },
+          "bulk": true,
+          "bulkText": "Kärrans hjul fastnar i sanden. Bulk rycker till och knyter näven."
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 833289026,
+          "fiender": [
+            "rese"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "monika": {
+          "kp": 17,
+          "vp": 14,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Äppelcider"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "uranus": {
+          "kp": 11,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "bacon": {
+          "kp": 17,
+          "vp": 11,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Flaska vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Gojans gladiatorgrop” av Mona.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-09 23:24",
+      "bulk": 0
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
