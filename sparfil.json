@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:31:12.948Z",
+  "uppdaterad": "2026-11-09T22:31:21.250Z",
   "spel": {
     "version": 1,
-    "tid": 1794263469959,
+    "tid": 1794263478177,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -364,7 +364,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -389,12 +389,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "nackdelNasta": false
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -444,7 +444,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         }
@@ -674,6 +674,18 @@
         {
           "text": "Resen Bulk tar 1 skada (3 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
