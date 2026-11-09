@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:27:01.261Z",
+  "uppdaterad": "2026-11-09T22:27:23.418Z",
   "spel": {
     "version": 1,
-    "tid": 1794263218317,
+    "tid": 1794263240445,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -382,7 +382,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Fingerfärdighet"
+            "Fingerfärdighet",
+            "Armborst"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -391,7 +392,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Armborst"
         },
         "bacon": {
           "kp": 17,
@@ -492,6 +494,18 @@
         {
           "text": "Uranus Wett (Nannheim) slår Svärd: [10] mot 8 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [9] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
