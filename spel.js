@@ -233,6 +233,7 @@ function ritaHem(){
   html += `<section class="card"><div class="row" style="justify-content:space-between"><h2>Sällskapet</h2><span class="kassa">${guldHtml(st.kassa)}</span></div>
     <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<div class="slot fylld" role="button" tabindex="0" data-a="visa" data-id="${id}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span>${st.run?"":`<button class="hval ut" data-a="valj" data-id="${id}" aria-label="Ta bort ${esc(HJ[id].namn)} ur sällskapet">✕</button>`}</div>`:`<div class="slot">Tom plats</div>`}).join("")}</div>
     <p class="small muted"><b>Håll in</b> på en hjälte i galleriet för att ta med hen. Tryck på <b>✕</b> (eller håll in igen) för att ta bort. Välj 1–4 hjältar. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
+    <div class="row"><button class="btn ghost small" data-a="slumpa" ${st.run?"disabled":""}>🎲 Slumpa fram ett sällskap</button></div>
     <div class="row hemval">
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragstavlan<span class="sub">Lansors förmedling</span></button>
       <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
@@ -260,6 +261,7 @@ function ritaHem(){
     const a = b.dataset.a, id = b.dataset.id;
     if(a==="visa") visaHjalte(id);
     if(a==="valj") return valjHjalte(id, b);
+    if(a==="slumpa") return slumpaSallskap();
     if(a==="tavla"){ jensLedig = null; ga("tavla"); }
     if(a==="basar") ga("basar");
     if(a==="platser") ga("platser");
@@ -291,6 +293,23 @@ function valjHjalte(id, knapp){
   else if(party.length >= 4){ const k = knapp || document.querySelector(`.hcard[data-id="${id}"]`); if(k){ k.classList.remove("skaka"); void k.offsetWidth; k.classList.add("skaka"); } return visaFullt(); }
   else st.sallskap = [...party, id];
   spara(); const y = window.scrollY; ritaOm(); window.scrollTo({top:y, behavior:"instant"});
+}
+// Slumpa fram ett nytt sällskap med 1–4 levande hjältar
+function slumpaSallskap(){
+  if(st.run) return;
+  const levande = window.HJALTAR.filter(h=>!ar(h.id)).map(h=>h.id);
+  if(!levande.length) return;
+  modal(`<h2>🎲 Slumpa fram ett sällskap</h2>
+    <p class="muted">Hur många hjältar ska vara med? Det nuvarande sällskapet byts ut mot slumpade hjältar.</p>
+    <div class="row slumpval">${[1,2,3,4].map(n=>`<button class="btn" data-n="${n}" ${n>levande.length?"disabled":""}>${n}</button>`).join("")}</div>
+    <button class="btn ghost small" data-n="avbryt">Avbryt</button>`, inner=>inner.onclick=e=>{
+      const b = e.target.closest("button"); if(!b || b.disabled) return;
+      if(b.dataset.n==="avbryt") return stangModal();
+      const n = +b.dataset.n, pott = [...levande];
+      for(let i=pott.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pott[i],pott[j]]=[pott[j],pott[i]]; }
+      st.sallskap = pott.slice(0,n); spara(); stangModal(); ritaOm();
+      window.scrollTo({top:0, behavior:"smooth"});   // visa det nya sällskapet i värdshuset
+    });
 }
 function visaFullt(){
   let t = $("#fulltnotis"); if(!t){ t = document.createElement("div"); t.id = "fulltnotis"; t.className = "notis"; document.body.appendChild(t); }
