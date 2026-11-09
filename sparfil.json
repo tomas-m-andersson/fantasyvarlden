@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:25:23.548Z",
+  "uppdaterad": "2026-11-09T22:25:47.464Z",
   "spel": {
     "version": 1,
-    "tid": 1794263120591,
+    "tid": 1794263144543,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -267,7 +267,8 @@
             3,
             57,
             63
-          ]
+          ],
+          "bulkKlar": true
         },
         {
           "typ": "rum",
@@ -334,7 +335,9 @@
             "Äppelcider"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Uppträda"
+          ]
         },
         "uranus": {
           "kp": 11,
@@ -402,6 +405,14 @@
         {
           "text": "Ni förlorar och får betala. (−30 guld)",
           "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer slår Uppträda: [6] mot 9 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer sjunger en vaggvisa. Bulk somnar om med ett lyckligt leende.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
