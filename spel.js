@@ -568,7 +568,10 @@ function rumText(miljo, anvanda){
 // Malbecs gruvor (uppdraget och platsen) har egna målade gruvbakgrunder i stället för grottans.
 // Bossrummet blir kultisternas altarsal. Bara bilden byts – rumstexter och fiender är fortfarande grottans.
 // Platser med egna målade bakgrunder (bara bilden byts, inte rumstexter eller fiender)
-const PLATS_BILD = {"Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vesselberget":"vesselberget", "Bududuoar":"bududuoar"};
+const PLATS_BILD = {"Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vesselberget":"vesselberget", "Bududuoar":"bududuoar",
+  "Krusbärsberget":"krusbarsberget", "Döda sjön":"doda_sjon", "Tunnlarna under Mårdgård":"svartalftunnlar", "Östra bergen":"drakgrottor",
+  "Marmoracs kyrkogård":"marmoracs_kyrkogard", "Harpybergen":"harpybergen", "Mt. Kraknor":"mt_kraknor", "Skogen norr om Slasby":"slasbyskogen",
+  "Gollenskogen":"gollenskogen", "Gravskogen":"gravskogen"};
 // Egna bossrum: när bossen själv står i rummet byts bakgrunden (gäller både uppdrag och utforskning)
 const BOSS_BILD = {drake:"boss_drake", grip:"boss_grip", harpydrottning:"boss_harpyor", orchhovding:"boss_orch", svartalfkung:"boss_svartalf",
   rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding"};

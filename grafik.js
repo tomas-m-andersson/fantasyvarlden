@@ -309,7 +309,7 @@ const UTSEENDE = {
 // ---------- Hjältarnas pixelfigurer (bilder i figurer/) ----------
 // ---------- Väder ----------
 // Vilka miljöer det kan regna i (inte grottor, kloaker eller öknen) och hur ofta: 1 rum på 4.
-const REGNMILJO = {boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, klippa_ruin:1, port_ute:1, klippa:1, vatten_ute:1, skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1, boss_harpyor:1, boss_dodasjon:1};
+const REGNMILJO = {doda_sjon:1, marmoracs_kyrkogard:1, harpybergen:1, slasbyskogen:1, gollenskogen:1, gravskogen:1, boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, klippa_ruin:1, port_ute:1, klippa:1, vatten_ute:1, skog:1, berg:1, ruin:1, gravfalt:1, trask:1, bududuoar:1, vag:1, boss_harpyor:1, boss_dodasjon:1};
 G.vader = (miljo, fro) => {
   if(!REGNMILJO[miljo] || !(window.BAKGRUND.harEgen && window.BAKGRUND.harEgen(miljo))) return null;
   const h = Math.imul((fro||7) >>> 0, 2654435761) >>> 0;
@@ -360,18 +360,18 @@ G.regnLager = (canvas, pa) => {
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
 const KISTOR = Array.from({length:64},(_,i)=>i).filter(i=>i<8||i>15);   // npc/kista.png: rad 2 är tom
-const MARK_NER = { skog2: 5, skog2natt: 5, skog4: 6, skog4natt: 6, skog5: 5, skog5natt: 5, gruva1: 6, gruva2: 7, kloak1: 5, vesselberget2: 6, berg7: 5, lager_ute: 4, lager_ute2: 5, ortgard1: 6, ortgard2: 6, dunkers_hus: 4, grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const MARK_NER = { doda_sjon1: 4, doda_sjon2: 4, gollenskogen1: 4, krusbarsberget1: 5, krusbarsberget2: 4, marmoracs_kyrkogard1: 4, marmoracs_kyrkogard2: 4, skog2: 5, skog2natt: 5, skog4: 6, skog4natt: 6, skog5: 5, skog5natt: 5, gruva1: 6, gruva2: 7, kloak1: 5, vesselberget2: 6, berg7: 5, lager_ute: 4, lager_ute2: 5, ortgard1: 6, ortgard2: 6, dunkers_hus: 4, grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { lager_oken1: 12, lager_oken2: 11, klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
 const HJ_START = { lager_oken2: -3, klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
-const KLYFTA_UTE = { klippa_oken:1, klippa_ruin:1, boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
+const KLYFTA_UTE = { doda_sjon:1, marmoracs_kyrkogard:1, harpybergen:1, mt_kraknor:1, slasbyskogen:1, gollenskogen:1, gravskogen:1, klippa_oken:1, klippa_ruin:1, boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 // Gåtan i sten: en förseglad dörr som stänger vägen, målad för varje sorts miljö
 const GATA = { grotta:"gata_inne", gruva:"gata_inne_gruva", gruva_kult:"gata_inne_gruva", kloak:"gata_inne_kloak",
   ruin:"gata_ute_ruin", vesselberget:"gata_ute_ruin", oken:"gata_ute_oken" };
 // (port och vatten väljer inne- eller utebild efter miljön; ruiner räknas som ute)
-const INNE_MILJO = { grotta:1, kloak:1, gruva:1, gruva_kult:1, boss_orch:1, boss_svartalf:1, boss_drake:1 };
+const INNE_MILJO = { krusbarsberget:1, svartalftunnlar:1, drakgrottor:1, grotta:1, kloak:1, gruva:1, gruva_kult:1, boss_orch:1, boss_svartalf:1, boss_drake:1 };
 
 // ---------- Stenporten med gåtan (ritas med kod i full upplösning, 320×180) ----------
 // cx = mitten, fot = markens höjd. Två pelare och en överliggare av huggen sten, mörk gång emellan
