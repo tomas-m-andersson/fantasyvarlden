@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:25:16.686Z",
+  "uppdaterad": "2026-11-09T22:25:23.548Z",
   "spel": {
     "version": 1,
-    "tid": 1794263113645,
+    "tid": 1794263120591,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -262,7 +262,12 @@
             "varg"
           ],
           "bulk": true,
-          "bulkText": "Bulk sträcker på sig i sömnen och kedjorna rasslar. En av dem går av med en smäll."
+          "bulkText": "Bulk sträcker på sig i sömnen och kedjorna rasslar. En av dem går av med en smäll.",
+          "rutor": [
+            3,
+            57,
+            63
+          ]
         },
         {
           "typ": "rum",
@@ -315,7 +320,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "monika": {
           "kp": 17,
