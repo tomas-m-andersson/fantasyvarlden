@@ -213,7 +213,7 @@ const IKON = {
   "Hästen Häst":"j:7","Skalp från en tornerspelare":"j:8","Visselpipa":"j:9","Tjurhorn":"j:10"
 };
 // Uppdragens föremål
-const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"j:13",barnen:"j:11",gripagg:"j:12","doda-sjon":"i:54",krusbar:"i:28"};
+const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"j:13",barnen:"j:11",gripagg:"j:12","doda-sjon":"i:54",krusbar:"i:28",gojan:"g:19"};
 const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner", j:"ikoner2", v:"vinflaska"};
 function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbijv]:\d+$/.test(k)) return "";
   const [a,r] = k.split(":"); return `<canvas class="px ikon ${extraKlass||""}" data-ikon="${IKONARK[a]}:${r}" aria-hidden="true"></canvas>`; }
@@ -548,12 +548,49 @@ function startaUppdrag(qid, medJens){
   const steg = resMoten.map(m=>({typ:"resa",mote:m.id,jens:!!medJens,vagn:medJens?R.t(G.antalVagnar)-1:undefined}));
   if(medJens){ st.kassa -= JENS_PRIS; jensLedig = null; }
   steg.push(...byggRum(q.miljo, q.rum, party.length, q.boss, 0));
+  if(q.sovande) sovandeBulk(steg, party.length);
   st.run = {q, party, steg, i:0, h:nyaHjaltar(party), guld:0, logg:[], utfall:null, start:datum()};
+  if(q.sovande){ st.run.bulk = 0; }
   st.tavla = st.tavla.filter(x=>x!==qid);
   storOrn(1/12);
   logga(`Sällskapet antar uppdraget ”${q.titel}” av ${q.givare}.`,"info");
   if(medJens){ logga(`🐴 Bakhuvudet Jens tar ${JENS_PRIS} guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.`,"info"); kronika(`${party.map(i=>HJ[i].namn).join(", ")} åkte med Bakhuvudet Jens mot ${q.plats} för ${JENS_PRIS} guld.`); }
   spara(); ga("run");
+}
+// ---------- Gojans gladiatorgrop: den nedsövda resen Bulk ----------
+// Bulk ligger nedsövd på en kärra. I några av rummen rör han på sig, och då måste någon söva honom igen.
+// Varje misslyckat försök (run.bulk) gör honom piggare – och starkare – när han vaknar i gropen.
+const BULK_ROR = [
+  "Kärran knakar. Bulk mumlar något om sin mamma och vänder sig på sidan, så att hela kärran lutar.",
+  "Bulk snarkar så högt att sanden darrar. Sedan slutar han snarka. Det är värre.",
+  "Ena ögat på Bulk glider upp en springa och tittar rakt på er.",
+  "Bulk sträcker på sig i sömnen och kedjorna rasslar. En av dem går av med en smäll.",
+  "Bulk smackar och frågar halvsovande om det är frukost snart.",
+  "Kärrans hjul fastnar i sanden. Bulk rycker till och knyter näven."
+];
+const BULK_KP = [0.7, 0.9, 1.1, 1.3];   // hur stark Bulk är i gropen beroende på hur mycket han hunnit vakna
+const BULK_GROP = [
+  "Ni rullar in kärran i Gojans gladiatorgrop. Publiken jublar. Bulk slår upp ögonen, yr och dåsig – han vet knappt var han är. Men han ser er, och han minns er.",
+  "Ni rullar in kärran i Gojans gladiatorgrop. Publiken jublar. Bulk sätter sig upp, gnuggar ögonen och ser sig omkring. Sedan får han syn på er.",
+  "Ni rullar in kärran i Gojans gladiatorgrop. Bulk är redan vaken. Han kliver av kärran, sträcker på sig och knäcker nacken. Publiken älskar det.",
+  "Kärran hinner knappt in i gropen förrän Bulk sliter sig loss. Han är klarvaken och fullkomligt rasande. Gojan ropar från läktaren att han inte betalar för döda säljare."
+];
+function sovandeBulk(steg, antal){
+  const rum = R.blanda(steg.filter(s=>s.typ==="rum" && s.rumtyp!=="boss")).slice(0,3);
+  rum.forEach(s=>{ s.bulk = true; s.bulkText = R.valj(BULK_ROR); });
+  const boss = steg.find(s=>s.rumtyp==="boss");
+  if(boss) boss.fiender = [boss.fiender[0]];   // i gropen är det bara Bulk mot sällskapet
+}
+function bulkHtml(steg){
+  return `<p class="berattelse">${esc(steg.text)}</p><h3>Bulk rör på sig!</h3><p>${esc(steg.bulkText)}</p>
+    <div class="val"><button class="btn" data-a="bulk" data-f="Läkekonst">Ge honom mer sömndryck<span class="sub">En hjälte slår Läkekonst</span></button>
+    <button class="btn" data-a="bulk" data-f="Uppträda">Sjung en vaggvisa<span class="sub">En hjälte slår Uppträda</span></button></div>`;
+}
+function bulkSlag(steg, fard, id){
+  const r = st.run, s = hjalteSlag(id, fard); logga(slagText(HJ[id].namn, s), slagCls(s));
+  if(s.lyckat) logga(fard==="Läkekonst" ? `${HJ[id].namn} droppar mer sömndryck i munnen på Bulk. Han smackar nöjt och somnar om.` : `${HJ[id].namn} sjunger en vaggvisa. Bulk somnar om med ett lyckligt leende.`, "ok");
+  else { r.bulk += s.demon ? 2 : 1; logga(fard==="Läkekonst" ? `${HJ[id].namn} spiller ut halva flaskan. Bulk hostar och blir lite piggare.` : `${HJ[id].namn} sjunger så falskt att Bulk vaknar till. Han blir lite piggare – och lite argare.`, "fel"); }
+  steg.bulkKlar = true; spara(); ritaRun();
 }
 // Bygger ett antal rum som slutar med en boss. extra = fler fiender (används när man utforskar djupare).
 // Bygger en rumsbeskrivning av tre delar och undviker delar som redan använts i samma äventyr
@@ -574,7 +611,7 @@ const PLATS_BILD = {"Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vessel
   "Gollenskogen":"gollenskogen", "Gravskogen":"gravskogen"};
 // Egna bossrum: när bossen själv står i rummet byts bakgrunden (gäller både uppdrag och utforskning)
 const BOSS_BILD = {drake:"boss_drake", grip:"boss_grip", harpydrottning:"boss_harpyor", orchhovding:"boss_orch", svartalfkung:"boss_svartalf",
-  rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding"};
+  rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding", rese:"arena_sten"};
 // Bossrum som hör till en plats i stället för en viss boss
 const BOSS_PLATS = {"Döda sjön":"boss_dodasjon"};
 // Bakgrund och frö för ett steg: strider som börjar på resan (t.ex. bakhåll) stannar kvar på vägen
@@ -790,8 +827,9 @@ function ritaRun(){
     titel = steg.jens ? `På Bakhuvudet Jens kärra mot ${r.q.plats}` : `På väg mot ${r.q.plats}`;
     innehall = moteHtml(m, steg);
   } else if(steg.rumtyp==="boss"){
-    titel = r.utforska ? `Kapitel ${r.kapitel} · bossen` : `${r.q.plats} – slutstriden`;
-    innehall = steg.klar ? klarHtml(steg) : `<p class="berattelse">Ni har nått målet. Här finns ${esc(V.FIENDER[steg.fiender[0]].namn.toLowerCase())}${steg.fiender.length>1?" – och den är inte ensam":""}. Det är nu det gäller.</p>
+    titel = r.utforska ? `Kapitel ${r.kapitel} · bossen` : `${r.bulk!=null ? r.q.titel : r.q.plats} – slutstriden`;
+    innehall = steg.klar ? klarHtml(steg) : r.bulk!=null ? `<p class="berattelse">${esc(BULK_GROP[Math.min(r.bulk,3)])}</p>
+      <div class="val"><button class="btn red" data-a="strid">Till strid!</button></div>` : `<p class="berattelse">Ni har nått målet. Här finns ${esc(V.FIENDER[steg.fiender[0]].namn.toLowerCase())}${steg.fiender.length>1?" – och den är inte ensam":""}. Det är nu det gäller.</p>
       <div class="val"><button class="btn red" data-a="strid">Till strid!</button></div>`;
   } else {
     titel = r.utforska ? `Kapitel ${r.kapitel} · rum ${r.djup+1}` : `Rum ${r.i - antalResa() + 1} av ${r.steg.length - antalResa()}`;
@@ -877,6 +915,7 @@ function vemHtml(){
 function rumHtml(steg){
   if(steg.klar) return klarHtml(steg);
   if(aktivtVal && aktivtVal.typ==="vem") return vemHtml();
+  if(steg.bulk && !steg.bulkKlar) return bulkHtml(steg);
   const t = steg.rumtyp;
   let h = `<p class="berattelse">${esc(steg.text)}</p>`;
   if(t==="strid") h += `<p>Ni är inte ensamma. ${esc(fiendeLista(steg.fiender))} spärrar vägen!</p><div class="val"><button class="btn red" data-a="strid">Till strid!</button>
@@ -900,6 +939,7 @@ function runKlick(b){
   if(a==="vem"){ const v=aktivtVal; aktivtVal=null; v.gor(b.dataset.id); return; }
   if(a==="strid"){ return startaStrid(steg.fiender, {boss:steg.rumtyp==="boss"}); }
   if(a==="hoppa"){ return klart(steg,"Ni går vidare utan att vila."); }
+  if(a==="bulk"){ const f=b.dataset.f; return valjVem(f, "Vem tar hand om Bulk?", id=>bulkSlag(steg, f, id)); }
   if(a==="smyg"){
     const res = vakna().map(id=>({id,s:hjalteSlag(id,"Smyga")}));
     res.forEach(x=>logga(slagText(HJ[x.id].namn,x.s),slagCls(x.s)));
@@ -1012,6 +1052,7 @@ function startaStrid(fiendeIds, opt){
   opt = opt||{};
   const r = st.run, sr = r.steg[r.i], rutor = (sr && sr.fiender===fiendeIds && sr.rutor) || [];
   const fiender = fiendeIds.map((fid,i)=>{ const f=fiendeData(fid), kp=Math.max(1,Math.round(f.kp*(r.arena?1:SVAR[svar()].kp)*(st.run&&st.run.utforska?kpFaktor(st.run.kapitel):1))); return {i, fid, ruta: rutor[i]!=null ? rutor[i] : slumpRuta(fid), namn:f.namn, sprite:f.sprite, kp, max:kp, rust:f.rust||0, typ:f.typ, anfall:f.anfall, skada:f.skada, skadaFn:f.skadaFn, hjalte:f.hjalte, attacker:f.attacker, boss:!!f.boss, folk:!!f.folk, stor:!!f.stor, liten:!!f.liten, besv:f.besv, stoppad:0, nackdel:false}; });
+  if(r.bulk!=null) fiender.forEach(f=>{ if(f.fid==="rese"){ f.kp = f.max = Math.max(1, Math.round(f.kp*BULK_KP[Math.min(r.bulk,3)]) + 4*Math.max(0, r.party.length-2)); } });
   // Numrera likadana fiender
   const c={}; fiender.forEach(f=>{c[f.namn]=(c[f.namn]||0)+1}); const n={}; fiender.forEach(f=>{ if(c[f.namn]>1){ n[f.namn]=(n[f.namn]||0)+1; f.namn+=" "+n[f.namn]; } });
   r.party.forEach(id=>{ const x=rh(id); Object.assign(x,{tempRust:0,vapenbonus:null,gift:x.gift||false,maktig:false,raseri:false,undvikAllt:false,stoppad:0}); });
@@ -1568,6 +1609,9 @@ function avslutaRun(lyckat, orsak, gavUpp){
     levande.forEach(id=>{ hs(id).segrar=(hs(id).segrar||0)+1; const x=rh(id); const kand = x.anvanda.filter(f=>!x.markerade.includes(f)); if(kand.length) x.markerade.push(R.valj(kand)); });
   } else if(lyckat){
     beloning = r.q.beloning; if(r.q.givare==="Lansor"){ avgift = Math.round(beloning*0.1); }
+    if(r.q.skuld){ const ranta = R.t(6)*10; avgift = 150 + ranta;
+      var avgiftText = `${r.q.skuld} väntar utanför och tar ${avgift} guld: 150 i skuld och ${ranta} i ränta`;
+      rad.push(`${r.q.skuld} räknar pengarna två gånger, stoppar dem i en börs med sitt eget namn på och påpekar att räntan fortsätter att ticka.`); }
     st.kassa += beloning - avgift + r.guld;
     st.avklarade[r.q.id] = (st.avklarade[r.q.id]||0)+1;
     levande.forEach(id=>{ hs(id).segrar=(hs(id).segrar||0)+1; const x=rh(id); const kand = x.anvanda.filter(f=>!x.markerade.includes(f)); if(kand.length) x.markerade.push(R.valj(kand)); });
@@ -1585,7 +1629,7 @@ function avslutaRun(lyckat, orsak, gavUpp){
   else kronika(lyckat ? `${namn} klarade ”${r.q.titel}” och fick ${beloning-avgift} guld${r.guld?` + ${r.guld} i byte`:""}.${doda.length?` ${doda.map(i=>HJ[i].namn).join(" och ")} dog på vägen.`:""}`
     : `${namn} misslyckades med ”${r.q.titel}”. ${orsak||""}${doda.length?` ${doda.map(i=>HJ[i].namn).join(" och ")} dog.`:""}`);
   if(r.ornar){ kronika(`Stör-örnen anföll Potus Rövhatt ${r.ornar} ${r.ornar===1?"gång":"gånger"} under ”${r.q.titel}”.`); rad.push(`🦅 Stör-örnen anföll Potus ${r.ornar} ${r.ornar===1?"gång":"gånger"}.`); }
-  r.utfall = {lyckat, orsak, beloning, avgift, byte:r.guld, doda, forb, rad};
+  r.utfall = {lyckat, orsak, beloning, avgift, avgiftText: typeof avgiftText!=="undefined" ? avgiftText : null, byte:r.guld, doda, forb, rad};
   spara(); vy="run"; ritaRun();
 }
 function ritaSlut(){
@@ -1594,7 +1638,7 @@ function ritaSlut(){
     <div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${r.utforska?esc(r.q.plats):u.lyckat?"Uppdraget klart!":"Misslyckat"}</span></div>
     <section class="card quest"><h2>${r.utforska?(u.lyckat?"Hemma med bytet!":"Det gick inte som planerat"):u.lyckat?"Seger!":"Det gick inte som planerat"}</h2>
       ${r.utforska?(u.lyckat?`<p>Byte: <b>${u.byte} guld</b>. Kapitelbonus för ${r.kapitel} ${r.kapitel===1?"kapitel":"kapitel"}: <b>${u.beloning} guld</b>. Totalt <b>${u.byte+u.beloning} guld</b> till kassan.</p>`:`<p class="berattelse">${esc(u.orsak||"")}</p>`):u.lyckat?`<p class="berattelse">${esc(r.q.svar)}</p>${r.q.foremal?`<p class="foremal">${ikonHtml(UPPDRAG_IKON[r.q.id])}<span>Ni har fått tag på: <b>${esc(r.q.foremal)}</b></span></p>`:""}
-        <p>Belöning: <b>${u.beloning} guld</b>${u.avgift?` (Lansor tar ${u.avgift} guld i avgift)`:""}. Byte under resan: <b>${u.byte} guld</b>.</p>`
+        <p>Belöning: <b>${u.beloning} guld</b>${u.avgift?` (${esc(u.avgiftText || `Lansor tar ${u.avgift} guld i avgift`)})`:""}. Byte under resan: <b>${u.byte} guld</b>.</p>`
       :`<p class="berattelse">${esc(u.orsak||"")}</p>`}
       ${u.rad.map(x=>`<p>${esc(x)}</p>`).join("")}
       ${u.doda.length?`<div><h3>Till poolen i Miami</h3>${u.doda.map(id=>`<p><b>${esc(HJ[id].namn)}</b>: ${esc(R.valj(V.EFTERRIKET))}</p>`).join("")}</div>`:""}

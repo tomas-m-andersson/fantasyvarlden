@@ -79,7 +79,13 @@ V.FIENDER = {
   drake:{namn:"Den talande draken",typ:"best",kp:38,rust:4,sprite:"drake",boss:true,stor:true,attacker:[
     {namn:"Eldlunga",text:"sprutar eld över",skada:"2T6",alla:true},{namn:"Klor",text:"sliter i",skada:"2T8"},
     {namn:"Svans",text:"sveper med svansen mot",skada:"2T6"},
-    {namn:"Föreläsning",text:"håller en lång och nedlåtande föreläsning för",skada:0,effekt:"nackdel",alla:true}]}
+    {namn:"Föreläsning",text:"håller en lång och nedlåtande föreläsning för",skada:0,effekt:"nackdel",alla:true}]},
+  // Resen Bulk – fångad i Mörka Gollenskogen, såld till Gojans gladiatorgrop. Bossen i ”Gojans gladiatorgrop”.
+  rese:{namn:"Resen Bulk",typ:"best",kp:30,rust:2,sprite:"orch",boss:true,stor:true,attacker:[
+    {namn:"Spikklubba",text:"svingar sin spikklubba mot",skada:"2T8"},{namn:"Knytnäve",text:"drämmer en knytnäve stor som en tunna i",skada:"2T6"},
+    {namn:"Bänkkast",text:"river loss en läktarbänk och slänger den mot",skada:"T6",alla:true},
+    {namn:"Stampa",text:"stampar så att hela gropen skakar under",skada:"T4",alla:true,effekt:"stoppa"},
+    {namn:"Vrål",text:"vrålar så att publiken tystnar –",skada:0,effekt:"nackdel",alla:true}]}
 };
 
 // Vilka fiender som hör hemma var
@@ -130,6 +136,9 @@ V.UPPDRAG = [
  {id:"broncos",givare:"Borgmästaren i Hagbo",titel:"Broncos i Hagbo",plats:"Skogen vid riksväg 40",land:"Gallvenien",miljo:"skog",boss:"rovarhovding",beloning:160,rum:5,
   text:"Det lokala rövarbandet Broncos har börjat råna folk längs riksväg 40. Hagbo, där alla hus ser exakt likadana ut och alla har en Hagwow, vill bli av med dem.",
   foremal:"Broncos fana",svar:"Borgmästaren klappar sin Hagwow."},
+ {id:"gojan",givare:"Mona",titel:"Gojans gladiatorgrop",plats:"Batik",land:"Bedinin",miljo:"oken",boss:"rese",beloning:400,rum:6,sovande:true,skuld:"Garvard",
+  text:"Sällskapet är skyldigt Garvard pengar – och skulden växer med ränta. På Monas gäststuga i ökenhamnen Batik får ni höra att Gojan, som äger gladiatorgropen ute i öknen, betalar bra för starka kämpar. Och ni har ju resen Bulk, som ni fångade i Mörka Gollenskogen. Han ligger nedsövd på en kärra. Nu gäller det bara att få honom fram innan sömndrycken går ur.",
+  foremal:"",svar:"Gojan räknar upp guldet mynt för mynt medan Bulk bärs ut på en dörr. Mona pratar redan om luftskeppet till spaöarna Bedjar och Kali."},
  {id:"doda-sjon",givare:"Professor Proppeteus",titel:"Vattenprover från Döda sjön",plats:"Döda sjön",land:"Grador",miljo:"trask",boss:"gast",beloning:150,rum:5,
   text:"Professor Proppeteus behöver vattenprover från Döda sjön utanför Cranford för sin mycket originella forskning. Sjön lär vara förgiftad sedan kriget. Det spökar också, säger folk.",
   foremal:"Tre flaskor giftigt sjövatten",svar:"Professorn tittar på er genom tre par glasögon samtidigt."}
