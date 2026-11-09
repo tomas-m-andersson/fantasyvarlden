@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:27:23.418Z",
+  "uppdaterad": "2026-11-09T22:27:45.221Z",
   "spel": {
     "version": 1,
-    "tid": 1794263240445,
+    "tid": 1794263262326,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -369,7 +369,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": false
         },
         "galfner": {
           "kp": 12,
@@ -396,7 +396,7 @@
           "valtVapen": "Armborst"
         },
         "bacon": {
-          "kp": 17,
+          "kp": 15,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -417,7 +417,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Handyxa"
         }
       },
@@ -506,6 +506,38 @@
         {
           "text": "Ulv faller!",
           "cls": "d"
+        },
+        {
+          "text": "Kultist från Tarragons Hand 2 anfaller Bacon: [7] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Bacon tar 2 skada (3 − 1 rustning) från Kultist från Tarragons Hand 2. KP 15/17.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
+        },
+        {
+          "text": "Kultist från Tarragons Hand 2 anfaller Monika Plöjer: [12] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer parerar: [7 / 3 → 3] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand 2 tar 7 skada.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
