@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:31:39.786Z",
+  "uppdaterad": "2026-11-09T22:31:48.788Z",
   "spel": {
     "version": 1,
-    "tid": 1794263496764,
+    "tid": 1794263505853,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -416,9 +416,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "bacon": {
           "kp": 17,
@@ -710,6 +710,10 @@
         {
           "text": "Resen Bulk tar 1 skada (3 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med nackdel: [3 / 16 → 16] mot 12 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
