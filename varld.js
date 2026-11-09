@@ -116,10 +116,10 @@ V.UPPDRAG = [
   text:"Det är höst i Bududuoar, och de döda från det uråldriga blodiga kriget vaknar som vanligt. Familjen von Borge behöver höstvakter som skyddar egendomen mot både odöda och banditer.",
   foremal:"Generalens hjälm",svar:"Familjen spikar igen fönstren och åker därifrån."},
  {id:"slasby",givare:"Slasbys församling",titel:"Dendroiderna i Slasby",plats:"Skogen norr om Slasby",land:"Dorisbergen",miljo:"skog",boss:"dendroidmoder",beloning:240,rum:6,
-  text:"Rövarbyn Slasby har anfallits av dendroider, och halva församlingen är död. Hannes på Den fallande fågeln (numera stadshuset) vill att någon tar reda på vem eller vad som ligger bakom.",
+  text:"Rövarbyn Slasby har anfallits av dendroider, och halva församlingen är död. Hannes – bryggare, bartender och en av Slasbys borgmästare – på Den fallande fågeln (numera stadshuset) vill att någon tar reda på vem eller vad som ligger bakom.",
   foremal:"Ett hjärta av levande trä",svar:"Hannes ställer fram en egenbryggd IPA. ”På huset. Om ni överlever.”"},
  {id:"rattor",givare:"Eva",titel:"Råttorna under Kras-Kras",plats:"Kras-Kras kloaker",land:"Dargobar",miljo:"kloak",boss:"rattkung",beloning:180,rum:6,
-  text:"Kras-Kras har ett fint avloppssystem som ingen använder – folk slänger fortfarande allt genom fönstren. I tunnlarna har råttorna vuxit sig enorma. Kentauren Eva på Evas uppdragsförmedling har fått in ett jobb.",
+  text:"Kras-Kras har ett fint avloppssystem som ingen använder – folk slänger fortfarande allt genom fönstren. I tunnlarna har råttorna vuxit sig enorma. Kentauren Eva på Evas uppdragsförmedling i Hjälmby lottar ut sina jobb genom att kasta kniv med ögonbindel – och den här gången träffade kniven Kras-Kras.",
   foremal:"Råttkungens krona",svar:"Eva stampar med hovarna. ”Jobb är jobb.”"},
  {id:"svartalf",givare:"Hövding Atlas",titel:"Den nya svartalfkungen",plats:"Tunnlarna under Mårdgård",land:"Mårdgård",miljo:"grotta",boss:"svartalfkung",beloning:220,rum:6,
   text:"Svartalfkungen klövs på mitten av en blixt, men nu har en ny kung tagit över tunnlarna under Mårdgård. Hövding Atlas i Skrovby betalar gärna igen. Han undrar fortfarande var hans son Greg är.",
@@ -145,7 +145,7 @@ V.PLATSER = [
  {id:"malbecs-gruvor",namn:"Malbecs gruvor",land:"Mårdgård",miljo:"grotta",bossar:["hogprast","svartalfkung"],text:"Gruvgångarna under arbetarstaden Malbec. Det viskas om Tarragons Hand."},
  {id:"kras-kras",namn:"Kras-Kras kloaker",land:"Dargobar",miljo:"kloak",bossar:["rattkung"],text:"Ett fint avloppssystem som ingen använder. Råttorna har vuxit sig enorma."},
  {id:"gravskogen",namn:"Gravskogen",land:"Gallvenien",miljo:"gravfalt",bossar:["general","gravvaktare"],text:"Gravarna från Det röda slaget står så tätt att de bildat en skog."},
- {id:"vesselberget",namn:"Vesselberget",land:"Grador",miljo:"ruin",bossar:["rovarhovding","gravvaktare"],text:"Ett förfallet utkikstorn och fästning. Gasten Mandor Marvolt spökar här."},
+ {id:"vesselberget",namn:"Vesselberget",land:"Grador",miljo:"ruin",bossar:["rovarhovding","gravvaktare"],text:"Ett förfallet utkikstorn och fästning. Gasten Mandor Marvolt spökar här. Under tornruinen ska hans skatt ligga nedgrävd – 136 guldmynt, enligt honom själv."},
  {id:"doda-sjon",namn:"Döda sjön",land:"Grador",miljo:"trask",bossar:["dendroidmoder","gast"],text:"Sjön nära Cranford, förgiftad sedan kriget. Allt som rinner ut i den är också förgiftat."}
 ];
 
@@ -315,7 +315,7 @@ V.MOTEN = [
        {knapp:"Säga åt Jens att köra vidare",fard:"Övertala",lyckat:{text:"Jens trampar på. Garvard blir en liten prick i fjärran."},misslyckat:{text:"Jens stannar ändå. Garvard pratar hela vägen men tappar sin börs när han kliver av.",guld:20}}]},
  // ---- Möten i rummen ----
  {id:"ormac",namn:"Häxan Ormac",npc:{ark:"stad",ruta:46},sprite:"alv",rum:true,
-  text:"En naken häxa vars hud bränns om man rör den. Hon erbjuder sig att hela er – för sju kopparmynt och en ”liten tjänst”.",
+  text:"En naken häxa på över 400 år, från Skuggberget, vars hud bränns om man rör den. Hon är känd för att kunna bota Nattdöden. Hon erbjuder sig att hela er – för sju kopparmynt och en ”liten tjänst”.",
   val:[{knapp:"Betala (1 guld)",kostnad:1,auto:{text:"Hon blandar en salva av rävhår, granbark och kråkmossa. Det svider, men hjälper.",kp:"2T6"}},
        {knapp:"Fråga om hennes tjänst",fard:"Övertala",lyckat:{text:"Hon vill bara ha sällskap en stund. Hon ger er en giftig ört som tack.",sak:"Kråkmossa",kp:"T4"},misslyckat:{text:"Någon råkar röra vid henne. Det bränns!",skada:"T6"}},
        {knapp:"Gå vidare",auto:{text:"Hon ser besviken ut."}}]},
@@ -330,7 +330,7 @@ V.MOTEN = [
        {knapp:"Slå sönder kedjorna",fard:"STY",lyckat:{text:"Kedjorna brister! Fången springer därifrån och glömmer en ört.",sak:"Läkande ört"},misslyckat:{text:"Ni får ont i händerna.",skada:"T4"}},
        {knapp:"Lämna honom",auto:{text:"Han ropar saker om er mamma tills ni är utom hörhåll."}}]},
  {id:"jones",namn:"Jones Docker",npc:{ark:"stad",ruta:8},sprite:"manniska",rum:true,
-  text:"Arkeologen Jones Docker – träben, hatt och ärr över vänster öga – letar efter en gammal relik. Han vill ha hjälp att läsa en karta.",
+  text:"Arkeologen Jones Docker – träben, hatt och ärr över vänster öga – letar efter en gammal relik. Han lämnade familjen för äventyren, och på kvällarna slåss han mot dvärgen Croxy på värdshuset Den vämjeliga varanen. Nu vill han ha hjälp att läsa en karta.",
   val:[{knapp:"Läsa kartan",fard:"Kunskap",lyckat:{text:"Ni hittar skatten tillsammans och delar lika.",guld:45},misslyckat:{text:"Ni läser fel och leder honom rakt in i en vägg.",ingenting:true}},
        {knapp:"Utmana honom på tisdagsfajt",fard:"Slagsmål",lyckat:{text:"Jones tar av sig fårskinnsvästen, förlorar och skrattar. Han ger er en läkedryck.",sak:"Läkedryck"},misslyckat:{text:"Han slår er medvetslösa. Med träbenet.",skada:"T6"}},
        {knapp:"Säga hej och gå",auto:{text:"Han nickar och fortsätter leta."}}]},

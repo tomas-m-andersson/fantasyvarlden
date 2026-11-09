@@ -210,7 +210,7 @@ const IKON = {
   "Spjut":"i:7","Kort spjut":"i:8","Långt spjut":"i:9","Kort båge":"i:12","Pilbåge":"i:13","Armborst":"i:14","Slunga":"i:15",
   "Ringbrynja":"g:35","Läderrustning":"i:33","Läderväst":"i:33","Plåtrustning":"i:34","Sköld":"i:30","guld":"g:19",
   "Stav":"j:0","Trollstav":"j:1","Trästav":"j:2","Knytnävar":"j:3","Tygtunika":"j:4","Ulvskinn":"j:5","Fjällpansar (ett ben)":"j:6",
-  "Hästen Häs":"j:7","Skalp från en tornerspelare":"j:8","Visselpipa":"j:9","Tjurhorn":"j:10"
+  "Hästen Häst":"j:7","Skalp från en tornerspelare":"j:8","Visselpipa":"j:9","Tjurhorn":"j:10"
 };
 // Uppdragens föremål
 const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"j:13",barnen:"j:11",gripagg:"j:12","doda-sjon":"i:54",krusbar:"i:28"};
