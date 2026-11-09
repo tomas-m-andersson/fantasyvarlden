@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:30:51.460Z",
+  "uppdaterad": "2026-11-09T22:31:06.952Z",
   "spel": {
     "version": 1,
-    "tid": 1794263448354,
+    "tid": 1794263464014,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -364,9 +364,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "uranus": {
           "kp": 11,
@@ -661,6 +661,10 @@
         },
         {
           "text": "Uranus Wett (Nannheim) slår Svärd: [13] mot 8 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med nackdel: [16 / 16 → 16] mot 15 – misslyckat",
           "cls": "fel"
         }
       ],
