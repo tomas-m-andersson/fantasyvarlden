@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:25:47.464Z",
+  "uppdaterad": "2026-11-09T22:26:23.085Z",
   "spel": {
     "version": 1,
-    "tid": 1794263144543,
+    "tid": 1794263180046,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -336,8 +336,18 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Uppträda"
-          ]
+            "Uppträda",
+            "Slagvapen"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Stridsgissel"
         },
         "uranus": {
           "kp": 11,
@@ -349,7 +359,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "galfner": {
           "kp": 12,
@@ -363,7 +381,15 @@
           "markerade": [],
           "anvanda": [
             "Fingerfärdighet"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "bacon": {
           "kp": 17,
@@ -377,7 +403,15 @@
             "Flaska vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -413,6 +447,22 @@
         {
           "text": "Monika Plöjer sjunger en vaggvisa. Bulk somnar om med ett lyckligt leende.",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen: [13] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand 1 tar 12 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Kultist från Tarragons Hand 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
