@@ -231,8 +231,8 @@ function ritaHem(){
   }
   html += `<section class="card"><div class="spelledare">${isakHtml(new Date().getDate())}<div><span class="small muted">Spelledaren Isak Jansson</span><p class="berattelse" style="margin:2px 0 0">${esc(ISAK.halsning[(new Date().getDate()+new Date().getHours())%ISAK.halsning.length])}</p></div></div></section>`;
   html += `<section class="card"><div class="row" style="justify-content:space-between"><h2>Sällskapet</h2><span class="kassa">${guldHtml(st.kassa)}</span></div>
-    <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<div class="slot fylld" role="button" tabindex="0" data-a="visa" data-id="${id}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span>${st.run?"":`<button class="hval ut" data-a="valj" data-id="${id}" aria-label="Ta bort ${esc(HJ[id].namn)} ur sällskapet">✕</button>`}</div>`:`<div class="slot">Tom plats</div>`}).join("")}</div>
-    <p class="small muted"><b>Håll in</b> på en hjälte i galleriet för att ta med hen. Tryck på <b>✕</b> (eller håll in igen) för att ta bort. Välj 1–4 hjältar. ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
+    <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<div class="slot fylld ${flytt.id===id?"lyft":""}" role="button" tabindex="0" data-a="visa" data-id="${id}" data-i="${i}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span></div>`:`<div class="slot" data-i="${i}">Tom plats</div>`}).join("")}</div>
+    <p class="small muted">${flytt.id?`<b>Tryck på den plats ${esc(HJ[flytt.id].namn)} ska flytta till</b> (eller på hen själv för att ångra).`:`<b>Håll in</b> på en hjälte här ovanför och dra hen till en annan plats för att byta ordning i TV:n. <b>Håll in</b> på en hjälte i galleriet för att ta med eller ta bort hen. Välj 1–4 hjältar.`} ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
     <div class="row"><button class="btn ghost small" data-a="slumpa" ${st.run?"disabled":""}>🎲 Slumpa fram ett sällskap</button></div>
     <div class="row hemval">
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragstavlan<span class="sub">Lansors förmedling</span></button>
@@ -257,6 +257,11 @@ function ritaHem(){
   if(doda.length) G.ritaPool($("#pool"), doda.map(h=>({id:h.id, ruta:figur(h.id)})));
   app.onclick = e => {
     if(langtryck.gjort){ langtryck.gjort = false; return; }
+    if(flytt.id){   // en hjälte är upplyft – nästa tryck på en plats flyttar hen dit
+      const sl = e.target.closest(".slots .slot"); const fran = flytt.fran; flytt.id = null;
+      if(sl && +sl.dataset.i !== fran) return bytPlats(fran, +sl.dataset.i);
+      return ritaOmKvar();
+    }
     const b = e.target.closest("[data-a]"); if(!b) return;
     const a = b.dataset.a, id = b.dataset.id;
     if(a==="visa") visaHjalte(id);
@@ -273,17 +278,54 @@ function ritaHem(){
 // Snabbval: håll in på en hjälte (ca en halv sekund) för att lägga till eller ta bort ur sällskapet
 const langtryck = {tid:null, gjort:false, x:0, y:0, el:null};
 function slutaLangtryck(){ clearTimeout(langtryck.tid); langtryck.tid = null; if(langtryck.el) langtryck.el.classList.remove("trycker"); langtryck.el = null; }
+// I sällskapet: håll in på en hjälte och dra hen till en annan plats (eller släpp och tryck på platsen) för att byta ordning
+const flytt = {id:null, fran:-1, spoke:null, drar:false};
+function ritaOmKvar(){ const y = window.scrollY; ritaOm(); window.scrollTo({top:y, behavior:"instant"}); }
+function bytPlats(a, b){
+  const p = st.sallskap.filter(x=>!ar(x)); if(a<0 || a>=p.length) return ritaOmKvar();
+  if(b >= p.length){ const [id] = p.splice(a,1); p.push(id); }   // till en tom plats = sist
+  else [p[a], p[b]] = [p[b], p[a]];
+  st.sallskap = p; flytt.id = null; spara(); ritaOmKvar();
+}
+function slotUnder(x, y){ const el = document.elementFromPoint(x, y); return el && el.closest(".slots .slot"); }
+function startaFlytt(el, x, y){
+  flytt.id = el.dataset.id; flytt.fran = +el.dataset.i; flytt.drar = true;
+  el.classList.add("lyft");
+  const r = el.getBoundingClientRect(), c = document.createElement("canvas"), k = el.querySelector("canvas");
+  c.width = k.width; c.height = k.height; c.getContext("2d").drawImage(k, 0, 0);
+  c.className = "px flyttspoke"; c.style.width = c.style.height = r.width + "px"; document.body.appendChild(c);
+  flytt.spoke = c; flyttaSpoke(x, y);
+}
+function flyttaSpoke(x, y){
+  if(!flytt.spoke) return; const w = flytt.spoke.offsetWidth;
+  flytt.spoke.style.left = (x - w/2) + "px"; flytt.spoke.style.top = (y - w/2) + "px";
+  document.querySelectorAll(".slots .slot.mal").forEach(s=>s.classList.remove("mal"));
+  const sl = slotUnder(x, y); if(sl && +sl.dataset.i !== flytt.fran) sl.classList.add("mal");
+}
+function slappFlytt(x, y){
+  flytt.drar = false; if(flytt.spoke){ flytt.spoke.remove(); flytt.spoke = null; }
+  document.querySelectorAll(".slots .slot.mal").forEach(s=>s.classList.remove("mal"));
+  const sl = x==null ? null : slotUnder(x, y);
+  if(sl && +sl.dataset.i !== flytt.fran) return bytPlats(flytt.fran, +sl.dataset.i);
+  ritaOmKvar();   // släppt på samma plats: hjälten är kvar upplyft och väntar på ett tryck
+}
 app.addEventListener("pointerdown", e => {
   langtryck.gjort = false;
-  if(vy!=="hem" || st.run) return;
-  const el = e.target.closest(".hcard:not(.dod), .slot.fylld"); if(!el || e.target.closest(".hval")) return;
+  if(vy!=="hem" || st.run || flytt.id) return;
+  const el = e.target.closest(".hcard:not(.dod), .slot.fylld"); if(!el) return;
   slutaLangtryck(); langtryck.el = el; langtryck.x = e.clientX; langtryck.y = e.clientY;
   el.classList.add("trycker");
   langtryck.tid = setTimeout(()=>{ const id = el.dataset.id; slutaLangtryck(); langtryck.gjort = true;
     try{ navigator.vibrate && navigator.vibrate(30); }catch(_){}
-    valjHjalte(id); }, 480);
+    if(el.classList.contains("slot")) startaFlytt(el, langtryck.x, langtryck.y);
+    else valjHjalte(id); }, 480);
 });
-app.addEventListener("pointermove", e => { if(langtryck.tid && Math.hypot(e.clientX-langtryck.x, e.clientY-langtryck.y) > 10) slutaLangtryck(); });
+app.addEventListener("pointermove", e => {
+  if(flytt.drar){ e.preventDefault(); return flyttaSpoke(e.clientX, e.clientY); }
+  if(langtryck.tid && Math.hypot(e.clientX-langtryck.x, e.clientY-langtryck.y) > 10) slutaLangtryck();
+});
+document.addEventListener("pointerup", e => { if(flytt.drar) slappFlytt(e.clientX, e.clientY); });
+document.addEventListener("pointercancel", () => { if(flytt.drar) slappFlytt(null, null); });
 ["pointerup","pointercancel","pointerleave"].forEach(t=>app.addEventListener(t, ()=>{ if(langtryck.tid) slutaLangtryck(); }));
 app.addEventListener("contextmenu", e => { if(vy==="hem" && e.target.closest(".hcard, .slot.fylld")) e.preventDefault(); });
 function valjHjalte(id, knapp){
