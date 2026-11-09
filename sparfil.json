@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:31:21.250Z",
+  "uppdaterad": "2026-11-09T22:31:31.785Z",
   "spel": {
     "version": 1,
-    "tid": 1794263478177,
+    "tid": 1794263488833,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -341,7 +341,7 @@
       "h": {
         "monika": {
           "kp": 17,
-          "vp": 14,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -361,10 +361,10 @@
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
-          "raseri": false,
+          "raseri": true,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stridsgissel",
           "nackdelNasta": false
         },
@@ -686,6 +686,18 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "★ Monika Plöjer: Slå. Av. Mig, HATTEN!!",
+          "cls": "d"
+        },
+        {
+          "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med fördel: [16 / 13 → 13] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Resen Bulk tar 17 skada (19 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
