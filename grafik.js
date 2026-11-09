@@ -115,8 +115,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(extra && String(extra).startsWith("jens")){
     const v = VAGNAR[(Number(String(extra).split(":")[1])||0) % VAGNAR.length];
     const vagn = G.npcBild("jens_vagn");
-    const vx = Math.round((W - v.b)/2), vy = 79 - v.h, reling = vy + v.rel;
-    ctx.fillStyle="#0005"; ctx.fillRect(vx+4, 77, v.b-8, 3);                       // skugga
+    const vx = Math.round((W - v.b)/2), vy = 79 + markNer - v.h, reling = vy + v.rel;
+    ctx.fillStyle="#0005"; ctx.fillRect(vx+4, 77 + markNer, v.b-8, 3);                       // skugga
     const vantar = [];
     if(!(vagn.complete && vagn.naturalWidth)) vantar.push(vagn);
     // sällskapet på flaket: fyra platser mellan bakkanten och Jens
@@ -142,8 +142,10 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(harHjaltar){
     const laddar = [];
     hjaltar.forEach((h,i)=>{
-      const bn = window.BAKGRUND.namn(bgId, fro);
-      const x = (HJ_START[bn] ?? HJ_START[bgId] ?? 2) + i*(HJ_STEG[bn] || HJ_STEG[bgId] || 15), y = 44 + (i%2 ? 4 : 0) + markNer; // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
+      const bn = window.BAKGRUND.namn(bgId, fro), bas = HJ_STEG[bn] || HJ_STEG[bgId];
+      // trånga platser (klyftan, lägret): fyra hjältar står tätt, färre får sprida ut sig på samma yta
+      const steg = bas ? Math.min(15, hjaltar.length > 1 ? Math.max(bas, Math.floor(bas*3/(hjaltar.length-1))) : bas) : 15;
+      const x = (HJ_START[bn] ?? HJ_START[bgId] ?? 2) + i*steg, y = 44 + (i%2 ? 4 : 0) + markNer; // fötterna (rad 30 i figuren) hamnar på marken, y 74–78
       const img = G.figurBild(h.id);
       if(!img){ return; }
       if(!img.complete){ laddar.push(img); return; }
@@ -335,7 +337,7 @@ G.regnLager = (canvas, pa) => {
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
-const MARK_NER = { arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
+const MARK_NER = { grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
@@ -747,7 +749,10 @@ G.ritaPool = (canvas, doda) => {
 };
 
 // ---------- Värdshuset på startsidan: möbler ur npc/mobler.png, värden ur npc/kopman.png ----------
-G.ritaVardshus = (canvas, hjaltar) => {
+// extra (valfritt) = slutscenen efter ett uppdrag: {npc:{ark, ruta, spegel}} = uppdragsgivaren som tar emot sällskapet,
+// {ikon:{ark, ruta}} = uppdragets föremål som ligger på bordet framför Isak
+const IKON_PA_BORD = {x:96, y:52}, UPPDRAGSGIVARE_PLATS = {x:104, y:51};
+G.ritaVardshus = (canvas, hjaltar, extra) => {
   const ctx = canvas.getContext("2d"); const W=160, H=90;
   const R=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
   // Målad bakgrund (bakgrunder/vardshus2.png, 320×180) med spis, älghuvud, sköld, anslagstavla, bord och bardisk.
@@ -756,15 +761,19 @@ G.ritaVardshus = (canvas, hjaltar) => {
   const tak = G.npcBild("../bakgrunder/vardshus2"), fram = G.npcBild("../bakgrunder/vardshus2_fram");
   const kop = G.npcBild("kopman"), isak = G.npcBild("isak_hel"), vantar=[];
   const klar = img => img.complete && img.naturalWidth;
-  [tak, fram, kop, isak].forEach(i=>{ if(!klar(i)) vantar.push(i); });
+  const npcImg = extra && extra.npc ? G.npcBild(extra.npc.ark) : null, ikonImg = extra && extra.ikon ? G.npcBild(extra.ikon.ark) : null;
+  [tak, fram, kop, isak, npcImg, ikonImg].forEach(i=>{ if(i && !klar(i)) vantar.push(i); });
   canvas.width=W*2; canvas.height=H*2; ctx.imageSmoothingEnabled=false;
-  if(vantar.length){ R(0,0,W*2,H*2,"#2a1a10"); [...new Set(vantar)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar),{once:true})); return; }
+  if(vantar.length){ R(0,0,W*2,H*2,"#2a1a10"); [...new Set(vantar)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar,extra),{once:true})); return; }
   ctx.drawImage(tak, 0, 0);
   ctx.setTransform(2,0,0,2,0,0);
   // spelledaren Isak sitter på stolen bakom bordet och värdshusvärden står bakom bardisken
   G.ritaRuta(ctx, isak, (new Date().getDate())%64, 78, 38, 32, true);
   G.ritaRuta(ctx, kop, 2, 132, 32, 32, true);
   ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(fram, 0, 0); ctx.setTransform(2,0,0,2,0,0);
+  if(ikonImg) G.ritaRuta(ctx, ikonImg, extra.ikon.ruta, IKON_PA_BORD.x, IKON_PA_BORD.y, 16);
+  if(npcImg){ const n = extra.npc; R(UPPDRAGSGIVARE_PLATS.x+9, UPPDRAGSGIVARE_PLATS.y+30, 14, 2, "#0005");
+    G.ritaRuta(ctx, npcImg, n.ruta, UPPDRAGSGIVARE_PLATS.x, UPPDRAGSGIVARE_PLATS.y, 32, n.spegel !== false); }
   // sällskapet står på golvet till vänster
   const v2 = [];
   (hjaltar||[]).slice(0,4).forEach((h,i)=>{
@@ -776,7 +785,7 @@ G.ritaVardshus = (canvas, hjaltar) => {
   });
   ctx.setTransform(1,0,0,1,0,0);
   G.eldLager(canvas, VARDSHUS_ELDAR);
-  if(v2.length) [...new Set(v2)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar),{once:true}));
+  if(v2.length) [...new Set(v2)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar,extra),{once:true}));
 };
 
 

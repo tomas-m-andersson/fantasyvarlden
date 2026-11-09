@@ -482,8 +482,10 @@ function ritaBasar(){
 const GIVARE = {"Porsch Wilson":"porsch","Barden Baror":"baror","Mandor Marvolt":"mandor","Gitte von Gittemberg":"gitte","Lansor":"lansor",
   "Familjen von Borge":"vonborge","Slasbys församling":"hannes","Eva":"eva","Hövding Atlas":"atlas","Clark":"clark",
   "Borgmästaren i Hagbo":"hagbo","Professor Proppeteus":"proppeteus"};
+// Arken tittar åt höger och speglas så att figuren vänder sig mot sällskapet – utom Eva, vars ark redan tittar åt vänster
+const GIVARE_VANSTER = new Set(["givare_eva"]);
 function givare(namn, fro){ const ark = "givare_" + (GIVARE[namn] || "generisk");
-  return {ark, ruta: ark==="givare_vonborge" ? (fro||0) % 8 : (fro||0) % 64}; }
+  return {ark, ruta: ark==="givare_vonborge" ? (fro||0) % 8 : (fro||0) % 64, spegel: !GIVARE_VANSTER.has(ark)}; }
 function fyllTavla(){
   const ids = V.UPPDRAG.map(u=>u.id);
   st.tavla = st.tavla.filter(id=>ids.includes(id));
@@ -572,6 +574,10 @@ const BOSS_BILD = {drake:"boss_drake", grip:"boss_grip", harpydrottning:"boss_ha
   rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding"};
 // Bossrum som hör till en plats i stället för en viss boss
 const BOSS_PLATS = {"Döda sjön":"boss_dodasjon"};
+// Bakgrund och frö för ett steg: strider som börjar på resan (t.ex. bakhåll) stannar kvar på vägen
+function stegScen(steg){ const r = st.run;
+  if(steg && steg.typ==="resa") return [resMiljo(r.q.miljo, r.i), steg.fro || r.i*977+13];
+  return [scenMiljo(r.q.miljo, steg), steg && steg.fro || 7]; }
 function scenMiljo(m, steg){
   const r = st.run, p = r && PLATS_BILD[r.q.plats];
   if(r && steg && steg.rumtyp==="boss" && BOSS_PLATS[r.q.plats]) return BOSS_PLATS[r.q.plats];
@@ -806,7 +812,9 @@ function scenNpcer(steg){
   if(m && m.npc) ut.push(m.npc.fiende ? {fiende:m.npc.fiende, ruta:G.fiendeRutor(m.npc.fiende)[0]} : {ark:m.npc.ark, ruta:m.npc.ruta});
   if(m && m.id==="kopman"){ ut.push({ark:"saker_by", ruta:32, spegel:false}); return ut; }
   if(m && m.id==="orter"){ ut.push({ark:"saker_by", ruta:56, spegel:false}); return ut; }
-  if(steg.typ==="resa"){ const fro = r.i*977 + r.q.id.length*31 + (r.start||"").length; ut.push({ark:"djur", ruta:DJUR_RUTOR[fro % DJUR_RUTOR.length], spegel:false}); }
+  if(steg.typ==="resa" && m && m.npc && m.npc.fiende && m.id!=="garvard"){ const rr = G.fiendeRutor(m.npc.fiende); ut.push({fiende:m.npc.fiende, ruta:rr[1] ?? rr[0]}); return ut; }   // t.ex. bakhållet: fler rövare, inga husdjur
+  // husdjur bara bland bönder och vid vägkanten – inte hos gycklare, demoner, professorer och liknande
+  if(steg.typ==="resa" && (!m || (m.npc && m.npc.ark==="by"))){ const fro = r.i*977 + r.q.id.length*31 + (r.start||"").length; ut.push({ark:"djur", ruta:DJUR_RUTOR[fro % DJUR_RUTOR.length], spegel:false}); }
   return ut;
 }
 const antalResa = () => st.run.steg.filter(s=>s.typ==="resa").length;
@@ -1297,11 +1305,12 @@ function ritaStrid(){
   const et = strid.etiketter || [];
   const fiendeVis = strid.fiender.filter(f=>!f.lamnat).map(f=>({...f, visa:true, etikett:et.filter(e=>e.mal==="f:"+f.i)}));
   const hjVis = scenHjaltar(akt).map(h=>({...h, etikett:et.filter(e=>e.mal==="h:"+h.id)}));
-  G.ritaScen($("#scen"), scenMiljo(r.q.miljo, steg), fiendeVis, steg.fro||7, null, hjVis);
+  const [sMiljo, sFro] = stegScen(steg);
+  G.ritaScen($("#scen"), sMiljo, fiendeVis, sFro, null, hjVis);
   G.npcBild("effekter");   // läs in effektarket i förväg
-  if(strid.effekter && strid.effekter.length) spelaEffekter(scenMiljo(r.q.miljo, steg), steg.fro||7, fiendeVis, hjVis);
+  if(strid.effekter && strid.effekter.length) spelaEffekter(sMiljo, sFro, fiendeVis, hjVis);
   if(strid.ornVisa){ const v = strid.ornVisa; strid.ornVisa = null;
-    spelaOrn(t => { const c = $("#scen"); if(c && strid) G.ritaScen(c, scenMiljo(r.q.miljo, steg), fiendeVis, steg.fro||7, null, hjVis.map(h=>h.id==="potus"&&t!=null?{...h, orn:{ruta:v.ruta, t}}:h)); }); }
+    spelaOrn(t => { const c = $("#scen"); if(c && strid) G.ritaScen(c, sMiljo, fiendeVis, sFro, null, hjVis.map(h=>h.id==="potus"&&t!=null?{...h, orn:{ruta:v.ruta, t}}:h)); }); }
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b || b.disabled) return;
@@ -1558,9 +1567,12 @@ function ritaSlut(){
       ${Object.entries(u.forb).map(([id,l])=>`<p><b>${esc(HJ[id].namn)}:</b> ${l.length?l.map(x=>`${esc(x.f)} (${x.v}) slog ${x.s} → ${x.upp?`<span style="color:var(--moss)">+1!</span>`:"ingen ändring"}`).join(", "):"inget att slå för"}</p>`).join("")||"<p class='small'>Ingen överlevde för att förbättras.</p>"}</div>
       <button class="btn" data-a="klar">Tillbaka till värdshuset</button>
     </section>${loggHtml()}`;
-  // Vid seger i ett uppdrag (inte utforskning) står uppdragsgivaren vid skatten och tar emot sällskapet
-  const tack = u.lyckat && !r.utforska ? [{...givare(r.q.givare, r.q.id.length*7), x:118, fot:78}] : [];
-  G.ritaScen($("#scen"), scenMiljo(r.q.miljo), [], 99, u.lyckat?"skatt":null, scenHjaltar(), tack);
+  // Vid seger i ett uppdrag (inte utforskning) slutar det där det började: i värdshuset, där uppdragsgivaren
+  // tar emot sällskapet och uppdragets föremål ligger på bordet. Annars står sällskapet kvar på platsen.
+  if(u.lyckat && !r.utforska){
+    const ik = UPPDRAG_IKON[r.q.id], [ia, ir] = ik ? ik.split(":") : [];
+    G.ritaVardshus($("#scen"), scenHjaltar().filter(h=>!rh(h.id).dod), {npc:givare(r.q.givare, r.q.id.length*7), ikon: ik ? {ark:IKONARK[ia], ruta:Number(ir)} : null});
+  } else G.ritaScen($("#scen"), scenMiljo(r.q.miljo), [], 99, u.lyckat?"skatt":null, scenHjaltar());
   fyllIkoner(app);
   scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(b && b.dataset.a==="klar"){ st.run=null; spara(); ga("hem"); } };
