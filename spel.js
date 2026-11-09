@@ -809,7 +809,9 @@ function ritaRun(){
 const DJUR_RUTOR = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63];
 // Möten med egna figurark (npc/*.png, 8×8 rutor) – ersätter figuren i varld.js. antal = hur många som står i bild.
 const MOTE_FIGUR = {
-  fjass:{ark:"fjass"}, dunker:{ark:"dunker"}, gycklare:{ark:"gycklare", antal:2},
+  fjass:{ark:"fjass", spegel:false},   // Fjäss-arket tittar redan åt vänster, mot sällskapet
+  dunker:{ark:"dunker"},
+  gycklare:{ark:"gycklare", antal:2, rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,48,49,50,51,52,53,54,55,58,59,60]},   // bara de som vänder sig mot sällskapet
   lik:{ark:"lik", rutor:[24,25,26,27,28,29,30,11,14,15,61,62]}   // de som ligger platt
 };
 // Möten med egna målade bakgrunder
@@ -820,7 +822,7 @@ function scenNpcer(steg){
   const m = steg.mote ? V.MOTEN.find(x=>x.id===steg.mote) : null;
   const egen = m && MOTE_FIGUR[m.id];
   if(egen){ const fro = (steg.fro || r.i*977+13), l = egen.rutor || Array.from({length:64},(_,i)=>i);
-    for(let k=0;k<(egen.antal||1);k++) ut.push({ark:egen.ark, ruta:l[(fro + k*23) % l.length]});
+    for(let k=0;k<(egen.antal||1);k++) ut.push({ark:egen.ark, ruta:l[(fro + k*23) % l.length], spegel:egen.spegel});
     return ut; }
   if(m && MOTE_BILD[m.id]){ if(m.npc) ut.push({ark:m.npc.ark, ruta:m.npc.ruta}); return ut; }   // egen bakgrund: inga extra saker eller djur
   if(m && m.npc) ut.push(m.npc.fiende ? {fiende:m.npc.fiende, ruta:G.fiendeRutor(m.npc.fiende)[0]} : {ark:m.npc.ark, ruta:m.npc.ruta});
