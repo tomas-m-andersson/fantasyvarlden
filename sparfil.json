@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:29:23.281Z",
+  "uppdaterad": "2026-11-09T22:29:48.674Z",
   "spel": {
     "version": 1,
-    "tid": 1794263360144,
+    "tid": 1794263385755,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -319,7 +319,8 @@
             ]
           },
           "bulk": true,
-          "bulkText": "Kärrans hjul fastnar i sanden. Bulk rycker till och knyter näven."
+          "bulkText": "Kärrans hjul fastnar i sanden. Bulk rycker till och knyter näven.",
+          "bulkKlar": true
         },
         {
           "typ": "rum",
@@ -602,6 +603,14 @@
         },
         {
           "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer slår Uppträda: [7] mot 9 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Monika Plöjer sjunger en vaggvisa. Bulk somnar om med ett lyckligt leende.",
           "cls": "ok"
         }
       ],
