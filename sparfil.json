@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:31:06.952Z",
+  "uppdaterad": "2026-11-09T22:31:12.948Z",
   "spel": {
     "version": 1,
-    "tid": 1794263464014,
+    "tid": 1794263469959,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -444,9 +444,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 86,
@@ -666,6 +666,14 @@
         {
           "text": "Monika Plöjer (Stridsgissel) slår Slagvapen med nackdel: [16 / 16 → 16] mot 15 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med nackdel: [11 / 2 → 11] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Resen Bulk tar 1 skada (3 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
