@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-09T22:31:31.785Z",
+  "uppdaterad": "2026-11-09T22:31:39.786Z",
   "spel": {
     "version": 1,
-    "tid": 1794263488833,
+    "tid": 1794263496764,
     "kassa": 1040,
     "packning": [
       "Läkande ört",
@@ -422,7 +422,7 @@
         },
         "bacon": {
           "kp": 17,
-          "vp": 11,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -444,7 +444,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Handyxa",
           "nackdelNasta": false
         }
@@ -697,6 +697,18 @@
         },
         {
           "text": "Resen Bulk tar 17 skada (19 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Bacon: Gladiatorvana!",
+          "cls": "d"
+        },
+        {
+          "text": "Bacon (Handyxa) slår Yxor med fördel: [15 / 3 → 3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Resen Bulk tar 1 skada (3 − 2 rustning).",
           "cls": "ok"
         }
       ],
