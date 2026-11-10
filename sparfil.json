@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:30:38.110Z",
+  "uppdaterad": "2026-11-10T23:30:51.031Z",
   "spel": {
     "version": 1,
-    "tid": 1794353435008,
+    "tid": 1794353448028,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -354,7 +354,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En cellgång där hälften av celldörrarna är utbrutna. Ett tärningsspel har avbrutits mitt i. Det luktar surt öl och gammal halm. Någon har ristat ”Bakhuvudet Jens var här” på väggen.",
-          "fro": 947725974
+          "fro": 947725974,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 3 guld."
         },
         {
           "typ": "rum",
@@ -507,7 +509,7 @@
           "fordelNasta": false
         }
       },
-      "guld": 38,
+      "guld": 41,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Svartborgen. Kapitel 1.",
@@ -727,6 +729,10 @@
         },
         {
           "text": "Galfner Galfner tar 5 skada från Larmklocka. KP 7/12.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [15] mot 8 – misslyckat",
           "cls": "fel"
         }
       ],
