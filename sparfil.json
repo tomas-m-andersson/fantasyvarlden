@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T22:27:48.760Z",
+  "uppdaterad": "2026-11-10T23:22:29.985Z",
   "spel": {
     "version": 1,
-    "tid": 1794349665833,
+    "tid": 1794352946979,
     "kassa": 1346,
     "packning": [
       "Läkande ört",
@@ -12,10 +12,10 @@
       "Läkedryck"
     ],
     "sallskap": [
-      "monika",
-      "uranus",
+      "ff",
+      "pescatore",
       "galfner",
-      "bacon"
+      "gofnagrim"
     ],
     "hj": {
       "monika": {
@@ -147,6 +147,14 @@
         },
         "aventyr": 1,
         "segrar": 1,
+        "vapen": [],
+        "rustning": null
+      },
+      "dagny": {
+        "dod": false,
+        "bonus": {},
+        "aventyr": 0,
+        "segrar": 0,
         "vapen": [],
         "rustning": null
       }
