@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:25:53.292Z",
+  "uppdaterad": "2026-11-10T23:26:02.520Z",
   "spel": {
     "version": 1,
-    "tid": 1794353150264,
+    "tid": 1794353159544,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -348,7 +348,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "pescatore": {
@@ -363,7 +363,9 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Pilbåge"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -371,7 +373,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "valtVapen": "Kort båge"
         },
         "galfner": {
           "kp": 12,
@@ -393,7 +396,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -416,7 +419,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav"
         }
       },
@@ -457,6 +460,18 @@
         {
           "text": "Galfner Galfner (Armborst) slår Armborst: [18] mot 13 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör 2 tar 5 skada (7 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
