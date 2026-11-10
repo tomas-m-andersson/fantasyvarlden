@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:35:47.543Z",
+  "uppdaterad": "2026-11-10T23:35:58.287Z",
   "spel": {
     "version": 1,
-    "tid": 1794353744510,
+    "tid": 1794353755341,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -525,10 +525,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav",
-          "fordelNasta": true,
-          "nackdelNasta": true
+          "fordelNasta": false,
+          "nackdelNasta": false
         }
       },
       "guld": 67,
@@ -1111,6 +1111,10 @@
         },
         {
           "text": "Göfnagrim skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [16] mot 12 – misslyckat",
           "cls": "fel"
         }
       ],
