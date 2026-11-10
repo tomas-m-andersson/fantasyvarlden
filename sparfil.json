@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:33:54.005Z",
+  "uppdaterad": "2026-11-10T23:34:01.327Z",
   "spel": {
     "version": 1,
-    "tid": 1794353630542,
+    "tid": 1794353638402,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -430,9 +430,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort spjut",
-          "fordelNasta": true
+          "agerat": true,
+          "valtVapen": "Gorgor",
+          "fordelNasta": false
         },
         "pescatore": {
           "kp": 11,
@@ -943,6 +943,18 @@
         {
           "text": "Stadsvakt 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd med fördel: [10 / 12 → 10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör tar 0 skada (2 − 2 rustning).",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim har redan använt sin handling till att försvara sig.",
+          "cls": "info"
         }
       ],
       "utfall": null,
