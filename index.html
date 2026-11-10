@@ -258,23 +258,15 @@ table.stat td.notis{font-family:inherit;font-weight:400;color:var(--muted);text-
 .btn.stampel:active{box-shadow:0 1px 0 #4a0f08}
 .btn.stampel:disabled{background:#7a6a54;border-color:#97866a;box-shadow:0 4px 0 #4f4434;color:#e2d6bc}
 
-/* Startsidans vägval som träskyltar */
-.hemval .btn.skylt{position:relative;padding:16px 28px;border-radius:5px;border:3px solid #2e1b0c;
-  font-family:"IM Fell English SC",Georgia,serif;font-weight:400;font-size:1.35rem;letter-spacing:.04em;color:#f1dfb4;
-  text-shadow:0 -1px 0 #1c0f05, 0 1px 0 #a87a48aa;
-  background:
-    repeating-linear-gradient(0deg, transparent 0 22px, #2e1b0c55 22px 24px),
-    repeating-linear-gradient(1.5deg, #00000018 0 1px, transparent 1px 5px, #ffffff0c 5px 6px, transparent 6px 11px, #0000000f 11px 13px, transparent 13px 19px),
-    radial-gradient(ellipse 18px 6px at 22% 30%, #3a220f88, transparent 70%),
-    radial-gradient(ellipse 14px 5px at 76% 68%, #3a220f77, transparent 70%),
-    linear-gradient(180deg, #8a5a2e, #73471f 50%, #5e3917);
-  box-shadow:inset 0 2px 0 #b07a4466, inset 0 -3px 0 #3a220f88, 0 5px 0 #24140a, 0 7px 10px #000a;transform:rotate(-.6deg)}
-.hemval .btn.skylt:nth-child(2n){transform:rotate(.5deg)}
-.hemval .btn.skylt::before,.hemval .btn.skylt::after{content:"";position:absolute;top:50%;width:9px;height:9px;margin-top:-4px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%, #d8d2c6, #77706a 45%, #2b2722 80%);box-shadow:0 1px 1px #000a}
-.hemval .btn.skylt::before{left:9px} .hemval .btn.skylt::after{right:9px}
-.hemval .btn.skylt:active{transform:translateY(3px);box-shadow:inset 0 2px 0 #b07a4466, inset 0 -3px 0 #3a220f88, 0 2px 0 #24140a, 0 3px 6px #000a}
-.hemval .btn.skylt:disabled{filter:grayscale(.6) brightness(.7);opacity:1;cursor:not-allowed}
+/* Startsidans vägval: en vägvisare (npc/vagskylt.png) där varje pil är en knapp */
+.vagskylt{position:relative;width:100%;max-width:688px;margin:4px auto;aspect-ratio:344/192;container-type:inline-size;
+  background:url("npc/vagskylt.png") center/100% 100% no-repeat;image-rendering:pixelated}
+.vagskylt .pil{position:absolute;display:flex;align-items:center;justify-content:center;padding:0 2%;margin:0;border:0;background:transparent;cursor:pointer;
+  font-family:"IM Fell English SC",Georgia,serif;font-size:4.6cqw;line-height:1;letter-spacing:.03em;color:#f6e6be;white-space:nowrap;
+  text-shadow:0 0 .12em #2a1608, 0 .06em 0 #2a1608, 0 -.04em 0 #2a1608, .06em 0 0 #2a1608, -.06em 0 0 #2a1608;border-radius:3px}
+.vagskylt .pil:active{background:radial-gradient(ellipse at center,#00000040,transparent 70%);transform:translateY(1px)}
+.vagskylt .pil:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.vagskylt .pil:disabled{color:#c9b998;opacity:.55;cursor:not-allowed}
 </style>
 </head>
 <body>

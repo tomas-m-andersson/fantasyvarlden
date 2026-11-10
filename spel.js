@@ -234,11 +234,11 @@ function ritaHem(){
     <div class="slots">${[0,1,2,3].map(i=>{ const id=party[i]; return id?`<div class="slot fylld ${flytt.id===id?"lyft":""}" role="button" tabindex="0" data-a="visa" data-id="${id}" data-i="${i}"><canvas class="px" data-p="${id}"></canvas><span class="lbl">${esc(HJ[id].namn)}</span></div>`:`<div class="slot" data-i="${i}">Tom plats</div>`}).join("")}</div>
     <p class="small muted">${flytt.id?`<b>Tryck på den plats ${esc(HJ[flytt.id].namn)} ska flytta till</b> (eller på hen själv för att ångra).`:`<b>Håll in</b> på en hjälte här ovanför och dra hen till en annan plats för att byta ordning i TV:n. <b>Håll in</b> på en hjälte i galleriet för att ta med eller ta bort hen. Välj 1–4 hjältar.`} ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
     <div class="row"><button class="btn ghost small" data-a="slumpa" ${st.run?"disabled":""}>🎲 Slumpa fram ett sällskap</button></div>
-    <div class="row hemval">
-      <button class="btn skylt" data-a="tavla" ${!party.length||st.run?"disabled":""}>Lansors uppdragsförmedling</button>
-      <button class="btn skylt" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska världen</button>
-      <button class="btn skylt" data-a="arena">Gladiatorgroparna</button>
-      <button class="btn skylt" data-a="basar">Basaren</button>
+    <div class="vagskylt" role="group" aria-label="Vart vill ni gå?">
+      <button class="pil vanster" style="left:14.53%;top:13.02%;width:69.77%;height:15.10%" data-a="tavla" ${!party.length||st.run?"disabled":""}>Lansors uppdragsförmedling</button>
+      <button class="pil hoger" style="left:16.28%;top:32.29%;width:69.19%;height:15.10%" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska världen</button>
+      <button class="pil vanster" style="left:14.53%;top:51.56%;width:68.90%;height:15.10%" data-a="arena">Gladiatorgroparna</button>
+      <button class="pil hoger" style="left:16.28%;top:70.83%;width:69.19%;height:15.10%" data-a="basar">Basaren</button>
     </div>
     <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
   </section>`;
