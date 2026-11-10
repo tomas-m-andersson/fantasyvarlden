@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:36:55.938Z",
+  "uppdaterad": "2026-11-10T23:37:19.421Z",
   "spel": {
     "version": 1,
-    "tid": 1794353812864,
+    "tid": 1794353836496,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -432,7 +432,7 @@
             "Svärd",
             "Undvika"
           ],
-          "tempRust": 0,
+          "tempRust": 3,
           "vapenbonus": null,
           "gift": false,
           "maktig": false,
@@ -506,7 +506,7 @@
         },
         "gofnagrim": {
           "kp": 9,
-          "vp": 2,
+          "vp": 0,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -525,7 +525,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav",
           "fordelNasta": false,
           "nackdelNasta": false
@@ -1171,6 +1171,14 @@
         },
         {
           "text": "General Kieslawski tar 3 skada (6 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim kastar Beskyddare slår Magi: [10] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "FF får +3 i rustning resten av striden.",
           "cls": "ok"
         }
       ],
