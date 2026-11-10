@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:28:13.005Z",
+  "uppdaterad": "2026-11-10T23:28:44.753Z",
   "spel": {
     "version": 1,
-    "tid": 1794353289893,
+    "tid": 1794353321426,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -340,8 +340,8 @@
       "i": 4,
       "h": {
         "ff": {
-          "kp": 10,
-          "vp": 8,
+          "kp": 9,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -352,7 +352,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -361,7 +362,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut"
         },
         "pescatore": {
@@ -521,6 +522,26 @@
         },
         {
           "text": "FF tar 3 skada från En låst cell. KP 10/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ FF: Gorgor flammar!",
+          "cls": "d"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski tar 16 skada (19 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "FF tar 1 skada från Gorgors lågor. KP 9/13.",
           "cls": "fel"
         }
       ],
