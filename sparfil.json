@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:36:40.449Z",
+  "uppdaterad": "2026-11-10T23:36:47.413Z",
   "spel": {
     "version": 1,
-    "tid": 1794353797403,
+    "tid": 1794353804361,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -470,10 +470,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge",
-          "fordelNasta": true,
-          "nackdelNasta": true
+          "fordelNasta": false,
+          "nackdelNasta": false
         },
         "galfner": {
           "kp": 6,
@@ -1148,6 +1148,18 @@
         {
           "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [6] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski tar 4 skada (7 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner tar 0 skada (3 − 3 rustning) från Sabelhugg. KP 6/12.",
+          "cls": "info"
         }
       ],
       "utfall": null,
