@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:25:18.998Z",
+  "uppdaterad": "2026-11-10T23:25:38.304Z",
   "spel": {
     "version": 1,
-    "tid": 1794353115890,
+    "tid": 1794353135220,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -403,7 +403,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -411,7 +413,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Stav"
         }
       },
       "guld": 0,
@@ -435,6 +438,18 @@
         {
           "text": "Desertör 2 anfaller Göfnagrim: [20] mot 12 – NATURLIGT 20!",
           "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [9] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör 1 tar 2 skada (4 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
