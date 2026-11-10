@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:31:15.136Z",
+  "uppdaterad": "2026-11-10T23:31:27.581Z",
   "spel": {
     "version": 1,
-    "tid": 1794353472053,
+    "tid": 1794353484637,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -430,9 +430,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut",
-          "fordelNasta": true
+          "fordelNasta": false
         },
         "pescatore": {
           "kp": 11,
@@ -763,6 +763,22 @@
         {
           "text": "Stadsvakt 2 anfaller Pescatore Vesuvio: [14] mot 12 – misslyckat",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut med fördel: [9 / 5 → 5] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 1 tar 1 skada (4 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 1 anfaller FF: [9] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 0 skada (2 − 3 rustning) från Stadsvakt 1. KP 9/13.",
+          "cls": "info"
         }
       ],
       "utfall": null,
