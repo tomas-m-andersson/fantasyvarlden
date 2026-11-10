@@ -423,7 +423,7 @@ const KLYFTA_UTE = { doda_sjon:1, marmoracs_kyrkogard:1, harpybergen:1, mt_krakn
 const GATA = { grotta:"gata_inne", gruva:"gata_inne_gruva", gruva_kult:"gata_inne_gruva", kloak:"gata_inne_kloak",
   ruin:"gata_ute_ruin", vesselberget:"gata_ute_ruin", oken:"gata_ute_oken" };
 // (port och vatten väljer inne- eller utebild efter miljön; ruiner räknas som ute)
-const INNE_MILJO = { krusbarsberget:1, svartalftunnlar:1, drakgrottor:1, grotta:1, kloak:1, gruva:1, gruva_kult:1, boss_orch:1, boss_svartalf:1, boss_drake:1 };
+const INNE_MILJO = { fangelse:1, fangelse_celler:1, fangelse_gard:1, fangelse_vakt:1, fangelse_valv:1, fangelse_mur:1, boss_kieslawski:1, krusbarsberget:1, svartalftunnlar:1, drakgrottor:1, grotta:1, kloak:1, gruva:1, gruva_kult:1, boss_orch:1, boss_svartalf:1, boss_drake:1 };
 
 // ---------- Stenporten med gåtan (ritas med kod i full upplösning, 320×180) ----------
 // cx = mitten, fot = markens höjd. Två pelare och en överliggare av huggen sten, mörk gång emellan

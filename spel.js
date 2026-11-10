@@ -633,7 +633,7 @@ const PLATS_BILD = {"Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vessel
   "Gollenskogen":"gollenskogen", "Gravskogen":"gravskogen"};
 // Egna bossrum: när bossen själv står i rummet byts bakgrunden (gäller både uppdrag och utforskning)
 const BOSS_BILD = {drake:"boss_drake", grip:"boss_grip", harpydrottning:"boss_harpyor", orchhovding:"boss_orch", svartalfkung:"boss_svartalf",
-  rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding", rese:"arena_sten"};
+  rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding", rese:"arena_sten", kieslawski:"boss_kieslawski"};
 // Bossrum som hör till en plats i stället för en viss boss
 const BOSS_PLATS = {"Döda sjön":"boss_dodasjon"};
 // Bakgrund och frö för ett steg: strider som börjar på resan (t.ex. bakhåll) stannar kvar på vägen
@@ -645,6 +645,15 @@ function scenMiljo(m, steg){
   if(r && steg && steg.rumtyp==="boss" && BOSS_PLATS[r.q.plats]) return BOSS_PLATS[r.q.plats];
   if(steg && steg.rumtyp==="boss" && steg.fiender && BOSS_BILD[steg.fiender[0]]) return BOSS_BILD[steg.fiender[0]];
   if(!p && m==="skog" && steg && steg.rumtyp==="skatt") return "hygge";
+  // Svartborgen: bilden väljs efter vilken del av fängelset rumstexten beskriver
+  if(!p && m==="fangelse" && steg && steg.text){
+    const t = steg.text.split(".")[0];
+    if(/cell/i.test(t)) return "fangelse_celler";
+    if(/gård/i.test(t)) return "fangelse_gard";
+    if(/vaktrum/i.test(t)) return "fangelse_vakt";
+    if(/valv|under jord|underjordisk/i.test(t)) return "fangelse_valv";
+    if(/mur/i.test(t)) return "fangelse_mur";
+  }
   // öknens rum med egna bilder: bilden väljs efter vad rumstexten beskriver
   if(!p && m==="oken" && steg && steg.text){
     if(/vindslipade stenar/i.test(steg.text)) return "oken_stenfalt";

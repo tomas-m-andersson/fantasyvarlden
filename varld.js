@@ -12,7 +12,8 @@ V.MILJO = {
   ruin:{namn:"Ruin",himmel:["#3d4660","#6f7a96"],mark:"#4a4a44",sten:"#77766c"},
   kloak:{namn:"Kloak",himmel:["#10140f","#1d2419"],mark:"#3d4a2c",sten:"#56604a"},
   gravfalt:{namn:"Gravfält",himmel:["#1c1a2c","#3a3554"],mark:"#2e3326",sten:"#6c6e74"},
-  trask:{namn:"Träsk",himmel:["#28321f","#45543a"],mark:"#34402a",sten:"#5c6646"}
+  trask:{namn:"Träsk",himmel:["#28321f","#45543a"],mark:"#34402a",sten:"#5c6646"},
+  fangelse:{namn:"Fängelse",himmel:["#121116","#24222a"],mark:"#2c2a2e",sten:"#4a474e"}
 };
 
 // ---------- Fiender ----------
@@ -25,6 +26,7 @@ V.FIENDER = {
   rovare:{namn:"Rövare",typ:"folk",kp:9,rust:1,anfall:11,skada:"T8",sprite:"rovare",folk:true},
   kultist:{namn:"Kultist från Tarragons Hand",typ:"folk",kp:9,rust:0,anfall:12,skada:"T6",sprite:"kultist",folk:true},
   stadsvakt:{namn:"Stadsvakt",typ:"folk",kp:11,rust:3,anfall:12,skada:"T8",sprite:"rovare",folk:true},
+  desertor:{namn:"Desertör",typ:"folk",kp:10,rust:2,anfall:12,skada:"T8",sprite:"rovare",folk:true},
   harpya:{namn:"Harpya",typ:"best",kp:10,rust:1,sprite:"harpya",attacker:[
     {namn:"Klor",text:"river med klorna",skada:"T6"},
     {namn:"Störtdyk",text:"störtdyker",skada:"T8"},
@@ -85,7 +87,13 @@ V.FIENDER = {
     {namn:"Spikklubba",text:"svingar sin spikklubba mot",skada:"2T8"},{namn:"Knytnäve",text:"drämmer en knytnäve stor som en tunna i",skada:"2T6"},
     {namn:"Bänkkast",text:"river loss en läktarbänk och slänger den mot",skada:"T6",alla:true},
     {namn:"Stampa",text:"stampar så att hela gropen skakar under",skada:"T4",alla:true,effekt:"stoppa"},
-    {namn:"Vrål",text:"vrålar så att publiken tystnar –",skada:0,effekt:"nackdel",alla:true}]}
+    {namn:"Vrål",text:"vrålar så att publiken tystnar –",skada:0,effekt:"nackdel",alla:true}]},
+  // General Kieslawski – ledare för desertörerna norr om Svartborgen, har utropat en egen stat. Bossen i Svartborgen.
+  kieslawski:{namn:"General Kieslawski",typ:"best",kp:28,rust:3,sprite:"rovare",boss:true,attacker:[
+    {namn:"Sabelhugg",text:"hugger med sin böjda sabel mot",skada:"2T6"},{namn:"Handarmborst",text:"skjuter med sitt handarmborst på",skada:"T8"},
+    {namn:"Till anfall!",text:"vrålar en order, och hans desertörer hugger mot",skada:"T6",alla:true},
+    {namn:"Medaljglans",text:"putsar sina stulna medaljer så att de bländar",skada:0,effekt:"nackdel",alla:true},
+    {namn:"Kappsvep",text:"sveper med den pälskantade kappan och sparkar undan benen på",skada:"T4",effekt:"stoppa"}]}
 };
 
 // Vilka fiender som hör hemma var
@@ -97,7 +105,8 @@ V.POOL = {
   ruin:["rovare","gast","kultist","odod"],
   kloak:["ratta","ratta","kultist","svartnisse"],
   gravfalt:["odod","odod","gast","rovare"],
-  trask:["dendroid","varg","ratta","gast"]
+  trask:["dendroid","varg","ratta","gast"],
+  fangelse:["desertor","desertor","stadsvakt","orch"]
 };
 
 // ---------- Uppdrag ----------
@@ -155,6 +164,7 @@ V.PLATSER = [
  {id:"kras-kras",namn:"Kras-Kras kloaker",land:"Dargobar",miljo:"kloak",bossar:["rattkung"],text:"Ett fint avloppssystem som ingen använder. Råttorna har vuxit sig enorma."},
  {id:"gravskogen",namn:"Gravskogen",land:"Gallvenien",miljo:"gravfalt",bossar:["general","gravvaktare"],text:"Gravarna från Det röda slaget står så tätt att de bildat en skog."},
  {id:"vesselberget",namn:"Vesselberget",land:"Grador",miljo:"ruin",bossar:["rovarhovding","gravvaktare"],text:"Ett förfallet utkikstorn och fästning. Gasten Mandor Marvolt spökar här. Under tornruinen ska hans skatt ligga nedgrävd – 136 guldmynt, enligt honom själv."},
+ {id:"svartborgen",namn:"Svartborgen",land:"Waltsala",miljo:"fangelse",bossar:["kieslawski"],text:"Det svarta fängelset som ni en gång rymde från. Nu har general Kieslawski och hans desertörer tagit över – och efterlysningarna med era ansikten sitter kvar på väggarna."},
  {id:"doda-sjon",namn:"Döda sjön",land:"Grador",miljo:"trask",bossar:["dendroidmoder","gast"],text:"Sjön nära Cranford, förgiftad sedan kriget. Allt som rinner ut i den är också förgiftat."}
 ];
 
@@ -167,7 +177,8 @@ V.RUMTEXT = {
   ruin:["En kollapsad sal där valvet har rasat in.","Ett gammalt utkikstorn med trappor som saknar steg.","En övervuxen gård med en torr brunn.","En kapellruin där någon nyligen tänt ljus.","En källare med tunnor som luktar surt vin."],
   kloak:["En kloaktunnel där det är mycket tydligt att ingen använder avloppet.","En kulvert där vattnet når upp till knäna.","En korsning av fyra tunnlar och oräkneliga ögon i mörkret.","En gammal pumpstation full av spindelväv.","En tunnel där väggarna rör sig. Det är råttor."],
   gravfalt:["Gravstenar står tätt, lutar åt alla håll.","Ett gravkor med en tung järngrind.","En öppen grav. Den var inte öppen nyss.","Ett gammalt gravkapell med söndriga fönster.","Dimma ligger tung över kullarna."],
-  trask:["Grönt vatten som bubblar illavarslande.","En spång av ruttnande plankor.","En döende björk med en hängsnara i.","Dimma och kväkande grodor.","En halvsjunken båt med någon sorts symbol på."]
+  trask:["Grönt vatten som bubblar illavarslande.","En spång av ruttnande plankor.","En döende björk med en hängsnara i.","Dimma och kväkande grodor.","En halvsjunken båt med någon sorts symbol på."],
+  fangelse:["En lång cellgång med rostiga galler.","Fängelsegården, full av desertörernas tält.","Vaktrummet, där tärningarna fortfarande ligger på bordet.","Valven långt under jord, där kedjorna hänger från väggarna.","Uppe på ringmuren, där vinden river i fanorna."]
 };
 // ---------- Rumsbeskrivningar som byggs ihop av delar: plats + något man ser + något man hör/luktar/känner ----------
 // Spelet slumpar en del ur varje lista (och undviker upprepningar under samma äventyr), så att rummen sällan blir likadana.
@@ -203,7 +214,12 @@ V.RUMDELAR = {
   trask:{
     plats:["Grönt vatten som bubblar illavarslande","En spång av ruttnande plankor","En döende björk mitt i dyn","Dimma och kväkande grodor","En halvsjunken båt","En liten ö av fast mark","Ett vassbälte högre än en hobbit","En strand där vattnet är svart","En gammal hydda på pålar","Ett gyttjigt flodfår","En gammal damm som har brustit","En gyttjig väg som är mer väg i teorin än i praktiken"],
     syn:["En symbol är målad på båtens sida","Lyktgubbar dansar ute i dimman","En stövel sticker upp ur dyn – med en fot i","Myggor i moln stora som hus","En gammal fiskare har lämnat sitt nät","Döda fiskar flyter med magen upp","En skylt: ”BADA EJ – GIFT”","Grodor sitter i rad och stirrar","Bubblor stiger upp i ett regelbundet mönster, som andetag","Ett skelett med ett metspö","En krokodil – nej, en stock – nej, en krokodil","Rester av ett fiskeläger, övergivet i hast"],
-    sinne:["Det luktar ruttet och sött","Det plaskar någonstans i vassen","Myggen surrar i öronen","Dyn suger tag i stövlarna","Dimman gör allt grått och mjukt","Grodor kväker i kör","Det bubblar och puttrar runt omkring","Luften är varm och kvav","Det luktar gift och dött vatten","Ett djupt läte hörs från mitten av träsket"]}
+    sinne:["Det luktar ruttet och sött","Det plaskar någonstans i vassen","Myggen surrar i öronen","Dyn suger tag i stövlarna","Dimman gör allt grått och mjukt","Grodor kväker i kör","Det bubblar och puttrar runt omkring","Luften är varm och kvav","Det luktar gift och dött vatten","Ett djupt läte hörs från mitten av träsket"]},
+  fangelse:{
+    plats:["En lång cellgång med rostiga galler på båda sidor","En cellgång där hälften av celldörrarna är utbrutna","Cellen ni själva satt i en gång – nummer sju","En rad trånga celler med halm på golvet","Fängelsegården, där desertörerna slagit upp sina tält","Den leriga fängelsegården med en sprucken brunn","Ett hörn av gården under ett vakttorn","Vaktrummet med ett bord fullt av tärningar och sejdlar","Ett vaktrum med en nyckelknippa på kroken","Vaktrummets spisrum, där elden nästan slocknat","Valven långt under jord, där vattnet droppar","Ett lågt valv med kedjor som hänger från väggarna","En underjordisk gång med igengallrade hål i golvet","Uppe på ringmuren, där vinden river i fanorna","En vallgång på muren med en rostig armborstkastare","Ringmuren vid ett halvt raserat vakttorn"],
+    syn:["En efterlysning med era ansikten sitter spikad på väggen – 1000 guldmynt","Någon har ritat ett skägg på efterlysningen av er","En gammal fånge känner igen er och viskar att ni måste vara galna som kom tillbaka","Generalens svartröda fanor hänger överallt","En stulen kista står öppen och tom","Ett tärningsspel har avbrutits mitt i","Någon har ristat ett streck för varje dag på väggen – det är väldigt många streck","En hög med stulna rustningar ligger i ett hörn","Ett porträtt av Kieslawski hänger snett, med alla medaljerna noga målade","Råttor har byggt bo i en gammal fångdräkt","En vaktlista med en enda regel: ”Generalen har alltid rätt”"],
+    sinne:["Det luktar surt öl och gammal halm","Någonstans rasslar kedjor","Desertörer skrålar en sång om generalens storhet","Det ekar när någon slår igen en järndörr","Det är iskallt mellan stenväggarna","Kråkor kraxar uppe på murarna","En trumma slår långsamt någonstans uppe på gården","Någon snarkar högt bakom en dörr","Vinden viner genom gluggarna"]
+  }
 };
 // Ibland läggs en extra rad till – små detaljer från Fantasyvärlden
 V.RUMEXTRA = [
@@ -226,15 +242,18 @@ V.FALLOR = {
   ruin:[{namn:"Ras",text:"Golvet ger vika.",skada:"T8"},{namn:"Gillerfälla",text:"En gammal fälla med rostiga blad slår igen.",skada:"T6"}],
   kloak:[{namn:"Gasficka",text:"En gasficka antänds av facklan!",skada:"T8"},{namn:"Strömt vatten",text:"Vattnet stiger plötsligt.",skada:"T6"}],
   gravfalt:[{namn:"Förbannad grav",text:"En förbannelse slår ut ur en gravsten.",skada:"T6",vp:true},{namn:"Kollapsande grav",text:"Någon trampar rakt ner i en gammal grav.",skada:"T6"}],
-  trask:[{namn:"Dy",text:"Dyn suger tag i fötterna.",skada:"T6"},{namn:"Giftiga ångor",text:"Träsket andas ut något grönt.",skada:"T6",vp:true}]
+  trask:[{namn:"Dy",text:"Dyn suger tag i fötterna.",skada:"T6"},{namn:"Giftiga ångor",text:"Träsket andas ut något grönt.",skada:"T6",vp:true}],
+  fangelse:[{namn:"Fallgaller",text:"Ett tungt fallgaller rasar ner bakom er!",skada:"T8"},{namn:"Larmklocka",text:"Någon trampar på en snubbeltråd och en larmklocka börjar ringa – armborstpilar viner genom gången.",skada:"T6"}]
 };
 // Hinder: alla måste klara slaget (alla:true) eller så räcker det att en lyckas.
 V.HINDER = [
   {namn:"En bred klyfta",text:"En klyfta skär av vägen. Den går att hoppa över – om man är smidig.",fard:"Akrobatik",alla:true,skada:"T6",miljo:["berg","grotta","ruin"]},
   {namn:"Forsande vatten",text:"Vägen går genom strömt vatten. Den som inte kan simma får det jobbigt.",fard:"Simma",alla:true,skada:"T6",miljo:["grotta","skog","kloak","trask"]},
-  {namn:"En låst port",text:"En tung, låst port. Någon behöver dyrka upp den.",fard:"Fingerfärdighet",alla:false,skada:"T4",miljo:["ruin","grotta","kloak","gravfalt"]},
+  {namn:"En låst port",text:"En tung, låst port. Någon behöver dyrka upp den.",fard:"Fingerfärdighet",alla:false,skada:"T4",miljo:["ruin","grotta","kloak","gravfalt","fangelse"]},
   {namn:"En brant klippa",text:"Enda vägen fram är uppåt.",fard:"Akrobatik",alla:true,skada:"T6",miljo:["berg","oken","ruin"]},
   {namn:"En gåta i sten",text:"En stenport med en inristad gåta. Någon lärd måste klura ut svaret.",fard:"Kunskap",alla:false,skada:"T4",miljo:["ruin","grotta","gravfalt","oken"]},
+  {namn:"Vaktrundan",text:"En vaktrunda med fackla kommer gående. Alla måste smyga förbi utan att märkas.",fard:"Smyga",alla:true,skada:"T6",miljo:["fangelse"]},
+  {namn:"En låst cell",text:"Vägen går genom en låst cell. Någon stark måste bända upp gallret.",fard:"STY",alla:false,skada:"T4",miljo:["fangelse"]},
   {namn:"Brännande sand",text:"En lång sträcka utan skugga. Man måste hålla ut.",fard:"FYS",alla:true,skada:"T4",miljo:["oken"]}
 ];
 V.SKATTER = ["Läkedryck","Läkande ört","Läkande ört","Kråkmossa","Krigarfasa","Läkedryck"];
