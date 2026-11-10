@@ -200,7 +200,7 @@ function visaTarningar(lista){
 // ================= IKONER FÖR SAKER (npc/saker_grotta.png = g, npc/saker_by.png = b) =================
 const IKON = {
   // "i:" = npc/ikoner.png (ikonarket), "j:" = npc/ikoner2.png (ikonark 2), "g:" = npc/saker_grotta.png, "b:" = npc/saker_by.png
-  "Läkedryck":"i:39","Läkande ört":"i:22","Grönfräken":"i:23","Gravstensalm":"i:24","Kråkmossa":"i:19","Hirtonbuske":"i:20","Tokfrans":"i:21",
+  "Läkedryck":"i:39","Läkande ört":"i:22","Grönfräken":"i:23","Gravstensalm":"i:24","Kråkmossa":"i:19","Örtpåse":"p:0","Luta":"l:0","Flöjt":"f:0","Klammerormbunke":"k:0","Hirtonbuske":"i:20","Tokfrans":"i:21",
   "Krigarfasa":"g:50","Flaska vin":"v:3","Vin":"v:3","Rött té":"b:34","Äppelcider":"b:33","Lite bröd":"i:55","En limpa bröd":"i:55",
   "Bröd (fyra kilo)":"i:55","Torkat kött":"i:56","Torkade fikon":"b:4","Rep":"i:16","Karta":"i:58","Karta över Grador och Liane":"i:58",
   "Trollformelbok":"i:44","Diktsamling":"g:13","Anteckningsblock":"g:13","Tärningsspel":"g:6","Elddon":"g:4",
@@ -214,8 +214,8 @@ const IKON = {
 };
 // Uppdragens föremål
 const UPPDRAG_IKON = {skold:"g:63",patricia:"g:52",tarragon:"g:62",hostvakt:"i:32",slasby:"g:24",rattor:"i:25",svartalf:"i:26",broncos:"j:13",barnen:"j:11",gripagg:"j:12","doda-sjon":"i:54",krusbar:"i:28",gojan:"g:19"};
-const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner", j:"ikoner2", v:"vinflaska"};
-function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbijv]:\d+$/.test(k)) return "";
+const IKONARK = {g:"saker_grotta", b:"saker_by", i:"ikoner", j:"ikoner2", v:"vinflaska", p:"ortpase", l:"luta", f:"flojt", k:"klammerormbunke"};
+function ikonHtml(namn, extraKlass){ const k = IKON[namn] || namn; if(!k || !/^[gbijvplfk]:\d+$/.test(k)) return "";
   const [a,r] = k.split(":"); return `<canvas class="px ikon ${extraKlass||""}" data-ikon="${IKONARK[a]}:${r}" aria-hidden="true"></canvas>`; }
 function fyllIkoner(root){ (root||document).querySelectorAll("canvas[data-ikon]").forEach(c=>{ const [ark,r]=c.dataset.ikon.split(":"); G.ritaIkon(c, ark, Number(r)); }); }
 const guldHtml = n => `${ikonHtml("guld")}${n} guld`;
@@ -889,6 +889,9 @@ const MOTE_FIGUR = {
   fjass:{ark:"fjass", spegel:false},   // Fjäss-arket tittar redan åt vänster, mot sällskapet
   dunker:{ark:"dunker"},
   proppeteus:{ark:"givare_proppeteus"},   // samma bild som när han är uppdragsgivare
+  egon:{ark:"egon"}, ormac:{ark:"ormac"}, torbyn:{ark:"torbyn"}, jones:{ark:"jones"}, orter:{ark:"ortgumma"}, vagtull:{ark:"tullvakt"},
+  fange:{ark:"fange", rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,24,25,26,27,28,29,30,31,40,41,42,43,44,45,46,47,56,57,58,59,60,61,62,63]},   // stående och knäböjande, inte liggande
+  ginzy:{ark:"ginzy", antal:2, rutor:[1,2,3,4,5,6,7,9,10,11,12,13,14,15,17,18,19,20,21,22,23,25,26,27,28,29,30,31,33,34,35,36,37,38,39,41,42,43,44,45,46,47,49,50,51,52,53,54,55,57,58,59,60,61,62,63]},   // Ginzy, Legolas, Martin Mangler och Borbor – utan lägerelden i första kolumnen
   garvard:{ark:"garvard", rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,48,49,50,51,52,53,54,55,56,57]},
   gycklare:{ark:"gycklare", antal:2, rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,48,49,50,51,52,53,54,55,58,59,60]},   // bara de som vänder sig mot sällskapet
   lik:{ark:"lik", rutor:[24,25,26,27,28,29,30,11,14,15,61,62]}   // de som ligger platt
