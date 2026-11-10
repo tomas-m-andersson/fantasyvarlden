@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:32:07.569Z",
+  "uppdaterad": "2026-11-10T23:33:09.868Z",
   "spel": {
     "version": 1,
-    "tid": 1794353524459,
+    "tid": 1794353586846,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -447,7 +447,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Pilbåge"
+            "Pilbåge",
+            "Kniv"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -458,7 +459,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Kort båge",
-          "fordelNasta": true
+          "fordelNasta": false
         },
         "galfner": {
           "kp": 7,
@@ -484,7 +485,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst",
           "fordelNasta": false,
           "nackdelNasta": true
@@ -510,7 +511,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "fordelNasta": false
         }
@@ -832,6 +833,42 @@
         {
           "text": "Desertör anfaller Pescatore Vesuvio: [7] mot 12 – lyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio parerar: [13 / 4 → 4] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Stadsvakt 1 anfaller FF: [18 / 14 → 18] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 2 anfaller Göfnagrim: [12 / 11 → 12] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim tar 0 skada (3 − 3 rustning) från Stadsvakt 2. KP 13/13.",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [2] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 1 tar 7 skada (10 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
