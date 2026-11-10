@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:33:09.868Z",
+  "uppdaterad": "2026-11-10T23:33:16.199Z",
   "spel": {
     "version": 1,
-    "tid": 1794353586846,
+    "tid": 1794353593115,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -432,11 +432,11 @@
           "stoppad": 0,
           "agerat": true,
           "valtVapen": "Kort spjut",
-          "fordelNasta": false
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 11,
-          "vp": 6,
+          "vp": 3,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -457,9 +457,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge",
-          "fordelNasta": false
+          "fordelNasta": true
         },
         "galfner": {
           "kp": 7,
@@ -487,7 +487,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Armborst",
-          "fordelNasta": false,
+          "fordelNasta": true,
           "nackdelNasta": true
         },
         "gofnagrim": {
@@ -513,7 +513,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Stav",
-          "fordelNasta": false
+          "fordelNasta": true
         }
       },
       "guld": 41,
@@ -869,6 +869,18 @@
         {
           "text": "Stadsvakt 1 faller!",
           "cls": "d"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 2 anfaller Göfnagrim: [16] mot 12 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
