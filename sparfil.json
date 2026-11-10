@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:29:05.605Z",
+  "uppdaterad": "2026-11-10T23:29:19.909Z",
   "spel": {
     "version": 1,
-    "tid": 1794353342556,
+    "tid": 1794353356969,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -419,7 +419,7 @@
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 10,
+          "vp": 8,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -428,7 +428,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Stav"
+            "Stav",
+            "Magi"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -437,9 +438,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav",
-          "fordelNasta": true
+          "fordelNasta": false
         }
       },
       "guld": 37,
@@ -583,6 +584,18 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Göfnagrim kastar Blixt slår Magi med fördel: [14 / 13 → 13] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör tar 6 skada (8 − 2 rustning) från Blixt.",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör anfaller FF: [3] mot 12 – lyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
