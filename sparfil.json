@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:29:31.647Z",
+  "uppdaterad": "2026-11-10T23:29:39.544Z",
   "spel": {
     "version": 1,
-    "tid": 1794353368510,
+    "tid": 1794353376465,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -362,7 +362,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -390,7 +390,7 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Kort båge",
-          "fordelNasta": true
+          "fordelNasta": false
         },
         "galfner": {
           "kp": 12,
@@ -413,7 +413,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst",
           "fordelNasta": true
         },
@@ -438,7 +438,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "fordelNasta": false
         }
@@ -611,6 +611,22 @@
         },
         {
           "text": "FF har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge med fördel: [12 / 19 → 12] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski tar 9 skada (12 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 3 —",
           "cls": "info"
         }
       ],
