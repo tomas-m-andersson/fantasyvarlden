@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:23:50.938Z",
+  "uppdaterad": "2026-11-10T23:23:54.869Z",
   "spel": {
     "version": 1,
-    "tid": 1794353027952,
-    "kassa": 896,
+    "tid": 1794353031111,
+    "kassa": 746,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -49,7 +49,7 @@
         "aventyr": 3,
         "segrar": 1,
         "vapen": [],
-        "rustning": null
+        "rustning": "Ringbrynja"
       },
       "kevin": {
         "dod": false,
@@ -172,6 +172,10 @@
       "gojan": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-11 00:23",
+        "text": "Göfnagrim köpte Ringbrynja för 150 guld."
+      },
       {
         "tid": "2026-11-11 00:23",
         "text": "Galfner Galfner köpte Ringbrynja för 150 guld."
