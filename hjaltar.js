@@ -3,7 +3,7 @@
 // e = grundegenskaper, tranad = tränade färdigheter (grundchans × 2), varden = fasta värden från podden.
 // formaga = signaturförmåga (kostar 3 VP). Texterna är egna sammanfattningar.
 window.HJALTAR = [
- {id:"monika",namn:"Monika Plöjer",alias:"Monkan, Monika Björnhuvud",folk:"Dvärg",yrke:"Gladiator",kon:"Kvinna",alder:"54",
+ {id:"monika",namn:"Monika Plöjer",spelare:"Nisse Hallberg",alias:"Monkan, Monika Björnhuvud",folk:"Dvärg",yrke:"Gladiator",kon:"Kvinna",alder:"54",
   e:{STY:17,FYS:17,SMI:10,INT:8,PSY:14,KAR:6},
   tranad:["Slagvapen","Slagsmål","Undvika","Uppträda"],varden:{},
   vapen:["Stridsgissel"],rustning:"Läderväst",skold:true,besv:[],guld:43,
@@ -12,7 +12,7 @@ window.HJALTAR = [
   citat:"SLÅÅÅ AAAV MIG HATTEEEN!",
   om:"Hetlevrad, girig och misstänksam dvärggladiator med ett björnhuvud (med ett ankhuvud ovanpå) som hatt. Kräver alltid större andel av belöningen. Dubbelhänt."},
 
- {id:"gofnagrim",namn:"Göfnagrim",alias:"Den skäggigaste trolldamen i de sju bygderna",folk:"Dvärg",yrke:"Trollkarl",kon:"Kvinna",alder:"216",
+ {id:"gofnagrim",namn:"Göfnagrim",spelare:"Martin Soneby",alias:"Den skäggigaste trolldamen i de sju bygderna",folk:"Dvärg",yrke:"Trollkarl",kon:"Kvinna",alder:"216",
   e:{STY:16,FYS:13,SMI:14,INT:9,PSY:13,KAR:16},
   tranad:["Magi","Stav","Uppträda","Övertala"],varden:{},
   vapen:["Stav"],rustning:null,besv:["Beskyddare","Blixt","Motståndskraft","Hela"],guld:5,saker:[],
@@ -20,7 +20,7 @@ window.HJALTAR = [
   citat:"Jag är GÖFNAGRIM!",
   om:"Karismatisk men våldsam dvärgtrollkarl som gärna blir vän med alla – och skrämmer bort lika många. Hatar spoken word."},
 
- {id:"gaston",namn:"Gaston Quasimodoson",alias:"Tangos",folk:"Människa",yrke:"Jägare",kon:"Man",alder:"30",
+ {id:"gaston",namn:"Gaston Quasimodoson",spelare:"Albin Olsson",alias:"Tangos",folk:"Människa",yrke:"Jägare",kon:"Man",alder:"30",
   e:{STY:12,FYS:12,SMI:8,INT:9,PSY:12,KAR:13},
   tranad:["Pilbåge","Armborst","Bluffa","Smyga"],varden:{},
   vapen:["Kort båge","Rostigt svärd","Morgonstjärna","Armborst","Gulddolk"],rustning:null,besv:[],guld:2,saker:[],
@@ -28,7 +28,7 @@ window.HJALTAR = [
   citat:"",
   om:"Tämligen usel jägare från Fornvik med spelskulder, alkoholproblem och antisociala drag. Har ett komplicerat förflutet med en guldyxa."},
 
- {id:"tola",namn:"Tola Sparv",alias:"Tula, Tuula, Tåla",folk:"Människa",yrke:"Riddare",kon:"Kvinna",alder:"20-årsåldern",
+ {id:"tola",namn:"Tola Sparv",spelare:"Thomas Eriksson",alias:"Tula, Tuula, Tåla",folk:"Människa",yrke:"Riddare",kon:"Kvinna",alder:"20-årsåldern",
   e:{STY:10,FYS:13,SMI:8,INT:11,PSY:5,KAR:10},
   tranad:["Spjut","Rida","Undvika","Uppträda"],varden:{},
   vapen:["Långt spjut"],rustning:"Ringbrynja",besv:[],guld:3,saker:["Hästen Häst"],
@@ -36,7 +36,7 @@ window.HJALTAR = [
   citat:"",
   om:"Rymde från sin adliga familj för att bli riddare. Hatar patriarkatet. Drömmer i hemlighet om att sjunga. Utbildad på Beckbury Park Knight School. Familjespjutet Kerfina gick förlorat."},
 
- {id:"dagny",namn:"Dagny von Fågelborg",alias:"Dagny",folk:"Alv",yrke:"Trollkarl",kon:"Kvinna",alder:"Okänd",
+ {id:"dagny",namn:"Dagny von Fågelborg",spelare:"Camilla Fågelborg",alias:"Dagny",folk:"Alv",yrke:"Trollkarl",kon:"Kvinna",alder:"Okänd",
   e:{STY:13,FYS:10,SMI:13,INT:12,PSY:9,KAR:7},
   tranad:["Magi","Stav","Bluffa"],varden:{"Pilbåge":8},
   vapen:["Trollstav"],rustning:null,besv:["Motståndskraft","Blixt","Lyft","Försegla"],guld:60,saker:["Skalp från en tornerspelare","Örtpåse"],
@@ -44,7 +44,7 @@ window.HJALTAR = [
   citat:"I Put the Focus on the Hocus Pocus",
   om:"Snål alvtrollkarl från Strotterdom som bär runt på en stor säck guld och skalpen från en pensionerad tornerspelare. Dotter till Hoodie von Fågelborg och kusin till Galfner Galfner och Kennoth Besk. Vänsterhänt, och kan läsa och skriva."},
 
- {id:"pescatore",namn:"Pescatore Vesuvio",alias:"",folk:"Alv",yrke:"Bard",kon:"Man",alder:"Okänd",
+ {id:"pescatore",namn:"Pescatore Vesuvio",spelare:"Isak Wahlberg",alias:"",folk:"Alv",yrke:"Bard",kon:"Man",alder:"Okänd",
   e:{STY:10,FYS:11,SMI:13,INT:16,PSY:12,KAR:7},
   tranad:["Pilbåge","Uppträda","Kniv"],varden:{"Kunskap":16},
   vapen:["Kort båge","Dolk"],rustning:"Tygtunika",besv:[],guld:1,saker:["Luta","Flöjt","Karta","Vin"],
@@ -52,7 +52,7 @@ window.HJALTAR = [
   citat:"",
   om:"Självgod alvbard och ”lutspelare av guds nåde”. I grunden godmodig och hjälper gärna sina vänner. Blev till slut kär i lutspelaren Galla i Alantis och stannade hos henne."},
 
- {id:"kevin",namn:"Kevin",alias:"Sheriffen av Mårdgård",folk:"Anka",yrke:"Lönnmördare",kon:"Man",alder:"7",
+ {id:"kevin",namn:"Kevin",spelare:"Johan Hurtig",alias:"Sheriffen av Mårdgård",folk:"Anka",yrke:"Lönnmördare",kon:"Man",alder:"7",
   e:{STY:8,FYS:10,SMI:15,INT:9,PSY:10,KAR:9},
   tranad:["Spjut","Kastvapen","Smyga","Kniv"],varden:{"Simma":18},
   vapen:["Spjut","Kastknivar","Strypsnara"],rustning:"Läderväst",besv:[],guld:121,saker:["Elddon","Karta över Grador och Liane"],
@@ -60,7 +60,7 @@ window.HJALTAR = [
   citat:"KEEEEEVIIIIIIIN",
   om:"Anka från en fin familj som blev föräldralös och uppfostrades av lönnmördare. Simmar som… ja, en anka."},
 
- {id:"ned",namn:"Ned Klen",alias:"",folk:"Anka",yrke:"Tjuv",kon:"Man",alder:"25",
+ {id:"ned",namn:"Ned Klen",spelare:"Petter Bristav",alias:"",folk:"Anka",yrke:"Tjuv",kon:"Man",alder:"25",
   e:{STY:7,FYS:9,SMI:12,INT:16,PSY:11,KAR:5},
   tranad:["Kastvapen","Spjut","Smyga","Simma"],varden:{"Fingerfärdighet":12,"Finna dolda ting":16},
   vapen:["Kort spjut","Kastknivar"],rustning:"Läderväst",besv:[],guld:4,saker:["Lite bröd"],
@@ -68,7 +68,7 @@ window.HJALTAR = [
   citat:"Vintern är på väg.",
   om:"Vit anka, tjuv och alkoholist. Träffade Monika på ett möte för kortväxta. Har ett osvikligt öga för vad saker är värda. Vänsterhänt."},
 
- {id:"shinji",namn:"Shinji Onishi",alias:"",folk:"Människa",yrke:"Jägare",kon:"Man",alder:"29",
+ {id:"shinji",namn:"Shinji Onishi",spelare:"David Sundin",alias:"",folk:"Människa",yrke:"Jägare",kon:"Man",alder:"29",
   e:{STY:12,FYS:13,SMI:16,INT:11,PSY:11,KAR:13},
   tranad:["Svärd","Kniv","Smyga","Upptäcka fara"],varden:{"Pilbåge":10,"Simma":14},
   vapen:["Kort svärd","Kort båge","Dolk"],rustning:"Läderväst",besv:[],guld:6,saker:["Torkat kött"],
@@ -76,7 +76,7 @@ window.HJALTAR = [
   citat:"",
   om:"Jägare som ser lite ut som en samuraj och är känd för sitt ledarskap. Bär torkat kött i fickorna på lädervästen. Dubbelhänt, med en knut i håret."},
 
- {id:"bongo",namn:"Bongo, son av Dingo",alias:"Bongo",folk:"Dvärg",yrke:"Bard/Lönnmördare",kon:"Man",alder:"143",
+ {id:"bongo",namn:"Bongo, son av Dingo",spelare:"Elinor Svensson",alias:"Bongo",folk:"Dvärg",yrke:"Bard/Lönnmördare",kon:"Man",alder:"143",
   e:{STY:12,FYS:13,SMI:9,INT:10,PSY:7,KAR:9},
   tranad:["Kniv","Smyga","Uppträda"],varden:{"Pilbåge":10,"Akrobatik":16,"Fingerfärdighet":12},
   vapen:["Dolk"],rustning:"Ulvskinn",besv:[],guld:1,saker:["Kråkmossa","Klammerormbunke"],
@@ -84,7 +84,7 @@ window.HJALTAR = [
   citat:"",
   om:"Rödhårig dvärgbard som extraknäcker som lönnmördare. Fick väldigt få kramar av sin far Dingo. Dubbelhänt. Mamma Pongo är död."},
 
- {id:"saganoren",namn:"Saganoren Länskrimmalmö",alias:"Saganoren",folk:"Alv",yrke:"Lärd",kon:"Kvinna",alder:"564",
+ {id:"saganoren",namn:"Saganoren Länskrimmalmö",spelare:"Johanna Wagrell",alias:"Saganoren",folk:"Alv",yrke:"Lärd",kon:"Kvinna",alder:"564",
   e:{STY:7,FYS:5,SMI:14,INT:14,PSY:12,KAR:9},
   tranad:["Övertala"],varden:{"Svärd":11,"Pilbåge":15,"Läkekonst":14,"Kunskap":14,"Bestiologi":14},
   vapen:["Kort svärd","Kort båge"],rustning:null,besv:[],guld:8,saker:["Diktsamling"],
@@ -92,7 +92,7 @@ window.HJALTAR = [
   citat:"",
   om:"Oerhört snygg och oerhört poppis alv – fast det är nåt med hennes mun. Kan det mesta om växter, djur och historia."},
 
- {id:"teaol",namn:"Teaol",alias:"Beskyddare av riket Järva",folk:"Alv",yrke:"Trollkarl",kon:"Man",alder:"Okänd",
+ {id:"teaol",namn:"Teaol",spelare:"Branislav Pavlovic",alias:"Beskyddare av riket Järva",folk:"Alv",yrke:"Trollkarl",kon:"Man",alder:"Okänd",
   e:{STY:9,FYS:10,SMI:12,INT:10,PSY:13,KAR:5},
   tranad:["Magi","Slagsmål","Upptäcka fara"],varden:{},
   vapen:["Trollstav"],rustning:null,besv:["Förtrolla vapen","Frost","Eld","Salamander"],guld:4,saker:["Gravstensalm","Krigarfasa","Tokfrans"],
@@ -100,7 +100,7 @@ window.HJALTAR = [
   citat:"Tjena grabbar, står ni här och är korta eller?",
   om:"Alvtrollkarl med väldigt låg karisma, drag av maktmissbruk och ett djupt agg mot dvärgar. Kan kalla fram en salamander."},
 
- {id:"trolleriolas",namn:"Trolleriolas",alias:"Trollereoleolas",folk:"Alv",yrke:"Trollkarl",kon:"Man",alder:"358",
+ {id:"trolleriolas",namn:"Trolleriolas",spelare:"Kodjo Akolor",alias:"Trollereoleolas",folk:"Alv",yrke:"Trollkarl",kon:"Man",alder:"358",
   e:{STY:12,FYS:10,SMI:11,INT:12,PSY:13,KAR:8},
   tranad:["Magi","Stav","Kunskap"],varden:{},
   vapen:["Trästav"],rustning:null,besv:["Försegla","Hela","Kontrollera person","Teleportera"],guld:25,saker:["Rep","Trollformelbok","En limpa bröd"],
@@ -108,7 +108,7 @@ window.HJALTAR = [
   citat:"",
   om:"Ung (358 år) alv med mediokert utseende. Vegetarian och alltid beredd att teleportera sig härifrån. Vänsterhänt, och duktig på navigation."},
 
- {id:"kristina",namn:"Kristina Glenning",alias:"Världens bästa trollkarl",folk:"Dvärg",yrke:"Trollkarl",kon:"Man",alder:"364½",
+ {id:"kristina",namn:"Kristina Glenning",spelare:"Henrik Nyblom",alias:"Världens bästa trollkarl",folk:"Dvärg",yrke:"Trollkarl",kon:"Man",alder:"364½",
   e:{STY:11,FYS:14,SMI:10,INT:5,PSY:9,KAR:15},
   tranad:["Magi","Pilbåge","Uppträda"],varden:{},
   vapen:["Pilbåge","Dolk"],rustning:null,besv:["Avbild","Eldklot","Frost"],guld:1,saker:["Hirtonbuske"],
@@ -116,7 +116,7 @@ window.HJALTAR = [
   citat:"",
   om:"Polygam dvärg med fjorton fruar, Dalí-mustasch och sin mammas nedkrympta ansikte runt halsen. Högerhänt på morgonen, vänsterhänt på kvällen. Har ögon som en husky och en koalatatuering under vänster öga."},
 
- {id:"larzone",namn:"Larzone",alias:"",folk:"Hobbit",yrke:"Mentalist",kon:"Man",alder:"60",
+ {id:"larzone",namn:"Larzone",spelare:"Patrik Larsson",alias:"",folk:"Hobbit",yrke:"Mentalist",kon:"Man",alder:"60",
   e:{STY:5,FYS:12,SMI:12,INT:8,PSY:9,KAR:12},
   tranad:["Slunga","Slagvapen","Bluffa","Smyga"],varden:{},
   vapen:["Slunga","Träpåk"],rustning:null,besv:[],guld:3,saker:["Grönfräken"],
@@ -124,7 +124,7 @@ window.HJALTAR = [
   citat:"",
   om:"Mycket kort hobbit av halvitaliensk/halvfinsk härkomst. Mentalist med väldigt okonventionella metoder."},
 
- {id:"malexander",namn:"Malexander Bard",alias:"Den gyllene",folk:"Orch",yrke:"Bard",kon:"Man (tidigare kvinna)",alder:"Okänd",
+ {id:"malexander",namn:"Malexander Bard",spelare:"Ola Aurell",alias:"Den gyllene",folk:"Orch",yrke:"Bard",kon:"Man (tidigare kvinna)",alder:"Okänd",
   e:{STY:15,FYS:14,SMI:4,INT:6,PSY:8,KAR:2},
   tranad:["Svärd","Yxor","Uppträda"],varden:{},
   vapen:["Kroksabel","Yxa"],rustning:"Fjällpansar (ett ben)",besv:[],guld:2,saker:[],
@@ -132,7 +132,7 @@ window.HJALTAR = [
   citat:"",
   om:"Orch från Kratof, relegerad från Beckbury Park Knight School. Bytte knektyrket mot barden – trots katastrofala värden. Dubbelhänt, och kan spela instrument."},
 
- {id:"ff",namn:"FF",alias:"Fuckface",folk:"Drakonit",yrke:"Köpman",kon:"Man",alder:"25",
+ {id:"ff",namn:"FF",spelare:"Petter Bristav",alias:"Fuckface",folk:"Drakonit",yrke:"Köpman",kon:"Man",alder:"25",
   e:{STY:17,FYS:13,SMI:12,INT:10,PSY:8,KAR:7},
   tranad:["Svärd","Spjut","Bluffa"],varden:{"Kunskap":12},
   vapen:["Gorgor","Kort spjut","Piska"],rustning:"Läderväst",besv:[],guld:15,saker:["Torkade fikon","Karta","Tärningsspel"],
@@ -140,7 +140,7 @@ window.HJALTAR = [
   citat:"",
   om:"Okarismatisk drakonit och köpman som blir djupt kränkt av sitt eget namn och därför kallar sig FF. Hans värsta misstag: att återuppliva Monika Plöjer."},
 
- {id:"galfner",namn:"Galfner Galfner",alias:"Gandalf",folk:"Alv",yrke:"Bard",kon:"Man",alder:"Okänd",
+ {id:"galfner",namn:"Galfner Galfner",spelare:"Jonatan Unge",alias:"Gandalf",folk:"Alv",yrke:"Bard",kon:"Man",alder:"Okänd",
   e:{STY:9,FYS:12,SMI:13,INT:18,PSY:7,KAR:6},
   tranad:["Armborst","Kniv","Akrobatik","Uppträda"],varden:{},
   vapen:["Armborst","Dolk av draktand"],rustning:null,besv:[],guld:5,saker:[],
@@ -148,7 +148,7 @@ window.HJALTAR = [
   citat:"",
   om:"Alvbard, kusin till Dagny och god vän med Tom Tom Bomson, som han har skrivit en sång om. Kan lugna eller skrämma folk med sina instrument. Mästare på japansk growl."},
 
- {id:"uranus",namn:"Uranus Wett",alias:"",folk:"Hobbit",yrke:"Astrolog",kon:"Ickebinär (hen)",alder:"33",
+ {id:"uranus",namn:"Uranus Wett",spelare:"Kirsty Armstrong",alias:"",folk:"Hobbit",yrke:"Astrolog",kon:"Ickebinär (hen)",alder:"33",
   e:{STY:8,FYS:11,SMI:14,INT:13,PSY:13,KAR:11},
   tranad:["Svärd","Kunskap","Smyga","Undvika"],varden:{},
   vapen:["Vantim","Nannheim"],rustning:null,besv:[],guld:6,saker:[],
@@ -156,7 +156,7 @@ window.HJALTAR = [
   citat:"",
   om:"Hobbit och astrolog, precis könsmogen för att vara hobbit. Bär två magiska svärd med namnen Vantim och Nannheim. Nannheim kallas Grötsvärdet: där det träffar förvandlas fienden till en sunkig maträtt."},
 
- {id:"vad",namn:"Våd Snolofsson",alias:"",folk:"Människa",yrke:"Tjuv",kon:"Quinna",alder:"42",
+ {id:"vad",namn:"Våd Snolofsson",spelare:"Josefin Johansson",alias:"",folk:"Människa",yrke:"Tjuv",kon:"Quinna",alder:"42",
   e:{STY:13,FYS:14,SMI:10,INT:10,PSY:12,KAR:11},
   tranad:["Yxor","Smyga","Fingerfärdighet"],varden:{"Pilbåge":8,"Uppträda":11},
   vapen:["Handyxa"],rustning:"Tygtunika",besv:[],guld:4,saker:["Bröd (fyra kilo)"],
@@ -164,7 +164,7 @@ window.HJALTAR = [
   citat:"",
   om:"Rejäl, lite go tjuv i fotriktiga skor och bred pennkjol. Varken borgarbracka eller Gekås-kund. Har alltid (minst) fyra kilo bröd med sig. Hennes far blev svårt sjuk och behövde gråtört för att bli frisk."},
 
- {id:"potus",namn:"Potus Singulus Rövhatt",alias:"Potus",folk:"Människa",yrke:"Gladiator",kon:"Man",alder:"48",
+ {id:"potus",namn:"Potus Singulus Rövhatt",spelare:"Pontus Ströbaek",alias:"Potus",folk:"Människa",yrke:"Gladiator",kon:"Man",alder:"48",
   e:{STY:14,FYS:15,SMI:5,INT:9,PSY:10,KAR:9},
   tranad:["Svärd","Slagsmål","Uppträda"],varden:{},
   vapen:["Kort svärd"],rustning:"Läderväst",besv:[],guld:2,saker:[],
@@ -172,7 +172,7 @@ window.HJALTAR = [
   citat:"",
   om:"Enarmad, enörad gladiator och före detta väpnare från Beckbury Park. Har en tendens att bli anfallen av örnar. Dubbelhänt. Gick på Beckbury Park samtidigt som Tola och Malexander."},
 
- {id:"bacon",namn:"Bacon",alias:"Crispy Bacon",folk:"Dvärg",yrke:"Gladiator",kon:"Kvinna",alder:"222",
+ {id:"bacon",namn:"Bacon",spelare:"Emma Knyckare",alias:"Crispy Bacon",folk:"Dvärg",yrke:"Gladiator",kon:"Kvinna",alder:"222",
   e:{STY:8,FYS:17,SMI:10,INT:9,PSY:11,KAR:8},
   tranad:["Yxor","Slagsmål","Undvika"],varden:{},
   vapen:["Handyxa"],rustning:"Läderväst",besv:[],guld:3,saker:["Flaska vin","Tärningsspel","Visselpipa"],
@@ -180,7 +180,7 @@ window.HJALTAR = [
   citat:"",
   om:"Seg dvärggladiator på 222 vårar. Svag men nästan omöjlig att få omkull."},
 
- {id:"alfred",namn:"Alfred Pitcher",alias:"",folk:"Människa",yrke:"Gladiator",kon:"Man",alder:"36",
+ {id:"alfred",namn:"Alfred Pitcher",spelare:"Adrian Boberg",alias:"",folk:"Människa",yrke:"Gladiator",kon:"Man",alder:"36",
   e:{STY:6,FYS:10,SMI:9,INT:11,PSY:8,KAR:10},
   tranad:["Svärd","Undvika","Bluffa"],varden:{},
   vapen:["Kort svärd"],rustning:"Läderväst",besv:[],guld:4,saker:[],
@@ -188,7 +188,7 @@ window.HJALTAR = [
   citat:"",
   om:"Gladiator som jobbar som personlig assistent åt Bjorn. Ökänt svag och ganska oengagerad i jobbet. Har dolda motiv."},
 
- {id:"john",namn:"John P. Bollbirth",alias:"",folk:"Människa",yrke:"Psykoterapeut",kon:"Man",alder:"59",
+ {id:"john",namn:"John P. Bollbirth",spelare:"Nisse Hallberg",alias:"",folk:"Människa",yrke:"Psykoterapeut",kon:"Man",alder:"59",
   e:{STY:7,FYS:10,SMI:8,INT:15,PSY:14,KAR:13},
   tranad:["Övertala","Läkekonst","Kunskap","Slagvapen"],varden:{},
   vapen:["Träpinne"],rustning:null,besv:[],guld:6,saker:["Tjurhorn","Anteckningsblock"],
@@ -196,7 +196,7 @@ window.HJALTAR = [
   citat:"",
   om:"Kritvit psykoterapeut med monokel, glasögon utan skalmar, benskydd och dåligt sittande jeans. Antecknar allt."},
 
- {id:"lufsen",namn:"Lufsen",alias:"",folk:"Vargmänniska",yrke:"Tandläkare",kon:"Man",alder:"Okänd",
+ {id:"lufsen",namn:"Lufsen",spelare:"Ahmed Berhan",alias:"",folk:"Vargmänniska",yrke:"Tandläkare",kon:"Man",alder:"Okänd",
   e:{STY:13,FYS:14,SMI:16,INT:12,PSY:15,KAR:6},
   tranad:["Slagvapen","Slagsmål","Läkekonst","Upptäcka fara"],varden:{},
   vapen:["Stridshammare"],rustning:null,besv:[],guld:5,saker:[],

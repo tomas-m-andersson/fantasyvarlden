@@ -378,6 +378,7 @@ function visaHjalte(id){
       <div class="col" style="gap:4px;flex:1;min-width:180px"><h2>${esc(h.namn)}</h2>
         ${h.alias?`<span class="small muted">Även känd som: ${esc(h.alias)}</span>`:""}
         <span>${esc(h.folk)} · ${esc(h.yrke)} · ${esc(h.kon)} · ${esc(h.alder)} år</span>
+        ${h.spelare?`<span class="small muted">Spelad av: <b>${esc(h.spelare)}</b></span>`:""}
         ${h.citat?`<span class="citat">”${esc(h.citat)}”</span>`:""}
         ${dod?`<span class="tag red">Död – ligger i poolen i Miami med Tetrok</span>`:""}</div></div>
     <p>${esc(h.om)}</p>
