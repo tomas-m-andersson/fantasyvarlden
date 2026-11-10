@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:27:11.341Z",
+  "uppdaterad": "2026-11-10T23:27:33.134Z",
   "spel": {
     "version": 1,
-    "tid": 1794353228137,
+    "tid": 1794353249953,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -300,7 +300,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "Ringmuren vid ett halvt raserat vakttorn. Råttor har byggt bo i en gammal fångdräkt.",
-          "fro": 602835815
+          "fro": 602835815,
+          "klar": true,
+          "utfallText": "Ni går vidare utan att vila."
         },
         {
           "typ": "rum",
