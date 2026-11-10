@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:34:01.327Z",
+  "uppdaterad": "2026-11-10T23:34:08.718Z",
   "spel": {
     "version": 1,
-    "tid": 1794353638402,
+    "tid": 1794353645749,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -430,7 +430,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Gorgor",
           "fordelNasta": false
         },
@@ -459,7 +459,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge",
           "fordelNasta": false
         },
@@ -513,7 +513,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "fordelNasta": false
         }
@@ -954,6 +954,18 @@
         },
         {
           "text": "Göfnagrim har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [6] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör tar 9 skada (11 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 5 —",
           "cls": "info"
         }
       ],
