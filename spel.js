@@ -235,10 +235,10 @@ function ritaHem(){
     <p class="small muted">${flytt.id?`<b>Tryck på den plats ${esc(HJ[flytt.id].namn)} ska flytta till</b> (eller på hen själv för att ångra).`:`<b>Håll in</b> på en hjälte här ovanför och dra hen till en annan plats för att byta ordning i TV:n. <b>Håll in</b> på en hjälte i galleriet för att ta med eller ta bort hen. Välj 1–4 hjältar.`} ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
     <div class="row"><button class="btn ghost small" data-a="slumpa" ${st.run?"disabled":""}>🎲 Slumpa fram ett sällskap</button></div>
     <div class="row hemval">
-      <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragsförmedlingen<span class="sub">Lansors anslagstavla</span></button>
-      <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
-      <button class="btn" data-a="arena">Gladiatorgroparna<span class="sub">Möt vem som helst – utan risk</span></button>
-      <button class="btn" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
+      <button class="btn skylt" data-a="tavla" ${!party.length||st.run?"disabled":""}>Lansors uppdragsförmedling</button>
+      <button class="btn skylt" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska världen</button>
+      <button class="btn skylt" data-a="arena">Gladiatorgroparna</button>
+      <button class="btn skylt" data-a="basar">Basaren</button>
     </div>
     <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
   </section>`;
