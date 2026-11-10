@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:33:36.361Z",
+  "uppdaterad": "2026-11-10T23:33:54.005Z",
   "spel": {
     "version": 1,
-    "tid": 1794353613407,
+    "tid": 1794353630542,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -445,7 +445,9 @@
           "saker": [
             "Vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Pilbåge"
+          ],
           "anvanda": [
             "Pilbåge",
             "Kniv"
@@ -457,9 +459,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge",
-          "fordelNasta": true
+          "fordelNasta": false
         },
         "galfner": {
           "kp": 6,
@@ -491,7 +493,7 @@
           "nackdelNasta": false
         },
         "gofnagrim": {
-          "kp": 13,
+          "kp": 9,
           "vp": 5,
           "doende": false,
           "ok": 0,
@@ -511,7 +513,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav",
           "fordelNasta": false
         }
@@ -909,6 +911,38 @@
         {
           "text": "— Runda 4 —",
           "cls": "info"
+        },
+        {
+          "text": "Desertör anfaller Göfnagrim: [1] mot 12 – NATURLIGT 1!",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim parerar: [13] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim tar 4 skada (7 − 3 rustning) från Desertör. KP 9/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge med fördel: [6 / 1 → 1] mot 12 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: En etta! Beskriv gärna hur snyggt det där såg ut.",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Stadsvakt 2 tar 13 skada (16 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
