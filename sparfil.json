@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:31:03.873Z",
+  "uppdaterad": "2026-11-10T23:31:15.136Z",
   "spel": {
     "version": 1,
-    "tid": 1794353460819,
+    "tid": 1794353472053,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -484,9 +484,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst",
-          "fordelNasta": true
+          "fordelNasta": false
         },
         "gofnagrim": {
           "kp": 13,
@@ -750,6 +750,18 @@
         },
         {
           "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [15 / 8 → 8] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 1 tar 4 skada (7 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Stadsvakt 2 anfaller Pescatore Vesuvio: [14] mot 12 – misslyckat",
           "cls": "ok"
         }
       ],
