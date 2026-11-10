@@ -888,6 +888,7 @@ const DJUR_RUTOR = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,2
 const MOTE_FIGUR = {
   fjass:{ark:"fjass", spegel:false},   // Fjäss-arket tittar redan åt vänster, mot sällskapet
   dunker:{ark:"dunker"},
+  proppeteus:{ark:"givare_proppeteus"},   // samma bild som när han är uppdragsgivare
   garvard:{ark:"garvard", rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,48,49,50,51,52,53,54,55,56,57]},
   gycklare:{ark:"gycklare", antal:2, rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,48,49,50,51,52,53,54,55,58,59,60]},   // bara de som vänder sig mot sällskapet
   lik:{ark:"lik", rutor:[24,25,26,27,28,29,30,11,14,15,61,62]}   // de som ligger platt
