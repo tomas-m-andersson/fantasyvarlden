@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:30:51.031Z",
+  "uppdaterad": "2026-11-10T23:30:54.957Z",
   "spel": {
     "version": 1,
-    "tid": 1794353448028,
+    "tid": 1794353451838,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -367,6 +367,11 @@
             "stadsvakt",
             "desertor",
             "stadsvakt"
+          ],
+          "rutor": [
+            43,
+            31,
+            48
           ]
         },
         {
@@ -400,7 +405,7 @@
           ]
         }
       ],
-      "i": 6,
+      "i": 7,
       "h": {
         "ff": {
           "kp": 9,
@@ -740,7 +745,7 @@
       "start": "2026-11-11 00:24",
       "utforska": true,
       "kapitel": 2,
-      "djup": 6,
+      "djup": 7,
       "paus": false,
       "anvandaText": [
         "Valven långt under jord, där vattnet droppar",
