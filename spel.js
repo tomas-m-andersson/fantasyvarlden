@@ -627,7 +627,7 @@ function rumText(miljo, anvanda){
 // Malbecs gruvor (uppdraget och platsen) har egna målade gruvbakgrunder i stället för grottans.
 // Bossrummet blir kultisternas altarsal. Bara bilden byts – rumstexter och fiender är fortfarande grottans.
 // Platser med egna målade bakgrunder (bara bilden byts, inte rumstexter eller fiender)
-const PLATS_BILD = {"Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vesselberget":"vesselberget", "Bududuoar":"bududuoar",
+const PLATS_BILD = {"Kras-Kras kloaker":"kras_kras", "Skogen vid riksväg 40":"riksvag40", "Batik":"batik", "Östra öknen":"ostra_oknen", "Malbecks gruvor":"gruva", "Malbecs gruvor":"gruva", "Vesselberget":"vesselberget", "Bududuoar":"bududuoar",
   "Krusbärsberget":"krusbarsberget", "Döda sjön":"doda_sjon", "Tunnlarna under Mårdgård":"svartalftunnlar", "Östra bergen":"drakgrottor",
   "Marmoracs kyrkogård":"marmoracs_kyrkogard", "Harpybergen":"harpybergen", "Mt. Kraknor":"mt_kraknor", "Skogen norr om Slasby":"slasbyskogen",
   "Gollenskogen":"gollenskogen", "Gravskogen":"gravskogen"};
