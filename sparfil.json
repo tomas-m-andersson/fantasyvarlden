@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:34:19.328Z",
+  "uppdaterad": "2026-11-10T23:34:34.358Z",
   "spel": {
     "version": 1,
-    "tid": 1794353656405,
+    "tid": 1794353673933,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -372,7 +372,9 @@
             43,
             31,
             48
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 26 guld."
         },
         {
           "typ": "rum",
@@ -405,7 +407,7 @@
           ]
         }
       ],
-      "i": 7,
+      "i": 8,
       "h": {
         "ff": {
           "kp": 9,
@@ -421,7 +423,8 @@
           "markerade": [],
           "anvanda": [
             "Spjut",
-            "Svärd"
+            "Svärd",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -459,7 +462,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge",
           "fordelNasta": false
         },
@@ -513,12 +516,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "fordelNasta": false
         }
       },
-      "guld": 41,
+      "guld": 67,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Svartborgen. Kapitel 1.",
@@ -979,13 +982,37 @@
         {
           "text": "Desertör anfaller FF: [8] mot 12 – lyckat",
           "cls": "fel"
+        },
+        {
+          "text": "FF försöker undvika: [7] mot 5 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 0 skada (3 − 3 rustning) från Desertör. KP 9/13.",
+          "cls": "info"
+        },
+        {
+          "text": "FF har redan använt sin handling till att försvara sig.",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [8] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör tar 5 skada (7 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-11 00:24",
       "utforska": true,
       "kapitel": 2,
-      "djup": 7,
+      "djup": 8,
       "paus": false,
       "anvandaText": [
         "Valven långt under jord, där vattnet droppar",
