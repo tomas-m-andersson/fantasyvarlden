@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:35:58.287Z",
+  "uppdaterad": "2026-11-10T23:36:05.458Z",
   "spel": {
     "version": 1,
-    "tid": 1794353755341,
+    "tid": 1794353762220,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -439,7 +439,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": true,
           "nackdelNasta": true
@@ -470,7 +470,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge",
           "fordelNasta": true,
           "nackdelNasta": true
@@ -501,8 +501,8 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Armborst",
-          "fordelNasta": true,
-          "nackdelNasta": true
+          "fordelNasta": false,
+          "nackdelNasta": false
         },
         "gofnagrim": {
           "kp": 9,
@@ -525,7 +525,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "fordelNasta": false,
           "nackdelNasta": false
@@ -1116,6 +1116,18 @@
         {
           "text": "Göfnagrim (Stav) slår Stav: [16] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [3] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski tar 9 skada (12 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
