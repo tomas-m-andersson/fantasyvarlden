@@ -1298,8 +1298,8 @@ const GROT_RATTER = ["lasagne","havregrynsgröt","ravioli ur burk","pyttipanna",
 const GROT_DELAR = ["ena armen","axeln","ena benet","magen","ryggen","huvudet","ena örat","svansen","näsan","höften"];
 function grotsvardet(f){
   const ratt = R.valj(GROT_RATTER), del = R.valj(GROT_DELAR);
-  if(f.kp <= 0) logga(`🥣 Grötsvärdet! ${f.namn} förvandlas helt till en rykande portion ${ratt}.`, "dm");
-  else logga(`🥣 Grötsvärdet! Där Nannheim träffar blir ${del} på ${f.namn} till ${ratt}.`, "dm");
+  if(f.kp <= 0) logga(`Grötsvärdet! ${f.namn} förvandlas helt till en rykande portion ${ratt}.`, "dm");
+  else logga(`Grötsvärdet! Där Nannheim träffar blir ${del} på ${f.namn} till ${ratt}.`, "dm");
 }
 function kasta(id, namn, mal){
   const h=bygg(id), x=rh(id), b=R.BESV[namn];
