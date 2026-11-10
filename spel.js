@@ -496,7 +496,8 @@ function fyllTavla(){
 function ritaTavla(){
   fyllTavla(); spara();
   const party = st.sallskap.filter(id=>!ar(id));
-  app.innerHTML = `<section class="card"><div class="row" style="gap:8px;flex-wrap:nowrap"><canvas class="px saljare" data-npc="givare_lansor:0"></canvas><h2>Lansors uppdragsförmedling</h2></div><p class="muted">Lansor – svart påvehatt, Fu Manchu-mustasch, pipskägg – pekar med en lång nagel på lapparna. Han tar 10 % av alla belöningar för uppdrag han förmedlar själv.</p></section>
+  app.innerHTML = `<div class="tv fast"><canvas id="scen" class="px"></canvas></div>
+    <section class="card"><h2>Lansors uppdragsförmedling</h2><p class="muted">Lansor – svart påvehatt, Fu Manchu-mustasch, pipskägg – pekar med en lång nagel på lapparna. Han tar 10 % av alla belöningar för uppdrag han förmedlar själv.</p></section>
     <div class="anslag">${st.tavla.map(id=>{const u=V.UPPDRAG.find(x=>x.id===id); const n=st.avklarade[id]||0; return `<div class="lappram"><section class="card quest lapp">
       <div class="row" style="justify-content:space-between;flex-wrap:nowrap;align-items:flex-start"><span class="row" style="gap:8px;flex-wrap:nowrap;align-items:center">${(g=>`<canvas class="px saljare" data-npc="${g.ark}:${g.ruta}"></canvas>`)(givare(u.givare, u.id.length*7))}<h2>${esc(u.titel)}</h2></span><span class="tag gold" style="flex:none;white-space:nowrap">${u.beloning} guld</span></div>
       <p class="small muted">Uppdragsgivare: ${esc(u.givare)} · ${esc(u.plats)}, ${esc(u.land)} · ${esc(V.MILJO[u.miljo].namn)} · ${u.rum} rum${n?` · <span class="tag">Klarat ${n} gång${n>1?"er":""}</span>`:""}</p>
@@ -505,6 +506,8 @@ function ritaTavla(){
       <div class="row"><button class="btn stampel" data-anta="${u.id}" ${!party.length?"disabled":""}>Anta uppdraget</button></div></section></div>`}).join("")}</div>
     <div class="row"><button class="btn ghost" data-a="nya">Nya lappar</button><button class="btn ghost" data-a="hem">Tillbaka</button></div>`;
   app.querySelectorAll("canvas[data-npc]").forEach(c=>{ const [ark,ruta]=c.dataset.npc.split(":"); G.ritaNpc(c, ark, Number(ruta), true); });
+  // Scenen: sällskapet står framför anslagstavlan, Lansor vid sitt skrivbord
+  G.ritaVardshus($("#scen"), party.map(id=>({id, ruta:figur(id)})), {npc:givare("Lansor", new Date().getDate()), rum:{bild:"lansors_formedling"}});
   app.onclick = e => {
     const b = e.target.closest("button"); if(!b) return;
     if(b.dataset.a==="hem") return ga("hem");
