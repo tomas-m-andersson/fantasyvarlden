@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:35:23.689Z",
+  "uppdaterad": "2026-11-10T23:35:34.248Z",
   "spel": {
     "version": 1,
-    "tid": 1794353720797,
+    "tid": 1794353731027,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -439,7 +439,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -469,7 +469,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge",
           "fordelNasta": false
         },
@@ -523,7 +523,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "fordelNasta": false
         }
@@ -1065,6 +1065,18 @@
         {
           "text": "Orch faller!",
           "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [5] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski tar 0 skada (3 − 3 rustning).",
+          "cls": "info"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
