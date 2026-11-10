@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:30:03.787Z",
+  "uppdaterad": "2026-11-10T23:30:31.818Z",
   "spel": {
     "version": 1,
-    "tid": 1794353400784,
+    "tid": 1794353428730,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -346,7 +346,9 @@
             "namn": "Larmklocka",
             "text": "Någon trampar på en snubbeltråd och en larmklocka börjar ringa – armborstpilar viner genom gången.",
             "skada": "T6"
-          }
+          },
+          "klar": true,
+          "utfallText": "Någon trampar på en snubbeltråd och en larmklocka börjar ringa – armborstpilar viner genom gången. Galfner Galfner får ta smällen."
         },
         {
           "typ": "rum",
@@ -452,7 +454,7 @@
           "fordelNasta": false
         },
         "galfner": {
-          "kp": 12,
+          "kp": 7,
           "vp": 1,
           "doende": false,
           "ok": 0,
@@ -465,7 +467,8 @@
           ],
           "anvanda": [
             "Armborst",
-            "Finna dolda ting"
+            "Finna dolda ting",
+            "Upptäcka fara"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -713,6 +716,18 @@
         {
           "text": "Sällskapet går djupare in i Svartborgen. Kapitel 2.",
           "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner slår Upptäcka fara: [17] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Någon trampar på en snubbeltråd och en larmklocka börjar ringa – armborstpilar viner genom gången.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner tar 5 skada från Larmklocka. KP 7/12.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
