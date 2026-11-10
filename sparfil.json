@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:29:51.505Z",
+  "uppdaterad": "2026-11-10T23:30:03.787Z",
   "spel": {
     "version": 1,
-    "tid": 1794353388492,
+    "tid": 1794353400784,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -336,9 +336,67 @@
             25
           ],
           "klar": true
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "falla",
+          "text": "Fängelsegården, där desertörerna slagit upp sina tält. Generalens svartröda fanor hänger överallt. Desertörer skrålar en sång om generalens storhet.",
+          "fro": 431656633,
+          "falla": {
+            "namn": "Larmklocka",
+            "text": "Någon trampar på en snubbeltråd och en larmklocka börjar ringa – armborstpilar viner genom gången.",
+            "skada": "T6"
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En cellgång där hälften av celldörrarna är utbrutna. Ett tärningsspel har avbrutits mitt i. Det luktar surt öl och gammal halm. Någon har ristat ”Bakhuvudet Jens var här” på väggen.",
+          "fro": 947725974
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En underjordisk gång med igengallrade hål i golvet. En gammal fånge känner igen er och viskar att ni måste vara galna som kom tillbaka. En trumma slår långsamt någonstans uppe på gården.",
+          "fro": 368422859,
+          "fiender": [
+            "stadsvakt",
+            "desertor",
+            "stadsvakt"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En lång cellgång med rostiga galler på båda sidor. En vaktlista med en enda regel: ”Generalen har alltid rätt”. Det ekar när någon slår igen en järndörr.",
+          "fro": 849848439,
+          "hinder": {
+            "namn": "En låst port",
+            "text": "En tung, låst port. Någon behöver dyrka upp den.",
+            "fard": "Fingerfärdighet",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "ruin",
+              "grotta",
+              "kloak",
+              "gravfalt",
+              "fangelse"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 637684279,
+          "fiender": [
+            "kieslawski",
+            "orch"
+          ]
         }
       ],
-      "i": 4,
+      "i": 5,
       "h": {
         "ff": {
           "kp": 9,
@@ -651,14 +709,18 @@
         {
           "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Svartborgen.",
           "cls": "d"
+        },
+        {
+          "text": "Sällskapet går djupare in i Svartborgen. Kapitel 2.",
+          "cls": "info"
         }
       ],
       "utfall": null,
       "start": "2026-11-11 00:24",
       "utforska": true,
-      "kapitel": 1,
+      "kapitel": 2,
       "djup": 5,
-      "paus": true,
+      "paus": false,
       "anvandaText": [
         "Valven långt under jord, där vattnet droppar",
         "En efterlysning med era ansikten sitter spikad på väggen – 1000 guldmynt",
@@ -669,9 +731,23 @@
         "Råttor har byggt bo i en gammal fångdräkt",
         "Cellen ni själva satt i en gång – nummer sju",
         "Ett porträtt av Kieslawski hänger snett, med alla medaljerna noga målade",
-        "Det är iskallt mellan stenväggarna"
+        "Det är iskallt mellan stenväggarna",
+        "Fängelsegården, där desertörerna slagit upp sina tält",
+        "Generalens svartröda fanor hänger överallt",
+        "Desertörer skrålar en sång om generalens storhet",
+        "En cellgång där hälften av celldörrarna är utbrutna",
+        "Ett tärningsspel har avbrutits mitt i",
+        "Det luktar surt öl och gammal halm",
+        "Någon har ristat ”Bakhuvudet Jens var här” på väggen.",
+        "En underjordisk gång med igengallrade hål i golvet",
+        "En gammal fånge känner igen er och viskar att ni måste vara galna som kom tillbaka",
+        "En trumma slår långsamt någonstans uppe på gården",
+        "En lång cellgång med rostiga galler på båda sidor",
+        "En vaktlista med en enda regel: ”Generalen har alltid rätt”",
+        "Det ekar när någon slår igen en järndörr"
       ],
-      "nyttRekord": true
+      "nyttRekord": true,
+      "kapStart": 5
     },
     "reset": 1793783047660,
     "rekord": {
