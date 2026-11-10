@@ -157,7 +157,7 @@ input[type=text],input[type=password],select{font:inherit;background:var(--bg2);
 /* Rad i basaren: text till vänster, knappen alltid längst till höger på samma rad */
 .vara{display:flex;gap:12px;align-items:center;justify-content:space-between}
 .vara>span{flex:1;min-width:0}
-.vara>.btn{flex:none}
+.vara>.btn{flex:none;min-width:6.6em;text-align:center}
 .platsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
 .platskort{display:flex;flex-direction:column;gap:0;padding:0;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .platskort:disabled{opacity:.5;cursor:not-allowed}
