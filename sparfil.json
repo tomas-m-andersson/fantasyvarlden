@@ -1,14 +1,15 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:26:30.035Z",
+  "uppdaterad": "2026-11-10T23:27:00.389Z",
   "spel": {
     "version": 1,
-    "tid": 1794353186744,
+    "tid": 1794353217317,
     "kassa": 746,
     "packning": [
       "Läkande ört",
       "Flaska vin",
+      "Läkedryck",
       "Läkedryck"
     ],
     "sallskap": [
@@ -291,7 +292,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "Uppe på ringmuren, där vinden river i fanorna. Någon har ristat ett streck för varje dag på väggen – det är väldigt många streck. Vinden viner genom gluggarna.",
-          "fro": 79319115
+          "fro": 79319115,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 24 guld och läkedryck."
         },
         {
           "typ": "rum",
@@ -389,7 +392,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Armborst"
+            "Armborst",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -425,7 +429,7 @@
           "valtVapen": "Stav"
         }
       },
-      "guld": 13,
+      "guld": 37,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Svartborgen. Kapitel 1.",
@@ -494,6 +498,10 @@
         {
           "text": "Desertör 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [7] mot 8 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
