@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:29:46.326Z",
+  "uppdaterad": "2026-11-10T23:29:51.505Z",
   "spel": {
     "version": 1,
-    "tid": 1794353383387,
+    "tid": 1794353388492,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -334,7 +334,8 @@
           "rutor": [
             61,
             25
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -415,7 +416,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst",
           "fordelNasta": false
         },
@@ -445,7 +446,7 @@
           "fordelNasta": false
         }
       },
-      "guld": 37,
+      "guld": 38,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Svartborgen. Kapitel 1.",
@@ -646,14 +647,18 @@
         {
           "text": "Desertör faller!",
           "cls": "d"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Svartborgen.",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-11 00:24",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "Valven långt under jord, där vattnet droppar",
         "En efterlysning med era ansikten sitter spikad på väggen – 1000 guldmynt",
@@ -665,7 +670,8 @@
         "Cellen ni själva satt i en gång – nummer sju",
         "Ett porträtt av Kieslawski hänger snett, med alla medaljerna noga målade",
         "Det är iskallt mellan stenväggarna"
-      ]
+      ],
+      "nyttRekord": true
     },
     "reset": 1793783047660,
     "rekord": {
@@ -683,6 +689,11 @@
         "kapitel": 1,
         "djup": 5,
         "datum": "2026-11-08"
+      },
+      "svartborgen": {
+        "kapitel": 1,
+        "djup": 5,
+        "datum": "2026-11-11"
       }
     }
   }
