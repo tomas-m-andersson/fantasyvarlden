@@ -483,6 +483,8 @@ const GIVARE = {"Porsch Wilson":"porsch","Barden Baror":"baror","Mandor Marvolt"
   "Familjen von Borge":"vonborge","Slasbys församling":"hannes","Eva":"eva","Hövding Atlas":"atlas","Clark":"clark",
   "Borgmästaren i Hagbo":"hagbo","Professor Proppeteus":"proppeteus","Mona":"mona"};
 // Arken tittar åt höger och speglas så att figuren vänder sig mot sällskapet – utom Eva, vars ark redan tittar åt vänster
+// Uppdrag vars slutscen sker i ett annat rum än värdshuset (målad bild i bakgrunder/, ikon = var föremålet ligger)
+const SLUTRUM = { gojan:{bild:"monas_gaststuga", ikon:{x:77, y:55}} };
 const GIVARE_VANSTER = new Set(["givare_eva"]);
 function givare(namn, fro){ const ark = "givare_" + (GIVARE[namn] || "generisk");
   return {ark, ruta: ark==="givare_vonborge" ? (fro||0) % 8 : (fro||0) % 64, spegel: !GIVARE_VANSTER.has(ark)}; }
@@ -580,6 +582,26 @@ function sovandeBulk(steg, antal){
   rum.forEach(s=>{ s.bulk = true; s.bulkText = R.valj(BULK_ROR); });
   const boss = steg.find(s=>s.rumtyp==="boss");
   if(boss) boss.fiender = [boss.fiender[0]];   // i gropen är det bara Bulk mot sällskapet
+  // Efter slutstriden: Garvard väntar utanför portarna och vill ha sin skuld – med ränta
+  steg.push({typ:"rum", rumtyp:"garvard", text:"", fiender:[], ranta:R.t(6)*10, fro:R.t(1000)});
+}
+const SKULD = 150;
+function garvardHtml(steg){
+  return `<p class="berattelse">Utanför de stora portarna står Garvard och väntar, lutad mot en tunna. Han slår ut med armarna. ”Där är ni ju! Och med en tung börs, ser jag. Skulden, mina vänner: ${SKULD} guld. Plus ränta, förstås – ${steg.ranta} guld. Det blir ${SKULD+steg.ranta} guld.”</p>
+    <div class="val"><button class="btn" data-a="garvard" data-g="betala">Betala<span class="sub">${SKULD+steg.ranta} guld</span></button>
+    <button class="btn" data-a="garvard" data-g="Bluffa">Bluffa om räntan<span class="sub">Lyckas: ingen ränta · Misslyckas: dubbel ränta</span></button>
+    <button class="btn" data-a="garvard" data-g="Övertala">Pruta på räntan<span class="sub">Övertala · Lyckas: halva räntan</span></button></div>`;
+}
+function garvardSlag(steg, val, id){
+  const r = st.run; let ranta = steg.ranta, text;
+  if(val==="betala") text = "Ni räknar upp pengarna. Garvard stoppar dem i en börs med sitt eget namn på och klappar er på axeln. ”Trevligt att göra affärer med er.”";
+  else { const s = hjalteSlag(id, val); logga(slagText(HJ[id].namn, s), slagCls(s));
+    if(val==="Bluffa"){ if(s.lyckat){ ranta = 0; text = `${HJ[id].namn} påstår att räntan redan är betald – till Garvards kusin i Batik. Garvard kliar sig i huvudet och nöjer sig med skulden.`; }
+      else { ranta *= 2; text = `${HJ[id].namn} försöker bluffa, men Garvard skrattar högt. ”Försök inte lura en mästare. Nu blir det dubbel ränta.”`; } }
+    else { if(s.lyckat){ ranta = Math.round(ranta/2); text = `${HJ[id].namn} pratar om gammal vänskap och alla gånger ni hjälpt honom. Garvard suckar och går med på halva räntan.`; }
+      else text = `${HJ[id].namn} försöker pruta, men Garvard skakar på huvudet. ”Ränta är ränta. Det är matematik, inte känslor.”`; } }
+  r.skuldRanta = ranta;
+  return klart(steg, `${text} Garvard tar ${SKULD+ranta} guld: ${SKULD} i skuld och ${ranta} i ränta.`);
 }
 function bulkHtml(steg){
   return `<p class="berattelse">${esc(steg.text)}</p><h3>Bulk rör på sig!</h3><p>${esc(steg.bulkText)}</p>
@@ -844,7 +866,7 @@ function ritaRun(){
     <section class="card"><div class="spelledare">${isakHtml(r.i)}<div><span class="small muted">Spelledaren Isak berättar</span><h2>${esc(titel)}</h2></div></div>${innehall}</section>
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
-  const moteBild = steg.mote && MOTE_BILD[steg.mote];
+  const moteBild = steg.rumtyp==="garvard" ? "utanfor_gropen" : steg.mote && MOTE_BILD[steg.mote];
   const ritaRum = orn => G.ritaScen($("#scen"), moteBild || (steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg)), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta","Forsande vatten":"vatten"}[steg.hinder.namn]||""):steg.typ==="resa"&&!moteBild?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
   ritaRum();
   if(r.ornVisa){ const v = r.ornVisa; r.ornVisa = null; spelaOrn(t => ritaRum(t==null ? undefined : {ruta:v.ruta, t, d:v.d})); }
@@ -857,13 +879,16 @@ const DJUR_RUTOR = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,2
 const MOTE_FIGUR = {
   fjass:{ark:"fjass", spegel:false},   // Fjäss-arket tittar redan åt vänster, mot sällskapet
   dunker:{ark:"dunker"},
+  garvard:{ark:"garvard", rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,48,49,50,51,52,53,54,55,56,57]},
   gycklare:{ark:"gycklare", antal:2, rutor:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,48,49,50,51,52,53,54,55,58,59,60]},   // bara de som vänder sig mot sällskapet
   lik:{ark:"lik", rutor:[24,25,26,27,28,29,30,11,14,15,61,62]}   // de som ligger platt
 };
+const GARVARD_RUTOR = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,48,49,50,51,52,53,54,55,56,57];   // med öppen hand, pekande eller räknande mynt
 // Möten med egna målade bakgrunder
 const MOTE_BILD = {orter:"ortgard", dunker:"dunkers_hus"};
 function scenNpcer(steg){
   const r = st.run, ut = [];
+  if(steg.rumtyp==="garvard") return [{ark:"garvard", ruta:GARVARD_RUTOR[(steg.fro||0) % GARVARD_RUTOR.length]}];
   if(steg.jens) return ut;
   const m = steg.mote ? V.MOTEN.find(x=>x.id===steg.mote) : null;
   const egen = m && MOTE_FIGUR[m.id];
@@ -916,6 +941,7 @@ function rumHtml(steg){
   if(steg.klar) return klarHtml(steg);
   if(aktivtVal && aktivtVal.typ==="vem") return vemHtml();
   if(steg.bulk && !steg.bulkKlar) return bulkHtml(steg);
+  if(steg.rumtyp==="garvard") return garvardHtml(steg);
   const t = steg.rumtyp;
   let h = `<p class="berattelse">${esc(steg.text)}</p>`;
   if(t==="strid") h += `<p>Ni är inte ensamma. ${esc(fiendeLista(steg.fiender))} spärrar vägen!</p><div class="val"><button class="btn red" data-a="strid">Till strid!</button>
@@ -939,6 +965,7 @@ function runKlick(b){
   if(a==="vem"){ const v=aktivtVal; aktivtVal=null; v.gor(b.dataset.id); return; }
   if(a==="strid"){ return startaStrid(steg.fiender, {boss:steg.rumtyp==="boss"}); }
   if(a==="hoppa"){ return klart(steg,"Ni går vidare utan att vila."); }
+  if(a==="garvard"){ const g=b.dataset.g; return g==="betala" ? garvardSlag(steg, g) : valjVem(g, g==="Bluffa" ? "Vem bluffar?" : "Vem prutar?", id=>garvardSlag(steg, g, id)); }
   if(a==="bulk"){ const f=b.dataset.f; return valjVem(f, "Vem tar hand om Bulk?", id=>bulkSlag(steg, f, id)); }
   if(a==="smyg"){
     const res = vakna().map(id=>({id,s:hjalteSlag(id,"Smyga")}));
@@ -1461,7 +1488,7 @@ function avslutaStrid(slut){
     });
     r.party.forEach(id=>{ const x=rh(id); if(x.stabil){ x.stabil=false; x.kp=1; logga(`${HJ[id].namn} vaknar upp med 1 KP.`,"info"); } });
     if(steg.rumtyp==="boss" && r.utforska){ steg.klar=true; spara(); return kapitelKlart(); }
-    if(steg.rumtyp==="boss"){ steg.klar=true; steg.utfallText=`${r.q.foremal ? "Ni har fått tag på: "+r.q.foremal+". " : ""}${V.FIENDER[r.q.boss].namn} är besegrad!`; spara(); return avslutaRun(true); }
+    if(steg.rumtyp==="boss"){ steg.klar=true; steg.utfallText=`${r.q.foremal ? "Ni har fått tag på: "+r.q.foremal+". " : ""}${V.FIENDER[r.q.boss].namn} är besegrad!`; spara(); if(r.bulk!=null){ steg.utfallText = "Bulk faller ihop i sanden och somnar om, med ett lyckligt leende. Publiken jublar och Gojan kliver ner från läktaren med en tung börs."; return ritaRun(); } return avslutaRun(true); }
     steg.klar = true; steg.utfallText = `Segern är er!${g?` Ni plundrar fienderna på ${g} guld.`:""}${steg.efterStrid?" ":""}`;
     spara(); return ritaRun();
   }
@@ -1609,9 +1636,9 @@ function avslutaRun(lyckat, orsak, gavUpp){
     levande.forEach(id=>{ hs(id).segrar=(hs(id).segrar||0)+1; const x=rh(id); const kand = x.anvanda.filter(f=>!x.markerade.includes(f)); if(kand.length) x.markerade.push(R.valj(kand)); });
   } else if(lyckat){
     beloning = r.q.beloning; if(r.q.givare==="Lansor"){ avgift = Math.round(beloning*0.1); }
-    if(r.q.skuld){ const ranta = R.t(6)*10; avgift = 150 + ranta;
-      var avgiftText = `${r.q.skuld} väntar utanför och tar ${avgift} guld: 150 i skuld och ${ranta} i ränta`;
-      rad.push(`${r.q.skuld} räknar pengarna två gånger, stoppar dem i en börs med sitt eget namn på och påpekar att räntan fortsätter att ticka.`); }
+    if(r.q.skuld){ const ranta = r.skuldRanta ?? R.t(6)*10; avgift = SKULD + ranta;
+      var avgiftText = `${r.q.skuld} tog ${avgift} guld: ${SKULD} i skuld och ${ranta} i ränta`;
+      }
     st.kassa += beloning - avgift + r.guld;
     st.avklarade[r.q.id] = (st.avklarade[r.q.id]||0)+1;
     levande.forEach(id=>{ hs(id).segrar=(hs(id).segrar||0)+1; const x=rh(id); const kand = x.anvanda.filter(f=>!x.markerade.includes(f)); if(kand.length) x.markerade.push(R.valj(kand)); });
@@ -1650,7 +1677,7 @@ function ritaSlut(){
   // tar emot sällskapet och uppdragets föremål ligger på bordet. Annars står sällskapet kvar på platsen.
   if(u.lyckat && !r.utforska){
     const ik = UPPDRAG_IKON[r.q.id], [ia, ir] = ik ? ik.split(":") : [];
-    G.ritaVardshus($("#scen"), scenHjaltar().filter(h=>!rh(h.id).dod), {npc:givare(r.q.givare, r.q.id.length*7), ikon: ik ? {ark:IKONARK[ia], ruta:Number(ir)} : null});
+    G.ritaVardshus($("#scen"), scenHjaltar().filter(h=>!rh(h.id).dod), {npc:givare(r.q.givare, r.q.id.length*7), ikon: ik ? {ark:IKONARK[ia], ruta:Number(ir)} : null, rum:SLUTRUM[r.q.id]});
   } else G.ritaScen($("#scen"), scenMiljo(r.q.miljo), [], 99, u.lyckat?"skatt":null, scenHjaltar());
   fyllIkoner(app);
   scrollaLogg();

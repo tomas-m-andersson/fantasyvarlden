@@ -826,6 +826,7 @@ G.ritaPool = (canvas, doda) => {
 // ---------- Värdshuset på startsidan: möbler ur npc/mobler.png, värden ur npc/kopman.png ----------
 // extra (valfritt) = slutscenen efter ett uppdrag: {npc:{ark, ruta, spegel}} = uppdragsgivaren som tar emot sällskapet,
 // {ikon:{ark, ruta}} = uppdragets föremål som ligger på bordet framför Isak
+// {rum:{bild, ikon:{x,y}}} = ett annat rum än värdshuset (t.ex. Monas gäststuga): en hel målad bild, utan Isak och värden
 const IKON_PA_BORD = {x:96, y:52}, UPPDRAGSGIVARE_PLATS = {x:104, y:51};
 G.ritaVardshus = (canvas, hjaltar, extra) => {
   canvas._vh = [hjaltar, extra]; canvas._scen = null; startaAndning();
@@ -834,20 +835,24 @@ G.ritaVardshus = (canvas, hjaltar, extra) => {
   // Målad bakgrund (bakgrunder/vardshus2.png, 320×180) med spis, älghuvud, sköld, anslagstavla, bord och bardisk.
   // Bordet och bardisken finns också som förgrund (vardshus2_fram.png), så att Isak kan sitta bakom bordet
   // och värdshusvärden stå bakom disken.
-  const tak = G.npcBild("../bakgrunder/vardshus2"), fram = G.npcBild("../bakgrunder/vardshus2_fram");
+  const rum = extra && extra.rum;
+  const tak = G.npcBild("../bakgrunder/"+(rum ? rum.bild : "vardshus2")), fram = rum ? null : G.npcBild("../bakgrunder/vardshus2_fram");
   const kop = G.npcBild("kopman"), isak = G.npcBild("isak_hel"), vantar=[];
   const klar = img => img.complete && img.naturalWidth;
   const npcImg = extra && extra.npc ? G.npcBild(extra.npc.ark) : null, ikonImg = extra && extra.ikon ? G.npcBild(extra.ikon.ark) : null;
-  [tak, fram, kop, isak, npcImg, ikonImg].forEach(i=>{ if(i && !klar(i)) vantar.push(i); });
+  [tak, fram, rum?null:kop, rum?null:isak, npcImg, ikonImg].forEach(i=>{ if(i && !klar(i)) vantar.push(i); });
   canvas.width=W*2; canvas.height=H*2; ctx.imageSmoothingEnabled=false;
   if(vantar.length){ R(0,0,W*2,H*2,"#2a1a10"); [...new Set(vantar)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar,extra),{once:true})); return; }
   ctx.drawImage(tak, 0, 0);
   ctx.setTransform(2,0,0,2,0,0);
   // spelledaren Isak sitter på stolen bakom bordet och värdshusvärden står bakom bardisken
-  G.ritaRuta(ctx, isak, (new Date().getDate())%64, 78, 38 - andas(7), 32, true);
-  G.ritaRuta(ctx, kop, 2, 132, 32 - andas(8), 32, true);
-  ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(fram, 0, 0); ctx.setTransform(2,0,0,2,0,0);
-  if(ikonImg) G.ritaRuta(ctx, ikonImg, extra.ikon.ruta, IKON_PA_BORD.x, IKON_PA_BORD.y, 16);
+  if(!rum){
+    G.ritaRuta(ctx, isak, (new Date().getDate())%64, 78, 38 - andas(7), 32, true);
+    G.ritaRuta(ctx, kop, 2, 132, 32 - andas(8), 32, true);
+    ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(fram, 0, 0); ctx.setTransform(2,0,0,2,0,0);
+  }
+  const ip = (rum && rum.ikon) || IKON_PA_BORD;
+  if(ikonImg) G.ritaRuta(ctx, ikonImg, extra.ikon.ruta, ip.x, ip.y, 16);
   if(npcImg){ const n = extra.npc; R(UPPDRAGSGIVARE_PLATS.x+9, UPPDRAGSGIVARE_PLATS.y+30, 14, 2, "#0005");
     G.ritaRuta(ctx, npcImg, n.ruta, UPPDRAGSGIVARE_PLATS.x, UPPDRAGSGIVARE_PLATS.y - andas(9), 32, n.spegel !== false); }
   // sällskapet står på golvet till vänster
@@ -860,7 +865,7 @@ G.ritaVardshus = (canvas, hjaltar, extra) => {
     ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, x, y - andas(i), 32, 32);
   });
   ctx.setTransform(1,0,0,1,0,0);
-  G.eldLager(canvas, VARDSHUS_ELDAR);
+  if(!rum) G.eldLager(canvas, VARDSHUS_ELDAR);
   if(v2.length) [...new Set(v2)].forEach(img=>img.addEventListener("load",()=>G.ritaVardshus(canvas,hjaltar,extra),{once:true}));
 };
 
