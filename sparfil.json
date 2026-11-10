@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:23:38.047Z",
+  "uppdaterad": "2026-11-10T23:23:46.123Z",
   "spel": {
     "version": 1,
-    "tid": 1794353013409,
-    "kassa": 1196,
+    "tid": 1794353022478,
+    "kassa": 1046,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -39,7 +39,7 @@
         "aventyr": 3,
         "segrar": 1,
         "vapen": [],
-        "rustning": null
+        "rustning": "Ringbrynja"
       },
       "gofnagrim": {
         "dod": false,
@@ -172,6 +172,10 @@
       "gojan": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-11 00:23",
+        "text": "Pescatore Vesuvio köpte Ringbrynja för 150 guld."
+      },
       {
         "tid": "2026-11-11 00:23",
         "text": "FF köpte Ringbrynja för 150 guld."
