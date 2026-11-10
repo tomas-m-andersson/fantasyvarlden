@@ -235,10 +235,10 @@ function ritaHem(){
     <p class="small muted">${flytt.id?`<b>Tryck på den plats ${esc(HJ[flytt.id].namn)} ska flytta till</b> (eller på hen själv för att ångra).`:`<b>Håll in</b> på en hjälte här ovanför och dra hen till en annan plats för att byta ordning i TV:n. <b>Håll in</b> på en hjälte i galleriet för att ta med eller ta bort hen. Välj 1–4 hjältar.`} ${party.length?"":"Tips: fyra hjältar klarar mer, men en ensam hjälte får all ära."}</p>
     <div class="row"><button class="btn ghost small" data-a="slumpa" ${st.run?"disabled":""}>🎲 Slumpa fram ett sällskap</button></div>
     <div class="vagskylt" role="group" aria-label="Vart vill ni gå?">
-      <button class="pil vanster" style="left:14.53%;top:13.02%;width:69.77%;height:15.10%" data-a="tavla" ${!party.length||st.run?"disabled":""}>Lansors uppdragsförmedling</button>
-      <button class="pil hoger" style="left:16.28%;top:32.29%;width:69.19%;height:15.10%" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska världen</button>
-      <button class="pil vanster" style="left:14.53%;top:51.56%;width:68.90%;height:15.10%" data-a="arena">Gladiatorgroparna</button>
-      <button class="pil hoger" style="left:16.28%;top:70.83%;width:69.19%;height:15.10%" data-a="basar">Basaren</button>
+      <button class="pil vanster" style="left:12.21%;top:6.38%;width:78.49%;height:17.02%" data-a="tavla" ${!party.length||st.run?"disabled":""}>Lansors uppdragsförmedling</button>
+      <button class="pil hoger" style="left:9.88%;top:26.60%;width:77.91%;height:17.38%" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska världen</button>
+      <button class="pil vanster" style="left:12.21%;top:47.52%;width:78.49%;height:17.02%" data-a="arena">Gladiatorgroparna</button>
+      <button class="pil hoger" style="left:9.88%;top:67.73%;width:77.91%;height:17.38%" data-a="basar">Basaren</button>
     </div>
     <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
   </section>`;
