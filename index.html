@@ -15,7 +15,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Fantasyvärlden">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Alegreya+Sans:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Alegreya+Sans:wght@400;500;700;800&display=swap">
 <style>
 :root{
   /* --pix = rubriker, knappar och siffror (Nunito Extra Bold) */
@@ -215,30 +215,48 @@ table.stat td.notis{font-family:inherit;font-weight:400;color:var(--muted);text-
 /* I mobilläget ligger hemmets tre stora knappar på varsin rad och är lika breda. */
 @media(max-width:600px){.hemval{flex-direction:column;align-items:stretch}.hemval .btn{width:100%}}
 
-/* Lansors anslagstavla: uppdragen som riktiga lappar uppsatta på en korktavla */
-.anslag{display:flex;flex-direction:column;gap:22px;padding:22px 14px 26px;border-radius:6px;border:8px solid #5a3b1f;
-  box-shadow:inset 0 0 0 2px #2e1d0e, inset 0 6px 14px #0007, 0 3px 0 #2e1d0e;
-  background:#9a6b3f radial-gradient(#7d5430 1px, transparent 1.6px) 0 0/9px 9px, radial-gradient(#b4844f 1px, transparent 1.4px) 4px 5px/11px 11px;
-  background-color:#9a6b3f}
-.lappram{filter:drop-shadow(0 5px 6px #000a);transform:rotate(-1.2deg);position:relative}
-.lappram:nth-child(2n){transform:rotate(.9deg)}
-.lappram:nth-child(3n){transform:rotate(-.4deg)}
-.lappram::before{content:"";position:absolute;z-index:2;left:50%;top:-7px;width:16px;height:16px;margin-left:-8px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%, #ff8a7a, #c62f22 55%, #6d140c);box-shadow:0 3px 3px #0008}
-.lappram:nth-child(2n)::before{background:radial-gradient(circle at 35% 35%, #9ad0ff, #2f6fc6 55%, #12335e)}
-.lappram:nth-child(3n)::before{background:radial-gradient(circle at 35% 35%, #fff09a, #c9a22f 55%, #6b520f)}
-.card.lapp{border:0;border-radius:2px;padding:20px 16px 22px;color:#3a2a16;
-  background:#ecdcb0 radial-gradient(ellipse at 85% 15%, #d8bf86 0, transparent 45%), radial-gradient(ellipse at 10% 90%, #dcc58f 0, transparent 40%);
-  background-color:#ecdcb0;
-  clip-path:polygon(0 0,100% 0,100% calc(100% - 6px),100.0% calc(100% - 4px),95.8% calc(100% - 2px),91.7% calc(100% - 6px),87.5% calc(100% - 5px),83.3% calc(100% - 0px),79.2% calc(100% - 0px),75.0% calc(100% - 1px),70.8% calc(100% - 3px),66.7% calc(100% - 0px),62.5% calc(100% - 4px),58.3% calc(100% - 3px),54.2% calc(100% - 0px),50.0% calc(100% - 3px),45.8% calc(100% - 2px),41.7% calc(100% - 0px),37.5% calc(100% - 0px),33.3% calc(100% - 6px),29.2% calc(100% - 6px),25.0% calc(100% - 0px),20.8% calc(100% - 2px),16.7% calc(100% - 0px),12.5% calc(100% - 3px),8.3% calc(100% - 6px),4.2% calc(100% - 0px),0.0% calc(100% - 1px))}
-.card.lapp h2{color:#7a2414}
-.card.lapp .muted{color:#6b5638}
-.card.lapp .tag{background:#f6ead0;border-color:#b89a63;color:#5a4426}
-.card.lapp .foremal{background:#f4e6c4;border:1px dashed #b89a63;color:#3a2a16}
-.card.lapp canvas.saljare{background:#f4e6c4;border-color:#b89a63}
-.btn.stampel{background:#9a2c1f;color:#f6e7c6;box-shadow:0 4px 0 #5c160d;border:2px solid #c9564a;border-radius:20px;letter-spacing:.03em}
-.btn.stampel:active{box-shadow:0 1px 0 #5c160d}
-.btn.stampel:disabled{background:#8a7a64;border-color:#a8977c;box-shadow:0 4px 0 #5e5140;color:#e8dcc4}
+/* Lansors anslagstavla: uppdragen som slitna lappar uppspikade på en korktavla */
+.anslag{display:flex;flex-direction:column;gap:24px;padding:24px 12px 28px;border-radius:4px;border:10px solid #4a2f17;
+  border-image:repeating-linear-gradient(90deg,#5a3a1d 0 14px,#4a2f17 14px 22px,#5e3e20 22px 40px) 10;
+  box-shadow:inset 0 0 0 2px #2a1a0b, inset 0 8px 18px #000a, 0 3px 0 #2a1a0b;
+  background:radial-gradient(#6f4a28 1px, transparent 1.7px) 0 0/8px 8px, radial-gradient(#b08050 1px, transparent 1.5px) 3px 4px/11px 11px, radial-gradient(ellipse at 50% 50%, #9a6b3f 40%, #6e4a2a 100%);
+  background-color:#8d623a}
+.lappram{filter:drop-shadow(0 6px 5px #000b);transform:rotate(-1.6deg);position:relative}
+.lappram:nth-child(2n){transform:rotate(1.2deg)}
+.lappram:nth-child(3n){transform:rotate(-.6deg)}
+/* smidda järnspikar */
+.lappram::before{content:"";position:absolute;z-index:2;left:50%;top:4px;width:13px;height:13px;margin-left:-6px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #c9c2b4, #6d675e 45%, #2b2722 75%);box-shadow:0 2px 2px #000a, 0 0 0 2px #3b2a1a55}
+.lappram:nth-child(2n)::before{left:18%}
+.lappram:nth-child(3n)::before{left:80%}
+.card.lapp{border:0;border-radius:0;padding:26px 18px 30px;color:#33230f;position:relative;
+  background:
+    linear-gradient(to bottom, transparent 41%, #6b4a2014 42%, #fff6dc40 43%, transparent 44%),
+    radial-gradient(ellipse at 100% 100%, #3a210c 0, #6a3e17aa 7%, #8a5a2a55 13%, transparent 22%),
+    radial-gradient(ellipse at 0% 0%, #7a5428aa 0, transparent 14%),
+    radial-gradient(circle at 78% 22%, transparent 9%, #a9824a33 10%, transparent 12%),
+    radial-gradient(ellipse at 18% 70%, #b8935944 0, transparent 22%),
+    radial-gradient(ellipse at 65% 85%, #9c7a4433 0, transparent 18%),
+    repeating-linear-gradient(93deg, #5a3a1008 0 1px, transparent 1px 13px, #5a3a100a 13px 14px, transparent 14px 31px),
+    radial-gradient(ellipse at 50% 45%, #e9d6a4 35%, #d2b77c 75%, #a8834a 100%);
+  background-color:#ddc58f;
+  clip-path:polygon(0.0% 3px,5.0% 4px,10.0% 3px,15.0% 3px,20.0% 4px,25.0% 4px,30.0% 1px,35.0% 1px,40.0% 4px,45.0% 3px,50.0% 5px,55.0% 4px,60.0% 1px,65.0% 0px,70.0% 3px,75.0% 2px,80.0% 1px,85.0% 0px,90.0% 4px,95.0% 5px,100.0% 5px,calc(100% - 0px) 0.0%,calc(100% - 4px) 7.1%,calc(100% - 3px) 14.3%,calc(100% - 3px) 21.4%,calc(100% - 4px) 28.6%,calc(100% - 1px) 35.7%,calc(100% - 4px) 42.9%,calc(100% - 0px) 50.0%,calc(100% - 4px) 57.1%,calc(100% - 0px) 64.3%,calc(100% - 0px) 71.4%,calc(100% - 0px) 78.6%,calc(100% - 1px) 85.7%,calc(100% - 1px) 92.9%,calc(100% - 4px) 100.0%,100.0% calc(100% - 0px),95.5% calc(100% - 7px),90.9% calc(100% - 5px),86.4% calc(100% - 7px),81.8% calc(100% - 3px),77.3% calc(100% - 8px),72.7% calc(100% - 3px),68.2% calc(100% - 4px),63.6% calc(100% - 7px),59.1% calc(100% - 0px),54.5% calc(100% - 1px),50.0% calc(100% - 7px),45.5% calc(100% - 4px),40.9% calc(100% - 6px),36.4% calc(100% - 8px),31.8% calc(100% - 1px),27.3% calc(100% - 4px),22.7% calc(100% - 5px),18.2% calc(100% - 3px),13.6% calc(100% - 8px),9.1% calc(100% - 4px),4.5% calc(100% - 0px),0.0% calc(100% - 1px),4px 100.0%,0px 92.9%,3px 85.7%,0px 78.6%,2px 71.4%,3px 64.3%,0px 57.1%,0px 50.0%,0px 42.9%,1px 35.7%,1px 28.6%,0px 21.4%,3px 14.3%,3px 7.1%,3px 0.0%)}
+.card.lapp h2{color:#6e1c10;font-family:"IM Fell English SC",Georgia,serif;font-weight:400;font-size:1.45rem;letter-spacing:.01em;text-shadow:0 1px 0 #f3e3b955}
+.card.lapp > p:not(.small){font-family:"IM Fell English",Georgia,serif;font-size:1.08rem;line-height:1.4}
+.card.lapp .muted{color:#5e4728}
+.card.lapp .tag{background:#efdcb0aa;border-color:#8f6f3e;color:#4a3519;font-weight:700}
+.card.lapp .foremal{background:#e6cf9a88;border:1px dashed #8f6f3e;color:#33230f}
+.card.lapp canvas.saljare{background:#e6cf9a;border-color:#8f6f3e;filter:sepia(.25)}
+/* vaxsigill nere i hörnet */
+.card.lapp::after{content:"✶";position:absolute;right:16px;top:58px;width:30px;height:28px;display:grid;place-items:center;
+  font-size:15px;line-height:1;color:#5e0f08;text-shadow:0 1px 0 #d2584a88;
+  border-radius:52% 48% 58% 42% / 46% 56% 44% 54%;
+  background:radial-gradient(circle at 42% 38%, #b8382a, #8e1f14 55%, #5e0f08 90%);
+  box-shadow:0 1px 1px #0005, inset 0 0 0 3px #6e160d, inset 0 0 0 5px #a12e2266;transform:rotate(-14deg);opacity:.85;pointer-events:none}
+.btn.stampel{background:#7d2015;color:#f3e0b8;box-shadow:0 4px 0 #4a0f08;border:2px solid #a83a2c;border-radius:3px;letter-spacing:.04em;
+  font-family:"IM Fell English SC",Georgia,serif;font-weight:400;font-size:1.1rem;text-shadow:0 1px 0 #000a}
+.btn.stampel:active{box-shadow:0 1px 0 #4a0f08}
+.btn.stampel:disabled{background:#7a6a54;border-color:#97866a;box-shadow:0 4px 0 #4f4434;color:#e2d6bc}
 </style>
 </head>
 <body>
