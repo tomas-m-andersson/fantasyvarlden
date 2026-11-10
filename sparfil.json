@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:38:51.310Z",
+  "uppdaterad": "2026-11-10T23:39:25.198Z",
   "spel": {
     "version": 1,
-    "tid": 1794353928315,
+    "tid": 1794353962266,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -162,9 +162,9 @@
       }
     },
     "tavla": [
-      "broncos",
-      "gripagg",
-      "patricia"
+      "gojan",
+      "barnen",
+      "gripagg"
     ],
     "avklarade": {
       "skold": 1,
