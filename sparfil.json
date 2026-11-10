@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:36:22.508Z",
+  "uppdaterad": "2026-11-10T23:36:29.738Z",
   "spel": {
     "version": 1,
-    "tid": 1794353779525,
+    "tid": 1794353786761,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -499,7 +499,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst",
           "fordelNasta": false,
           "nackdelNasta": false
@@ -1135,6 +1135,14 @@
         },
         {
           "text": "General Kieslawski tar 7 skada (10 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [7] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski tar 1 skada (4 − 3 rustning).",
           "cls": "ok"
         }
       ],
