@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:23:54.869Z",
+  "uppdaterad": "2026-11-10T23:24:50.236Z",
   "spel": {
     "version": 1,
-    "tid": 1794353031111,
+    "tid": 1794353086322,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -36,7 +36,7 @@
         "bonus": {
           "Läkekonst": 1
         },
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 1,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -46,7 +46,7 @@
         "bonus": {
           "Magi": 1
         },
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 1,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -114,7 +114,7 @@
         "bonus": {
           "Spjut": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -145,7 +145,7 @@
           "Finna dolda ting": 1,
           "Armborst": 1
         },
-        "aventyr": 1,
+        "aventyr": 2,
         "segrar": 1,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -249,7 +249,162 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-svartborgen",
+        "titel": "Svartborgen",
+        "plats": "Svartborgen",
+        "land": "Waltsala",
+        "miljo": "fangelse",
+        "boss": "kieslawski",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "svartborgen"
+      },
+      "party": [
+        "ff",
+        "pescatore",
+        "galfner",
+        "gofnagrim"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Valven långt under jord, där vattnet droppar. En efterlysning med era ansikten sitter spikad på väggen – 1000 guldmynt.",
+          "fro": 297319818,
+          "fiender": [
+            "desertor",
+            "desertor"
+          ],
+          "rutor": [
+            38,
+            51
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Uppe på ringmuren, där vinden river i fanorna. Någon har ristat ett streck för varje dag på väggen – det är väldigt många streck. Vinden viner genom gluggarna.",
+          "fro": 79319115
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "Ringmuren vid ett halvt raserat vakttorn. Råttor har byggt bo i en gammal fångdräkt.",
+          "fro": 602835815
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "Cellen ni själva satt i en gång – nummer sju. Ett porträtt av Kieslawski hänger snett, med alla medaljerna noga målade. Det är iskallt mellan stenväggarna.",
+          "fro": 905454976,
+          "hinder": {
+            "namn": "En låst cell",
+            "text": "Vägen går genom en låst cell. Någon stark måste bända upp gallret.",
+            "fard": "STY",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "fangelse"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 919268977,
+          "fiender": [
+            "kieslawski",
+            "desertor"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "ff": {
+          "kp": 13,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkade fikon"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "pescatore": {
+          "kp": 11,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "gofnagrim": {
+          "kp": 13,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Svartborgen. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-11 00:24",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false,
+      "anvandaText": [
+        "Valven långt under jord, där vattnet droppar",
+        "En efterlysning med era ansikten sitter spikad på väggen – 1000 guldmynt",
+        "Uppe på ringmuren, där vinden river i fanorna",
+        "Någon har ristat ett streck för varje dag på väggen – det är väldigt många streck",
+        "Vinden viner genom gluggarna",
+        "Ringmuren vid ett halvt raserat vakttorn",
+        "Råttor har byggt bo i en gammal fångdräkt",
+        "Cellen ni själva satt i en gång – nummer sju",
+        "Ett porträtt av Kieslawski hänger snett, med alla medaljerna noga målade",
+        "Det är iskallt mellan stenväggarna"
+      ]
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
