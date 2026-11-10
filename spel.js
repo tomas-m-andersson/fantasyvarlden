@@ -238,7 +238,7 @@ function ritaHem(){
       <button class="btn" data-a="tavla" ${!party.length||st.run?"disabled":""}>Till uppdragsförmedlingen<span class="sub">Lansors anslagstavla</span></button>
       <button class="btn" data-a="platser" ${!party.length||st.run?"disabled":""}>Utforska en plats<span class="sub">Ingen berättelse – se hur djupt ni kommer</span></button>
       <button class="btn" data-a="arena">Gladiatorgroparna<span class="sub">Möt vem som helst – utan risk</span></button>
-      <button class="btn ghost" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
+      <button class="btn" data-a="basar">Basaren<span class="sub">Köp drycker och utrustning</span></button>
     </div>
     <div class="small muted packning">Packning: ${st.packning.length?packningHtml(st.packning):"tom"}</div>
   </section>`;
