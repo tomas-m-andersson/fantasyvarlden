@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:31:27.581Z",
+  "uppdaterad": "2026-11-10T23:31:33.510Z",
   "spel": {
     "version": 1,
-    "tid": 1794353484637,
+    "tid": 1794353490434,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -490,7 +490,7 @@
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 8,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -509,7 +509,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav",
           "fordelNasta": true
         }
@@ -778,6 +778,22 @@
         },
         {
           "text": "FF tar 0 skada (2 − 3 rustning) från Stadsvakt 1. KP 9/13.",
+          "cls": "info"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Desertör anfaller Pescatore Vesuvio: [2 / 1 → 2] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 0 skada (2 − 3 rustning) från Desertör. KP 11/11.",
           "cls": "info"
         }
       ],
