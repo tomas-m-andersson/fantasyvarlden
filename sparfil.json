@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:28:50.530Z",
+  "uppdaterad": "2026-11-10T23:28:54.983Z",
   "spel": {
     "version": 1,
-    "tid": 1794353327324,
+    "tid": 1794353332041,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -392,7 +392,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -411,7 +411,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -550,6 +550,18 @@
         },
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "General Kieslawski tvekar och missar tillfället.",
           "cls": "ok"
         }
       ],
