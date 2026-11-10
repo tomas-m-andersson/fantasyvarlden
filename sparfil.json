@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-10T23:34:50.459Z",
+  "uppdaterad": "2026-11-10T23:34:54.833Z",
   "spel": {
     "version": 1,
-    "tid": 1794353687284,
+    "tid": 1794353691682,
     "kassa": 746,
     "packning": [
       "Läkande ört",
@@ -406,10 +406,14 @@
           "fiender": [
             "kieslawski",
             "orch"
+          ],
+          "rutor": [
+            23,
+            27
           ]
         }
       ],
-      "i": 8,
+      "i": 9,
       "h": {
         "ff": {
           "kp": 9,
@@ -1019,7 +1023,7 @@
       "start": "2026-11-11 00:24",
       "utforska": true,
       "kapitel": 2,
-      "djup": 8,
+      "djup": 9,
       "paus": false,
       "anvandaText": [
         "Valven långt under jord, där vattnet droppar",
