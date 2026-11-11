@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:29.978Z",
+  "uppdaterad": "2026-11-11T17:14:35.916Z",
   "spel": {
     "version": 1,
-    "tid": 1794417267005,
+    "tid": 1794417272937,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -308,7 +308,9 @@
           "rutor": [
             9,
             45
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 3 guld."
         },
         {
           "typ": "rum",
@@ -367,7 +369,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -414,7 +416,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -445,7 +447,7 @@
           "valtVapen": "Stav"
         }
       },
-      "guld": 0,
+      "guld": 3,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
