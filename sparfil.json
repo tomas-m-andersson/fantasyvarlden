@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:46:15.236Z",
+  "uppdaterad": "2026-11-11T22:46:28.114Z",
   "spel": {
     "version": 1,
-    "tid": 1794437172327,
+    "tid": 1794437185111,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -373,7 +373,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Spjut"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -384,7 +385,7 @@
           "stoppad": 0,
           "agerat": false,
           "fordelNasta": false,
-          "valtVapen": "Gorgor"
+          "valtVapen": "Kort spjut"
         },
         "pescatore": {
           "kp": 11,
@@ -413,7 +414,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -432,13 +433,13 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 10,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -456,7 +457,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -542,6 +543,34 @@
         {
           "text": "Orch 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [4] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 1 skada (4 − 3 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
