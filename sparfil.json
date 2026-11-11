@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:17:39.092Z",
+  "uppdaterad": "2026-11-11T17:17:47.104Z",
   "spel": {
     "version": 1,
-    "tid": 1794417456143,
+    "tid": 1794417464045,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -386,7 +386,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -412,7 +412,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true,
           "valtVapen": "Kort båge"
         },
@@ -437,7 +437,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true,
           "valtVapen": "Armborst"
         },
@@ -464,7 +464,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true,
+          "fordelNasta": false,
           "valtVapen": "Stav"
         }
       },
@@ -741,6 +741,18 @@
         {
           "text": "Harpydrottningen tar 4 skada (6 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav med fördel: [4 / 14 → 4] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 1 skada (3 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
