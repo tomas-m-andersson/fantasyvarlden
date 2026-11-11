@@ -109,7 +109,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Skattkistan ur kistarket (npc/kista.png, rad 2 är tom) och lägerelden ur möbelarket (npc/mobler.png, ruta 36)
   if(extra==="skatt"){
     const kista = G.npcBild("kista"), r = KISTOR[Math.floor(slump((fro||7)*13+1)()*KISTOR.length)];
-    if(kista.complete && kista.naturalWidth){ ctx.fillStyle="#0005"; ctx.fillRect(90, 77+markNer, 20, 3); G.ritaRuta(ctx, kista, r, 88, 55+markNer, 24); }   // står på marken i höjd med hjältarnas fötter
+    if(kista.complete && kista.naturalWidth){ const kx = 88 + (KISTA_X[bgId] ?? 0); ctx.fillStyle="#0005"; ctx.fillRect(kx+2, 77+markNer, 20, 3); G.ritaRuta(ctx, kista, r, kx, 55+markNer, 24); }   // står på marken i höjd med hjältarnas fötter
     else omRitaVid(kista);
   }
   if(extra==="vila" && !window.BAKGRUND.harEgen(bgId)){   // lägerbilderna har redan en eld
@@ -485,6 +485,8 @@ G.snoLager = (canvas, pa) => {
 
 // Miljöer där marken i den målade bilden ligger längre ner, så att figurerna inte svävar (pixlar i 160×90)
 // (nyckeln kan vara en miljö eller en enskild bild, t.ex. klyfta_ute2)
+// Flytta skattkistan i sidled i vissa bilder (plus = åt höger), t.ex. så att den inte står framför orchernas lägereld
+const KISTA_X = { boss_orch: 26 };
 const KISTOR = Array.from({length:64},(_,i)=>i).filter(i=>i<8||i>15);   // npc/kista.png: rad 2 är tom
 const MARK_NER = { lager_berg: -5, svartborgen1: 4, utanfor_gropen: 5, mt_kraknor1: 5, mt_kraknor2: 3, doda_sjon1: 4, doda_sjon2: 4, gollenskogen1: 4, gollenskogen3: 6, krusbarsberget1: 5, krusbarsberget2: 4, krusbarsberget3: 5, marmoracs_kyrkogard1: 4, marmoracs_kyrkogard2: 4, skog2: 5, skog2natt: 5, skog4: 6, skog4natt: 6, skog5: 5, skog5natt: 5, gruva1: 6, gruva2: 7, kloak1: 5, vesselberget2: 6, berg7: 5, lager_ute: 4, lager_ute2: 5, ortgard1: 6, ortgard2: 6, dunkers_hus: 4, grotta7: 5, arena_tra: 4, arena_tra_tom: 4, arena_sten: 6, arena_sten_tom: 6, basar: 9, port_inne: 6, port_ute: 6, klippa: 6, boss_orch: 5, boss_svartalf: 3, boss_dodasjon: 7, boss_drake: 6, boss_grip: 6, boss_harpyor: 6, tehandeln: 6, vag1: 6, vag2: 6, vag3: 6, vag4: 6, skog3: 6, skog3natt: 6, klyfta_ute: -13, klyfta_ute2: -13, klyfta_inne: -18, klyfta_inne2: -19 };
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
