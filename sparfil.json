@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:10:24.107Z",
+  "uppdaterad": "2026-11-11T17:10:27.485Z",
   "spel": {
     "version": 1,
-    "tid": 1794417021043,
+    "tid": 1794417024464,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -381,11 +381,12 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Gorgor"
+          "valtVapen": "Gorgor",
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 11,
-          "vp": 9,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -403,7 +404,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "fordelNasta": true
         },
         "galfner": {
           "kp": 12,
@@ -423,7 +425,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "fordelNasta": true
         },
         "gofnagrim": {
           "kp": 10,
@@ -443,7 +446,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "fordelNasta": true
         }
       },
       "guld": 0,
@@ -483,6 +487,14 @@
         {
           "text": "FF (Gorgor) slår Svärd: [15] mot 14 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
