@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:43:20.351Z",
+  "uppdaterad": "2026-11-11T16:43:23.489Z",
   "spel": {
     "version": 1,
-    "tid": 1794415397392,
+    "tid": 1794415400474,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -340,10 +340,14 @@
           "fiender": [
             "harpydrottning",
             "varg"
+          ],
+          "rutor": [
+            15,
+            55
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "ff": {
           "kp": 13,
@@ -581,7 +585,7 @@
       "start": "2026-11-11 17:39",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false,
       "anvandaText": [
         "En glänta där solen knappt når ner",
