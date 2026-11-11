@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:14.104Z",
+  "uppdaterad": "2026-11-11T17:14:26.183Z",
   "spel": {
     "version": 1,
-    "tid": 1794417251120,
+    "tid": 1794417263227,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -367,9 +367,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut",
-          "fordelNasta": true
+          "fordelNasta": false
         },
         "pescatore": {
           "kp": 11,
@@ -404,7 +404,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Armborst"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -413,10 +415,11 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "valtVapen": "Armborst"
         },
         "gofnagrim": {
-          "kp": 13,
+          "kp": 12,
           "vp": 13,
           "doende": false,
           "ok": 0,
@@ -503,6 +506,34 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar 1 skada (4 − 3 rustning) från Ramslag. KP 12/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut med fördel: [3 / 12 → 3] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 10 skada (12 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn faller!",
+          "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [18 / 3 → 3] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 3 skada (4 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
