@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:46:53.938Z",
+  "uppdaterad": "2026-11-11T22:47:02.424Z",
   "spel": {
     "version": 1,
-    "tid": 1794437210878,
+    "tid": 1794437219402,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -441,7 +441,7 @@
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 7,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -450,7 +450,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Stav"
+            "Stav",
+            "Magi"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -459,7 +460,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -616,6 +617,14 @@
         },
         {
           "text": "Orchhövdingen Grorm tar 2 skada (5 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim kastar Blixt slår Magi: [13] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 3 skada (6 − 3 rustning) från Blixt.",
           "cls": "ok"
         }
       ],
