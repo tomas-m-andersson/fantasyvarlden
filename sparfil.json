@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:44:08.648Z",
+  "uppdaterad": "2026-11-11T16:44:18.172Z",
   "spel": {
     "version": 1,
-    "tid": 1794415445592,
+    "tid": 1794415455098,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -455,10 +455,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true,
+          "agerat": true,
+          "fordelNasta": false,
           "valtVapen": "Stav",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 13,
@@ -694,6 +694,14 @@
         {
           "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [14] mot 13 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [5] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
