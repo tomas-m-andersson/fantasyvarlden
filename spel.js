@@ -725,6 +725,11 @@ function startaUtforskning(pid){
   logga(`Sällskapet ger sig in i ${p.namn}. Kapitel 1.`,"info");
   spara(); ga("run");
 }
+// Bossarnas pronomen i berättartexten ("och han är inte ensam"), och namnet med liten första bokstav
+// men egennamn kvar ("general Kieslawski", "orchhövdingen Grorm")
+const BOSS_PRONOMEN = { orchhovding:"han", rovarhovding:"han", svartalfkung:"han", hogprast:"han", harpydrottning:"hon", rattkung:"han",
+  general:"han", dendroidmoder:"hon", grip:"den", gravvaktare:"han", drake:"den", rese:"han", kieslawski:"han" };
+const forstaLiten = t => t ? t.charAt(0).toLowerCase() + t.slice(1) : t;
 function kapitelKlart(){
   const r = st.run; r.paus = true; r.djup++;
   logga(`★ Kapitel ${r.kapitel} klart! Sällskapet har tagit sig igenom ${r.djup} rum i ${r.q.plats}.`,"d");
@@ -848,7 +853,7 @@ function ritaRun(){
   if(r.utforska && r.paus){
     app.innerHTML = `<div class="tv fast"><canvas id="scen" class="px"></canvas><span class="badge">${esc(r.q.plats)} · kapitel ${r.kapitel}</span></div>
       ${partyHtml()}<section class="card quest">${kapitelHtml()}</section>${loggHtml()}`;
-    G.ritaScen($("#scen"), scenMiljo(r.q.miljo), [], 77+r.kapitel, "skatt", scenHjaltar());
+    G.ritaScen($("#scen"), scenMiljo(r.q.miljo, r.steg[r.i]), [], 77+r.kapitel, "skatt", scenHjaltar());   // kvar i bossens rum
     fyllPortratt(app); scrollaLogg();
     app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b) return;
       if(b.dataset.a==="djupare") return nyttKapitel();
@@ -864,7 +869,7 @@ function ritaRun(){
   } else if(steg.rumtyp==="boss"){
     titel = r.utforska ? `Kapitel ${r.kapitel} · bossen` : `${r.bulk!=null ? r.q.titel : r.q.plats} – slutstriden`;
     innehall = steg.klar ? klarHtml(steg) : r.bulk!=null ? `<p class="berattelse">${esc(BULK_GROP[Math.min(r.bulk,3)])}</p>
-      <div class="val"><button class="btn red" data-a="strid">Till strid!</button></div>` : `<p class="berattelse">Ni har nått målet. Här finns ${esc(V.FIENDER[steg.fiender[0]].namn.toLowerCase())}${steg.fiender.length>1?" – och den är inte ensam":""}. Det är nu det gäller.</p>
+      <div class="val"><button class="btn red" data-a="strid">Till strid!</button></div>` : `<p class="berattelse">Ni har nått målet. Här finns ${esc(forstaLiten(V.FIENDER[steg.fiender[0]].namn))}${steg.fiender.length>1?` – och ${BOSS_PRONOMEN[steg.fiender[0]]||"den"} är inte ensam`:""}. Det är nu det gäller.</p>
       <div class="val"><button class="btn red" data-a="strid">Till strid!</button></div>`;
   } else {
     titel = r.utforska ? `Kapitel ${r.kapitel} · rum ${r.djup+1}` : `Rum ${r.i - antalResa() + 1} av ${r.steg.length - antalResa()}`;
@@ -880,7 +885,7 @@ function ritaRun(){
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
   const moteBild = steg.rumtyp==="garvard" ? "utanfor_gropen" : steg.mote && MOTE_BILD[steg.mote];
-  const ritaRum = orn => G.ritaScen($("#scen"), moteBild || (steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg)), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?"falla":steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta","Forsande vatten":"vatten"}[steg.hinder.namn]||""):steg.typ==="resa"&&!moteBild?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
+  const ritaRum = orn => G.ritaScen($("#scen"), moteBild || (steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg)), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?(steg.utlost?"falla":null):steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta","Forsande vatten":"vatten"}[steg.hinder.namn]||""):steg.typ==="resa"&&!moteBild?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
   ritaRum();
   if(r.ornVisa){ const v = r.ornVisa; r.ornVisa = null; spelaOrn(t => ritaRum(t==null ? undefined : {ruta:v.ruta, t, d:v.d})); }
   fyllPortratt(app); scrollaLogg();
@@ -994,8 +999,8 @@ function runKlick(b){
   if(a==="falla"){ return valjVem("Upptäcka fara","Vem går först och letar efter fällor?", id=>{
       const s=hjalteSlag(id,"Upptäcka fara"); logga(slagText(HJ[id].namn,s),slagCls(s));
       if(s.lyckat){ let t=`${HJ[id].namn} upptäcker fällan (${steg.falla.namn}) i tid och leder alla runt den.`; if(s.drake){ const g=R.t(10)+5; r.guld+=g; t+=` Hen hittar dessutom ${g} guld som någon tidigare offer tappat.`; } klart(steg,t); }
-      else { logga(steg.falla.text,"fel"); const d=R.slaTarning(steg.falla.skada)*(s.demon?2:1); skadaHjalte(id,d,steg.falla.namn,true); if(steg.falla.vp) vpAndra(id,-R.t(4)); klart(steg,`${steg.falla.text} ${HJ[id].namn} får ta smällen.`); } }); }
-  if(a==="falla-rusa"){ const id=R.valj(vakna()); logga(steg.falla.text,"fel"); skadaHjalte(id,R.slaTarning(steg.falla.skada),steg.falla.namn,true); return klart(steg,`Ni rusar rakt in. ${steg.falla.text} Det blev ${HJ[id].namn} som fick ta smällen.`); }
+      else { steg.utlost=true; logga(steg.falla.text,"fel"); const d=R.slaTarning(steg.falla.skada)*(s.demon?2:1); skadaHjalte(id,d,steg.falla.namn,true); if(steg.falla.vp) vpAndra(id,-R.t(4)); klart(steg,`${steg.falla.text} ${HJ[id].namn} får ta smällen.`); } }); }
+  if(a==="falla-rusa"){ steg.utlost=true; const id=R.valj(vakna()); logga(steg.falla.text,"fel"); skadaHjalte(id,R.slaTarning(steg.falla.skada),steg.falla.namn,true); return klart(steg,`Ni rusar rakt in. ${steg.falla.text} Det blev ${HJ[id].namn} som fick ta smällen.`); }
   if(a==="hinder"){
     const hi=steg.hinder;
     if(hi.alla){ const t=[]; vakna().forEach(id=>{ const s=hjalteSlag(id,hi.fard); logga(slagText(HJ[id].namn,s),slagCls(s)); if(!s.lyckat){ skadaHjalte(id,R.slaTarning(hi.skada),hi.namn,true); t.push(HJ[id].namn);} });
