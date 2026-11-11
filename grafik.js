@@ -418,7 +418,7 @@ const MARK_NER = { svartborgen1: 4, utanfor_gropen: 5, mt_kraknor1: 5, mt_krakno
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { lager_oken1: 12, lager_oken2: 11, klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
-const HJ_START = { lager_fangelse: 40, lager_oken2: -3, klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
+const HJ_START = { lager_fangelse: 30, lager_oken2: -3, klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
 const KLYFTA_UTE = {riksvag40:1, batik:1, ostra_oknen:1,  doda_sjon:1, marmoracs_kyrkogard:1, harpybergen:1, mt_kraknor:1, slasbyskogen:1, gollenskogen:1, gravskogen:1, klippa_oken:1, klippa_ruin:1, boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 // Gåtan i sten: en förseglad dörr som stänger vägen, målad för varje sorts miljö
@@ -497,7 +497,7 @@ function ritaStenport(ctx, cx, fot, fro){
 // Värdshuset: elden i eldstaden (ingen rök, den går upp i skorstenen) och de fyra väggljusen
 const VARDSHUS_ELDAR = [ {x:105, y:114, s:9, inne:true},
   {x:45, y:17, ljus:true}, {x:166, y:17, ljus:true}, {x:224, y:17, ljus:true}, {x:315, y:17, ljus:true} ];
-const ELDAR = { lager_fangelse:{x:58, y:124, s:7}, lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
+const ELDAR = { lager_fangelse:{x:262, y:124, s:7}, lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
 const ELD = { senast:0, gnistor:[], rok:[] };
 function ritaEld(c, eldar, t){
   const x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);
