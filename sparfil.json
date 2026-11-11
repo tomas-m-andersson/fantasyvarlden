@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:26.183Z",
+  "uppdaterad": "2026-11-11T17:14:29.978Z",
   "spel": {
     "version": 1,
-    "tid": 1794417263227,
+    "tid": 1794417267005,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -414,7 +414,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -534,6 +534,18 @@
         {
           "text": "Rövare tar 3 skada (4 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [8] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Rövare faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
