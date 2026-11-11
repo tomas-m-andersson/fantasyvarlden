@@ -1713,7 +1713,12 @@ function ritaSlut(){
   if(u.lyckat && !r.utforska){
     const ik = UPPDRAG_IKON[r.q.id], [ia, ir] = ik ? ik.split(":") : [];
     G.ritaVardshus($("#scen"), scenHjaltar().filter(h=>!rh(h.id).dod), {npc:givare(r.q.givare, r.q.id.length*7), ikon: ik ? {ark:IKONARK[ia], ruta:Number(ir)} : null, rum:SLUTRUM[r.q.id]});
-  } else G.ritaScen($("#scen"), scenMiljo(r.q.miljo), [], 99, u.lyckat?"skatt":null, scenHjaltar());
+  } else {
+    // stå kvar i samma rum som sist (t.ex. bossrummet efter en bossvinst) i stället för att hoppa till platsens vanliga bild
+    const sista = r.steg && r.steg[Math.min(r.i, r.steg.length-1)];
+    const [bild, fro] = sista ? stegScen(sista) : [scenMiljo(r.q.miljo), 99];
+    G.ritaScen($("#scen"), bild, [], fro, u.lyckat?"skatt":null, scenHjaltar());
+  }
   fyllIkoner(app);
   scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(b && b.dataset.a==="klar"){ st.run=null; spara(); ga("hem"); } };
