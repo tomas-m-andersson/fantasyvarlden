@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:43:50.042Z",
+  "uppdaterad": "2026-11-11T16:43:55.367Z",
   "spel": {
     "version": 1,
-    "tid": 1794415427117,
+    "tid": 1794415432309,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -375,7 +375,8 @@
           "stoppad": 0,
           "agerat": false,
           "fordelNasta": false,
-          "valtVapen": "Kort spjut"
+          "valtVapen": "Kort spjut",
+          "nackdelNasta": true
         },
         "pescatore": {
           "kp": 11,
@@ -401,7 +402,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": true,
+          "nackdelNasta": true
         },
         "galfner": {
           "kp": 12,
@@ -425,9 +427,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true,
-          "valtVapen": "Armborst"
+          "agerat": true,
+          "fordelNasta": false,
+          "valtVapen": "Armborst",
+          "nackdelNasta": true
         },
         "gofnagrim": {
           "kp": 12,
@@ -452,7 +455,8 @@
           "stoppad": 0,
           "agerat": false,
           "fordelNasta": true,
-          "valtVapen": "Stav"
+          "valtVapen": "Stav",
+          "nackdelNasta": true
         }
       },
       "guld": 13,
@@ -648,6 +652,34 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [9 / 19 → 9] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen skriker så att alla tappar fattningen – hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "FF skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
