@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:49.754Z",
+  "uppdaterad": "2026-11-11T17:15:50.038Z",
   "spel": {
     "version": 1,
-    "tid": 1794417285856,
+    "tid": 1794417346902,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -428,7 +428,7 @@
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 13,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -448,7 +448,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -557,6 +557,22 @@
         },
         {
           "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tvekar och missar tillfället.",
           "cls": "ok"
         }
       ],
