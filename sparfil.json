@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:21:01.271Z",
+  "uppdaterad": "2026-11-11T22:42:28.394Z",
   "spel": {
     "version": 1,
-    "tid": 1794417658125,
+    "tid": 1794436945515,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -42,7 +42,7 @@
           "Läkekonst": 1,
           "Pilbåge": 3
         },
-        "aventyr": 7,
+        "aventyr": 8,
         "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -53,7 +53,7 @@
           "Magi": 1,
           "Akrobatik": 1
         },
-        "aventyr": 7,
+        "aventyr": 8,
         "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -123,7 +123,7 @@
           "Simma": 1,
           "Akrobatik": 1
         },
-        "aventyr": 5,
+        "aventyr": 6,
         "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -156,7 +156,7 @@
           "Simma": 1,
           "Undvika": 1
         },
-        "aventyr": 5,
+        "aventyr": 6,
         "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -280,7 +280,150 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-krusbarsberget",
+        "titel": "Krusbärsberget",
+        "plats": "Krusbärsberget",
+        "land": "Bedinin",
+        "miljo": "grotta",
+        "boss": "orchhovding",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "krusbarsberget"
+      },
+      "party": [
+        "ff",
+        "pescatore",
+        "galfner",
+        "gofnagrim"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En korsning där tre gångar möts. En rostig hjälm ligger upp och ner i ett hörn. Det droppar oavbrutet någonstans i mörkret.",
+          "fro": 569211038
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "En sluttande gång täckt av löst grus. Ett gammalt rep hänger ner ur ett hål i taket. Ett avlägset muller får golvet att darra.",
+          "fro": 167870595
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "mote",
+          "text": "En trång passage med kalla, svettiga väggar. En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier. Det luktar fuktig ull och svavel.",
+          "fro": 916041823,
+          "mote": "lik"
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En smal gång som slingrar sig nedåt i mörkret. Någon har lämnat ett par strumpor på tork. Ett ekande skratt hörs – sedan blir det helt tyst.",
+          "fro": 204703819,
+          "fiender": [
+            "orch",
+            "orch"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 388485401,
+          "fiender": [
+            "orchhovding"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "ff": {
+          "kp": 13,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkade fikon"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "pescatore": {
+          "kp": 11,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "gofnagrim": {
+          "kp": 13,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Krusbärsberget. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-11 23:42",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false,
+      "anvandaText": [
+        "En korsning där tre gångar möts",
+        "En rostig hjälm ligger upp och ner i ett hörn",
+        "Det droppar oavbrutet någonstans i mörkret",
+        "En sluttande gång täckt av löst grus",
+        "Ett gammalt rep hänger ner ur ett hål i taket",
+        "Ett avlägset muller får golvet att darra",
+        "En trång passage med kalla, svettiga väggar",
+        "En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier",
+        "Det luktar fuktig ull och svavel",
+        "En smal gång som slingrar sig nedåt i mörkret",
+        "Någon har lämnat ett par strumpor på tork",
+        "Ett ekande skratt hörs – sedan blir det helt tyst"
+      ]
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
