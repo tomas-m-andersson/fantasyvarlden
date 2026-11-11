@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:09:57.279Z",
+  "uppdaterad": "2026-11-11T17:10:24.107Z",
   "spel": {
     "version": 1,
-    "tid": 1794416994332,
+    "tid": 1794417021043,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -370,7 +370,18 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Svärd"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Gorgor"
         },
         "pescatore": {
           "kp": 11,
@@ -384,7 +395,15 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "galfner": {
           "kp": 12,
@@ -396,10 +415,18 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "gofnagrim": {
-          "kp": 13,
+          "kp": 10,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -408,7 +435,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -424,6 +459,30 @@
         {
           "text": "Garvard berättar om berget Kevaros hela vägen. Ni förlorar lite av livsglädjen. (alla förlorar VP)",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar 3 skada (6 − 3 rustning) från Störtdyk. KP 10/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 0 skada (1 − 3 rustning) från Bett. KP 11/11.",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [15] mot 14 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
