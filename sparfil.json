@@ -1,17 +1,18 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:11:56.858Z",
+  "uppdaterad": "2026-11-11T17:12:13.370Z",
   "spel": {
     "version": 1,
-    "tid": 1794417113925,
+    "tid": 1794417130278,
     "kassa": 906,
     "packning": [
       "Läkande ört",
       "Flaska vin",
       "Läkedryck",
       "Läkedryck",
-      "Läkedryck"
+      "Läkedryck",
+      "Läkande ört"
     ],
     "sallskap": [
       "ff",
@@ -343,7 +344,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "Ett pass mellan två toppar. En vimpel från Harpybergen fladdrar i vinden. Vinden ylar som en ensam varg.",
-          "fro": 364046263
+          "fro": 364046263,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 14 guld och läkande ört."
         },
         {
           "typ": "rum",
@@ -435,7 +438,8 @@
           "markerade": [],
           "anvanda": [
             "Armborst",
-            "Akrobatik"
+            "Akrobatik",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -475,7 +479,7 @@
           "nackdelNasta": false
         }
       },
-      "guld": 3,
+      "guld": 17,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Ett gripägg till Gitte” av Gitte von Gittemberg.",
@@ -619,6 +623,10 @@
         },
         {
           "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [2] mot 8 – lyckat",
           "cls": "ok"
         }
       ],
