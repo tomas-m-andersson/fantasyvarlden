@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:16:19.443Z",
+  "uppdaterad": "2026-11-11T17:16:24.134Z",
   "spel": {
     "version": 1,
-    "tid": 1794417376451,
+    "tid": 1794417381229,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -364,9 +364,12 @@
           "saker": [
             "Torkade fikon"
           ],
-          "markerade": [],
+          "markerade": [
+            "Svärd"
+          ],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -375,7 +378,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Gorgor",
           "fordelNasta": false
         },
@@ -625,6 +628,26 @@
         {
           "text": "Brunbjörn tar 4 skada (6 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [1] mot 14 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: En etta! Beskriv gärna hur snyggt det där såg ut.",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Brunbjörn tar 2 skada (4 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [14] mot 13 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
