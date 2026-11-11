@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:09:22.223Z",
+  "uppdaterad": "2026-11-11T17:09:38.568Z",
   "spel": {
     "version": 1,
-    "tid": 1794416959319,
-    "kassa": 916,
+    "tid": 1794416975650,
+    "kassa": 906,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -39,7 +39,7 @@
           "Läkekonst": 1,
           "Pilbåge": 2
         },
-        "aventyr": 5,
+        "aventyr": 6,
         "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -49,7 +49,7 @@
         "bonus": {
           "Magi": 1
         },
-        "aventyr": 5,
+        "aventyr": 6,
         "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -118,7 +118,7 @@
           "Spjut": 1,
           "Simma": 1
         },
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -150,7 +150,7 @@
           "Armborst": 1,
           "Simma": 1
         },
-        "aventyr": 3,
+        "aventyr": 4,
         "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -166,8 +166,7 @@
     },
     "tavla": [
       "gojan",
-      "barnen",
-      "gripagg"
+      "barnen"
     ],
     "avklarade": {
       "skold": 1,
@@ -177,6 +176,10 @@
       "gojan": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-11 18:09",
+        "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim åkte med Bakhuvudet Jens mot Mt. Kraknor för 10 guld."
+      },
       {
         "tid": "2026-11-11 17:44",
         "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Gollenskogen och nådde kapitel 1 (5 rum). De gick hem med 36 guld."
@@ -262,7 +265,160 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "gripagg",
+        "givare": "Gitte von Gittemberg",
+        "titel": "Ett gripägg till Gitte",
+        "plats": "Mt. Kraknor",
+        "land": "Liane",
+        "miljo": "berg",
+        "boss": "grip",
+        "beloning": 400,
+        "rum": 6,
+        "text": "Den ofantligt rika Gitte von Gittemberg, som äger nästan hela Marmoracs hamn, vill ha ett gripägg. Hennes betjänt Mulder pekar mot Mt. Kraknor i Liane, där vilda gripar häckar.",
+        "foremal": "Ett gripägg",
+        "svar": "Mulder räcker över en kontrakt-rulle utan att säga ett ord."
+      },
+      "party": [
+        "ff",
+        "pescatore",
+        "galfner",
+        "gofnagrim"
+      ],
+      "steg": [
+        {
+          "typ": "resa",
+          "mote": "jens-liftare",
+          "jens": true,
+          "vagn": 1
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En klyfta med en vinglig hängbro. Ben från något som har flugit in i berget. Det knakar oroväckande i berget.",
+          "fro": 376858518,
+          "fiender": [
+            "harpya",
+            "varg"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En grotta halvvägs upp i bergväggen. Ett örnbo med stulna smycken i.",
+          "fro": 140887229,
+          "hinder": {
+            "namn": "En bred klyfta",
+            "text": "En klyfta skär av vägen. Den går att hoppa över – om man är smidig.",
+            "fard": "Akrobatik",
+            "alla": true,
+            "skada": "T6",
+            "miljo": [
+              "berg",
+              "grotta",
+              "ruin"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "En dal där molnen ligger lågt. Rester av en lavin har begravt stigen. Stenar rasar någonstans ovanför.",
+          "fro": 518668587
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "skatt",
+          "text": "Ett pass mellan två toppar. En vimpel från Harpybergen fladdrar i vinden. Vinden ylar som en ensam varg.",
+          "fro": 364046263
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "mote",
+          "text": "En utsiktspunkt där någon har byggt ett stenröse. Ett kors av sten där någon en gång föll. Det luktar snö och järn.",
+          "fro": 56226087,
+          "mote": "fange"
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 74623528,
+          "fiender": [
+            "grip"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "ff": {
+          "kp": 13,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkade fikon"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "pescatore": {
+          "kp": 11,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "gofnagrim": {
+          "kp": 13,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet antar uppdraget ”Ett gripägg till Gitte” av Gitte von Gittemberg.",
+          "cls": "info"
+        },
+        {
+          "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-11 18:09"
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
