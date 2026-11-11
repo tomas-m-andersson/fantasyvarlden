@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:42:17.744Z",
+  "uppdaterad": "2026-11-11T16:42:30.854Z",
   "spel": {
     "version": 1,
-    "tid": 1794415334766,
+    "tid": 1794415347823,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -426,7 +426,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Simma"
+            "Simma",
+            "Stav"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -435,8 +436,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true
+          "agerat": true,
+          "fordelNasta": false,
+          "valtVapen": "Stav"
         }
       },
       "guld": 0,
@@ -487,6 +489,26 @@
         },
         {
           "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
+        },
+        {
+          "text": "FF tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "FF tar 0 skada (1 − 3 rustning) från Klor. KP 13/13.",
+          "cls": "info"
+        },
+        {
+          "text": "Dendroid tvekar och missar tillfället.",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav med fördel: [6 / 3 → 3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroid tar 3 skada (6 − 3 rustning).",
           "cls": "ok"
         }
       ],
