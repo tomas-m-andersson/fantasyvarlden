@@ -82,7 +82,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // Klyftan har egna målade bakgrunder där sällskapet står vid kanten (bakgrunder/klyfta_ute.png och klyfta_inne.png)
   // Viloplatserna har egna lägerbilder med lägereld (inne i grottor, kloaker och gruvor, annars ute)
   const bgId = extra==="hinder:klyfta" ? (KLYFTA_UTE[miljoId] ? "klyfta_ute" : "klyfta_inne")
-             : extra==="vila" ? (String(miljoId).startsWith("fangelse") ? "lager_fangelse" : INNE_MILJO[miljoId] ? "lager_inne" : (String(miljoId).startsWith("oken")||OKEN_LIK[miljoId]) ? "lager_oken" : "lager_ute")
+             : extra==="vila" ? (String(miljoId).startsWith("fangelse") ? "lager_fangelse" : BERG_LIK[miljoId] ? "lager_berg" : INNE_MILJO[miljoId] ? "lager_inne" : (String(miljoId).startsWith("oken")||OKEN_LIK[miljoId]) ? "lager_oken" : "lager_ute")
              : extra==="hinder:mur" ? (GATA[miljoId] || (INNE_MILJO[miljoId] ? "gata_inne" : "gata_ute"))
              : extra==="hinder:dorr" ? (INNE_MILJO[miljoId] ? "port_inne" : "port_ute")
              : extra==="hinder:stege" ? ((miljoId==="oken"||OKEN_LIK[miljoId]) ? "klippa_oken" : (miljoId==="ruin"||miljoId==="vesselberget") ? "klippa_ruin" : "klippa")
@@ -437,7 +437,9 @@ G.skumLager = (canvas, id) => {
 // Bilder med snö i landskapet. Där snöar det ungefär varannan gång, med enstaka vindbyar som blåser flingorna åt sidan.
 // Platsbilder i öknen som ska få ökenns lägereld, klippa och gåta
 const OKEN_LIK = { batik:1, ostra_oknen:1 };
-const SNOBILDER = { mt_kraknor1:1, mt_kraknor2:1, berg3:1, berg4:1, berg6:1 };
+// Bergsmiljöer som vilar i bergslägret (lager_berg) i stället för skogslägret
+const BERG_LIK = { berg:1, harpybergen:1, mt_kraknor:1, boss_harpyor:1, boss_grip:1 };
+const SNOBILDER = { lager_berg:1, mt_kraknor1:1, mt_kraknor2:1, berg3:1, berg4:1, berg6:1 };
 G.snovader = fro => { const h = Math.imul(((fro||7) >>> 0) ^ 0x5bd1e995, 2246822519) >>> 0; return (h >>> 9) % 2 === 0 ? "sno" : null; };
 const SNO = { aktiv:false, flingor:[], ilar:[], vind:0, by:null, nastaBy:0, senast:0 };
 function nyFlinga(overst){ return { x: Math.random()*340 - 10, y: overst ? -Math.random()*20 : Math.random()*180, vy: 9 + Math.random()*16,
@@ -488,7 +490,7 @@ const MARK_NER = { svartborgen1: 4, utanfor_gropen: 5, mt_kraknor1: 5, mt_krakno
 // Hur tätt hjältarna står (pixlar mellan dem). Vid klyftan står de tätare så att alla får plats på kanten.
 const HJ_STEG = { lager_oken1: 12, lager_oken2: 11, klyfta_ute: 9, klyfta_inne: 9, lager_ute: 12, lager_inne: 12, lager_inne2: 9 };
 // Var den första hjälten står (x i 160×90). Vid klyftan börjar de längre till vänster så att ingen hamnar över kanten.
-const HJ_START = { lager_fangelse: 30, lager_oken2: -3, klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
+const HJ_START = { lager_fangelse: 30, lager_berg: 14, lager_oken2: -3, klyfta_ute: -3, klyfta_inne: -3, lager_inne2: -3 };
 // Miljöer som använder den målade klyftan utomhus – övriga (grotta, kloak) får klyftan inomhus
 const KLYFTA_UTE = {riksvag40:1, batik:1, ostra_oknen:1,  doda_sjon:1, marmoracs_kyrkogard:1, harpybergen:1, mt_kraknor:1, slasbyskogen:1, gollenskogen:1, gravskogen:1, klippa_oken:1, klippa_ruin:1, boss_general:1, boss_dendroidmoder:1, boss_rovarhovding:1, port_ute:1, klippa:1, vatten_ute:1, boss_grip:1, boss_harpyor:1, boss_dodasjon:1, skog:1, berg:1, oken:1, ruin:1, gravfalt:1, trask:1, vesselberget:1, bududuoar:1, vag:1 };
 // Gåtan i sten: en förseglad dörr som stänger vägen, målad för varje sorts miljö
@@ -572,7 +574,7 @@ const VARDSHUS_ELDAR = [ {x:105, y:114, s:9, inne:true},
 // Extra justering av fällans höjd per bakgrundsbild (plus = längre ner), där marken mitt i bild ligger annorlunda än vid sällskapet
 const FALLA_NER = { grotta4:6, svartborgen4:2, skog2:3, kloak1:-5, ruin3:3, oken4:-3, grotta6:3, svartborgen5:3, skog5:3, ruin2:3, oken5:3 };
 const FALLOR_RUTOR = [[0,2,30,32],[1,2,30,32],[2,2,30,32],[3,2,30,32],[4,2,30,32],[5,2,30,32],[6,2,30,32],[7,2,30,32],[8,4,32,32],[9,3,32,32],[10,4,32,32],[11,1,32,32],[12,3,32,31],[15,3,32,32],[32,2,31,25],[33,2,30,25],[34,1,32,25],[35,4,31,25],[36,2,31,25],[37,2,30,25],[38,2,31,25],[39,3,30,25],[40,5,26,30],[41,3,23,30],[42,5,24,31],[43,9,29,30],[44,5,25,30],[45,3,23,30],[46,5,24,30],[48,7,29,32],[49,7,29,32],[50,7,31,32],[51,7,31,32],[52,7,29,32],[53,7,31,32],[54,7,30,32],[55,7,26,32]];
-const ELDAR = { lager_fangelse:{x:262, y:124, s:7}, lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
+const ELDAR = { lager_fangelse:{x:262, y:124, s:7}, lager_berg:{x:191, y:134, s:8}, lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
 const ELD = { senast:0, gnistor:[], rok:[] };
 function ritaEld(c, eldar, t){
   const x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);
