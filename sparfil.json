@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:17:27.545Z",
+  "uppdaterad": "2026-11-11T17:17:39.092Z",
   "spel": {
     "version": 1,
-    "tid": 1794417444520,
+    "tid": 1794417456143,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -386,9 +386,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Gorgor",
-          "fordelNasta": true
+          "agerat": true,
+          "valtVapen": "Kort spjut",
+          "fordelNasta": false
         },
         "pescatore": {
           "kp": 10,
@@ -733,6 +733,14 @@
         {
           "text": "Göfnagrim tar 4 skada (7 − 3 rustning) från Klor. KP 9/13.",
           "cls": "fel"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut med fördel: [7 / 13 → 7] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
