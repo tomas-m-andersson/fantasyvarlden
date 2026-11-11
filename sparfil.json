@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:41.646Z",
+  "uppdaterad": "2026-11-11T17:14:49.754Z",
   "spel": {
     "version": 1,
-    "tid": 1794417278605,
+    "tid": 1794417285856,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -316,7 +316,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En glänta där solen knappt når ner. Svampar i alla regnbågens färger växer i en ring. Det doftar kåda och regn.",
-          "fro": 647545292
+          "fro": 647545292,
+          "klar": true,
+          "utfallText": "Ni vilar i lugn och ro. Alla känner sig lite bättre."
         },
         {
           "typ": "rum",
@@ -326,6 +328,10 @@
           "fiender": [
             "harpya",
             "bjorn"
+          ],
+          "rutor": [
+            38,
+            60
           ]
         },
         {
@@ -345,7 +351,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "ff": {
           "kp": 13,
@@ -375,7 +381,7 @@
         },
         "pescatore": {
           "kp": 11,
-          "vp": 9,
+          "vp": 12,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -398,7 +404,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 4,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -421,7 +427,7 @@
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
-          "kp": 12,
+          "kp": 13,
           "vp": 13,
           "doende": false,
           "ok": 0,
@@ -548,13 +554,17 @@
         {
           "text": "Rövare faller!",
           "cls": "d"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
       "start": "2026-11-11 18:13",
       "utforska": true,
       "kapitel": 1,
-      "djup": 1,
+      "djup": 2,
       "paus": false,
       "anvandaText": [
         "En backe täckt av blåbärsris",
