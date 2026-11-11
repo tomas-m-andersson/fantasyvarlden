@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:09:51.238Z",
+  "uppdaterad": "2026-11-11T17:09:57.279Z",
   "spel": {
     "version": 1,
-    "tid": 1794416988202,
+    "tid": 1794416994332,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -303,6 +303,10 @@
           "fiender": [
             "harpya",
             "varg"
+          ],
+          "rutor": [
+            63,
+            35
           ]
         },
         {
@@ -352,7 +356,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "ff": {
           "kp": 13,
