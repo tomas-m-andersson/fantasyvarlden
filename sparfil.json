@@ -1,14 +1,15 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:39:55.639Z",
+  "uppdaterad": "2026-11-11T16:40:23.711Z",
   "spel": {
     "version": 1,
-    "tid": 1794415192491,
+    "tid": 1794415220769,
     "kassa": 880,
     "packning": [
       "Läkande ört",
       "Flaska vin",
+      "Läkedryck",
       "Läkedryck",
       "Läkedryck"
     ],
@@ -282,7 +283,9 @@
           "rumtyp": "mote",
           "text": "En glänta där solen knappt når ner. Spår efter en björn – eller en väldigt stor dvärg. Det prasslar i buskarna bakom er.",
           "fro": 328237372,
-          "mote": "torbyn"
+          "mote": "torbyn",
+          "klar": true,
+          "utfallText": "”Smart.” Han försvinner i en svavelpuff och lämnar något efter sig. (Läkedryck i packningen)"
         },
         {
           "typ": "rum",
@@ -358,7 +361,9 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Kunskap"
+          ]
         },
         "galfner": {
           "kp": 12,
@@ -389,6 +394,14 @@
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
+          "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Kunskap: [7] mot 16 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "”Smart.” Han försvinner i en svavelpuff och lämnar något efter sig. (Läkedryck i packningen)",
           "cls": "info"
         }
       ],
