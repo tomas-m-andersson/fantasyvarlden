@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:13:38.369Z",
+  "uppdaterad": "2026-11-11T17:14:04.137Z",
   "spel": {
     "version": 1,
-    "tid": 1794417215419,
+    "tid": 1794417243775,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -357,11 +357,23 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Spjut"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Kort spjut",
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 11,
-          "vp": 12,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -371,7 +383,16 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "fordelNasta": true
         },
         "galfner": {
           "kp": 12,
@@ -383,7 +404,16 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false,
+          "fordelNasta": true
         },
         "gofnagrim": {
           "kp": 13,
@@ -395,7 +425,16 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false,
+          "fordelNasta": true
         }
       },
       "guld": 0,
@@ -403,6 +442,30 @@
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Rövare anfaller FF: [13] mot 11 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [10] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 8 skada (10 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
