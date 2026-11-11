@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:08.867Z",
+  "uppdaterad": "2026-11-11T17:14:14.104Z",
   "spel": {
     "version": 1,
-    "tid": 1794417245953,
+    "tid": 1794417251120,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -367,7 +367,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": true
         },
@@ -391,7 +391,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "galfner": {
@@ -412,7 +412,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "gofnagrim": {
@@ -424,8 +424,12 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
-          "anvanda": [],
+          "markerade": [
+            "Stav"
+          ],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -434,7 +438,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true,
+          "fordelNasta": false,
           "valtVapen": "Stav"
         }
       },
@@ -475,6 +479,30 @@
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav med fördel: [6 / 1 → 1] mot 12 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Naturligt 1! Det där kommer att berättas om länge.",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Brunbjörn tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tvekar och missar tillfället.",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
