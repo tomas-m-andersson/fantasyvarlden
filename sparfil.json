@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:18:10.246Z",
+  "uppdaterad": "2026-11-11T17:18:16.186Z",
   "spel": {
     "version": 1,
-    "tid": 1794417487275,
-    "kassa": 1323,
+    "tid": 1794417492862,
+    "kassa": 1353,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -43,7 +43,7 @@
           "Pilbåge": 3
         },
         "aventyr": 7,
-        "segrar": 4,
+        "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -54,7 +54,7 @@
           "Akrobatik": 1
         },
         "aventyr": 7,
-        "segrar": 4,
+        "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -124,7 +124,7 @@
           "Akrobatik": 1
         },
         "aventyr": 5,
-        "segrar": 4,
+        "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -153,10 +153,11 @@
         "bonus": {
           "Finna dolda ting": 2,
           "Armborst": 1,
-          "Simma": 1
+          "Simma": 1,
+          "Undvika": 1
         },
         "aventyr": 5,
-        "segrar": 4,
+        "segrar": 5,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -182,6 +183,10 @@
       "gripagg": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-11 18:18",
+        "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Gollenskogen och nådde kapitel 1 (5 rum). De gick hem med 30 guld."
+      },
       {
         "tid": "2026-11-11 18:13",
         "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim klarade ”Ett gripägg till Gitte” och fick 400 guld + 17 i byte."
@@ -404,7 +409,9 @@
           "saker": [
             "Vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Pilbåge"
+          ],
           "anvanda": [
             "Pilbåge"
           ],
@@ -429,7 +436,8 @@
           "dod": false,
           "saker": [],
           "markerade": [
-            "Armborst"
+            "Armborst",
+            "Undvika"
           ],
           "anvanda": [
             "Armborst",
@@ -820,7 +828,64 @@
           "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "orsak": "Sällskapet gick hem med bytet.",
+        "beloning": 20,
+        "avgift": 0,
+        "avgiftText": null,
+        "byte": 10,
+        "doda": [],
+        "forb": {
+          "ff": [
+            {
+              "f": "Svärd",
+              "v": 14,
+              "s": 11,
+              "upp": false
+            },
+            {
+              "f": "Spjut",
+              "v": 15,
+              "s": 10,
+              "upp": false
+            }
+          ],
+          "pescatore": [
+            {
+              "f": "Pilbåge",
+              "v": 15,
+              "s": 3,
+              "upp": false
+            }
+          ],
+          "galfner": [
+            {
+              "f": "Armborst",
+              "v": 13,
+              "s": 1,
+              "upp": false
+            },
+            {
+              "f": "Undvika",
+              "v": 6,
+              "s": 18,
+              "upp": true
+            }
+          ],
+          "gofnagrim": [
+            {
+              "f": "Stav",
+              "v": 12,
+              "s": 6,
+              "upp": false
+            }
+          ]
+        },
+        "rad": [
+          "Ni tog er igenom 5 rum och nådde kapitel 1 i Gollenskogen."
+        ]
+      },
       "start": "2026-11-11 18:13",
       "utforska": true,
       "kapitel": 1,
