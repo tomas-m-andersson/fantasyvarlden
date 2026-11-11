@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:44:27.392Z",
+  "uppdaterad": "2026-11-11T16:44:31.814Z",
   "spel": {
     "version": 1,
-    "tid": 1794415464099,
+    "tid": 1794415468912,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -436,7 +436,7 @@
         },
         "gofnagrim": {
           "kp": 12,
-          "vp": 10,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -455,7 +455,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav",
           "nackdelNasta": false
@@ -734,6 +734,14 @@
         {
           "text": "Göfnagrim tar 0 skada (2 − 3 rustning) från Vingstorm. KP 12/13.",
           "cls": "info"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
