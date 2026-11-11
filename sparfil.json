@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:17:14.476Z",
+  "uppdaterad": "2026-11-11T17:17:19.661Z",
   "spel": {
     "version": 1,
-    "tid": 1794417431477,
+    "tid": 1794417436598,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -353,10 +353,13 @@
           "fro": 385894751,
           "fiender": [
             "harpydrottning"
+          ],
+          "rutor": [
+            36
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "ff": {
           "kp": 8,
@@ -708,7 +711,7 @@
       "start": "2026-11-11 18:13",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false,
       "anvandaText": [
         "En backe täckt av blåbärsris",
