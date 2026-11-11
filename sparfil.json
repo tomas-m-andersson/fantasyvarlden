@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:43:34.442Z",
+  "uppdaterad": "2026-11-11T16:43:41.567Z",
   "spel": {
     "version": 1,
-    "tid": 1794415411472,
+    "tid": 1794415418647,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -373,12 +373,12 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": false,
+          "fordelNasta": true,
           "valtVapen": "Gorgor"
         },
         "pescatore": {
           "kp": 11,
-          "vp": 9,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -399,7 +399,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": true
         },
         "galfner": {
@@ -425,7 +425,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "fordelNasta": false,
+          "fordelNasta": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -450,7 +450,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "fordelNasta": false,
+          "fordelNasta": true,
           "valtVapen": "Stav"
         }
       },
@@ -623,6 +623,14 @@
         {
           "text": "Göfnagrim tar 1 skada (4 − 3 rustning) från Vingstorm. KP 12/13.",
           "cls": "fel"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
