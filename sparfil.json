@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:17:47.104Z",
+  "uppdaterad": "2026-11-11T17:17:57.657Z",
   "spel": {
     "version": 1,
-    "tid": 1794417464045,
+    "tid": 1794417477308,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -373,7 +373,8 @@
             "Torkade fikon"
           ],
           "markerade": [
-            "Svärd"
+            "Svärd",
+            "Spjut"
           ],
           "anvanda": [
             "Spjut",
@@ -386,12 +387,13 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut",
-          "fordelNasta": false
+          "fordelNasta": false,
+          "nackdelNasta": true
         },
         "pescatore": {
-          "kp": 10,
+          "kp": 5,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -443,7 +445,7 @@
         },
         "gofnagrim": {
           "kp": 9,
-          "vp": 10,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -463,7 +465,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -753,6 +755,34 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 5 skada (8 − 3 rustning) från Klor. KP 5/11.",
+          "cls": "fel"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [20] mot 15 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Naturligt 20. Aj. Det här kommer att svida.",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! FF tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
