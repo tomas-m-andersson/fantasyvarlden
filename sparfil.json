@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:09:38.568Z",
+  "uppdaterad": "2026-11-11T17:09:51.238Z",
   "spel": {
     "version": 1,
-    "tid": 1794416975650,
+    "tid": 1794416988202,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -291,7 +291,9 @@
           "typ": "resa",
           "mote": "jens-liftare",
           "jens": true,
-          "vagn": 1
+          "vagn": 1,
+          "klar": true,
+          "utfallText": "Garvard berättar om berget Kevaros hela vägen. Ni förlorar lite av livsglädjen. (alla förlorar VP)"
         },
         {
           "typ": "rum",
@@ -354,7 +356,7 @@
       "h": {
         "ff": {
           "kp": 13,
-          "vp": 8,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -368,7 +370,7 @@
         },
         "pescatore": {
           "kp": 11,
-          "vp": 12,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -382,7 +384,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -394,7 +396,7 @@
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 13,
+          "vp": 11,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -413,6 +415,10 @@
         },
         {
           "text": "🐴 Bakhuvudet Jens tar 10 guld, klättrar upp på kuskbocken och kör iväg utan att säga ett ord.",
+          "cls": "info"
+        },
+        {
+          "text": "Garvard berättar om berget Kevaros hela vägen. Ni förlorar lite av livsglädjen. (alla förlorar VP)",
           "cls": "info"
         }
       ],
