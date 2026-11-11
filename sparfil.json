@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:12:44.094Z",
+  "uppdaterad": "2026-11-11T17:13:00.358Z",
   "spel": {
     "version": 1,
-    "tid": 1794417161056,
+    "tid": 1794417177434,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -385,7 +385,8 @@
             "Torkade fikon"
           ],
           "markerade": [
-            "Akrobatik"
+            "Akrobatik",
+            "Spjut"
           ],
           "anvanda": [
             "Svärd",
@@ -399,7 +400,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -434,7 +435,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 4,
+          "vp": 1,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -454,7 +455,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -646,6 +647,34 @@
         {
           "text": "Kedjorna brister! Fången springer därifrån och glömmer en ört. (Läkande ört i packningen)",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [1] mot 15 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Gripen tar 14 skada (16 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Gripen tvekar och missar tillfället.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
