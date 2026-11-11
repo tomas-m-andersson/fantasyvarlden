@@ -984,7 +984,7 @@ function rumHtml(steg){
   if(t==="mote"){ const m=V.MOTEN.find(x=>x.id===steg.mote); return h + moteHtml(m, steg); }
   return h;
 }
-function fiendeLista(ids){ const c={}; ids.forEach(f=>c[f]=(c[f]||0)+1); return Object.entries(c).map(([f,n])=>n>1?`${n} ${pluralis(V.FIENDER[f].namn)}`:`En ${V.FIENDER[f].namn.toLowerCase()}`).join(" och "); }
+function fiendeLista(ids){ const c={}; ids.forEach(f=>c[f]=(c[f]||0)+1); return Object.entries(c).map(([f,n])=>n>1?`${n} ${pluralis(V.FIENDER[f].namn)}`:`en ${V.FIENDER[f].namn.toLowerCase()}`).join(" och ").replace(/^./, b=>b.toUpperCase()); }   // "En harpya och en brunbjörn"
 function pluralis(n){ const m={"Orch":"orcher","Svartalf":"svartalfer","Svartnisse":"svartnissar","Rövare":"rövare","Kultist från Tarragons Hand":"kultister från Tarragons Hand","Stadsvakt":"stadsvakter","Harpya":"harpyor","Jätteråtta":"jätteråttor","Ulv":"ulvar","Brunbjörn":"brunbjörnar","Odöd soldat":"odöda soldater","Dendroid":"dendroider","Sabeltandad tiger":"sabeltandade tigrar","Gast":"gastar"}; return m[n]||n.toLowerCase(); }
 
 // ---------- Klick i äventyret ----------

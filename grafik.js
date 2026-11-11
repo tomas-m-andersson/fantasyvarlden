@@ -278,7 +278,8 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
         const dod = f.kp <= 0, ligger = dod && G.fiendeLigger(f.fid);
         const r = G.fiendeRuta(f.fid, f.ruta, dod, i);
         if(ligger) ctx.globalAlpha = .9;   // döda fiender ligger kvar på marken i stället för att blekna
-        ctx.save(); ctx.translate(x+w, Math.max(0,y) - (dod ? 0 : andas(i+5)*Math.max(1, Math.round(sk)))); ctx.scale(-1,1);   // spegelvänd så att fienden tittar mot hjältarna
+        const redanVanster = FIENDE_VANSTER[f.fid] && FIENDE_VANSTER[f.fid].has(r);   // rutor som redan tittar åt vänster ska inte vändas
+        ctx.save(); ctx.translate(redanVanster ? x : x+w, Math.max(0,y) - (dod ? 0 : andas(i+5)*Math.max(1, Math.round(sk)))); if(!redanVanster) ctx.scale(-1,1);   // spegelvänd så att fienden tittar mot hjältarna
         ctx.drawImage(img, ...fiendeKalla(f.fid, r), 0, 0, w, w);
         ctx.restore();
       } else G.ritaSprite(ctx, f.sprite, x, Math.max(0,y), sk, PALETT_FOR[f.fid]||f.sprite, i%2===1);
@@ -708,6 +709,9 @@ const RUTNAT = { drake: {c:64, n:4, vis:96} };
 const rutnat = fid => RUTNAT[fid] || {c:32, n:8};
 G.fiendeRutnat = rutnat;
 G.fiendeRutor = fid => RUTNAT[fid] ? [...Array(RUTNAT[fid].n*RUTNAT[fid].n).keys()] : ((window.FIENDEFIGURER && window.FIENDEFIGURER[fid]) || []);
+// Fiendeark ska titta åt höger (spelet vänder dem mot hjältarna). Här står rutor som av misstag tittar åt vänster –
+// de ritas som de är, så att fienden ändå vänder sig mot sällskapet.
+const FIENDE_VANSTER = { bjorn: new Set([8,9,13,17,22,23,25,29,33,39,41,46,47,53,55,60]) };
 const fiendeKalla = (fid, r) => { const g = rutnat(fid); return [(r%g.n)*g.c, Math.floor(r/g.n)*g.c, g.c, g.c]; };
 G.fiendeBild = fid => {
   if(!G.fiendeRutor(fid).length) return null;
