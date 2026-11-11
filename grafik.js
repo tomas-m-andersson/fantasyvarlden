@@ -135,7 +135,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   // fällan som just slagit till: en av sex sorter ur npc/fallor.png (spikar, björnsax, fallucka, stenblock, pendelyxa, giftgas)
   if(extra==="falla"){ const fi = G.npcBild("fallor"), [r,x0,x1,y1] = FALLOR_RUTOR[Math.floor(slump((fro||7)*31+5)()*FALLOR_RUTOR.length)];
     // skugga bara under stenblocket och pendelyxan (rutor 32–47)
-    const fx = Math.round(98 - (x0+x1)/2), fy = 80 - y1 + markNer + (FALLA_NER[window.BAKGRUND.namn(bgId, fro)] ?? 0);   // mitt i bild, nederkanten på marken där fötterna står
+    const fx = Math.round(98 - (x0+x1)/2), fy = 80 - y1 + markNer + (FALLA_NER[window.BAKGRUND.namn(bgId, fro)] ?? 0) + (r>=48 ? 3 : 0);   // giftgasens galler lite längre ner   // mitt i bild, nederkanten på marken där fötterna står
     if(klarBild(fi)){ if(r>=32 && r<48){ ctx.fillStyle="#0005"; ctx.fillRect(fx+x0+2, fy+y1-1, x1-x0-4, 2); } G.ritaRuta(ctx, fi, r, fx, fy, 32); } else omRitaVid(fi); }
   if(extra==="hinder:dorr" && !window.BAKGRUND.harEgen(bgId)){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege" && !window.BAKGRUND.harEgen(bgId)) sak(sb, 13, 84, 40, 38);
