@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:04.137Z",
+  "uppdaterad": "2026-11-11T17:14:08.867Z",
   "spel": {
     "version": 1,
-    "tid": 1794417243775,
+    "tid": 1794417245953,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -396,7 +396,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -412,7 +412,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": true
         },
         "gofnagrim": {
@@ -434,7 +434,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": true,
+          "valtVapen": "Stav"
         }
       },
       "guld": 0,
@@ -465,6 +466,14 @@
         },
         {
           "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
         }
       ],
