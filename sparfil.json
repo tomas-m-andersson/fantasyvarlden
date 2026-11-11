@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:13:00.358Z",
+  "uppdaterad": "2026-11-11T17:13:08.867Z",
   "spel": {
     "version": 1,
-    "tid": 1794417177434,
-    "kassa": 906,
+    "tid": 1794417185925,
+    "kassa": 1323,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -39,20 +39,21 @@
         "dod": false,
         "bonus": {
           "Läkekonst": 1,
-          "Pilbåge": 2
+          "Pilbåge": 3
         },
         "aventyr": 6,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
       "gofnagrim": {
         "dod": false,
         "bonus": {
-          "Magi": 1
+          "Magi": 1,
+          "Akrobatik": 1
         },
         "aventyr": 6,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -118,10 +119,11 @@
         "dod": false,
         "bonus": {
           "Spjut": 1,
-          "Simma": 1
+          "Simma": 1,
+          "Akrobatik": 1
         },
         "aventyr": 4,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -148,12 +150,12 @@
       "galfner": {
         "dod": false,
         "bonus": {
-          "Finna dolda ting": 1,
+          "Finna dolda ting": 2,
           "Armborst": 1,
           "Simma": 1
         },
         "aventyr": 4,
-        "segrar": 3,
+        "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -175,9 +177,14 @@
       "barnen": 1,
       "rattor": 1,
       "krusbar": 1,
-      "gojan": 1
+      "gojan": 1,
+      "gripagg": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-11 18:13",
+        "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim klarade ”Ett gripägg till Gitte” och fick 400 guld + 17 i byte."
+      },
       {
         "tid": "2026-11-11 18:09",
         "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim åkte med Bakhuvudet Jens mot Mt. Kraknor för 10 guld."
@@ -368,7 +375,9 @@
           ],
           "rutor": [
             8
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Ni har fått tag på: Ett gripägg. Gripen är besegrad!"
         }
       ],
       "i": 6,
@@ -386,7 +395,8 @@
           ],
           "markerade": [
             "Akrobatik",
-            "Spjut"
+            "Spjut",
+            "Svärd"
           ],
           "anvanda": [
             "Svärd",
@@ -400,7 +410,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -416,7 +426,8 @@
             "Vin"
           ],
           "markerade": [
-            "Pilbåge"
+            "Pilbåge",
+            "Akrobatik"
           ],
           "anvanda": [
             "Pilbåge",
@@ -442,7 +453,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Finna dolda ting"
+          ],
           "anvanda": [
             "Armborst",
             "Akrobatik",
@@ -455,7 +468,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -468,7 +481,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Akrobatik"
+          ],
           "anvanda": [
             "Stav",
             "Akrobatik"
@@ -675,9 +690,81 @@
         {
           "text": "Gripen tvekar och missar tillfället.",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [9] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Gripen tar 8 skada (10 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Gripen faller!",
+          "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "beloning": 400,
+        "avgift": 0,
+        "avgiftText": null,
+        "byte": 17,
+        "doda": [],
+        "forb": {
+          "ff": [
+            {
+              "f": "Akrobatik",
+              "v": 5,
+              "s": 17,
+              "upp": true
+            },
+            {
+              "f": "Spjut",
+              "v": 15,
+              "s": 3,
+              "upp": false
+            },
+            {
+              "f": "Svärd",
+              "v": 14,
+              "s": 6,
+              "upp": false
+            }
+          ],
+          "pescatore": [
+            {
+              "f": "Pilbåge",
+              "v": 14,
+              "s": 18,
+              "upp": true
+            },
+            {
+              "f": "Akrobatik",
+              "v": 6,
+              "s": 1,
+              "upp": false
+            }
+          ],
+          "galfner": [
+            {
+              "f": "Finna dolda ting",
+              "v": 8,
+              "s": 20,
+              "upp": true
+            }
+          ],
+          "gofnagrim": [
+            {
+              "f": "Akrobatik",
+              "v": 6,
+              "s": 10,
+              "upp": true
+            }
+          ]
+        },
+        "rad": []
+      },
       "start": "2026-11-11 18:09"
     },
     "reset": 1793783047660,
