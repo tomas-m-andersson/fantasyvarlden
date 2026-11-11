@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:43:36.157Z",
+  "uppdaterad": "2026-11-11T22:43:48.384Z",
   "spel": {
     "version": 1,
-    "tid": 1794437013257,
+    "tid": 1794437025469,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -15,7 +15,8 @@
       "Läkande ört",
       "Läkande ört",
       "Läkande ört",
-      "Läkande ört"
+      "Läkande ört",
+      "Krigarfasa"
     ],
     "sallskap": [
       "ff",
@@ -315,7 +316,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En sluttande gång täckt av löst grus. Ett gammalt rep hänger ner ur ett hål i taket. Ett avlägset muller får golvet att darra.",
-          "fro": 167870595
+          "fro": 167870595,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 21 guld och krigarfasa."
         },
         {
           "typ": "rum",
@@ -401,7 +404,7 @@
           "anvanda": []
         }
       },
-      "guld": 29,
+      "guld": 50,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Krusbärsberget. Kapitel 1.",
@@ -409,6 +412,10 @@
         },
         {
           "text": "Galfner Galfner slår Finna dolda ting: [2] mot 9 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [4] mot 9 – lyckat",
           "cls": "ok"
         }
       ],
