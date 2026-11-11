@@ -134,7 +134,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(extra==="resa") sak(sb, 27, 74, 50, 26);                                   // vägvisare vid vägen
   // fällan som just slagit till: en av sex sorter ur npc/fallor.png (spikar, björnsax, fallucka, stenblock, pendelyxa, giftgas)
   if(extra==="falla"){ const fi = G.npcBild("fallor"), [r,x0,x1,y1] = FALLOR_RUTOR[Math.floor(slump((fro||7)*31+5)()*FALLOR_RUTOR.length)];
-    const fx = Math.round(98 - (x0+x1)/2), fy = 77 - y1 + markNer + (FALLA_NER[window.BAKGRUND.namn(bgId, fro)] ?? 0);   // mitt i bild, nederkanten på marken där fötterna står
+    const fx = Math.round(98 - (x0+x1)/2), fy = 80 - y1 + markNer + (FALLA_NER[window.BAKGRUND.namn(bgId, fro)] ?? 0);   // mitt i bild, nederkanten på marken där fötterna står
     if(klarBild(fi)){ ctx.fillStyle="#0005"; ctx.fillRect(fx+x0+2, fy+y1-1, x1-x0-4, 2); G.ritaRuta(ctx, fi, r, fx, fy, 32); } else omRitaVid(fi); }
   if(extra==="hinder:dorr" && !window.BAKGRUND.harEgen(bgId)){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege" && !window.BAKGRUND.harEgen(bgId)) sak(sb, 13, 84, 40, 38);
@@ -503,8 +503,8 @@ const VARDSHUS_ELDAR = [ {x:105, y:114, s:9, inne:true},
 // Fällorna i npc/fallor.png: [ruta, vänsterkant, högerkant, nederkant] för det synliga i rutan (32×32).
 // Fallluckorna (rad 3–4) är bortvalda. Fällan ställs med sin nederkant i höjd med hjältarnas fötter.
 // Extra justering av fällans höjd per bakgrundsbild (plus = längre ner), där marken mitt i bild ligger annorlunda än vid sällskapet
-const FALLA_NER = { grotta4:6, svartborgen4:2, skog2:3, kloak1:-2, ruin3:3, grotta6:3, svartborgen5:3, skog5:3, ruin2:3, oken5:3 };
-const FALLOR_RUTOR = [[0,2,30,32],[1,2,30,32],[2,2,30,32],[3,2,30,32],[4,2,30,32],[5,2,30,32],[6,2,30,32],[7,2,30,32],[8,4,32,32],[9,3,32,32],[10,4,32,32],[11,1,32,32],[12,3,32,31],[15,3,32,32],[32,0,32,32],[33,0,32,32],[34,0,32,32],[35,0,32,32],[36,0,32,32],[37,0,32,32],[38,0,32,32],[39,0,32,32],[40,5,26,30],[41,3,23,30],[42,5,24,31],[43,9,29,30],[44,5,25,30],[45,3,23,30],[46,5,24,30],[48,7,29,32],[49,7,29,32],[50,7,31,32],[51,7,31,32],[52,7,29,32],[53,7,31,32],[54,7,30,32],[55,7,26,32]];
+const FALLA_NER = { grotta4:6, svartborgen4:2, skog2:3, kloak1:-5, ruin3:3, oken4:-3, grotta6:3, svartborgen5:3, skog5:3, ruin2:3, oken5:3 };
+const FALLOR_RUTOR = [[0,2,30,32],[1,2,30,32],[2,2,30,32],[3,2,30,32],[4,2,30,32],[5,2,30,32],[6,2,30,32],[7,2,30,32],[8,4,32,32],[9,3,32,32],[10,4,32,32],[11,1,32,32],[12,3,32,31],[15,3,32,32],[32,2,31,25],[33,2,30,25],[34,1,32,25],[35,4,31,25],[36,2,31,25],[37,2,30,25],[38,2,31,25],[39,3,30,25],[40,5,26,30],[41,3,23,30],[42,5,24,31],[43,9,29,30],[44,5,25,30],[45,3,23,30],[46,5,24,30],[48,7,29,32],[49,7,29,32],[50,7,31,32],[51,7,31,32],[52,7,29,32],[53,7,31,32],[54,7,30,32],[55,7,26,32]];
 const ELDAR = { lager_fangelse:{x:262, y:124, s:7}, lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
 const ELD = { senast:0, gnistor:[], rok:[] };
 function ritaEld(c, eldar, t){
