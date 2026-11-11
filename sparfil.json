@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:42:13.995Z",
+  "uppdaterad": "2026-11-11T16:42:17.744Z",
   "spel": {
     "version": 1,
-    "tid": 1794415331013,
+    "tid": 1794415334766,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -363,11 +363,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 11,
-          "vp": 12,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -388,7 +389,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "fordelNasta": true
         },
         "galfner": {
           "kp": 12,
@@ -410,7 +412,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": true,
+          "fordelNasta": true
         },
         "gofnagrim": {
           "kp": 13,
@@ -432,7 +435,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "fordelNasta": true
         }
       },
       "guld": 0,
@@ -475,6 +479,14 @@
         },
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
           "cls": "ok"
         }
       ],
