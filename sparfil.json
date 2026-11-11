@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:44:02.814Z",
+  "uppdaterad": "2026-11-11T16:44:08.648Z",
   "spel": {
     "version": 1,
-    "tid": 1794415439806,
+    "tid": 1794415445592,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -392,7 +392,8 @@
           "markerade": [],
           "anvanda": [
             "Kunskap",
-            "Simma"
+            "Simma",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -401,9 +402,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true,
-          "nackdelNasta": true
+          "agerat": true,
+          "fordelNasta": false,
+          "nackdelNasta": false,
+          "valtVapen": "Kort båge"
         },
         "galfner": {
           "kp": 12,
@@ -688,6 +690,10 @@
         {
           "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [14] mot 13 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
