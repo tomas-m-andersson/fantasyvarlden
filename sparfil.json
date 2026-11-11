@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:43:03.933Z",
+  "uppdaterad": "2026-11-11T16:43:20.351Z",
   "spel": {
     "version": 1,
-    "tid": 1794415380965,
+    "tid": 1794415397392,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -328,7 +328,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En skogssjö blank som en spegel. En nedbrunnen lägereld är fortfarande varm. Doften av vilda smultron är nästan förförisk.",
-          "fro": 139916758
+          "fro": 139916758,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 7 guld."
         },
         {
           "typ": "rum",
@@ -408,7 +410,8 @@
           "markerade": [],
           "anvanda": [
             "Simma",
-            "Armborst"
+            "Armborst",
+            "Finna dolda ting"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -447,7 +450,7 @@
           "valtVapen": "Stav"
         }
       },
-      "guld": 6,
+      "guld": 13,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -568,6 +571,10 @@
         {
           "text": "Dendroid faller!",
           "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [17] mot 8 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
