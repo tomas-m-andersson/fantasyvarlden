@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:42:30.854Z",
+  "uppdaterad": "2026-11-11T16:42:37.723Z",
   "spel": {
     "version": 1,
-    "tid": 1794415347823,
+    "tid": 1794415354726,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -354,7 +354,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Simma"
+            "Simma",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -364,7 +365,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "valtVapen": "Gorgor"
         },
         "pescatore": {
           "kp": 11,
@@ -389,7 +391,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "galfner": {
@@ -412,7 +414,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "gofnagrim": {
@@ -436,7 +438,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -510,6 +512,18 @@
         {
           "text": "Dendroid tar 3 skada (6 − 3 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd med fördel: [13 / 10 → 10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroid tar 4 skada (7 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
