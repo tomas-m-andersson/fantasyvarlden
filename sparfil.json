@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:44:13.678Z",
+  "uppdaterad": "2026-11-11T22:44:22.575Z",
   "spel": {
     "version": 1,
-    "tid": 1794437050572,
+    "tid": 1794437059566,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -337,6 +337,10 @@
           "fiender": [
             "orch",
             "orch"
+          ],
+          "rutor": [
+            54,
+            32
           ]
         },
         {
@@ -349,7 +353,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "ff": {
           "kp": 13,
@@ -435,7 +439,7 @@
       "start": "2026-11-11 23:42",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false,
       "anvandaText": [
         "En korsning där tre gångar möts",
