@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:40:39.339Z",
+  "uppdaterad": "2026-11-11T16:41:15.997Z",
   "spel": {
     "version": 1,
-    "tid": 1794415236316,
+    "tid": 1794415272977,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -304,7 +304,9 @@
               "kloak",
               "trask"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Alla tar sig förbi utan en skråma."
         },
         {
           "typ": "rum",
@@ -347,7 +349,9 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Simma"
+          ]
         },
         "pescatore": {
           "kp": 11,
@@ -362,7 +366,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Kunskap"
+            "Kunskap",
+            "Simma"
           ]
         },
         "galfner": {
@@ -375,7 +380,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Simma"
+          ]
         },
         "gofnagrim": {
           "kp": 13,
@@ -387,7 +394,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Simma"
+          ]
         }
       },
       "guld": 0,
@@ -403,6 +412,22 @@
         {
           "text": "”Smart.” Han försvinner i en svavelpuff och lämnar något efter sig. (Läkedryck i packningen)",
           "cls": "info"
+        },
+        {
+          "text": "FF slår Simma: [5] mot 5 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Simma: [3] mot 6 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner slår Simma: [5] mot 6 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim slår Simma: [3] mot 6 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
