@@ -102,6 +102,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   if(snoar){ ctx.fillStyle = "rgba(210,224,245,.10)"; ctx.fillRect(0, 0, W, H); }
   G.regnLager(canvas, regnar);
   G.snoLager(canvas, snoar);
+  G.skumLager(canvas, SKUM[bgId] ? bgId : null);
   // Lägereldarna i de målade lägerbilderna fladdrar och ryker (eget lager ovanpå, se ELD längre ner)
   G.eldLager(canvas, ELDAR[window.BAKGRUND.namn(bgId, fro)] || null);
   // rummets föremål (skatt, fälla, vila…)
@@ -371,6 +372,64 @@ G.regnLager = (canvas, pa) => {
   if(!REGN.droppar.length) for(let i=0;i<150;i++) REGN.droppar.push(nyDroppe(false));
   if(STILLA){ ritaRegn(ov); return; }
   if(!REGN.aktiv){ REGN.aktiv = true; REGN.senast = 0; requestAnimationFrame(regnSteg); }
+};
+
+// ---------- Skum i forsande vatten ----------
+// Små vita prickar som flyter med strömmen. Var vattnet finns räknas ut ur själva bakgrundsbilden (ljusa, blåvita pixlar
+// inom ett område), så prickarna bara syns på forsen. fx/fy = strömmens riktning, v = fart (pixlar per sekund i 320×180).
+const SKUM = {
+  vatten_ute:  { x0:170, y0:78, x1:320, y1:180, fx:.18, fy:1, v:34 },
+  vatten_inne: { x0:250, y0:50, x1:320, y1:180, fx:-.12, fy:1, v:46 }
+};
+const SKUMDATA = {};   // bild-id → { mask, punkter, prickar }
+function skumMask(id){
+  if(SKUMDATA[id]) return SKUMDATA[id].mask ? SKUMDATA[id] : null;
+  const d = SKUMDATA[id] = { mask:null, punkter:[], prickar:[] }, img = new Image();
+  img.onload = () => { try{
+    const c = document.createElement("canvas"); c.width = 320; c.height = 180;
+    const x = c.getContext("2d"); x.drawImage(img, 0, 0, 320, 180);
+    const px = x.getImageData(0, 0, 320, 180).data, o = SKUM[id], m = new Uint8Array(320*180);
+    for(let y=o.y0; y<o.y1; y++) for(let X=o.x0; X<o.x1; X++){ const i = (y*320+X)*4, r=px[i], g=px[i+1], b=px[i+2];
+      if(r+g+b > 330 && b >= r - 8) { m[y*320+X] = 1; d.punkter.push(y*320+X); } }
+    d.mask = m;
+  }catch(e){} };
+  img.src = "bakgrunder/" + id + ".png";
+  return null;
+}
+function nyPrick(d, o){ const p = d.punkter[Math.floor(Math.random()*d.punkter.length)];
+  return { x: p % 320, y: Math.floor(p/320), v: o.v*(.6 + Math.random()*.8), t: 0, liv: .5 + Math.random()*1.1, stor: Math.random() < .4 ? (Math.random() < .3 ? 2 : 1) : 0 }; }
+const SKUMLAGER = { aktiv:false, senast:0 };
+function ritaSkum(c){
+  const id = c._skum, d = SKUMDATA[id], x = c.getContext("2d"); x.clearRect(0, 0, 320, 180);
+  if(!d || !d.mask) return;
+  for(const p of d.prickar){ const a = Math.min(1, p.t/.15, (p.liv - p.t)/.25);
+    x.fillStyle = `rgba(255,255,255,${(.85*a).toFixed(2)})`;
+    x.fillRect(Math.round(p.x), Math.round(p.y), p.stor ? 2 : 1, p.stor===2 ? 2 : 1); }
+}
+function skumSteg(t){
+  const lager = [...document.querySelectorAll("canvas.skum")].filter(c=>c.isConnected);
+  if(!lager.length){ SKUMLAGER.aktiv = false; return; }
+  const dt = Math.min(.05, SKUMLAGER.senast ? (t - SKUMLAGER.senast)/1000 : .016); SKUMLAGER.senast = t;
+  new Set(lager.map(c=>c._skum)).forEach(id => { const d = SKUMDATA[id], o = SKUM[id]; if(!d || !d.mask || !d.punkter.length) return;
+    while(d.prickar.length < 70) d.prickar.push(nyPrick(d, o));
+    const n = Math.hypot(o.fx, o.fy);
+    d.prickar.forEach((p,i) => { p.t += dt; p.x += o.fx/n*p.v*dt + (Math.random()-.5)*.6; p.y += o.fy/n*p.v*dt;
+      const X = Math.round(p.x), Y = Math.round(p.y);
+      if(p.t > p.liv || X < 0 || X >= 320 || Y >= 180 || !d.mask[Y*320+X]) d.prickar[i] = nyPrick(d, o); });
+  });
+  lager.forEach(ritaSkum);
+  requestAnimationFrame(skumSteg);
+}
+G.skumLager = (canvas, id) => {
+  const tv = canvas.parentElement;
+  if(!tv || !tv.classList.contains("tv")) return;
+  let ov = tv.querySelector("canvas.skum");
+  if(!id){ if(ov) ov.remove(); return; }
+  if(!ov){ ov = document.createElement("canvas"); ov.className = "px skum"; ov.width = 320; ov.height = 180; ov.setAttribute("aria-hidden","true"); canvas.after(ov); }
+  ov._skum = id;
+  if(!skumMask(id)){ setTimeout(()=>{ if(ov.isConnected) G.skumLager(canvas, id); }, 300); return; }
+  if(STILLA) return;
+  if(!SKUMLAGER.aktiv){ SKUMLAGER.aktiv = true; SKUMLAGER.senast = 0; requestAnimationFrame(skumSteg); }
 };
 
 // ---------- Snöfall ----------
