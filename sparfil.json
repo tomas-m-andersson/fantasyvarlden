@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:10:46.835Z",
+  "uppdaterad": "2026-11-11T17:10:56.364Z",
   "spel": {
     "version": 1,
-    "tid": 1794417043900,
+    "tid": 1794417053350,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -371,7 +371,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Svärd"
+            "Svärd",
+            "Spjut"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -380,9 +381,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Gorgor",
-          "fordelNasta": true
+          "agerat": true,
+          "valtVapen": "Kort spjut",
+          "fordelNasta": false
         },
         "pescatore": {
           "kp": 11,
@@ -552,6 +553,14 @@
         {
           "text": "Ulv faller!",
           "cls": "d"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut med fördel: [8 / 13 → 8] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
