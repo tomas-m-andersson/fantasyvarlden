@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:43:55.367Z",
+  "uppdaterad": "2026-11-11T16:44:02.814Z",
   "spel": {
     "version": 1,
-    "tid": 1794415432309,
+    "tid": 1794415439806,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -373,10 +373,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
-          "valtVapen": "Kort spjut",
-          "nackdelNasta": true
+          "valtVapen": "Gorgor",
+          "nackdelNasta": false
         },
         "pescatore": {
           "kp": 11,
@@ -680,6 +680,14 @@
         {
           "text": "Göfnagrim skakas om och får nackdel på nästa slag.",
           "cls": "fel"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd med nackdel: [13 / 11 → 13] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
