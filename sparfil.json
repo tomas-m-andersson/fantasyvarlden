@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:12:16.953Z",
+  "uppdaterad": "2026-11-11T17:12:34.666Z",
   "spel": {
     "version": 1,
-    "tid": 1794417133974,
+    "tid": 1794417151540,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -12,6 +12,7 @@
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
+      "Läkande ört",
       "Läkande ört"
     ],
     "sallskap": [
@@ -353,7 +354,9 @@
           "rumtyp": "mote",
           "text": "En utsiktspunkt där någon har byggt ett stenröse. Ett kors av sten där någon en gång föll. Det luktar snö och järn.",
           "fro": 56226087,
-          "mote": "fange"
+          "mote": "fange",
+          "klar": true,
+          "utfallText": "Kedjorna brister! Fången springer därifrån och glömmer en ört. (Läkande ört i packningen)"
         },
         {
           "typ": "rum",
@@ -628,6 +631,18 @@
         {
           "text": "Galfner Galfner slår Finna dolda ting: [2] mot 8 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "FF slår STY: [1] mot 17 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Där satt den. Tärningsgudarna ler i dag.",
+          "cls": "d"
+        },
+        {
+          "text": "Kedjorna brister! Fången springer därifrån och glömmer en ört. (Läkande ört i packningen)",
+          "cls": "info"
         }
       ],
       "utfall": null,
