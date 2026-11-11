@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:42:52.485Z",
+  "uppdaterad": "2026-11-11T16:43:03.933Z",
   "spel": {
     "version": 1,
-    "tid": 1794415369569,
+    "tid": 1794415380965,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -320,7 +320,9 @@
           "rutor": [
             35,
             30
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld."
         },
         {
           "typ": "rum",
@@ -339,7 +341,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "ff": {
           "kp": 13,
@@ -363,8 +365,8 @@
           "maktig": false,
           "raseri": false,
           "undvikAllt": false,
-          "stoppad": 1,
-          "agerat": true,
+          "stoppad": 0,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Gorgor"
         },
@@ -405,7 +407,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Simma"
+            "Simma",
+            "Armborst"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -415,7 +418,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "valtVapen": "Armborst"
         },
         "gofnagrim": {
           "kp": 13,
@@ -438,12 +442,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
       },
-      "guld": 0,
+      "guld": 6,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -552,13 +556,25 @@
         {
           "text": "FF sitter fast och förlorar sin nästa handling.",
           "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [3 / 9 → 3] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroid tar 4 skada (7 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroid faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-11 17:39",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false,
       "anvandaText": [
         "En glänta där solen knappt når ner",
