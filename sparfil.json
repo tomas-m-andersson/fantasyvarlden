@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:10:30.765Z",
+  "uppdaterad": "2026-11-11T17:10:36.662Z",
   "spel": {
     "version": 1,
-    "tid": 1794417027738,
+    "tid": 1794417033709,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -380,7 +380,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Gorgor",
           "fordelNasta": true
         },
@@ -404,7 +404,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "galfner": {
@@ -425,7 +425,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "gofnagrim": {
@@ -438,7 +438,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -447,7 +449,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true,
+          "fordelNasta": false,
           "valtVapen": "Stav"
         }
       },
@@ -504,6 +506,18 @@
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav med fördel: [10 / 4 → 4] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
