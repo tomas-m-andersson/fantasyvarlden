@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:13:28.524Z",
+  "uppdaterad": "2026-11-11T17:13:38.369Z",
   "spel": {
     "version": 1,
-    "tid": 1794417205609,
+    "tid": 1794417215419,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -41,7 +41,7 @@
           "Läkekonst": 1,
           "Pilbåge": 3
         },
-        "aventyr": 6,
+        "aventyr": 7,
         "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -52,7 +52,7 @@
           "Magi": 1,
           "Akrobatik": 1
         },
-        "aventyr": 6,
+        "aventyr": 7,
         "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -122,7 +122,7 @@
           "Simma": 1,
           "Akrobatik": 1
         },
-        "aventyr": 4,
+        "aventyr": 5,
         "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -154,7 +154,7 @@
           "Armborst": 1,
           "Simma": 1
         },
-        "aventyr": 4,
+        "aventyr": 5,
         "segrar": 4,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -274,7 +274,158 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-gollenskogen",
+        "titel": "Gollenskogen",
+        "plats": "Gollenskogen",
+        "land": "Mårdgård",
+        "miljo": "skog",
+        "boss": "harpydrottning",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "gollenskogen"
+      },
+      "party": [
+        "ff",
+        "pescatore",
+        "galfner",
+        "gofnagrim"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En backe täckt av blåbärsris. En hydda av grenar som ser nybyggd ut. En gök gal någonstans – trettiofyra gånger. En lapp: ”Har ni sett Greg? / Atlas”.",
+          "fro": 698632961,
+          "fiender": [
+            "rovare",
+            "bjorn"
+          ],
+          "rutor": [
+            9,
+            45
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "vila",
+          "text": "En glänta där solen knappt når ner. Svampar i alla regnbågens färger växer i en ring. Det doftar kåda och regn.",
+          "fro": 647545292
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "Ett snår så tätt att ni måste hugga er igenom. Spår efter en björn – eller en väldigt stor dvärg. Det är så tyst att man hör sina egna hjärtslag.",
+          "fro": 352807003,
+          "fiender": [
+            "harpya",
+            "bjorn"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "mote",
+          "text": "Gamla ekar med ansikten inristade i barken. Fåglarna i träden har slutat sjunga.",
+          "fro": 440808239,
+          "mote": "fange"
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 385894751,
+          "fiender": [
+            "harpydrottning"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "ff": {
+          "kp": 13,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkade fikon"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "pescatore": {
+          "kp": 11,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "gofnagrim": {
+          "kp": 13,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-11 18:13",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false,
+      "anvandaText": [
+        "En backe täckt av blåbärsris",
+        "En hydda av grenar som ser nybyggd ut",
+        "En gök gal någonstans – trettiofyra gånger",
+        "En lapp: ”Har ni sett Greg? / Atlas”.",
+        "En glänta där solen knappt når ner",
+        "Svampar i alla regnbågens färger växer i en ring",
+        "Det doftar kåda och regn",
+        "Ett snår så tätt att ni måste hugga er igenom",
+        "Spår efter en björn – eller en väldigt stor dvärg",
+        "Det är så tyst att man hör sina egna hjärtslag",
+        "Gamla ekar med ansikten inristade i barken",
+        "Fåglarna i träden har slutat sjunga"
+      ]
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
