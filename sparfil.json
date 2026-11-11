@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:11:29.130Z",
+  "uppdaterad": "2026-11-11T17:11:56.858Z",
   "spel": {
     "version": 1,
-    "tid": 1794417086177,
+    "tid": 1794417113925,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -335,7 +335,9 @@
           "typ": "rum",
           "rumtyp": "vila",
           "text": "En dal där molnen ligger lågt. Rester av en lavin har begravt stigen. Stenar rasar någonstans ovanför.",
-          "fro": 518668587
+          "fro": 518668587,
+          "klar": true,
+          "utfallText": "Ni vilar i lugn och ro. Alla känner sig lite bättre."
         },
         {
           "typ": "rum",
@@ -360,11 +362,11 @@
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "ff": {
-          "kp": 8,
-          "vp": 4,
+          "kp": 12,
+          "vp": 5,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -393,8 +395,8 @@
           "fordelNasta": false
         },
         "pescatore": {
-          "kp": 5,
-          "vp": 6,
+          "kp": 7,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -423,7 +425,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 1,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -447,8 +449,8 @@
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
-          "kp": 6,
-          "vp": 11,
+          "kp": 11,
+          "vp": 13,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -614,6 +616,10 @@
         {
           "text": "Göfnagrim tar 3 skada från En bred klyfta. KP 6/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Sällskapet vilar och samlar krafter.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
