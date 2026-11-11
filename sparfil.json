@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:16:43.882Z",
+  "uppdaterad": "2026-11-11T17:16:51.885Z",
   "spel": {
     "version": 1,
-    "tid": 1794417400972,
+    "tid": 1794417408953,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -332,7 +332,9 @@
           "rutor": [
             38,
             60
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 7 guld."
         },
         {
           "typ": "rum",
@@ -351,7 +353,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "ff": {
           "kp": 8,
@@ -404,7 +406,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -429,7 +431,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -455,12 +457,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
       },
-      "guld": 3,
+      "guld": 10,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -695,7 +697,7 @@
       "start": "2026-11-11 18:13",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false,
       "anvandaText": [
         "En backe täckt av blåbärsris",
