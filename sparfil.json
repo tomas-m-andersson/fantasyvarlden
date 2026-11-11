@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:47:33.021Z",
+  "uppdaterad": "2026-11-11T22:47:38.068Z",
   "spel": {
     "version": 1,
-    "tid": 1794437250112,
-    "kassa": 1353,
+    "tid": 1794437255015,
+    "kassa": 1429,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -45,7 +45,7 @@
           "Pilbåge": 3
         },
         "aventyr": 8,
-        "segrar": 5,
+        "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -56,7 +56,7 @@
           "Akrobatik": 1
         },
         "aventyr": 8,
-        "segrar": 5,
+        "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -126,7 +126,7 @@
           "Akrobatik": 1
         },
         "aventyr": 6,
-        "segrar": 5,
+        "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -159,7 +159,7 @@
           "Undvika": 1
         },
         "aventyr": 6,
-        "segrar": 5,
+        "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -185,6 +185,10 @@
       "gripagg": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-11 23:47",
+        "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Krusbärsberget och nådde kapitel 1 (5 rum). De gick hem med 76 guld."
+      },
       {
         "tid": "2026-11-11 18:18",
         "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Gollenskogen och nådde kapitel 1 (5 rum). De gick hem med 30 guld."
@@ -372,7 +376,9 @@
           "saker": [
             "Torkade fikon"
           ],
-          "markerade": [],
+          "markerade": [
+            "Spjut"
+          ],
           "anvanda": [
             "Svärd",
             "Spjut"
@@ -400,7 +406,8 @@
             "Vin"
           ],
           "markerade": [
-            "Pilbåge"
+            "Pilbåge",
+            "Kunskap"
           ],
           "anvanda": [
             "Kunskap",
@@ -427,7 +434,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Armborst"
+          ],
           "anvanda": [
             "Finna dolda ting",
             "Armborst"
@@ -452,7 +461,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Magi"
+          ],
           "anvanda": [
             "Stav",
             "Magi"
@@ -676,7 +687,59 @@
           "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "orsak": "Sällskapet gick hem med bytet.",
+        "beloning": 20,
+        "avgift": 0,
+        "avgiftText": null,
+        "byte": 56,
+        "doda": [],
+        "forb": {
+          "ff": [
+            {
+              "f": "Spjut",
+              "v": 15,
+              "s": 6,
+              "upp": false
+            }
+          ],
+          "pescatore": [
+            {
+              "f": "Pilbåge",
+              "v": 15,
+              "s": 4,
+              "upp": false
+            },
+            {
+              "f": "Kunskap",
+              "v": 16,
+              "s": 5,
+              "upp": false
+            }
+          ],
+          "galfner": [
+            {
+              "f": "Armborst",
+              "v": 13,
+              "s": 6,
+              "upp": false
+            }
+          ],
+          "gofnagrim": [
+            {
+              "f": "Magi",
+              "v": 13,
+              "s": 12,
+              "upp": false
+            }
+          ]
+        },
+        "rad": [
+          "Ni tog er igenom 5 rum och nådde kapitel 1 i Krusbärsberget.",
+          "🏆 Nytt rekord för Krusbärsberget!"
+        ]
+      },
       "start": "2026-11-11 23:42",
       "utforska": true,
       "kapitel": 1,
