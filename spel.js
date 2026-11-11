@@ -638,6 +638,9 @@ const PLATS_BILD = {"Kras-Kras kloaker":"kras_kras", "Skogen vid riksväg 40":"r
 // Egna bossrum: när bossen själv står i rummet byts bakgrunden (gäller både uppdrag och utforskning)
 const BOSS_BILD = {drake:"boss_drake", grip:"boss_grip", harpydrottning:"boss_harpyor", orchhovding:"boss_orch", svartalfkung:"boss_svartalf",
   rattkung:"boss_rattkung", general:"boss_general", gravvaktare:"boss_gravvaktare", dendroidmoder:"boss_dendroidmoder", rovarhovding:"boss_rovarhovding", rese:"arena_sten", kieslawski:"boss_kieslawski"};
+// Bossbilder som bara passar i en viss miljö (harpyornas bergsnäste ska inte dyka upp i Gollenskogen, rövarlägret inte i öknen).
+// I andra miljöer används platsens vanliga bakgrund.
+const BOSS_MILJO = {harpydrottning:"berg", grip:"berg", rovarhovding:"skog", dendroidmoder:"skog"};
 // Bossrum som hör till en plats i stället för en viss boss
 const BOSS_PLATS = {"Döda sjön":"boss_dodasjon"};
 // Bakgrund och frö för ett steg: strider som börjar på resan (t.ex. bakhåll) stannar kvar på vägen
@@ -647,7 +650,7 @@ function stegScen(steg){ const r = st.run;
 function scenMiljo(m, steg){
   const r = st.run, p = r && PLATS_BILD[r.q.plats];
   if(r && steg && steg.rumtyp==="boss" && BOSS_PLATS[r.q.plats]) return BOSS_PLATS[r.q.plats];
-  if(steg && steg.rumtyp==="boss" && steg.fiender && BOSS_BILD[steg.fiender[0]]) return BOSS_BILD[steg.fiender[0]];
+  if(steg && steg.rumtyp==="boss" && steg.fiender && BOSS_BILD[steg.fiender[0]] && (!BOSS_MILJO[steg.fiender[0]] || BOSS_MILJO[steg.fiender[0]]===m)) return BOSS_BILD[steg.fiender[0]];
   if(!p && m==="skog" && steg && steg.rumtyp==="skatt") return "hygge";
   // Svartborgen: bilden väljs efter vilken del av fängelset rumstexten beskriver
   if(!p && m==="fangelse" && steg && steg.text){
