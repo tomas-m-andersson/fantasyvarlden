@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:16:39.817Z",
+  "uppdaterad": "2026-11-11T17:16:43.882Z",
   "spel": {
     "version": 1,
-    "tid": 1794417396871,
+    "tid": 1794417400972,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -404,7 +404,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -677,6 +677,18 @@
         {
           "text": "Brunbjörn tar 9 skada (11 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [6] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 10 skada (12 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
