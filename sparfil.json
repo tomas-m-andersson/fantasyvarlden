@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:43:51.302Z",
+  "uppdaterad": "2026-11-11T22:44:13.678Z",
   "spel": {
     "version": 1,
-    "tid": 1794437028391,
+    "tid": 1794437050572,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -325,7 +325,9 @@
           "rumtyp": "mote",
           "text": "En trång passage med kalla, svettiga väggar. En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier. Det luktar fuktig ull och svavel.",
           "fro": 916041823,
-          "mote": "lik"
+          "mote": "lik",
+          "klar": true,
+          "utfallText": "Ni känner er som bättre människor (och alver, dvärgar, ankor). (alla återfår VP)"
         },
         {
           "typ": "rum",
@@ -375,7 +377,9 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Kunskap"
+          ]
         },
         "galfner": {
           "kp": 12,
@@ -417,6 +421,14 @@
         {
           "text": "Galfner Galfner slår Finna dolda ting: [4] mot 9 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Kunskap: [8] mot 16 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ni känner er som bättre människor (och alver, dvärgar, ankor). (alla återfår VP)",
+          "cls": "info"
         }
       ],
       "utfall": null,
