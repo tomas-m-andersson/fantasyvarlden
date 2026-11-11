@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:47:07.818Z",
+  "uppdaterad": "2026-11-11T22:47:13.278Z",
   "spel": {
     "version": 1,
-    "tid": 1794437224731,
+    "tid": 1794437230357,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -383,7 +383,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Gorgor"
         },
@@ -398,7 +398,9 @@
           "saker": [
             "Vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Pilbåge"
+          ],
           "anvanda": [
             "Kunskap",
             "Pilbåge"
@@ -412,7 +414,8 @@
           "stoppad": 0,
           "agerat": false,
           "fordelNasta": false,
-          "valtVapen": "Kort båge"
+          "valtVapen": "Kort båge",
+          "nackdelNasta": true
         },
         "galfner": {
           "kp": 12,
@@ -435,7 +438,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -460,7 +463,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -634,6 +637,18 @@
         {
           "text": "Orchhövdingen Grorm tar 4 skada (7 − 3 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [20] mot 15 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Pescatore Vesuvio tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
