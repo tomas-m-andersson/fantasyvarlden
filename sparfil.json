@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:16:51.885Z",
+  "uppdaterad": "2026-11-11T17:17:14.476Z",
   "spel": {
     "version": 1,
-    "tid": 1794417408953,
+    "tid": 1794417431477,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -12,6 +12,7 @@
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
+      "Läkande ört",
       "Läkande ört",
       "Läkande ört"
     ],
@@ -341,7 +342,9 @@
           "rumtyp": "mote",
           "text": "Gamla ekar med ansikten inristade i barken. Fåglarna i träden har slutat sjunga.",
           "fro": 440808239,
-          "mote": "fange"
+          "mote": "fange",
+          "klar": true,
+          "utfallText": "Kedjorna brister! Fången springer därifrån och glömmer en ört. (Läkande ört i packningen)"
         },
         {
           "typ": "rum",
@@ -691,6 +694,14 @@
         {
           "text": "Brunbjörn faller!",
           "cls": "d"
+        },
+        {
+          "text": "FF slår STY: [17] mot 17 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Kedjorna brister! Fången springer därifrån och glömmer en ört. (Läkande ört i packningen)",
+          "cls": "info"
         }
       ],
       "utfall": null,
