@@ -219,6 +219,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       if(!(img.complete && img.naturalWidth)){ omRitaVid(img); return; }
       const r = n.fiende ? G.fiendeRuta(n.fiende, n.ruta, false) : n.ruta;
       const x = n.x != null ? n.x : (i===0 ? 100 : 126), fot = n.fot != null ? n.fot : (i===0 ? 77 : 74) + markNer;
+      if(n.dold){ effektPa(n.effekt, x-2, fot-34, 36); return; }   // försvunnen i en rökpuff – bara molnet
       ctx.fillStyle=SKUGGA; ctx.fillRect(x+7, fot-2, 18, 2);
       ctx.save();
       const nb = n.ark==="lik" ? 0 : andas(i+9);   // liken ligger still
@@ -226,6 +227,7 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
       if(n.fiende) ctx.drawImage(img, ...fiendeKalla(n.fiende, r), 0, 0, 32, 32);
       else ctx.drawImage(img, (r%8)*32, Math.floor(r/8)*32, 32, 32, 0, 0, 32, 32);
       ctx.restore();
+      effektPa(n.effekt, x-2, fot-34, 36);
     });
   }
   // fiender

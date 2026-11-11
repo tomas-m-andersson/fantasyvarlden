@@ -888,8 +888,11 @@ function ritaRun(){
     ${loggHtml()}
     <div class="row"><button class="btn ghost small" data-a="hem">Till värdshuset (pausa)</button></div>`;
   const moteBild = steg.rumtyp==="garvard" ? "utanfor_gropen" : steg.mote && MOTE_BILD[steg.mote];
-  const ritaRum = orn => G.ritaScen($("#scen"), moteBild || (steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg)), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?(steg.utlost?"falla":null):steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta","Forsande vatten":"vatten"}[steg.hinder.namn]||""):steg.typ==="resa"&&!moteBild?"resa":null, scenHjaltar(null, orn), scenNpcer(steg));
+  const ritaRum = (orn, puff) => G.ritaScen($("#scen"), moteBild || (steg.typ==="resa"?resMiljo(miljo,r.i):scenMiljo(miljo, steg)), steg.typ==="resa"?[]:fiendeVisning, steg.fro||r.i*977+13, steg.jens?"jens:"+(steg.vagn||0):steg.rumtyp==="falla"?(steg.utlost?"falla":null):steg.rumtyp==="skatt"?"skatt":steg.rumtyp==="vila"?"vila":steg.rumtyp==="hinder"?"hinder:"+({"En låst port":"dorr","En brant klippa":"stege","En gåta i sten":"mur","En bred klyfta":"klyfta","Forsande vatten":"vatten"}[steg.hinder.namn]||""):steg.typ==="resa"&&!moteBild?"resa":null, scenHjaltar(null, orn), scenNpcer(steg, puff));
   ritaRum();
+  if(r.puffVisa){ r.puffVisa = false; let k = 0;
+    const puff = () => { if(!$("#scen") || st.run !== r) return; ritaRum(undefined, k < PUFF_RUTOR.length ? k : null); if(k++ < PUFF_RUTOR.length) setTimeout(puff, 90); };
+    puff(); }
   if(r.ornVisa){ const v = r.ornVisa; r.ornVisa = null; spelaOrn(t => ritaRum(t==null ? undefined : {ruta:v.ruta, t, d:v.d})); }
   fyllPortratt(app); scrollaLogg();
   app.onclick = e => { const b=e.target.closest("[data-a]"); if(!b||b.disabled||tarningLas) return; medTarningar(()=>runKlick(b)); };
@@ -911,7 +914,10 @@ const MOTE_FIGUR = {
 const GARVARD_RUTOR = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,48,49,50,51,52,53,54,55,56,57];   // med öppen hand, pekande eller räknande mynt
 // Möten med egna målade bakgrunder
 const MOTE_BILD = {orter:"ortgard", dunker:"dunkers_hus"};
-function scenNpcer(steg){
+function scenNpcer(steg, puff){
+  // figuren som försvunnit i en rökpuff: bara molnet medan det syns, sedan tomt
+  if(steg.forsvann){ if(puff == null) return [];
+    return scenNpcer({...steg, forsvann:false}).slice(0,1).map(n => ({...n, dold: puff >= 2, effekt: PUFF_RUTOR[puff]})); }
   const r = st.run, ut = [];
   if(steg.rumtyp==="garvard") return [{ark:"garvard", ruta:GARVARD_RUTOR[(steg.fro||0) % GARVARD_RUTOR.length]}];
   if(steg.jens) return ut;
@@ -1058,8 +1064,12 @@ function tillampa(eff, id, steg){
   }
   klart(steg, t.filter(Boolean).join(" "));
 }
+// Mötespersoner som försvinner i en rökpuff (t.ex. Torbyn): rökmolnet ur effektarket spelas upp och figuren är borta efteråt
+const FORSVINNER = /försvinner i en (svavel|rök)puff|borta när ni blinkar/i;
+const PUFF_RUTOR = [48,49,50,50,51,52,52,51,50,49,48];   // rad 6 i npc/effekter.png, molnet växer och sjunker ihop
 function klart(steg, text){
   steg.klar = true; steg.utfallText = text; aktivtVal=null;
+  if(steg.mote && FORSVINNER.test(text||"")){ steg.forsvann = true; st.run.puffVisa = true; }
   if(kollaAllaNere()) return;
   spara(); ritaRun();
 }
