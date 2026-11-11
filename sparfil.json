@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:10:56.364Z",
+  "uppdaterad": "2026-11-11T17:11:05.513Z",
   "spel": {
     "version": 1,
-    "tid": 1794417053350,
+    "tid": 1794417061530,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -307,7 +307,9 @@
           "rutor": [
             63,
             35
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 3 guld."
         },
         {
           "typ": "rum",
@@ -356,7 +358,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "ff": {
           "kp": 13,
@@ -381,7 +383,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -409,7 +411,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -423,7 +425,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Armborst"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -432,7 +436,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "valtVapen": "Armborst"
         },
         "gofnagrim": {
           "kp": 9,
@@ -460,7 +465,7 @@
           "nackdelNasta": true
         }
       },
-      "guld": 0,
+      "guld": 3,
       "logg": [
         {
           "text": "Sällskapet antar uppdraget ”Ett gripägg till Gitte” av Gitte von Gittemberg.",
@@ -561,6 +566,18 @@
         {
           "text": "Harpya tar 7 skada (8 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [12 / 8 → 8] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 2 skada (3 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
