@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:46:43.171Z",
+  "uppdaterad": "2026-11-11T22:46:53.938Z",
   "spel": {
     "version": 1,
-    "tid": 1794437200192,
+    "tid": 1794437210878,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -388,7 +388,7 @@
           "valtVapen": "Kort spjut"
         },
         "pescatore": {
-          "kp": 10,
+          "kp": 6,
           "vp": 9,
           "doende": false,
           "ok": 0,
@@ -435,7 +435,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -597,6 +597,26 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Pescatore Vesuvio: [13] mot 14 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 4 skada (7 − 3 rustning) från Orchhövdingen Grorm. KP 6/11.",
+          "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [13] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 2 skada (5 − 3 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
