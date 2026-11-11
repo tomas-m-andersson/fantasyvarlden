@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:16:28.142Z",
+  "uppdaterad": "2026-11-11T17:16:39.817Z",
   "spel": {
     "version": 1,
-    "tid": 1794417385052,
+    "tid": 1794417396871,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -378,7 +378,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Gorgor",
           "fordelNasta": false
         },
@@ -404,7 +404,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -419,7 +419,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Armborst"
+            "Armborst",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -652,6 +653,30 @@
         {
           "text": "Pescatore Vesuvio tar 1 skada (4 − 3 rustning) från Ramslag. KP 10/11.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner försöker undvika: [4] mot 6 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [11] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 0 skada (2 − 2 rustning).",
+          "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [8] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 9 skada (11 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
