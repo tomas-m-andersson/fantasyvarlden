@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:41:28.487Z",
+  "uppdaterad": "2026-11-11T16:42:13.995Z",
   "spel": {
     "version": 1,
-    "tid": 1794415285506,
+    "tid": 1794415331013,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -355,7 +355,15 @@
           "markerade": [],
           "anvanda": [
             "Simma"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "pescatore": {
           "kp": 11,
@@ -372,11 +380,19 @@
           "anvanda": [
             "Kunskap",
             "Simma"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -386,7 +402,15 @@
           "markerade": [],
           "anvanda": [
             "Simma"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         },
         "gofnagrim": {
           "kp": 13,
@@ -400,7 +424,15 @@
           "markerade": [],
           "anvanda": [
             "Simma"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -431,6 +463,18 @@
         },
         {
           "text": "Göfnagrim slår Simma: [3] mot 6 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
         }
       ],
