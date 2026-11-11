@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:17:19.661Z",
+  "uppdaterad": "2026-11-11T17:17:27.545Z",
   "spel": {
     "version": 1,
-    "tid": 1794417436598,
+    "tid": 1794417444520,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -388,11 +388,11 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Gorgor",
-          "fordelNasta": false
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 10,
-          "vp": 12,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -412,13 +412,13 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": false,
+          "agerat": true,
+          "fordelNasta": true,
           "valtVapen": "Kort båge"
         },
         "galfner": {
           "kp": 12,
-          "vp": 4,
+          "vp": 1,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -437,12 +437,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": false,
+          "agerat": true,
+          "fordelNasta": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
-          "kp": 13,
+          "kp": 9,
           "vp": 10,
           "doende": false,
           "ok": 0,
@@ -464,7 +464,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": false,
+          "fordelNasta": true,
           "valtVapen": "Stav"
         }
       },
@@ -705,6 +705,34 @@
         {
           "text": "Kedjorna brister! Fången springer därifrån och glömmer en ört. (Läkande ört i packningen)",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar 4 skada (7 − 3 rustning) från Klor. KP 9/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
