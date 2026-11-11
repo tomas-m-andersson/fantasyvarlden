@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:44:18.172Z",
+  "uppdaterad": "2026-11-11T16:44:27.392Z",
   "spel": {
     "version": 1,
-    "tid": 1794415455098,
+    "tid": 1794415464099,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -350,7 +350,7 @@
       "i": 4,
       "h": {
         "ff": {
-          "kp": 10,
+          "kp": 7,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -373,7 +373,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Gorgor",
           "nackdelNasta": false
@@ -402,7 +402,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "nackdelNasta": false,
           "valtVapen": "Kort båge"
@@ -432,7 +432,7 @@
           "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Armborst",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "gofnagrim": {
           "kp": 12,
@@ -455,7 +455,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav",
           "nackdelNasta": false
@@ -702,6 +702,38 @@
         {
           "text": "Harpydrottningen tar 3 skada (5 − 2 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med nackdel: [12 / 12 → 12] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 5 skada (7 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen piskar upp en storm mot hela sällskapet!",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 3 skada (6 − 3 rustning) från Vingstorm. KP 7/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 0 skada (3 − 3 rustning) från Vingstorm. KP 11/11.",
+          "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner tar 0 skada (2 − 3 rustning) från Vingstorm. KP 12/12.",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar 0 skada (2 − 3 rustning) från Vingstorm. KP 12/13.",
+          "cls": "info"
         }
       ],
       "utfall": null,
