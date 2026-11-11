@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:42:28.394Z",
+  "uppdaterad": "2026-11-11T22:43:33.250Z",
   "spel": {
     "version": 1,
-    "tid": 1794436945515,
+    "tid": 1794437009935,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -12,6 +12,7 @@
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
+      "Läkande ört",
       "Läkande ört",
       "Läkande ört",
       "Läkande ört"
@@ -306,7 +307,9 @@
           "typ": "rum",
           "rumtyp": "skatt",
           "text": "En korsning där tre gångar möts. En rostig hjälm ligger upp och ner i ett hörn. Det droppar oavbrutet någonstans i mörkret.",
-          "fro": 569211038
+          "fro": 569211038,
+          "klar": true,
+          "utfallText": "Galfner Galfner hittar 29 guld och läkande ört."
         },
         {
           "typ": "rum",
@@ -381,7 +384,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Finna dolda ting"
+          ]
         },
         "gofnagrim": {
           "kp": 13,
@@ -396,11 +401,15 @@
           "anvanda": []
         }
       },
-      "guld": 0,
+      "guld": 29,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Krusbärsberget. Kapitel 1.",
           "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner slår Finna dolda ting: [2] mot 9 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
