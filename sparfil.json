@@ -1,7 +1,7 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:17:57.657Z",
+  "uppdaterad": "2026-11-11T17:18:00.206Z",
   "spel": {
     "version": 1,
     "tid": 1794417477308,
@@ -427,7 +427,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Armborst"
+          ],
           "anvanda": [
             "Armborst",
             "Undvika"
@@ -440,7 +442,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true,
+          "fordelNasta": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -782,6 +784,22 @@
         },
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [7 / 1 → 1] mot 13 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "🎲 Spelledaren Isak: Perfekt! Jag hade inte ens förberett mig på att ni skulle lyckas så bra.",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Harpydrottningen tar 12 skada (14 − 2 rustning).",
           "cls": "ok"
         }
       ],
