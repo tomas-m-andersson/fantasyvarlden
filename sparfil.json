@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:43:41.567Z",
+  "uppdaterad": "2026-11-11T16:43:50.042Z",
   "spel": {
     "version": 1,
-    "tid": 1794415418647,
+    "tid": 1794415427117,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -363,7 +363,8 @@
           "markerade": [],
           "anvanda": [
             "Simma",
-            "Svärd"
+            "Svärd",
+            "Spjut"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -373,8 +374,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true,
-          "valtVapen": "Gorgor"
+          "fordelNasta": false,
+          "valtVapen": "Kort spjut"
         },
         "pescatore": {
           "kp": 11,
@@ -399,7 +400,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "galfner": {
@@ -424,7 +425,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true,
           "valtVapen": "Armborst"
         },
@@ -449,7 +450,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true,
           "valtVapen": "Stav"
         }
@@ -631,6 +632,22 @@
         {
           "text": "Alla hjältar får fördel på sitt nästa slag.",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut med fördel: [15 / 16 → 15] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
