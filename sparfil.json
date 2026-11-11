@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:47:13.278Z",
+  "uppdaterad": "2026-11-11T22:47:21.981Z",
   "spel": {
     "version": 1,
-    "tid": 1794437230357,
+    "tid": 1794437238909,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -412,10 +412,10 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Kort båge",
-          "nackdelNasta": true
+          "nackdelNasta": false
         },
         "galfner": {
           "kp": 12,
@@ -649,6 +649,26 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge med nackdel: [8 / 1 → 8] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 3 skada (6 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [12] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm tar 2 skada (5 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
