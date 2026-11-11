@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:10:36.662Z",
+  "uppdaterad": "2026-11-11T17:10:46.835Z",
   "spel": {
     "version": 1,
-    "tid": 1794417033709,
+    "tid": 1794417043900,
     "kassa": 906,
     "packning": [
       "Läkande ört",
@@ -395,8 +395,12 @@
           "saker": [
             "Vin"
           ],
-          "markerade": [],
-          "anvanda": [],
+          "markerade": [
+            "Pilbåge"
+          ],
+          "anvanda": [
+            "Pilbåge"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -404,8 +408,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true
+          "agerat": true,
+          "fordelNasta": false,
+          "valtVapen": "Kort båge"
         },
         "galfner": {
           "kp": 12,
@@ -429,7 +434,7 @@
           "fordelNasta": true
         },
         "gofnagrim": {
-          "kp": 10,
+          "kp": 9,
           "vp": 11,
           "doende": false,
           "ok": 0,
@@ -450,7 +455,8 @@
           "stoppad": 0,
           "agerat": false,
           "fordelNasta": false,
-          "valtVapen": "Stav"
+          "valtVapen": "Stav",
+          "nackdelNasta": true
         }
       },
       "guld": 0,
@@ -518,6 +524,34 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar 1 skada (4 − 3 rustning) från Skrik. KP 9/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim skakas om och får nackdel på nästa slag.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge med fördel: [6 / 1 → 1] mot 14 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Ulv tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Ulv faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
