@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:15:53.592Z",
+  "uppdaterad": "2026-11-11T17:16:00.087Z",
   "spel": {
     "version": 1,
-    "tid": 1794417350674,
+    "tid": 1794417357150,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -354,7 +354,7 @@
       "i": 2,
       "h": {
         "ff": {
-          "kp": 13,
+          "kp": 8,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -375,7 +375,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -582,6 +582,18 @@
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [3] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpya tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "FF tar 5 skada (8 − 3 rustning) från Bett. KP 8/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
