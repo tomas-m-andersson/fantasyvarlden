@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:46:28.114Z",
+  "uppdaterad": "2026-11-11T22:46:32.725Z",
   "spel": {
     "version": 1,
-    "tid": 1794437185111,
+    "tid": 1794437189779,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -383,7 +383,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Kort spjut"
         },
@@ -571,6 +571,10 @@
         {
           "text": "Orchhövdingen Grorm tar 1 skada (4 − 3 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Orchhövdingen Grorm anfaller Pescatore Vesuvio: [14 / 14 → 14] mot 14 – lyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
