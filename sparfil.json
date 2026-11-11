@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:45:55.764Z",
+  "uppdaterad": "2026-11-11T22:46:01.912Z",
   "spel": {
     "version": 1,
-    "tid": 1794437152771,
+    "tid": 1794437158990,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -367,7 +367,9 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Svärd"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -376,7 +378,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "valtVapen": "Gorgor"
         },
         "pescatore": {
           "kp": 11,
@@ -400,7 +403,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         },
         "galfner": {
@@ -424,7 +427,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -446,7 +449,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": true
         }
       },
@@ -503,6 +506,18 @@
         {
           "text": "Orch 1 faller!",
           "cls": "d"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd med fördel: [17 / 20 → 17] mot 14 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orch 2 anfaller Göfnagrim: [14 / 1 → 14] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
