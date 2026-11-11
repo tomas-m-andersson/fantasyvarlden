@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:16:14.011Z",
+  "uppdaterad": "2026-11-11T17:16:19.443Z",
   "spel": {
     "version": 1,
-    "tid": 1794417371003,
+    "tid": 1794417376451,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -376,7 +376,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort spjut",
+          "valtVapen": "Gorgor",
           "fordelNasta": false
         },
         "pescatore": {
@@ -451,7 +451,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -617,6 +617,14 @@
         {
           "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [18] mot 15 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [6] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Brunbjörn tar 4 skada (6 − 2 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
