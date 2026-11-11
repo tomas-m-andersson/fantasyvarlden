@@ -133,8 +133,9 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
   }
   if(extra==="resa") sak(sb, 27, 74, 50, 26);                                   // vägvisare vid vägen
   // fällan som just slagit till: en av sex sorter ur npc/fallor.png (spikar, björnsax, fallucka, stenblock, pendelyxa, giftgas)
-  if(extra==="falla"){ const fi = G.npcBild("fallor"), r = FALLOR_RUTOR[Math.floor(slump((fro||7)*31+5)()*FALLOR_RUTOR.length)];
-    if(klarBild(fi)){ ctx.fillStyle="#0005"; ctx.fillRect(86, 79+markNer, 28, 2); G.ritaRuta(ctx, fi, r, 84, 49+markNer, 32); } else omRitaVid(fi); }
+  if(extra==="falla"){ const fi = G.npcBild("fallor"), [r,x0,x1,y1] = FALLOR_RUTOR[Math.floor(slump((fro||7)*31+5)()*FALLOR_RUTOR.length)];
+    const fx = Math.round(98 - (x0+x1)/2), fy = 77 - y1 + markNer;   // mitt i bild, nederkanten på marken där fötterna står
+    if(klarBild(fi)){ ctx.fillStyle="#0005"; ctx.fillRect(fx+x0+2, fy+y1-1, x1-x0-4, 2); G.ritaRuta(ctx, fi, r, fx, fy, 32); } else omRitaVid(fi); }
   if(extra==="hinder:dorr" && !window.BAKGRUND.harEgen(bgId)){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege" && !window.BAKGRUND.harEgen(bgId)) sak(sb, 13, 84, 40, 38);
   if(extra==="hinder:mur" && !window.BAKGRUND.harEgen(bgId)) ritaStenport(ctx, 178, (76 + markNer)*2, fro);   // gåtan i sten: en stenport med runor
@@ -499,8 +500,9 @@ function ritaStenport(ctx, cx, fot, fro){
 // Värdshuset: elden i eldstaden (ingen rök, den går upp i skorstenen) och de fyra väggljusen
 const VARDSHUS_ELDAR = [ {x:105, y:114, s:9, inne:true},
   {x:45, y:17, ljus:true}, {x:166, y:17, ljus:true}, {x:224, y:17, ljus:true}, {x:315, y:17, ljus:true} ];
-// Rutor i npc/fallor.png som används (rad 3, de stängda fallluckorna, och tomma rutor är bortvalda)
-const FALLOR_RUTOR = [0,1,2,3,4,5,6,7, 8,9,10,11,12,15, 25,26,27,29,30, 32,33,34,35,36,37,38,39, 40,41,42,43,44,45,46, 48,49,50,51,52,53,54,55];
+// Fällorna i npc/fallor.png: [ruta, vänsterkant, högerkant, nederkant] för det synliga i rutan (32×32).
+// Fallluckorna (rad 3–4) är bortvalda. Fällan ställs med sin nederkant i höjd med hjältarnas fötter.
+const FALLOR_RUTOR = [[0,2,30,32],[1,2,30,32],[2,2,30,32],[3,2,30,32],[4,2,30,32],[5,2,30,32],[6,2,30,32],[7,2,30,32],[8,4,32,32],[9,3,32,32],[10,4,32,32],[11,1,32,32],[12,3,32,31],[15,3,32,32],[32,0,32,32],[33,0,32,32],[34,0,32,32],[35,0,32,32],[36,0,32,32],[37,0,32,32],[38,0,32,32],[39,0,32,32],[40,5,26,30],[41,3,23,30],[42,5,24,31],[43,9,29,30],[44,5,25,30],[45,3,23,30],[46,5,24,30],[48,7,29,32],[49,7,29,32],[50,7,31,32],[51,7,31,32],[52,7,29,32],[53,7,31,32],[54,7,30,32],[55,7,26,32]];
 const ELDAR = { lager_fangelse:{x:262, y:124, s:7}, lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
 const ELD = { senast:0, gnistor:[], rok:[] };
 function ritaEld(c, eldar, t){
