@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:44:31.814Z",
+  "uppdaterad": "2026-11-11T16:44:48.384Z",
   "spel": {
     "version": 1,
-    "tid": 1794415468912,
-    "kassa": 880,
+    "tid": 1794415485439,
+    "kassa": 916,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -37,10 +37,10 @@
         "dod": false,
         "bonus": {
           "Läkekonst": 1,
-          "Pilbåge": 1
+          "Pilbåge": 2
         },
         "aventyr": 5,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -50,7 +50,7 @@
           "Magi": 1
         },
         "aventyr": 5,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -115,10 +115,11 @@
       "ff": {
         "dod": false,
         "bonus": {
-          "Spjut": 1
+          "Spjut": 1,
+          "Simma": 1
         },
         "aventyr": 3,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -146,10 +147,11 @@
         "dod": false,
         "bonus": {
           "Finna dolda ting": 1,
-          "Armborst": 1
+          "Armborst": 1,
+          "Simma": 1
         },
         "aventyr": 3,
-        "segrar": 2,
+        "segrar": 3,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -175,6 +177,10 @@
       "gojan": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-11 17:44",
+        "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Gollenskogen och nådde kapitel 1 (5 rum). De gick hem med 36 guld."
+      },
       {
         "tid": "2026-11-11 00:37",
         "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Svartborgen och nådde kapitel 2 (10 rum). De gick hem med 134 guld."
@@ -344,7 +350,8 @@
           "rutor": [
             15,
             55
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -360,7 +367,9 @@
           "saker": [
             "Torkade fikon"
           ],
-          "markerade": [],
+          "markerade": [
+            "Simma"
+          ],
           "anvanda": [
             "Simma",
             "Svärd",
@@ -389,7 +398,9 @@
           "saker": [
             "Vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Pilbåge"
+          ],
           "anvanda": [
             "Kunskap",
             "Simma",
@@ -416,7 +427,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Simma"
+          ],
           "anvanda": [
             "Simma",
             "Armborst",
@@ -429,7 +442,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst",
           "nackdelNasta": false
@@ -443,7 +456,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Simma"
+          ],
           "anvanda": [
             "Simma",
             "Stav"
@@ -455,13 +470,13 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav",
           "nackdelNasta": false
         }
       },
-      "guld": 13,
+      "guld": 16,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Gollenskogen. Kapitel 1.",
@@ -742,14 +757,75 @@
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [3] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen tar 10 skada (12 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Harpydrottningen faller!",
+          "cls": "d"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Gollenskogen.",
+          "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "orsak": "Sällskapet gick hem med bytet.",
+        "beloning": 20,
+        "avgift": 0,
+        "avgiftText": null,
+        "byte": 16,
+        "doda": [],
+        "forb": {
+          "ff": [
+            {
+              "f": "Simma",
+              "v": 5,
+              "s": 9,
+              "upp": true
+            }
+          ],
+          "pescatore": [
+            {
+              "f": "Pilbåge",
+              "v": 13,
+              "s": 16,
+              "upp": true
+            }
+          ],
+          "galfner": [
+            {
+              "f": "Simma",
+              "v": 6,
+              "s": 13,
+              "upp": true
+            }
+          ],
+          "gofnagrim": [
+            {
+              "f": "Simma",
+              "v": 6,
+              "s": 2,
+              "upp": false
+            }
+          ]
+        },
+        "rad": [
+          "Ni tog er igenom 5 rum och nådde kapitel 1 i Gollenskogen."
+        ]
+      },
       "start": "2026-11-11 17:39",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "En glänta där solen knappt når ner",
         "Spår efter en björn – eller en väldigt stor dvärg",
