@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:40:23.711Z",
+  "uppdaterad": "2026-11-11T16:40:39.339Z",
   "spel": {
     "version": 1,
-    "tid": 1794415220769,
+    "tid": 1794415236316,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -333,7 +333,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "ff": {
           "kp": 13,
@@ -409,7 +409,7 @@
       "start": "2026-11-11 17:39",
       "utforska": true,
       "kapitel": 1,
-      "djup": 0,
+      "djup": 1,
       "paus": false,
       "anvandaText": [
         "En glänta där solen knappt når ner",
