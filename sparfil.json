@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:47:27.202Z",
+  "uppdaterad": "2026-11-11T22:47:33.021Z",
   "spel": {
     "version": 1,
-    "tid": 1794437244218,
+    "tid": 1794437250112,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -355,7 +355,8 @@
           ],
           "rutor": [
             63
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -412,7 +413,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Kort båge",
           "nackdelNasta": false
@@ -438,7 +439,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -669,14 +670,18 @@
         {
           "text": "Orchhövdingen Grorm faller!",
           "cls": "d"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Krusbärsberget.",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-11 23:42",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "En korsning där tre gångar möts",
         "En rostig hjälm ligger upp och ner i ett hörn",
@@ -690,7 +695,8 @@
         "En smal gång som slingrar sig nedåt i mörkret",
         "Någon har lämnat ett par strumpor på tork",
         "Ett ekande skratt hörs – sedan blir det helt tyst"
-      ]
+      ],
+      "nyttRekord": true
     },
     "reset": 1793783047660,
     "rekord": {
@@ -712,6 +718,11 @@
       "svartborgen": {
         "kapitel": 2,
         "djup": 10,
+        "datum": "2026-11-11"
+      },
+      "krusbarsberget": {
+        "kapitel": 1,
+        "djup": 5,
         "datum": "2026-11-11"
       }
     },
