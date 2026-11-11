@@ -1754,4 +1754,33 @@ ritaOm();
 ghLadda(false);
 G.npcBild("storn"); // ladda örnen i förväg så att den syns direkt när den anfaller
 window.__fv = {get st(){return st}, get strid(){return strid}}; // för felsökning
+// ================= EGENRITADE IKONER =================
+// Spelet använder inga emojier. Tecknen nedan finns kvar i texterna som markörer och byts automatiskt
+// mot egenritade pixelikoner (klasserna .pix-… i index.html) när de visas på skärmen.
+const PIX_TECKEN = {"🎲":["t20","Tärning"],"🐴":["hast","Häst"],"☠":["skalle","Död"],"🦅":["orn","Örn"],"⚔":["svard","Strid"],
+  "⛓":["kedja","Fasthållen"],"😨":["radd","Skrämd"],"🏆":["pokal","Seger"],"★":["stjarna","Stjärna"],"✓":["bock","Lyckat"],"✗":["kryss","Misslyckat"]};
+const PIX_FORKLARING = {kedja:"Fasthållen: fienden sitter fast och står över sina turer.", radd:"Skrämd: fienden har nackdel på sin nästa handling och kan tveka och missa helt."};
+const PIX_RE = new RegExp("(" + Object.keys(PIX_TECKEN).join("|") + ")\uFE0F?", "g");
+function bytIkoner(root){
+  if(!root) return;
+  if(root.nodeType===3){ if(PIX_RE.test(root.nodeValue)){ PIX_RE.lastIndex=0; ersattText(root); } PIX_RE.lastIndex=0; return; }
+  if(root.nodeType!==1 || /^(SCRIPT|STYLE|TEXTAREA|OPTION|SELECT|TITLE)$/.test(root.nodeName)) return;
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), lista=[];
+  while(w.nextNode()){ const n=w.currentNode; PIX_RE.lastIndex=0; if(PIX_RE.test(n.nodeValue) && !/^(SCRIPT|STYLE|TEXTAREA|OPTION|TITLE)$/.test(n.parentNode.nodeName)) lista.push(n); }
+  PIX_RE.lastIndex=0; lista.forEach(ersattText);
+}
+function ersattText(n){
+  const frag=document.createDocumentFragment(), t=n.nodeValue; let senast=0; PIX_RE.lastIndex=0; let m;
+  while((m=PIX_RE.exec(t))){ if(m.index>senast) frag.appendChild(document.createTextNode(t.slice(senast,m.index)));
+    const [namn,etikett]=PIX_TECKEN[m[1]], i=document.createElement("i"); i.className="pix pix-"+namn; i.setAttribute("role","img"); i.setAttribute("aria-label",etikett);
+    if(PIX_FORKLARING[namn]) i.title=PIX_FORKLARING[namn]; frag.appendChild(i); senast=m.index+m[0].length; }
+  if(senast<t.length) frag.appendChild(document.createTextNode(t.slice(senast)));
+  n.parentNode.replaceChild(frag,n);
+}
+new MutationObserver(l=>l.forEach(x=>x.addedNodes.forEach(bytIkoner))).observe(document.body,{childList:true,subtree:true,characterData:false});
+document.addEventListener("DOMContentLoaded",()=>bytIkoner(document.body)); bytIkoner(document.body);
+// Tryck på ikonen för fasthållen eller skrämd så visas en förklaring
+document.addEventListener("click", e=>{ const i=e.target.closest(".pix-kedja,.pix-radd"); if(!i) return; e.stopPropagation();
+  let t=$("#pixnotis"); if(!t){ t=document.createElement("div"); t.id="pixnotis"; t.className="notis"; document.body.appendChild(t); }
+  t.textContent=i.title; t.classList.add("syns"); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("syns"),3200); }, true);
 })();
