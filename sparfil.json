@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:14:35.916Z",
+  "uppdaterad": "2026-11-11T17:14:41.646Z",
   "spel": {
     "version": 1,
-    "tid": 1794417272937,
+    "tid": 1794417278605,
     "kassa": 1323,
     "packning": [
       "Läkande ört",
@@ -345,7 +345,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "ff": {
           "kp": 13,
@@ -554,7 +554,7 @@
       "start": "2026-11-11 18:13",
       "utforska": true,
       "kapitel": 1,
-      "djup": 0,
+      "djup": 1,
       "paus": false,
       "anvandaText": [
         "En backe täckt av blåbärsris",
