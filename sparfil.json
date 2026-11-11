@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T17:09:11.877Z",
+  "uppdaterad": "2026-11-11T17:09:17.668Z",
   "spel": {
     "version": 1,
-    "tid": 1794416948760,
+    "tid": 1794416954675,
     "kassa": 916,
     "packning": [
       "Läkande ört",
@@ -285,6 +285,7 @@
         "djup": 10,
         "datum": "2026-11-11"
       }
-    }
+    },
+    "svarighet": "latt"
   }
 }
