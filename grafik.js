@@ -132,7 +132,9 @@ G.ritaScen = (canvas, miljoId, fiender, fro, extra, hjaltar, npcer) => {
     else if(UTE[miljoId]){ const l=UTE[miljoId]; pa(sb, l[Math.floor(rnd2()*l.length)], 138, 72, 20); }
   }
   if(extra==="resa") sak(sb, 27, 74, 50, 26);                                   // vägvisare vid vägen
-  if(extra==="falla") sak(sg, 53, 74, 54, 26);                                  // spikfälla
+  // fällan som just slagit till: en av sex sorter ur npc/fallor.png (spikar, björnsax, fallucka, stenblock, pendelyxa, giftgas)
+  if(extra==="falla"){ const fi = G.npcBild("fallor"), r = FALLOR_RUTOR[Math.floor(slump((fro||7)*31+5)()*FALLOR_RUTOR.length)];
+    if(klarBild(fi)){ ctx.fillStyle="#0005"; ctx.fillRect(86, 79+markNer, 28, 2); G.ritaRuta(ctx, fi, r, 84, 49+markNer, 32); } else omRitaVid(fi); }
   if(extra==="hinder:dorr" && !window.BAKGRUND.harEgen(bgId)){ sak(sb, 26, 82, 44, 34); sak(sg, 54, 92, 60, 12); } // låst port med hänglås
   if(extra==="hinder:stege" && !window.BAKGRUND.harEgen(bgId)) sak(sb, 13, 84, 40, 38);
   if(extra==="hinder:mur" && !window.BAKGRUND.harEgen(bgId)) ritaStenport(ctx, 178, (76 + markNer)*2, fro);   // gåtan i sten: en stenport med runor
@@ -497,6 +499,8 @@ function ritaStenport(ctx, cx, fot, fro){
 // Värdshuset: elden i eldstaden (ingen rök, den går upp i skorstenen) och de fyra väggljusen
 const VARDSHUS_ELDAR = [ {x:105, y:114, s:9, inne:true},
   {x:45, y:17, ljus:true}, {x:166, y:17, ljus:true}, {x:224, y:17, ljus:true}, {x:315, y:17, ljus:true} ];
+// Rutor i npc/fallor.png som används (rad 3, de stängda fallluckorna, och tomma rutor är bortvalda)
+const FALLOR_RUTOR = [0,1,2,3,4,5,6,7, 8,9,10,11,12,15, 25,26,27,29,30, 32,33,34,35,36,37,38,39, 40,41,42,43,44,45,46, 48,49,50,51,52,53,54,55];
 const ELDAR = { lager_fangelse:{x:262, y:124, s:7}, lager_oken1:{x:165, y:133, s:9}, lager_oken2:{x:141, y:133, s:9}, lager_ute:{x:162, y:134, s:6}, lager_ute2:{x:160, y:153, s:9}, lager_inne:{x:160, y:134, s:9}, lager_inne2:{x:120, y:131, s:9} };
 const ELD = { senast:0, gnistor:[], rok:[] };
 function ritaEld(c, eldar, t){
