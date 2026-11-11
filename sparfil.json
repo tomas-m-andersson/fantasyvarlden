@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:46:01.912Z",
+  "uppdaterad": "2026-11-11T22:46:15.236Z",
   "spel": {
     "version": 1,
-    "tid": 1794437158990,
+    "tid": 1794437172327,
     "kassa": 1353,
     "packning": [
       "Läkande ört",
@@ -341,7 +341,9 @@
           "rutor": [
             54,
             32
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld."
         },
         {
           "typ": "rum",
@@ -350,10 +352,13 @@
           "fro": 388485401,
           "fiender": [
             "orchhovding"
+          ],
+          "rutor": [
+            63
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "ff": {
           "kp": 13,
@@ -441,7 +446,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -450,10 +457,11 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "valtVapen": "Stav"
         }
       },
-      "guld": 50,
+      "guld": 56,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Krusbärsberget. Kapitel 1.",
@@ -518,13 +526,29 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Orch 2 anfaller Pescatore Vesuvio: [17] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav med fördel: [10 / 14 → 10] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 tar 8 skada (9 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-11 23:42",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false,
       "anvandaText": [
         "En korsning där tre gångar möts",
