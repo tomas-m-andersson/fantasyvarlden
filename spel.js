@@ -1716,7 +1716,8 @@ function ritaSlut(){
   } else {
     // stå kvar i samma rum som sist (t.ex. bossrummet efter en bossvinst) i stället för att hoppa till platsens vanliga bild
     const sista = r.steg && r.steg[Math.min(r.i, r.steg.length-1)];
-    const [bild, fro] = sista ? stegScen(sista) : [scenMiljo(r.q.miljo), 99];
+    let [bild, fro] = sista ? stegScen(sista) : [scenMiljo(r.q.miljo), 99];
+    if(r.utforska && sista && sista.rumtyp==="boss") fro = 77 + r.kapitel;   // samma kista som på kapitelskärmen i bossrummet
     G.ritaScen($("#scen"), bild, [], fro, u.lyckat?"skatt":null, scenHjaltar());
   }
   fyllIkoner(app);
