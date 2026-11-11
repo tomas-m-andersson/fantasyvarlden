@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T16:42:46.117Z",
+  "uppdaterad": "2026-11-11T16:42:52.485Z",
   "spel": {
     "version": 1,
-    "tid": 1794415363163,
+    "tid": 1794415369569,
     "kassa": 880,
     "packning": [
       "Läkande ört",
@@ -363,7 +363,7 @@
           "maktig": false,
           "raseri": false,
           "undvikAllt": false,
-          "stoppad": 0,
+          "stoppad": 1,
           "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Gorgor"
@@ -438,7 +438,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -536,6 +536,22 @@
         {
           "text": "Harpya faller!",
           "cls": "d"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [5] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Dendroid tar 3 skada (6 − 3 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "FF tar 0 skada (1 − 3 rustning) från Rötter. KP 13/13.",
+          "cls": "info"
+        },
+        {
+          "text": "FF sitter fast och förlorar sin nästa handling.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
