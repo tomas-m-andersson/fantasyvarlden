@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:02:56.061Z",
+  "uppdaterad": "2026-11-12T22:03:04.184Z",
   "spel": {
     "version": 1,
-    "tid": 1794520972117,
+    "tid": 1794520981182,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -392,7 +392,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Svärd"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -401,8 +402,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort spjut"
+          "agerat": true,
+          "valtVapen": "Gorgor"
         },
         "pescatore": {
           "kp": 11,
@@ -660,6 +661,26 @@
         {
           "text": "Galfner Galfner (Armborst) slår Armborst: [17] mot 13 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio försöker undvika: [14] mot 6 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 0 skada (1 − 3 rustning) från Smittbett. KP 11/11.",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [10] mot 14 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta tar 3 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio har redan använt sin handling till att försvara sig.",
+          "cls": "info"
         }
       ],
       "utfall": null,
