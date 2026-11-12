@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:33.271Z",
+  "uppdaterad": "2026-11-12T22:01:40.281Z",
   "spel": {
     "version": 1,
-    "tid": 1794520890168,
+    "tid": 1794520897289,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -395,7 +395,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut"
         },
         "pescatore": {
@@ -539,6 +539,10 @@
         {
           "text": "Orch 2 tar 1 skada (2 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
