@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:20.792Z",
+  "uppdaterad": "2026-11-12T22:01:27.286Z",
   "spel": {
     "version": 1,
-    "tid": 1794520877731,
+    "tid": 1794520884323,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -453,7 +453,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -461,7 +463,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Stav"
         }
       },
       "guld": 0,
@@ -521,6 +524,10 @@
         {
           "text": "Orch 1 tar 3 skada (4 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [18] mot 12 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
