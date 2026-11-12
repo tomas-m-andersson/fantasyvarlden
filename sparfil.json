@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:40.281Z",
+  "uppdaterad": "2026-11-12T22:01:51.281Z",
   "spel": {
     "version": 1,
-    "tid": 1794520897289,
+    "tid": 1794520908322,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -420,7 +420,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "galfner": {
@@ -443,7 +443,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -466,7 +466,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav"
         }
       },
@@ -542,6 +542,22 @@
         },
         {
           "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orch 2 anfaller Pescatore Vesuvio: [18] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 anfaller FF: [1 / 16 → 16] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [18] mot 15 – misslyckat",
           "cls": "fel"
         }
       ],
