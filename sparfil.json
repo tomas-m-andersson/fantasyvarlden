@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:48.011Z",
+  "uppdaterad": "2026-11-12T22:03:53.433Z",
   "spel": {
     "version": 1,
-    "tid": 1794521025050,
+    "tid": 1794521030484,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -459,7 +459,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -762,6 +762,14 @@
         {
           "text": "FF (Gorgor) slår Svärd: [15] mot 14 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [12] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
