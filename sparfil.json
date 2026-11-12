@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:04:47.519Z",
+  "uppdaterad": "2026-11-12T22:04:54.989Z",
   "spel": {
     "version": 1,
-    "tid": 1794521084490,
-    "kassa": 1429,
+    "tid": 1794521092016,
+    "kassa": 1471,
     "packning": [
       "Läkande ört",
       "Flaska vin",
@@ -42,10 +42,11 @@
         "dod": false,
         "bonus": {
           "Läkekonst": 1,
-          "Pilbåge": 3
+          "Pilbåge": 4,
+          "Undvika": 1
         },
         "aventyr": 9,
-        "segrar": 6,
+        "segrar": 7,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -56,7 +57,7 @@
           "Akrobatik": 1
         },
         "aventyr": 9,
-        "segrar": 6,
+        "segrar": 7,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -126,7 +127,7 @@
           "Akrobatik": 1
         },
         "aventyr": 7,
-        "segrar": 6,
+        "segrar": 7,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -159,7 +160,7 @@
           "Undvika": 1
         },
         "aventyr": 7,
-        "segrar": 6,
+        "segrar": 7,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -185,6 +186,10 @@
       "gripagg": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-12 23:04",
+        "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Malbecs gruvor och nådde kapitel 1 (5 rum). De gick hem med 42 guld."
+      },
       {
         "tid": "2026-11-11 23:47",
         "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Krusbärsberget och nådde kapitel 1 (5 rum). De gick hem med 76 guld."
@@ -286,585 +291,7 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": {
-      "q": {
-        "id": "utforska-malbecs-gruvor",
-        "titel": "Malbecs gruvor",
-        "plats": "Malbecs gruvor",
-        "land": "Mårdgård",
-        "miljo": "grotta",
-        "boss": "svartalfkung",
-        "beloning": 0,
-        "givare": "",
-        "svar": "",
-        "foremal": null,
-        "rum": 5,
-        "plats_id": "malbecs-gruvor"
-      },
-      "party": [
-        "ff",
-        "pescatore",
-        "galfner",
-        "gofnagrim"
-      ],
-      "steg": [
-        {
-          "typ": "rum",
-          "rumtyp": "strid",
-          "text": "En låg tunnel där alla utom ankorna måste huka sig. Någon har lämnat ett par strumpor på tork. Ett avlägset muller får golvet att darra.",
-          "fro": 460843807,
-          "fiender": [
-            "orch",
-            "orch"
-          ],
-          "rutor": [
-            28,
-            33
-          ],
-          "klar": true,
-          "utfallText": "Segern är er! Ni plundrar fienderna på 17 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "strid",
-          "text": "En sluttande gång täckt av löst grus. En trasig tunna läcker något som kanske en gång var öl.",
-          "fro": 359409615,
-          "fiender": [
-            "svartnisse",
-            "ratta"
-          ],
-          "rutor": [
-            7,
-            13
-          ],
-          "klar": true,
-          "utfallText": "Segern är er! Ni plundrar fienderna på 2 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "strid",
-          "text": "En spricka i berget, precis bred nog att klämma sig igenom. En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier. Det luktar fuktig ull och svavel.",
-          "fro": 793877711,
-          "fiender": [
-            "orch",
-            "orch"
-          ],
-          "rutor": [
-            42,
-            26
-          ],
-          "klar": true,
-          "utfallText": "Segern är er! Ni plundrar fienderna på 3 guld."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "hinder",
-          "text": "En grotta full av glittrande kristaller. På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel.",
-          "fro": 468952567,
-          "hinder": {
-            "namn": "En gåta i sten",
-            "text": "En stenport med en inristad gåta. Någon lärd måste klura ut svaret.",
-            "fard": "Kunskap",
-            "alla": false,
-            "skada": "T4",
-            "miljo": [
-              "ruin",
-              "grotta",
-              "gravfalt",
-              "oken"
-            ]
-          },
-          "klar": true,
-          "utfallText": "Pescatore Vesuvio löser det. Ni går vidare."
-        },
-        {
-          "typ": "rum",
-          "rumtyp": "boss",
-          "text": "",
-          "fro": 219253845,
-          "fiender": [
-            "svartalfkung"
-          ],
-          "rutor": [
-            30
-          ],
-          "klar": true
-        }
-      ],
-      "i": 4,
-      "h": {
-        "ff": {
-          "kp": 13,
-          "vp": 8,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [
-            "Torkade fikon"
-          ],
-          "markerade": [],
-          "anvanda": [
-            "Spjut",
-            "Svärd"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort spjut"
-        },
-        "pescatore": {
-          "kp": 11,
-          "vp": 12,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [
-            "Vin"
-          ],
-          "markerade": [
-            "Pilbåge"
-          ],
-          "anvanda": [
-            "Pilbåge",
-            "Undvika",
-            "Kunskap"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Kort båge"
-        },
-        "galfner": {
-          "kp": 12,
-          "vp": 1,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [],
-          "markerade": [],
-          "anvanda": [
-            "Armborst"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Armborst"
-        },
-        "gofnagrim": {
-          "kp": 6,
-          "vp": 7,
-          "doende": false,
-          "ok": 0,
-          "miss": 0,
-          "stabil": false,
-          "dod": false,
-          "saker": [],
-          "markerade": [
-            "Stav"
-          ],
-          "anvanda": [
-            "Stav"
-          ],
-          "tempRust": 0,
-          "vapenbonus": null,
-          "gift": false,
-          "maktig": false,
-          "raseri": false,
-          "undvikAllt": false,
-          "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Stav",
-          "nackdelNasta": false
-        }
-      },
-      "guld": 22,
-      "logg": [
-        {
-          "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
-          "cls": "info"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Orch 1 anfaller Galfner Galfner: [18] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "★ Galfner Galfner: Japansk growl!",
-          "cls": "d"
-        },
-        {
-          "text": "Fienderna ryggar tillbaka i fasa.",
-          "cls": "ok"
-        },
-        {
-          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
-          "cls": "d"
-        },
-        {
-          "text": "Fienderna ryggar tillbaka i fasa.",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [13] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 tar 4 skada (5 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 2 anfaller Pescatore Vesuvio: [18 / 18 → 18] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [6] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 tar 3 skada (4 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Göfnagrim (Stav) slår Stav: [18] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Galfner Galfner (Armborst) slår Armborst: [12] mot 13 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 2 tar 1 skada (2 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Orch 2 anfaller Pescatore Vesuvio: [18] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 anfaller FF: [1 / 16 → 16] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 3 —",
-          "cls": "info"
-        },
-        {
-          "text": "FF (Kort spjut) slår Spjut: [18] mot 15 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim (Stav) slår Stav: [17] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Orch 2 anfaller FF: [4] mot 12 – lyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "FF tar 0 skada (1 − 3 rustning) från Orch 2. KP 13/13.",
-          "cls": "info"
-        },
-        {
-          "text": "Orch 1 anfaller FF: [17] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Galfner Galfner (Armborst) slår Armborst: [2] mot 13 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 tar 9 skada (10 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [1] mot 15 – NATURLIGT 1!",
-          "cls": "d"
-        },
-        {
-          "text": "Naturligt 1! Dubbel vapenskada.",
-          "cls": "d"
-        },
-        {
-          "text": "Orch 2 tar 12 skada (13 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 2 faller!",
-          "cls": "d"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "Galfner Galfner tar smällen.",
-          "cls": "info"
-        },
-        {
-          "text": "Galfner Galfner tar 0 skada (1 − 3 rustning) från Smittbett. KP 12/12.",
-          "cls": "info"
-        },
-        {
-          "text": "Svartnisse anfaller Göfnagrim: [17] mot 10 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Galfner Galfner (Armborst) slår Armborst: [19] mot 13 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [17] mot 15 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim (Stav) slår Stav: [4] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Svartnisse tar 4 skada.",
-          "cls": "ok"
-        },
-        {
-          "text": "Svartnisse faller!",
-          "cls": "d"
-        },
-        {
-          "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Galfner Galfner (Armborst) slår Armborst: [17] mot 13 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio försöker undvika: [14] mot 6 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Pescatore Vesuvio tar 0 skada (1 − 3 rustning) från Smittbett. KP 11/11.",
-          "cls": "info"
-        },
-        {
-          "text": "FF (Gorgor) slår Svärd: [10] mot 14 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Jätteråtta tar 3 skada.",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio har redan använt sin handling till att försvara sig.",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim (Stav) slår Stav: [12] mot 12 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Jätteråtta tar 7 skada.",
-          "cls": "ok"
-        },
-        {
-          "text": "Jätteråtta faller!",
-          "cls": "d"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "★ Galfner Galfner: Japansk growl!",
-          "cls": "d"
-        },
-        {
-          "text": "Fienderna ryggar tillbaka i fasa.",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 2 anfaller Pescatore Vesuvio: [10 / 17 → 17] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "FF (Kort spjut) slår Spjut: [14] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 tar 7 skada (8 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Göfnagrim (Stav) slår Stav: [20] mot 12 – NATURLIGT 20!",
-          "cls": "dm"
-        },
-        {
-          "text": "Naturligt 20! Göfnagrim tappar balansen och får nackdel på nästa slag.",
-          "cls": "dm"
-        },
-        {
-          "text": "Orch 1 anfaller Galfner Galfner: [14 / 9 → 14] mot 12 – misslyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [2] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 tar 7 skada (8 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 1 faller!",
-          "cls": "d"
-        },
-        {
-          "text": "— Runda 2 —",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim (Stav) slår Stav med nackdel: [18 / 6 → 18] mot 12 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "FF (Gorgor) slår Svärd: [15] mot 14 – misslyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Galfner Galfner (Armborst) slår Armborst: [12] mot 13 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 2 tar 4 skada (5 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [11] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 2 tar 4 skada (5 − 1 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Orch 2 faller!",
-          "cls": "d"
-        },
-        {
-          "text": "Pescatore Vesuvio slår Kunskap: [9] mot 16 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "— Runda 1 —",
-          "cls": "info"
-        },
-        {
-          "text": "FF (Kort spjut) slår Spjut: [12] mot 15 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den nya svartalfkungen tar 8 skada (10 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Den nya svartalfkungen anfaller Göfnagrim: [10] mot 14 – lyckat",
-          "cls": "fel"
-        },
-        {
-          "text": "Göfnagrim tar smällen.",
-          "cls": "info"
-        },
-        {
-          "text": "Göfnagrim tar 7 skada (10 − 3 rustning) från Den nya svartalfkungen. KP 6/13.",
-          "cls": "fel"
-        },
-        {
-          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
-          "cls": "d"
-        },
-        {
-          "text": "Fienderna ryggar tillbaka i fasa.",
-          "cls": "ok"
-        },
-        {
-          "text": "Galfner Galfner (Armborst) slår Armborst: [9] mot 13 – lyckat",
-          "cls": "ok"
-        },
-        {
-          "text": "Den nya svartalfkungen tar 11 skada (13 − 2 rustning).",
-          "cls": "ok"
-        },
-        {
-          "text": "Den nya svartalfkungen faller!",
-          "cls": "d"
-        },
-        {
-          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Malbecs gruvor.",
-          "cls": "d"
-        }
-      ],
-      "utfall": null,
-      "start": "2026-11-12 23:00",
-      "utforska": true,
-      "kapitel": 1,
-      "djup": 5,
-      "paus": true,
-      "anvandaText": [
-        "En låg tunnel där alla utom ankorna måste huka sig",
-        "Någon har lämnat ett par strumpor på tork",
-        "Ett avlägset muller får golvet att darra",
-        "En sluttande gång täckt av löst grus",
-        "En trasig tunna läcker något som kanske en gång var öl",
-        "En spricka i berget, precis bred nog att klämma sig igenom",
-        "En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier",
-        "Det luktar fuktig ull och svavel",
-        "En grotta full av glittrande kristaller",
-        "På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel"
-      ],
-      "nyttRekord": true
-    },
+    "run": null,
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
