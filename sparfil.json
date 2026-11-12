@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:30.880Z",
+  "uppdaterad": "2026-11-12T22:03:36.922Z",
   "spel": {
     "version": 1,
-    "tid": 1794521007935,
+    "tid": 1794521013883,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -408,7 +408,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "pescatore": {
@@ -459,7 +459,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -484,7 +484,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "nackdelNasta": true
         }
@@ -738,6 +738,22 @@
         {
           "text": "Orch 1 anfaller Galfner Galfner: [14 / 9 → 14] mot 12 – misslyckat",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [2] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 faller!",
+          "cls": "d"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
