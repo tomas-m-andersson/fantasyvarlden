@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:12.350Z",
+  "uppdaterad": "2026-11-12T22:01:20.792Z",
   "spel": {
     "version": 1,
-    "tid": 1794520869346,
+    "tid": 1794520877731,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -420,7 +420,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         },
         "galfner": {
@@ -513,6 +513,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [6] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 tar 3 skada (4 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
