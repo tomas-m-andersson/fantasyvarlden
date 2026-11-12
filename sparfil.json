@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:00:46.890Z",
+  "uppdaterad": "2026-11-12T22:01:01.103Z",
   "spel": {
     "version": 1,
-    "tid": 1794520843763,
+    "tid": 1794520860634,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -385,7 +385,18 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Spjut"
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true,
+          "valtVapen": "Kort spjut"
         },
         "pescatore": {
           "kp": 11,
@@ -399,11 +410,19 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -411,7 +430,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         },
         "gofnagrim": {
           "kp": 13,
@@ -423,7 +450,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -431,6 +466,26 @@
         {
           "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "Orch 1 anfaller Galfner Galfner: [18] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
