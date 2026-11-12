@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:02:06.199Z",
+  "uppdaterad": "2026-11-12T22:02:15.083Z",
   "spel": {
     "version": 1,
-    "tid": 1794520923222,
+    "tid": 1794520932053,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -320,7 +320,9 @@
           "rutor": [
             28,
             33
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 17 guld."
         },
         {
           "typ": "rum",
@@ -330,6 +332,10 @@
           "fiender": [
             "svartnisse",
             "ratta"
+          ],
+          "rutor": [
+            7,
+            13
           ]
         },
         {
@@ -371,7 +377,7 @@
           ]
         }
       ],
-      "i": 0,
+      "i": 1,
       "h": {
         "ff": {
           "kp": 13,
@@ -395,7 +401,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "pescatore": {
@@ -409,7 +415,9 @@
           "saker": [
             "Vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Pilbåge"
+          ],
           "anvanda": [
             "Pilbåge"
           ],
@@ -443,7 +451,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -466,11 +474,11 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav"
         }
       },
-      "guld": 0,
+      "guld": 17,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
@@ -587,13 +595,29 @@
         {
           "text": "Orch 1 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [1] mot 15 – NATURLIGT 1!",
+          "cls": "d"
+        },
+        {
+          "text": "Naturligt 1! Dubbel vapenskada.",
+          "cls": "d"
+        },
+        {
+          "text": "Orch 2 tar 12 skada (13 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-12 23:00",
       "utforska": true,
       "kapitel": 1,
-      "djup": 0,
+      "djup": 1,
       "paus": false,
       "anvandaText": [
         "En låg tunnel där alla utom ankorna måste huka sig",
