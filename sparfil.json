@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:02:48.009Z",
+  "uppdaterad": "2026-11-12T22:02:56.061Z",
   "spel": {
     "version": 1,
-    "tid": 1794520965089,
+    "tid": 1794520972117,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -419,7 +419,8 @@
             "Pilbåge"
           ],
           "anvanda": [
-            "Pilbåge"
+            "Pilbåge",
+            "Undvika"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -428,7 +429,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort båge"
         },
         "galfner": {
@@ -451,7 +452,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -655,6 +656,10 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [17] mot 13 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
