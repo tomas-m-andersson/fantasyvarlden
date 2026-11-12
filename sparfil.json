@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-11T22:49:30.624Z",
+  "uppdaterad": "2026-11-12T22:00:46.890Z",
   "spel": {
     "version": 1,
-    "tid": 1794437367438,
+    "tid": 1794520843763,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -44,7 +44,7 @@
           "Läkekonst": 1,
           "Pilbåge": 3
         },
-        "aventyr": 8,
+        "aventyr": 9,
         "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -55,7 +55,7 @@
           "Magi": 1,
           "Akrobatik": 1
         },
-        "aventyr": 8,
+        "aventyr": 9,
         "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -125,7 +125,7 @@
           "Simma": 1,
           "Akrobatik": 1
         },
-        "aventyr": 6,
+        "aventyr": 7,
         "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -158,7 +158,7 @@
           "Simma": 1,
           "Undvika": 1
         },
-        "aventyr": 6,
+        "aventyr": 7,
         "segrar": 6,
         "vapen": [],
         "rustning": "Ringbrynja"
@@ -286,7 +286,172 @@
         "text": "Monika Plöjer, Pescatore Vesuvio, Göfnagrim, Kevin åkte med Bakhuvudet Jens mot Östra bergen för 10 guld."
       }
     ],
-    "run": null,
+    "run": {
+      "q": {
+        "id": "utforska-malbecs-gruvor",
+        "titel": "Malbecs gruvor",
+        "plats": "Malbecs gruvor",
+        "land": "Mårdgård",
+        "miljo": "grotta",
+        "boss": "svartalfkung",
+        "beloning": 0,
+        "givare": "",
+        "svar": "",
+        "foremal": null,
+        "rum": 5,
+        "plats_id": "malbecs-gruvor"
+      },
+      "party": [
+        "ff",
+        "pescatore",
+        "galfner",
+        "gofnagrim"
+      ],
+      "steg": [
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En låg tunnel där alla utom ankorna måste huka sig. Någon har lämnat ett par strumpor på tork. Ett avlägset muller får golvet att darra.",
+          "fro": 460843807,
+          "fiender": [
+            "orch",
+            "orch"
+          ],
+          "rutor": [
+            28,
+            33
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En sluttande gång täckt av löst grus. En trasig tunna läcker något som kanske en gång var öl.",
+          "fro": 359409615,
+          "fiender": [
+            "svartnisse",
+            "ratta"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "strid",
+          "text": "En spricka i berget, precis bred nog att klämma sig igenom. En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier. Det luktar fuktig ull och svavel.",
+          "fro": 793877711,
+          "fiender": [
+            "orch",
+            "orch"
+          ]
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "hinder",
+          "text": "En grotta full av glittrande kristaller. På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel.",
+          "fro": 468952567,
+          "hinder": {
+            "namn": "En gåta i sten",
+            "text": "En stenport med en inristad gåta. Någon lärd måste klura ut svaret.",
+            "fard": "Kunskap",
+            "alla": false,
+            "skada": "T4",
+            "miljo": [
+              "ruin",
+              "grotta",
+              "gravfalt",
+              "oken"
+            ]
+          }
+        },
+        {
+          "typ": "rum",
+          "rumtyp": "boss",
+          "text": "",
+          "fro": 219253845,
+          "fiender": [
+            "svartalfkung"
+          ]
+        }
+      ],
+      "i": 0,
+      "h": {
+        "ff": {
+          "kp": 13,
+          "vp": 8,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Torkade fikon"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "pescatore": {
+          "kp": 11,
+          "vp": 12,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [
+            "Vin"
+          ],
+          "markerade": [],
+          "anvanda": []
+        },
+        "galfner": {
+          "kp": 12,
+          "vp": 7,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        },
+        "gofnagrim": {
+          "kp": 13,
+          "vp": 13,
+          "doende": false,
+          "ok": 0,
+          "miss": 0,
+          "stabil": false,
+          "dod": false,
+          "saker": [],
+          "markerade": [],
+          "anvanda": []
+        }
+      },
+      "guld": 0,
+      "logg": [
+        {
+          "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
+          "cls": "info"
+        }
+      ],
+      "utfall": null,
+      "start": "2026-11-12 23:00",
+      "utforska": true,
+      "kapitel": 1,
+      "djup": 0,
+      "paus": false,
+      "anvandaText": [
+        "En låg tunnel där alla utom ankorna måste huka sig",
+        "Någon har lämnat ett par strumpor på tork",
+        "Ett avlägset muller får golvet att darra",
+        "En sluttande gång täckt av löst grus",
+        "En trasig tunna läcker något som kanske en gång var öl",
+        "En spricka i berget, precis bred nog att klämma sig igenom",
+        "En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier",
+        "Det luktar fuktig ull och svavel",
+        "En grotta full av glittrande kristaller",
+        "På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel"
+      ]
+    },
     "reset": 1793783047660,
     "rekord": {
       "doda-sjon": {
