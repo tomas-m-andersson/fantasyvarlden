@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:36.922Z",
+  "uppdaterad": "2026-11-12T22:03:42.395Z",
   "spel": {
     "version": 1,
-    "tid": 1794521013883,
+    "tid": 1794521019402,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -409,7 +409,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort spjut"
+          "valtVapen": "Gorgor"
         },
         "pescatore": {
           "kp": 11,
@@ -484,9 +484,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav",
-          "nackdelNasta": true
+          "nackdelNasta": false
         }
       },
       "guld": 19,
@@ -754,6 +754,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav med nackdel: [18 / 6 → 18] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF (Gorgor) slår Svärd: [15] mot 14 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
