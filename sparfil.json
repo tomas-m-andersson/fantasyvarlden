@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:53.433Z",
+  "uppdaterad": "2026-11-12T22:04:02.892Z",
   "spel": {
     "version": 1,
-    "tid": 1794521030484,
+    "tid": 1794521039914,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -352,7 +352,9 @@
           "rutor": [
             42,
             26
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 3 guld."
         },
         {
           "typ": "rum",
@@ -383,7 +385,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "ff": {
           "kp": 13,
@@ -408,7 +410,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Gorgor"
         },
         "pescatore": {
@@ -459,7 +461,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -484,12 +486,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "nackdelNasta": false
         }
       },
-      "guld": 19,
+      "guld": 22,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
@@ -770,13 +772,25 @@
         {
           "text": "Orch 2 tar 4 skada (5 − 1 rustning).",
           "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [11] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 tar 4 skada (5 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-12 23:00",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false,
       "anvandaText": [
         "En låg tunnel där alla utom ankorna måste huka sig",
