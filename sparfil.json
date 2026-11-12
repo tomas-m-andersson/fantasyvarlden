@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:04.184Z",
+  "uppdaterad": "2026-11-12T22:03:11.826Z",
   "spel": {
     "version": 1,
-    "tid": 1794520981182,
+    "tid": 1794520988887,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -336,7 +336,9 @@
           "rutor": [
             7,
             13
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 2 guld."
         },
         {
           "typ": "rum",
@@ -346,6 +348,10 @@
           "fiender": [
             "orch",
             "orch"
+          ],
+          "rutor": [
+            42,
+            26
           ]
         },
         {
@@ -377,7 +383,7 @@
           ]
         }
       ],
-      "i": 1,
+      "i": 2,
       "h": {
         "ff": {
           "kp": 13,
@@ -402,7 +408,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Gorgor"
         },
         "pescatore": {
@@ -430,7 +436,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "galfner": {
@@ -453,7 +459,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -480,7 +486,7 @@
           "valtVapen": "Stav"
         }
       },
-      "guld": 17,
+      "guld": 19,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
@@ -681,13 +687,25 @@
         {
           "text": "Pescatore Vesuvio har redan använt sin handling till att försvara sig.",
           "cls": "info"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [12] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta tar 7 skada.",
+          "cls": "ok"
+        },
+        {
+          "text": "Jätteråtta faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-12 23:00",
       "utforska": true,
       "kapitel": 1,
-      "djup": 1,
+      "djup": 2,
       "paus": false,
       "anvandaText": [
         "En låg tunnel där alla utom ankorna måste huka sig",
