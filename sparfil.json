@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:17.404Z",
+  "uppdaterad": "2026-11-12T22:03:24.340Z",
   "spel": {
     "version": 1,
-    "tid": 1794520994328,
+    "tid": 1794521001322,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -408,8 +408,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Gorgor"
+          "agerat": true,
+          "valtVapen": "Kort spjut"
         },
         "pescatore": {
           "kp": 11,
@@ -714,6 +714,14 @@
         },
         {
           "text": "Orch 2 anfaller Pescatore Vesuvio: [10 / 17 → 17] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [14] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 tar 7 skada (8 − 1 rustning).",
           "cls": "ok"
         }
       ],
