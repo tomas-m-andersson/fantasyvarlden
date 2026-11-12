@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:11.826Z",
+  "uppdaterad": "2026-11-12T22:03:17.404Z",
   "spel": {
     "version": 1,
-    "tid": 1794520988887,
+    "tid": 1794520994328,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -441,7 +441,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 4,
+          "vp": 1,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -459,7 +459,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -699,6 +699,22 @@
         {
           "text": "Jätteråtta faller!",
           "cls": "d"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 anfaller Pescatore Vesuvio: [10 / 17 → 17] mot 12 – misslyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
