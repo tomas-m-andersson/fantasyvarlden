@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:04:25.503Z",
+  "uppdaterad": "2026-11-12T22:04:34.616Z",
   "spel": {
     "version": 1,
-    "tid": 1794521062522,
+    "tid": 1794521071300,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -415,8 +415,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Gorgor"
+          "agerat": true,
+          "valtVapen": "Kort spjut"
         },
         "pescatore": {
           "kp": 11,
@@ -794,6 +794,22 @@
         {
           "text": "Pescatore Vesuvio slår Kunskap: [9] mot 16 – lyckat",
           "cls": "ok"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [12] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen tar 8 skada (10 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen anfaller Göfnagrim: [10] mot 14 – lyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
