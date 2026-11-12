@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:02:42.131Z",
+  "uppdaterad": "2026-11-12T22:02:48.009Z",
   "spel": {
     "version": 1,
-    "tid": 1794520959046,
+    "tid": 1794520965089,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -428,7 +428,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort båge"
         },
         "galfner": {
@@ -451,7 +451,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -474,7 +474,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav"
         }
       },
@@ -647,6 +647,14 @@
         {
           "text": "Svartnisse faller!",
           "cls": "d"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut: [16] mot 15 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "— Runda 2 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
