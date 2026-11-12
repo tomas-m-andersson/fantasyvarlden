@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:51.281Z",
+  "uppdaterad": "2026-11-12T22:01:57.385Z",
   "spel": {
     "version": 1,
-    "tid": 1794520908322,
+    "tid": 1794520914385,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -466,7 +466,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav"
         }
       },
@@ -559,6 +559,18 @@
         {
           "text": "FF (Kort spjut) slår Spjut: [18] mot 15 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [17] mot 12 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Orch 2 anfaller FF: [4] mot 12 – lyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 0 skada (1 − 3 rustning) från Orch 2. KP 13/13.",
+          "cls": "info"
         }
       ],
       "utfall": null,
