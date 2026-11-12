@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:01.103Z",
+  "uppdaterad": "2026-11-12T22:01:03.651Z",
   "spel": {
     "version": 1,
-    "tid": 1794520860634,
+    "tid": 1794520863339,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -442,7 +442,7 @@
         },
         "gofnagrim": {
           "kp": 13,
-          "vp": 13,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -458,7 +458,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true
         }
       },
       "guld": 0,
@@ -481,6 +481,14 @@
         },
         {
           "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
           "cls": "d"
         },
         {
