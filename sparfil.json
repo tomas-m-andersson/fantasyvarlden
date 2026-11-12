@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:27.286Z",
+  "uppdaterad": "2026-11-12T22:01:33.271Z",
   "spel": {
     "version": 1,
-    "tid": 1794520884323,
+    "tid": 1794520890168,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -433,7 +433,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Armborst"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -441,7 +443,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "valtVapen": "Armborst"
         },
         "gofnagrim": {
           "kp": 13,
@@ -528,6 +531,14 @@
         {
           "text": "Göfnagrim (Stav) slår Stav: [18] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [12] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 2 tar 1 skada (2 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
