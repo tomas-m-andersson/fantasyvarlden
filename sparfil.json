@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:04:02.892Z",
+  "uppdaterad": "2026-11-12T22:04:20.957Z",
   "spel": {
     "version": 1,
-    "tid": 1794521039914,
+    "tid": 1794521057967,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -373,7 +373,9 @@
               "gravfalt",
               "oken"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Pescatore Vesuvio löser det. Ni går vidare."
         },
         {
           "typ": "rum",
@@ -429,7 +431,8 @@
           ],
           "anvanda": [
             "Pilbåge",
-            "Undvika"
+            "Undvika",
+            "Kunskap"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -784,6 +787,10 @@
         {
           "text": "Orch 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Kunskap: [9] mot 16 – lyckat",
+          "cls": "ok"
         }
       ],
       "utfall": null,
