@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:04:42.041Z",
+  "uppdaterad": "2026-11-12T22:04:47.519Z",
   "spel": {
     "version": 1,
-    "tid": 1794521078998,
+    "tid": 1794521084490,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -387,7 +387,8 @@
           ],
           "rutor": [
             30
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -415,7 +416,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut"
         },
         "pescatore": {
@@ -492,7 +493,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Stav",
           "nackdelNasta": false
         }
@@ -838,14 +839,18 @@
         {
           "text": "Den nya svartalfkungen faller!",
           "cls": "d"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Malbecs gruvor.",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-12 23:00",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "En låg tunnel där alla utom ankorna måste huka sig",
         "Någon har lämnat ett par strumpor på tork",
@@ -857,7 +862,8 @@
         "Det luktar fuktig ull och svavel",
         "En grotta full av glittrande kristaller",
         "På väggen har någon ristat ”ORCHER ÄR BÄST” med stavfel"
-      ]
+      ],
+      "nyttRekord": true
     },
     "reset": 1793783047660,
     "rekord": {
@@ -885,6 +891,11 @@
         "kapitel": 1,
         "djup": 5,
         "datum": "2026-11-11"
+      },
+      "malbecs-gruvor": {
+        "kapitel": 1,
+        "djup": 5,
+        "datum": "2026-11-12"
       }
     },
     "svarighet": "latt"
