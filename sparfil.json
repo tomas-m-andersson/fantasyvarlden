@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:04:34.616Z",
+  "uppdaterad": "2026-11-12T22:04:42.041Z",
   "spel": {
     "version": 1,
-    "tid": 1794521071300,
+    "tid": 1794521078998,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -471,8 +471,8 @@
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
-          "kp": 13,
-          "vp": 10,
+          "kp": 6,
+          "vp": 7,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -492,7 +492,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Stav",
           "nackdelNasta": false
         }
@@ -810,6 +810,34 @@
         {
           "text": "Den nya svartalfkungen anfaller Göfnagrim: [10] mot 14 – lyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim tar smällen.",
+          "cls": "info"
+        },
+        {
+          "text": "Göfnagrim tar 7 skada (10 − 3 rustning) från Den nya svartalfkungen. KP 6/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [9] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen tar 11 skada (13 − 2 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Den nya svartalfkungen faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
