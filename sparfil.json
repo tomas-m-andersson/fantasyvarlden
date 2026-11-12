@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:03:24.340Z",
+  "uppdaterad": "2026-11-12T22:03:30.880Z",
   "spel": {
     "version": 1,
-    "tid": 1794521001322,
+    "tid": 1794521007935,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -471,7 +471,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Stav"
+          ],
           "anvanda": [
             "Stav"
           ],
@@ -482,8 +484,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "valtVapen": "Stav"
+          "agerat": true,
+          "valtVapen": "Stav",
+          "nackdelNasta": true
         }
       },
       "guld": 19,
@@ -722,6 +725,18 @@
         },
         {
           "text": "Orch 1 tar 7 skada (8 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [20] mot 12 – NATURLIGT 20!",
+          "cls": "dm"
+        },
+        {
+          "text": "Naturligt 20! Göfnagrim tappar balansen och får nackdel på nästa slag.",
+          "cls": "dm"
+        },
+        {
+          "text": "Orch 1 anfaller Galfner Galfner: [14 / 9 → 14] mot 12 – misslyckat",
           "cls": "ok"
         }
       ],
