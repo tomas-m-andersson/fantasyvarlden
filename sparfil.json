@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-12T22:01:57.385Z",
+  "uppdaterad": "2026-11-12T22:02:06.199Z",
   "spel": {
     "version": 1,
-    "tid": 1794520914385,
+    "tid": 1794520923222,
     "kassa": 1429,
     "packning": [
       "Läkande ört",
@@ -443,7 +443,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -571,6 +571,22 @@
         {
           "text": "FF tar 0 skada (1 − 3 rustning) från Orch 2. KP 13/13.",
           "cls": "info"
+        },
+        {
+          "text": "Orch 1 anfaller FF: [17] mot 12 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst: [2] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Orch 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
