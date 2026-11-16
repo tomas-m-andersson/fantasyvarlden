@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:11:11.259Z",
+  "uppdaterad": "2026-11-16T22:11:31.446Z",
   "spel": {
     "version": 1,
-    "tid": 1794867068236,
+    "tid": 1794867088342,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -322,7 +322,10 @@
             "namn": "Stenras",
             "text": "Taket börjar rasa!",
             "skada": "T8"
-          }
+          },
+          "utlost": true,
+          "klar": true,
+          "utfallText": "Taket börjar rasa! Pescatore Vesuvio får ta smällen."
         },
         {
           "typ": "rum",
@@ -387,7 +390,7 @@
           "anvanda": []
         },
         "pescatore": {
-          "kp": 11,
+          "kp": 3,
           "vp": 12,
           "doende": false,
           "ok": 0,
@@ -398,7 +401,9 @@
             "Vin"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [
+            "Upptäcka fara"
+          ]
         },
         "galfner": {
           "kp": 12,
@@ -430,6 +435,18 @@
         {
           "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
           "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Upptäcka fara: [17] mot 7 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Taket börjar rasa!",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio tar 8 skada från Stenras. KP 3/11.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
