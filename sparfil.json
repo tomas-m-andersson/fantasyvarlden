@@ -1,11 +1,11 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:15:21.466Z",
+  "uppdaterad": "2026-11-16T22:15:32.282Z",
   "spel": {
     "version": 1,
-    "tid": 1794867318535,
-    "kassa": 1471,
+    "tid": 1794867329206,
+    "kassa": 1497,
     "packning": [
       "Flaska vin",
       "Läkedryck",
@@ -42,10 +42,11 @@
         "bonus": {
           "Läkekonst": 1,
           "Pilbåge": 4,
-          "Undvika": 1
+          "Undvika": 1,
+          "Simma": 1
         },
         "aventyr": 10,
-        "segrar": 7,
+        "segrar": 8,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -53,10 +54,11 @@
         "dod": false,
         "bonus": {
           "Magi": 1,
-          "Akrobatik": 1
+          "Akrobatik": 1,
+          "Stav": 1
         },
         "aventyr": 10,
-        "segrar": 7,
+        "segrar": 8,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -126,7 +128,7 @@
           "Akrobatik": 1
         },
         "aventyr": 8,
-        "segrar": 7,
+        "segrar": 8,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -159,7 +161,7 @@
           "Undvika": 1
         },
         "aventyr": 8,
-        "segrar": 7,
+        "segrar": 8,
         "vapen": [],
         "rustning": "Ringbrynja"
       },
@@ -185,6 +187,10 @@
       "gripagg": 1
     },
     "kronika": [
+      {
+        "tid": "2026-11-16 23:15",
+        "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Malbecs gruvor och nådde kapitel 1 (5 rum). De gick hem med 26 guld."
+      },
       {
         "tid": "2026-11-12 23:04",
         "text": "FF, Pescatore Vesuvio, Galfner Galfner, Göfnagrim utforskade Malbecs gruvor och nådde kapitel 1 (5 rum). De gick hem med 42 guld."
@@ -399,7 +405,9 @@
           "saker": [
             "Torkade fikon"
           ],
-          "markerade": [],
+          "markerade": [
+            "Spjut"
+          ],
           "anvanda": [
             "Spjut",
             "Simma"
@@ -426,7 +434,9 @@
           "saker": [
             "Vin"
           ],
-          "markerade": [],
+          "markerade": [
+            "Simma"
+          ],
           "anvanda": [
             "Upptäcka fara",
             "Pilbåge",
@@ -452,7 +462,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Läkekonst"
+          ],
           "anvanda": [
             "Armborst",
             "Simma",
@@ -478,7 +490,9 @@
           "stabil": false,
           "dod": false,
           "saker": [],
-          "markerade": [],
+          "markerade": [
+            "Stav"
+          ],
           "anvanda": [
             "Stav",
             "Simma"
@@ -742,7 +756,52 @@
           "cls": "d"
         }
       ],
-      "utfall": null,
+      "utfall": {
+        "lyckat": true,
+        "orsak": "Sällskapet gick hem med bytet.",
+        "beloning": 20,
+        "avgift": 0,
+        "avgiftText": null,
+        "byte": 6,
+        "doda": [],
+        "forb": {
+          "ff": [
+            {
+              "f": "Spjut",
+              "v": 15,
+              "s": 6,
+              "upp": false
+            }
+          ],
+          "pescatore": [
+            {
+              "f": "Simma",
+              "v": 6,
+              "s": 8,
+              "upp": true
+            }
+          ],
+          "galfner": [
+            {
+              "f": "Läkekonst",
+              "v": 7,
+              "s": 2,
+              "upp": false
+            }
+          ],
+          "gofnagrim": [
+            {
+              "f": "Stav",
+              "v": 12,
+              "s": 18,
+              "upp": true
+            }
+          ]
+        },
+        "rad": [
+          "Ni tog er igenom 5 rum och nådde kapitel 1 i Malbecs gruvor."
+        ]
+      },
       "start": "2026-11-16 23:11",
       "utforska": true,
       "kapitel": 1,
