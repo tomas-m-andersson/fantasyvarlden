@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:12:56.163Z",
+  "uppdaterad": "2026-11-16T22:13:05.025Z",
   "spel": {
     "version": 1,
-    "tid": 1794867173224,
+    "tid": 1794867182057,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -463,7 +463,9 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": [],
+          "anvanda": [
+            "Stav"
+          ],
           "tempRust": 0,
           "vapenbonus": null,
           "gift": false,
@@ -471,8 +473,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true
+          "agerat": true,
+          "fordelNasta": false,
+          "valtVapen": "Stav"
         }
       },
       "guld": 0,
@@ -524,6 +527,18 @@
         {
           "text": "Alla hjältar får fördel på sitt nästa slag.",
           "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav med fördel: [3 / 16 → 3] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 1 tar 6 skada (7 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 1 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
