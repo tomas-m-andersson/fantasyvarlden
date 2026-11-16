@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:11:50.301Z",
+  "uppdaterad": "2026-11-16T22:12:25.452Z",
   "spel": {
     "version": 1,
-    "tid": 1794867107235,
+    "tid": 1794867142111,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -332,7 +332,9 @@
           "rumtyp": "mote",
           "text": "En stor sal med stalaktiter som hänger som tänder. En trasig tunna läcker något som kanske en gång var öl. Långt borta hörs någon som slår på en gryta.",
           "fro": 870052084,
-          "mote": "torbyn"
+          "mote": "torbyn",
+          "klar": true,
+          "utfallText": "Han vinkar efter er. Hans getfötter klapprar mot stenen."
         },
         {
           "typ": "rum",
@@ -447,6 +449,10 @@
         {
           "text": "Pescatore Vesuvio tar 8 skada från Stenras. KP 3/11.",
           "cls": "fel"
+        },
+        {
+          "text": "Han vinkar efter er. Hans getfötter klapprar mot stenen.",
+          "cls": "info"
         }
       ],
       "utfall": null,
