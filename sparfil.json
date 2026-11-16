@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:13:44.573Z",
+  "uppdaterad": "2026-11-16T22:13:50.088Z",
   "spel": {
     "version": 1,
-    "tid": 1794867221547,
+    "tid": 1794867227043,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -430,7 +430,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -588,6 +588,18 @@
         {
           "text": "Göfnagrim (Stav) slår Stav: [19] mot 12 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge: [14] mot 16 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
