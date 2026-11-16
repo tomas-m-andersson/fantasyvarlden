@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:12:31.539Z",
+  "uppdaterad": "2026-11-16T22:12:39.225Z",
   "spel": {
     "version": 1,
-    "tid": 1794867148532,
+    "tid": 1794867156207,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -393,7 +393,15 @@
             "Torkade fikon"
           ],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "pescatore": {
           "kp": 3,
@@ -409,11 +417,19 @@
           "markerade": [],
           "anvanda": [
             "Upptäcka fara"
-          ]
+          ],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         },
         "galfner": {
           "kp": 12,
-          "vp": 7,
+          "vp": 4,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -421,7 +437,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": true
         },
         "gofnagrim": {
           "kp": 13,
@@ -433,7 +457,15 @@
           "dod": false,
           "saker": [],
           "markerade": [],
-          "anvanda": []
+          "anvanda": [],
+          "tempRust": 0,
+          "vapenbonus": null,
+          "gift": false,
+          "maktig": false,
+          "raseri": false,
+          "undvikAllt": false,
+          "stoppad": 0,
+          "agerat": false
         }
       },
       "guld": 0,
@@ -457,6 +489,18 @@
         {
           "text": "Han vinkar efter er. Hans getfötter klapprar mot stenen.",
           "cls": "info"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
