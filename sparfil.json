@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:14:58.655Z",
+  "uppdaterad": "2026-11-16T22:15:04.773Z",
   "spel": {
     "version": 1,
-    "tid": 1794867295568,
+    "tid": 1794867301831,
     "kassa": 1471,
     "packning": [
       "Flaska vin",
@@ -463,8 +463,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true,
+          "agerat": true,
+          "fordelNasta": false,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -685,6 +685,14 @@
         },
         {
           "text": "Högprästen i Tarragons Hand tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [12 / 7 → 7] mot 13 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Högprästen i Tarragons Hand tar 3 skada (4 − 1 rustning).",
           "cls": "ok"
         }
       ],
