@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:13:30.833Z",
+  "uppdaterad": "2026-11-16T22:13:38.111Z",
   "spel": {
     "version": 1,
-    "tid": 1794867207693,
+    "tid": 1794867215111,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -403,7 +403,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
@@ -420,7 +420,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Upptäcka fara"
+            "Upptäcka fara",
+            "Pilbåge"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -430,7 +431,8 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": true
+          "fordelNasta": false,
+          "valtVapen": "Kort båge"
         },
         "galfner": {
           "kp": 12,
@@ -452,7 +454,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -476,7 +478,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -570,6 +572,18 @@
         {
           "text": "FF tar 7 skada (10 − 3 rustning) från Sabeltänder. KP 6/13.",
           "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge med fördel: [11 / 14 → 11] mot 16 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 tar 3 skada (4 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "— Runda 3 —",
+          "cls": "info"
         }
       ],
       "utfall": null,
