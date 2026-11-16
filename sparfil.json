@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:13:16.435Z",
+  "uppdaterad": "2026-11-16T22:13:23.162Z",
   "spel": {
     "version": 1,
-    "tid": 1794867193415,
+    "tid": 1794867200219,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -404,7 +404,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "valtVapen": "Kort spjut",
+          "valtVapen": "Gorgor",
           "fordelNasta": true
         },
         "pescatore": {
@@ -476,7 +476,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -554,6 +554,14 @@
         {
           "text": "Galfner Galfner (Armborst) slår Armborst med fördel: [16 / 20 → 16] mot 13 – misslyckat",
           "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [7] mot 12 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Sabeltandad tiger 2 tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
