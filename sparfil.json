@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:14:21.209Z",
+  "uppdaterad": "2026-11-16T22:14:33.468Z",
   "spel": {
     "version": 1,
-    "tid": 1794867258323,
+    "tid": 1794867270535,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -470,7 +470,7 @@
         },
         "gofnagrim": {
           "kp": 9,
-          "vp": 13,
+          "vp": 10,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -489,7 +489,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -635,6 +635,18 @@
         {
           "text": "Göfnagrim tar 4 skada från Forsande vatten. KP 9/13.",
           "cls": "fel"
+        },
+        {
+          "text": "— Runda 1 —",
+          "cls": "info"
+        },
+        {
+          "text": "★ Göfnagrim: Jag är GÖFNAGRIM!!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
         }
       ],
       "utfall": null,
