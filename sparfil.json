@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:13:50.088Z",
+  "uppdaterad": "2026-11-16T22:13:53.994Z",
   "spel": {
     "version": 1,
-    "tid": 1794867227043,
+    "tid": 1794867233486,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -348,7 +348,9 @@
           "rutor": [
             44,
             63
-          ]
+          ],
+          "klar": true,
+          "utfallText": "Segern är er! Ni plundrar fienderna på 6 guld."
         },
         {
           "typ": "rum",
@@ -379,7 +381,7 @@
           ]
         }
       ],
-      "i": 2,
+      "i": 3,
       "h": {
         "ff": {
           "kp": 6,
@@ -430,7 +432,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -478,12 +480,12 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
       },
-      "guld": 0,
+      "guld": 6,
       "logg": [
         {
           "text": "Sällskapet ger sig in i Malbecs gruvor. Kapitel 1.",
@@ -606,7 +608,7 @@
       "start": "2026-11-16 23:11",
       "utforska": true,
       "kapitel": 1,
-      "djup": 2,
+      "djup": 3,
       "paus": false,
       "anvandaText": [
         "En låg tunnel där alla utom ankorna måste huka sig",
