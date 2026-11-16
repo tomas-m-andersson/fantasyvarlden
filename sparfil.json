@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:14:33.468Z",
+  "uppdaterad": "2026-11-16T22:14:38.418Z",
   "spel": {
     "version": 1,
-    "tid": 1794867270535,
+    "tid": 1794867275489,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -413,11 +413,11 @@
           "stoppad": 0,
           "agerat": false,
           "valtVapen": "Kort spjut",
-          "fordelNasta": false
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 3,
-          "vp": 9,
+          "vp": 6,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -439,8 +439,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": false,
+          "agerat": true,
+          "fordelNasta": true,
           "valtVapen": "Kort båge"
         },
         "galfner": {
@@ -465,7 +465,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": false,
-          "fordelNasta": false,
+          "fordelNasta": true,
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
@@ -490,7 +490,7 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "fordelNasta": false,
+          "fordelNasta": true,
           "valtVapen": "Stav"
         }
       },
@@ -646,6 +646,18 @@
         },
         {
           "text": "Fienderna ryggar tillbaka i fasa.",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
+          "cls": "ok"
+        },
+        {
+          "text": "Högprästen i Tarragons Hand anfaller Göfnagrim: [19 / 4 → 19] mot 13 – misslyckat",
           "cls": "ok"
         }
       ],
