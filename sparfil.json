@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:13:56.531Z",
+  "uppdaterad": "2026-11-16T22:14:12.806Z",
   "spel": {
     "version": 1,
-    "tid": 1794867233486,
+    "tid": 1794867249864,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -369,7 +369,9 @@
               "kloak",
               "trask"
             ]
-          }
+          },
+          "klar": true,
+          "utfallText": "Alla tar sig till slut förbi, men FF, Göfnagrim gjorde sig illa på vägen."
         },
         {
           "typ": "rum",
@@ -384,7 +386,7 @@
       "i": 3,
       "h": {
         "ff": {
-          "kp": 6,
+          "kp": 2,
           "vp": 8,
           "doende": false,
           "ok": 0,
@@ -396,7 +398,8 @@
           ],
           "markerade": [],
           "anvanda": [
-            "Spjut"
+            "Spjut",
+            "Simma"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -423,7 +426,8 @@
           "markerade": [],
           "anvanda": [
             "Upptäcka fara",
-            "Pilbåge"
+            "Pilbåge",
+            "Simma"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -447,7 +451,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Armborst"
+            "Armborst",
+            "Simma"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -461,7 +466,7 @@
           "valtVapen": "Armborst"
         },
         "gofnagrim": {
-          "kp": 13,
+          "kp": 9,
           "vp": 13,
           "doende": false,
           "ok": 0,
@@ -471,7 +476,8 @@
           "saker": [],
           "markerade": [],
           "anvanda": [
-            "Stav"
+            "Stav",
+            "Simma"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -602,6 +608,30 @@
         {
           "text": "Sabeltandad tiger 2 faller!",
           "cls": "d"
+        },
+        {
+          "text": "FF slår Simma: [14] mot 6 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "FF tar 4 skada från Forsande vatten. KP 2/13.",
+          "cls": "fel"
+        },
+        {
+          "text": "Pescatore Vesuvio slår Simma: [3] mot 6 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Galfner Galfner slår Simma: [2] mot 7 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Göfnagrim slår Simma: [18] mot 6 – misslyckat",
+          "cls": "fel"
+        },
+        {
+          "text": "Göfnagrim tar 4 skada från Forsande vatten. KP 9/13.",
+          "cls": "fel"
         }
       ],
       "utfall": null,
