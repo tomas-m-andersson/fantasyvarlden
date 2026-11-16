@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:14:12.806Z",
+  "uppdaterad": "2026-11-16T22:14:21.209Z",
   "spel": {
     "version": 1,
-    "tid": 1794867249864,
+    "tid": 1794867258323,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -380,10 +380,13 @@
           "fro": 249582562,
           "fiender": [
             "hogprast"
+          ],
+          "rutor": [
+            54
           ]
         }
       ],
-      "i": 3,
+      "i": 4,
       "h": {
         "ff": {
           "kp": 2,
@@ -638,7 +641,7 @@
       "start": "2026-11-16 23:11",
       "utforska": true,
       "kapitel": 1,
-      "djup": 3,
+      "djup": 4,
       "paus": false,
       "anvandaText": [
         "En låg tunnel där alla utom ankorna måste huka sig",
