@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:14:50.201Z",
+  "uppdaterad": "2026-11-16T22:14:58.655Z",
   "spel": {
     "version": 1,
-    "tid": 1794867287279,
+    "tid": 1794867295568,
     "kassa": 1471,
     "packning": [
       "Flaska vin",
@@ -438,8 +438,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
-          "fordelNasta": true,
+          "agerat": true,
+          "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
         "galfner": {
@@ -678,6 +678,14 @@
         {
           "text": "— Runda 2 —",
           "cls": "info"
+        },
+        {
+          "text": "Pescatore Vesuvio (Kort båge) slår Pilbåge med fördel: [5 / 8 → 5] mot 16 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Högprästen i Tarragons Hand tar 5 skada (6 − 1 rustning).",
+          "cls": "ok"
         }
       ],
       "utfall": null,
