@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:15:10.127Z",
+  "uppdaterad": "2026-11-16T22:15:18.466Z",
   "spel": {
     "version": 1,
-    "tid": 1794867307186,
+    "tid": 1794867315455,
     "kassa": 1471,
     "packning": [
       "Flaska vin",
@@ -410,9 +410,9 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "valtVapen": "Kort spjut",
-          "fordelNasta": true
+          "fordelNasta": false
         },
         "pescatore": {
           "kp": 0,
@@ -714,6 +714,18 @@
         {
           "text": "Pescatore Vesuvio faller ihop och ligger döende!",
           "cls": "dm"
+        },
+        {
+          "text": "FF (Kort spjut) slår Spjut med fördel: [14 / 5 → 5] mot 15 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Högprästen i Tarragons Hand tar 6 skada (7 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "Högprästen i Tarragons Hand faller!",
+          "cls": "d"
         }
       ],
       "utfall": null,
