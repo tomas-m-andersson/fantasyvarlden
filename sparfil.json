@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:13:38.111Z",
+  "uppdaterad": "2026-11-16T22:13:44.573Z",
   "spel": {
     "version": 1,
-    "tid": 1794867215111,
+    "tid": 1794867221547,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -478,7 +478,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -584,6 +584,10 @@
         {
           "text": "— Runda 3 —",
           "cls": "info"
+        },
+        {
+          "text": "Göfnagrim (Stav) slår Stav: [19] mot 12 – misslyckat",
+          "cls": "fel"
         }
       ],
       "utfall": null,
