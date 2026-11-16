@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:12:47.624Z",
+  "uppdaterad": "2026-11-16T22:12:56.163Z",
   "spel": {
     "version": 1,
-    "tid": 1794867164692,
+    "tid": 1794867173224,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -404,11 +404,12 @@
           "undvikAllt": false,
           "stoppad": 0,
           "agerat": true,
-          "valtVapen": "Kort spjut"
+          "valtVapen": "Kort spjut",
+          "fordelNasta": true
         },
         "pescatore": {
           "kp": 3,
-          "vp": 12,
+          "vp": 9,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -428,7 +429,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": true,
+          "fordelNasta": true
         },
         "galfner": {
           "kp": 12,
@@ -448,7 +450,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true
+          "agerat": true,
+          "fordelNasta": true
         },
         "gofnagrim": {
           "kp": 13,
@@ -468,7 +471,8 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false
+          "agerat": false,
+          "fordelNasta": true
         }
       },
       "guld": 0,
@@ -511,6 +515,14 @@
         },
         {
           "text": "Sabeltandad tiger 1 tar 9 skada (10 − 1 rustning).",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Pescatore Vesuvio: Stridshymnen!",
+          "cls": "d"
+        },
+        {
+          "text": "Alla hjältar får fördel på sitt nästa slag.",
           "cls": "ok"
         }
       ],
