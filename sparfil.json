@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:14:38.418Z",
+  "uppdaterad": "2026-11-16T22:14:43.552Z",
   "spel": {
     "version": 1,
-    "tid": 1794867275489,
+    "tid": 1794867280543,
     "kassa": 1471,
     "packning": [
       "Läkande ört",
@@ -445,7 +445,7 @@
         },
         "galfner": {
           "kp": 12,
-          "vp": 4,
+          "vp": 1,
           "doende": false,
           "ok": 0,
           "miss": 0,
@@ -464,7 +464,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": false,
+          "agerat": true,
           "fordelNasta": true,
           "valtVapen": "Armborst"
         },
@@ -658,6 +658,14 @@
         },
         {
           "text": "Högprästen i Tarragons Hand anfaller Göfnagrim: [19 / 4 → 19] mot 13 – misslyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Galfner Galfner: Japansk growl!",
+          "cls": "d"
+        },
+        {
+          "text": "Fienderna ryggar tillbaka i fasa.",
           "cls": "ok"
         }
       ],
