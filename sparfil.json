@@ -1,10 +1,10 @@
 {
   "app": "Fantasyvärlden",
   "version": 1,
-  "uppdaterad": "2026-11-16T22:15:18.466Z",
+  "uppdaterad": "2026-11-16T22:15:21.466Z",
   "spel": {
     "version": 1,
-    "tid": 1794867315455,
+    "tid": 1794867318535,
     "kassa": 1471,
     "packning": [
       "Flaska vin",
@@ -382,7 +382,8 @@
           ],
           "rutor": [
             54
-          ]
+          ],
+          "klar": true
         }
       ],
       "i": 4,
@@ -410,14 +411,14 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "valtVapen": "Kort spjut",
           "fordelNasta": false
         },
         "pescatore": {
-          "kp": 0,
+          "kp": 1,
           "vp": 6,
-          "doende": true,
+          "doende": false,
           "ok": 0,
           "miss": 0,
           "stabil": false,
@@ -438,7 +439,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Kort båge"
         },
@@ -454,7 +455,8 @@
           "markerade": [],
           "anvanda": [
             "Armborst",
-            "Simma"
+            "Simma",
+            "Läkekonst"
           ],
           "tempRust": 0,
           "vapenbonus": null,
@@ -463,7 +465,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Armborst"
         },
@@ -488,7 +490,7 @@
           "raseri": false,
           "undvikAllt": false,
           "stoppad": 0,
-          "agerat": true,
+          "agerat": false,
           "fordelNasta": false,
           "valtVapen": "Stav"
         }
@@ -726,14 +728,26 @@
         {
           "text": "Högprästen i Tarragons Hand faller!",
           "cls": "d"
+        },
+        {
+          "text": "Galfner Galfner tar hand om Pescatore Vesuvio slår Läkekonst: [2] mot 7 – lyckat",
+          "cls": "ok"
+        },
+        {
+          "text": "Pescatore Vesuvio kommer tillbaka på benen!",
+          "cls": "ok"
+        },
+        {
+          "text": "★ Kapitel 1 klart! Sällskapet har tagit sig igenom 5 rum i Malbecs gruvor.",
+          "cls": "d"
         }
       ],
       "utfall": null,
       "start": "2026-11-16 23:11",
       "utforska": true,
       "kapitel": 1,
-      "djup": 4,
-      "paus": false,
+      "djup": 5,
+      "paus": true,
       "anvandaText": [
         "En låg tunnel där alla utom ankorna måste huka sig",
         "En slocknad lägereld omges av ohyggligt dåligt huggna träsniderier",
